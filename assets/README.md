@@ -1,5 +1,7 @@
 # Illustrations and credits
 
+The [current runtime diagram](illustrations/joint-deck-runtime.svg) and the [blind replay chart](illustrations/joint-deck-evidence.svg) accompany the [joint deck experiment](../docs/joint-deck.md). The [Hafenrechnung Admin image](experiments/joint-deck/hafenrechnung-admin.png) is an actual Chrome capture from the synthetic percentage coupon run with Shopware stopped.
+
 The illustrations and experiment captures accompany Stefan Hamann’s *The End of Software as We Know It: From Apps to Holos*. The editorial artwork depicts the vision. The experiment captures depict the existing Holoshop trial. They serve different purposes in the documentation.
 
 The architecture comparison is available as a [shareable PNG](illustrations/projects-to-properties.png) and an [editable SVG](illustrations/projects-to-properties.svg).

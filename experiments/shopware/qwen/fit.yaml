@@ -1,0 +1,18 @@
+train: true
+fine_tune_type: lora
+num_layers: 8
+iters: 96
+batch_size: 2
+learning_rate: 0.0001
+steps_per_report: 8
+steps_per_eval: 32
+val_batches: 6
+max_seq_length: 1024
+save_every: 32
+mask_prompt: true
+seed: 31415
+lora_parameters:
+  keys: [mlp.gate_proj, mlp.up_proj, mlp.down_proj]
+  rank: 16
+  scale: 2.0
+  dropout: 0.0

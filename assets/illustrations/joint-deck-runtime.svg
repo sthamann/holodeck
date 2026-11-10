@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 648" role="img" aria-labelledby="runtime-title runtime-desc">
+  <title id="runtime-title">How Holoshop runs today</title>
+  <desc id="runtime-desc">Shopware traces and candidate programs teach the sparse deck offline. In the running shop, Qwen interprets Admin text, merchant facts feed the deck, and learned cells produce actions and views or programs for the VM and SQLite.</desc>
+  <defs>
+    <marker id="runtime-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#59675d"/>
+    </marker>
+    <style>
+      .title{font:700 54px Georgia,serif;fill:#252c25}
+      .sub{font:22px system-ui,sans-serif;fill:#49584c}
+      .label{font:600 15px ui-monospace,monospace;letter-spacing:2px;fill:#47574b}
+      .name{font:700 22px system-ui,sans-serif;fill:#252c25}
+      .detail{font:17px system-ui,sans-serif;fill:#49584c}
+      .box{fill:#fffcf5;stroke:#a9b4a6;stroke-width:1.5}
+      .edge{fill:none;stroke:#59675d;stroke-width:2;marker-end:url(#runtime-arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="648" rx="24" fill="#f7f1e6"/>
+  <text class="label" x="48" y="44">HOLODECK / EXPERIMENT 01</text>
+  <text class="title" x="48" y="108">How Holoshop runs today</text>
+  <text class="sub" x="48" y="148">The same checkpoint selects transaction programs and the controls that invoke them.</text>
+  <rect x="48" y="180" width="1104" height="140" rx="16" fill="#efebe1" stroke="#a9a495" stroke-dasharray="6 6"/>
+  <text class="label" x="72" y="208">OFFLINE / TEACH AND CHECK</text>
+  <text class="label" x="48" y="366">LIVE / SHOPWARE OFF</text>
+  <g class="edge">
+    <path d="M360 263H452"/><path d="M744 263H836"/>
+    <path d="M992 300V328Q992 336 984 336H608Q600 336 600 344V400" stroke-dasharray="6 6"/>
+    <path d="M352 464H432"/><path d="M352 552H432"/>
+    <path d="M768 464H848"/><path d="M768 552H848"/>
+  </g>
+  <g>
+    <rect class="box" x="72" y="228" width="288" height="72" rx="12"/>
+    <text class="name" x="92" y="256">Isolated Shopware</text>
+    <text class="detail" x="92" y="281">Native API and browser traces</text>
+    <rect class="box" x="456" y="228" width="288" height="72" rx="12"/>
+    <text class="name" x="476" y="256">Compile and fit</text>
+    <text class="detail" x="476" y="281">Candidate cells + trace checks</text>
+    <rect class="box" x="840" y="228" width="288" height="72" rx="12"/>
+    <text class="name" x="860" y="256">Freeze the checkpoint</text>
+    <text class="detail" x="860" y="281">Then test on fresh shops</text>
+  </g>
+  <g>
+    <rect class="box" x="48" y="400" width="304" height="92" rx="12"/>
+    <text class="name" x="68" y="436">Intent or business event</text>
+    <text class="detail" x="68" y="464">Frozen Qwen encodes Admin text</text>
+    <rect class="box" x="48" y="504" width="304" height="92" rx="12"/>
+    <text class="name" x="68" y="540">Merchant facts</text>
+    <text class="detail" x="68" y="568">Catalog, settings, current records</text>
+    <rect x="436" y="400" width="332" height="196" rx="16" fill="#e7eee4" stroke="#2e523f" stroke-width="2"/>
+    <text class="label" x="460" y="434">THE JOINT DECK</text>
+    <text class="name" x="460" y="472">Sparse trained weights</text>
+    <text class="detail" x="460" y="506">Select and combine cells for</text>
+    <text class="detail" x="460" y="530">commerce, workflows and views.</text>
+    <text class="detail" x="460" y="568">Versioned grammar + specialist</text>
+    <rect class="box" x="852" y="400" width="300" height="92" rx="12"/>
+    <text class="name" x="872" y="436">Working holos</text>
+    <text class="detail" x="872" y="464">Storefront, checkout and Admin</text>
+    <rect class="box" x="852" y="504" width="300" height="92" rx="12"/>
+    <text class="name" x="872" y="540">Exact commits</text>
+    <text class="detail" x="872" y="568">Typed VM, SQLite and receipts</text>
+  </g>
+  <text class="label" x="48" y="628">SHOPWARE 6.7.15.1 · SYNTHETIC MERCHANTS · LOCAL REPLAY</text>
+</svg>

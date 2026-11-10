@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 512" role="img" aria-labelledby="evidence-title evidence-desc">
+  <title id="evidence-title">Exact replay across four unseen shops</title>
+  <desc id="evidence-desc">The previous checkpoint matched 10 of 48 complete journeys, the numeric joint deck 48 of 48, and the same numeric deck with its fixed-shipping output changed 24 of 48.</desc>
+  <defs>
+    <style>
+      .title{font:700 52px Georgia,serif;fill:#252c25}
+      .sub{font:22px system-ui,sans-serif;fill:#49584c}
+      .label{font:600 15px ui-monospace,monospace;letter-spacing:2px;fill:#47574b}
+      .row{font:700 21px system-ui,sans-serif;fill:#252c25}
+      .num{font:700 22px ui-monospace,monospace;fill:#252c25}
+      .tick{font:17px ui-monospace,monospace;fill:#49584c}
+    </style>
+  </defs>
+  <rect width="1200" height="512" rx="24" fill="#f7f1e6"/>
+  <text class="label" x="48" y="44">HOLODECK / BLIND REPLAY</text>
+  <text class="title" x="48" y="106">48 journeys. Four unseen shops.</text>
+  <text class="sub" x="48" y="148">Exact from cart to durable order, stock and workflow. Shopware offline.</text>
+  <g fill="none" stroke="#c8c6b9" stroke-width="1">
+    <path d="M400 200V400M552 200V400M704 200V400M856 200V400M1008 200V400"/>
+  </g>
+  <g fill="#e8e4d9">
+    <rect x="400" y="216" width="608" height="32" rx="4"/>
+    <rect x="400" y="280" width="608" height="32" rx="4"/>
+    <rect x="400" y="344" width="608" height="32" rx="4"/>
+  </g>
+  <rect x="400" y="216" width="126.67" height="32" rx="4" fill="#7c8a7f"/>
+  <rect x="400" y="280" width="608" height="32" rx="4" fill="#315745"/>
+  <rect x="400" y="344" width="304" height="32" rx="4" fill="#7c8a7f"/>
+  <text class="row" x="48" y="240">Previous joint deck</text>
+  <text class="row" x="48" y="304">Numeric joint deck</text>
+  <text class="row" x="48" y="368">Fixed shipping output changed</text>
+  <text class="num" x="1040" y="240">10 / 48</text>
+  <text class="num" x="1040" y="304">48 / 48</text>
+  <text class="num" x="1040" y="368">24 / 48</text>
+  <g class="tick" text-anchor="middle">
+    <text x="400" y="430">0</text><text x="552" y="430">12</text><text x="704" y="430">24</text>
+    <text x="856" y="430">36</text><text x="1008" y="430">48</text>
+  </g>
+  <text class="label" x="48" y="478">EXACT COMPLETE JOURNEYS / SAME 48 REFERENCES IN EACH ARM</text>
+</svg>

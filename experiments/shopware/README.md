@@ -1,5 +1,7 @@
 # Holoshop experiments with Shopware
 
+**Current experiment.** The [joint deck](../../docs/joint-deck.md) runs four new shops with Shopware offline. The [published evidence](evidence/joint-deck/) includes its checkpoints and separate native training, holdout and regression traces. The [benchmark log](benchmark/README.md) records the controller comparisons, counterexamples, specialization and browser tests that led to it. The [Qwen adapter comparison](qwen/README.md) is a separate direct generation experiment.
+
 [Marktlabor and the scaled corpus](../../docs/scaled-shopware-learning.md) cover 2,048 native Store and Admin API journeys for catalog edits, coupons, checkout and returns, plus native browser observations and independent two-line basket tests.
 
 Shopware is the teacher for these commerce experiments. We ran an isolated Shopware Community Edition 6.7.15.1 installation with synthetic merchants and recorded selected state transitions. The published code replays those observations and runs a small native shop on the learned computation.

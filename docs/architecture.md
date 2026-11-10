@@ -1,8 +1,18 @@
 # The deck architecture
 
-**Status: target design.** The [Shopware experiments](../experiments/shopware/README.md) implement selected pieces. The complete architecture described here is the next research and engineering objective.
+This page describes the target architecture. The [joint deck](joint-deck.md) documents the current implementation and replay. The complete model must carry commerce semantics across merchant configurations, actions and surfaces.
 
 The target is one multimodal, executable model of the business. Search, pricing, checkout, service and analysis draw on the same learned business semantics. The model interprets what happened, determines the consequences, carries the process forward and projects the software needed for the work. Standard commerce supplies the first evidence. [The eight properties](../README.md#what-becomes-a-property-of-the-architecture)
+
+The [Shopware absorption plan](shopware-absorption.md) specifies the teacher, execution boundary and experiments that distinguish learned acquisition from a learned decision in the live shop.
+
+## Where the prototype stands
+
+![The current joint deck and its offline teacher.](../assets/illustrations/joint-deck-runtime.svg)
+
+The current checkpoint has a shared sparse decoder for commerce, workflow and projection cells. A frozen Qwen encoder and separate language readouts interpret Admin requests. The model selects expressions from a versioned grammar and binds them to merchant inputs. A typed interpreter executes those expressions and a SQLite store commits the result. The working Storefront, Checkout and Admin use a bounded component set and the same available action programs.
+
+The offline comparison reproduced 48 of 48 new journeys across four merchant configurations. The arithmetic expressions were designed from source and selected against traces. A shipping output intervention shows that the executed choice depends on the trained decoder. The current result covers those journeys. The target calls for a jointly trained multimodal representation, broader acquisition of business logic and a complete product profile. [Read the results and run the same checkpoint](joint-deck.md)
 
 ## First delivery
 

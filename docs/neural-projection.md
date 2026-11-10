@@ -1,5 +1,7 @@
 # A deck that generates its own shop surfaces
 
+This records the two shop projection milestone. The [current joint deck](joint-deck.md) extends the same experiment to four new configured shops and publishes its replay and browser evidence.
+
 The same checkpoint runs Kanne and Werkraum Handel. Each shop has a separate catalog, price and shipping configuration, visual profile and database. The deck generates an interface program from the current task, intent, merchant profile and business state. The browser renders the program and sends its bound actions to the same deck.
 
 | Surface | Kanne | Werkraum Handel |

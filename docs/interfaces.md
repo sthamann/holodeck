@@ -1,5 +1,7 @@
 # Technical contracts
 
+These are the target contracts. In the [current joint deck](joint-deck.md), an offered action binds a record ID and revision to the hash of its emitted program. The VM computes typed writes, and SQLite stores changes and an idempotent receipt together. The numeric extension versions the arithmetic vocabulary with the checkpoint. Integer cents remain the stored representation.
+
 **Status: proposed interfaces.** The runnable experiments have their existing smaller APIs. These contracts define the next deck implementation and apply beyond commerce.
 
 ## DeckStep

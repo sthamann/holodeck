@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Holodeck · Shoplabor</title>
+  <link rel="stylesheet" href="/shop.css">
+  <script src="/shop.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="top">
+      <a class="brand" id="brand" href="/">Holodeck</a>
+      <nav aria-label="Bereiche">
+        <button type="button" data-scope="storefront">Sortiment</button>
+        <button type="button" data-scope="checkout">Kasse</button>
+        <button type="button" data-scope="admin">Händlerbereich</button>
+      </nav>
+      <div class="shop-links" aria-label="Testshop wählen"></div>
+    </div>
+  </header>
+  <main>
+    <div class="intro">
+      <div>
+        <h1 id="heading">Shoplabor</h1>
+        <p id="caption">Ansicht wird erzeugt.</p>
+      </div>
+      <form id="ask" hidden>
+        <label for="intent">Was möchtest du sehen?</label>
+        <div class="input-row">
+          <textarea id="intent" name="intent" rows="2" maxlength="450" required></textarea>
+          <button class="secondary">Ansicht erzeugen</button>
+        </div>
+      </form>
+    </div>
+    <p id="message" role="status" aria-live="polite"></p>
+    <div id="surface" aria-busy="true"></div>
+  </main>
+  <footer>Holodeck Shoplabor <span>Isolierter Testshop · Testzahlung</span></footer>
+</body>
+</html>

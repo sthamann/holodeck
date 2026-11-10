@@ -1,5 +1,7 @@
 # Learn from Shopware Admin and build a third shop workspace
 
+This records the Nordlager native interaction milestone. The [current joint deck](joint-deck.md) uses these earlier observations as part of its projection curriculum.
+
 Nordlager runs on a new checkpoint and a separate merchant data file. Its admin accepts a free request and builds a working view over orders or inventory, or both. The request is interpreted by local Qwen. A UI head trained from the Shopware recordings emits the available fields, tools and action bindings. Those bindings execute through the same commerce model and transaction runtime as the rest of the shop.
 
 ![Nordlager dispatch workbench from a free request](../assets/experiments/workspace/nordlager-versandleitstand.jpg)

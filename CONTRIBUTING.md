@@ -13,3 +13,5 @@ python experiments/shopware/replay.py
 ```
 
 Report any limits that affect interpretation, such as a fixed schema, supported currency or unavailable reference behaviour.
+
+For changes to the joint decoder, numeric primitives or generated bindings, also run the [published joint deck replay](docs/joint-deck.md#replay-the-published-checkpoints). The reference cases are synthetic. Add new cases in a separate cohort when the change was informed by an existing holdout.

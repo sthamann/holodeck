@@ -1,0 +1,50 @@
+{
+  "routes": {
+    "order_delivery.retour": [
+      "state.order.delivery=open",
+      "state.order.delivery=returned",
+      "state.order.delivery=returned_partially",
+      "state.order.delivery=shipped"
+    ],
+    "order_delivery.retour_partially": [
+      "state.order.delivery=open",
+      "state.order.delivery=returned",
+      "state.order.delivery=shipped"
+    ],
+    "order_transaction.refund": [
+      "state.order.payment=open",
+      "state.order.payment=paid",
+      "state.order.payment=refunded",
+      "state.order.payment=refunded_partially"
+    ],
+    "order_transaction.refund_partially": [
+      "state.order.payment=open",
+      "state.order.payment=paid",
+      "state.order.payment=refunded"
+    ]
+  },
+  "notifications": {
+    "delivery.returned": [
+      0,
+      1
+    ],
+    "delivery.returned_partially": [
+      1
+    ],
+    "payment.refunded": [
+      0,
+      1
+    ],
+    "payment.refunded_partially": [
+      1
+    ]
+  },
+  "observations": 52,
+  "base": "9ad2c6e027127c2cb901575e004e5c949eb258ce0782f62bd0a87c0e29d6165c-e50c1bf03c2cae6ca0be38a9be8a5e2e8284224d438834653a35a3377bdf81b8-3a31c8afe5bb667188492f17bf403a13a729397b0d050fdf4b19fc59a095e129",
+  "source": "ca6ba863a2541bd4d3c5ebeac7017775201a1d50b4a3428695d2361b658bf186",
+  "training_channels": [
+    "68180591a73a4a3fba3fc3e90091a315",
+    "f6f9a291567640caa57928b4af24e425"
+  ],
+  "signatures": 22
+}

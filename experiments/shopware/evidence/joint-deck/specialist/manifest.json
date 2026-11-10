@@ -1,0 +1,30 @@
+{
+  "tags": [
+    "event.refunds=True",
+    "event.returns=True",
+    "event=delivery.returned",
+    "event=delivery.returned_partially",
+    "event=order_delivery.retour",
+    "event=order_delivery.retour_partially",
+    "event=order_transaction.refund",
+    "event=order_transaction.refund_partially",
+    "event=payment.refunded",
+    "event=payment.refunded_partially",
+    "event=project.admin",
+    "state.order.delivery=open",
+    "state.order.delivery=returned",
+    "state.order.delivery=returned_partially",
+    "state.order.delivery=shipped",
+    "state.order.payment=open",
+    "state.order.payment=paid",
+    "state.order.payment=refunded",
+    "state.order.payment=refunded_partially"
+  ],
+  "ordered": true,
+  "grammar_sha256": "0cd31d44cd6c0d1c0918effaa62423ba440d6fd88fa4a2127fa39358970dcd5c",
+  "weights_sha256": "ca10cecd6197976753061c79fc070cafa7498c779f7d21a63118b933c0699472",
+  "training_sha256": "bf8463fe89d715490c7931d0e844225b1b494cc1037cf19b7ecae081699afeba",
+  "learned_gates": 38,
+  "learned_edges": 29,
+  "signatures": 22
+}

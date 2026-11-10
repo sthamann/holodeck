@@ -1,5 +1,7 @@
 # Decks, holos and projected software
 
+The terms on this page describe the architecture. The [joint deck](joint-deck.md) shows their current implementation in a storefront, checkout and merchant workspace driven by one sparse checkpoint.
+
 Holodeck uses a small vocabulary to describe a large change in how business software could work. The terms refer to responsibilities and observable behaviour, not to a particular framework or vendor.
 
 ## Deck

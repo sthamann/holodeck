@@ -1,0 +1,601 @@
+{
+  "teacher_port_closed": 55729,
+  "shipping_weight_intervention": {
+    "cell": "shipping_bands",
+    "changed_output_index": [
+      3,
+      2
+    ],
+    "unchanged_grammar": "e50c1bf03c2cae6ca0be38a9be8a5e2e8284224d438834653a35a3377bdf81b8"
+  },
+  "fit_receipt_sha256": "a0ba37a1701bcea2af499e3e9641e5af08cc44320a3070cb994d74d6e00e70a2",
+  "holdout_configs": [
+    [
+      1,
+      1,
+      "auto"
+    ],
+    [
+      1,
+      5,
+      "fixed"
+    ],
+    [
+      1,
+      10,
+      "fixed"
+    ],
+    [
+      5,
+      5,
+      "auto"
+    ]
+  ],
+  "cohorts": {
+    "holdout": {
+      "source_sha256": "059dd8e76922ead0e583b86a9bd30b187c1940667151e6a762fef58fda678419",
+      "arms": {
+        "baseline": {
+          "checkpoint": "f59f5cda337e51c001d93a4262a18a98c8645c5aac121237e7ffbaf210b9bdec",
+          "by_shop": {
+            "Flusskonto": [
+              10,
+              12
+            ],
+            "Hafenrechnung": [
+              0,
+              12
+            ],
+            "Kupfermuehle": [
+              0,
+              12
+            ],
+            "Nordtaler": [
+              0,
+              12
+            ]
+          },
+          "by_event": {
+            "cart.add": [
+              11,
+              48
+            ],
+            "cart.promo": [
+              12,
+              48
+            ],
+            "checkout.place": [
+              12,
+              48
+            ],
+            "order_delivery.reopen": [
+              24,
+              24
+            ],
+            "order_delivery.ship": [
+              48,
+              48
+            ],
+            "order_transaction.paid": [
+              48,
+              48
+            ],
+            "order_transaction.reopen": [
+              24,
+              24
+            ]
+          },
+          "replayed_checkout_receipts": 48,
+          "apply_ms_p50_p95": [
+            0.5217920042923652,
+            0.6991232439759187
+          ]
+        },
+        "numeric": {
+          "checkpoint": "9ad2c6e027127c2cb901575e004e5c949eb258ce0782f62bd0a87c0e29d6165c-e50c1bf03c2cae6ca0be38a9be8a5e2e8284224d438834653a35a3377bdf81b8-3a31c8afe5bb667188492f17bf403a13a729397b0d050fdf4b19fc59a095e129",
+          "by_shop": {
+            "Flusskonto": [
+              12,
+              12
+            ],
+            "Hafenrechnung": [
+              12,
+              12
+            ],
+            "Kupfermuehle": [
+              12,
+              12
+            ],
+            "Nordtaler": [
+              12,
+              12
+            ]
+          },
+          "by_event": {
+            "cart.add": [
+              48,
+              48
+            ],
+            "cart.promo": [
+              48,
+              48
+            ],
+            "checkout.place": [
+              48,
+              48
+            ],
+            "order_delivery.reopen": [
+              24,
+              24
+            ],
+            "order_delivery.ship": [
+              48,
+              48
+            ],
+            "order_transaction.paid": [
+              48,
+              48
+            ],
+            "order_transaction.reopen": [
+              24,
+              24
+            ]
+          },
+          "replayed_checkout_receipts": 48,
+          "apply_ms_p50_p95": [
+            0.7040624986984767,
+            0.8506251011567655
+          ]
+        },
+        "numeric-shipping-control": {
+          "checkpoint": "9ad2c6e027127c2cb901575e004e5c949eb258ce0782f62bd0a87c0e29d6165c-e50c1bf03c2cae6ca0be38a9be8a5e2e8284224d438834653a35a3377bdf81b8-3a31c8afe5bb667188492f17bf403a13a729397b0d050fdf4b19fc59a095e129-shipping-output-intervention",
+          "by_shop": {
+            "Flusskonto": [
+              12,
+              12
+            ],
+            "Hafenrechnung": [
+              0,
+              12
+            ],
+            "Kupfermuehle": [
+              12,
+              12
+            ],
+            "Nordtaler": [
+              0,
+              12
+            ]
+          },
+          "by_event": {
+            "cart.add": [
+              24,
+              48
+            ],
+            "cart.promo": [
+              24,
+              48
+            ],
+            "checkout.place": [
+              24,
+              48
+            ],
+            "order_delivery.reopen": [
+              24,
+              24
+            ],
+            "order_delivery.ship": [
+              48,
+              48
+            ],
+            "order_transaction.paid": [
+              48,
+              48
+            ],
+            "order_transaction.reopen": [
+              24,
+              24
+            ]
+          },
+          "replayed_checkout_receipts": 48,
+          "apply_ms_p50_p95": [
+            0.7358119983109646,
+            0.8911353055736981
+          ]
+        }
+      }
+    },
+    "program-deck-sealed-complete": {
+      "source_sha256": "7ad950cb5efa041349f3e469eac67b3119060ff59a38fe64ba13d10eb64937de",
+      "arms": {
+        "baseline": {
+          "checkpoint": "f59f5cda337e51c001d93a4262a18a98c8645c5aac121237e7ffbaf210b9bdec",
+          "by_shop": {
+            "Erlenkai": [
+              12,
+              12
+            ],
+            "Feldhafen": [
+              12,
+              12
+            ],
+            "Steindock": [
+              12,
+              12
+            ],
+            "Waldkai": [
+              11,
+              12
+            ]
+          },
+          "by_event": {
+            "cart.add": [
+              47,
+              48
+            ],
+            "cart.promo": [
+              47,
+              48
+            ],
+            "checkout.place": [
+              47,
+              48
+            ],
+            "order_delivery.reopen": [
+              24,
+              24
+            ],
+            "order_delivery.ship": [
+              48,
+              48
+            ],
+            "order_transaction.paid": [
+              48,
+              48
+            ],
+            "order_transaction.reopen": [
+              24,
+              24
+            ]
+          },
+          "replayed_checkout_receipts": 48,
+          "apply_ms_p50_p95": [
+            0.6567710006493144,
+            0.8736647061596159
+          ]
+        },
+        "numeric": {
+          "checkpoint": "9ad2c6e027127c2cb901575e004e5c949eb258ce0782f62bd0a87c0e29d6165c-e50c1bf03c2cae6ca0be38a9be8a5e2e8284224d438834653a35a3377bdf81b8-3a31c8afe5bb667188492f17bf403a13a729397b0d050fdf4b19fc59a095e129",
+          "by_shop": {
+            "Erlenkai": [
+              12,
+              12
+            ],
+            "Feldhafen": [
+              12,
+              12
+            ],
+            "Steindock": [
+              12,
+              12
+            ],
+            "Waldkai": [
+              12,
+              12
+            ]
+          },
+          "by_event": {
+            "cart.add": [
+              48,
+              48
+            ],
+            "cart.promo": [
+              48,
+              48
+            ],
+            "checkout.place": [
+              48,
+              48
+            ],
+            "order_delivery.reopen": [
+              24,
+              24
+            ],
+            "order_delivery.ship": [
+              48,
+              48
+            ],
+            "order_transaction.paid": [
+              48,
+              48
+            ],
+            "order_transaction.reopen": [
+              24,
+              24
+            ]
+          },
+          "replayed_checkout_receipts": 48,
+          "apply_ms_p50_p95": [
+            0.7905834936536849,
+            0.9882977989036589
+          ]
+        }
+      }
+    },
+    "joint-deck-native": {
+      "source_sha256": "ce27eb618e0c0d41a02e01e96bd37b8b8fbb167d70848e1cf1e2e0d538f78e95",
+      "arms": {
+        "baseline": {
+          "checkpoint": "f59f5cda337e51c001d93a4262a18a98c8645c5aac121237e7ffbaf210b9bdec",
+          "by_shop": {
+            "Falkensteg": [
+              6,
+              6
+            ],
+            "Kupferkai": [
+              6,
+              6
+            ],
+            "Lindenbogen": [
+              6,
+              6
+            ],
+            "Sandwerk": [
+              6,
+              6
+            ]
+          },
+          "by_event": {
+            "cart.add": [
+              24,
+              24
+            ],
+            "cart.promo": [
+              24,
+              24
+            ],
+            "checkout.place": [
+              24,
+              24
+            ],
+            "order_delivery.reopen": [
+              12,
+              12
+            ],
+            "order_delivery.ship": [
+              24,
+              24
+            ],
+            "order_transaction.paid": [
+              24,
+              24
+            ],
+            "order_transaction.reopen": [
+              12,
+              12
+            ]
+          },
+          "replayed_checkout_receipts": 24,
+          "apply_ms_p50_p95": [
+            0.6772294946131296,
+            0.894959011930041
+          ]
+        },
+        "numeric": {
+          "checkpoint": "9ad2c6e027127c2cb901575e004e5c949eb258ce0782f62bd0a87c0e29d6165c-e50c1bf03c2cae6ca0be38a9be8a5e2e8284224d438834653a35a3377bdf81b8-3a31c8afe5bb667188492f17bf403a13a729397b0d050fdf4b19fc59a095e129",
+          "by_shop": {
+            "Falkensteg": [
+              6,
+              6
+            ],
+            "Kupferkai": [
+              6,
+              6
+            ],
+            "Lindenbogen": [
+              6,
+              6
+            ],
+            "Sandwerk": [
+              6,
+              6
+            ]
+          },
+          "by_event": {
+            "cart.add": [
+              24,
+              24
+            ],
+            "cart.promo": [
+              24,
+              24
+            ],
+            "checkout.place": [
+              24,
+              24
+            ],
+            "order_delivery.reopen": [
+              12,
+              12
+            ],
+            "order_delivery.ship": [
+              24,
+              24
+            ],
+            "order_transaction.paid": [
+              24,
+              24
+            ],
+            "order_transaction.reopen": [
+              12,
+              12
+            ]
+          },
+          "replayed_checkout_receipts": 24,
+          "apply_ms_p50_p95": [
+            0.7536665070801973,
+            0.8959392507676966
+          ]
+        }
+      }
+    }
+  },
+  "service_composition": {
+    "before": {
+      "journeys": 16,
+      "exact": 0,
+      "mutations": {
+        "total": 44,
+        "exact": 0
+      },
+      "no_mutations": {
+        "total": 36,
+        "exact": 20
+      }
+    },
+    "after": {
+      "journeys": 16,
+      "exact": 16,
+      "mutations": {
+        "total": 44,
+        "exact": 44
+      },
+      "no_mutations": {
+        "total": 36,
+        "exact": 36
+      }
+    },
+    "regression": {
+      "journeys": 24,
+      "identical_programs": 144,
+      "old": 24,
+      "new": 24
+    }
+  },
+  "browser": {
+    "browser-absolute": [
+      {
+        "shop": "Flusskonto",
+        "root": "6395721421db4da4a60a0afb39016e8a",
+        "control": false,
+        "gross": 32898,
+        "cartExact": true,
+        "checkoutExact": true,
+        "foreignOrderRejected": false,
+        "staleOfferRejected": true,
+        "invalidBindingRejected": true,
+        "statusTransitionsChecked": 3,
+        "finalRevision": 6,
+        "workflowEffects": 1,
+        "delivery": "shipped"
+      },
+      {
+        "shop": "Nordtaler",
+        "root": "353453d41fc94c8b9008370c3af5e076",
+        "control": false,
+        "gross": 32975,
+        "cartExact": true,
+        "checkoutExact": true,
+        "foreignOrderRejected": true,
+        "staleOfferRejected": true,
+        "invalidBindingRejected": true,
+        "statusTransitionsChecked": 3,
+        "finalRevision": 6,
+        "workflowEffects": 1,
+        "delivery": "shipped"
+      },
+      {
+        "shop": "Kupfermuehle",
+        "root": "7aeb32f27c5b4aa994b47e2634833657",
+        "control": false,
+        "gross": 32805,
+        "cartExact": true,
+        "checkoutExact": true,
+        "foreignOrderRejected": true,
+        "staleOfferRejected": true,
+        "invalidBindingRejected": true,
+        "statusTransitionsChecked": 3,
+        "finalRevision": 6,
+        "workflowEffects": 1,
+        "delivery": "shipped"
+      },
+      {
+        "shop": "Hafenrechnung",
+        "root": "d0d80ad759e34685b0afb2c4747e2a9d",
+        "control": false,
+        "gross": 33110,
+        "cartExact": true,
+        "checkoutExact": true,
+        "foreignOrderRejected": true,
+        "staleOfferRejected": true,
+        "invalidBindingRejected": true,
+        "statusTransitionsChecked": 3,
+        "finalRevision": 6,
+        "workflowEffects": 1,
+        "delivery": "shipped"
+      }
+    ],
+    "browser-percent": [
+      {
+        "shop": "Flusskonto",
+        "root": "9687fc76cbb644d7aed41a413b9694e8",
+        "control": false,
+        "gross": 57814,
+        "cartExact": true,
+        "checkoutExact": true,
+        "foreignOrderRejected": false,
+        "staleOfferRejected": true,
+        "invalidBindingRejected": true,
+        "statusTransitionsChecked": 3,
+        "finalRevision": 6,
+        "workflowEffects": 1,
+        "delivery": "shipped"
+      },
+      {
+        "shop": "Nordtaler",
+        "root": "1bd3929364144128a6cfee30d1dc8497",
+        "control": false,
+        "gross": 57890,
+        "cartExact": true,
+        "checkoutExact": true,
+        "foreignOrderRejected": true,
+        "staleOfferRejected": true,
+        "invalidBindingRejected": true,
+        "statusTransitionsChecked": 3,
+        "finalRevision": 6,
+        "workflowEffects": 1,
+        "delivery": "shipped"
+      },
+      {
+        "shop": "Kupfermuehle",
+        "root": "d7d0dc2e8aab460bad11e5ec85b5a4a9",
+        "control": false,
+        "gross": 57730,
+        "cartExact": true,
+        "checkoutExact": true,
+        "foreignOrderRejected": true,
+        "staleOfferRejected": true,
+        "invalidBindingRejected": true,
+        "statusTransitionsChecked": 3,
+        "finalRevision": 6,
+        "workflowEffects": 1,
+        "delivery": "shipped"
+      },
+      {
+        "shop": "Hafenrechnung",
+        "root": "e5517669bd614b16bcefd3a64da17bc6",
+        "control": false,
+        "gross": 58030,
+        "cartExact": true,
+        "checkoutExact": true,
+        "foreignOrderRejected": true,
+        "staleOfferRejected": true,
+        "invalidBindingRejected": true,
+        "statusTransitionsChecked": 3,
+        "finalRevision": 6,
+        "workflowEffects": 1,
+        "delivery": "shipped"
+      }
+    ]
+  }
+}

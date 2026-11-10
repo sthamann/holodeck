@@ -1,0 +1,110 @@
+{
+  "training_channels": [
+    "36e46cbd6cca470f947ddf699da777b4",
+    "62cd9d0a03724356b83c0efeed4fa188",
+    "977dab4e8a084d97bcec5df1d65be95b"
+  ],
+  "training_shops": [
+    "Geldkai",
+    "Marktbruecke",
+    "Silberbogen"
+  ],
+  "training_cases": 18,
+  "training_sha256": "2089393c44a90566dcfc3ef658fd4f70d027b1774f085484d88480a888038dd6",
+  "baseline_checkpoint": "f59f5cda337e51c001d93a4262a18a98c8645c5aac121237e7ffbaf210b9bdec",
+  "numeric_vm": "3a31c8afe5bb667188492f17bf403a13a729397b0d050fdf4b19fc59a095e129",
+  "numeric_compiler": "6a402db8a6de7d357f3572ca9a43bf336d04230cdba02aa871288446e5043329",
+  "choices": [
+    {
+      "hypothesis": [
+        14,
+        "amount",
+        "learned"
+      ],
+      "wrong_quotes": 0
+    },
+    {
+      "hypothesis": [
+        14,
+        "amount",
+        "base"
+      ],
+      "wrong_quotes": 0
+    },
+    {
+      "hypothesis": [
+        14,
+        "bands",
+        "learned"
+      ],
+      "wrong_quotes": 0
+    },
+    {
+      "hypothesis": [
+        14,
+        "bands",
+        "base"
+      ],
+      "wrong_quotes": 0
+    },
+    {
+      "hypothesis": [
+        17,
+        "amount",
+        "learned"
+      ],
+      "wrong_quotes": 8
+    },
+    {
+      "hypothesis": [
+        17,
+        "amount",
+        "base"
+      ],
+      "wrong_quotes": 8
+    },
+    {
+      "hypothesis": [
+        17,
+        "bands",
+        "learned"
+      ],
+      "wrong_quotes": 8
+    },
+    {
+      "hypothesis": [
+        17,
+        "bands",
+        "base"
+      ],
+      "wrong_quotes": 8
+    }
+  ],
+  "selected": [
+    14,
+    "amount",
+    "learned"
+  ],
+  "equally_exact": [
+    [
+      14,
+      "amount",
+      "learned"
+    ],
+    [
+      14,
+      "amount",
+      "base"
+    ],
+    [
+      14,
+      "bands",
+      "learned"
+    ],
+    [
+      14,
+      "bands",
+      "base"
+    ]
+  ]
+}

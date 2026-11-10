@@ -55,7 +55,7 @@ Fresh composition takes time and compute. Useful holos can be saved and reopened
 
 ## Shopware as a curriculum
 
-We can teach from commerce software by varying its configuration, recording whole journeys and comparing what changes. The published experiments demonstrate rule transfer between merchants, exact replay of 168 recorded transitions and reusable views with live demo data. The next experiments test how much of an ordinary commerce workflow the learned model can carry. [Shopware experiments](../experiments/shopware/README.md) · [How a deck is made](../README.md#how-a-deck-is-made) · [Learning design](learning.md)
+We can teach from commerce software by varying its configuration, recording whole journeys and comparing what changes. The current joint deck reproduces 48 complete journeys across four fresh merchant configurations. Eight browser journeys carry the same order from storefront and checkout to a generated Admin workspace while Shopware is offline. This measures a defined part of commerce. The wider goal is to learn the full semantics of a standard shop. [Current Holoshop](joint-deck.md) · [How a deck is made](../README.md#how-a-deck-is-made) · [Learning design](learning.md)
 
 ![Projected software leaves the durable outcome behind when the interface is gone.](../assets/illustrations/projected-software.png)
 

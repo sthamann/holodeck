@@ -1,5 +1,7 @@
 # How a deck learns a business
 
+**Current evidence.** The [joint deck](joint-deck.md) fits sparse selection weights over executable cells and uses a frozen Qwen encoder for language features. Its numeric refit uses 18 Shopware journeys to choose a source informed arithmetic hypothesis, carries forward the earlier commerce and projection supervision, and tests four new shops. An [independent LoRA run](../experiments/shopware/qwen/README.md) trains Qwen itself on a narrower checkout and Admin task and documents a failure on the percentage coupon. The plan below describes the next shared learning stage.
+
 The [architecture](architecture.md) gives the model responsibility for commercial decisions. The learning plan makes that responsibility observable. The first learner must determine which data a decision needs, which exact operations apply, which state changes belong together and which event the business is waiting for.
 
 ## The first curriculum is a complete shop

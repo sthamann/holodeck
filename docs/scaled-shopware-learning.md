@@ -1,5 +1,7 @@
 # Learn a shop from Shopware at scale
 
+Marktlabor is the scaled capture milestone. Later [controlled comparisons](../experiments/shopware/benchmark/README.md) and the [joint deck replay](joint-deck.md) use separate cohorts and test model decisions, views and exact durable effects together.
+
 Marktlabor runs the same deck through catalog maintenance, checkout, fulfilment and return status updates. Shopware supplies the reference transitions during capture. The local Marktlabor demo runs with the Shopware container stopped.
 
 ![Architecture and data flow of the Marktlabor shop](../assets/experiments/scale/architektur.png)
