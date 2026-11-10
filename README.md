@@ -56,6 +56,12 @@ The deck learned a quantity policy from Cart API outcomes alone. It reproduced a
 
 Four more shops supplied only product facts and stock. Targeted Cart API probes recovered the missing quantity policy for 12 of 16 products. One additional observation per unresolved product made all 16 identifiable. The resulting program supplied the generated controls and persisted quantities through checkout in all four shops with Shopware stopped. [See the browser capture, the baselines and the Fable 5.2 review](docs/hidden-quantity.md)
 
+### Learn a shipping rule from the way it behaves
+
+The next trial hides nested Shopware availability rules and price tiers. A trained prior identifies 13 of 16 supported rules after 16 observed carts per shop, compared with 11 for a uniform prior. At 24 contexts both recover all 16 and withhold four incompatible methods. An early false offer shows why the model needs an independent check before a rule can serve checkout. [Read the comparison and replay the orders](docs/shipping-rules.md)
+
+[![Correctly recovered rules across four query budgets.](assets/illustrations/shipping-rule-acquisition.svg)](docs/shipping-rules.md)
+
 ## Deck, holo and projected software
 
 | Concept | What it does |

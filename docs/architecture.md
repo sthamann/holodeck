@@ -22,6 +22,8 @@ The [quantity transfer experiment](quantity-transfer.md) uses one learned domain
 
 The [masked quantity trial](hidden-quantity.md) removes purchase policy fields from the merchant import. The acquisition step uses a small number of observed actions to infer an effective rule. It withholds the rule when the evidence permits several behaviors. The resulting program supplies both the rendered choices and the cart write, with live stock as an input.
 
+The [shipping rule trial](shipping-rules.md) trains a small prior over rule structures, then fits executable trees for new merchants from native observations. Both the quote and the order use the recovered graph. An early wrong checkout plan shows where the deck needs an independent validation stage before it activates an acquired rule.
+
 ## First delivery
 
 The first accepted deck operates a complete standard shop. Its learned commerce specialists cover catalog and cart, prices and availability, checkout and payment, and order handling in the admin. These specialists are part of the versioned model. Shopware supplies teaching data and independent comparisons during development. At deployment, the deck reads and writes its own business records through the generic commit core. [First delivery and acceptance](roadmap.md#first-delivery-and-acceptance)

@@ -22,4 +22,10 @@ jobs:
           checkpoint=experiments/shopware/evidence/joint-deck/checkpoint
           python experiments/shopware/benchmark/hidden_quantity_evaluate.py "$data" "$checkpoint" "$RUNNER_TEMP/hidden-quantity"
           cmp "$data/summary.json" "$RUNNER_TEMP/hidden-quantity/report.json"
+      - name: Reproduce shipping rule acquisition and checkout
+        run: |
+          data=experiments/shopware/evidence/shipping-rules
+          checkpoint=experiments/shopware/evidence/joint-deck/checkpoint
+          python experiments/shopware/benchmark/shipping_evaluate.py "$data" "$checkpoint" "$RUNNER_TEMP/shipping-rules"
+          cmp "$data/summary.json" "$RUNNER_TEMP/shipping-rules/report.json"
       - run: PYTHONPATH=src python -m unittest discover -s tests

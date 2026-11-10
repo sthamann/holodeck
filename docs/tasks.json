@@ -1,6 +1,6 @@
 {
   "schema": "holodeck.roadmap/1",
-  "revision": 8,
+  "revision": 9,
   "date": "2026-11-10",
   "status": "planned",
   "milestones": [
@@ -564,6 +564,16 @@
         ],
         "scope": "Merchant quantity fields masked across four shops. Cart probes identify a bounded executable policy, and an additional intervention separates four initially ambiguous cases. Both consumers are checked with Shopware stopped.",
         "evidence": "experiments/shopware/evidence/hidden-quantity/summary.json"
+      },
+      {
+        "tasks": [
+          "H06",
+          "H22",
+          "H25",
+          "H26"
+        ],
+        "scope": "A trained structural prior changes which native carts teach nested shipping rules. Independent checkout replay separates availability, tier price and wrong admission from outside the grammar.",
+        "evidence": "experiments/shopware/evidence/shipping-rules/summary.json"
       }
     ]
   }

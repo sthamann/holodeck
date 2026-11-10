@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 472" role="img" aria-labelledby="title description">
+<title id="title">Shipping rules recovered with increasing observations</title>
+<desc id="description">Four Shopware test shops. At sixteen contexts the trained prior recovers thirteen rules, the uniform prior eleven, the size prior ten and fixed order three. All three targeted arms reach sixteen rules at twenty-four contexts.</desc>
+<rect width="840" height="472" rx="18" fill="#f8f5ed"/>
+<g fill="#202b26" font-family="system-ui, sans-serif">
+<text x="38" y="53" font-size="29" font-weight="700">Learning which question to ask</text>
+<text x="38" y="86" font-size="16" fill="#51594e">Correctly recovered shipping rules across four new Shopware shops</text>
+<path d="M105 354H775" stroke="#d9dbd2"/>
+<text x="91" y="359" text-anchor="end" font-size="14">0</text>
+<path d="M105 298H775" stroke="#d9dbd2"/>
+<text x="91" y="303" text-anchor="end" font-size="14">4</text>
+<path d="M105 242H775" stroke="#d9dbd2"/>
+<text x="91" y="247" text-anchor="end" font-size="14">8</text>
+<path d="M105 186H775" stroke="#d9dbd2"/>
+<text x="91" y="191" text-anchor="end" font-size="14">12</text>
+<path d="M105 130H775" stroke="#d9dbd2"/>
+<text x="91" y="135" text-anchor="end" font-size="14">16</text>
+<text x="145" y="380" text-anchor="middle" font-size="14">8</text>
+<text x="285" y="380" text-anchor="middle" font-size="14">12</text>
+<text x="425" y="380" text-anchor="middle" font-size="14">16</text>
+<text x="705" y="380" text-anchor="middle" font-size="14">24</text>
+<text x="423" y="408" text-anchor="middle" font-size="15" fill="#51594e">Observed contexts per shop</text>
+<polyline points="145,340 285,340 425,312 705,228" fill="none" stroke="#706d66" stroke-width="3" stroke-dasharray="7 5"/>
+<circle cx="145" cy="340" r="4.5" fill="#706d66"/>
+<circle cx="285" cy="340" r="4.5" fill="#706d66"/>
+<circle cx="425" cy="312" r="4.5" fill="#706d66"/>
+<circle cx="705" cy="228" r="4.5" fill="#706d66"/>
+<path d="M629 438h19" stroke="#706d66" stroke-width="3" stroke-dasharray="7 5"/><text x="656" y="443" font-size="14">Fixed order</text>
+<polyline points="145,354 285,298 425,214 705,130" fill="none" stroke="#955a15" stroke-width="3" stroke-dasharray="7 5"/>
+<circle cx="145" cy="354" r="4.5" fill="#955a15"/>
+<circle cx="285" cy="298" r="4.5" fill="#955a15"/>
+<circle cx="425" cy="214" r="4.5" fill="#955a15"/>
+<circle cx="705" cy="130" r="4.5" fill="#955a15"/>
+<path d="M448 438h19" stroke="#955a15" stroke-width="3" stroke-dasharray="7 5"/><text x="475" y="443" font-size="14">Size prior</text>
+<polyline points="145,354 285,270 425,200 705,130" fill="none" stroke="#3956a1" stroke-width="3" stroke-dasharray="7 5"/>
+<circle cx="145" cy="354" r="4.5" fill="#3956a1"/>
+<circle cx="285" cy="270" r="4.5" fill="#3956a1"/>
+<circle cx="425" cy="200" r="4.5" fill="#3956a1"/>
+<circle cx="705" cy="130" r="4.5" fill="#3956a1"/>
+<path d="M267 438h19" stroke="#3956a1" stroke-width="3" stroke-dasharray="7 5"/><text x="294" y="443" font-size="14">Uniform prior</text>
+<polyline points="145,354 285,284 425,172 705,130" fill="none" stroke="#155e52" stroke-width="3"/>
+<circle cx="145" cy="354" r="4.5" fill="#155e52"/>
+<circle cx="285" cy="284" r="4.5" fill="#155e52"/>
+<circle cx="425" cy="172" r="4.5" fill="#155e52"/>
+<circle cx="705" cy="130" r="4.5" fill="#155e52"/>
+<path d="M86 438h19" stroke="#155e52" stroke-width="3"/><text x="113" y="443" font-size="14">Trained prior</text>
+</g>
+</svg>

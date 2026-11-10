@@ -12,6 +12,8 @@ The [Nordufer capture](experiments/quantity-transfer/nordufer.png) shows the gen
 
 The [Muehlenbogen capture](experiments/hidden-quantity/muehlenbogen.png) shows a Holoshop using the [quantity policy recovered from masked Shopware traces](../docs/hidden-quantity.md).
 
+The [shipping rule chart](illustrations/shipping-rule-acquisition.svg) uses the native replay's counts at equal observation budgets. [Experiment](../docs/shipping-rules.md)
+
 The architecture comparison is available as a [shareable PNG](illustrations/projects-to-properties.png) and an [editable SVG](illustrations/projects-to-properties.svg).
 
 The local demo uses these photographs from Wikimedia Commons. The cited licenses apply to the photographs.

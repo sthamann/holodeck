@@ -10,6 +10,8 @@ The [quantity transfer round](../../../docs/quantity-transfer.md) fits one share
 
 The [masked quantity round](../../../docs/hidden-quantity.md) omits the policy fields from the import and compares three ways of learning them from native cart behavior. One separating question resolves each of the four ambiguous cases. The offline replay also runs in GitHub Actions.
 
+The [shipping rule round](../../../docs/shipping-rules.md) learns which observations to request when the rules have multiple nested conditions. Its final comparison separates eligibility from price and checks the same learned rule against native checkout offers and committed orders.
+
 ## Scope and source
 
 The reference was Shopware Community Edition 6.7.15.1. All products, buyers and sales channels are synthetic. The recorded observations come from the native Shopware Store API and Admin API. Payment, shipment, return and refund are observed status transitions. No funds move.
