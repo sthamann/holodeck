@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 352" role="img" aria-labelledby="journey-title journey-desc">
+  <title id="journey-title">One purchase through three holos</title>
+  <desc id="journey-desc">In the Hafenrechnung browser run, four products enter the cart. After a percentage coupon, checkout saves a 580.30 euro order. Admin marks the same order shipped and displays its tax breakdown.</desc>
+  <defs>
+    <style>
+      .eyebrow{font:600 16px ui-monospace,monospace;letter-spacing:2px;fill:#40574c}
+      .title{font:700 46px Georgia,serif;fill:#252c25}
+      .stage{font:700 25px system-ui,sans-serif;fill:#252c25}
+      .body{font:18px system-ui,sans-serif;fill:#40574c}
+      .value{font:700 20px ui-monospace,monospace;fill:#254f3a}
+    </style>
+    <marker id="journey-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#59675d"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="352" rx="24" fill="#f7f1e6"/>
+  <text x="44" y="48" class="eyebrow">HOLOSHOP / HAFENRECHNUNG</text>
+  <text x="44" y="108" class="title">One purchase through three holos</text>
+  <g stroke="#59675d" stroke-width="2" marker-end="url(#journey-arrow)">
+    <path d="M388 212H424"/><path d="M772 212H808"/>
+  </g>
+  <rect x="44" y="144" width="344" height="144" rx="12" fill="#fffcf5" stroke="#a9b4a6"/>
+  <rect x="428" y="144" width="344" height="144" rx="12" fill="#e7eee4" stroke="#62816c"/>
+  <rect x="812" y="144" width="344" height="144" rx="12" fill="#fffcf5" stroke="#a9b4a6"/>
+  <text x="64" y="184" class="stage">01 Storefront</text>
+  <text x="64" y="220" class="body">Four products in the cart</text>
+  <text x="64" y="260" class="value">€697.20 before coupon</text>
+  <text x="448" y="184" class="stage">02 Checkout</text>
+  <text x="448" y="220" class="body">17% coupon applied</text>
+  <text x="448" y="260" class="value">€580.30 saved order</text>
+  <text x="832" y="184" class="stage">03 Admin</text>
+  <text x="832" y="220" class="body">Same order marked shipped</text>
+  <text x="832" y="260" class="value">4 rates · 1 workflow mark</text>
+  <text x="44" y="324" class="eyebrow">SAME CHECKPOINT · SYNTHETIC TEST ORDER · SHOPWARE OFFLINE</text>
+</svg>

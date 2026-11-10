@@ -22,9 +22,15 @@ The latest Holoshop checkpoint selects commerce programs, workflow transitions a
 
 Chrome completed eight separate journeys through the generated storefront, checkout and Admin. The buyer and merchant worked on the same order with Shopware stopped. A separately tested service specialist matched all 16 held out return and refund status journeys. The checkout and status actions use synthetic data and simulated payments. [Experiment and limits](docs/joint-deck.md) · [Checkpoints, traces and recorded scores](experiments/shopware/evidence/joint-deck/)
 
-![Actual Hafenrechnung Admin browser run showing a requested view with a delivery filter, the shipped order, its line items, one workflow mark and tax by rate.](assets/experiments/joint-deck/hafenrechnung-admin.png)
-
 The current model uses **frozen Qwen3.5 9B Base** to interpret Admin requests. A sparse trained decoder selects executable cells for both commerce and projection. The numeric cells come from candidate expressions informed by the Shopware source and checked against traces. A separate [Qwen LoRA experiment](experiments/shopware/qwen/README.md) tests direct generation and records where it fails. A jointly trained multimodal deck with complete Shopware semantics is the research target. [Open architecture questions and acceptance criteria](docs/shopware-absorption.md)
+
+### One purchase through three holos
+
+In Hafenrechnung, four products go into the cart. A 17% coupon brings the rounded order total to €580.30. The merchant opens that order in Admin, asks for delivery status and the tax breakdown, then marks it shipped.
+
+[![The real Hafenrechnung purchase across Storefront, Checkout and Admin.](assets/illustrations/joint-deck-journey.svg)](docs/joint-deck.md#one-order-in-the-browser)
+
+[Storefront](assets/experiments/joint-deck/hafenrechnung-storefront.png) · [Checkout](assets/experiments/joint-deck/hafenrechnung-checkout.png) · [Admin](assets/experiments/joint-deck/hafenrechnung-admin.png) · [Walk through the browser captures](docs/joint-deck.md#one-order-in-the-browser)
 
 ## Deck, holo and projected software
 

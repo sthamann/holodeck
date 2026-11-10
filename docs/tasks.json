@@ -1,6 +1,6 @@
 {
   "schema": "holodeck.roadmap/1",
-  "revision": 3,
+  "revision": 4,
   "date": "2026-11-10",
   "status": "planned",
   "milestones": [
@@ -492,5 +492,39 @@
       ],
       "instructions": "Demonstrate a complete purchase and merchant handling through newly generated holos. Run with Shopware stopped and use the learned deck as the source of all commercial decisions on the accepted path. Verify record consistency, correct permissions, replay and decision origin before accepting the milestone."
     }
-  ]
+  ],
+  "implementation_snapshot": {
+    "scope": "Observed prototype evidence. Task statuses describe acceptance of the complete standard shop.",
+    "current_run": "docs/joint-deck.md",
+    "observations": [
+      {
+        "tasks": [
+          "H03",
+          "H04",
+          "H08",
+          "H10",
+          "H13",
+          "H14",
+          "H15",
+          "H22"
+        ],
+        "scope": "Recorded commerce comparison over four synthetic shops with the teacher offline. Includes a learned shipping output intervention and durable checkout replay.",
+        "evidence": "experiments/shopware/evidence/joint-deck/summary.json"
+      },
+      {
+        "tasks": [
+          "H06",
+          "H07",
+          "H09",
+          "H12",
+          "H16",
+          "H17",
+          "H18",
+          "H29"
+        ],
+        "scope": "Generated storefront, checkout and Admin act on the same order. The browser verifies totals, state changes and action binding.",
+        "evidence": "experiments/shopware/evidence/joint-deck/walkthrough-browser.json"
+      }
+    ]
+  }
 }

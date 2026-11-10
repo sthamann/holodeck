@@ -30,9 +30,23 @@ The new merchants use item and total rounding increments of 1/1, 1/5, 5/5 and 1/
 
 Eight Chrome runs checked real actions in generated surfaces. The test bought products, applied a coupon, placed an order, and used the generated Admin to record payment, reopen it and mark the order shipped. The tests checked stale offers and row binding, and verified the same record after a reload. The optional service deck also matched 16/16 separate held out journeys. These included 44 expected writes and 36 attempts expected to leave the record unchanged.
 
-![Browser capture of the generated Hafenrechnung Admin, after shipping the order.](../assets/experiments/joint-deck/hafenrechnung-admin.png)
-
 The measured money profile uses gross prices, two decimal places, a positive goods total after discount, one coupon and one delivery. The amounts and transitions cover these fixtures. They do not establish parity for net pricing, stacked promotions, commercial B2B, payment settlement or all Shopware routes. View generation uses a defined component vocabulary, and the main comparison measures a trained choice of executable expressions. The shared multimodal training target and the coverage required for system replacement are described in the [architecture](architecture.md) and [acceptance plan](shopware-absorption.md).
+
+## One order in the browser
+
+These three captures are from one Chrome run in Hafenrechnung, case 7 of the published holdout. Shopware was stopped. The [browser report](../experiments/shopware/evidence/joint-deck/walkthrough-browser.json) records the order identity, exact comparison and final status.
+
+**Storefront.** The shopper updates quantities for four products. The generated cart shows €697.20 before the coupon and offers a code field.
+
+![Hafenrechnung storefront with four selected products, their quantities and the €697.20 cart total.](../assets/experiments/joint-deck/hafenrechnung-storefront.png)
+
+**Checkout.** The 17% coupon applies €116.91 of discount. The merchant’s ten cent end total interval yields €580.30. The checkout action saves that total and the browser compares the order with the native reference.
+
+![Hafenrechnung checkout with the discount, shipping and €580.30 total before placing the test order.](../assets/experiments/joint-deck/hafenrechnung-checkout.png)
+
+**Admin.** The merchant asks for delivery status, the order items and the tax breakdown. The view binds to order `26E7B5D2`. After marking it shipped, the view shows the new status and the single workflow mark.
+
+![Hafenrechnung Admin with the shipped order 26E7B5D2, delivery filter, items, workflow mark and tax by rate.](../assets/experiments/joint-deck/hafenrechnung-admin.png)
 
 ## Replay the published checkpoints
 
@@ -90,4 +104,4 @@ node experiments/shopware/benchmark/joint_browser.cjs http://127.0.0.1:55730 \
   experiments/shopware/evidence/joint-deck/traces/numeric-holdout.jsonl /tmp/holodeck-browser
 ```
 
-For the percentage coupon run, import case 7 for all four shops and set `HOLODECK_CASE=7` for the browser command.
+For the percentage coupon run, import case 7 for all four shops and set `HOLODECK_CASE=7` for the browser command. The normal run writes full page PNG captures of Storefront, Checkout and Admin along with the browser report.

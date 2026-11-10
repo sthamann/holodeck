@@ -7,3 +7,5 @@ This bundle contains the small checkpoints and synthetic Shopware 6.7.15.1 obser
 - `traces` separates numeric and service training, holdout and historical regression cases. These observations contain synthetic IDs, catalog and order values, settings and status transitions. No runtime request needs the expected outcomes.
 - `lessons` contains the earlier trace checked labels used for refitting the sparse checkpoint. The file name `retrieval.json` refers to the earlier comparison arm. The numeric serving path does not load it.
 - [`summary.json`](summary.json) records the original replay, shipping output intervention, service and Chrome results. The output files produced by the replay add full program details.
+
+The [walkthrough browser report](walkthrough-browser.json) records the four percentage coupon checks rerun for the [Hafenrechnung screenshots](../../../../docs/joint-deck.md#one-order-in-the-browser). It uses the published checkpoint and the same held out traces.

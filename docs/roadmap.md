@@ -14,9 +14,7 @@
 
 The first product milestone is a working standard shop. A customer shops in a **generated Holo Storefront**, completes a purchase in **generated Holo Checkout** and sees the order progress after the merchant handles it in **generated Holo Admin**. The shop runs on one deployed deck, including its learned commerce specialists, and one set of durable business records.
 
-The current prototype completes the purchase and merchant flow in two local shops with the same checkpoint and Shopware offline. The deck uses learned commerce decisions and emits the component tree, data and action bindings for each surface. [Runnable two shop proof](neural-projection.md) · [Commerce experiment](standalone-shop.md)
-
-Nordlager extends the experiment with a workspace from a free request and a broader set of observed Shopware state transitions. [Native UI and third shop proof](native-shopware-workspace.md)
+The current joint deck completes the measured purchase and merchant flow in four shops with Shopware offline. It uses the same checkpoint for commerce decisions, component selection and action bindings. The earlier [two shop proof](neural-projection.md) and [Nordlager workspace](native-shopware-workspace.md) document the path to this experiment. [One order through the three current surfaces](joint-deck.md#one-order-in-the-browser)
 
 ## First delivery and acceptance
 
@@ -30,7 +28,7 @@ The first reference shop uses synthetic merchant data and a test payment adapter
 
 The acceptance run starts with a clean database and empty projection storage. The deck composes each surface at request time with real bindings and actions, and the same learned graph governs the action when invoked. The run traces each commercial decision to its model version and graph, checks independently specified results, and covers ordinary refusals such as unavailable stock and failed payment. An archived or reopened holo can reuse the generated composition after this path has been demonstrated.
 
-The general model is planned under `src/holodeck`. Existing experiments remain under `experiments/shopware`. The machine-readable task source is [tasks.json](tasks.json). See the [architecture](architecture.md), [contracts](interfaces.md) and [learning design](learning.md).
+The general model is planned under `src/holodeck`. Existing experiments remain under `experiments/shopware`. The machine-readable [task plan](tasks.json) links the current evidence to relevant tasks and tracks acceptance of the complete shop separately. See the [architecture](architecture.md), [contracts](interfaces.md) and [learning design](learning.md).
 
 ## M0: Boundary and teaching contract
 

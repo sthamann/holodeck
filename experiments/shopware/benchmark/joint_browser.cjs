@@ -44,6 +44,11 @@ async function rejected(page, path, body, reason) {
   assert.match((await response.json()).error, reason);
 }
 
+async function capture(page, row, surface) {
+  const name = row.shop.toLowerCase() + '-' + surface + '.png';
+  await page.screenshot({path:join(screenshots, name), fullPage:true});
+}
+
 async function checkout(page, row) {
   await page.goto(new URL('/?shop=' + row.shop.toLowerCase(), url).href);
   await page.getByRole('heading', {name:row.shop, exact:true}).waitFor();
@@ -52,11 +57,13 @@ async function checkout(page, row) {
   }
   const cart = await action(page, 'update');
   assert.deepEqual(cart.data.cart, row.before);
+  if (!control) await capture(page, row, 'storefront');
   await page.getByLabel('Gutscheincode').fill(row.shop.slice(0, 4).toUpperCase() + row.case);
   const coupon = await action(page, 'discount');
   assert.deepEqual(coupon.data.cart, row.after);
   assert.equal(await present(page, 'discount'), 0);
   await stage(page, 'checkout');
+  if (!control) await capture(page, row, 'checkout');
   const placed = await action(page, 'place');
   assert.deepEqual(placed.data.receipt, row.order);
   assert.equal(placed.receipt.revision, 3);
@@ -117,8 +124,7 @@ async function journey(browser, row, foreign) {
       for (const [key, value] of Object.entries(expected.state)) assert.equal(step.data.selection[key], value);
       assert.equal(Number(step.data.workflow.ready), expected.markers.both);
     }
-    const screenshot = control ? '-control' : '-admin';
-    await page.screenshot({path:join(screenshots, row.shop.toLowerCase() + screenshot + '.png')});
+    await capture(page, row, control ? 'control' : 'admin');
     await page.setViewportSize({width:390,height:844});
     assert(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth));
     assert.deepEqual(errors, []);

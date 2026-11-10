@@ -1,6 +1,6 @@
 # Illustrations and credits
 
-The [current runtime diagram](illustrations/joint-deck-runtime.svg) and the [blind replay chart](illustrations/joint-deck-evidence.svg) accompany the [joint deck experiment](../docs/joint-deck.md). The [Hafenrechnung Admin image](experiments/joint-deck/hafenrechnung-admin.png) is an actual Chrome capture from the synthetic percentage coupon run with Shopware stopped.
+The [current runtime diagram](illustrations/joint-deck-runtime.svg) and the [blind replay chart](illustrations/joint-deck-evidence.svg) accompany the [joint deck experiment](../docs/joint-deck.md). The [Hafenrechnung journey illustration](illustrations/joint-deck-journey.svg) follows the same synthetic order as the [Storefront](experiments/joint-deck/hafenrechnung-storefront.png), [Checkout](experiments/joint-deck/hafenrechnung-checkout.png) and [Admin](experiments/joint-deck/hafenrechnung-admin.png) captures. Chrome recorded all three in one percentage coupon run with Shopware stopped.
 
 The illustrations and experiment captures accompany Stefan Hamann’s *The End of Software as We Know It: From Apps to Holos*. The editorial artwork depicts the vision. The experiment captures depict the existing Holoshop trial. They serve different purposes in the documentation.
 

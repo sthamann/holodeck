@@ -1,0 +1,62 @@
+[
+  {
+    "shop": "Flusskonto",
+    "root": "3fd53285991a4870a5aa2f00bbd1e59f",
+    "control": false,
+    "gross": 57814,
+    "cartExact": true,
+    "checkoutExact": true,
+    "foreignOrderRejected": false,
+    "staleOfferRejected": true,
+    "invalidBindingRejected": true,
+    "statusTransitionsChecked": 3,
+    "finalRevision": 6,
+    "workflowEffects": 1,
+    "delivery": "shipped"
+  },
+  {
+    "shop": "Nordtaler",
+    "root": "fe0a0b7a83504a44843dbaa3259e6c08",
+    "control": false,
+    "gross": 57890,
+    "cartExact": true,
+    "checkoutExact": true,
+    "foreignOrderRejected": true,
+    "staleOfferRejected": true,
+    "invalidBindingRejected": true,
+    "statusTransitionsChecked": 3,
+    "finalRevision": 6,
+    "workflowEffects": 1,
+    "delivery": "shipped"
+  },
+  {
+    "shop": "Kupfermuehle",
+    "root": "9bdcbbf60e1749fbb3675e9c41c74b05",
+    "control": false,
+    "gross": 57730,
+    "cartExact": true,
+    "checkoutExact": true,
+    "foreignOrderRejected": true,
+    "staleOfferRejected": true,
+    "invalidBindingRejected": true,
+    "statusTransitionsChecked": 3,
+    "finalRevision": 6,
+    "workflowEffects": 1,
+    "delivery": "shipped"
+  },
+  {
+    "shop": "Hafenrechnung",
+    "root": "26e7b5d2dd174c9fb2d75f809ec3a3e2",
+    "control": false,
+    "gross": 58030,
+    "cartExact": true,
+    "checkoutExact": true,
+    "foreignOrderRejected": true,
+    "staleOfferRejected": true,
+    "invalidBindingRejected": true,
+    "statusTransitionsChecked": 3,
+    "finalRevision": 6,
+    "workflowEffects": 1,
+    "delivery": "shipped"
+  }
+]
