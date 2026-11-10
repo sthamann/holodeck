@@ -52,6 +52,10 @@ The next experiment recovers nine executable expressions without providing formu
 
 The deck learned a quantity policy from Cart API outcomes alone. It reproduced all 16 native Storefront option sets and all 220 persisted quantity decisions in four unseen shops. Removing the stock dependency impaired both readouts. The reverse fit from UI observations identified the same allowed quantities but left 161 of the 220 request corrections ambiguous. [See Nordufer, the control and reproduction](docs/quantity-transfer.md)
 
+### Recover a rule missing from the merchant import
+
+Four more shops supplied only product facts and stock. Targeted Cart API probes recovered the missing quantity policy for 12 of 16 products. One additional observation per unresolved product made all 16 identifiable. The resulting program supplied the generated controls and persisted quantities through checkout in all four shops with Shopware stopped. [See the browser capture, the baselines and the Fable 5.2 review](docs/hidden-quantity.md)
+
 ## Deck, holo and projected software
 
 | Concept | What it does |

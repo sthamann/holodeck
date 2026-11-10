@@ -1,0 +1,137 @@
+{
+  "products": 16,
+  "shops": 4,
+  "capture_sha256": {
+    "support.jsonl": "2cdad5246f1b5acfb05bf7dc43124d1ad9fb6b1e4af8b682d695fa39586259f0",
+    "holdout.jsonl": "76f0c3bc55d074e66766b62c065e2266a44c8fcae18ea6836ad5b000ba901f1e",
+    "additional.jsonl": "db0c69086b6dc3d6a47fc88cca22191d300b6b6c29f7ea35d02be4886b58bb6e",
+    "resolution-holdout.jsonl": "77593d500146242207810fad72fea99e6caadae4d75127e139bec7c35274d092"
+  },
+  "strategies": {
+    "adaptive": {
+      "products_identified": 12,
+      "queries": 59,
+      "median_queries_for_identified": 4.0,
+      "controls_exact": 24,
+      "controls_tested": 24,
+      "controls_withheld": 8,
+      "control_misses": [],
+      "writes_exact": 240,
+      "writes_tested": 240,
+      "writes_withheld": 80,
+      "write_misses": [],
+      "matches_including_abstentions": 240,
+      "empty_checkouts_blocked": 130
+    },
+    "analytic": {
+      "products_identified": 12,
+      "queries": 63,
+      "median_queries_for_identified": 4.0,
+      "controls_exact": 24,
+      "controls_tested": 24,
+      "controls_withheld": 8,
+      "control_misses": [],
+      "writes_exact": 240,
+      "writes_tested": 240,
+      "writes_withheld": 80,
+      "write_misses": [],
+      "matches_including_abstentions": 240,
+      "empty_checkouts_blocked": 130
+    },
+    "fixed": {
+      "products_identified": 7,
+      "queries": 84,
+      "median_queries_for_identified": 4,
+      "controls_exact": 14,
+      "controls_tested": 14,
+      "controls_withheld": 18,
+      "control_misses": [],
+      "writes_exact": 140,
+      "writes_tested": 140,
+      "writes_withheld": 180,
+      "write_misses": [],
+      "matches_including_abstentions": 170,
+      "empty_checkouts_blocked": 200
+    }
+  },
+  "additional": [
+    {
+      "product_id": "d1d54c7ca9cf4700b4245aa2bcd79c56",
+      "result": {
+        "stock": 0,
+        "request": 1,
+        "quantity": 0,
+        "before": 2,
+        "remaining": 1,
+        "policy": {
+          "start": 2,
+          "end": 5,
+          "stride": 3,
+          "stock_limited": true
+        }
+      }
+    },
+    {
+      "product_id": "97726f8d6e984342899b63fbd264ca3f",
+      "result": {
+        "stock": 0,
+        "request": 1,
+        "quantity": 3,
+        "before": 2,
+        "remaining": 1,
+        "policy": {
+          "start": 3,
+          "end": 7,
+          "stride": 4,
+          "stock_limited": false
+        }
+      }
+    },
+    {
+      "product_id": "9a46e36b9ce545c1b262f62753dd8193",
+      "result": {
+        "stock": 0,
+        "request": 1,
+        "quantity": 0,
+        "before": 2,
+        "remaining": 1,
+        "policy": {
+          "start": 1,
+          "end": 9,
+          "stride": 4,
+          "stock_limited": true
+        }
+      }
+    },
+    {
+      "product_id": "ee25d12bcb874246bba70b993951dfbc",
+      "result": {
+        "stock": 0,
+        "request": 1,
+        "quantity": 4,
+        "before": 2,
+        "remaining": 1,
+        "policy": {
+          "start": 4,
+          "end": 8,
+          "stride": 2,
+          "stock_limited": false
+        }
+      }
+    }
+  ],
+  "expanded": {
+    "products_identified": 16,
+    "additional_queries": 4,
+    "controls_exact": 8,
+    "controls_tested": 8,
+    "controls_withheld": 0,
+    "control_misses": [],
+    "writes_exact": 40,
+    "writes_tested": 40,
+    "writes_withheld": 0,
+    "write_misses": [],
+    "matches_including_abstentions": 40,
+    "empty_checkouts_blocked": 0
+  }
+}

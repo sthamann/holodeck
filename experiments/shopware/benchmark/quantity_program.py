@@ -69,6 +69,9 @@ class QuantityPredictor:
         self.model = model
         self.tags = model.tags
         self.quantity_domain = learned['domain']
+        self.catalog_fields = tuple(learned.get('catalog_fields', FIELDS))
+        if any(field not in FIELDS for field in self.catalog_fields):
+            raise ValueError('Unknown quantity catalog field')
         mode = learned['mode']
         if mode not in MODES:
             raise ValueError('A cart program needs an identified correction mode')
@@ -87,7 +90,7 @@ class QuantityPredictor:
             elif name == 'updated':
                 op, source, variable, row = expression
                 expression = [op, source, variable, record(
-                    **{**row[1], **{field: R(variable, field) for field in FIELDS if field != 'stock'}})]
+                    **{**row[1], **{field: R(variable, field) for field in self.catalog_fields if field != 'stock'}})]
             elif name == 'order':
                 expression = ['require_nonempty', R('quote_in', 'items'), expression]
             elif name == 'write:mixed.items':

@@ -8,6 +8,8 @@ The separate [trace induction round](../../../docs/trace-induction.md) learns sc
 
 The [quantity transfer round](../../../docs/quantity-transfer.md) fits one shared rule from cart outcomes and checks it against native Storefront and persisted writes. A separately fitted UI arm measures which request corrections are underdetermined.
 
+The [masked quantity round](../../../docs/hidden-quantity.md) omits the policy fields from the import and compares three ways of learning them from native cart behavior. One separating question resolves each of the four ambiguous cases. The offline replay also runs in GitHub Actions.
+
 ## Scope and source
 
 The reference was Shopware Community Edition 6.7.15.1. All products, buyers and sales channels are synthetic. The recorded observations come from the native Shopware Store API and Admin API. Payment, shipment, return and refund are observed status transitions. No funds move.

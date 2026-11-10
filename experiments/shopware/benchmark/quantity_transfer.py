@@ -131,7 +131,7 @@ def replay_cart(observations, baseline, fit_path, database):
             catalog = {key: value for key, value in product_row.items() if key != 'name'}
             identity = product_row['id']
             for probe in row['cart']:
-                root = f"{identity}:{probe['request']}"
+                root = f"{identity}:{product_row['stock']}:{probe['request']}"
                 state = graph(tenant, root, {'mixed.catalog': [catalog], **dict.fromkeys(FLOW_FIELDS, 0)},
                               {'mode': 'none', 'discount_value': 0, 'shipping': 575,
                                'shipping_tax': 'auto', 'shipping_rate': None, 'joint.checkpoint': deck.identity})

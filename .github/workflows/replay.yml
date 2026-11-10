@@ -15,4 +15,10 @@ jobs:
           python-version: '3.12'
       - run: python -m pip install -r requirements.txt
       - run: python experiments/shopware/replay.py
+      - name: Reproduce masked quantity policies
+        run: |
+          data=experiments/shopware/evidence/hidden-quantity
+          checkpoint=experiments/shopware/evidence/joint-deck/checkpoint
+          python experiments/shopware/benchmark/hidden_quantity_evaluate.py "$data" "$checkpoint" "$RUNNER_TEMP/hidden-quantity"
+          cmp "$data/summary.json" "$RUNNER_TEMP/hidden-quantity/report.json"
       - run: PYTHONPATH=src python -m unittest discover -s tests

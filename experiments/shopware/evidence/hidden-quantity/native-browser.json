@@ -1,0 +1,247 @@
+[
+  {
+    "shop": "Muehlenbogen",
+    "product": "Muehlenbogen Paket 1",
+    "options": [
+      3,
+      7,
+      11,
+      15,
+      19,
+      23
+    ],
+    "typed": {
+      "value": 6,
+      "valid": false,
+      "request": 6,
+      "cartQuantity": 3
+    }
+  },
+  {
+    "shop": "Muehlenbogen",
+    "product": "Muehlenbogen Paket 2",
+    "options": [
+      4,
+      11,
+      18,
+      25
+    ],
+    "typed": {
+      "value": 6,
+      "valid": false,
+      "request": 6,
+      "cartQuantity": 4
+    }
+  },
+  {
+    "shop": "Muehlenbogen",
+    "product": "Muehlenbogen Paket 3",
+    "options": [
+      6,
+      11,
+      16,
+      21
+    ],
+    "typed": {
+      "value": 9,
+      "valid": false,
+      "request": 9,
+      "cartQuantity": 6
+    }
+  },
+  {
+    "shop": "Muehlenbogen",
+    "product": "Muehlenbogen Paket 4",
+    "options": [
+      2,
+      5
+    ],
+    "typed": {
+      "value": 3,
+      "valid": false,
+      "request": 3,
+      "cartQuantity": 2
+    }
+  },
+  {
+    "shop": "Frachtkai",
+    "product": "Frachtkai Paket 1",
+    "options": [
+      5,
+      11,
+      17,
+      23,
+      29,
+      35
+    ],
+    "typed": {
+      "value": 6,
+      "valid": false,
+      "request": 6,
+      "cartQuantity": 5
+    }
+  },
+  {
+    "shop": "Frachtkai",
+    "product": "Frachtkai Paket 2",
+    "options": [
+      7,
+      11,
+      15,
+      19,
+      23
+    ],
+    "typed": {
+      "value": 9,
+      "valid": false,
+      "request": 9,
+      "cartQuantity": 7
+    }
+  },
+  {
+    "shop": "Frachtkai",
+    "product": "Frachtkai Paket 3",
+    "options": [
+      2,
+      10,
+      18
+    ],
+    "typed": {
+      "value": 3,
+      "valid": false,
+      "request": 3,
+      "cartQuantity": 2
+    }
+  },
+  {
+    "shop": "Frachtkai",
+    "product": "Frachtkai Paket 4",
+    "options": [
+      3,
+      7
+    ],
+    "typed": {
+      "value": 6,
+      "valid": false,
+      "request": 6,
+      "cartQuantity": 3
+    }
+  },
+  {
+    "shop": "Kupfersteg",
+    "product": "Kupfersteg Paket 1",
+    "options": [
+      4,
+      7,
+      10,
+      13,
+      16,
+      19,
+      22
+    ],
+    "typed": {
+      "value": 6,
+      "valid": false,
+      "request": 6,
+      "cartQuantity": 4
+    }
+  },
+  {
+    "shop": "Kupfersteg",
+    "product": "Kupfersteg Paket 2",
+    "options": [
+      1,
+      6,
+      11,
+      16,
+      21,
+      26,
+      31,
+      36
+    ],
+    "typed": {
+      "value": 3,
+      "valid": false,
+      "request": 3,
+      "cartQuantity": 1
+    }
+  },
+  {
+    "shop": "Kupfersteg",
+    "product": "Kupfersteg Paket 3",
+    "options": [
+      9
+    ]
+  },
+  {
+    "shop": "Kupfersteg",
+    "product": "Kupfersteg Paket 4",
+    "options": [
+      1,
+      5,
+      9
+    ],
+    "typed": {
+      "value": 3,
+      "valid": false,
+      "request": 3,
+      "cartQuantity": 1
+    }
+  },
+  {
+    "shop": "Westmole",
+    "product": "Westmole Paket 1",
+    "options": [
+      6,
+      13,
+      20
+    ],
+    "typed": {
+      "value": 9,
+      "valid": false,
+      "request": 9,
+      "cartQuantity": 6
+    }
+  },
+  {
+    "shop": "Westmole",
+    "product": "Westmole Paket 2",
+    "options": [
+      5,
+      14,
+      23,
+      32,
+      41
+    ],
+    "typed": {
+      "value": 6,
+      "valid": false,
+      "request": 6,
+      "cartQuantity": 5
+    }
+  },
+  {
+    "shop": "Westmole",
+    "product": "Westmole Paket 3",
+    "options": [
+      8,
+      14,
+      20
+    ],
+    "typed": {
+      "value": 9,
+      "valid": false,
+      "request": 9,
+      "cartQuantity": 8
+    }
+  },
+  {
+    "shop": "Westmole",
+    "product": "Westmole Paket 4",
+    "options": [
+      4,
+      6,
+      8
+    ]
+  }
+]

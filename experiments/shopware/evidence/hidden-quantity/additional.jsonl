@@ -1,0 +1,4 @@
+{"product_id": "d1d54c7ca9cf4700b4245aa2bcd79c56", "result": {"stock": 0, "request": 1, "quantity": 0, "before": 2, "remaining": 1, "policy": {"start": 2, "end": 5, "stride": 3, "stock_limited": true}}}
+{"product_id": "97726f8d6e984342899b63fbd264ca3f", "result": {"stock": 0, "request": 1, "quantity": 3, "before": 2, "remaining": 1, "policy": {"start": 3, "end": 7, "stride": 4, "stock_limited": false}}}
+{"product_id": "9a46e36b9ce545c1b262f62753dd8193", "result": {"stock": 0, "request": 1, "quantity": 0, "before": 2, "remaining": 1, "policy": {"start": 1, "end": 9, "stride": 4, "stock_limited": true}}}
+{"product_id": "ee25d12bcb874246bba70b993951dfbc", "result": {"stock": 0, "request": 1, "quantity": 4, "before": 2, "remaining": 1, "policy": {"start": 4, "end": 8, "stride": 2, "stock_limited": false}}}

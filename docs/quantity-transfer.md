@@ -30,7 +30,7 @@ The rendered choices are the positive fixed points of the learned normalization.
 
 Fable 5.2 reviewed the design. Its strongest caveat is the distinction between recovering a program that uses typed merchant facts and recovering hidden policy or a shared neural representation. The typed grammar supplies the progression abstraction. One reduced minimum-cost domain fits each training arm. The executable expression is acquired from traces. The sparse gates and Qwen weights remain fixed, and the same compiled domain is explicitly reused in both paths.
 
-A stronger follow-up would hide the raw policy and give each surface only partial behavioral evidence. The evaluation would ask whether a single acquired representation recovers both the effect and the offered action under an intervention. Native storefront handling of a typed off-grid request and the Cart API must be measured separately before assuming that both implement the same correction. [Native quantity control](https://github.com/shopware/shopware/blob/v6.7.15.1/src/Storefront/Resources/views/storefront/component/buy-widget/buy-widget-form.html.twig) · [Native cart processor](https://github.com/shopware/shopware/blob/v6.7.15.1/src/Core/Content/Product/Cart/ProductCartProcessor.php)
+The [masked quantity trial](hidden-quantity.md) follows this by hiding the purchase policy from the import. It measures which Cart API probes recover an executable rule and checks native Storefront manual input separately.
 
 ## Reproduce
 

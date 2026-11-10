@@ -1,0 +1,647 @@
+{
+  "supervision": "cart",
+  "exact_domains": 1,
+  "catalog_fields": [],
+  "mode": "floor",
+  "domain": [
+    "record",
+    {
+      "start": [
+        "get",
+        [
+          "get_default",
+          [
+            "literal",
+            {
+              "42c3c9f6b6864b2698406fd758264d49": {
+                "start": 3,
+                "end": 27,
+                "stride": 4,
+                "stock_limited": true
+              },
+              "27c6781ef1b64b5bb0446226d946b143": {
+                "start": 4,
+                "end": 25,
+                "stride": 7,
+                "stock_limited": false
+              },
+              "ad5c42a3cdd840d1930212c39a88e1d9": {
+                "start": 6,
+                "end": 31,
+                "stride": 5,
+                "stock_limited": true
+              },
+              "d8d3d1e334bd405d8489006edd2c6fb2": {
+                "start": 5,
+                "end": 35,
+                "stride": 6,
+                "stock_limited": false
+              },
+              "4bdfed441ea84141b7d173785c930c88": {
+                "start": 7,
+                "end": 35,
+                "stride": 4,
+                "stock_limited": true
+              },
+              "9fd30dfeaf614625881d0f2a7e5d7094": {
+                "start": 2,
+                "end": 42,
+                "stride": 8,
+                "stock_limited": true
+              },
+              "90118e84d91843d78335002ca8f432ba": {
+                "start": 4,
+                "end": 37,
+                "stride": 3,
+                "stock_limited": true
+              },
+              "4369fc470eb245d7af6a7ea8695c0222": {
+                "start": 1,
+                "end": 36,
+                "stride": 5,
+                "stock_limited": false
+              },
+              "97e4dc7ccb0c41e3bc378c078e5187fe": {
+                "start": 9,
+                "end": 9,
+                "stride": 1,
+                "stock_limited": true
+              },
+              "3919829813414266bddd9865b42d25bf": {
+                "start": 6,
+                "end": 34,
+                "stride": 7,
+                "stock_limited": true
+              },
+              "fd00e8b14c4b43c4b056308d7dd07b83": {
+                "start": 5,
+                "end": 41,
+                "stride": 9,
+                "stock_limited": false
+              },
+              "d052246f162e447eb783d5364236c906": {
+                "start": 8,
+                "end": 32,
+                "stride": 6,
+                "stock_limited": true
+              },
+              "d1d54c7ca9cf4700b4245aa2bcd79c56": {
+                "start": 2,
+                "end": 5,
+                "stride": 3,
+                "stock_limited": true
+              },
+              "97726f8d6e984342899b63fbd264ca3f": {
+                "start": 3,
+                "end": 7,
+                "stride": 4,
+                "stock_limited": false
+              },
+              "9a46e36b9ce545c1b262f62753dd8193": {
+                "start": 1,
+                "end": 9,
+                "stride": 4,
+                "stock_limited": true
+              },
+              "ee25d12bcb874246bba70b993951dfbc": {
+                "start": 4,
+                "end": 8,
+                "stride": 2,
+                "stock_limited": false
+              }
+            }
+          ],
+          [
+            "ref",
+            "product",
+            "id"
+          ],
+          [
+            "literal",
+            {
+              "start": 1,
+              "end": 0,
+              "stride": 1,
+              "stock_limited": false
+            }
+          ]
+        ],
+        [
+          "literal",
+          "start"
+        ]
+      ],
+      "stride": [
+        "get",
+        [
+          "get_default",
+          [
+            "literal",
+            {
+              "42c3c9f6b6864b2698406fd758264d49": {
+                "start": 3,
+                "end": 27,
+                "stride": 4,
+                "stock_limited": true
+              },
+              "27c6781ef1b64b5bb0446226d946b143": {
+                "start": 4,
+                "end": 25,
+                "stride": 7,
+                "stock_limited": false
+              },
+              "ad5c42a3cdd840d1930212c39a88e1d9": {
+                "start": 6,
+                "end": 31,
+                "stride": 5,
+                "stock_limited": true
+              },
+              "d8d3d1e334bd405d8489006edd2c6fb2": {
+                "start": 5,
+                "end": 35,
+                "stride": 6,
+                "stock_limited": false
+              },
+              "4bdfed441ea84141b7d173785c930c88": {
+                "start": 7,
+                "end": 35,
+                "stride": 4,
+                "stock_limited": true
+              },
+              "9fd30dfeaf614625881d0f2a7e5d7094": {
+                "start": 2,
+                "end": 42,
+                "stride": 8,
+                "stock_limited": true
+              },
+              "90118e84d91843d78335002ca8f432ba": {
+                "start": 4,
+                "end": 37,
+                "stride": 3,
+                "stock_limited": true
+              },
+              "4369fc470eb245d7af6a7ea8695c0222": {
+                "start": 1,
+                "end": 36,
+                "stride": 5,
+                "stock_limited": false
+              },
+              "97e4dc7ccb0c41e3bc378c078e5187fe": {
+                "start": 9,
+                "end": 9,
+                "stride": 1,
+                "stock_limited": true
+              },
+              "3919829813414266bddd9865b42d25bf": {
+                "start": 6,
+                "end": 34,
+                "stride": 7,
+                "stock_limited": true
+              },
+              "fd00e8b14c4b43c4b056308d7dd07b83": {
+                "start": 5,
+                "end": 41,
+                "stride": 9,
+                "stock_limited": false
+              },
+              "d052246f162e447eb783d5364236c906": {
+                "start": 8,
+                "end": 32,
+                "stride": 6,
+                "stock_limited": true
+              },
+              "d1d54c7ca9cf4700b4245aa2bcd79c56": {
+                "start": 2,
+                "end": 5,
+                "stride": 3,
+                "stock_limited": true
+              },
+              "97726f8d6e984342899b63fbd264ca3f": {
+                "start": 3,
+                "end": 7,
+                "stride": 4,
+                "stock_limited": false
+              },
+              "9a46e36b9ce545c1b262f62753dd8193": {
+                "start": 1,
+                "end": 9,
+                "stride": 4,
+                "stock_limited": true
+              },
+              "ee25d12bcb874246bba70b993951dfbc": {
+                "start": 4,
+                "end": 8,
+                "stride": 2,
+                "stock_limited": false
+              }
+            }
+          ],
+          [
+            "ref",
+            "product",
+            "id"
+          ],
+          [
+            "literal",
+            {
+              "start": 1,
+              "end": 0,
+              "stride": 1,
+              "stock_limited": false
+            }
+          ]
+        ],
+        [
+          "literal",
+          "stride"
+        ]
+      ],
+      "end": [
+        "select_value",
+        [
+          "get",
+          [
+            "get_default",
+            [
+              "literal",
+              {
+                "42c3c9f6b6864b2698406fd758264d49": {
+                  "start": 3,
+                  "end": 27,
+                  "stride": 4,
+                  "stock_limited": true
+                },
+                "27c6781ef1b64b5bb0446226d946b143": {
+                  "start": 4,
+                  "end": 25,
+                  "stride": 7,
+                  "stock_limited": false
+                },
+                "ad5c42a3cdd840d1930212c39a88e1d9": {
+                  "start": 6,
+                  "end": 31,
+                  "stride": 5,
+                  "stock_limited": true
+                },
+                "d8d3d1e334bd405d8489006edd2c6fb2": {
+                  "start": 5,
+                  "end": 35,
+                  "stride": 6,
+                  "stock_limited": false
+                },
+                "4bdfed441ea84141b7d173785c930c88": {
+                  "start": 7,
+                  "end": 35,
+                  "stride": 4,
+                  "stock_limited": true
+                },
+                "9fd30dfeaf614625881d0f2a7e5d7094": {
+                  "start": 2,
+                  "end": 42,
+                  "stride": 8,
+                  "stock_limited": true
+                },
+                "90118e84d91843d78335002ca8f432ba": {
+                  "start": 4,
+                  "end": 37,
+                  "stride": 3,
+                  "stock_limited": true
+                },
+                "4369fc470eb245d7af6a7ea8695c0222": {
+                  "start": 1,
+                  "end": 36,
+                  "stride": 5,
+                  "stock_limited": false
+                },
+                "97e4dc7ccb0c41e3bc378c078e5187fe": {
+                  "start": 9,
+                  "end": 9,
+                  "stride": 1,
+                  "stock_limited": true
+                },
+                "3919829813414266bddd9865b42d25bf": {
+                  "start": 6,
+                  "end": 34,
+                  "stride": 7,
+                  "stock_limited": true
+                },
+                "fd00e8b14c4b43c4b056308d7dd07b83": {
+                  "start": 5,
+                  "end": 41,
+                  "stride": 9,
+                  "stock_limited": false
+                },
+                "d052246f162e447eb783d5364236c906": {
+                  "start": 8,
+                  "end": 32,
+                  "stride": 6,
+                  "stock_limited": true
+                },
+                "d1d54c7ca9cf4700b4245aa2bcd79c56": {
+                  "start": 2,
+                  "end": 5,
+                  "stride": 3,
+                  "stock_limited": true
+                },
+                "97726f8d6e984342899b63fbd264ca3f": {
+                  "start": 3,
+                  "end": 7,
+                  "stride": 4,
+                  "stock_limited": false
+                },
+                "9a46e36b9ce545c1b262f62753dd8193": {
+                  "start": 1,
+                  "end": 9,
+                  "stride": 4,
+                  "stock_limited": true
+                },
+                "ee25d12bcb874246bba70b993951dfbc": {
+                  "start": 4,
+                  "end": 8,
+                  "stride": 2,
+                  "stock_limited": false
+                }
+              }
+            ],
+            [
+              "ref",
+              "product",
+              "id"
+            ],
+            [
+              "literal",
+              {
+                "start": 1,
+                "end": 0,
+                "stride": 1,
+                "stock_limited": false
+              }
+            ]
+          ],
+          [
+            "literal",
+            "stock_limited"
+          ]
+        ],
+        [
+          "min",
+          [
+            "get",
+            [
+              "get_default",
+              [
+                "literal",
+                {
+                  "42c3c9f6b6864b2698406fd758264d49": {
+                    "start": 3,
+                    "end": 27,
+                    "stride": 4,
+                    "stock_limited": true
+                  },
+                  "27c6781ef1b64b5bb0446226d946b143": {
+                    "start": 4,
+                    "end": 25,
+                    "stride": 7,
+                    "stock_limited": false
+                  },
+                  "ad5c42a3cdd840d1930212c39a88e1d9": {
+                    "start": 6,
+                    "end": 31,
+                    "stride": 5,
+                    "stock_limited": true
+                  },
+                  "d8d3d1e334bd405d8489006edd2c6fb2": {
+                    "start": 5,
+                    "end": 35,
+                    "stride": 6,
+                    "stock_limited": false
+                  },
+                  "4bdfed441ea84141b7d173785c930c88": {
+                    "start": 7,
+                    "end": 35,
+                    "stride": 4,
+                    "stock_limited": true
+                  },
+                  "9fd30dfeaf614625881d0f2a7e5d7094": {
+                    "start": 2,
+                    "end": 42,
+                    "stride": 8,
+                    "stock_limited": true
+                  },
+                  "90118e84d91843d78335002ca8f432ba": {
+                    "start": 4,
+                    "end": 37,
+                    "stride": 3,
+                    "stock_limited": true
+                  },
+                  "4369fc470eb245d7af6a7ea8695c0222": {
+                    "start": 1,
+                    "end": 36,
+                    "stride": 5,
+                    "stock_limited": false
+                  },
+                  "97e4dc7ccb0c41e3bc378c078e5187fe": {
+                    "start": 9,
+                    "end": 9,
+                    "stride": 1,
+                    "stock_limited": true
+                  },
+                  "3919829813414266bddd9865b42d25bf": {
+                    "start": 6,
+                    "end": 34,
+                    "stride": 7,
+                    "stock_limited": true
+                  },
+                  "fd00e8b14c4b43c4b056308d7dd07b83": {
+                    "start": 5,
+                    "end": 41,
+                    "stride": 9,
+                    "stock_limited": false
+                  },
+                  "d052246f162e447eb783d5364236c906": {
+                    "start": 8,
+                    "end": 32,
+                    "stride": 6,
+                    "stock_limited": true
+                  },
+                  "d1d54c7ca9cf4700b4245aa2bcd79c56": {
+                    "start": 2,
+                    "end": 5,
+                    "stride": 3,
+                    "stock_limited": true
+                  },
+                  "97726f8d6e984342899b63fbd264ca3f": {
+                    "start": 3,
+                    "end": 7,
+                    "stride": 4,
+                    "stock_limited": false
+                  },
+                  "9a46e36b9ce545c1b262f62753dd8193": {
+                    "start": 1,
+                    "end": 9,
+                    "stride": 4,
+                    "stock_limited": true
+                  },
+                  "ee25d12bcb874246bba70b993951dfbc": {
+                    "start": 4,
+                    "end": 8,
+                    "stride": 2,
+                    "stock_limited": false
+                  }
+                }
+              ],
+              [
+                "ref",
+                "product",
+                "id"
+              ],
+              [
+                "literal",
+                {
+                  "start": 1,
+                  "end": 0,
+                  "stride": 1,
+                  "stock_limited": false
+                }
+              ]
+            ],
+            [
+              "literal",
+              "end"
+            ]
+          ],
+          [
+            "ref",
+            "product",
+            "stock"
+          ]
+        ],
+        [
+          "get",
+          [
+            "get_default",
+            [
+              "literal",
+              {
+                "42c3c9f6b6864b2698406fd758264d49": {
+                  "start": 3,
+                  "end": 27,
+                  "stride": 4,
+                  "stock_limited": true
+                },
+                "27c6781ef1b64b5bb0446226d946b143": {
+                  "start": 4,
+                  "end": 25,
+                  "stride": 7,
+                  "stock_limited": false
+                },
+                "ad5c42a3cdd840d1930212c39a88e1d9": {
+                  "start": 6,
+                  "end": 31,
+                  "stride": 5,
+                  "stock_limited": true
+                },
+                "d8d3d1e334bd405d8489006edd2c6fb2": {
+                  "start": 5,
+                  "end": 35,
+                  "stride": 6,
+                  "stock_limited": false
+                },
+                "4bdfed441ea84141b7d173785c930c88": {
+                  "start": 7,
+                  "end": 35,
+                  "stride": 4,
+                  "stock_limited": true
+                },
+                "9fd30dfeaf614625881d0f2a7e5d7094": {
+                  "start": 2,
+                  "end": 42,
+                  "stride": 8,
+                  "stock_limited": true
+                },
+                "90118e84d91843d78335002ca8f432ba": {
+                  "start": 4,
+                  "end": 37,
+                  "stride": 3,
+                  "stock_limited": true
+                },
+                "4369fc470eb245d7af6a7ea8695c0222": {
+                  "start": 1,
+                  "end": 36,
+                  "stride": 5,
+                  "stock_limited": false
+                },
+                "97e4dc7ccb0c41e3bc378c078e5187fe": {
+                  "start": 9,
+                  "end": 9,
+                  "stride": 1,
+                  "stock_limited": true
+                },
+                "3919829813414266bddd9865b42d25bf": {
+                  "start": 6,
+                  "end": 34,
+                  "stride": 7,
+                  "stock_limited": true
+                },
+                "fd00e8b14c4b43c4b056308d7dd07b83": {
+                  "start": 5,
+                  "end": 41,
+                  "stride": 9,
+                  "stock_limited": false
+                },
+                "d052246f162e447eb783d5364236c906": {
+                  "start": 8,
+                  "end": 32,
+                  "stride": 6,
+                  "stock_limited": true
+                },
+                "d1d54c7ca9cf4700b4245aa2bcd79c56": {
+                  "start": 2,
+                  "end": 5,
+                  "stride": 3,
+                  "stock_limited": true
+                },
+                "97726f8d6e984342899b63fbd264ca3f": {
+                  "start": 3,
+                  "end": 7,
+                  "stride": 4,
+                  "stock_limited": false
+                },
+                "9a46e36b9ce545c1b262f62753dd8193": {
+                  "start": 1,
+                  "end": 9,
+                  "stride": 4,
+                  "stock_limited": true
+                },
+                "ee25d12bcb874246bba70b993951dfbc": {
+                  "start": 4,
+                  "end": 8,
+                  "stride": 2,
+                  "stock_limited": false
+                }
+              }
+            ],
+            [
+              "ref",
+              "product",
+              "id"
+            ],
+            [
+              "literal",
+              {
+                "start": 1,
+                "end": 0,
+                "stride": 1,
+                "stock_limited": false
+              }
+            ]
+          ],
+          [
+            "literal",
+            "end"
+          ]
+        ]
+      ]
+    }
+  ]
+}

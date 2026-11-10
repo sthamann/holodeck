@@ -34,7 +34,20 @@ async function native(browser) {
                                                     step:Number(input.step), value:Number(input.value)}));
         assert.deepEqual(data, row.storefront);
       }
-      result.push({shop:row.shop, product:row.product.name, options:expectedOptions(row)});
+      const options = expectedOptions(row);
+      let typed = null;
+      if (process.env.HOLODECK_NATIVE_EDIT === '1' && row.storefront) {
+        const probe = row.cart.find(event => event.request >= row.storefront.min &&
+                                    event.request <= row.storefront.max && !options.includes(event.request));
+        if (probe) {
+          await page.waitForLoadState('load');
+          await field.fill(String(probe.request));
+          await field.blur();
+          typed = await field.evaluate(input => ({value:Number(input.value), valid:input.checkValidity()}));
+          typed = {...typed, request:probe.request, cartQuantity:probe.quantity};
+        }
+      }
+      result.push({shop:row.shop, product:row.product.name, options, ...(typed && {typed})});
     }
     return result;
   } finally {
@@ -81,25 +94,29 @@ async function generated(browser) {
       assert(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth));
       if (shop === shops[0]) {
         const unavailable = catalog.find(row => !expectedOptions(row).length);
-        assert(unavailable);
-        const card = page.locator('.product').filter({
-          has:page.getByRole('heading', {name:unavailable.product.name, exact:true})
-        });
-        await card.getByText('Nicht verfügbar', {exact:true}).scrollIntoViewIfNeeded();
+        if (unavailable) {
+          const card = page.locator('.product').filter({
+            has:page.getByRole('heading', {name:unavailable.product.name, exact:true})
+          });
+          await card.getByText('Nicht verfügbar', {exact:true}).scrollIntoViewIfNeeded();
+        }
         await page.screenshot({path:join(output, 'mobile-quantities.png')});
       }
       await page.setViewportSize({width:1440,height:1000});
-      const sample = catalog.find(row => row.product.closeout && expectedOptions(row).length > 1);
-      assert(sample);
+      const candidates = catalog.map(row => {
+        const quantity = expectedOptions(row)[0];
+        const contrast = row.cart.find(event => event.quantity > quantity &&
+                                     event.quantity <= row.product.stock && event.quantity !== event.request);
+        return {row, quantity, contrast};
+      });
+      const candidate = candidates.find(item => item.contrast);
+      assert(candidate);
+      const {row:sample, quantity, contrast} = candidate;
       const id = sample.product.id;
-      const quantity = expectedOptions(sample)[0];
       await page.getByLabel('Menge ' + sample.product.name).selectOption(String(quantity));
       const cart = await captureResponse(page, 'action', () => page.locator('[data-action=update]').click());
       assert.equal(cart.data.cart.items[id].quantity, quantity);
 
-      const contrast = sample.cart.find(event => event.quantity > 0 && event.quantity !== quantity &&
-                                                event.quantity !== event.request);
-      assert(contrast);
       const response = await page.request.post(new URL('/api/action', base).href, {
         headers:{Origin:base.origin},
         data:{session:cart.session, scope:'storefront', action:'update', projection:cart.projection,

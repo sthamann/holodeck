@@ -10,6 +10,8 @@ The [trace induction illustration](illustrations/trace-induction.svg) shows the 
 
 The [Nordufer capture](experiments/quantity-transfer/nordufer.png) shows the generated quantity control from the [quantity transfer experiment](../docs/quantity-transfer.md).
 
+The [Muehlenbogen capture](experiments/hidden-quantity/muehlenbogen.png) shows a Holoshop using the [quantity policy recovered from masked Shopware traces](../docs/hidden-quantity.md).
+
 The architecture comparison is available as a [shareable PNG](illustrations/projects-to-properties.png) and an [editable SVG](illustrations/projects-to-properties.svg).
 
 The local demo uses these photographs from Wikimedia Commons. The cited licenses apply to the photographs.

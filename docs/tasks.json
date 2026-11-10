@@ -1,6 +1,6 @@
 {
   "schema": "holodeck.roadmap/1",
-  "revision": 7,
+  "revision": 8,
   "date": "2026-11-10",
   "status": "planned",
   "milestones": [
@@ -554,6 +554,16 @@
         ],
         "scope": "One acquired quantity progression supplies both the generated control and the persisted cart write. The reverse fit and stock dependency control measure the boundary of the shared domain.",
         "evidence": "experiments/shopware/evidence/quantity-transfer/summary.json"
+      },
+      {
+        "tasks": [
+          "H06",
+          "H22",
+          "H25",
+          "H26"
+        ],
+        "scope": "Merchant quantity fields masked across four shops. Cart probes identify a bounded executable policy, and an additional intervention separates four initially ambiguous cases. Both consumers are checked with Shopware stopped.",
+        "evidence": "experiments/shopware/evidence/hidden-quantity/summary.json"
       }
     ]
   }

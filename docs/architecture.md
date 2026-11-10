@@ -20,6 +20,8 @@ The [trace induction trial](trace-induction.md) replaces selected scalar express
 
 The [quantity transfer experiment](quantity-transfer.md) uses one learned domain for a generated control and the cart writer. Removing one dependency from that domain changes both outputs. The UI fit also shows where the reverse transfer stops because the visible choices do not identify request correction.
 
+The [masked quantity trial](hidden-quantity.md) removes purchase policy fields from the merchant import. The acquisition step uses a small number of observed actions to infer an effective rule. It withholds the rule when the evidence permits several behaviors. The resulting program supplies both the rendered choices and the cart write, with live stock as an input.
+
 ## First delivery
 
 The first accepted deck operates a complete standard shop. Its learned commerce specialists cover catalog and cart, prices and availability, checkout and payment, and order handling in the admin. These specialists are part of the versioned model. Shopware supplies teaching data and independent comparisons during development. At deployment, the deck reads and writes its own business records through the generic commit core. [First delivery and acceptance](roadmap.md#first-delivery-and-acceptance)

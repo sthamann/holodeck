@@ -1,0 +1,30 @@
+[
+  {
+    "shop": "Muehlenbogen",
+    "productControls": 4,
+    "rawRequest": 9,
+    "storedQuantity": 7,
+    "order": "62d0a24c1fae492c8445ca6907123e40"
+  },
+  {
+    "shop": "Frachtkai",
+    "productControls": 4,
+    "rawRequest": 13,
+    "storedQuantity": 11,
+    "order": "a18e65915d9e41e9b873fdbbe56cd7b3"
+  },
+  {
+    "shop": "Kupfersteg",
+    "productControls": 4,
+    "rawRequest": 9,
+    "storedQuantity": 7,
+    "order": "61ad78744e72490ab4e8306d7ae4c769"
+  },
+  {
+    "shop": "Westmole",
+    "productControls": 4,
+    "rawRequest": 18,
+    "storedQuantity": 13,
+    "order": "901701be40a0416f8f37360a2adf3fc9"
+  }
+]
