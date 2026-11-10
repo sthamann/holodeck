@@ -1,85 +1,91 @@
 # Holodeck
 
-**Business knowledge that becomes executable software.**
+**Teach a model how a business works. Run what it learns.**
 
-Holodeck explores a different foundation for business software: a model that learns the rules of a business, uses those rules to act, and projects the tools people need to do the work.
+A wholesale buyer orders 40 units. The warehouse ships 24. Then the buyer asks to reduce the order to 30. If the revision is accepted, six units remain due. The supplier has to work out which commitments can change, whether the contract price still applies and who can approve the revision.
 
-We call that executable understanding a **deck**. The working software it projects is a **holo**. A holo can be a storefront, a checkout inside another application, an operations workspace, or a tool someone needs for five minutes. The business keeps its records and what it learned after the view is gone.
+That is the kind of work Holodeck explores. The aim is to turn a general AI model into a **B2B software expert** that learns the meaning and consequences of business decisions and can execute them. We call that executable specialist a **deck**. The working software it projects for each person is a **holo**.
 
-[Concepts](docs/concepts.md) · [Architecture](docs/architecture.md) · [Model and learning](docs/learning.md) · [Shopware experiments](experiments/shopware/README.md) · [Roadmap](docs/roadmap.md)
+![A deck combines business logic and agentic intelligence and projects a storefront, checkout and software for a new business model.](assets/illustrations/deck-and-holos.png)
 
-![A deck combines business logic and agentic intelligence, then projects a storefront, checkout and software for a new business model.](assets/illustrations/deck-and-holos.png)
+[How a deck is made](#how-a-deck-is-made) · [What runs today](#what-runs-today) · [Architecture](docs/architecture.md) · [Roadmap](docs/roadmap.md) · [From Apps to Holos](docs/article.md)
 
-*A research project by [Stefan Hamann](https://github.com/sthamann), accompanying [**The End of Software as We Know It: From Apps to Holos**](docs/article.md). The illustration shows the target architecture. The experiments below establish smaller parts of it.*
+## Deck, holo and projected software
 
-## The idea
-
-A business knows how its work gets done. Much of that knowledge is written into software: what accepting an offer changes, when a payment permits fulfilment, or why a refund sometimes restores stock and sometimes does not.
-
-A deck learns that meaning and its executable consequences. Its learned structure determines the calculation, the permitted next action and the state change. The interface is a projection of that same understanding. When a relevant fact changes, the deck can revisit the affected decisions while preserving what people already agreed to.
-
-The architecture therefore has one source of business decisions: **the model itself**. Exact arithmetic, rendering, authorization and durable commits provide the machinery it runs on. They do not contain a second, independently maintained commerce application.
-
-This is the central research question of Holodeck. Putting an agent and an existing business engine in the same package would not answer it.
-
-## A vocabulary for projected software
-
-| Term | Meaning |
+| Concept | What it does |
 |---|---|
-| **Deck** | An executable model of a business: learned rules, operational meaning, decision structure and the ability to project working software. |
-| **Holo** | A working projection of a deck: interface, workflow and rules bound to one context of work. It can be temporary or kept for years. |
-| **Projected software** | Software whose form follows the work and the people doing it, while its business meaning remains coherent. |
-| **Business memory** | Current facts, agreements, outcomes and learned structures, with an explicit distinction between records and model knowledge. |
-| **Commit core** | The small technical boundary that checks access, versions and atomic changes, then records an effect durably. |
-| **Holoshop** | The first commerce experiments used to investigate the deck architecture. |
+| **Deck** | Carries learned business logic in an executable model. It interprets an event, applies the relevant rules, proposes changes and determines what can happen next. |
+| **Holo** | Gives someone the tools to act on that decision. The buyer might see a revised order to accept. The account manager might see the price and approval impact. The warehouse sees what it can still ship. |
+| **Projected software** | The practice of generating these working surfaces from the same business semantics. A holo can be a temporary approval screen, an embedded checkout or the workspace a team uses every day. |
+| **Commit core** | Checks actual permissions and record versions, then commits the proposed changes together. It supplies the technical guarantees while the deck supplies the business decision. |
 
-These are the working definitions used in this project. [Read the concepts and their boundaries →](docs/concepts.md)
+The three people in the example see different controls because they have different jobs. They work on the same order and its accepted commitments. The order, the approval and the shipment survive the closing of any view. [Concepts and definitions](docs/concepts.md)
 
-## One model, several ways to work
+## How a deck is made
+
+Start with **one job a business already knows how to do**. For wholesale order changes, the teaching material is what actually happens when quantities, terms, shipments and approvals interact. For our first commerce experiments, Shopware supplies reference behaviour.
 
 ```mermaid
 flowchart LR
-    I[Intent, click or event] --> D
-    S[(Current business state)] --> D
-    subgraph D[Deck model]
-        R[Shared representation] --> G[Learned executable business graph]
-        G --> A[Changes and permitted actions]
-        G --> W[Continuations]
-        G --> U[Working views]
-    end
-    A --> K[Generic commit core]
-    W --> K
-    K --> S
-    U --> H[Holos]
-    H --> I
-    K --> E[Result or conflict]
-    E --> D
+    E["Reference software<br/>Policies and expert cases"] --> T["Executed traces<br/>State, action, outcome"]
+    T --> L["Learn operands, rules<br/>and workflow transitions"]
+    L --> V["Replay held-out cases<br/>and test counterexamples"]
+    V --> D["Versioned specialist<br/>deck checkpoint"]
+    C["Company configuration<br/>and current records"] --> D
+    D --> H["Holos with usable<br/>controls and next actions"]
+    D --> K["Proposed changes<br/>for the commit core"]
+    V -->|Failures refine training| L
 ```
 
-The proposed model is **neurosymbolic**. Learned parameters select and connect typed operations. Those operations execute arithmetic and state changes exactly. A stable learned subgraph can be compiled into a fast path; changing the merchant’s current price changes an input, not the model’s memory of how pricing works.
+### 1. Record decisions and their consequences
 
-The design is domain independent. Commerce is the first place we test it because it offers a rich reference implementation and observable outcomes. The same questions apply to procurement, billing, service work and other business processes.
+Run the reference system with different configurations and capture the state before an action, the action itself, the effects and what happens next. Include complete journeys and refusals. Try the same order change before shipment, after partial shipment and with a contract that requires approval before any revision.
 
-[Read the complete architecture →](docs/architecture.md)
+Documentation and expert examples help identify the rules. Executed results and independently specified outcomes give us something to check. Reserve entire companies and policy combinations for evaluation so that a replay tests more than recall.
+
+### 2. Teach the model to execute the rule
+
+The foundation model helps connect language and business terms to typed records. Trainable business heads learn **which fields matter, which conditions apply, which exact operations to use and which step follows**. The selected operations form an executable graph. A guard is the part of that graph that decides whether an action may proceed.
+
+In the wholesale example, the graph could read the accepted order and completed shipments, calculate the open quantity, check the revision against the account's policy, and produce a pending approval with a continuation if one is needed. The learner evaluates candidate graphs by executing them against reference outcomes. Counterexamples expose a candidate that gets the arithmetic right and releases stock at the wrong time.
+
+The proposed design starts with a shared foundation encoder and trained business heads. We can then measure what a trainable adapter adds. The graph runs exact operations on typed values. Stable learned paths can be compiled and checked against their original execution, including refusals and the next actions they expose. [Model and learning design](docs/learning.md)
+
+### 3. Make it an expert for a specific business
+
+A versioned **deck checkpoint** brings together the model reference, the trained parameters, their executable graph, the schema and primitive versions, and the evidence supporting its use. A company package supplies its products, customer contracts, approval configuration and other facts. A change to a configured approval limit is a data update. Teaching the deck when that limit applies is a change to executable knowledge.
+
+This lets us test what transfers between companies. Two wholesalers may share the semantics of a partially shipped order and apply different terms or approval limits. A domain specialist earns its place by handling that shared work across configurations and learning the policy differences that matter.
+
+### 4. Prove the specialist before it acts
+
+Replay unseen journeys against independent outcomes. Compare the full sequence of allowed actions, exact effects, refusals and resumptions. Then change the model checkpoint while keeping the host fixed. If the business decision changes in the expected way, we have evidence about where the rule lives. Removing the relevant learned part gives us a second check.
+
+We compare trained adaptation with the same base model given retrieved examples and with direct rule synthesis. A useful new rule and an improvement attributable to training are separate results. [Evaluation and adaptation plan](docs/learning.md#the-first-policy-adaptation)
+
+### 5. Project the work and learn from use
+
+At runtime the deck reads a typed snapshot and an event. It produces proposed changes, the allowed next actions, a continuation if the job is waiting, and a projection with real controls. The commit core checks the proposed effects. If a relevant record changes, the deck receives the updated state and revisits the decision.
+
+An observed failure can become a new teaching case. A corrected checkpoint is tested on fresh cases before activation. Existing agreements and running work retain their references, so an improved policy has a defined point of adoption. [Runtime contracts](docs/interfaces.md)
 
 ## What runs today
 
-The repository includes two small, runnable Shopware experiments and their synthetic reference data.
+**Holoshop** is the first testbed. It starts with ordinary commerce so we can follow the same decisions across catalog, cart, pricing, checkout, payment, fulfilment and returns. The published prototype exercises a narrower subset.
 
-| Experiment | Observed result | What it establishes |
-|---|---|---|
-| Learn a readable rule | A service credit learned from three examples transfers to 12 new journeys in a second shop. Direct Qwen rule generation ties the additional numerical comparison. | A narrow instance of executable rule learning and transfer. |
-| Compile the learned computation | 168 recorded transitions agree with the selected Shopware reference outcomes. | Exact execution of these learned programs in the interpreter and native backend. |
-| Keep facts live | Versioned offers, checkout retries and concurrent access to the last unit are exercised by the included tests. | Durable state and transactional behaviour in the current prototype. |
-| Project and reuse a view | Stored shopper and merchant compositions use live data. The original local run observed 108 warm requests with no large model calls. | Reusable interactive projections over a small catalog. |
+| Published experiment | Result |
+|---|---|
+| **Learn and transfer a rule** | Three examples teach a capped service credit. It transfers to 12 of 12 held-out journeys at a second merchant. Direct Qwen rule generation ties the learned rule on 1,000 additional numeric cases. |
+| **Execute exactly** | The native backend matches all 168 recorded reference transitions. The local regression suite exercises quote freshness, checkout retries and contention for the last unit. |
+| **Project reusable views** | Stored shopper and merchant compositions bind to current data. The original local run observed 108 warm requests with no large model calls. |
 
-The current implementation still has business decisions in its host code. It does **not** yet establish the complete fused deck. The next work moves ordinary commerce decisions into the learned model and tests that boundary directly. [Evidence, scope and reproduction →](experiments/shopware/README.md)
+The prototype trains small categorical selection heads. Some commercial decisions still live in host code. The next milestone moves cart and pricing decisions into the learned model. The first end-to-end target goes through a partial return and tests where each decision lives through replay, transfer and ablation. [Experiment evidence](experiments/shopware/README.md) · [Milestones and tasks](docs/roadmap.md)
 
-![The current experiment runs one learned rule for two merchants, with different rates and caps.](assets/experiments/learned-rule.png)
+![The learned service credit runs with two merchants' rates and caps.](assets/experiments/learned-rule.png)
 
 ## Run the experiments
 
-Python 3.11 or newer is recommended. The native experiment needs `clang` on macOS or Linux. Replaying and verifying the included checkpoints uses NumPy and Z3; it needs no GPU, Shopware server or model provider account.
+Use Python 3.11 or newer and `clang` on macOS or Linux. The replay uses the included checkpoints and synthetic traces, so it runs locally without a GPU or a live Shopware instance.
 
 ```sh
 git clone https://github.com/sthamann/holodeck.git
@@ -90,29 +96,8 @@ python -m pip install -r requirements.txt
 python experiments/shopware/replay.py
 ```
 
-Open the existing local shop experiment:
+Start the local demo with `python experiments/shopware/native/api.py` and open [localhost:18778](http://127.0.0.1:18778). The experiment guide includes the refitting command, the evidence behind each result and the scope of the original Shopware comparison. [Reproduction guide](experiments/shopware/README.md)
 
-```sh
-python experiments/shopware/native/api.py
-# Open http://127.0.0.1:18778
-```
+---
 
-It contains synthetic products and test checkout. The server binds to the local machine. See [the experiment guide](experiments/shopware/README.md) for training the small rule model again, bounded rule verification, data provenance and the exact scope of the original live Shopware comparison.
-
-## What we build next
-
-The first target is **ordinary commerce**: catalog, cart, pricing, checkout, payment, fulfilment and a partial return. The same learned structure should determine the outcome, the allowed next action and the controls shown to the person doing the work.
-
-We will test that claim by removing a learned part, changing a model checkpoint while keeping the host fixed, restoring a running process, and transferring a new policy to another merchant. A correct screenshot or a successful API call alone does not establish where the business logic lives.
-
-The sofa in the article illustrates what this could eventually make possible. It is not the first implementation milestone. [Milestones and the concrete task plan →](docs/roadmap.md)
-
-![A team rehearses a proposed change against earlier work before keeping it.](assets/illustrations/rehearse-and-learn.png)
-
-## Explore and contribute
-
-Start with the [concepts](docs/concepts.md), follow the [technical contracts](docs/interfaces.md), or run the [experiments](experiments/shopware/README.md). The [learning design](docs/learning.md) explains what must change in the model and how we separate learning from retrieval, configuration and program generation.
-
-Useful contributions include independently labelled business cases, failures of the proposed boundary, stronger baselines, and improvements that make the same learned semantics usable through different interfaces. [Contribution guide](CONTRIBUTING.md) · [Image and source credits](assets/README.md).
-
-The point is to make the idea testable: **give a business a new job, let its model produce the software the job needs, and keep the knowledge when the job is done.**
+*Holodeck is a research project by Stefan Hamann and the technical companion to **The End of Software as We Know It: From Apps to Holos**.* [Article companion](docs/article.md) · [Contributing](CONTRIBUTING.md) · [Illustration credits](assets/README.md)
