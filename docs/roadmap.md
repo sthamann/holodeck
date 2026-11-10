@@ -2,7 +2,7 @@
 
 The first product milestone is a working standard shop. A customer shops in a **generated Holo Storefront**, completes a purchase in **generated Holo Checkout** and sees the order progress after the merchant handles it in **generated Holo Admin**. The shop runs on one deployed deck, including its learned commerce specialists, and one set of durable business records.
 
-The milestones describe the broader development plan. The first standalone shop now demonstrates the local purchase and merchant flow with fresh holos and an offline teacher. [Runnable prototype and evidence](standalone-shop.md) · [Earlier experiments](../experiments/shopware/README.md)
+The milestones describe the broader development plan. The first standalone shop now demonstrates the local purchase and merchant flow with live projections and an offline teacher. The serving path executes a checkpoint trained from Shopware API observations. [Runnable prototype and evidence](standalone-shop.md) · [Earlier experiments](../experiments/shopware/README.md)
 
 ## First delivery and acceptance
 
@@ -274,7 +274,7 @@ Measure computation, commit, saved views and new projection separately. Count in
 
 ## What each stage establishes
 
-M1 puts the first learned decisions into a storefront that is generated and usable. M2 follows the purchase through checkout, payment and merchant handling. M3 accepts the first complete shop with fresh holos and an offline teacher. M4, M5 and M6 deepen joint training, test new policy learning and transfer, and measure the speed of the accepted runtime.
+M1 puts the first learned decisions into a storefront that is generated and usable. M2 follows the purchase through checkout, payment and merchant handling. M3 accepts the first complete shop with live projections and an offline teacher. The serving path executes a checkpoint trained from Shopware API observations. M4, M5 and M6 deepen joint training, test new policy learning and transfer, and measure the speed of the accepted runtime.
 
 The eight target properties have their own mechanisms and evidence requirements. [Properties and how to test them](architecture.md#properties-and-how-to-test-them)
 

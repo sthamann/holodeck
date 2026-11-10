@@ -60,6 +60,9 @@ class Deck:
         self.identity = digest(self.model)
         self.config = self.model["config"]
 
+    def roles(self, task):
+        return tuple(self.model["surfaces"].get(task, {}).get("roles", ()))
+
     def expr(self, node, env):
         if isinstance(node, dict):
             return {k: self.expr(v, env) for k, v in node.items()}

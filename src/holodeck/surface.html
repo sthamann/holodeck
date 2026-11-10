@@ -20,8 +20,8 @@
 const surface=document.querySelector('#surface'), title=document.querySelector('#title');
 const notice=document.querySelector('#notice'), nav=document.querySelector('nav');
 const tasks={storefront:'Sortiment',checkout:'Kasse',order:'Bestellung',admin:'Verwaltung'};
-const stages={pending:'Zahlung offen',ready:'Versandbereit',shipped:'Versendet',completed:'Zugestellt',cancelled:'Storniert',returned:'Retoure abgeschlossen',payment_failed:'Zahlung abgelehnt'};
-const payments={pending:'Zahlung offen',paid:'Bezahlt',failed:'Nicht bezahlt',refunded:'Erstattet'};
+const stages={open:'Offen',in_progress:'In Bearbeitung',pending:'Zahlung offen',ready:'Versandbereit',shipped:'Versendet',completed:'Zugestellt',cancelled:'Storniert',returned:'Retoure abgeschlossen',payment_failed:'Zahlung abgelehnt'};
+const payments={open:'Zahlung offen',pending:'Zahlung offen',paid:'Bezahlt',failed:'Nicht bezahlt',refunded:'Erstattet'};
 const money=new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR'});
 const eur=n=>money.format(n/100);
 let task='storefront', query='', page=0, sequence=0;
@@ -155,7 +155,12 @@ function totals(node){
 }
 function orderCard(record){
   const card=el('article',undefined,'order'), info=el('div',undefined,'order-info');
-  card.append(el('h3','Bestellung '+record.id.slice(0,8).toUpperCase()),el('span',stages[record.stage]??record.stage,'tag'),el('span',payments[record.payment]??record.payment,'tag'));
+  const stage=record.delivery&&record.stage==='completed'?'Abgeschlossen':(stages[record.stage]??record.stage);
+  card.append(el('h3','Bestellung '+record.id.slice(0,8).toUpperCase()),el('span',stage,'tag'),el('span',payments[record.payment]??record.payment,'tag'));
+  if(record.delivery){
+    const deliveries={open:'Versand offen',shipped:'Versendet',returned:'Retourniert'};
+    card.append(el('span',deliveries[record.delivery]??record.delivery,'tag'));
+  }
   info.append(el('p',record.name+' · '+eur(record.quote.gross),'line-amount'),el('p',record.address,'subtle'));
   for(const item of record.quote.lines)info.append(el('p',item.quantity+' × '+item.name));
   if(record.tracking)info.append(el('p','Sendungsnummer '+record.tracking,'subtle'));

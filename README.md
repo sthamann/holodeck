@@ -8,7 +8,7 @@ That is the vision. **Holoshop is the first experiment.** It learns and transfer
 
 **The first delivery is a complete standard shop.** A customer shops and orders through a Holo Storefront and Holo Checkout. The merchant handles that same order in Holo Admin. The deck generates all three surfaces as they are needed and owns the commerce logic that drives them. Shopware teaches the deck during development. The delivered shop runs with the teacher offline. [First delivery and acceptance](docs/roadmap.md#first-delivery-and-acceptance)
 
-**A first standalone shop runs today.** Its learned checkpoint and live projections took a test purchase through checkout, payment and delivery while the Shopware teacher was offline. [Run the shop and see the evidence](docs/standalone-shop.md)
+**A first standalone shop runs today.** A checkpoint trained on live Shopware traces drives the storefront, checkout and merchant workflow while the teacher is offline. The server uses the weights to decide state changes and select exact arithmetic. [Run the shop and see the evidence](docs/standalone-shop.md)
 
 ![Inside a deck. Intent and live business state enter one multimodal model. Its executable business graph produces working holos and proposes effects for the generic runtime and durable records.](assets/illustrations/inside-a-deck.png)
 

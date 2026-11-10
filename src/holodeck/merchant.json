@@ -1,0 +1,39 @@
+{
+  "shipping": 799,
+  "rate": 19,
+  "catalog": {
+    "moka-3": {
+      "sku": "moka-3",
+      "name": "Moka Express",
+      "variant": "3 Tassen",
+      "description": "Klassischer Espressokocher aus Aluminium.",
+      "price": 3490,
+      "rate": 19,
+      "stock": 8,
+      "active": true,
+      "image": "moka.jpg"
+    },
+    "moka-6": {
+      "sku": "moka-6",
+      "name": "Moka Express",
+      "variant": "6 Tassen",
+      "description": "Die größere Kanne für den gemeinsamen Kaffee.",
+      "price": 5490,
+      "rate": 19,
+      "stock": 5,
+      "active": true,
+      "image": "moka-pair.jpg"
+    },
+    "press": {
+      "sku": "press",
+      "name": "French Press",
+      "variant": "1 Liter",
+      "description": "Glaskanne mit Edelstahlfilter für kräftigen Filterkaffee.",
+      "price": 2990,
+      "rate": 19,
+      "stock": 6,
+      "active": true,
+      "image": "press.jpg"
+    }
+  }
+}

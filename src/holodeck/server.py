@@ -10,7 +10,8 @@ import re
 import secrets
 from urllib.parse import parse_qs, urlsplit
 
-from .runtime import Deck, Ledger, Refusal, digest, encode
+from .neural_shop import NeuralDeck
+from .runtime import Ledger, Refusal, digest, encode
 
 
 HERE = Path(__file__).resolve().parent
@@ -25,6 +26,8 @@ def buyer_identity(token):
 
 
 def test_payment(work):
+    if work["kind"] == "neural-test-payment":
+        return "order_transaction.paid", {"order_id":work["order_id"]}
     if work["kind"] != "payment":
         raise ValueError("Unsupported adapter effect")
     outcome = {"test": "approved", "declined": "declined"}[work["method"]]
@@ -38,10 +41,10 @@ class Handler(BaseHTTPRequestHandler):
         super().__init__(*args, **kwargs)
 
     def actor(self, task):
-        surface = self.ledger.deck.model["surfaces"].get(task)
-        if surface is None:
+        roles = self.ledger.deck.roles(task)
+        if not roles:
             raise Refusal("Unbekannte Ansicht.")
-        if surface["roles"] == ["admin"]:
+        if roles == ("admin",):
             if not compare_digest(self.headers.get("X-Deck-Admin", ""), self.admin_token):
                 raise PermissionError("Bitte im Admin anmelden.")
             return {"id":"merchant","role":"admin"}
@@ -121,13 +124,15 @@ class Handler(BaseHTTPRequestHandler):
 def main():
     cli = argparse.ArgumentParser(description=__doc__)
     cli.add_argument("--port",type=int,default=18779)
-    cli.add_argument("--database",type=Path,default=Path(".holodeck/shop-v1.sqlite"))
-    cli.add_argument("--checkpoint",type=Path,default=HERE/"checkpoint.json")
+    cli.add_argument("--database",type=Path,default=None)
+    cli.add_argument("--checkpoint",type=Path,default=HERE/"weights.npz")
+    cli.add_argument("--merchant",type=Path,default=HERE/"merchant.json")
     cli.add_argument("--admin-password",default="deck-demo")
     args = cli.parse_args()
-    args.database.parent.mkdir(parents=True,exist_ok=True)
-    deck = Deck(args.checkpoint)
-    ledger = Ledger(args.database,deck,deck.model["initial"])
+    deck = NeuralDeck(args.checkpoint,args.merchant)
+    database = args.database or Path(".holodeck/shop-neural.sqlite")
+    database.parent.mkdir(parents=True,exist_ok=True)
+    ledger = Ledger(database,deck,deck.initial)
     ledger.settle(test_payment)
     handler = partial(Handler, ledger=ledger, admin_token=secrets.token_hex(32),admin_password=args.admin_password)
     with ThreadingHTTPServer(("127.0.0.1",args.port),handler) as server:

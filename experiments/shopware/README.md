@@ -56,7 +56,7 @@ The screenshots come from an English rendering of the experiment. The bundled de
 - A small, inspectable program can be learned from examples and transferred to another configured shop.
 - Exact arithmetic, durable records, repeatable effects and reusable projected views can coexist.
 - The current host still makes some commercial decisions, including cart eligibility and parts of order formation. The experiment fits small categorical selection heads. It does not train Qwen weights.
-- The reference covers a selected subset of commerce and API responses. The new standard-commerce deck, including a fuller payment and return flow with learned guards, is the subject of the [roadmap](../../docs/roadmap.md).
+- The reference covers a selected subset of commerce and API responses. The [standalone neural shop](../../docs/standalone-shop.md) is a separate experiment with a new set of Shopware traces and trained weights in the serving path.
 
 ## Data and source notes
 
