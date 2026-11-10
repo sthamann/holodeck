@@ -10,7 +10,7 @@
 | Model and learning | Sparse choices change the executed programs. Four orders keep their [activated specialist after restart](learning.md#one-specialist-from-training-to-activation). | Shared multimodal training, learning new rule families with a fixed runtime, and improvement under controlled activation across merchants. |
 | Performance | Local apply p95 was 0.85 ms for the numeric comparison. | Cold and warm UI timings, load and comparison with Shopware on the same hardware. |
 
-[Evidence, artifacts and reproduction](joint-deck.md) · [Full product profile and acceptance tests](shopware-absorption.md#6-prüfprogramm-für-den-systemersatz)
+[Evidence, artifacts and reproduction](joint-deck.md) · [Trace induction and changed teacher control](trace-induction.md) · [Full product profile and acceptance tests](shopware-absorption.md#6-prüfprogramm-für-den-systemersatz)
 
 The first product milestone is a working standard shop. A customer shops in a **generated Holo Storefront**, completes a purchase in **generated Holo Checkout** and sees the order progress after the merchant handles it in **generated Holo Admin**. The shop runs on one deployed deck, including its learned commerce specialists, and one set of durable business records.
 

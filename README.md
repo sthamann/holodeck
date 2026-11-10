@@ -40,6 +40,14 @@ A service specialist learned which return and refund status changes Shopware acc
 
 [See the before and after captures and reproduce the activation](docs/learning.md#one-specialist-from-training-to-activation)
 
+### Discover expressions from Shopware traces
+
+The next experiment recovers nine executable expressions without providing formula labels. On four fresh shops, deliberately varied observations yield **38 of 40** exact journeys, compared with **6 of 40** from the same number of earlier passive observations. A separately fitted checkpoint follows a deliberately changed Shopware teacher in **16 of 16** fresh journeys. The sparse selector weights stay identical. The acquired knowledge is the executable expression grammar.
+
+[![A controlled change to Shopware produces a different learned program.](assets/illustrations/trace-induction.svg)](docs/trace-induction.md#the-teacher-changes-one-rule)
+
+[Read the Fable 5.2 challenge, results and reproduction](docs/trace-induction.md)
+
 ## Deck, holo and projected software
 
 | Concept | What it does |

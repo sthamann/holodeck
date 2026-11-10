@@ -1,0 +1,197 @@
+{
+  "training_channels": [
+    "36e46cbd6cca470f947ddf699da777b4",
+    "62cd9d0a03724356b83c0efeed4fa188",
+    "977dab4e8a084d97bcec5df1d65be95b"
+  ],
+  "training_shops": [
+    "Geldkai",
+    "Marktbruecke",
+    "Silberbogen"
+  ],
+  "training_cases": 18,
+  "training_sha256": "2089393c44a90566dcfc3ef658fd4f70d027b1774f085484d88480a888038dd6",
+  "compiler_sha256": "580be738972b3cf8504c450cc2fc6f3b43de5816b15ab3b6117ff0311b2b822b",
+  "learned": {
+    "quantity": {
+      "expression": [
+        "ref",
+        "requested"
+      ],
+      "nodes": 1,
+      "exact_root_matches": 1,
+      "evaluated_candidates": 0,
+      "examples": 54
+    },
+    "line": {
+      "expression": [
+        "mul",
+        [
+          "quantize",
+          [
+            "ref",
+            "unit"
+          ],
+          [
+            "ref",
+            "item"
+          ]
+        ],
+        [
+          "ref",
+          "quantity"
+        ]
+      ],
+      "nodes": 5,
+      "exact_root_matches": 1,
+      "evaluated_candidates": 121,
+      "examples": 54
+    },
+    "remaining": {
+      "expression": [
+        "sub",
+        [
+          "ref",
+          "stock"
+        ],
+        [
+          "ref",
+          "quantity"
+        ]
+      ],
+      "nodes": 3,
+      "exact_root_matches": 1,
+      "evaluated_candidates": 35,
+      "examples": 72
+    },
+    "absolute": {
+      "expression": [
+        "neg",
+        [
+          "quantize",
+          [
+            "ref",
+            "setting"
+          ],
+          [
+            "ref",
+            "item"
+          ]
+        ]
+      ],
+      "nodes": 4,
+      "exact_root_matches": 2,
+      "evaluated_candidates": 82,
+      "examples": 6
+    },
+    "percentage": {
+      "expression": [
+        "neg",
+        [
+          "quantize",
+          [
+            "mul",
+            [
+              "ref",
+              "basis"
+            ],
+            [
+              "ref",
+              "setting"
+            ]
+          ],
+          [
+            "ref",
+            "item"
+          ]
+        ]
+      ],
+      "nodes": 6,
+      "exact_root_matches": 2,
+      "evaluated_candidates": 116,
+      "examples": 6
+    },
+    "shipping": {
+      "expression": [
+        "quantize",
+        [
+          "ref",
+          "setting"
+        ],
+        [
+          "ref",
+          "item"
+        ]
+      ],
+      "nodes": 3,
+      "exact_root_matches": 2,
+      "evaluated_candidates": 26,
+      "examples": 36
+    },
+    "goods": {
+      "expression": [
+        "add",
+        [
+          "ref",
+          "adjustment"
+        ],
+        [
+          "ref",
+          "basis"
+        ]
+      ],
+      "nodes": 3,
+      "exact_root_matches": 1,
+      "evaluated_candidates": 39,
+      "examples": 36
+    },
+    "gross": {
+      "expression": [
+        "add",
+        [
+          "ref",
+          "delivery"
+        ],
+        [
+          "quantize",
+          [
+            "ref",
+            "goods"
+          ],
+          [
+            "ref",
+            "total"
+          ]
+        ]
+      ],
+      "nodes": 5,
+      "exact_root_matches": 2,
+      "evaluated_candidates": 212,
+      "examples": 36
+    },
+    "net": {
+      "expression": [
+        "add",
+        [
+          "ref",
+          "goods"
+        ],
+        [
+          "sub",
+          [
+            "ref",
+            "delivery"
+          ],
+          [
+            "ref",
+            "tax"
+          ]
+        ]
+      ],
+      "nodes": 5,
+      "exact_root_matches": 5,
+      "evaluated_candidates": 421,
+      "examples": 36
+    }
+  }
+}

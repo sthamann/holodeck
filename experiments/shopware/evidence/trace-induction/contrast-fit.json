@@ -1,0 +1,213 @@
+{
+  "training_channels": [
+    "5d48e7eb52df4288a71bab915546b54d",
+    "8ea9cfb3483a4733af901f65cbadf72c",
+    "bb97964cb5364eb8950cfb896ce481ac",
+    "d50f71629d1d4793b5688630782bb789"
+  ],
+  "training_shops": [
+    "Birkentor",
+    "Messingbogen",
+    "Uhrkai",
+    "Wellenlager"
+  ],
+  "training_cases": 18,
+  "training_sha256": "c36dc89754ca50bbdb235ba735f36403d552d84da466343647a0f27832a04d74",
+  "compiler_sha256": "580be738972b3cf8504c450cc2fc6f3b43de5816b15ab3b6117ff0311b2b822b",
+  "learned": {
+    "quantity": {
+      "expression": [
+        "min",
+        [
+          "ref",
+          "requested"
+        ],
+        [
+          "ref",
+          "stock"
+        ]
+      ],
+      "nodes": 3,
+      "exact_root_matches": 1,
+      "evaluated_candidates": 35,
+      "examples": 68
+    },
+    "line": {
+      "expression": [
+        "mul",
+        [
+          "quantize",
+          [
+            "ref",
+            "unit"
+          ],
+          [
+            "ref",
+            "item"
+          ]
+        ],
+        [
+          "ref",
+          "quantity"
+        ]
+      ],
+      "nodes": 5,
+      "exact_root_matches": 1,
+      "evaluated_candidates": 121,
+      "examples": 68
+    },
+    "remaining": {
+      "expression": [
+        "sub",
+        [
+          "ref",
+          "stock"
+        ],
+        [
+          "ref",
+          "quantity"
+        ]
+      ],
+      "nodes": 3,
+      "exact_root_matches": 1,
+      "evaluated_candidates": 35,
+      "examples": 86
+    },
+    "absolute": {
+      "expression": [
+        "neg",
+        [
+          "min",
+          [
+            "ref",
+            "basis"
+          ],
+          [
+            "quantize",
+            [
+              "ref",
+              "setting"
+            ],
+            [
+              "ref",
+              "item"
+            ]
+          ]
+        ]
+      ],
+      "nodes": 6,
+      "exact_root_matches": 2,
+      "evaluated_candidates": 455,
+      "examples": 6
+    },
+    "percentage": {
+      "expression": [
+        "neg",
+        [
+          "quantize",
+          [
+            "mul",
+            [
+              "ref",
+              "basis"
+            ],
+            [
+              "ref",
+              "setting"
+            ]
+          ],
+          [
+            "ref",
+            "item"
+          ]
+        ]
+      ],
+      "nodes": 6,
+      "exact_root_matches": 2,
+      "evaluated_candidates": 116,
+      "examples": 6
+    },
+    "shipping": {
+      "expression": [
+        "quantize",
+        [
+          "ref",
+          "setting"
+        ],
+        [
+          "ref",
+          "item"
+        ]
+      ],
+      "nodes": 3,
+      "exact_root_matches": 1,
+      "evaluated_candidates": 26,
+      "examples": 36
+    },
+    "goods": {
+      "expression": [
+        "add",
+        [
+          "ref",
+          "adjustment"
+        ],
+        [
+          "ref",
+          "basis"
+        ]
+      ],
+      "nodes": 3,
+      "exact_root_matches": 1,
+      "evaluated_candidates": 39,
+      "examples": 36
+    },
+    "gross": {
+      "expression": [
+        "quantize",
+        [
+          "add",
+          [
+            "ref",
+            "delivery"
+          ],
+          [
+            "ref",
+            "goods"
+          ]
+        ],
+        [
+          "ref",
+          "total"
+        ]
+      ],
+      "nodes": 5,
+      "exact_root_matches": 1,
+      "evaluated_candidates": 272,
+      "examples": 36
+    },
+    "net": {
+      "expression": [
+        "add",
+        [
+          "ref",
+          "goods"
+        ],
+        [
+          "sub",
+          [
+            "ref",
+            "delivery"
+          ],
+          [
+            "ref",
+            "tax"
+          ]
+        ]
+      ],
+      "nodes": 5,
+      "exact_root_matches": 5,
+      "evaluated_candidates": 559,
+      "examples": 36
+    }
+  }
+}

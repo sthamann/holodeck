@@ -4,6 +4,8 @@ Start with the [current joint deck](../../../docs/joint-deck.md) for the bundled
 
 This local benchmark compares a frozen Qwen retrieval baseline, a shared trained controller, and a shared controller with a learned two-of-four expert router. It reuses the existing Shopware recorder, trace-based arithmetic compiler, integer VM and SQLite transaction store.
 
+The separate [trace induction round](../../../docs/trace-induction.md) learns scalar expressions from observations, compares passive and deliberately varied training data, and runs a changed teacher control. Its replay starts from the bundled checkpoints and traces.
+
 ## Scope and source
 
 The reference was Shopware Community Edition 6.7.15.1. All products, buyers and sales channels are synthetic. The recorded observations come from the native Shopware Store API and Admin API. Payment, shipment, return and refund are observed status transitions. No funds move.

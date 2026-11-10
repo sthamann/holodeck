@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-labelledby="induction-title induction-desc">
+  <title id="induction-title">Change the teacher, change the learned program</title>
+  <desc id="induction-desc">The same search and VM learn to round the sum in regular Shopware and to add without cash rounding when a native teacher is deliberately modified. Full offline replay is exact for 38 of 40 and 16 of 16 journeys respectively.</desc>
+  <style>
+    .label{font:600 16px ui-monospace,monospace;letter-spacing:2px;fill:#40574c}
+    .title{font:700 48px Georgia,serif;fill:#252c25}
+    .head{font:700 24px system-ui,sans-serif;fill:#252c25}
+    .body{font:18px system-ui,sans-serif;fill:#40574c}
+    .code{font:700 22px ui-monospace,monospace;fill:#254f3a}
+  </style>
+  <rect width="1200" height="400" rx="24" fill="#f7f1e6"/>
+  <text class="label" x="44" y="48">HOLODECK / TRACE INDUCTION</text>
+  <text class="title" x="44" y="108">Change the teacher. Learn a different rule.</text>
+  <rect x="44" y="148" width="536" height="176" rx="16" fill="#fffcf5" stroke="#a9b4a6"/>
+  <rect x="620" y="148" width="536" height="176" rx="16" fill="#e7eee4" stroke="#62816c"/>
+  <text class="head" x="68" y="196">Unchanged Shopware</text>
+  <text class="code" x="68" y="248">round(goods + shipping)</text>
+  <text class="body" x="68" y="296">38 / 40 exact complete journeys</text>
+  <text class="head" x="644" y="196">Shopware with final cash rounding removed</text>
+  <text class="code" x="644" y="248">goods + shipping</text>
+  <text class="body" x="644" y="296">16 / 16 exact complete journeys</text>
+  <text class="label" x="44" y="364">SAME SEARCH, SELECTOR WEIGHTS AND VM · FRESH SHOPS · TEACHER OFFLINE IN REPLAY</text>
+</svg>

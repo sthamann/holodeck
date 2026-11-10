@@ -1,0 +1,62 @@
+[
+  {
+    "shop": "Ankerfluss",
+    "root": "75aa0e551bc14b85be1f854608b2d1f2",
+    "control": false,
+    "gross": 99110,
+    "cartExact": true,
+    "checkoutExact": true,
+    "foreignOrderRejected": false,
+    "staleOfferRejected": true,
+    "invalidBindingRejected": true,
+    "statusTransitionsChecked": 3,
+    "finalRevision": 6,
+    "workflowEffects": 1,
+    "delivery": "shipped"
+  },
+  {
+    "shop": "Drahtufer",
+    "root": "0e58910656ff4e81bb8698bb8a42e423",
+    "control": false,
+    "gross": 52290,
+    "cartExact": true,
+    "checkoutExact": true,
+    "foreignOrderRejected": true,
+    "staleOfferRejected": true,
+    "invalidBindingRejected": true,
+    "statusTransitionsChecked": 3,
+    "finalRevision": 6,
+    "workflowEffects": 1,
+    "delivery": "shipped"
+  },
+  {
+    "shop": "Walzwerk",
+    "root": "085b75a671d747a3abcb433afaf3f42f",
+    "control": false,
+    "gross": 45444,
+    "cartExact": true,
+    "checkoutExact": true,
+    "foreignOrderRejected": true,
+    "staleOfferRejected": true,
+    "invalidBindingRejected": true,
+    "statusTransitionsChecked": 3,
+    "finalRevision": 6,
+    "workflowEffects": 1,
+    "delivery": "shipped"
+  },
+  {
+    "shop": "Seidenhafen",
+    "root": "1a4fd352dae94c04af7f6bf333ac62bd",
+    "control": false,
+    "gross": 43700,
+    "cartExact": true,
+    "checkoutExact": true,
+    "foreignOrderRejected": true,
+    "staleOfferRejected": true,
+    "invalidBindingRejected": true,
+    "statusTransitionsChecked": 3,
+    "finalRevision": 6,
+    "workflowEffects": 1,
+    "delivery": "shipped"
+  }
+]

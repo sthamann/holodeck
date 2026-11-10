@@ -1,0 +1,828 @@
+{
+  "reference": "Shopware Community Edition 6.7.15.1",
+  "teacher_stopped_at_evaluation": true,
+  "cohorts": {
+    "unchanged": {
+      "holdout_sha256": "333d41ae3e1162dd44425ba9de70a1652b9c8cf6ad4c5c867e5c56b61914bb29",
+      "arms": {
+        "source_authored": {
+          "journeys_exact": 38,
+          "journeys_total": 40,
+          "events": {
+            "cart.add": [
+              40,
+              40
+            ],
+            "cart.promo": [
+              38,
+              40
+            ],
+            "checkout.place": [
+              38,
+              40
+            ],
+            "order_delivery.reopen": [
+              20,
+              20
+            ],
+            "order_delivery.ship": [
+              40,
+              40
+            ],
+            "order_transaction.paid": [
+              40,
+              40
+            ],
+            "order_transaction.reopen": [
+              20,
+              20
+            ]
+          },
+          "checkout_receipts_replayed": 40,
+          "misses": [
+            {
+              "shop": "Drahtufer",
+              "case": 3,
+              "events": [
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Drahtufer",
+              "case": 8,
+              "events": [
+                "cart.promo",
+                "checkout.place"
+              ]
+            }
+          ]
+        },
+        "induced": {
+          "journeys_exact": 38,
+          "journeys_total": 40,
+          "events": {
+            "cart.add": [
+              40,
+              40
+            ],
+            "cart.promo": [
+              38,
+              40
+            ],
+            "checkout.place": [
+              38,
+              40
+            ],
+            "order_delivery.reopen": [
+              20,
+              20
+            ],
+            "order_delivery.ship": [
+              40,
+              40
+            ],
+            "order_transaction.paid": [
+              40,
+              40
+            ],
+            "order_transaction.reopen": [
+              20,
+              20
+            ]
+          },
+          "checkout_receipts_replayed": 40,
+          "misses": [
+            {
+              "shop": "Drahtufer",
+              "case": 3,
+              "events": [
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Drahtufer",
+              "case": 8,
+              "events": [
+                "cart.promo",
+                "checkout.place"
+              ]
+            }
+          ]
+        },
+        "passive_induction": {
+          "journeys_exact": 6,
+          "journeys_total": 40,
+          "events": {
+            "cart.add": [
+              8,
+              40
+            ],
+            "cart.promo": [
+              6,
+              40
+            ],
+            "checkout.place": [
+              6,
+              40
+            ],
+            "order_delivery.reopen": [
+              20,
+              20
+            ],
+            "order_delivery.ship": [
+              40,
+              40
+            ],
+            "order_transaction.paid": [
+              40,
+              40
+            ],
+            "order_transaction.reopen": [
+              20,
+              20
+            ]
+          },
+          "checkout_receipts_replayed": 40,
+          "misses": [
+            {
+              "shop": "Ankerfluss",
+              "case": 0,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Ankerfluss",
+              "case": 1,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Ankerfluss",
+              "case": 2,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Ankerfluss",
+              "case": 3,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Ankerfluss",
+              "case": 4,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Ankerfluss",
+              "case": 5,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Ankerfluss",
+              "case": 6,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Ankerfluss",
+              "case": 7,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Ankerfluss",
+              "case": 8,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Ankerfluss",
+              "case": 9,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Drahtufer",
+              "case": 0,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Drahtufer",
+              "case": 3,
+              "events": [
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Drahtufer",
+              "case": 4,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Drahtufer",
+              "case": 8,
+              "events": [
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Walzwerk",
+              "case": 0,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Walzwerk",
+              "case": 1,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Walzwerk",
+              "case": 2,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Walzwerk",
+              "case": 3,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Walzwerk",
+              "case": 4,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Walzwerk",
+              "case": 5,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Walzwerk",
+              "case": 6,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Walzwerk",
+              "case": 7,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Walzwerk",
+              "case": 8,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Walzwerk",
+              "case": 9,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Seidenhafen",
+              "case": 0,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Seidenhafen",
+              "case": 1,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Seidenhafen",
+              "case": 2,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Seidenhafen",
+              "case": 3,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Seidenhafen",
+              "case": 4,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Seidenhafen",
+              "case": 5,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Seidenhafen",
+              "case": 6,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Seidenhafen",
+              "case": 7,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Seidenhafen",
+              "case": 8,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Seidenhafen",
+              "case": 9,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "changed": {
+      "holdout_sha256": "2a26b4262efa807bc38849e4a2ae756a689917f57ab8964fbab6349d0ab95283",
+      "arms": {
+        "source_authored": {
+          "journeys_exact": 2,
+          "journeys_total": 16,
+          "events": {
+            "cart.add": [
+              5,
+              16
+            ],
+            "cart.promo": [
+              4,
+              16
+            ],
+            "checkout.place": [
+              4,
+              16
+            ],
+            "order_delivery.reopen": [
+              8,
+              8
+            ],
+            "order_delivery.ship": [
+              16,
+              16
+            ],
+            "order_transaction.paid": [
+              16,
+              16
+            ],
+            "order_transaction.reopen": [
+              8,
+              8
+            ]
+          },
+          "checkout_receipts_replayed": 16,
+          "misses": [
+            {
+              "shop": "Ankerfluss",
+              "case": 0,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Ankerfluss",
+              "case": 1,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Ankerfluss",
+              "case": 2,
+              "events": [
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Ankerfluss",
+              "case": 3,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Drahtufer",
+              "case": 0,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Drahtufer",
+              "case": 1,
+              "events": [
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Drahtufer",
+              "case": 3,
+              "events": [
+                "cart.add"
+              ]
+            },
+            {
+              "shop": "Walzwerk",
+              "case": 0,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Walzwerk",
+              "case": 1,
+              "events": [
+                "cart.add"
+              ]
+            },
+            {
+              "shop": "Walzwerk",
+              "case": 2,
+              "events": [
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Walzwerk",
+              "case": 3,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Seidenhafen",
+              "case": 1,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Seidenhafen",
+              "case": 2,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Seidenhafen",
+              "case": 3,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            }
+          ]
+        },
+        "induced_on_changed_teacher": {
+          "journeys_exact": 16,
+          "journeys_total": 16,
+          "events": {
+            "cart.add": [
+              16,
+              16
+            ],
+            "cart.promo": [
+              16,
+              16
+            ],
+            "checkout.place": [
+              16,
+              16
+            ],
+            "order_delivery.reopen": [
+              8,
+              8
+            ],
+            "order_delivery.ship": [
+              16,
+              16
+            ],
+            "order_transaction.paid": [
+              16,
+              16
+            ],
+            "order_transaction.reopen": [
+              8,
+              8
+            ]
+          },
+          "checkout_receipts_replayed": 16,
+          "misses": []
+        },
+        "induced_on_unchanged_teacher": {
+          "journeys_exact": 2,
+          "journeys_total": 16,
+          "events": {
+            "cart.add": [
+              5,
+              16
+            ],
+            "cart.promo": [
+              4,
+              16
+            ],
+            "checkout.place": [
+              4,
+              16
+            ],
+            "order_delivery.reopen": [
+              8,
+              8
+            ],
+            "order_delivery.ship": [
+              16,
+              16
+            ],
+            "order_transaction.paid": [
+              16,
+              16
+            ],
+            "order_transaction.reopen": [
+              8,
+              8
+            ]
+          },
+          "checkout_receipts_replayed": 16,
+          "misses": [
+            {
+              "shop": "Ankerfluss",
+              "case": 0,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Ankerfluss",
+              "case": 1,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Ankerfluss",
+              "case": 2,
+              "events": [
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Ankerfluss",
+              "case": 3,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Drahtufer",
+              "case": 0,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Drahtufer",
+              "case": 1,
+              "events": [
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Drahtufer",
+              "case": 3,
+              "events": [
+                "cart.add"
+              ]
+            },
+            {
+              "shop": "Walzwerk",
+              "case": 0,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Walzwerk",
+              "case": 1,
+              "events": [
+                "cart.add"
+              ]
+            },
+            {
+              "shop": "Walzwerk",
+              "case": 2,
+              "events": [
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Walzwerk",
+              "case": 3,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Seidenhafen",
+              "case": 1,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Seidenhafen",
+              "case": 2,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            },
+            {
+              "shop": "Seidenhafen",
+              "case": 3,
+              "events": [
+                "cart.add",
+                "cart.promo",
+                "checkout.place"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "changed_teacher": {
+    "file": "vendor/shopware/core/Checkout/Cart/Price/AmountCalculator.php",
+    "operation": "calculateGrossAmount final cashRound changed to mathRound",
+    "source_sha256": "0d28d7e868f6973ef11aef1b1380011a34e3b4536658e445b6da371cb35c21b9",
+    "mutated_sha256": "b29b161eee75edc37ec4c049b8757d00a8e0ec066b997de624dde04219b7b1ce",
+    "restored_sha256": "0d28d7e868f6973ef11aef1b1380011a34e3b4536658e445b6da371cb35c21b9"
+  },
+  "selectors_sha256": "9ad2c6e027127c2cb901575e004e5c949eb258ce0782f62bd0a87c0e29d6165c",
+  "fable_review": {
+    "model": "claude-fable-5-2",
+    "reviews": 2,
+    "focus": [
+      "Identifiability through contrasts",
+      "Deliberately changed teacher",
+      "Cross-readout transfer between cart effects and UI controls"
+    ]
+  }
+}

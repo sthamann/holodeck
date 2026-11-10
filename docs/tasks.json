@@ -1,6 +1,6 @@
 {
   "schema": "holodeck.roadmap/1",
-  "revision": 5,
+  "revision": 6,
   "date": "2026-11-10",
   "status": "planned",
   "milestones": [
@@ -532,6 +532,17 @@
         ],
         "scope": "An explicitly activated service specialist persists on four synthetic orders after a process restart. The check covers forward activation and restore.",
         "evidence": "experiments/shopware/evidence/joint-deck/activation-report.json"
+      },
+      {
+        "tasks": [
+          "H04",
+          "H06",
+          "H08",
+          "H10",
+          "H22"
+        ],
+        "scope": "Nine scalar expressions acquired from Shopware outcomes in a fixed typed grammar. Fresh unchanged and changed teacher comparisons hold the sparse selectors and runtime fixed.",
+        "evidence": "experiments/shopware/evidence/trace-induction/summary.json"
       }
     ]
   }

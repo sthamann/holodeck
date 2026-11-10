@@ -4,6 +4,8 @@
 
 The [architecture](architecture.md) gives the model responsibility for commercial decisions. The learning plan makes that responsibility observable. The first learner must determine which data a decision needs, which exact operations apply, which state changes belong together and which event the business is waiting for.
 
+The [trace induction experiment](trace-induction.md) also shows a different kind of learning. A compiler builds new expressions from observed results, while the sparse selector weights stay fixed. Separate fits follow two teacher semantics.
+
 ## The first curriculum is a complete shop
 
 Teach the standard commerce functions in the order a working shop needs them. Start with catalog, variants, availability, cart and pricing. Add checkout, payment and merchant order handling on the same model and records. Connect each learned decision to the model-generated controls that let a customer or merchant act on it.

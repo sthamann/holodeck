@@ -6,6 +6,8 @@ The illustrations and experiment captures accompany Stefan Hamann’s *The End o
 
 The [service specialist illustration](illustrations/joint-deck-learning.svg) follows the activation of the published checkpoint. The [before](experiments/joint-deck/birkenkai-before-activation.png) and [after](experiments/joint-deck/birkenkai-after-activation.png) images show the same Birkenkai order in Chrome. [Learning experiment](../docs/learning.md#one-specialist-from-training-to-activation)
 
+The [trace induction illustration](illustrations/trace-induction.svg) shows the different final-total expressions acquired from the regular and deliberately modified reference. [Trace induction evidence](../docs/trace-induction.md)
+
 The architecture comparison is available as a [shareable PNG](illustrations/projects-to-properties.png) and an [editable SVG](illustrations/projects-to-properties.svg).
 
 The local demo uses these photographs from Wikimedia Commons. The cited licenses apply to the photographs.

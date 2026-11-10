@@ -16,6 +16,8 @@ The offline comparison reproduced 48 of 48 new journeys across four merchant con
 
 The [specialist activation test](learning.md#one-specialist-from-training-to-activation) verifies a version change on a live order with the published checkpoint. The old and new decks can run in one process. The order records its bound version, and the first projection after restart resolves that version from the record.
 
+The [trace induction trial](trace-induction.md) replaces selected scalar expressions inside the checkpoint with programs learned from observations. It holds the renderer, executor and sparse selectors fixed and compares the result on fresh shops and a deliberately changed teacher.
+
 ## First delivery
 
 The first accepted deck operates a complete standard shop. Its learned commerce specialists cover catalog and cart, prices and availability, checkout and payment, and order handling in the admin. These specialists are part of the versioned model. Shopware supplies teaching data and independent comparisons during development. At deployment, the deck reads and writes its own business records through the generic commit core. [First delivery and acceptance](roadmap.md#first-delivery-and-acceptance)
