@@ -6,6 +6,8 @@ This local benchmark compares a frozen Qwen retrieval baseline, a shared trained
 
 The separate [trace induction round](../../../docs/trace-induction.md) learns scalar expressions from observations, compares passive and deliberately varied training data, and runs a changed teacher control. Its replay starts from the bundled checkpoints and traces.
 
+The [quantity transfer round](../../../docs/quantity-transfer.md) fits one shared rule from cart outcomes and checks it against native Storefront and persisted writes. A separately fitted UI arm measures which request corrections are underdetermined.
+
 ## Scope and source
 
 The reference was Shopware Community Edition 6.7.15.1. All products, buyers and sales channels are synthetic. The recorded observations come from the native Shopware Store API and Admin API. Payment, shipment, return and refund are observed status transitions. No funds move.

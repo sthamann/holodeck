@@ -48,6 +48,10 @@ The next experiment recovers nine executable expressions without providing formu
 
 [Read the Fable 5.2 challenge, results and reproduction](docs/trace-induction.md)
 
+### One learned rule powers a control and a write
+
+The deck learned a quantity policy from Cart API outcomes alone. It reproduced all 16 native Storefront option sets and all 220 persisted quantity decisions in four unseen shops. Removing the stock dependency impaired both readouts. The reverse fit from UI observations identified the same allowed quantities but left 161 of the 220 request corrections ambiguous. [See Nordufer, the control and reproduction](docs/quantity-transfer.md)
+
 ## Deck, holo and projected software
 
 | Concept | What it does |

@@ -8,6 +8,8 @@ The [service specialist illustration](illustrations/joint-deck-learning.svg) fol
 
 The [trace induction illustration](illustrations/trace-induction.svg) shows the different final-total expressions acquired from the regular and deliberately modified reference. [Trace induction evidence](../docs/trace-induction.md)
 
+The [Nordufer capture](experiments/quantity-transfer/nordufer.png) shows the generated quantity control from the [quantity transfer experiment](../docs/quantity-transfer.md).
+
 The architecture comparison is available as a [shareable PNG](illustrations/projects-to-properties.png) and an [editable SVG](illustrations/projects-to-properties.svg).
 
 The local demo uses these photographs from Wikimedia Commons. The cited licenses apply to the photographs.

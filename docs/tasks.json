@@ -1,6 +1,6 @@
 {
   "schema": "holodeck.roadmap/1",
-  "revision": 6,
+  "revision": 7,
   "date": "2026-11-10",
   "status": "planned",
   "milestones": [
@@ -543,6 +543,17 @@
         ],
         "scope": "Nine scalar expressions acquired from Shopware outcomes in a fixed typed grammar. Fresh unchanged and changed teacher comparisons hold the sparse selectors and runtime fixed.",
         "evidence": "experiments/shopware/evidence/trace-induction/summary.json"
+      },
+      {
+        "tasks": [
+          "H06",
+          "H08",
+          "H09",
+          "H16",
+          "H22"
+        ],
+        "scope": "One acquired quantity progression supplies both the generated control and the persisted cart write. The reverse fit and stock dependency control measure the boundary of the shared domain.",
+        "evidence": "experiments/shopware/evidence/quantity-transfer/summary.json"
       }
     ]
   }

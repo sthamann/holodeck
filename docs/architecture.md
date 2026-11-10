@@ -18,6 +18,8 @@ The [specialist activation test](learning.md#one-specialist-from-training-to-act
 
 The [trace induction trial](trace-induction.md) replaces selected scalar expressions inside the checkpoint with programs learned from observations. It holds the renderer, executor and sparse selectors fixed and compares the result on fresh shops and a deliberately changed teacher.
 
+The [quantity transfer experiment](quantity-transfer.md) uses one learned domain for a generated control and the cart writer. Removing one dependency from that domain changes both outputs. The UI fit also shows where the reverse transfer stops because the visible choices do not identify request correction.
+
 ## First delivery
 
 The first accepted deck operates a complete standard shop. Its learned commerce specialists cover catalog and cart, prices and availability, checkout and payment, and order handling in the admin. These specialists are part of the versioned model. Shopware supplies teaching data and independent comparisons during development. At deployment, the deck reads and writes its own business records through the generic commit core. [First delivery and acceptance](roadmap.md#first-delivery-and-acceptance)

@@ -101,6 +101,15 @@ function empty(text) { return node('p', {class:'muted', text}); }
 function quantities(data, spec) {
   const grid = node('div', {class:'grid'}, data.map((item, index) => {
     const name = view.names[item.id] || item.id;
+    const current = view.data.quantities[item.id] || 0;
+    const choices = spec.quantity_options?.[item.id];
+    const props = {'aria-label':'Menge ' + name, name:item.id, disabled:!spec.actions.length};
+    const field = choices === undefined
+      ? node('input', {...props, type:'number', min:0, max:999, value:current})
+      : node('select', props, [
+          node('option', {value:0, text:'0'}),
+          ...choices.map(value => node('option', {value, selected:value === current, text:String(value)}))
+        ]);
     return node('div', {class:'product'}, [
       node('div', {class:'index', 'aria-hidden':'true'}, [
         node('strong', {text:String(index + 1).padStart(2, '0')}),
@@ -108,8 +117,7 @@ function quantities(data, spec) {
       ]),
       node('h3', {text:name}),
       node('p', {class:'num', text:money(item.unit)}),
-      node('label', {text:'Menge'}, [node('input', {type:'number', min:0, max:999,
-        'aria-label':'Menge ' + name, name:item.id, disabled:!spec.actions.length, value:view.data.quantities[item.id] || 0})])
+      choices?.length === 0 ? empty('Nicht verfügbar') : node('label', {text:'Menge'}, [field])
     ]);
   }));
   const form = node('form', {}, [grid]);

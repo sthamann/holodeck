@@ -56,6 +56,13 @@ class JointDeck:
                                      'component': item['component'], 'actions': []}
                 if item['component'] == 'grid':
                     nodes[item['id']].update(columns=[], controls=[], filters=[])
+        domain = getattr(self.deck.predict, 'quantity_domain', None)
+        if domain is not None:
+            from quantity_program import values_for
+            for node in nodes.values():
+                if node['component'] == 'quantity-grid':
+                    catalog = root_of(state)['fields'].get('mixed.catalog', [])
+                    node['quantity_options'] = {row['id']: list(values_for(domain, row)) for row in catalog}
         offers = {}
         for cell, item in sorted(data.items(), key=lambda pair: pair[1]['rank']):
             if cell.startswith('view:node:') or item['node'] not in nodes:
@@ -72,10 +79,13 @@ class JointDeck:
                 # A typed witness checks the program shape. The actual quantities
                 # are supplied by the browser and validated at commit.
                 catalog = root_of(state)['fields'].get('mixed.catalog', [])
-                witness = next((item for item in catalog if item['stock'] > 0), None)
+                if 'quantity_options' in node:
+                    witness = next(((key, values[0]) for key, values in node['quantity_options'].items() if values), None)
+                else:
+                    witness = next(((item['id'], 1) for item in catalog if item['stock'] > 0), None)
                 if witness is None:
                     continue
-                args = {'items': [{'id': witness['id'], 'quantity': 1}]}
+                args = {'items': [{'id': witness[0], 'quantity': witness[1]}]}
             probe = {'kind': action['event'], 'id': 'projection-probe', 'args': args, 'root': state['root']}
             try:
                 result = self.plan(state, probe, state['tenant'],

@@ -1,0 +1,59 @@
+{
+  "supervision": "cart",
+  "source_sha256": "738d1d8a18a6c295ad264932a5dca0cbd33cb7d9dc04a37c0b56184a8e63ca57",
+  "training_channels": [
+    "3bb9472ae2994040b44e616caf824710",
+    "41302ceaba4f4b62ad7ac55537258eaf",
+    "5a00557b6d1e4ae3838c6da4b5db3b4f",
+    "fd642be94cae4e4190e68141305bdfca"
+  ],
+  "products": 16,
+  "cost": 7,
+  "tested": 6272,
+  "exact_domains": 1,
+  "domain": [
+    "record",
+    {
+      "start": [
+        "ref",
+        "product",
+        "minimum"
+      ],
+      "end": [
+        "select_value",
+        [
+          "ref",
+          "product",
+          "closeout"
+        ],
+        [
+          "min",
+          [
+            "ref",
+            "product",
+            "maximum"
+          ],
+          [
+            "ref",
+            "product",
+            "stock"
+          ]
+        ],
+        [
+          "ref",
+          "product",
+          "maximum"
+        ]
+      ],
+      "stride": [
+        "ref",
+        "product",
+        "step"
+      ]
+    }
+  ],
+  "compatible_modes": [
+    "floor"
+  ],
+  "mode": "floor"
+}

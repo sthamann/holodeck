@@ -1,0 +1,150 @@
+[
+  {
+    "shop": "Nordufer",
+    "product": "Nordufer Paket 1",
+    "options": [
+      5,
+      9
+    ]
+  },
+  {
+    "shop": "Nordufer",
+    "product": "Nordufer Paket 2",
+    "options": [
+      5,
+      9,
+      13,
+      17
+    ]
+  },
+  {
+    "shop": "Nordufer",
+    "product": "Nordufer Paket 3",
+    "options": []
+  },
+  {
+    "shop": "Nordufer",
+    "product": "Nordufer Paket 4",
+    "options": [
+      3,
+      8,
+      13,
+      18
+    ]
+  },
+  {
+    "shop": "Sandkai",
+    "product": "Sandkai Paket 1",
+    "options": [
+      6,
+      11
+    ]
+  },
+  {
+    "shop": "Sandkai",
+    "product": "Sandkai Paket 2",
+    "options": [
+      6,
+      11,
+      16,
+      21
+    ]
+  },
+  {
+    "shop": "Sandkai",
+    "product": "Sandkai Paket 3",
+    "options": [
+      2,
+      6,
+      10,
+      14
+    ]
+  },
+  {
+    "shop": "Sandkai",
+    "product": "Sandkai Paket 4",
+    "options": [
+      2,
+      6,
+      10,
+      14
+    ]
+  },
+  {
+    "shop": "Feldwerk",
+    "product": "Feldwerk Paket 1",
+    "options": [
+      4,
+      8,
+      12,
+      16
+    ]
+  },
+  {
+    "shop": "Feldwerk",
+    "product": "Feldwerk Paket 2",
+    "options": [
+      4,
+      8,
+      12,
+      16,
+      20
+    ]
+  },
+  {
+    "shop": "Feldwerk",
+    "product": "Feldwerk Paket 3",
+    "options": []
+  },
+  {
+    "shop": "Feldwerk",
+    "product": "Feldwerk Paket 4",
+    "options": [
+      6,
+      11,
+      16,
+      21
+    ]
+  },
+  {
+    "shop": "Kronensteg",
+    "product": "Kronensteg Paket 1",
+    "options": [
+      5,
+      10,
+      15,
+      20
+    ]
+  },
+  {
+    "shop": "Kronensteg",
+    "product": "Kronensteg Paket 2",
+    "options": [
+      5,
+      10,
+      15,
+      20,
+      25
+    ]
+  },
+  {
+    "shop": "Kronensteg",
+    "product": "Kronensteg Paket 3",
+    "options": [
+      6,
+      10
+    ]
+  },
+  {
+    "shop": "Kronensteg",
+    "product": "Kronensteg Paket 4",
+    "options": [
+      6,
+      10,
+      14,
+      18,
+      22,
+      26
+    ]
+  }
+]

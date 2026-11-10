@@ -1,0 +1,463 @@
+{
+  "holdout_sha256": "dd8416235abd3e12f523b7a00005184ff8dd339ea76552508c395785c853b764",
+  "products": 16,
+  "shops": 4,
+  "cart_requests": 220,
+  "models": {
+    "cart": {
+      "storefront_exact": 16,
+      "storefront_misses": [],
+      "cart_exact_by_mode": {
+        "floor": 220,
+        "ceil": 173,
+        "nearest": 201,
+        "reject": 59
+      },
+      "cart_ambiguous": 0,
+      "cart_exact_consensus": 220,
+      "cart_no_compatible_outcome": 0,
+      "fit": {
+        "supervision": "cart",
+        "source_sha256": "738d1d8a18a6c295ad264932a5dca0cbd33cb7d9dc04a37c0b56184a8e63ca57",
+        "training_channels": [
+          "3bb9472ae2994040b44e616caf824710",
+          "41302ceaba4f4b62ad7ac55537258eaf",
+          "5a00557b6d1e4ae3838c6da4b5db3b4f",
+          "fd642be94cae4e4190e68141305bdfca"
+        ],
+        "products": 16,
+        "cost": 7,
+        "tested": 6272,
+        "exact_domains": 1,
+        "domain": [
+          "record",
+          {
+            "start": [
+              "ref",
+              "product",
+              "minimum"
+            ],
+            "end": [
+              "select_value",
+              [
+                "ref",
+                "product",
+                "closeout"
+              ],
+              [
+                "min",
+                [
+                  "ref",
+                  "product",
+                  "maximum"
+                ],
+                [
+                  "ref",
+                  "product",
+                  "stock"
+                ]
+              ],
+              [
+                "ref",
+                "product",
+                "maximum"
+              ]
+            ],
+            "stride": [
+              "ref",
+              "product",
+              "step"
+            ]
+          }
+        ],
+        "compatible_modes": [
+          "floor"
+        ],
+        "mode": "floor"
+      }
+    },
+    "storefront": {
+      "storefront_exact": 16,
+      "storefront_misses": [],
+      "cart_exact_by_mode": {
+        "floor": 220,
+        "ceil": 173,
+        "nearest": 201,
+        "reject": 59
+      },
+      "cart_ambiguous": 161,
+      "cart_exact_consensus": 59,
+      "cart_no_compatible_outcome": 0,
+      "fit": {
+        "supervision": "storefront",
+        "source_sha256": "250d8743ed820f058529e1e7a044d99f877d60c88d3f6a93631701a3c2f3cf50",
+        "training_channels": [
+          "3bb9472ae2994040b44e616caf824710",
+          "41302ceaba4f4b62ad7ac55537258eaf",
+          "5a00557b6d1e4ae3838c6da4b5db3b4f",
+          "fd642be94cae4e4190e68141305bdfca"
+        ],
+        "products": 16,
+        "cost": 7,
+        "tested": 1568,
+        "exact_domains": 1,
+        "domain": [
+          "record",
+          {
+            "start": [
+              "ref",
+              "product",
+              "minimum"
+            ],
+            "end": [
+              "select_value",
+              [
+                "ref",
+                "product",
+                "closeout"
+              ],
+              [
+                "min",
+                [
+                  "ref",
+                  "product",
+                  "maximum"
+                ],
+                [
+                  "ref",
+                  "product",
+                  "stock"
+                ]
+              ],
+              [
+                "ref",
+                "product",
+                "maximum"
+              ]
+            ],
+            "stride": [
+              "ref",
+              "product",
+              "step"
+            ]
+          }
+        ],
+        "compatible_modes": [
+          "floor",
+          "ceil",
+          "nearest",
+          "reject"
+        ],
+        "mode": null
+      }
+    }
+  },
+  "runtime": {
+    "cart_exact": 220,
+    "empty_checkout_blocked": 25,
+    "misses": []
+  },
+  "without_stock_dependency": {
+    "cart_exact": 172,
+    "empty_checkout_blocked": 0,
+    "misses": [
+      {
+        "product": "Nordufer Paket 1",
+        "request": 13,
+        "expected": 9,
+        "actual": 13
+      },
+      {
+        "product": "Nordufer Paket 1",
+        "request": 18,
+        "expected": 9,
+        "actual": 17
+      },
+      {
+        "product": "Nordufer Paket 1",
+        "request": 19,
+        "expected": 9,
+        "actual": 17
+      },
+      {
+        "product": "Nordufer Paket 1",
+        "request": 20,
+        "expected": 9,
+        "actual": 17
+      },
+      {
+        "product": "Nordufer Paket 1",
+        "request": 24,
+        "expected": 9,
+        "actual": 17
+      },
+      {
+        "product": "Nordufer Paket 3",
+        "request": 1,
+        "expected": 0,
+        "actual": 3
+      },
+      {
+        "product": "Nordufer Paket 3",
+        "request": 2,
+        "expected": 0,
+        "actual": 3
+      },
+      {
+        "product": "Nordufer Paket 3",
+        "request": 3,
+        "expected": 0,
+        "actual": 3
+      },
+      {
+        "product": "Nordufer Paket 3",
+        "request": 4,
+        "expected": 0,
+        "actual": 3
+      },
+      {
+        "product": "Nordufer Paket 3",
+        "request": 7,
+        "expected": 0,
+        "actual": 3
+      },
+      {
+        "product": "Nordufer Paket 3",
+        "request": 8,
+        "expected": 0,
+        "actual": 8
+      },
+      {
+        "product": "Nordufer Paket 3",
+        "request": 9,
+        "expected": 0,
+        "actual": 8
+      },
+      {
+        "product": "Nordufer Paket 3",
+        "request": 20,
+        "expected": 0,
+        "actual": 18
+      },
+      {
+        "product": "Nordufer Paket 3",
+        "request": 21,
+        "expected": 0,
+        "actual": 18
+      },
+      {
+        "product": "Nordufer Paket 3",
+        "request": 22,
+        "expected": 0,
+        "actual": 18
+      },
+      {
+        "product": "Nordufer Paket 3",
+        "request": 27,
+        "expected": 0,
+        "actual": 18
+      },
+      {
+        "product": "Sandkai Paket 1",
+        "request": 16,
+        "expected": 11,
+        "actual": 16
+      },
+      {
+        "product": "Sandkai Paket 1",
+        "request": 21,
+        "expected": 11,
+        "actual": 21
+      },
+      {
+        "product": "Sandkai Paket 1",
+        "request": 22,
+        "expected": 11,
+        "actual": 21
+      },
+      {
+        "product": "Sandkai Paket 1",
+        "request": 23,
+        "expected": 11,
+        "actual": 21
+      },
+      {
+        "product": "Sandkai Paket 1",
+        "request": 28,
+        "expected": 11,
+        "actual": 21
+      },
+      {
+        "product": "Feldwerk Paket 1",
+        "request": 22,
+        "expected": 16,
+        "actual": 20
+      },
+      {
+        "product": "Feldwerk Paket 1",
+        "request": 23,
+        "expected": 16,
+        "actual": 20
+      },
+      {
+        "product": "Feldwerk Paket 1",
+        "request": 24,
+        "expected": 16,
+        "actual": 20
+      },
+      {
+        "product": "Feldwerk Paket 1",
+        "request": 28,
+        "expected": 16,
+        "actual": 20
+      },
+      {
+        "product": "Feldwerk Paket 3",
+        "request": 1,
+        "expected": 0,
+        "actual": 6
+      },
+      {
+        "product": "Feldwerk Paket 3",
+        "request": 2,
+        "expected": 0,
+        "actual": 6
+      },
+      {
+        "product": "Feldwerk Paket 3",
+        "request": 3,
+        "expected": 0,
+        "actual": 6
+      },
+      {
+        "product": "Feldwerk Paket 3",
+        "request": 4,
+        "expected": 0,
+        "actual": 6
+      },
+      {
+        "product": "Feldwerk Paket 3",
+        "request": 5,
+        "expected": 0,
+        "actual": 6
+      },
+      {
+        "product": "Feldwerk Paket 3",
+        "request": 6,
+        "expected": 0,
+        "actual": 6
+      },
+      {
+        "product": "Feldwerk Paket 3",
+        "request": 7,
+        "expected": 0,
+        "actual": 6
+      },
+      {
+        "product": "Feldwerk Paket 3",
+        "request": 10,
+        "expected": 0,
+        "actual": 6
+      },
+      {
+        "product": "Feldwerk Paket 3",
+        "request": 11,
+        "expected": 0,
+        "actual": 11
+      },
+      {
+        "product": "Feldwerk Paket 3",
+        "request": 12,
+        "expected": 0,
+        "actual": 11
+      },
+      {
+        "product": "Feldwerk Paket 3",
+        "request": 24,
+        "expected": 0,
+        "actual": 21
+      },
+      {
+        "product": "Feldwerk Paket 3",
+        "request": 25,
+        "expected": 0,
+        "actual": 21
+      },
+      {
+        "product": "Feldwerk Paket 3",
+        "request": 26,
+        "expected": 0,
+        "actual": 21
+      },
+      {
+        "product": "Feldwerk Paket 3",
+        "request": 31,
+        "expected": 0,
+        "actual": 21
+      },
+      {
+        "product": "Kronensteg Paket 1",
+        "request": 25,
+        "expected": 20,
+        "actual": 25
+      },
+      {
+        "product": "Kronensteg Paket 1",
+        "request": 26,
+        "expected": 20,
+        "actual": 25
+      },
+      {
+        "product": "Kronensteg Paket 1",
+        "request": 27,
+        "expected": 20,
+        "actual": 25
+      },
+      {
+        "product": "Kronensteg Paket 1",
+        "request": 28,
+        "expected": 20,
+        "actual": 25
+      },
+      {
+        "product": "Kronensteg Paket 1",
+        "request": 33,
+        "expected": 20,
+        "actual": 25
+      },
+      {
+        "product": "Kronensteg Paket 3",
+        "request": 28,
+        "expected": 10,
+        "actual": 26
+      },
+      {
+        "product": "Kronensteg Paket 3",
+        "request": 29,
+        "expected": 10,
+        "actual": 26
+      },
+      {
+        "product": "Kronensteg Paket 3",
+        "request": 30,
+        "expected": 10,
+        "actual": 26
+      },
+      {
+        "product": "Kronensteg Paket 3",
+        "request": 34,
+        "expected": 10,
+        "actual": 26
+      }
+    ],
+    "storefront_exact": 9
+  },
+  "probe_coverage": {
+    "inside_options": 34,
+    "outside_options_with_selection": 161,
+    "no_available_options": 25,
+    "native_statuses": {
+      "200": 220
+    }
+  }
+}

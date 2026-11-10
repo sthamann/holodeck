@@ -1,0 +1,30 @@
+[
+  {
+    "shop": "Nordufer",
+    "productControls": 4,
+    "rawRequest": 10,
+    "storedQuantity": 9,
+    "order": "be9c31c31f4f479fbc513f341787979a"
+  },
+  {
+    "shop": "Sandkai",
+    "productControls": 4,
+    "rawRequest": 12,
+    "storedQuantity": 11,
+    "order": "9fff3abcd1264b01a95d045eb0b0083a"
+  },
+  {
+    "shop": "Feldwerk",
+    "productControls": 4,
+    "rawRequest": 9,
+    "storedQuantity": 8,
+    "order": "633ff74b77c743dd89fc23782cf2d0b1"
+  },
+  {
+    "shop": "Kronensteg",
+    "productControls": 4,
+    "rawRequest": 11,
+    "storedQuantity": 10,
+    "order": "df39255eb9ae43a7b685fe28583af762"
+  }
+]

@@ -20,7 +20,11 @@ from service_intent import EXTRA
 class JointShop(App):
     def __init__(self, args):
         self.store = Store(args.db)
-        self.deck = JointDeck(load(args.checkpoint))
+        commerce = load(args.checkpoint)
+        if getattr(args, 'quantity_program', None):
+            from quantity_program import with_quantity
+            commerce = with_quantity(commerce, args.quantity_program)
+        self.deck = JointDeck(commerce)
         self.shops = json.loads(args.catalog.read_text())
         self.projections = {}
         self.audit = args.audit
@@ -196,6 +200,7 @@ if __name__ == '__main__':
     parser.add_argument('--specialist', type=Path)
     parser.add_argument('--service-weights', type=Path)
     parser.add_argument('--active-specialist', action='store_true')
+    parser.add_argument('--quantity-program', type=Path)
     args = parser.parse_args()
     require_offline(args.teacher_port)
     if args.mode == 'import':
@@ -208,4 +213,6 @@ if __name__ == '__main__':
         if (args.specialist is None) != (args.service_weights is None) or (
                 args.active_specialist and not args.specialist) or (args.intervention and args.specialist):
             parser.error('provide matching specialist and language weights without an intervention')
+        if args.quantity_program and (args.specialist or args.intervention):
+            parser.error('the quantity experiment uses the standalone joint checkpoint')
         serve(JointShop(args), args.port)
