@@ -1,0 +1,92 @@
+:root:has(.showcase) {
+  --paper: #f1eee6;
+  --panel: #fffcf5;
+  --ink: #182b26;
+  --muted: #52615a;
+  --line: #d8d9cc;
+  --accent: #1a4b3e;
+  --tint: #e4ebe0;
+  --chrome: #132e28;
+  --on-chrome: #f2f3e7;
+}
+:root[data-shop="sandfracht"]:has(.showcase) {
+  --paper: #f4eee4;
+  --panel: #fffcf5;
+  --ink: #382a22;
+  --muted: #66564b;
+  --line: #e0d3c3;
+  --accent: #71462d;
+  --tint: #f0e5d6;
+  --chrome: #3e2b21;
+}
+.showcase header { background: var(--chrome); border: 0; }
+.showcase header a, .showcase nav button { color: var(--on-chrome); }
+.showcase nav button[aria-current="page"] { background: color-mix(in srgb, var(--on-chrome) 15%, var(--chrome)); }
+.showcase header :focus-visible { outline-color: var(--on-chrome); }
+.showcase .brand { font-size: 1.45rem; }
+.showcase .intro { gap: 1rem 2rem; margin: 1.7rem 0 1.25rem; }
+.showcase h1 { font-size: clamp(2.4rem, 5vw, 4.1rem); font-weight: 500; line-height: .99; }
+.showcase #caption { margin-top: .5rem; font-size: .92rem; }
+.showcase #ask { flex-basis: 33rem; }
+.showcase textarea { min-height: 4.2rem; font-size: .91rem; }
+.showcase #message:empty { min-height: 0; margin: 0 0 .9rem; }
+.showcase #message:not(:empty) { margin: .4rem 0 .65rem; }
+.showcase .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; }
+.showcase .product { padding: 0 0 .7rem; border: 0; border-radius: 0; border-bottom: 1px solid var(--line); }
+.showcase .product .index { margin-bottom: .38rem; min-height: 2.15rem; padding: .2rem 0; background: transparent; }
+.showcase .product .index strong { font: 650 .85rem/1.3 system-ui, sans-serif; font-variant-numeric: tabular-nums; }
+.showcase .product h3 { font: 600 1.08rem/1.2 Georgia, serif; }
+.showcase .product p { margin: .27rem 0 .48rem; }
+.showcase .product label { font-size: .8rem; }
+.showcase .product-photo { width: 100%; height: auto; aspect-ratio: 1.35; object-fit: cover; display: block; border-radius: .45rem; background: var(--tint); }
+.showcase .product input { min-height: 2.35rem; }
+.showcase .panel { padding: 1rem 1.15rem; }
+.showcase .panel h2 { margin-bottom: .65rem; font-weight: 720; }
+.showcase .panel .grand { font-size: 1.15rem; }
+.showcase[data-scope="admin"] #surface { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
+.showcase[data-scope="admin"] #surface[data-wide-only] { grid-template-columns: minmax(0, 1fr); }
+.showcase[data-scope="admin"] .text-button[data-order] { font-variant-numeric: tabular-nums; }
+.showcase #deck-inspector {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .65rem;
+  min-height: 3.4rem;
+  padding: .45rem .72rem .45rem .95rem;
+  color: var(--on-chrome);
+  background: var(--chrome);
+  border-radius: .6rem;
+  font-size: .84rem;
+}
+.deck-facts, .deck-controls { display: flex; align-items: center; gap: .4rem .85rem; flex-wrap: wrap; }
+.deck-facts strong { font: 600 1.1rem/1.2 Georgia, serif; }
+.deck-mode { padding: .19rem .5rem; border: 1px solid currentColor; border-radius: .25rem; }
+.deck-mode[data-service="true"] { background: #dcf1b7; color: #24371c; border-color: #dcf1b7; }
+.deck-record { font-variant-numeric: tabular-nums; }
+.deck-offline { color: #d0e4b4; }
+.deck-controls summary { cursor: pointer; padding: .25rem; text-decoration: underline; text-underline-offset: .2em; }
+.deck-controls :focus-visible { outline-color: var(--on-chrome); }
+.deck-controls button { color: var(--chrome); background: var(--on-chrome); border-color: var(--on-chrome); min-height: 2.2rem; }
+.deck-trace {
+  position: absolute;
+  right: 0;
+  top: calc(100% + .35rem);
+  z-index: 2;
+  width: min(28rem, 100%);
+  padding: .9rem 1rem;
+  color: var(--on-chrome);
+  background: var(--chrome);
+  border-radius: .6rem;
+}
+.deck-trace ul { margin: .3rem 0 0; padding-left: 1.15rem; }
+@media (max-width: 880px) {
+  .showcase #ask { flex-basis: auto; }
+  .showcase[data-scope="admin"] #surface { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .showcase #deck-inspector { align-items: stretch; flex-direction: column; }
+  .deck-facts, .deck-controls { gap: .4rem .62rem; }
+  .showcase .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .showcase textarea { font-size: 1rem; }
+}

@@ -25,3 +25,5 @@ The local demo uses these photographs from Wikimedia Commons. The cited licenses
 | `press.jpg` | Kreegah | [Bodum French Press](https://commons.wikimedia.org/wiki/File:Bodum_French_Press.jpg) · [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
 
 The photographs are bundled as resized demo assets. Product names, prices, stock, customers and orders in the experiments are synthetic.
+
+The [live showcase](../docs/showcase.md) uses generated catalogue illustrations for the two synthetic merchants. The screenshots record the running application.

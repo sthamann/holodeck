@@ -3,6 +3,7 @@ const $ = (s, root = document) => root.querySelector(s);
 const surface = $('#surface');
 const params = new URLSearchParams(location.search);
 const requestedShop = params.get('shop');
+const demoRequested = params.get('demo') === '1';
 const format = new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'EUR'});
 const money = cents => format.format(cents / 100);
 const title = {storefront: 'Sortiment', checkout: 'Zur Kasse', receipt: 'Bestellung eingegangen', admin: 'Bestellungen'};
@@ -26,6 +27,7 @@ let intent = {...defaultIntent};
 let sorting = {key:'number', reverse:false};
 let filter = {text:'', payment:'', delivery:''};
 let busy = false;
+let showcase = false;
 
 function node(tag, props = {}, children = []) {
   const element = document.createElement(tag);
@@ -110,7 +112,12 @@ function quantities(data, spec) {
           node('option', {value:0, text:'0'}),
           ...choices.map(value => node('option', {value, selected:value === current, text:String(value)}))
         ]);
+    const photo = showcase && index < 5 ? node('img', {
+      class:'product-photo', src:'/showcase/' + (index + 1) + '.webp', alt:name, width:512, height:512,
+      onerror:event => event.currentTarget.hidden = true
+    }) : null;
     return node('div', {class:'product'}, [
+      photo,
       node('div', {class:'index', 'aria-hidden':'true'}, [
         node('strong', {text:String(index + 1).padStart(2, '0')}),
         node('span', {text:item.rate + ' % MwSt.'})
@@ -249,8 +256,52 @@ const components = {
   'quantity-grid':quantities, lines:(data, spec) => spec.source === 'selection' ? detail(data, spec) : lines(data),
   totals, form:coupon, grid:orders, taxes, status:workflow
 };
+
+async function activateService() {
+  await operation(async () => {
+    await api('activate', {session:selected, revision:view.revision, request:crypto.randomUUID()});
+    await load('admin', selected);
+    notice('Servicespezialist für diese Bestellung aktiviert.');
+  });
+}
+
+function renderInspector() {
+  const inspector = $('#deck-inspector');
+  const proof = view.provenance;
+  if (!showcase || !proof) {
+    inspector.hidden = true;
+    return;
+  }
+  const bound = scope === 'receipt' || view.data.selection;
+  const description = bound ? 'Bestellung ' + proof.root.slice(0, 8).toUpperCase() : title[scope];
+  const facts = node('div', {class:'deck-facts'}, [
+    node('strong', {text:'Holodeck'}),
+    node('span', {class:'deck-mode', 'data-service':String(proof.serviceActive),
+                  text:proof.serviceActive ? 'Service aktiv' : 'Basisdeck'}),
+    node('span', {class:'deck-record', text:description + ' · Revision ' + view.revision}),
+    proof.teacherOffline ? node('span', {class:'deck-offline', text:'Shopware aus'}) : null
+  ]);
+  const actions = node('div', {class:'deck-controls'}, [
+    node('details', {}, [
+      node('summary', {text:'Projektion ansehen'}),
+      node('div', {class:'deck-trace'}, [
+        node('p', {text:'Checkpoint ' + proof.checkpoint.slice(0, 12)}),
+        node('ul', {}, view.nodes.map(spec => {
+          const bindings = spec.actions.map(action => action.id + ' → ' + action.binding);
+          return node('li', {text:headings[spec.id] + (bindings.length ? ' · ' + bindings.join(', ') : '')});
+        }))
+      ])
+    ]),
+    proof.activationAvailable ? node('button', {type:'button', id:'activate-service', text:'Service aktivieren',
+      onclick:activateService}) : null
+  ]);
+  inspector.replaceChildren(facts, actions);
+  inspector.hidden = false;
+}
+
 function render() {
   const label = scope === 'storefront' ? session.name : title[scope];
+  document.body.dataset.scope = scope;
   $('#heading').textContent = label;
   $('#caption').textContent = scope === 'admin' ? session.name + ' · Bestellungen im Testshop' :
     scope === 'storefront' ? 'Das Sortiment und dein Warenkorb' : session.name + ' · Testshop';
@@ -274,6 +325,11 @@ function render() {
   }
   surface.toggleAttribute('data-wide-only', main.hasChildNodes() && !side.hasChildNodes());
   surface.replaceChildren(...[main, side].filter(lane => lane.hasChildNodes()));
+  renderInspector();
+  if (showcase && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    surface.animate([{opacity:.5, transform:'translateY(5px)'}, {opacity:1, transform:'translateY(0)'}],
+                    {duration:240, easing:'cubic-bezier(.16, 1, .3, 1)'});
+  }
 }
 $('#ask').addEventListener('submit', event => {
   event.preventDefault();
@@ -300,13 +356,16 @@ operation(async () => {
   sessionStorage.setItem(sessionKey, session.session);
   const active = session.shop || requestedShop || 'uferkauf';
   const shops = session.shops || [{key:'uferkauf', name:'Uferkauf'}, {key:'heidewerk', name:'Heidewerk'}];
+  showcase = Boolean(demoRequested && session.showcase);
+  document.body.classList.toggle('showcase', showcase);
   document.documentElement.dataset.shop = active;
+  const demoSuffix = showcase ? '&demo=1' : '';
   $('.shop-links').replaceChildren(...shops.map(item => node('a', {
-    href:'/?shop=' + encodeURIComponent(item.key), text:item.name, 'aria-current':item.key === active ? 'true' : false
+    href:'/?shop=' + encodeURIComponent(item.key) + demoSuffix, text:item.name, 'aria-current':item.key === active ? 'true' : false
   })));
   if (session.adminIntent) intent.admin = session.adminIntent;
   $('#brand').textContent = session.name;
-  $('#brand').href = '/?shop=' + encodeURIComponent(active);
+  $('#brand').href = '/?shop=' + encodeURIComponent(active) + demoSuffix;
   document.title = session.name + ' · Holodeck';
   await load('storefront');
 });

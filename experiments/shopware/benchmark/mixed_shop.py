@@ -26,7 +26,8 @@ SHOPS = {
                                             'Schleifklotz', 'Handbürste', 'Leinenschnur', 'Schraubzwinge')),
 }
 PATHS = {'/': ('index.html', 'text/html'), '/shop.css': ('shop.css', 'text/css'),
-         '/shop.js': ('shop.js', 'text/javascript')}
+         '/shop.js': ('shop.js', 'text/javascript'), '/showcase.css': ('showcase.css', 'text/css'),
+         **{f'/showcase/{i}.webp': (f'showcase/{i}.webp', 'image/webp') for i in range(1, 6)}}
 
 
 class App:
@@ -174,11 +175,13 @@ def serve(app, port):
     class Handler(BaseHTTPRequestHandler):
         def send(self, status, body, mime):
             self.send_response(status)
-            self.send_header('Content-Type', mime + '; charset=utf-8')
+            encoded = body if isinstance(body, bytes) else body.encode()
+            self.send_header('Content-Type', mime if isinstance(body, bytes) else mime + '; charset=utf-8')
+            self.send_header('Content-Length', str(len(encoded)))
             self.send_header('Cache-Control', 'no-store')
             self.send_header('X-Content-Type-Options', 'nosniff')
             self.end_headers()
-            self.wfile.write(body.encode())
+            self.wfile.write(encoded)
 
         def do_GET(self):
             entry = PATHS.get(urlsplit(self.path).path)
@@ -186,7 +189,14 @@ def serve(app, port):
                 self.send(404, 'Not found', 'text/plain')
                 return
             name, mime = entry
-            self.send(200, (HERE / 'mixed_ui' / name).read_text(), mime)
+            source = HERE / 'mixed_ui' / name
+            if mime.startswith('image/'):
+                if not source.is_file():
+                    self.send(404, 'Not found', 'text/plain')
+                    return
+                self.send(200, source.read_bytes(), mime)
+            else:
+                self.send(200, source.read_text(), mime)
 
         def do_POST(self):
             routes = {'/api/session': app.new_session, '/api/project': app.project, '/api/action': app.action}

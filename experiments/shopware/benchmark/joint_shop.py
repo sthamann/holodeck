@@ -28,6 +28,13 @@ class JointShop(App):
         self.shops = json.loads(args.catalog.read_text())
         self.projections = {}
         self.audit = args.audit
+        self.showcase = args.showcase
+        self.teacher_port = args.teacher_port
+        if self.showcase:
+            labels = ('Mokkakanne aus Stahl', 'Espressotasse mit Untertasse', 'French Press',
+                      'Espresso Vorratspack', 'Dosierlöffel aus Messing')
+            for shop in self.shops.values():
+                shop['names'].update({item['id']: name for item, name in zip(shop['catalog'], labels)})
         features = TextFeatures(args.base, (), [(('admin',), '')])
         self.language = AdminProjection(features, args.language_weights, None)
         if args.intervention:
@@ -75,6 +82,8 @@ class JointShop(App):
         shop = self.shops[slug]
         profile = {'name': shop['name'], 'shop': slug, 'demoCode': shop['code'], 'adminIntent': FULL,
                    'shops': [{'key': key, 'name': item['name']} for key, item in self.shops.items()]}
+        if self.showcase:
+            profile['showcase'] = True
         root = body.get('resume')
         if root:
             try:
@@ -125,6 +134,12 @@ class JointShop(App):
         deck = self.pinned(state)
         nodes, offers = deck.view(state, scope, facets, bool(selected))
         result = self.view(session, scope, nodes, selected)
+        if self.showcase:
+            require_offline(self.teacher_port)
+            active = self.candidate is not None and self.candidate.identity == deck.identity
+            result['provenance'] = {'checkpoint': deck.identity, 'root': state['root'],
+                                    'serviceActive': active, 'teacherOffline': True,
+                                    'activationAvailable': bool(selected and self.candidate and not active)}
         projection = uuid4().hex
         self.projections[session, scope] = {'id': projection, 'nodes': nodes, 'offers': offers,
                                            'selected': selected, 'facets': facets, 'request': request,
@@ -201,6 +216,7 @@ if __name__ == '__main__':
     parser.add_argument('--service-weights', type=Path)
     parser.add_argument('--active-specialist', action='store_true')
     parser.add_argument('--quantity-program', type=Path)
+    parser.add_argument('--showcase', action='store_true')
     args = parser.parse_args()
     require_offline(args.teacher_port)
     if args.mode == 'import':

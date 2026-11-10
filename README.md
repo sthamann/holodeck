@@ -32,6 +32,10 @@ In Hafenrechnung, four products go into the cart. A 17% coupon brings the rounde
 
 [Storefront](assets/experiments/joint-deck/hafenrechnung-storefront.png) · [Checkout](assets/experiments/joint-deck/hafenrechnung-checkout.png) · [Admin](assets/experiments/joint-deck/hafenrechnung-admin.png) · [Walk through the browser captures](docs/joint-deck.md#one-order-in-the-browser)
 
+### Interactive demo in Birkenkai and Sandfracht
+
+Follow one checkout from the storefront into Admin. Ask for service actions, activate the specialist and run the same request again. The live inspector shows the order revision, checkpoint and action bindings. [Run the demo and see the browser captures](docs/showcase.md)
+
 ### A new capability on an existing order
 
 A service specialist learned which return and refund status changes Shopware accepts. In the browser, the same paid order gains the permitted Admin controls when the checked specialist is activated. All four test orders resume on that version after a restart.
