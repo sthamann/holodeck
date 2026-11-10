@@ -1,0 +1,493 @@
+{
+  "schema": "holodeck.roadmap/1",
+  "revision": 2,
+  "date": "2026-11-10",
+  "status": "planned",
+  "milestones": [
+    {
+      "id": "M0",
+      "title": "Boundary and teaching contract"
+    },
+    {
+      "id": "M1",
+      "title": "Shared learned business model"
+    },
+    {
+      "id": "M2",
+      "title": "Complete standard-commerce flows"
+    },
+    {
+      "id": "M3",
+      "title": "Projections from the same semantics"
+    },
+    {
+      "id": "M4",
+      "title": "Connected learning and causal evidence"
+    },
+    {
+      "id": "M5",
+      "title": "New policy and merchant transfer"
+    },
+    {
+      "id": "M6",
+      "title": "Reproducible commerce deck"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "H01",
+      "milestone": "M0",
+      "title": "Locate current business decisions",
+      "status": "planned",
+      "depends_on": [],
+      "files": [
+        "experiments/shopware/native/service.py",
+        "docs/decision-inventory.json"
+      ],
+      "instructions": "Trace the real cart, checkout and return path. Attribute each commercial decision to host code or a learned graph; preserve the existing results as baseline."
+    },
+    {
+      "id": "H02",
+      "milestone": "M0",
+      "title": "Define the shared model contract",
+      "status": "planned",
+      "depends_on": [
+        "H01"
+      ],
+      "files": [
+        "src/holodeck/contracts.py",
+        "src/holodeck/primitives.py"
+      ],
+      "instructions": "Specify DeckStep, checkpoint, effects, continuation and projection. Freeze generic primitives with exact type and rounding semantics. No tax, checkout or return primitive may hide the business rule."
+    },
+    {
+      "id": "H03",
+      "milestone": "M0",
+      "title": "Collect complete commerce teaching cases",
+      "status": "planned",
+      "depends_on": [
+        "H02"
+      ],
+      "files": [
+        "experiments/shopware/oracle/",
+        "datasets/commerce/schema.json"
+      ],
+      "instructions": "Vary teacher configurations. Capture complete cart-to-return trajectories, rejected events and unchanged states. Give missing Shopware behaviours an explicitly independent reference contract."
+    },
+    {
+      "id": "H04",
+      "milestone": "M0",
+      "title": "Freeze independent evaluation families",
+      "status": "planned",
+      "depends_on": [
+        "H03"
+      ],
+      "files": [
+        "experiments/shopware/evaluation/",
+        "docs/evaluation.md"
+      ],
+      "instructions": "Separate merchants and rule combinations across training and evaluation. Equalize baseline context and verification access. Resolve the trainable model, tokenizer and hardware early. Evaluate against independent outcomes rather than the candidate validator."
+    },
+    {
+      "id": "H05",
+      "milestone": "M1",
+      "title": "Connect exact objects to the representation",
+      "status": "planned",
+      "depends_on": [
+        "H02"
+      ],
+      "files": [
+        "src/holodeck/encoder.py",
+        "src/holodeck/state.py"
+      ],
+      "instructions": "Connect text and image features to typed objects, events and configuration. Preserve exact prices, quantities and identities as referenced operands. Declare completeness of required collections."
+    },
+    {
+      "id": "H06",
+      "milestone": "M1",
+      "title": "Implement the learnable business graph",
+      "status": "planned",
+      "depends_on": [
+        "H02",
+        "H05"
+      ],
+      "files": [
+        "src/holodeck/model.py",
+        "src/holodeck/graph.py",
+        "src/holodeck/heads.py"
+      ],
+      "instructions": "Extend learned operand and operator selection to guards, object changes and continuations inside one Deck step. The output must carry business conditions and effects rather than a host function name."
+    },
+    {
+      "id": "H07",
+      "milestone": "M1",
+      "title": "Build the generic commit boundary",
+      "status": "planned",
+      "depends_on": [
+        "H02",
+        "H05"
+      ],
+      "files": [
+        "src/holodeck/store.py",
+        "src/holodeck/commit.py"
+      ],
+      "instructions": "Commit typed changes, continuation, receipt and outbox together. Check access and versions. Stable effect identity prevents duplicate effects. Return conflicts to the model without calculating a replacement business decision."
+    },
+    {
+      "id": "H08",
+      "milestone": "M1",
+      "title": "Learn cart validity and pricing",
+      "status": "planned",
+      "depends_on": [
+        "H03",
+        "H04",
+        "H06",
+        "H07"
+      ],
+      "files": [
+        "src/holodeck/learning.py",
+        "tests/test_learned_cart.py"
+      ],
+      "instructions": "Learn eligibility, gross and net amounts, tax, configured discounts and simple shipping conditions. Test rounding boundaries, mixed lines, inactive products and invalid quantities against independent labels."
+    },
+    {
+      "id": "H09",
+      "milestone": "M1",
+      "title": "Remove host decisions from the target path",
+      "status": "planned",
+      "depends_on": [
+        "H01",
+        "H08"
+      ],
+      "files": [
+        "src/holodeck/adapters/http.py",
+        "tests/test_decision_origin.py"
+      ],
+      "instructions": "Route existing API input through the Deck step. Retain transport and formatting only. Remove a relevant learned graph part and verify that the capability disappears without a host fallback."
+    },
+    {
+      "id": "H10",
+      "milestone": "M2",
+      "title": "Learn checkout and order formation",
+      "status": "planned",
+      "depends_on": [
+        "H09"
+      ],
+      "files": [
+        "src/holodeck/model.py",
+        "tests/test_learned_checkout.py"
+      ],
+      "instructions": "Learn customer requirements, consent binding, joint order changes and stock effects. Exercise an empty cart, price changes, the last unit and repeated confirmation. One accepted checkout must produce one consistent order."
+    },
+    {
+      "id": "H11",
+      "milestone": "M2",
+      "title": "Learn payment continuations",
+      "status": "planned",
+      "depends_on": [
+        "H10"
+      ],
+      "files": [
+        "src/holodeck/scheduler.py",
+        "experiments/shopware/payment_simulator.py",
+        "tests/test_learned_payment.py"
+      ],
+      "instructions": "Deliver authorization, capture, failure, unknown outcome and refund as events. The model determines waiting, compensation and release for fulfilment. Duplicate or late messages must not duplicate charges or orders."
+    },
+    {
+      "id": "H12",
+      "milestone": "M2",
+      "title": "Learn fulfilment and partial returns",
+      "status": "planned",
+      "depends_on": [
+        "H11"
+      ],
+      "files": [
+        "tests/test_learned_return.py",
+        "datasets/commerce/returns/"
+      ],
+      "instructions": "Connect shipment, return handover, receipt, inspection and refund in the same model. Learn payment eligibility and resale eligibility separately. A refund alone must not restore stock."
+    },
+    {
+      "id": "H13",
+      "milestone": "M2",
+      "title": "Compare complete commerce trajectories",
+      "status": "planned",
+      "depends_on": [
+        "H10",
+        "H11",
+        "H12"
+      ],
+      "files": [
+        "experiments/shopware/evaluation/",
+        "tests/test_commerce_trajectories.py"
+      ],
+      "instructions": "Evaluate whole journeys and failures against independent expectations. Separate retrieval, guard, calculation and continuation errors. Extend API coverage only for the contracts actually demonstrated."
+    },
+    {
+      "id": "H14",
+      "milestone": "M2",
+      "title": "Restore business processes after restart",
+      "status": "planned",
+      "depends_on": [
+        "H13"
+      ],
+      "files": [
+        "src/holodeck/checkpoint.py",
+        "tests/test_restart.py"
+      ],
+      "instructions": "Restart after ordering, payment requests and pending inspection. Preserve model identity, agreements and completed effects. Do not silently change the semantics of an active continuation."
+    },
+    {
+      "id": "H15",
+      "milestone": "M3",
+      "title": "Import catalog, media and merchant data",
+      "status": "planned",
+      "depends_on": [
+        "H05"
+      ],
+      "files": [
+        "src/holodeck/imports.py",
+        "experiments/shopware/merchants/"
+      ],
+      "instructions": "Map products, variants, media, conditions and style declaratively. Keep vector retrieval separate from authoritative facts. Replay historical expectations only with the needed historical conditions. ERP stays excluded."
+    },
+    {
+      "id": "H16",
+      "milestone": "M3",
+      "title": "Read actions and projections from the same semantics",
+      "status": "planned",
+      "depends_on": [
+        "H06",
+        "H13"
+      ],
+      "files": [
+        "src/holodeck/projection.py",
+        "src/holodeck/heads.py"
+      ],
+      "instructions": "Bind the action and projection outputs to the executed business graph. Each commercial control references the same guard and model version used when its event is executed."
+    },
+    {
+      "id": "H17",
+      "milestone": "M3",
+      "title": "Provide usable generic components",
+      "status": "planned",
+      "depends_on": [
+        "H16"
+      ],
+      "files": [
+        "ui/components/",
+        "ui/bindings/"
+      ],
+      "instructions": "Provide cards, grids, forms, totals and history with typed bindings. Preserve sorting, filtering, focus and drafts. Components must not contain a second pricing or return policy."
+    },
+    {
+      "id": "H18",
+      "milestone": "M3",
+      "title": "Connect shopper and merchant views",
+      "status": "planned",
+      "depends_on": [
+        "H15",
+        "H16",
+        "H17"
+      ],
+      "files": [
+        "ui/",
+        "tests/test_projection_contracts.py"
+      ],
+      "instructions": "Operate catalog, cart, checkout, orders and returns on the same records. Filter authorized data server-side. Reopen familiar views with current bindings; stale views must not bypass access checks."
+    },
+    {
+      "id": "H19",
+      "milestone": "M3",
+      "title": "Keep the model involved as facts change",
+      "status": "planned",
+      "depends_on": [
+        "H14",
+        "H18"
+      ],
+      "files": [
+        "src/holodeck/dependencies.py",
+        "tests/test_changed_facts.py"
+      ],
+      "instructions": "Derive dependencies from executed reads. Recompute affected open decisions after price, quantity or state changes. Obtain required new consent while preserving unaffected drafts and completed agreements."
+    },
+    {
+      "id": "H20",
+      "milestone": "M4",
+      "title": "Build aligned understanding and execution data",
+      "status": "planned",
+      "depends_on": [
+        "H04",
+        "H13",
+        "H19"
+      ],
+      "files": [
+        "training/export.py",
+        "training/schema.json"
+      ],
+      "instructions": "Link intents, states, decisions, graphs, continuations and action bindings in each case. Validate generated candidates by independent execution. Attractive UI is not a commercial correctness label."
+    },
+    {
+      "id": "H21",
+      "milestone": "M4",
+      "title": "Train the connected model path",
+      "status": "planned",
+      "depends_on": [
+        "H20"
+      ],
+      "files": [
+        "training/train.py",
+        "training/model_manifest.json",
+        "src/holodeck/heads.py"
+      ],
+      "instructions": "Connect the already learned business core to encoder and projection training. Distinguish frozen features, learned selections and optional LoRA weights. Show that the consumer loads the trained artifact."
+    },
+    {
+      "id": "H22",
+      "milestone": "M4",
+      "title": "Test fusion with causal interventions",
+      "status": "planned",
+      "depends_on": [
+        "H21"
+      ],
+      "files": [
+        "tests/test_model_ablation.py",
+        "experiments/shopware/evaluation/"
+      ],
+      "instructions": "Disable relevant guards, operands or continuations and observe the expected loss. Compare base, retrieval and training with equal knowledge and verification access. Common packaging is not evidence of fusion."
+    },
+    {
+      "id": "H23",
+      "milestone": "M4",
+      "title": "Compile and restore learned subgraphs",
+      "status": "planned",
+      "depends_on": [
+        "H21",
+        "H22"
+      ],
+      "files": [
+        "src/holodeck/compile.py",
+        "src/holodeck/checkpoint.py",
+        "tests/test_model_equivalence.py"
+      ],
+      "instructions": "Specialize only stable parts and preserve dynamic selections. Compare acceptance, refusal, effects, continuations and action masks between normal and compiled execution. Restore the exact learned semantics."
+    },
+    {
+      "id": "H24",
+      "milestone": "M5",
+      "title": "Learn a new early-refund policy",
+      "status": "planned",
+      "depends_on": [
+        "H20",
+        "H22"
+      ],
+      "files": [
+        "training/policy_adaptation.py",
+        "tests/test_policy_adaptation.py"
+      ],
+      "instructions": "Learn early refund after confirmed return handover for a configured customer attribute and amount limit. Test boundaries, changed items and partial quantities. Keep restock bound to confirmed resale eligibility."
+    },
+    {
+      "id": "H25",
+      "milestone": "M5",
+      "title": "Transfer without changing the host",
+      "status": "planned",
+      "depends_on": [
+        "H23",
+        "H24"
+      ],
+      "files": [
+        "experiments/shopware/evaluation/transfer.py",
+        "experiments/shopware/merchants/"
+      ],
+      "instructions": "Use one runtime artifact for two merchants. Change only declared data, configuration and model artifacts. Vary products, names and thresholds. Give direct rule generation the same context and checks."
+    },
+    {
+      "id": "H26",
+      "milestone": "M5",
+      "title": "Turn capability gaps into learning cases",
+      "status": "planned",
+      "depends_on": [
+        "H19",
+        "H25"
+      ],
+      "files": [
+        "src/holodeck/gaps.py",
+        "src/holodeck/learning.py"
+      ],
+      "instructions": "Distinguish missing facts, retrieval errors, impossible requests and missing rules. Preserve a concrete counterexample. Open a new learning round with separate development and independent evaluation cases."
+    },
+    {
+      "id": "H27",
+      "milestone": "M5",
+      "title": "Activate and roll back an improvement",
+      "status": "planned",
+      "depends_on": [
+        "H14",
+        "H25",
+        "H26"
+      ],
+      "files": [
+        "src/holodeck/activation.py",
+        "tests/test_learning_cycle.py"
+      ],
+      "instructions": "Activate a checked model for new runs, restart and show its actual effect in merchant B. Preserve existing capabilities. Restore the previous artifact. Connect detection, learning, persistence and use."
+    },
+    {
+      "id": "H28",
+      "milestone": "M6",
+      "title": "Measure speed with semantic provenance",
+      "status": "planned",
+      "depends_on": [
+        "H19",
+        "H23",
+        "H27"
+      ],
+      "files": [
+        "benchmarks/commerce.py",
+        "docs/performance.md"
+      ],
+      "instructions": "Measure computation, commit, saved views and new projection separately. Count interactions without a large model while retaining Deck semantics. Distinguish target budgets from measured latency."
+    },
+    {
+      "id": "H29",
+      "milestone": "M6",
+      "title": "Reproduce startup and API comparison",
+      "status": "planned",
+      "depends_on": [
+        "H15",
+        "H18",
+        "H25"
+      ],
+      "files": [
+        "experiments/shopware/README.md",
+        "scripts/demo.py",
+        "tests/test_api_contracts.py"
+      ],
+      "instructions": "Provide a clean local database, synthetic merchants, media and test payments. Route Store and Admin comparisons through the same model. A fresh checkout must work without private local files."
+    },
+    {
+      "id": "H30",
+      "milestone": "M6",
+      "title": "Accept the actual commerce-deck claim",
+      "status": "planned",
+      "depends_on": [
+        "H13",
+        "H14",
+        "H19",
+        "H22",
+        "H23",
+        "H27",
+        "H28",
+        "H29"
+      ],
+      "files": [
+        "experiments/shopware/evidence/",
+        "docs/status.md",
+        "README.md"
+      ],
+      "instructions": "Demonstrate purchase, payment, partial return, inspection, new policy and merchant transfer. Record decision origin, ablation, fixed host, restore and independent outcomes. Keep unproved claims explicit."
+    }
+  ]
+}

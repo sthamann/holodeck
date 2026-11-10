@@ -1,0 +1,479 @@
+[
+  {
+    "event": {
+      "kind": "refund",
+      "root": "case-1000",
+      "now": 1800001000,
+      "id": "shopvm-kanne-1000-refund"
+    },
+    "before": {
+      "tenant": "Kanne",
+      "revision": 0,
+      "root": "case-1000",
+      "objects": [
+        {
+          "id": "case-1000",
+          "kind": "root",
+          "parent": null,
+          "fields": {
+            "gross": 56664,
+            "tax": 3707,
+            "net": 52957,
+            "goods": 10001,
+            "order_total": 56664,
+            "order_net": 52957,
+            "order_tax": 3707,
+            "credit": 0
+          }
+        },
+        {
+          "id": "15a1b2d3b54f52f29e7036d2fe33a51a",
+          "kind": "item",
+          "parent": "case-1000",
+          "fields": {
+            "unit": 14166,
+            "quantity": 4,
+            "rate": 7,
+            "gross": 56664,
+            "tax": 3707,
+            "net": 52957
+          }
+        },
+        {
+          "id": "transaction-1000",
+          "kind": "transaction",
+          "parent": "case-1000",
+          "fields": {
+            "state": 1,
+            "amount": 56664
+          }
+        },
+        {
+          "id": "await-1000",
+          "kind": "continuation",
+          "parent": "case-1000",
+          "fields": {
+            "active": 0,
+            "due": 1800008200
+          }
+        }
+      ],
+      "config": {
+        "credit_rate": 3,
+        "credit_cap": 700,
+        "wait_seconds": 7200,
+        "shipping_gross": 0,
+        "shipping_tax": 0
+      }
+    },
+    "after": {
+      "tenant": "Kanne",
+      "revision": 0,
+      "root": "case-1000",
+      "objects": [
+        {
+          "id": "case-1000",
+          "kind": "root",
+          "parent": null,
+          "fields": {
+            "gross": 56664,
+            "tax": 3707,
+            "net": 52957,
+            "goods": 10001,
+            "order_total": 56664,
+            "order_net": 52957,
+            "order_tax": 3707,
+            "credit": 300
+          }
+        },
+        {
+          "id": "15a1b2d3b54f52f29e7036d2fe33a51a",
+          "kind": "item",
+          "parent": "case-1000",
+          "fields": {
+            "unit": 14166,
+            "quantity": 4,
+            "rate": 7,
+            "gross": 56664,
+            "tax": 3707,
+            "net": 52957
+          }
+        },
+        {
+          "id": "transaction-1000",
+          "kind": "transaction",
+          "parent": "case-1000",
+          "fields": {
+            "state": 2,
+            "amount": 56664
+          }
+        },
+        {
+          "id": "await-1000",
+          "kind": "continuation",
+          "parent": "case-1000",
+          "fields": {
+            "active": 0,
+            "due": 1800008200
+          }
+        }
+      ],
+      "config": {
+        "credit_rate": 3,
+        "credit_cap": 700,
+        "wait_seconds": 7200,
+        "shipping_gross": 0,
+        "shipping_tax": 0
+      }
+    },
+    "source": "Independent, explicitly chosen synthetic merchant examples with literal labels; neither Shopware nor Qwen labels",
+    "raw": {
+      "payment": "refunded",
+      "transaction_id": "01a1c3ef3f4b735aadc79002edbcea68"
+    }
+  },
+  {
+    "event": {
+      "kind": "refund",
+      "root": "case-1001",
+      "now": 1800001001,
+      "id": "shopvm-kanne-1001-refund"
+    },
+    "before": {
+      "tenant": "Kanne",
+      "revision": 0,
+      "root": "case-1001",
+      "objects": [
+        {
+          "id": "case-1001",
+          "kind": "root",
+          "parent": null,
+          "fields": {
+            "gross": 30458,
+            "tax": 4480,
+            "net": 25978,
+            "goods": 40000,
+            "order_total": 30458,
+            "order_net": 25978,
+            "order_tax": 4480,
+            "credit": 0
+          }
+        },
+        {
+          "id": "57257aa382c9518babdfd760acb49cf3",
+          "kind": "item",
+          "parent": "case-1001",
+          "fields": {
+            "unit": 2031,
+            "quantity": 2,
+            "rate": 7,
+            "gross": 4062,
+            "tax": 266,
+            "net": 3796
+          }
+        },
+        {
+          "id": "f3ea4ff5aaa459eda7147ed9837cf4c3",
+          "kind": "item",
+          "parent": "case-1001",
+          "fields": {
+            "unit": 6599,
+            "quantity": 4,
+            "rate": 19,
+            "gross": 26396,
+            "tax": 4214,
+            "net": 22182
+          }
+        },
+        {
+          "id": "transaction-1001",
+          "kind": "transaction",
+          "parent": "case-1001",
+          "fields": {
+            "state": 1,
+            "amount": 30458
+          }
+        },
+        {
+          "id": "await-1001",
+          "kind": "continuation",
+          "parent": "case-1001",
+          "fields": {
+            "active": 0,
+            "due": 1800008201
+          }
+        }
+      ],
+      "config": {
+        "credit_rate": 3,
+        "credit_cap": 700,
+        "wait_seconds": 7200,
+        "shipping_gross": 0,
+        "shipping_tax": 0
+      }
+    },
+    "after": {
+      "tenant": "Kanne",
+      "revision": 0,
+      "root": "case-1001",
+      "objects": [
+        {
+          "id": "case-1001",
+          "kind": "root",
+          "parent": null,
+          "fields": {
+            "gross": 30458,
+            "tax": 4480,
+            "net": 25978,
+            "goods": 40000,
+            "order_total": 30458,
+            "order_net": 25978,
+            "order_tax": 4480,
+            "credit": 700
+          }
+        },
+        {
+          "id": "57257aa382c9518babdfd760acb49cf3",
+          "kind": "item",
+          "parent": "case-1001",
+          "fields": {
+            "unit": 2031,
+            "quantity": 2,
+            "rate": 7,
+            "gross": 4062,
+            "tax": 266,
+            "net": 3796
+          }
+        },
+        {
+          "id": "f3ea4ff5aaa459eda7147ed9837cf4c3",
+          "kind": "item",
+          "parent": "case-1001",
+          "fields": {
+            "unit": 6599,
+            "quantity": 4,
+            "rate": 19,
+            "gross": 26396,
+            "tax": 4214,
+            "net": 22182
+          }
+        },
+        {
+          "id": "transaction-1001",
+          "kind": "transaction",
+          "parent": "case-1001",
+          "fields": {
+            "state": 2,
+            "amount": 30458
+          }
+        },
+        {
+          "id": "await-1001",
+          "kind": "continuation",
+          "parent": "case-1001",
+          "fields": {
+            "active": 0,
+            "due": 1800008201
+          }
+        }
+      ],
+      "config": {
+        "credit_rate": 3,
+        "credit_cap": 700,
+        "wait_seconds": 7200,
+        "shipping_gross": 0,
+        "shipping_tax": 0
+      }
+    },
+    "source": "Independent, explicitly chosen synthetic merchant examples with literal labels; neither Shopware nor Qwen labels",
+    "raw": {
+      "payment": "refunded",
+      "transaction_id": "01a1c3ef4eec73ada6d1b49e5d35a8ff"
+    }
+  },
+  {
+    "event": {
+      "kind": "refund",
+      "root": "case-1002",
+      "now": 1800001002,
+      "id": "shopvm-kanne-1002-refund"
+    },
+    "before": {
+      "tenant": "Kanne",
+      "revision": 0,
+      "root": "case-1002",
+      "objects": [
+        {
+          "id": "case-1002",
+          "kind": "root",
+          "parent": null,
+          "fields": {
+            "gross": 157882,
+            "tax": 10329,
+            "net": 147553,
+            "goods": 19199,
+            "order_total": 157882,
+            "order_net": 147553,
+            "order_tax": 10329,
+            "credit": 0
+          }
+        },
+        {
+          "id": "b7ca1d93414b5b58a3309bb4c3893c9a",
+          "kind": "item",
+          "parent": "case-1002",
+          "fields": {
+            "unit": 17180,
+            "quantity": 3,
+            "rate": 7,
+            "gross": 51540,
+            "tax": 3372,
+            "net": 48168
+          }
+        },
+        {
+          "id": "93411a1ac9bf5406a45e073ea57b814f",
+          "kind": "item",
+          "parent": "case-1002",
+          "fields": {
+            "unit": 19629,
+            "quantity": 4,
+            "rate": 7,
+            "gross": 78516,
+            "tax": 5137,
+            "net": 73379
+          }
+        },
+        {
+          "id": "afd5822e8cbb5438989fb70ac387b993",
+          "kind": "item",
+          "parent": "case-1002",
+          "fields": {
+            "unit": 13913,
+            "quantity": 2,
+            "rate": 7,
+            "gross": 27826,
+            "tax": 1820,
+            "net": 26006
+          }
+        },
+        {
+          "id": "transaction-1002",
+          "kind": "transaction",
+          "parent": "case-1002",
+          "fields": {
+            "state": 1,
+            "amount": 157882
+          }
+        },
+        {
+          "id": "await-1002",
+          "kind": "continuation",
+          "parent": "case-1002",
+          "fields": {
+            "active": 0,
+            "due": 1800008202
+          }
+        }
+      ],
+      "config": {
+        "credit_rate": 5,
+        "credit_cap": 1100,
+        "wait_seconds": 7200,
+        "shipping_gross": 0,
+        "shipping_tax": 0
+      }
+    },
+    "after": {
+      "tenant": "Kanne",
+      "revision": 0,
+      "root": "case-1002",
+      "objects": [
+        {
+          "id": "case-1002",
+          "kind": "root",
+          "parent": null,
+          "fields": {
+            "gross": 157882,
+            "tax": 10329,
+            "net": 147553,
+            "goods": 19199,
+            "order_total": 157882,
+            "order_net": 147553,
+            "order_tax": 10329,
+            "credit": 960
+          }
+        },
+        {
+          "id": "b7ca1d93414b5b58a3309bb4c3893c9a",
+          "kind": "item",
+          "parent": "case-1002",
+          "fields": {
+            "unit": 17180,
+            "quantity": 3,
+            "rate": 7,
+            "gross": 51540,
+            "tax": 3372,
+            "net": 48168
+          }
+        },
+        {
+          "id": "93411a1ac9bf5406a45e073ea57b814f",
+          "kind": "item",
+          "parent": "case-1002",
+          "fields": {
+            "unit": 19629,
+            "quantity": 4,
+            "rate": 7,
+            "gross": 78516,
+            "tax": 5137,
+            "net": 73379
+          }
+        },
+        {
+          "id": "afd5822e8cbb5438989fb70ac387b993",
+          "kind": "item",
+          "parent": "case-1002",
+          "fields": {
+            "unit": 13913,
+            "quantity": 2,
+            "rate": 7,
+            "gross": 27826,
+            "tax": 1820,
+            "net": 26006
+          }
+        },
+        {
+          "id": "transaction-1002",
+          "kind": "transaction",
+          "parent": "case-1002",
+          "fields": {
+            "state": 2,
+            "amount": 157882
+          }
+        },
+        {
+          "id": "await-1002",
+          "kind": "continuation",
+          "parent": "case-1002",
+          "fields": {
+            "active": 0,
+            "due": 1800008202
+          }
+        }
+      ],
+      "config": {
+        "credit_rate": 5,
+        "credit_cap": 1100,
+        "wait_seconds": 7200,
+        "shipping_gross": 0,
+        "shipping_tax": 0
+      }
+    },
+    "source": "Independent, explicitly chosen synthetic merchant examples with literal labels; neither Shopware nor Qwen labels",
+    "raw": {
+      "payment": "refunded",
+      "transaction_id": "01a1c3ef5fa1704596ce1587b09b72dd"
+    }
+  }
+]

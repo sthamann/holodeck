@@ -1,0 +1,8 @@
+{
+  "root":{"gross":"money","tax":"money","net":"money","goods":"money","order_total":"money","order_net":"money","order_tax":"money","credit":"money"},
+  "item":{"unit":"money","quantity":"scalar","rate":"scalar","gross":"money","tax":"money","net":"money"},
+  "transaction":{"state":"enum","amount":"money"},
+  "continuation":{"active":"enum","due":"time"},
+  "config":{"credit_rate":"scalar","credit_cap":"money","wait_seconds":"time","shipping_gross":"money","shipping_tax":"money"},
+  "event":{"now":"time"}
+}

@@ -1,0 +1,28 @@
+{
+  "title": "Sortiment und Bestellungen",
+  "intro": "Pflege dein Sortiment und behalte deine Bestellungen im Blick.",
+  "sections": [
+    {
+      "component": "inventory-table",
+      "title": "Lagerbestand",
+      "binding": "products",
+      "columns": [
+        "name",
+        "productNumber",
+        "price",
+        "stock"
+      ]
+    },
+    {
+      "component": "order-list",
+      "title": "Eingehende Bestellungen",
+      "binding": "orders",
+      "columns": [
+        "name",
+        "productNumber",
+        "price",
+        "stock"
+      ]
+    }
+  ]
+}

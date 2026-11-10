@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "id": "werkraum",
+  "name": "Werkraum",
+  "revision": 1,
+  "currency": "EUR",
+  "locale": "de-DE",
+  "config": {
+    "credit_rate": 8,
+    "credit_cap": 1300,
+    "wait_seconds": 7200,
+    "shipping_gross": 0,
+    "shipping_tax": 0
+  },
+  "style": {
+    "tokens": {
+      "paper": "#f5f2e9",
+      "ink": "#222d29",
+      "accent": "#284b70"
+    },
+    "tone": "klar und persönlich"
+  },
+  "organization": {
+    "roles": {
+      "shopper": [
+        "catalog:read",
+        "cart:write",
+        "order:create"
+      ],
+      "merchant": [
+        "catalog:read",
+        "catalog:write",
+        "order:read"
+      ]
+    }
+  },
+  "products": [
+    {
+      "id": "92062a960e7659d28070e5ced8209d6c",
+      "productNumber": "WERKRAUM-MOKA-3",
+      "name": "Moka Express · 3 Tassen",
+      "description": "Espressokocher aus Aluminium. Für die kleine Kaffeepause.",
+      "taxRate": 19,
+      "active": true,
+      "media": [
+        {
+          "url": "/assets/moka.jpg",
+          "alt": "Moka Express · 3 Tassen"
+        }
+      ],
+      "properties": {
+        "material": "Aluminium"
+      },
+      "variants": []
+    },
+    {
+      "id": "90f7979a8c655915b0c4f7a4342fb41d",
+      "productNumber": "WERKRAUM-MOKA-6",
+      "name": "Moka Express · 6 Tassen",
+      "description": "Mehr Kaffee für die gemeinsame Pause.",
+      "taxRate": 19,
+      "active": true,
+      "media": [
+        {
+          "url": "/assets/moka-pair.jpg",
+          "alt": "Moka Express · 6 Tassen"
+        }
+      ],
+      "properties": {
+        "material": "Aluminium"
+      },
+      "variants": []
+    },
+    {
+      "id": "a837c0ea0b1d532fa198a734efd00e41",
+      "productNumber": "WERKRAUM-PRESS-1",
+      "name": "French Press · 1 Liter",
+      "description": "Glaskanne mit Edelstahlfilter. Klarer, voller Kaffee.",
+      "taxRate": 19,
+      "active": true,
+      "media": [
+        {
+          "url": "/assets/press.jpg",
+          "alt": "French Press · 1 Liter"
+        }
+      ],
+      "properties": {
+        "material": "Glas"
+      },
+      "variants": []
+    }
+  ],
+  "offers": [
+    {
+      "id": "92062a960e7659d28070e5ced8209d6c",
+      "unit_cents": 4200,
+      "stock": 40,
+      "version": 1,
+      "observed_at_ms": 1794291523592
+    },
+    {
+      "id": "90f7979a8c655915b0c4f7a4342fb41d",
+      "unit_cents": 6200,
+      "stock": 25,
+      "version": 1,
+      "observed_at_ms": 1794291523592
+    },
+    {
+      "id": "a837c0ea0b1d532fa198a734efd00e41",
+      "unit_cents": 3700,
+      "stock": 60,
+      "version": 1,
+      "observed_at_ms": 1794291523592
+    }
+  ],
+  "rules": [],
+  "provenance": "synthetic merchant package with existing licensed product photographs; no real customer data; no ERP",
+  "field_mapping": {
+    "sku": "productNumber",
+    "title": "name",
+    "price_gross_cents": "unit_cents",
+    "available_stock": "stock",
+    "vat_percent": "taxRate"
+  }
+}

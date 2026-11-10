@@ -1,0 +1,22 @@
+{
+  "provenance": "Recorded local experiments, November 2026",
+  "reference": "Shopware 6.7.15.1 in local isolated Docker",
+  "live_selected_http_checks": {
+    "exact": 120,
+    "total": 120,
+    "checkout_journeys": 6,
+    "scope": "Same physical Mac, Shopware in Docker and facade native macOS; HTTP calls alternate; not identical runtimes or full response sizes."
+  },
+  "native_recorded_transitions": {
+    "exact": 168,
+    "total": 168
+  },
+  "original_final_http": {
+    "checks": 6,
+    "passed": true,
+    "warm_requests_observed": 108,
+    "large_model_calls": 0
+  },
+  "learning_scope": "Existing synthesized and categorically trained programs compiled; no new foundation model training in this iteration",
+  "reproduction": "The public replay uses the bundled reference traces. The recorded live Shopware comparison was a separate run."
+}

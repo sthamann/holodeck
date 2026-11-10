@@ -1,0 +1,65 @@
+{
+  "reference": "Shopware 6.7.15.1 local container codex-commerce-lab-1109",
+  "vocabulary_sha256": "b031ba7ad6f57861619625b7f9ed92d7abb1aba9d93f59529ac993c87b891c49",
+  "train_trajectories": 30,
+  "unseen_shop_trajectories": 12,
+  "projection": "cart gross/net/tax/goods, per-line gross/net/tax, order totals, payment states; continuation protocol fixture",
+  "not_covered": [
+    "Rule Builder variation",
+    "Flows",
+    "promotions",
+    "net-price shops",
+    "partial refunds",
+    "PSP settlement",
+    "full DAL equivalence",
+    "shipping selection"
+  ],
+  "source_config_variation": {
+    "item_tax_rates": [
+      7,
+      19,
+      20
+    ],
+    "shipping_gross_cents": [
+      0,
+      199,
+      499,
+      799
+    ],
+    "items": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "target_config_variation": {
+    "item_tax_rates": [
+      0,
+      5,
+      16,
+      20
+    ],
+    "shipping_gross_cents": [
+      0,
+      333,
+      899,
+      1299
+    ],
+    "items": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "development_feedback": {
+    "first_target_cohort": "7000..7011, now development-only",
+    "initial_exact_trajectories": "10/12",
+    "cause": "net rounded before tax is ambiguous on initial training data",
+    "new_source_oracle_cases": 6
+  },
+  "held_out_cohort": "9000..9011; generated after source counterexamples; no fitting or checkpoint selection on this cohort"
+}

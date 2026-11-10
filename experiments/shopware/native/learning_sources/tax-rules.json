@@ -1,0 +1,23 @@
+{
+    "source": "Shopware 6.7.15.1 PercentageTaxRuleBuilder, executed locally",
+    "mixed": [
+        {
+            "taxRate": 19,
+            "percentage": 35.735735735736
+        },
+        {
+            "taxRate": 7,
+            "percentage": 64.264264264264
+        }
+    ],
+    "zero": [
+        {
+            "taxRate": 19,
+            "percentage": 50
+        },
+        {
+            "taxRate": 7,
+            "percentage": 50
+        }
+    ]
+}

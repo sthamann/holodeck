@@ -1,0 +1,6 @@
+{
+  "native_transition": {"p95_ms": 10},
+  "bound_view": {"p95_ms": 50},
+  "intent_search_ranking": {"p95_ms": 150, "status": "not_implemented"},
+  "generated_first_frame": {"p95_ms": 400, "status": "not_measured"}
+}

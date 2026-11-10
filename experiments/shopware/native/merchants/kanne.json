@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "id": "kanne",
+  "name": "Kanne",
+  "revision": 1,
+  "currency": "EUR",
+  "locale": "de-DE",
+  "config": {
+    "credit_rate": 3,
+    "credit_cap": 700,
+    "wait_seconds": 7200,
+    "shipping_gross": 0,
+    "shipping_tax": 0
+  },
+  "style": {
+    "tokens": {
+      "paper": "#f5f2e9",
+      "ink": "#222d29",
+      "accent": "#214b3f"
+    },
+    "tone": "klar und persönlich"
+  },
+  "organization": {
+    "roles": {
+      "shopper": [
+        "catalog:read",
+        "cart:write",
+        "order:create"
+      ],
+      "merchant": [
+        "catalog:read",
+        "catalog:write",
+        "order:read"
+      ]
+    }
+  },
+  "products": [
+    {
+      "id": "589c8c6c654d551aaadd2d2698c8d331",
+      "productNumber": "KANNE-MOKA-3",
+      "name": "Moka Express · 3 Tassen",
+      "description": "Espressokocher aus Aluminium. Für die kleine Kaffeepause.",
+      "taxRate": 19,
+      "active": true,
+      "media": [
+        {
+          "url": "/assets/moka.jpg",
+          "alt": "Moka Express · 3 Tassen"
+        }
+      ],
+      "properties": {
+        "material": "Aluminium"
+      },
+      "variants": []
+    },
+    {
+      "id": "b4e977b1f2b453eab8c628e89cd5496e",
+      "productNumber": "KANNE-MOKA-6",
+      "name": "Moka Express · 6 Tassen",
+      "description": "Mehr Kaffee für die gemeinsame Pause.",
+      "taxRate": 19,
+      "active": true,
+      "media": [
+        {
+          "url": "/assets/moka-pair.jpg",
+          "alt": "Moka Express · 6 Tassen"
+        }
+      ],
+      "properties": {
+        "material": "Aluminium"
+      },
+      "variants": []
+    },
+    {
+      "id": "1d669cb1d904594fbd0bd0656794c07d",
+      "productNumber": "KANNE-PRESS-1",
+      "name": "French Press · 1 Liter",
+      "description": "Glaskanne mit Edelstahlfilter. Klarer, voller Kaffee.",
+      "taxRate": 19,
+      "active": true,
+      "media": [
+        {
+          "url": "/assets/press.jpg",
+          "alt": "French Press · 1 Liter"
+        }
+      ],
+      "properties": {
+        "material": "Glas"
+      },
+      "variants": []
+    }
+  ],
+  "offers": [
+    {
+      "id": "589c8c6c654d551aaadd2d2698c8d331",
+      "unit_cents": 3490,
+      "stock": 40,
+      "version": 1,
+      "observed_at_ms": 1794291523592
+    },
+    {
+      "id": "b4e977b1f2b453eab8c628e89cd5496e",
+      "unit_cents": 5490,
+      "stock": 25,
+      "version": 1,
+      "observed_at_ms": 1794291523592
+    },
+    {
+      "id": "1d669cb1d904594fbd0bd0656794c07d",
+      "unit_cents": 2990,
+      "stock": 60,
+      "version": 1,
+      "observed_at_ms": 1794291523592
+    }
+  ],
+  "rules": [],
+  "provenance": "synthetic merchant package with existing licensed product photographs; no real customer data; no ERP",
+  "field_mapping": {
+    "sku": "productNumber",
+    "title": "name",
+    "price_gross_cents": "unit_cents",
+    "available_stock": "stock",
+    "vat_percent": "taxRate"
+  }
+}

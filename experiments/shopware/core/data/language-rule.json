@@ -1,0 +1,37 @@
+{
+  "merchant_rule": "Bei einer vollständigen Erstattung bekommt der Kunde zusätzlich eine Servicegutschrift. Sie beträgt den im Shop konfigurierten Prozentsatz des Warenwerts ohne Versand, höchstens den dort konfigurierten Deckelbetrag. Runde kaufmännisch auf Cent.",
+  "model": "qwen3.6:35b",
+  "seconds": 0.8958133749983972,
+  "prompt": "Convert the merchant rule to ONE expression in the provided generic JSON array grammar.\nReturn only {\"expression\": [...], \"explanation\": \"German readable rule\"}.\nEVERY operand must itself be an expression array. A number must be [\"const\", 100], never a bare 100.\nMoney is integer cents. read uses [\"read\", scope, field]; const uses [\"const\", integer].\nAvailable relevant inputs: root.goods (goods value without shipping, cents), config.credit_rate (percent, e.g. 3), config.credit_cap (cents).\nArithmetic: [\"add\",a,b], [\"sub\",a,b], [\"mul\",a,b], [\"muldiv\",a,b,c] (round a*b/c HALF_UP to integer), [\"min\",a,b], [\"max\",a,b].\nThe caller invokes the rule on full refund only. No event condition is needed in the expression.\nMerchant rule: Bei einer vollständigen Erstattung bekommt der Kunde zusätzlich eine Servicegutschrift. Sie beträgt den im Shop konfigurierten Prozentsatz des Warenwerts ohne Versand, höchstens den dort konfigurierten Deckelbetrag. Runde kaufmännisch auf Cent.",
+  "raw_content": "{\n\"expression\": [\n  \"min\",\n  [\n    \"muldiv\",\n    \"root.goods\",\n    \"config.credit_rate\",\n    100\n  ],\n  \"config.credit_cap\"\n],\n\"explanation\": \"Berechne den Prozentsatz des Warenwerts ohne Versand (multipliziere mit dem konfigurierten Satz und teile durch 100, kaufmännisch gerundet) und begrenze das Ergebnis auf den maximalen Deckelbetrag.\"\n}",
+  "expression": [
+    "min",
+    [
+      "muldiv",
+      [
+        "read",
+        "root",
+        "goods"
+      ],
+      [
+        "read",
+        "config",
+        "credit_rate"
+      ],
+      [
+        "const",
+        100
+      ]
+    ],
+    [
+      "read",
+      "config",
+      "credit_cap"
+    ]
+  ],
+  "readback": "min(runden(root.goods × config.credit_rate / 100), config.credit_cap)",
+  "explanation": "Berechne den Prozentsatz des Warenwerts ohne Versand (multipliziere mit dem konfigurierten Satz und teile durch 100, kaufmännisch gerundet) und begrenze das Ergebnis auf den maximalen Deckelbetrag.",
+  "eval_count": 115,
+  "syntax_normalized": true,
+  "authority": "proposal for synthetic test only"
+}

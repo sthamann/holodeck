@@ -1,0 +1,17 @@
+{
+  "title": "Kaffeekannen Sortiment",
+  "intro": "Finde die passende Kanne für deine Kaffeepause.",
+  "sections": [
+    {
+      "component": "product-grid",
+      "title": "Unsere Modelle",
+      "binding": "products",
+      "columns": [
+        "name",
+        "price",
+        "stock",
+        "stock"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "numeric_representation": "signed integers; money in minor units; muldiv rounds half away from zero",
+  "operations": ["const", "read", "sum", "add", "sub", "mul", "muldiv", "min", "max", "eq", "le", "select"],
+  "effects": ["set"],
+  "scopes": ["self", "root", "config", "event"],
+  "binding": "event.root plus its direct children in the authenticated tenant",
+  "execution": "model-selected ordered dataflow graphs; exact arithmetic; atomic compare-and-swap",
+  "limits": {"integer_bits": 63, "nodes_per_expression": 80, "expression_depth": 16, "max_objects": 256}
+}
