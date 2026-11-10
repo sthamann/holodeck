@@ -1,5 +1,7 @@
 # Holoshop experiments with Shopware
 
+[Marktlabor and the scaled corpus](../../docs/scaled-shopware-learning.md) cover 2,048 native Store and Admin API journeys for catalog edits, coupons, checkout and returns, plus native browser observations and independent two-line basket tests.
+
 Shopware is the teacher for these commerce experiments. We ran an isolated Shopware Community Edition 6.7.15.1 installation with synthetic merchants and recorded selected state transitions. The published code replays those observations and runs a small native shop on the learned computation.
 
 ## Reproduce the published runs

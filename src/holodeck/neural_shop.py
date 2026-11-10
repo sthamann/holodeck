@@ -16,8 +16,10 @@ ORDER_EVENTS = {
     'order_delivery.ship':'delivery', 'order_delivery.retour':'delivery',
     'order_transaction.fail':'payment', 'order_transaction.reopen':'payment',
     'order_delivery.ship_partially':'delivery', 'order_delivery.reopen':'delivery',
+    'order_delivery.retour_partially':'delivery', 'order_transaction.refund_partially':'payment',
 }
 CART_EVENTS = {'cart.add','cart.set','cart.remove'}
+EXTENDED_ORDER_EVENTS = {'order_delivery.retour_partially','order_transaction.refund_partially'}
 EMPTY_CART = {'items':{},'last':''}
 AMOUNTS = ('goods','shipping','gross','tax','net')
 
@@ -40,6 +42,14 @@ class NeuralDeck:
             raise ValueError('Unknown merchant presentation profile')
         self.workspace = Workspace(self.weights.values,workspace_model) if workspace_model and 'ws.schema' in self.weights.values else None
         self.projector = Projector(self.weights.values) if 'ui.schema' in self.weights.values else None
+        self.extended = 'int.scale.catalog.price' in self.weights.values
+        self.promotions = fixture.get('promotions', {})
+        for code, policy in self.promotions.items():
+            mode,value = policy['mode'],policy['value']
+            if (not code or code!=code.strip().upper() or type(policy['active']) is not bool
+                or mode not in ('absolute','percentage') or type(value) is not int
+                or not 1<=value<=(100 if mode=='percentage' else 10**8)):
+                raise ValueError('Invalid configured promotion')
         self.shipping = fixture['shipping']
         self.rate = fixture['rate']
         if self.rate not in (7,19) or any(p['rate']!=self.rate for p in fixture['catalog'].values()):
@@ -50,7 +60,7 @@ class NeuralDeck:
     def roles(self, task):
         return ('admin',) if task=='admin' else ('buyer',) if task in TASKS else ()
 
-    def quote(self, catalog, quantities):
+    def quote(self, catalog, quantities, coupon=None):
         integer = self.weights.integer
         lines = []
         for sku,qty in quantities.items():
@@ -64,8 +74,29 @@ class NeuralDeck:
         shipping_tax = integer('line_tax',shipping,self.rate)
         registers = (sum(row['gross'] for row in lines),sum(row['tax'] for row in lines),shipping,shipping_tax)
         goods,gross,tax = [integer(name,*registers) for name in ('goods','gross','tax')]
-        return {'goods':goods,'shipping':shipping,'gross':gross,'tax':tax,
-                'net':integer('net',gross,tax),'lines':lines}
+        result = {'goods':goods,'shipping':shipping,'gross':gross,'tax':tax,
+                  'net':integer('net',gross,tax),'lines':lines}
+        if self.extended:
+            result['discount'] = 0
+            if coupon and self.weights.decide('cart.promo',self.promotion_condition(coupon))[0]:
+                policy = self.promotions[coupon]
+                mode,value = policy['mode'],policy['value']
+                inputs = (goods,value,100) if mode=='percentage' else (goods,value)
+                reduction = integer('scale.discount.'+mode,*inputs)
+                reduction_tax = integer('scale.discount.tax',reduction,self.rate)
+                result['coupon'] = coupon
+                result['discount'] = reduction
+                result['goods'] = integer('scale.discount.balance',goods,reduction)
+                result['gross'] = integer('scale.discount.balance',gross,reduction)
+                result['tax'] = integer('scale.discount.balance',tax,reduction_tax)
+                result['net'] = integer('net',result['gross'],result['tax'])
+        return result
+
+    def promotion_condition(self, code):
+        policy = self.promotions.get(code)
+        if policy is None:
+            return 'foreign'
+        return 'active' if policy['active'] else 'inactive'
 
     def remaining_stock(self, product, count):
         if not product['active']:
@@ -92,11 +123,37 @@ class NeuralDeck:
             next_qty = integer(event,*operands)
             refuse_unless(0<=next_qty<=100,'Die Menge liegt außerhalb des Testbereichs.')
             items = {**cart['items'],sku:next_qty}
-            writes = {'carts':{**carts,owner:{**cart,'items':{k:v for k,v in items.items() if v}}}}
+            updated = {**cart,'items':{k:v for k,v in items.items() if v}}
+            if not updated['items']:
+                updated.pop('coupon',None)
+            writes = {'carts':{**carts,owner:updated}}
+        elif event=='cart.promo':
+            refuse_unless(role=='buyer' and self.extended and cart['items'])
+            raw = args.get('code')
+            refuse_unless(isinstance(raw,str) and 0<len(raw.strip())<=64,'Bitte einen Rabattcode eingeben.')
+            code = raw.strip().upper()
+            refuse_unless(decide(event,self.promotion_condition(code))[0],'Der Rabattcode ist hier nicht gültig.')
+            writes = {'carts':{**carts,owner:{**cart,'coupon':code}}}
+        elif event=='catalog.edit':
+            refuse_unless(role=='admin' and self.extended)
+            sku = args.get('sku')
+            refuse_unless(isinstance(sku,str) and sku in catalog,'Unbekannter Artikel.')
+            old = catalog[sku]
+            refuse_unless(args.get('version')==digest(old),'Der Artikel wurde geändert. Lade die Ansicht neu.')
+            name,price,stock = (args.get(k) for k in ('name','price','stock'))
+            refuse_unless(isinstance(name,str) and 0<len(name.strip())<=128 and
+                          type(price) is int and type(stock) is int and 0<price<=10**8 and 0<=stock<=10**6,
+                          'Bitte Namen, Preis und Bestand prüfen.')
+            ok,pointer = decide('catalog.name','text')
+            refuse_unless(ok and pointer=='<argument>')
+            new = {**old,'name':name,
+                   'price':integer('scale.catalog.price',price),
+                   'stock':integer('scale.catalog.stock',stock)}
+            writes = {'catalog':{**catalog,sku:new}}
         elif event=='checkout.place':
             refuse_unless(role=='buyer')
             refuse_unless(decide(event,presence(cart['items']))[0],'Der Warenkorb kann so nicht bestellt werden.')
-            quote = self.quote(catalog,cart['items'])
+            quote = self.quote(catalog,cart['items'],cart.get('coupon'))
             refuse_unless(args.get('quote_key')==digest(quote) and args.get('consent') is True,
                           'Bitte bestätige den aktuellen Gesamtpreis.')
             contact = {field:args.get(field) for field in ('name','address','email')}
@@ -124,6 +181,7 @@ class NeuralDeck:
             outbox = [{'kind':'neural-test-payment','order_id':new_id}]
             result = {'order_id':new_id}
         elif event in ORDER_EVENTS or event=='order_delivery.track':
+            refuse_unless(self.extended or event not in EXTENDED_ORDER_EVENTS)
             refuse_unless(role=='admin' or (role=='provider' and event in ('order_transaction.paid','order_transaction.fail')))
             oid = args.get('order_id')
             refuse_unless(isinstance(oid,str) and oid in orders,'Bestellung nicht gefunden.')
@@ -150,6 +208,8 @@ class NeuralDeck:
         decide = self.weights.decide
         actions = set()
         for event, key in ORDER_EVENTS.items():
+            if not self.extended and event in EXTENDED_ORDER_EVENTS:
+                continue
             before = order[key]
             ok, after = decide(event, before)
             if ok and before != after:
@@ -174,6 +234,11 @@ class NeuralDeck:
                     for item in catalog.values() if item['active'] or role == 'admin']
         sources, affordances = {'catalog': products}, {}
         if role == 'admin':
+            if self.extended:
+                for row in products:
+                    sku = row['sku']
+                    row['version'] = digest(catalog[sku])
+                    affordances[('catalog',sku)] = {'catalog.edit'}
             orders = sorted(state['orders'].values(), key=lambda order: order['sequence'], reverse=True)
             sources['orders'] = [self.order_record(order) for order in orders]
             sources['metrics'] = [{
@@ -183,9 +248,11 @@ class NeuralDeck:
             }]
             return sources, affordances, '', 'empty', 'absent'
 
-        quote = self.quote(catalog, cart['items'])
+        quote = self.quote(catalog, cart['items'],cart.get('coupon'))
         sources['cart'] = quote['lines']
         sources['quote'] = [{key:quote[key] for key in AMOUNTS}]
+        if self.extended:
+            sources['quote'][0]['discount'] = quote['discount']
         order = state['orders'].get(cart['last'])
         owned = order is not None and order['buyer'] == actor['id']
         sources['receipt'] = [self.order_record(order)] if owned else []
@@ -206,6 +273,8 @@ class NeuralDeck:
             cart_status = 'blocked' if shortage else 'ready'
             if not shortage:
                 affordances[('_', None)] = {'checkout.place'}
+                if self.extended:
+                    affordances[('_', None)].add('cart.promo')
         return sources, affordances, digest(quote), cart_status, 'present' if owned else 'absent'
 
     def authorize_scope(self, scope, event, state, actor, args):

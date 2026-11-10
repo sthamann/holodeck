@@ -21,13 +21,16 @@ def cents(value):
 
 
 class Oracle:
-    def __init__(self, shipping=None):
+    def authenticate(self):
         auth, _ = self.call('/api/oauth/token', {
             'grant_type': 'password', 'client_id': 'administration',
             'username': os.getenv('LAB_SW_USER', 'admin'),
             'password': os.getenv('LAB_SW_PASSWORD', 'shopware'),
         })
-        self.headers = {'Authorization': 'Bearer ' + auth['access_token']}
+        return {'Authorization': 'Bearer ' + auth['access_token']}
+
+    def __init__(self, shipping=None):
+        self.headers = self.authenticate()
         self.states = {row['id']: row['technicalName'] for row in self.search('state-machine-state', {'limit': 200})}
         self.country = self.search('country', {'filter': [{'type':'equals','field':'iso','value':'DE'}]})[0]['id']
         self.salutation = self.search('salutation', {'limit': 1})[0]['id']

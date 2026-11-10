@@ -27,7 +27,7 @@ FIELDS = {
     'price': ('Preis', 'money'), 'stock': ('Bestand', 'number'), 'availability': ('Verfügbarkeit', 'tag'),
     'quantity': ('Menge', 'number'), 'unit': ('Stückpreis', 'money'), 'gross': ('Gesamt', 'money'),
     'goods': ('Warenwert', 'money'), 'shipping': ('Versand', 'money'), 'tax': ('Enthaltene MwSt.', 'money'),
-    'net': ('Netto', 'money'), 'id': ('Bestellung', 'order-id'), 'address': ('Lieferadresse', 'text'),
+    'net': ('Netto', 'money'), 'discount': ('Rabatt', 'money'), 'id': ('Bestellung', 'order-id'), 'address': ('Lieferadresse', 'text'),
     'stage': ('Bestellstatus', 'stage'), 'payment': ('Zahlung', 'payment'), 'delivery': ('Versandstatus', 'delivery'),
     'tracking': ('Sendungsnummer', 'text'), 'items': ('Positionen', 'items'),
     'total_orders': ('Bestellungen', 'number'), 'paid_orders': ('Bezahlt', 'number'),
@@ -36,7 +36,7 @@ FIELDS = {
 SOURCE_FIELDS = {
     'catalog': {'image', 'name', 'sku', 'variant', 'description', 'price', 'stock', 'availability'},
     'cart': {'sku', 'name', 'quantity', 'unit', 'gross'},
-    'quote': {'goods', 'shipping', 'tax', 'gross', 'net'},
+    'quote': {'goods', 'shipping', 'tax', 'gross', 'net', 'discount'},
     'orders': {'id', 'name', 'address', 'stage', 'payment', 'delivery', 'tracking', 'gross', 'items'},
     'receipt': {'id', 'name', 'address', 'stage', 'payment', 'delivery', 'tracking', 'gross', 'items'},
     'metrics': {'total_orders', 'paid_orders', 'open_deliveries', 'active_products'},
@@ -53,6 +53,8 @@ PARAMETERS = {
     'email': ('E-Mail', 'email'), 'address': ('Lieferadresse', 'text'),
     'quote_key': ('Preisbindung', 'quote'), 'consent': ('Ich bestätige die Testbestellung zum angezeigten Preis.', 'checkbox'),
     'tracking': ('Sendungsnummer', 'text'),
+    'code': ('Rabattcode', 'text'), 'version': ('Artikelstand', 'key'),
+    'price': ('Preis in Euro', 'money'), 'stock': ('Bestand', 'number'),
 }
 EVENTS = {
     'cart.add': ('In den Warenkorb', ('sku', 'quantity')),
@@ -70,6 +72,10 @@ EVENTS = {
     'order_delivery.ship_partially': ('Teilversandstatus setzen', ('order_id',)),
     'order_delivery.reopen': ('Versandstatus wieder öffnen', ('order_id',)),
     'order_delivery.track': ('Sendungsnummer speichern', ('order_id', 'tracking')),
+    'cart.promo': ('Rabattcode anwenden', ('code',)),
+    'catalog.edit': ('Artikel speichern', ('sku','version','name','price','stock')),
+    'order_delivery.retour_partially': ('Teilretoure erfassen', ('order_id',)),
+    'order_transaction.refund_partially': ('Teilerstattung als Status erfassen', ('order_id',)),
 }
 NAV_LABELS = {
     'storefront:browse': 'Entdecken', 'storefront:compare': 'Produkte vergleichen',
@@ -96,7 +102,10 @@ class Projector:
         self.schema = json.loads(str(archive['ui.schema']))
         if self.schema['version'] != 3:
             raise ValueError('Unsupported projection weights')
-        for head, size in (('tree', SLOTS*len(TREE_AXES)), ('bindings', WIDTH*len(BINDING_AXES)), ('argument', 1)):
+        self.width = self.schema.get('width',WIDTH)
+        if self.width not in (WIDTH,16):
+            raise ValueError('Unsupported binding width')
+        for head, size in (('tree', SLOTS*len(TREE_AXES)), ('bindings', self.width*len(BINDING_AXES)), ('argument', 1)):
             spec = self.schema[head]
             if len(spec['outputs']) != size:
                 raise ValueError('Incompatible projection head shape')
@@ -139,7 +148,7 @@ class Projector:
             if node['kind'] in WIDGETS:
                 bindings = self.predict('bindings', (node['kind'], node["source"], node["title"], context[0], context[1], context[2]))
                 for index, axis in enumerate(BINDING_AXES):
-                    node[axis] = [x for x in bindings[index*WIDTH:(index+1)*WIDTH] if x != '_']
+                    node[axis] = [x for x in bindings[index*self.width:(index+1)*self.width] if x != '_']
                 node['wires'] = {}
                 for event in node['events']:
                     if event not in EVENTS:
@@ -166,11 +175,15 @@ def bind_action(event, wires, row, quote_key):
     for name in params:
         pointer = wires[name]
         caption, kind = PARAMETERS[name]
+        if event=='catalog.edit' and name=='name':
+            caption = 'Artikelname'
         if pointer == 'input' and kind not in ('key', 'quote'):
             initial = row.get(name, False if kind == 'checkbox' else '')
             inputs.append({'name': name, 'label': caption, 'type': kind, 'value': initial})
         elif pointer == 'row.sku' and name == 'sku' and type(row.get('sku')) is str:
             args[name] = row['sku']
+        elif pointer == 'row.version' and name == 'version' and type(row.get('version')) is str:
+            args[name] = row['version']
         elif pointer == 'row.id' and name == 'order_id' and type(row.get('id')) is str:
             args[name] = row['id']
         elif pointer == 'const.one' and kind == 'number':

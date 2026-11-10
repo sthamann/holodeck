@@ -12,6 +12,8 @@ That is the vision. **Holoshop is the first experiment.** It learns commerce tra
 
 **Nordlager adds a free-text Admin.** The deck learns from native Shopware grids and interactions and composes a new working view over live orders and stock. A local language specialist interprets the request. [See the third shop and native Shopware evidence](docs/native-shopware-workspace.md)
 
+**Marktlabor scales the Shopware curriculum.** The deck learns catalog edits, percentage and fixed discounts and full and partial return states from 2,048 native API journeys. Its generated storefront, checkout and admin run locally with Shopware stopped. [Data flow, independent tests and demo](docs/scaled-shopware-learning.md)
+
 ![Inside a deck. Intent and live business state enter one multimodal model. Its executable business graph produces working holos and proposes effects for the generic runtime and durable records.](assets/illustrations/inside-a-deck.png)
 
 [How a deck is made](#how-a-deck-is-made) · [Architecture](docs/architecture.md) · [Roadmap](docs/roadmap.md) · [From Apps to Holos](docs/article.md)

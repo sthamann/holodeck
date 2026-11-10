@@ -1,0 +1,36 @@
+{"case":0,"surface":"Admin","event":"catalog.edit","fields":["name","gross","stock"],"status":200,"verified":["same product identifier","changed name and gross price visible in Storefront"]}
+{"case":0,"surface":"Storefront","event":"cart.add","status":302,"verified":["same edited product in cart"]}
+{"case":0,"surface":"Storefront","event":"cart.promo","status":302,"verified":["native promotion line in cart"]}
+{"case":1,"surface":"Admin","event":"catalog.edit","fields":["name","gross","stock"],"status":200,"verified":["same product identifier","changed name and gross price visible in Storefront"]}
+{"case":1,"surface":"Storefront","event":"cart.add","status":302,"verified":["same edited product in cart"]}
+{"case":1,"surface":"Storefront","event":"cart.promo","status":302,"verified":["native promotion line in cart"]}
+{"case":2,"surface":"Admin","event":"catalog.edit","fields":["name","gross","stock"],"status":200,"verified":["same product identifier","changed name and gross price visible in Storefront"]}
+{"case":2,"surface":"Storefront","event":"cart.add","status":302,"verified":["same edited product in cart"]}
+{"case":2,"surface":"Storefront","event":"cart.promo","status":302,"verified":["native promotion line in cart"]}
+{"case":3,"surface":"Admin","event":"catalog.edit","fields":["name","gross","stock"],"status":200,"verified":["same product identifier","changed name and gross price visible in Storefront"]}
+{"case":3,"surface":"Storefront","event":"cart.add","status":302,"verified":["same edited product in cart"]}
+{"case":3,"surface":"Storefront","event":"cart.promo","status":302,"verified":["native promotion line in cart"]}
+{"case":4,"surface":"Admin","event":"catalog.edit","fields":["name","gross","stock"],"status":200,"verified":["same product identifier","changed name and gross price visible in Storefront"]}
+{"case":4,"surface":"Storefront","event":"cart.add","status":302,"verified":["same edited product in cart"]}
+{"case":4,"surface":"Storefront","event":"cart.promo","status":302,"verified":["native promotion line in cart"]}
+{"case":5,"surface":"Admin","event":"catalog.edit","fields":["name","gross","stock"],"status":200,"verified":["same product identifier","changed name and gross price visible in Storefront"]}
+{"case":5,"surface":"Storefront","event":"cart.add","status":302,"verified":["same edited product in cart"]}
+{"case":5,"surface":"Storefront","event":"cart.promo","status":302,"verified":["native promotion line in cart"]}
+{"case":6,"surface":"Admin","event":"catalog.edit","fields":["name","gross","stock"],"status":200,"verified":["same product identifier","changed name and gross price visible in Storefront"]}
+{"case":6,"surface":"Storefront","event":"cart.add","status":302,"verified":["same edited product in cart"]}
+{"case":6,"surface":"Storefront","event":"cart.promo","status":302,"verified":["native promotion line in cart"]}
+{"case":7,"surface":"Admin","event":"catalog.edit","fields":["name","gross","stock"],"status":200,"verified":["same product identifier","changed name and gross price visible in Storefront"]}
+{"case":7,"surface":"Storefront","event":"cart.add","status":302,"verified":["same edited product in cart"]}
+{"case":7,"surface":"Storefront","event":"cart.promo","status":302,"verified":["native promotion line in cart"]}
+{"case":8,"surface":"Admin","event":"catalog.edit","fields":["name","gross","stock"],"status":200,"verified":["same product identifier","changed name and gross price visible in Storefront"]}
+{"case":8,"surface":"Storefront","event":"cart.add","status":302,"verified":["same edited product in cart"]}
+{"case":8,"surface":"Storefront","event":"cart.promo","status":302,"verified":["native promotion line in cart"]}
+{"case":9,"surface":"Admin","event":"catalog.edit","fields":["name","gross","stock"],"status":200,"verified":["same product identifier","changed name and gross price visible in Storefront"]}
+{"case":9,"surface":"Storefront","event":"cart.add","status":302,"verified":["same edited product in cart"]}
+{"case":9,"surface":"Storefront","event":"cart.promo","status":302,"verified":["native promotion line in cart"]}
+{"case":10,"surface":"Admin","event":"catalog.edit","fields":["name","gross","stock"],"status":200,"verified":["same product identifier","changed name and gross price visible in Storefront"]}
+{"case":10,"surface":"Storefront","event":"cart.add","status":302,"verified":["same edited product in cart"]}
+{"case":10,"surface":"Storefront","event":"cart.promo","status":302,"verified":["native promotion line in cart"]}
+{"case":11,"surface":"Admin","event":"catalog.edit","fields":["name","gross","stock"],"status":200,"verified":["same product identifier","changed name and gross price visible in Storefront"]}
+{"case":11,"surface":"Storefront","event":"cart.add","status":302,"verified":["same edited product in cart"]}
+{"case":11,"surface":"Storefront","event":"cart.promo","status":302,"verified":["native promotion line in cart"]}

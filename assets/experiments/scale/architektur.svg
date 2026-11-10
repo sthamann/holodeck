@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1024" viewBox="0 0 1600 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Wie der Holodeck Shop lernt und läuft</title>
+  <desc id="desc">Shopware liefert im Training Vorher- und Nachherzustände aus Store API und Admin API. Browseraufnahmen und annotierte UI Beispiele helfen beim Lernen der Oberflächen. Im Betrieb erzeugt der gelernte Checkpoint aus Anlass, Händlerpaket und live gespeicherten Daten eine Oberfläche oder einen Änderungsvorschlag. Der Runtime Kern prüft und speichert die Änderungen atomar.</desc>
+  <defs>
+    <style>
+      text { font-family: system-ui,sans-serif; fill:#2d2822 }
+      .display { font-family: Georgia,serif; font-size:59px; font-weight:700; letter-spacing:-1.8px }
+      .section { font-size:24px; font-weight:750 }
+      .heading { font-size:21px; font-weight:730; letter-spacing:-.35px }
+      .body { font-size:17px; fill:#51463b }
+      .caption { font-size:15px; font-weight:650; fill:#51463b }
+      .blue { fill:#285164 }
+      .green { fill:#294e3e }
+      .white { fill:#fff9ed }
+      .rust { fill:#833d27 }
+      .panel { fill:#fdf9f0; stroke:#c9bba6; stroke-width:1.3 }
+      .line { fill:none; stroke:#6d6154; stroke-width:2.2; marker-end:url(#arrow) }
+      .learn { fill:none; stroke:#285164; stroke-width:2.2; marker-end:url(#blueArrow) }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#6d6154"/></marker>
+    <marker id="blueArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#285164"/></marker>
+  </defs>
+  <rect width="1600" height="1024" fill="#f6efe2"/>
+  <text x="64" y="94" class="display">Wie der Holodeck Shop lernt und läuft</text>
+  <text x="67" y="137" class="body" style="font-size:21px">Marktlabor · Shopware liefert die Lernbeispiele. Das Deck betreibt den Testshop selbst.</text>
+
+  <rect x="64" y="173" width="1472" height="345" rx="18" fill="#edf0eb" stroke="#b9c7c1"/>
+  <text x="92" y="215" class="section blue">1 · Offline lernen und prüfen</text>
+  <rect x="92" y="240" width="372" height="122" rx="12" fill="#f9fbf7" stroke="#b5c5bd"/>
+  <text x="111" y="270" class="heading blue">Isoliertes Shopware 6.7.15.1</text>
+  <text x="111" y="300" class="body">Store API · Warenkorb, Rabatt, Kauf</text>
+  <text x="111" y="324" class="body">Admin API · Artikel, Versand, Retoure</text>
+  <text x="111" y="348" class="caption">Synthetische Artikel und Testkunden</text>
+  <rect x="92" y="380" width="372" height="108" rx="12" fill="#f9fbf7" stroke="#b5c5bd"/>
+  <text x="111" y="410" class="heading blue">Echte Browserinteraktionen</text>
+  <text x="111" y="434" class="body">Admin speichert, Storefront zeigt es</text>
+  <text x="111" y="456" class="body">Plus annotierte UI Beispiele</text>
+  <text x="111" y="477" class="caption blue">12 Läufe · 36 verifizierte Aktionen</text>
+
+  <path d="M464 302H505" class="learn"/>
+  <rect x="507" y="240" width="375" height="122" rx="12" fill="#f9fbf7" stroke="#b5c5bd"/>
+  <text x="526" y="270" class="heading blue">2.048 normalisierte Abläufe</text>
+  <text x="526" y="300" class="body">Vorher · Aktion · Shopware Ergebnis</text>
+  <text x="526" y="324" class="body">1.638 Training · 410 Vergleichsläufe</text>
+  <text x="526" y="348" class="caption">Andere Rabattwerte im Vergleich</text>
+
+  <rect x="944" y="240" width="550" height="248" rx="14" fill="#285164"/>
+  <text x="967" y="278" class="heading white" style="font-size:24px">Trainierte Gewichte · scale.npz</text>
+  <text x="967" y="322" class="body white">Fachköpfe wählen Rechenoperationen, Operanden</text>
+  <text x="967" y="348" class="body white">und den nächsten Liefer- oder Zahlungsstatus.</text>
+  <text x="967" y="396" class="body white">Projektionsköpfe wählen Komponenten, Felder</text>
+  <text x="967" y="422" class="body white">und die Aktionen, die im Holo gebunden werden.</text>
+  <text x="967" y="462" class="caption white">Passt auf die lokale CPU · lernt hier im Trainingslauf</text>
+  <path d="M882 302H942" class="learn"/>
+  <path d="M464 435H942" class="learn"/>
+  <rect x="548" y="418" width="360" height="29" rx="5" fill="#edf0eb"/>
+  <text x="569" y="438" class="caption blue">Beobachtete Bedienung und UI Lehrmaterial</text>
+
+  <rect x="64" y="550" width="1472" height="407" rx="18" fill="#f8eee2" stroke="#cdb9a6"/>
+  <text x="92" y="592" class="section green">2 · Live betreiben · Shopware aus</text>
+  <rect x="92" y="620" width="372" height="92" rx="12" class="panel"/>
+  <text x="111" y="650" class="heading">Aktion oder Kontext</text>
+  <text x="111" y="679" class="body">Ansicht öffnen · Klick · Formulardaten</text>
+  <rect x="92" y="728" width="372" height="92" rx="12" class="panel"/>
+  <text x="111" y="758" class="heading">Händlerpaket</text>
+  <text x="111" y="786" class="body">Startkatalog, Stil, Versand, Steuer, Codes</text>
+  <rect x="92" y="836" width="372" height="92" rx="12" class="panel"/>
+  <text x="111" y="866" class="heading">SQLite · dauerhafte Shopdaten</text>
+  <text x="111" y="894" class="body">Aktueller Katalog, Warenkörbe, Bestellungen</text>
+
+  <rect x="564" y="639" width="450" height="170" rx="14" fill="#294e3e"/>
+  <text x="589" y="677" class="heading white" style="font-size:24px">Dasselbe geladene Deck</text>
+  <text x="589" y="712" class="body white">Liest den Zustand für den aktuellen Nutzer.</text>
+  <text x="589" y="742" class="body white">Gibt einen UI Baum mit Bindungen oder</text>
+  <text x="589" y="768" class="body white">einen typisierten Änderungsvorschlag aus.</text>
+
+  <rect x="1114" y="639" width="380" height="170" rx="14" fill="#f5e3d4" stroke="#bd8a70"/>
+  <text x="1138" y="677" class="heading rust" style="font-size:24px">Generierte Holos</text>
+  <text x="1138" y="711" class="body">Storefront · kaufen</text>
+  <text x="1138" y="738" class="body">Checkout · Rabatt und Bestellung</text>
+  <text x="1138" y="765" class="body">Admin · Artikel und Bestellungen pflegen</text>
+  <text x="1138" y="790" class="caption rust">Generischer Renderer zeigt die Komponenten</text>
+
+  <rect x="564" y="848" width="930" height="80" rx="12" class="panel"/>
+  <text x="589" y="877" class="heading">Commit Kern</text>
+  <text x="589" y="903" class="body">Prüft Rolle, Version und bestätigten Preis. Speichert den Effekt atomar in SQLite.</text>
+  <path d="M464 666H562" class="line"/>
+  <path d="M464 774H514V714H562" class="line"/>
+  <path d="M464 862H526V758H562" class="line"/>
+  <path d="M1014 718H1112" class="line"/>
+  <path d="M787 809V846" class="line"/>
+  <path d="M564 899H466" class="line"/>
+  <path d="M1213 488V531H786V637" class="learn"/>
+  <rect x="900" y="515" width="190" height="30" rx="5" fill="#f6efe2"/>
+  <text x="916" y="536" class="caption blue">Checkpoint laden</text>
+  <text x="65" y="989" class="caption">Holodeck · Shopware Lernexperiment · Retoure und Erstattung sind Statuswechsel im Testshop</text>
+</svg>

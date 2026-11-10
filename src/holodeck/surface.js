@@ -74,16 +74,17 @@ function inputField(field) {
   const label = el('label',field.label);
   const input = el('input');
   input.name = field.name;
-  input.type = field.type;
+  input.type = field.type==='money' ? 'text' : field.type;
+  if (field.type==='money') input.inputMode = 'decimal';
   input.required = true;
   if (field.type === 'checkbox') {
     input.checked = !!field.value;
     label.classList.add('check');
     label.prepend(input);
   } else {
-    input.value = field.value;
+    input.value = field.type==='money' ? (field.value/100).toFixed(2).replace('.',',') : field.value;
     if (field.type === 'number') {
-      input.min = '1';
+      input.min = field.name === 'stock' ? '0' : '1';
       input.step = '1';
     }
     label.append(input);
@@ -107,7 +108,13 @@ function action(spec) {
     const args = {...spec.args};
     for (const field of spec.fields) {
       const value = fields.get(field.name);
-      args[field.name] = field.type === 'checkbox' ? value !== null : field.type === 'number' ? Number(value) : value;
+      if (field.type==='money') {
+        const parsed = /^([0-9]+)(?:[.,]([0-9]{1,2}))?$/.exec(value);
+        if (!parsed) { message('Bitte einen Betrag wie 29,90 eingeben.',true); return; }
+        args[field.name] = Number(parsed[1])*100 + Number((parsed[2] || '').padEnd(2,'0'));
+      } else {
+        args[field.name] = field.type === 'checkbox' ? value !== null : field.type === 'number' ? Number(value) : value;
+      }
     }
     const signature = JSON.stringify(args);
     if (signature !== previous) {
