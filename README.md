@@ -32,6 +32,14 @@ In Hafenrechnung, four products go into the cart. A 17% coupon brings the rounde
 
 [Storefront](assets/experiments/joint-deck/hafenrechnung-storefront.png) · [Checkout](assets/experiments/joint-deck/hafenrechnung-checkout.png) · [Admin](assets/experiments/joint-deck/hafenrechnung-admin.png) · [Walk through the browser captures](docs/joint-deck.md#one-order-in-the-browser)
 
+### A new capability on an existing order
+
+A service specialist learned which return and refund status changes Shopware accepts. In the browser, the same paid order gains the permitted Admin controls when the checked specialist is activated. All four test orders resume on that version after a restart.
+
+[![How Holoshop teaches, checks, activates and restores a service specialist.](assets/illustrations/joint-deck-learning.svg)](docs/learning.md#one-specialist-from-training-to-activation)
+
+[See the before and after captures and reproduce the activation](docs/learning.md#one-specialist-from-training-to-activation)
+
 ## Deck, holo and projected software
 
 | Concept | What it does |

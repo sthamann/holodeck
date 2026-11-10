@@ -4,6 +4,8 @@ The [current runtime diagram](illustrations/joint-deck-runtime.svg) and the [bli
 
 The illustrations and experiment captures accompany Stefan Hamann’s *The End of Software as We Know It: From Apps to Holos*. The editorial artwork depicts the vision. The experiment captures depict the existing Holoshop trial. They serve different purposes in the documentation.
 
+The [service specialist illustration](illustrations/joint-deck-learning.svg) follows the activation of the published checkpoint. The [before](experiments/joint-deck/birkenkai-before-activation.png) and [after](experiments/joint-deck/birkenkai-after-activation.png) images show the same Birkenkai order in Chrome. [Learning experiment](../docs/learning.md#one-specialist-from-training-to-activation)
+
 The architecture comparison is available as a [shareable PNG](illustrations/projects-to-properties.png) and an [editable SVG](illustrations/projects-to-properties.svg).
 
 The local demo uses these photographs from Wikimedia Commons. The cited licenses apply to the photographs.

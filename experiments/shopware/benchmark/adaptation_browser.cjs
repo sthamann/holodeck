@@ -73,6 +73,7 @@ async function run(browser, row) {
     exact(paid, row.events[0]);
     const old = await ask(page, service);
     for (const id of ids) assert.equal(await present(page, id), 0);
+    await page.screenshot({path:join(screenshots, row.shop.toLowerCase() + '-before-activation.png')});
     const request = {session:root, revision:old.revision, request:'activate-' + root};
     const activated = await post(page, 'activate', request, 200);
     assert.equal(activated.revision, old.revision + 1);
@@ -95,6 +96,7 @@ async function run(browser, row) {
     assert.match((await post(page, 'action', {session:root, row:root, scope:'admin', action:'return_full',
       projection:current.projection, revision:current.revision, request:'premature-return'}, 400)).error, /nicht verfügbar/);
     assert.notEqual(row.events[1].http_status, 200);
+    await page.screenshot({path:join(screenshots, row.shop.toLowerCase() + '-after-activation.png')});
 
     const partialPayment = await action(page, 'refund_partial');
     exact(partialPayment, row.events[2]);

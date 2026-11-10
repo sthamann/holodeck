@@ -1,6 +1,6 @@
 {
   "schema": "holodeck.roadmap/1",
-  "revision": 4,
+  "revision": 5,
   "date": "2026-11-10",
   "status": "planned",
   "milestones": [
@@ -524,6 +524,14 @@
         ],
         "scope": "Generated storefront, checkout and Admin act on the same order. The browser verifies totals, state changes and action binding.",
         "evidence": "experiments/shopware/evidence/joint-deck/walkthrough-browser.json"
+      },
+      {
+        "tasks": [
+          "H14",
+          "H27"
+        ],
+        "scope": "An explicitly activated service specialist persists on four synthetic orders after a process restart. The check covers forward activation and restore.",
+        "evidence": "experiments/shopware/evidence/joint-deck/activation-report.json"
       }
     ]
   }

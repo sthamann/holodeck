@@ -7,7 +7,7 @@
 | Commerce and merchant import | The same joint checkpoint passes 48 new configured journeys and 72 earlier ones. | Full catalog and variant lifecycle, broader pricing, promotions, tax and availability coverage. |
 | Storefront, checkout and Admin | Eight Chrome journeys carry one order through the three generated surfaces. | More independent tasks and interaction types, complete role separation, and multimodal product discovery. |
 | Transactions and service | Checkout receipts survive reopening SQLite. A separate service specialist matches 16 status journeys. | Independent payment provider outcomes, quantity and financial returns, and the complete continuation and authority tests. |
-| Model and learning | Sparse choices change the executed programs. A specialist can be attached as a versioned extension. | Shared multimodal training, learning new rule families with a fixed runtime, and improvement under controlled activation across merchants. |
+| Model and learning | Sparse choices change the executed programs. Four orders keep their [activated specialist after restart](learning.md#one-specialist-from-training-to-activation). | Shared multimodal training, learning new rule families with a fixed runtime, and improvement under controlled activation across merchants. |
 | Performance | Local apply p95 was 0.85 ms for the numeric comparison. | Cold and warm UI timings, load and comparison with Shopware on the same hardware. |
 
 [Evidence, artifacts and reproduction](joint-deck.md) · [Full product profile and acceptance tests](shopware-absorption.md#6-prüfprogramm-für-den-systemersatz)

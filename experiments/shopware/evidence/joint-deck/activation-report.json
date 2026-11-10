@@ -1,0 +1,62 @@
+[
+  {
+    "shop": "Birkenkai",
+    "root": "fc890d922ee94af890959b4563538c8a",
+    "activation": {
+      "from": "9ad2c6e027127c2cb901575e004e5c949eb258ce0782f62bd0a87c0e29d6165c-e50c1bf03c2cae6ca0be38a9be8a5e2e8284224d438834653a35a3377bdf81b8-3a31c8afe5bb667188492f17bf403a13a729397b0d050fdf4b19fc59a095e129",
+      "to": "2e1267919ee03c7e52ce73687e204ddbf27401b451421f7fe259db1be8087f74"
+    },
+    "activationRevision": 5,
+    "finalRevision": 10,
+    "workflowMarks": 1,
+    "checkoutExact": true,
+    "staleOfferRejected": true,
+    "prematureReturnRejected": true,
+    "resumeAfterProcessRestart": true
+  },
+  {
+    "shop": "Sandfracht",
+    "root": "b4c34fadb1264c0faffe3181d77de433",
+    "activation": {
+      "from": "9ad2c6e027127c2cb901575e004e5c949eb258ce0782f62bd0a87c0e29d6165c-e50c1bf03c2cae6ca0be38a9be8a5e2e8284224d438834653a35a3377bdf81b8-3a31c8afe5bb667188492f17bf403a13a729397b0d050fdf4b19fc59a095e129",
+      "to": "2e1267919ee03c7e52ce73687e204ddbf27401b451421f7fe259db1be8087f74"
+    },
+    "activationRevision": 5,
+    "finalRevision": 10,
+    "workflowMarks": 1,
+    "checkoutExact": true,
+    "staleOfferRejected": true,
+    "prematureReturnRejected": true,
+    "resumeAfterProcessRestart": true
+  },
+  {
+    "shop": "Lindenlager",
+    "root": "e15caae0c23441f3bb21b093c17f4a6e",
+    "activation": {
+      "from": "9ad2c6e027127c2cb901575e004e5c949eb258ce0782f62bd0a87c0e29d6165c-e50c1bf03c2cae6ca0be38a9be8a5e2e8284224d438834653a35a3377bdf81b8-3a31c8afe5bb667188492f17bf403a13a729397b0d050fdf4b19fc59a095e129",
+      "to": "2e1267919ee03c7e52ce73687e204ddbf27401b451421f7fe259db1be8087f74"
+    },
+    "activationRevision": 5,
+    "finalRevision": 10,
+    "workflowMarks": 1,
+    "checkoutExact": true,
+    "staleOfferRejected": true,
+    "prematureReturnRejected": true,
+    "resumeAfterProcessRestart": true
+  },
+  {
+    "shop": "Werksand",
+    "root": "dd3684eb4f2548d79fe95c50e64460f4",
+    "activation": {
+      "from": "9ad2c6e027127c2cb901575e004e5c949eb258ce0782f62bd0a87c0e29d6165c-e50c1bf03c2cae6ca0be38a9be8a5e2e8284224d438834653a35a3377bdf81b8-3a31c8afe5bb667188492f17bf403a13a729397b0d050fdf4b19fc59a095e129",
+      "to": "2e1267919ee03c7e52ce73687e204ddbf27401b451421f7fe259db1be8087f74"
+    },
+    "activationRevision": 5,
+    "finalRevision": 10,
+    "workflowMarks": 1,
+    "checkoutExact": true,
+    "staleOfferRejected": true,
+    "prematureReturnRejected": true,
+    "resumeAfterProcessRestart": true
+  }
+]

@@ -516,6 +516,8 @@ Run `node experiments/shopware/benchmark/joint_browser.cjs http://127.0.0.1:5572
 
 ## Add an after-sales specialist while orders are open
 
+The [learning guide](../../../docs/learning.md#one-specialist-from-training-to-activation) uses the published numeric checkpoint and includes an independent activation and restart report. The procedure below preserves the earlier capture and fit sequence.
+
 The frozen joint checkpoint is kept byte for byte. A sparse specialist is fitted on 52 Shopware observations of four state commands across eight orders in two teaching channels. It learns which delivery and payment transitions are accepted, refused or accepted without a write. The routing vocabulary comes from the observed command and state relation. Unobserved state categories refuse rather than extrapolate a payment or delivery mutation. New internal notifications preserve the existing workflow evidence. This experiment covers only the states and effects observed in the scoped Shopware edition.
 
 The composite checkpoint adds learned action cells to the existing Admin projection. An additional text readout on the same frozen Qwen features recognizes requests for those actions. The existing transaction checkpoint and language outputs continue to serve their old behavior. The live server can hold both versions. A local test activation stores the new checkpoint identity in the order graph in a version checked transaction. It leaves the order and its workflow continuation intact. The browser must obtain a new offer after activation.

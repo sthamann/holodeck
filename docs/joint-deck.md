@@ -32,6 +32,8 @@ Eight Chrome runs checked real actions in generated surfaces. The test bought pr
 
 The measured money profile uses gross prices, two decimal places, a positive goods total after discount, one coupon and one delivery. The amounts and transitions cover these fixtures. They do not establish parity for net pricing, stacked promotions, commercial B2B, payment settlement or all Shopware routes. View generation uses a defined component vocabulary, and the main comparison measures a trained choice of executable expressions. The shared multimodal training target and the coverage required for system replacement are described in the [architecture](architecture.md) and [acceptance plan](shopware-absorption.md).
 
+The [specialist activation experiment](learning.md#one-specialist-from-training-to-activation) shows the before and after Admin views on one paid order and records which checkpoint serves it after restart.
+
 ## One order in the browser
 
 These three captures are from one Chrome run in Hafenrechnung, case 7 of the published holdout. Shopware was stopped. The [browser report](../experiments/shopware/evidence/joint-deck/walkthrough-browser.json) records the order identity, exact comparison and final status.

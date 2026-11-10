@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 396" role="img" aria-labelledby="learn-title learn-desc">
+  <title id="learn-title">Teach a specialist. Keep the order.</title>
+  <desc id="learn-desc">Shopware observations teach return and refund status decisions. The specialist matches sixteen held out journeys. It is activated for an existing order, which resumes on the new checkpoint after a process restart.</desc>
+  <defs>
+    <style>
+      .eyebrow{font:600 16px ui-monospace,monospace;letter-spacing:2px;fill:#40574c}
+      .title{font:700 48px Georgia,serif;fill:#252c25}
+      .stage{font:700 24px system-ui,sans-serif;fill:#252c25}
+      .body{font:17px system-ui,sans-serif;fill:#40574c}
+      .value{font:700 18px ui-monospace,monospace;fill:#254f3a}
+    </style>
+    <marker id="learn-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#59675d"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="396" rx="24" fill="#f7f1e6"/>
+  <text x="44" y="48" class="eyebrow">HOLODECK / SERVICE SPECIALIST</text>
+  <text x="44" y="108" class="title">Teach a specialist. Keep the order.</text>
+  <text x="44" y="152" class="eyebrow">OFFLINE LEARNING</text>
+  <text x="620" y="152" class="eyebrow">RUNNING SHOP · SHOPWARE OFF</text>
+  <g stroke="#59675d" stroke-width="2" marker-end="url(#learn-arrow)">
+    <path d="M292 252H328"/><path d="M580 252H616" stroke-dasharray="4 4"/><path d="M868 252H904"/>
+  </g>
+  <rect x="44" y="176" width="248" height="148" rx="12" fill="#fffcf5" stroke="#a9b4a6"/>
+  <rect x="332" y="176" width="248" height="148" rx="12" fill="#fffcf5" stroke="#a9b4a6"/>
+  <rect x="620" y="176" width="248" height="148" rx="12" fill="#e7eee4" stroke="#62816c"/>
+  <rect x="908" y="176" width="248" height="148" rx="12" fill="#fffcf5" stroke="#a9b4a6"/>
+  <text x="64" y="216" class="stage">01 Teach</text>
+  <text x="64" y="248" class="body">Return and refund status</text>
+  <text x="64" y="288" class="value">52 observations</text>
+  <text x="352" y="216" class="stage">02 Verify</text>
+  <text x="352" y="248" class="body">Fresh shops and orders</text>
+  <text x="352" y="288" class="value">16 / 16 journeys</text>
+  <text x="640" y="216" class="stage">03 Activate</text>
+  <text x="640" y="248" class="body">Bind a paid order</text>
+  <text x="640" y="272" class="body">to the new checkpoint</text>
+  <text x="640" y="304" class="value">New Admin controls</text>
+  <text x="928" y="216" class="stage">04 Resume</text>
+  <text x="928" y="248" class="body">Restart the shop process</text>
+  <text x="928" y="288" class="value">4 / 4 resumed</text>
+  <text x="44" y="364" class="eyebrow">SYNTHETIC TEST ORDERS · SIMULATED STATUS CHANGES</text>
+</svg>
