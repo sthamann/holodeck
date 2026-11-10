@@ -4,6 +4,12 @@
 
 The target is one multimodal, executable model of the business. Search, pricing, checkout, service and analysis draw on the same learned business semantics. The model interprets what happened, determines the consequences, carries the process forward and projects the software needed for the work. Standard commerce supplies the first evidence. [The eight properties](../README.md#what-becomes-a-property-of-the-architecture)
 
+## First delivery
+
+The first accepted deck operates a complete standard shop. Its learned commerce specialists cover catalog and cart, prices and availability, checkout and payment, and order handling in the admin. These specialists are part of the versioned model. Shopware supplies teaching data and independent comparisons during development. At deployment, the deck reads and writes its own business records through the generic commit core. [First delivery and acceptance](roadmap.md#first-delivery-and-acceptance)
+
+The first shopper and merchant journey starts with an empty projection store and Shopware offline. Storefront, checkout and admin are composed by the deck at request time. They bind the same records and call the same model entry point. Every commercial decision in the journey must be attributable to the executed model graph. The generic renderer renders components and sends actions. It has no shop-specific decision logic.
+
 ## 1. One source of business decisions
 
 The proposed semantic entry point is:
@@ -157,6 +163,8 @@ A projection contains components, data bindings and action references from the m
 Local input is draft state. Authoritative business data changes only through an accepted command. A stale button is not authorization; the current event is evaluated again on the server through the same model semantics.
 
 Views can be saved and reopened with fresh data. A merchant’s familiar workspace and an on-demand customer view are both valid holos. Streaming should preserve focus, selection and entered values.
+
+The first shop proves generation before reuse. On a cold request the deck emits the surface structure, live bindings and permitted actions for the work at hand. A compatible saved projection can later reuse that output. Both paths route actions back to the model for evaluation against current state.
 
 Presentation can adapt to intent, language and authorized context. The merchant’s policy determines which facts can affect an offer, such as the customer’s contract, quantity or explicit tier. A person’s presentation context does not independently change a price. Each surface inherits the same separation between presentation context and commercial inputs.
 

@@ -2,6 +2,12 @@
 
 The [architecture](architecture.md) gives the model responsibility for commercial decisions. The learning plan makes that responsibility observable. The first learner must determine which data a decision needs, which exact operations apply, which state changes belong together and which event the business is waiting for.
 
+## The first curriculum is a complete shop
+
+Teach the standard commerce functions in the order a working shop needs them. Start with catalog, variants, availability, cart and pricing. Add checkout, payment and merchant order handling on the same model and records. Connect each learned decision to the model-generated controls that let a customer or merchant act on it.
+
+Capture linked buyer and merchant traces rather than disconnected answers. A training case includes the event, the state and applicable policy, the allowed actions, durable changes and any continuation. Reference outcomes check the business decisions. Projection examples teach the model to turn those decisions into usable surfaces. The first shop is accepted only after it completes the full journey with fresh holos and the teacher offline. [First delivery and acceptance](roadmap.md#first-delivery-and-acceptance)
+
 ## Learn from executions
 
 Start with synthetic merchants in an isolated Shopware installation. Vary tax configuration, prices, discounts, quantities, stock, customer conditions and permitted transitions. Capture both accepted and rejected requests. Keep the inputs, the relevant state before and after, the actual effects, and the whole ordered trajectory. Use separate merchants and rule combinations for development and evaluation.
@@ -29,6 +35,8 @@ On the H200 system, resolve the trainable foundation checkpoint and tokenizer fi
 The task loss can score graph and action predictions alongside execution-derived labels for effects and continuation. Exact arithmetic runs in the typed graph. A floating-point approximation of a price is never a committed output. Distinguish retrieval failure, wrong operand selection, wrong policy, wrong continuation and wrong UI binding.
 
 ## The first policy adaptation
+
+This adaptation follows acceptance of the standard shop. The first release learns an ordinary, complete purchase and merchant journey. This experiment then changes a policy inside that working deck.
 
 Initially the return flow waits for inspection before a refund. Teach a new policy in which a configured customer attribute and amount limit permit an earlier refund after confirmed return handover. Stock is restored after confirmed resale eligibility. The policy needs several dependent decisions and keeps monetary and physical outcomes separate.
 

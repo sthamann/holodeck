@@ -72,6 +72,8 @@ Input adapters can convey typed events and evidence from text, photos, transcrip
 
 A saved projection carries its model and schema version, business and actor scope, surface, component bindings and action references. Reopening checks compatibility and binds current authorized values. Commercial offers come from the model and merchant policy, with consent and current-state checks when an action executes.
 
+For a cold request, the model produces the projection for the requested work, actor and current state. The renderer receives components, bindings and model action references. Storefront, checkout and admin share this contract and the same business records. A stored projection is an optional output of the same mechanism.
+
 [MCP Apps](https://apps.extensions.modelcontextprotocol.io/api/documents/overview.html) provides a protocol and host integration for interactive application views associated with tools. It is a candidate transport for holos in other applications. It does not, by itself, define an order, a shared agreement or cross-company write authority.
 
 [A2UI](https://a2ui.org/specification/v1.0-a2ui/) provides a candidate representation for component and data updates. A deck adapter would declare its supported version and component catalog. Local form bindings remain distinct from authoritative business changes.

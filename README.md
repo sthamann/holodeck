@@ -6,7 +6,9 @@ Today, intelligence sits on top of software. The application is the fixed part, 
 
 That is the vision. **Holoshop is the first experiment.** It learns and transfers a small commerce rule, executes recorded Shopware transitions and binds saved views to live demo data. The broader architecture is the research target. [What runs today](#what-runs-today)
 
-![A deck combines business logic and agentic intelligence and projects a storefront, checkout and software for a new business model.](assets/illustrations/deck-and-holos.png)
+**The first delivery is a complete standard shop.** A customer shops and orders through a Holo Storefront and Holo Checkout. The merchant handles that same order in Holo Admin. The deck generates all three surfaces as they are needed and owns the commerce logic that drives them. Shopware teaches the deck during development. The delivered shop runs with the teacher offline. [First delivery and acceptance](docs/roadmap.md#first-delivery-and-acceptance)
+
+![Inside a deck. Intent and live business state enter one multimodal model. Its executable business graph produces working holos and proposes effects for the generic runtime and durable records.](assets/illustrations/inside-a-deck.png)
 
 [How a deck is made](#how-a-deck-is-made) · [Architecture](docs/architecture.md) · [Roadmap](docs/roadmap.md) · [From Apps to Holos](docs/article.md)
 
@@ -98,7 +100,7 @@ An observed failure can become a new teaching case. A corrected checkpoint is te
 | **Execute exactly** | The native backend matches all 168 recorded reference transitions. The local regression suite exercises quote freshness, checkout retries and contention for the last unit. |
 | **Project reusable views** | Stored shopper and merchant compositions bind to current data. The original local run observed 108 warm requests with no large model calls. |
 
-The prototype trains small categorical selection heads. Some commercial decisions still live in host code. The planned experiments move a standard commerce journey into the learned model and test where its decisions live through replay, transfer and ablation. [Experiment evidence](experiments/shopware/README.md) · [Milestones and tasks](docs/roadmap.md)
+The prototype trains small categorical selection heads. Its saved views expose a catalog, a test order flow, catalog edits and an order list. Some commercial decisions still live in host code. The first delivery completes order handling and runs the customer and merchant journey on learned decisions and freshly generated holos. [Experiment evidence](experiments/shopware/README.md) · [Milestones and tasks](docs/roadmap.md)
 
 ![The learned service credit runs with two merchants' rates and caps.](assets/experiments/learned-rule.png)
 

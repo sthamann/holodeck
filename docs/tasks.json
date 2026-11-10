@@ -1,6 +1,6 @@
 {
   "schema": "holodeck.roadmap/1",
-  "revision": 2,
+  "revision": 3,
   "date": "2026-11-10",
   "status": "planned",
   "milestones": [
@@ -10,27 +10,27 @@
     },
     {
       "id": "M1",
-      "title": "Shared learned business model"
+      "title": "Learn and project the storefront"
     },
     {
       "id": "M2",
-      "title": "Complete standard-commerce flows"
+      "title": "Complete checkout and merchant operations"
     },
     {
       "id": "M3",
-      "title": "Projections from the same semantics"
+      "title": "Accept the first complete shop"
     },
     {
       "id": "M4",
-      "title": "Connected learning and causal evidence"
+      "title": "Deepen joint model training"
     },
     {
       "id": "M5",
-      "title": "New policy and merchant transfer"
+      "title": "Learn new policies and transfer them"
     },
     {
       "id": "M6",
-      "title": "Reproducible commerce deck"
+      "title": "Optimize the accepted commerce deck"
     }
   ],
   "tasks": [
@@ -44,7 +44,7 @@
         "experiments/shopware/native/service.py",
         "docs/decision-inventory.json"
       ],
-      "instructions": "Trace the real cart, checkout and return path. Attribute each commercial decision to host code or a learned graph; preserve the existing results as baseline."
+      "instructions": "Trace the current native demo from a catalog request through cart, checkout and the merchant order view. Identify which decisions come from the model and which are still supplied by host code."
     },
     {
       "id": "H02",
@@ -72,7 +72,7 @@
         "experiments/shopware/oracle/",
         "datasets/commerce/schema.json"
       ],
-      "instructions": "Vary teacher configurations. Capture complete cart-to-return trajectories, rejected events and unchanged states. Give missing Shopware behaviours an explicitly independent reference contract."
+      "instructions": "Use Shopware as an offline teacher. Capture complete shopper and merchant journeys with authorized actions, effects, refusals and unchanged records across configurations. Define independently checked expectations for behaviours outside the available reference."
     },
     {
       "id": "H04",
@@ -136,7 +136,7 @@
     {
       "id": "H08",
       "milestone": "M1",
-      "title": "Learn cart validity and pricing",
+      "title": "Learn catalog, cart and pricing behaviour",
       "status": "planned",
       "depends_on": [
         "H03",
@@ -148,22 +148,25 @@
         "src/holodeck/learning.py",
         "tests/test_learned_cart.py"
       ],
-      "instructions": "Learn eligibility, gross and net amounts, tax, configured discounts and simple shipping conditions. Test rounding boundaries, mixed lines, inactive products and invalid quantities against independent labels."
+      "instructions": "Learn product and variant eligibility, quantity and stock rules, gross and net amounts, tax, configured discounts and ordinary shipping choices. Execute the learned graph against independent labels for accepted and rejected actions."
     },
     {
       "id": "H09",
       "milestone": "M1",
-      "title": "Remove host decisions from the target path",
+      "title": "Run the generated storefront through the learned core",
       "status": "planned",
       "depends_on": [
         "H01",
-        "H08"
+        "H08",
+        "H15",
+        "H16",
+        "H17"
       ],
       "files": [
         "src/holodeck/adapters/http.py",
         "tests/test_decision_origin.py"
       ],
-      "instructions": "Route existing API input through the Deck step. Retain transport and formatting only. Remove a relevant learned graph part and verify that the capability disappears without a host fallback."
+      "instructions": "Open a storefront holo from an empty projection store and buyable catalog context. Connect catalog and cart interactions to the learned Deck step. Test that disabling the relevant learned graph removes the associated capability."
     },
     {
       "id": "H10",
@@ -177,7 +180,7 @@
         "src/holodeck/model.py",
         "tests/test_learned_checkout.py"
       ],
-      "instructions": "Learn customer requirements, consent binding, joint order changes and stock effects. Exercise an empty cart, price changes, the last unit and repeated confirmation. One accepted checkout must produce one consistent order."
+      "instructions": "Learn customer and address requirements, shipping selection, price consent, joint order creation and stock effects. Generate the checkout projection from the current decisions. Exercise an empty cart, price changes, the last unit and repeated confirmation."
     },
     {
       "id": "H11",
@@ -192,12 +195,12 @@
         "experiments/shopware/payment_simulator.py",
         "tests/test_learned_payment.py"
       ],
-      "instructions": "Deliver authorization, capture, failure, unknown outcome and refund as events. The model determines waiting, compensation and release for fulfilment. Duplicate or late messages must not duplicate charges or orders."
+      "instructions": "Deliver test payment authorization, capture, failure, unknown outcome and refund as events. The model determines waiting, compensation and release for fulfilment. Verify that duplicate or late events do not duplicate charges or orders."
     },
     {
       "id": "H12",
       "milestone": "M2",
-      "title": "Learn fulfilment and partial returns",
+      "title": "Learn standard order handling in the admin",
       "status": "planned",
       "depends_on": [
         "H11"
@@ -206,23 +209,24 @@
         "tests/test_learned_return.py",
         "datasets/commerce/returns/"
       ],
-      "instructions": "Connect shipment, return handover, receipt, inspection and refund in the same model. Learn payment eligibility and resale eligibility separately. A refund alone must not restore stock."
+      "instructions": "Learn fulfilment, cancellation and a standard return with the associated inventory and payment effects. Produce the permitted merchant actions and the corresponding customer order status from the same decisions."
     },
     {
       "id": "H13",
       "milestone": "M2",
-      "title": "Compare complete commerce trajectories",
+      "title": "Compare the complete shopper and merchant journey",
       "status": "planned",
       "depends_on": [
         "H10",
         "H11",
-        "H12"
+        "H12",
+        "H18"
       ],
       "files": [
         "experiments/shopware/evaluation/",
         "tests/test_commerce_trajectories.py"
       ],
-      "instructions": "Evaluate whole journeys and failures against independent expectations. Separate retrieval, guard, calculation and continuation errors. Extend API coverage only for the contracts actually demonstrated."
+      "instructions": "Run the complete journey through storefront, checkout and admin. Compare record effects, displayed actions and refusals with independent expectations. Attribute each commercial decision to the active model artifact and an executed graph."
     },
     {
       "id": "H14",
@@ -240,7 +244,7 @@
     },
     {
       "id": "H15",
-      "milestone": "M3",
+      "milestone": "M1",
       "title": "Import catalog, media and merchant data",
       "status": "planned",
       "depends_on": [
@@ -254,23 +258,23 @@
     },
     {
       "id": "H16",
-      "milestone": "M3",
-      "title": "Read actions and projections from the same semantics",
+      "milestone": "M1",
+      "title": "Generate working projections from the model",
       "status": "planned",
       "depends_on": [
         "H06",
-        "H13"
+        "H08"
       ],
       "files": [
         "src/holodeck/projection.py",
         "src/holodeck/heads.py"
       ],
-      "instructions": "Bind the action and projection outputs to the executed business graph. Each commercial control references the same guard and model version used when its event is executed."
+      "instructions": "Produce a projection at request time from the model output, role and current business context. Emit a component tree, data bindings and permitted actions tied to the executed business graph. Verify cold generation with no stored storefront, checkout or admin page."
     },
     {
       "id": "H17",
-      "milestone": "M3",
-      "title": "Provide usable generic components",
+      "milestone": "M1",
+      "title": "Render generic components and route model actions",
       "status": "planned",
       "depends_on": [
         "H16"
@@ -279,14 +283,17 @@
         "ui/components/",
         "ui/bindings/"
       ],
-      "instructions": "Provide cards, grids, forms, totals and history with typed bindings. Preserve sorting, filtering, focus and drafts. Components must not contain a second pricing or return policy."
+      "instructions": "Render typed cards, grids, forms, totals and histories. Route permitted actions to the same model entry point. Component implementations supply interaction mechanics and formatting."
     },
     {
       "id": "H18",
-      "milestone": "M3",
-      "title": "Connect shopper and merchant views",
+      "milestone": "M2",
+      "title": "Connect the generated storefront, checkout and admin",
       "status": "planned",
       "depends_on": [
+        "H10",
+        "H11",
+        "H12",
         "H15",
         "H16",
         "H17"
@@ -295,7 +302,7 @@
         "ui/",
         "tests/test_projection_contracts.py"
       ],
-      "instructions": "Operate catalog, cart, checkout, orders and returns on the same records. Filter authorized data server-side. Reopen familiar views with current bindings; stale views must not bypass access checks."
+      "instructions": "Generate shopper, checkout and merchant order views from the same model checkpoint and durable records. Operate the order from the admin and observe its new state from the shopper view. Apply server-side actor scope to data and action access."
     },
     {
       "id": "H19",
@@ -319,8 +326,7 @@
       "status": "planned",
       "depends_on": [
         "H04",
-        "H13",
-        "H19"
+        "H30"
       ],
       "files": [
         "training/export.py",
@@ -452,34 +458,31 @@
     },
     {
       "id": "H29",
-      "milestone": "M6",
-      "title": "Reproduce startup and API comparison",
+      "milestone": "M3",
+      "title": "Start the first shop with its own model and records",
       "status": "planned",
       "depends_on": [
+        "H14",
         "H15",
-        "H18",
-        "H25"
+        "H18"
       ],
       "files": [
         "experiments/shopware/README.md",
         "scripts/demo.py",
         "tests/test_api_contracts.py"
       ],
-      "instructions": "Provide a clean local database, synthetic merchants, media and test payments. Route Store and Admin comparisons through the same model. A fresh checkout must work without private local files."
+      "instructions": "Provide a clean local startup with a loadable deck, synthetic merchant data, media and test payment events. Start with empty projection storage and an offline Shopware teacher. Replay the full buyer and merchant journey through the deployed model."
     },
     {
       "id": "H30",
-      "milestone": "M6",
-      "title": "Accept the actual commerce-deck claim",
+      "milestone": "M3",
+      "title": "Accept the complete standard shop",
       "status": "planned",
       "depends_on": [
+        "H09",
         "H13",
         "H14",
         "H19",
-        "H22",
-        "H23",
-        "H27",
-        "H28",
         "H29"
       ],
       "files": [
@@ -487,7 +490,7 @@
         "docs/status.md",
         "README.md"
       ],
-      "instructions": "Demonstrate purchase, payment, partial return, inspection, new policy and merchant transfer. Record decision origin, ablation, fixed host, restore and independent outcomes. Keep unproved claims explicit."
+      "instructions": "Demonstrate a complete purchase and merchant handling through newly generated holos. Run with Shopware stopped and use the learned deck as the source of all commercial decisions on the accepted path. Verify record consistency, correct permissions, replay and decision origin before accepting the milestone."
     }
   ]
 }
