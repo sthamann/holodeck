@@ -5,7 +5,6 @@ from pathlib import Path
 import mlx.core as mx
 import mlx.nn as nn
 import mlx.optimizers as optim
-from mlx_lm import load
 import numpy as np
 
 from graph_contract import FIELD_TYPES, encode
@@ -13,6 +12,8 @@ from graph_contract import FIELD_TYPES, encode
 
 class Features:
     def __init__(self, base, contexts, samples):
+        from mlx_lm import load
+
         self.tags = sorted({tag for tags, _ in samples for tag in tags})
         self.dimension = len(self.tags) + 129
         self.model, self.tokenizer = load(str(base))

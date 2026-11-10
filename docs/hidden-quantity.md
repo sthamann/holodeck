@@ -36,7 +36,7 @@ Claude Fable 5.2 reviewed the setup and results. It pointed out that the stock t
 
 ## Reproduce the offline check
 
-Install the repository requirements and run from the root with the Shopware teacher stopped.
+Install the repository requirements and MLX 0.32.4. Use `mlx` on Apple Silicon and `mlx[cpu]` on Linux. The offline check uses the archived sparse checkpoint. Run from the repository root with the Shopware teacher stopped. [MLX installation](https://ml-explore.github.io/mlx/build/html/install.html#python-installation)
 
 ```sh
 bench=experiments/shopware/benchmark
