@@ -85,11 +85,12 @@ class Handler(BaseHTTPRequestHandler):
             raw_ops = query.get("ops", ["{}"])[0]
             ops = json.loads(raw_ops) if len(raw_ops) < 2500 else {}
             args["ops"] = ops if isinstance(ops, dict) else {}
+            args["workspace"] = query.get("workspace", [""])[0][:32]
             projection = self.ledger.deck.project(task,self.ledger.read(),actor,args)
             return self.respond(200,projection)
         if self.command == "GET" and url.path == "/health":
             return self.respond(200, {"checkpoint":self.ledger.deck.identity})
-        if self.command != "POST" or url.path not in ("/admin-login","/command"):
+        if self.command != "POST" or url.path not in ("/admin-login","/command","/workspace"):
             return self.respond(404,{"error":"Seite nicht gefunden."})
         origin = self.headers.get("Origin")
         if origin and origin != f"http://{self.headers.get('Host')}":
@@ -105,11 +106,20 @@ class Handler(BaseHTTPRequestHandler):
             if not isinstance(password, str) or not compare_digest(password.encode(),self.admin_password.encode()):
                 raise PermissionError("Das Passwort stimmt nicht.")
             return self.respond(200,{"admin_session":self.admin_token})
+        if url.path == "/workspace":
+            self.actor("admin")
+            composer = getattr(self.ledger.deck,"workspace",None)
+            if composer is None:
+                raise Refusal("Dieser Shop hat keinen Sprachprojektor.")
+            return self.respond(200,{"workspace":composer.create(body.get("prompt"))})
         actor = self.actor(body["task"])
         args, event_id, event = body["args"], body["id"], body["event"]
         if not isinstance(args,dict) or not isinstance(event,str) or not re.fullmatch(r"[a-f0-9-]{32,36}",event_id):
             raise Refusal("Ungültige Anfrage.")
-        result = self.ledger.apply(event,actor,args,event_id)
+        scope = body.get("workspace")
+        if scope is not None and (body["task"] != "admin" or not isinstance(scope,str) or not re.fullmatch(r"[a-f0-9]{32}",scope)):
+            raise Refusal("Ungültiger Arbeitsbereich.")
+        result = self.ledger.apply(event,actor,args,event_id,scope=scope)
         self.ledger.settle(test_payment)
         return self.respond(200,result)
 
@@ -133,8 +143,9 @@ def main():
     cli.add_argument("--checkpoint",type=Path,default=HERE/"deck.npz")
     cli.add_argument("--merchant",type=Path,default=HERE/"merchant.json")
     cli.add_argument("--admin-password",default="deck-demo")
+    cli.add_argument("--workspace-model")
     args = cli.parse_args()
-    deck = NeuralDeck(args.checkpoint,args.merchant)
+    deck = NeuralDeck(args.checkpoint,args.merchant,args.workspace_model)
     if deck.projector is None:
         cli.error("The shop requires a checkpoint with projection weights.")
     database = args.database or Path(".holodeck") / f"projection-{args.merchant.stem}.sqlite"

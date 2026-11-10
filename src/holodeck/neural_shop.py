@@ -6,6 +6,7 @@ from uuid import uuid4
 from .neural import Weights
 from .projection import INTENTS, Projector, materialize
 from .runtime import Refusal, digest
+from .workspace import Workspace
 
 
 TASKS = {'storefront':'Sortiment','checkout':'Kasse','order':'Bestellstatus','admin':'Verwaltung'}
@@ -13,6 +14,8 @@ ORDER_EVENTS = {
     'order.process':'stage', 'order.complete':'stage',
     'order_transaction.paid':'payment', 'order_transaction.refund':'payment',
     'order_delivery.ship':'delivery', 'order_delivery.retour':'delivery',
+    'order_transaction.fail':'payment', 'order_transaction.reopen':'payment',
+    'order_delivery.ship_partially':'delivery', 'order_delivery.reopen':'delivery',
 }
 CART_EVENTS = {'cart.add','cart.set','cart.remove'}
 EMPTY_CART = {'items':{},'last':''}
@@ -29,12 +32,13 @@ def refuse_unless(condition, message='Das Modell lässt diese Aktion im aktuelle
 
 
 class NeuralDeck:
-    def __init__(self, checkpoint, merchant):
+    def __init__(self, checkpoint, merchant, workspace_model=None):
         self.weights = Weights(checkpoint)
         fixture = json.loads(Path(merchant).read_text())
         self.brand = {'name': 'Holoshop', 'tone': 'visual', 'theme': 'kanne', **fixture.get('brand', {})}
         if self.brand['tone'] not in ('visual', 'dense') or self.brand['theme'] not in ('kanne', 'werkraum'):
             raise ValueError('Unknown merchant presentation profile')
+        self.workspace = Workspace(self.weights.values,workspace_model) if workspace_model and 'ws.schema' in self.weights.values else None
         self.projector = Projector(self.weights.values) if 'ui.schema' in self.weights.values else None
         self.shipping = fixture['shipping']
         self.rate = fixture['rate']
@@ -120,7 +124,7 @@ class NeuralDeck:
             outbox = [{'kind':'neural-test-payment','order_id':new_id}]
             result = {'order_id':new_id}
         elif event in ORDER_EVENTS or event=='order_delivery.track':
-            refuse_unless(role=='admin' or (role=='provider' and event=='order_transaction.paid'))
+            refuse_unless(role=='admin' or (role=='provider' and event in ('order_transaction.paid','order_transaction.fail')))
             oid = args.get('order_id')
             refuse_unless(isinstance(oid,str) and oid in orders,'Bestellung nicht gefunden.')
             order = orders[oid]
@@ -204,8 +208,15 @@ class NeuralDeck:
                 affordances[('_', None)] = {'checkout.place'}
         return sources, affordances, digest(quote), cart_status, 'present' if owned else 'absent'
 
+    def authorize_scope(self, scope, event, state, actor, args):
+        refuse_unless(actor['role']=='admin' and self.workspace is not None)
+        self.workspace.authorize(scope,self,event,state,args)
+
     def project(self, task, state, actor, args):
         refuse_unless(actor['role'] in self.roles(task))
+        if args.get('workspace'):
+            refuse_unless(task=='admin' and actor['role']=='admin' and self.workspace is not None)
+            return self.workspace.render(args['workspace'],self,state,actor,args)
         if self.projector is None:
             raise Refusal('Dieser Modellstand enthält keine Oberflächengewichte.')
         intents = INTENTS[task]
@@ -219,4 +230,5 @@ class NeuralDeck:
         tree = materialize(program, actor['role'], sources, actions, quote_key, self.brand, queries,
                            lambda oid: self.order_affordances(state['orders'][oid]))
         return {'title':TASKS[task], 'tree':tree, 'program':program, 'brand':self.brand,
-                'context':context, 'checkpoint':self.identity, 'projection':uuid4().hex}
+                'context':context, 'checkpoint':self.identity, 'projection':uuid4().hex,
+                'workspaces': self.workspace is not None and actor['role']=='admin'}

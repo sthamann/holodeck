@@ -228,9 +228,9 @@ class Ledger:
                 return self.read(connection)
         return json.loads(db.execute("SELECT state FROM business WHERE id=1").fetchone()[0])
 
-    def apply(self, name, actor, args, event_id):
+    def apply(self, name, actor, args, event_id, *, scope=None):
         receipt_id = digest([actor, event_id])
-        request = digest([name, args])
+        request = digest([name, args] if scope is None else [name, args, scope])
         with self.connect() as db:
             db.execute("BEGIN IMMEDIATE")
             previous = db.execute("SELECT request, result FROM receipts WHERE id=?", (receipt_id,)).fetchone()
@@ -239,6 +239,8 @@ class Ledger:
                     raise Refusal("Diese Anfrage wurde mit anderen Angaben bereits verarbeitet.")
                 return json.loads(previous[1])
             state = self.read(db)
+            if scope is not None:
+                self.deck.authorize_scope(scope,name,state,actor,args)
             result = self.deck.action(name, state, actor, args, uuid4().hex)
             next_state = {**state, **result["writes"]}
             db.execute("UPDATE business SET state=? WHERE id=1", (encode(next_state),))

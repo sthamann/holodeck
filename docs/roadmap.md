@@ -4,6 +4,8 @@ The first product milestone is a working standard shop. A customer shops in a **
 
 The current prototype completes the purchase and merchant flow in two local shops with the same checkpoint and Shopware offline. The deck uses learned commerce decisions and emits the component tree, data and action bindings for each surface. [Runnable two shop proof](neural-projection.md) · [Commerce experiment](standalone-shop.md)
 
+Nordlager extends the experiment with a workspace from a free request and a broader set of observed Shopware state transitions. [Native UI and third shop proof](native-shopware-workspace.md)
+
 ## First delivery and acceptance
 
 | Area | What the first shop must do |

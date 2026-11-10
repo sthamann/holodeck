@@ -1,0 +1,9 @@
+{"source":"catalog","kind":"grid","role":"table","headers":[{"label":"Name","sortable":true},{"label":"Product number","sortable":true},{"label":"Manufacturer","sortable":true},{"label":"Active","sortable":true},{"label":"Sales","sortable":true},{"label":"In stock","sortable":true},{"label":"Available","sortable":true},{"label":"Created at","sortable":true}],"route":"#/sw/product/index"}
+{"source":"catalog","kind":"sort","label":"In stock","property":"stock","direction":"ASC","status":200,"input":"native URL sort state"}
+{"source":"catalog","kind":"search","label":"Search products...","status":200}
+{"source":"orders","kind":"grid","role":"table","headers":[{"label":"Order number","sortable":true},{"label":"Customer name","sortable":true},{"label":"Delivery address","sortable":true},{"label":"Total","sortable":true},{"label":"Order status","sortable":true},{"label":"Payment status","sortable":true},{"label":"Delivery status","sortable":true},{"label":"Order date","sortable":true}],"route":"#/sw/order/index","capture":"visible native ARIA columns and sortable Shopware DOM class"}
+{"source":"orders","kind":"sort","label":"Total","property":"amountTotal","direction":"ASC","status":200,"input":"native URL sort state"}
+{"source":"orders","kind":"search","label":"Search all orders...","status":200}
+{"source":"orders","kind":"filter","labels":["Order status","Payment status","Delivery status"]}
+{"source":"orders","kind":"expand","fields":["Delivery address","Items","Tracking codes"],"selectedRecord":true}
+{"source":"orders","kind":"command","event":"order_delivery.ship","status":200,"binding":"selected order → delivery relation","after":"shipped","emailSent":false}

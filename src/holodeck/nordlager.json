@@ -1,0 +1,55 @@
+{
+  "shipping": 625,
+  "rate": 19,
+  "brand": {
+    "name": "Nordlager",
+    "tone": "dense",
+    "theme": "werkraum"
+  },
+  "catalog": {
+    "NL-A01": {
+      "sku": "NL-A01",
+      "name": "Moka Ersatzkanne",
+      "variant": "3 Tassen",
+      "description": "Nordlager Demokatalog",
+      "price": 6200,
+      "rate": 19,
+      "stock": 6,
+      "active": true,
+      "image": "moka.jpg"
+    },
+    "NL-B04": {
+      "sku": "NL-B04",
+      "name": "Servicepaket Herdkocher",
+      "variant": "6 Tassen",
+      "description": "Nordlager Demokatalog",
+      "price": 13700,
+      "rate": 19,
+      "stock": 5,
+      "active": true,
+      "image": "moka-pair.jpg"
+    },
+    "NL-C08": {
+      "sku": "NL-C08",
+      "name": "Glaskanne für Filterstation",
+      "variant": "1 Liter",
+      "description": "Nordlager Demokatalog",
+      "price": 4350,
+      "rate": 19,
+      "stock": 2,
+      "active": true,
+      "image": "press.jpg"
+    },
+    "NL-D12": {
+      "sku": "NL-D12",
+      "name": "Theken Set",
+      "variant": "Gastro",
+      "description": "Nordlager Demokatalog",
+      "price": 8200,
+      "rate": 19,
+      "stock": 12,
+      "active": true,
+      "image": "moka-pair.jpg"
+    }
+  }
+}

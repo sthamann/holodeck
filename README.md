@@ -10,6 +10,8 @@ That is the vision. **Holoshop is the first experiment.** It learns commerce tra
 
 **Two shops now run from the same deck.** Kanne and Werkraum use one checkpoint with learned commerce and projection heads. It builds the storefront, checkout and admin and binds each action to the current records. Both shops completed a purchase with Shopware switched off. [See the generated surfaces and run the proof](docs/neural-projection.md)
 
+**Nordlager adds a free-text Admin.** The deck learns from native Shopware grids and interactions and composes a new working view over live orders and stock. A local language specialist interprets the request. [See the third shop and native Shopware evidence](docs/native-shopware-workspace.md)
+
 ![Inside a deck. Intent and live business state enter one multimodal model. Its executable business graph produces working holos and proposes effects for the generic runtime and durable records.](assets/illustrations/inside-a-deck.png)
 
 [How a deck is made](#how-a-deck-is-made) · [Architecture](docs/architecture.md) · [Roadmap](docs/roadmap.md) · [From Apps to Holos](docs/article.md)

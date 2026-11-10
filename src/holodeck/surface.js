@@ -3,14 +3,15 @@ const surface = document.querySelector('#surface');
 const title = document.querySelector('#title');
 const notice = document.querySelector('#notice');
 const nav = document.querySelector('nav');
+const composer = document.querySelector('#composer');
 const brand = document.querySelector('.brand');
 const tasks = {storefront:'Sortiment', checkout:'Kasse', order:'Bestellung', admin:'Verwaltung'};
 const money = new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR'});
 const compare = new Intl.Collator('de-DE',{numeric:true,sensitivity:'base'});
 const statusLabels = {
   stage:{open:'Offen',in_progress:'In Bearbeitung',completed:'Abgeschlossen'},
-  payment:{open:'Zahlung offen',paid:'Bezahlt',refunded:'Erstattet'},
-  delivery:{open:'Versand offen',shipped:'Versendet',returned:'Retourniert'},
+  payment:{open:'Zahlung offen',paid:'Bezahlt',refunded:'Erstattet',failed:'Fehlgeschlagen',in_progress:'In Bearbeitung',paid_partially:'Teilbezahlt',authorized:'Autorisiert',cancelled:'Storniert',refunded_partially:'Teilweise erstattet'},
+  delivery:{open:'Versand offen',shipped:'Versendet',returned:'Retourniert',shipped_partially:'Teilweise versendet',cancelled:'Storniert',returned_partially:'Teilweise retourniert'},
   tag:{in_stock:'Verfügbar',sold_out:'Ausverkauft'}
 };
 let view = {}, sequence = 0, navigation = 0;
@@ -90,7 +91,7 @@ function inputField(field) {
   return label;
 }
 function action(spec) {
-  const task = view.task;
+  const {task,workspace} = view;
   const form = el('form');
   if (spec.fields.length) {
     const fields = el('div',undefined,'fields');
@@ -116,7 +117,7 @@ function action(spec) {
     button.disabled = true;
     const at = navigation;
     try {
-      await request('/command',{task,event:spec.event,id:eventId,args});
+      await request('/command',{task,event:spec.event,id:eventId,args,workspace});
       if (at !== navigation) return;
       if (spec.navigate) go(spec.navigate);
       else { message('Gespeichert.'); await load(); }
@@ -256,9 +257,17 @@ function table(node, rows, state, refresh, queryChanged) {
 function collection(node,path) {
   const section = el('section',undefined,node.component === 'grid' ? '' : 'panel');
   section.append(el('h2',node.title));
+  if (node.criteria?.length) {
+    const criteria = el('div',undefined,'criteria');
+    const symbols = {eq:'=',lt:'<',lte:'≤',gt:'>',gte:'≥'};
+    for (const item of node.criteria) {
+      criteria.append(el('span',item.label + ' ' + symbols[item.op] + ' ' + readable(item,item.value),'tag'));
+    }
+    section.append(criteria);
+  }
   const tools = el('div',undefined,'tools');
   const content = el('div');
-  const key = view.task + '/' + view.intent + '/' + path;
+  const key = view.task + '/' + view.intent + '/' + (view.workspace ?? '') + '/' + path;
   if (!local.has(key)) local.set(key,{filters:{},direction:1,open:new Set()});
   const state = local.get(key);
   section.dataset.node = path;
@@ -391,18 +400,54 @@ function login() {
   });
   surface.replaceChildren(form);
 }
+function workspaceComposer() {
+  const box = el('section',undefined,'composer');
+  box.append(el('h2','Admin-Ansicht beschreiben'));
+  const form = el('form');
+  const label = el('label','Welche Daten und Aktionen brauchst du?');
+  const input = el('textarea');
+  input.name = 'request';
+  input.required = true;
+  input.maxLength = 1600;
+  input.rows = 2;
+  label.append(input);
+  const button = el('button','Ansicht erzeugen');
+  form.append(label,button);
+  form.addEventListener('submit',async event => {
+    event.preventDefault();
+    const at = navigation;
+    button.disabled = true;
+    button.textContent = 'Ansicht wird erzeugt …';
+    message();
+    try {
+      const result = await request('/workspace',{prompt:input.value});
+      if (at === navigation) go({task:'admin',workspace:result.workspace});
+    } catch (error) {
+      if (at === navigation) message(error.message,true);
+    } finally {
+      button.disabled = false;
+      button.textContent = 'Ansicht erzeugen';
+    }
+  });
+  box.append(form);
+  composer.replaceChildren(box);
+  composer.hidden = false;
+}
 async function load(focus) {
   const current = ++sequence;
   const query = new URLSearchParams(location.search);
   const task = Object.hasOwn(tasks,query.get('task')) ? query.get('task') : 'storefront';
   const intent = query.get('intent') ?? '';
-  view = {task,intent};
+  const workspace = task === 'admin' ? query.get('workspace') : null;
+  view = workspace ? {task,intent,workspace} : {task,intent};
+  if (task !== 'admin') composer.hidden = true;
   nav.replaceChildren(...Object.entries(tasks).map(([task,label]) => link({task},label)));
   surface.inert = !focus?.search;
   surface.setAttribute('aria-busy','true');
   if (!surface.children.length) surface.append(el('p','Ansicht wird vorbereitet …','empty'));
   try {
-    const prefix = task + '/' + (intent || defaults.get(task) || '') + '/';
+    const mode = workspace ? 'workspace' : intent || defaults.get(task) || '';
+    const prefix = task + '/' + mode + '/' + (workspace ?? '') + '/';
     const ops = {}, sent = [];
     for (const [key,state] of local) if (key.startsWith(prefix) && state.source) {
       ops[state.source] = {q:state.query,sort:state.sort,direction:state.direction,filters:state.filters,page:state.page};
@@ -412,13 +457,16 @@ async function load(focus) {
     const data = await request('/projection?' + params);
     if (current !== sequence || sent.some(([state,query]) => state.query !== query)) return;
     view.intent = data.context[1];
-    if (!intent) defaults.set(task,view.intent);
+    if (!intent && !workspace) defaults.set(task,view.intent);
     document.documentElement.dataset.theme = data.brand.theme;
     brand.textContent = data.brand.name;
     title.textContent = data.title;
     title.hidden = data.program.some(node => node.kind === 'hero');
     document.title = data.title + ' · ' + data.brand.name;
     surface.replaceChildren(render(data.tree));
+    if (data.workspaces) {
+      if (composer.hidden) workspaceComposer();
+    } else composer.hidden = true;
     surface.inert = false;
     if (focus) {
       const parent = surface.querySelector('[data-node="' + CSS.escape(focus.path) + '"]');
@@ -429,6 +477,7 @@ async function load(focus) {
     }
   } catch (error) {
     if (current !== sequence) return;
+    composer.hidden = true;
     title.hidden = false;
     title.textContent = tasks[task];
     if (task === 'admin' && error.status === 403) login();

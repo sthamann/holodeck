@@ -65,6 +65,10 @@ EVENTS = {
     'order_transaction.refund': ('Testzahlung erstatten', ('order_id',)),
     'order_delivery.ship': ('Als versendet markieren', ('order_id',)),
     'order_delivery.retour': ('Retoure erfassen', ('order_id',)),
+    'order_transaction.fail': ('Zahlung als fehlgeschlagen markieren', ('order_id',)),
+    'order_transaction.reopen': ('Zahlung wieder öffnen', ('order_id',)),
+    'order_delivery.ship_partially': ('Teilversandstatus setzen', ('order_id',)),
+    'order_delivery.reopen': ('Versandstatus wieder öffnen', ('order_id',)),
     'order_delivery.track': ('Sendungsnummer speichern', ('order_id', 'tracking')),
 }
 NAV_LABELS = {

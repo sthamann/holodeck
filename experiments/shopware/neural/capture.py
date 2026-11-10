@@ -7,10 +7,13 @@ from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 import random
 from urllib.error import HTTPError
+from urllib.parse import urlsplit
 from urllib.request import Request, urlopen
 from uuid import uuid4
 
-BASE = 'http://127.0.0.1:18765'
+BASE = os.environ.get('HOLODECK_TEACHER_URL', 'http://127.0.0.1:18765').rstrip('/')
+if urlsplit(BASE).hostname != '127.0.0.1' or urlsplit(BASE).scheme != 'http':
+    raise ValueError('The teacher must be a loopback HTTP instance.')
 
 
 def cents(value):
@@ -28,7 +31,10 @@ class Oracle:
         self.states = {row['id']: row['technicalName'] for row in self.search('state-machine-state', {'limit': 200})}
         self.country = self.search('country', {'filter': [{'type':'equals','field':'iso','value':'DE'}]})[0]['id']
         self.salutation = self.search('salutation', {'limit': 1})[0]['id']
-        base = self.search('sales-channel', {'filter': [{'type':'equals','field':'name','value':'ShopVM Kanne'}]})[0]
+        named = self.search('sales-channel', {'filter': [{'type':'equals','field':'name','value':'ShopVM Kanne'}]})
+        storefront = [{'type':'equals','field':'typeId','value':'8a243080f92e4c719546314b577cf82b'},
+                      {'type':'equals','field':'active','value':True}]
+        base = (named or self.search('sales-channel', {'filter':storefront,'limit':1}))[0]
         self.channel = {key: base[key] for key in (
             'typeId','languageId','currencyId','paymentMethodId','shippingMethodId','countryId',
             'navigationCategoryId','customerGroupId','taxCalculationType',
