@@ -262,8 +262,12 @@ Demonstrate purchase, payment, partial return, inspection, new policy and mercha
 
 ## What each stage establishes
 
+These milestones test selected parts of the architecture. The eight target properties have their own mechanisms and evidence requirements. [Properties and how to test them](architecture.md#properties-and-how-to-test-them)
+
 M1 already requires a learned commercial decision. Fusion is not postponed until after a conventional application has been built. M2 completes the standard process. M3 projects that same semantics. M4 tests the connection between understanding and execution. M5 changes the policy and transfers it with an unchanged host. M6 demonstrates the complete result.
 
 The adaptation policy changes when a refund becomes eligible while keeping inventory tied to inspection. It therefore tests multiple dependent decisions, not another isolated formula.
 
 Broader Shopware parity, B2B organizations and approvals, embedded holos, external partners and new business models follow after this evidence. They must meet the same boundary and transfer tests.
+
+A purchase order amendment after partial shipment is a candidate for the later B2B transfer experiment. [Experiment design](learning.md#a-later-b2b-transfer-experiment)

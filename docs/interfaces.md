@@ -68,6 +68,10 @@ A projection contains a component tree, authorized data bindings, local drafts a
 
 Sorting, filtering and local form editing can operate without a large model call. The component code provides interaction mechanics. It cannot contain an alternative refund, pricing or approval policy.
 
+Input adapters can convey typed events and evidence from text, photos, transcripts or documents. Evidence carries source references and uncertainty. The deck resolves it to typed inputs or requests more facts. Presentation context and authorized commercial inputs have separate roles in the step contract.
+
+A saved projection carries its model and schema version, business and actor scope, surface, component bindings and action references. Reopening checks compatibility and binds current authorized values. Commercial offers come from the model and merchant policy, with consent and current-state checks when an action executes.
+
 [MCP Apps](https://apps.extensions.modelcontextprotocol.io/api/documents/overview.html) provides a protocol and host integration for interactive application views associated with tools. It is a candidate transport for holos in other applications. It does not, by itself, define an order, a shared agreement or cross-company write authority.
 
 [A2UI](https://a2ui.org/specification/v1.0-a2ui/) provides a candidate representation for component and data updates. A deck adapter would declare its supported version and component catalog. Local form bindings remain distinct from authoritative business changes.

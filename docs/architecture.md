@@ -2,7 +2,7 @@
 
 **Status: target design.** The [Shopware experiments](../experiments/shopware/README.md) implement selected pieces. The complete architecture described here is the next research and engineering objective.
 
-The aim is one executable model of a business. That model should understand an event, determine its commercial consequences, carry the process forward and project the controls needed to do the work. The first implementation target is ordinary commerce. More elaborate stories illustrate the eventual flexibility; they do not define the initial backlog.
+The target is one multimodal, executable model of the business. Search, pricing, checkout, service and analysis draw on the same learned business semantics. The model interprets what happened, determines the consequences, carries the process forward and projects the software needed for the work. Standard commerce supplies the first evidence. [The eight properties](../README.md#what-becomes-a-property-of-the-architecture)
 
 ## 1. One source of business decisions
 
@@ -17,11 +17,26 @@ DeckModel.step(state, event, configuration, continuation, actor_scope)
     → decision trace
 ```
 
-The same learned structure determines whether a return can be refunded, the resulting records and the availability of the refund control. A separate application must not independently determine those outcomes after the model chooses a tool name.
+The same learned structure determines which action is allowed, which effects belong together and which controls can be offered. Each decision is attributed to the model checkpoint and the executable graph that produced it.
 
 The model runs on technical infrastructure. A database stores current facts. A renderer implements controls. A commit core enforces access, versions and atomicity. These remain necessary, but they contain no independent promotion engine, refund policy or order state machine.
 
 The distinction is operational rather than cosmetic. A single service, repository or class does not establish fusion. We test the location and cause of each business decision.
+
+“One model” means one versioned deck owns the business semantics across operations and surfaces. Its checkpoint can include a foundation model, trained adapters and an executable learned graph. Typed primitives, storage, access checks and rendering provide general execution machinery. Live facts and accepted agreements remain durable records with authority, provenance and versions.
+
+## Properties and how to test them
+
+| Target property | Mechanism | First convincing check |
+|---|---|---|
+| **Every function thinks** | Search, pricing, checkout and service resolve shared facts and commitments through the deck. | Trace how one learned policy change affects related decisions across functions. |
+| **Personal is the only version** | Compose or reuse a projection for the current person, task and authorized context. Evaluate merchant pricing on declared inputs. | Different presentations of the same authorized pricing facts produce the same offer. A declared contract can change it through the pricing policy. |
+| **Anything is input** | Bind text, image, speech and document evidence to typed facts and intents, preserving source and uncertainty. | Equivalent evidence leads to the same supported workflow. An ambiguous match requests evidence before the affected action proceeds. |
+| **Every surface, without a project** | Use the same action and projection contracts through compatible browser, embedded, voice and agent adapters. | Complete the same journey through two surfaces and compare effects, receipts and access checks. |
+| **Every business gets its own software** | Bind company data and configuration to a shared checkpoint and teach additional semantics through checked adaptation. | Transfer to a second business and measure configured differences and learned changes with a fixed runtime. |
+| **Features are imagined, then they exist** | Express a described policy as a candidate graph and projection over typed primitives. Rehearse and verify its scope before activation. | Demonstrate a new feature against independent cases and activate the accepted version. |
+| **You can ask the business** | Resolve a question against authorized records and project its evidence and available actions. | Reproduce an answer for a defined population and time window and verify access to its drill-down. |
+| **It gets better by working** | Turn a failure or expert correction into a teaching case and evaluate the next checkpoint before adoption. | Measure improvement on fresh journeys and recover the preceding version with open agreements intact. |
 
 ## 2. Inside the model
 
@@ -52,7 +67,7 @@ The representation connects language and images with typed entities, events, rel
 
 Learned selections determine which operands, operations, conditions and transitions apply. The primitive executor evaluates those choices exactly. It supplies arithmetic, comparison, collections, typed object changes and continuation mechanics. It does not supply commerce formulas.
 
-For example, a learned graph may read the amount already paid, subtract earlier refunds, compare a proposed refund with the remaining amount and emit the associated changes. The fixed executor knows subtraction and comparison. It does not know the meaning of a refund.
+The learned graph chooses which records, conditions and operations are relevant to a business event. The primitive executor supplies exact subtraction, comparison and record operations. That distinction lets the same machinery run learned semantics from different parts of the business.
 
 ### Structured model state
 
@@ -129,6 +144,10 @@ The cache identity includes the checkpoint, vocabulary, schema, compiler and rel
 
 We require interpreter and compiled execution to agree on rejection as well as success: amounts, writes, continuations, action availability and relevant dependencies. Replacing a learned decision with a handwritten approximation for speed would invalidate this comparison.
 
+Projection has its own reuse path. Save the component structure, bindings and action references with the model, tenant, surface and access scope that make them valid. Reopen a compatible view with current authorized records. Recheck the action against current state at execution, including its consent and agreement references. A model or policy change can invalidate a saved projection or require it to be rebound.
+
+Measure time and inference cost for initial composition, opening a saved holo and executing a routine action separately. Each result records which path ran and whether a large model was called. Personalization can happen through binding and selecting a saved view as well as composing one.
+
 The existing native experiment validates a much narrower version of this idea for selected fixed-schema programs. It does not establish whole-model compilation.
 
 ## 8. Holos are grounded projections
@@ -138,6 +157,8 @@ A projection contains components, data bindings and action references from the m
 Local input is draft state. Authoritative business data changes only through an accepted command. A stale button is not authorization; the current event is evaluated again on the server through the same model semantics.
 
 Views can be saved and reopened with fresh data. A merchant’s familiar workspace and an on-demand customer view are both valid holos. Streaming should preserve focus, selection and entered values.
+
+Presentation can adapt to intent, language and authorized context. The merchant’s policy determines which facts can affect an offer, such as the customer’s contract, quantity or explicit tier. A person’s presentation context does not independently change a price. Each surface inherits the same separation between presentation context and commercial inputs.
 
 MCP Apps is a possible delivery mechanism for an interactive view inside another host. A2UI is a possible representation for component and data updates. These protocols do not supply the deck’s business semantics or shared agreement model. See [projection and transport boundaries](interfaces.md#projection-and-transport).
 

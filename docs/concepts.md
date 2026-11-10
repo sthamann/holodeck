@@ -8,6 +8,8 @@ A **deck** is an executable representation of a business. It combines learned un
 
 The deck understands what a business event means, what must be true before it can proceed, which changes belong together, and what remains to be done. Its learned model determines those relationships. Exact typed operations make them executable and inspectable.
 
+The same versioned multimodal model supplies those meanings across the business. A product recognized in a photo, a contracted item in a tender and an order line can resolve to the same record and commitments. Learned semantics remain part of the deck as current data and agreements evolve.
+
 A deck may exist for one job or become the version of a business used for years. It can carry a stable checkout while learning a new return policy. Its records remain current even when its learned business structure stays the same.
 
 A language model choosing a function name is not sufficient evidence of a deck. If a separately maintained application determines every commercial consequence of that function, the central learning problem remains in that application.
@@ -25,6 +27,8 @@ A generated screenshot is not a holo. Its controls must be bound to actual data 
 **Projected software** is the broader design principle. The form of the software follows the work, its context and its participants. Its meaning survives changes in presentation.
 
 This does not require constant novelty. A warehouse team may prefer the same stock view every morning. Keeping that view is a valid projection. A new view is useful when it improves the decision or makes a different kind of work possible.
+
+Personalization shapes the experience. Merchant policy determines offers and can explicitly take contract terms, quantity or customer tiers into account. A saved holo keeps the layout and bindings and uses current authorized data when reopened.
 
 ## Model knowledge and business memory
 

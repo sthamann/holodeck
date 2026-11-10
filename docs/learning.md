@@ -52,4 +52,10 @@ Save the learned structure, provenance, checked scope and activation history. Re
 
 The ablation test is essential. Deactivate the relevant learned structure and verify that the matching commercial ability disappears. If a hidden host handler still performs the task, the experiment has located more business code to move into the model.
 
+## A later B2B transfer experiment
+
+A purchase order amendment after partial shipment is a planned probe for transfer. Start with 40 accepted units and 24 already shipped. Ask to revise the total to 30. If the revision is accepted, six units remain to be fulfilled. The learned graph must preserve the completed shipment, apply the applicable contract terms and wait for approval when required.
+
+Compare complete trajectories under two companies’ configurations, including approval refused and fulfilment arriving while a revision is open. Use independent expected records and action sets. Keep the runtime fixed and track which differences come from company data and which require learned semantics.
+
 The work is sequenced in the [roadmap](roadmap.md). The [existing Shopware evidence](../experiments/shopware/README.md) establishes a narrower starting point.

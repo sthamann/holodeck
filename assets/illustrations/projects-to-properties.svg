@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 824" width="1280" height="824" role="img" aria-labelledby="title description" font-family="Arial, Helvetica, sans-serif">
+<title id="title">Today a project. In a deck a property.</title>
+<desc id="description">Six examples of projected software across personalization, search, languages, customization, channels and analysis.</desc>
+<rect width="1280" height="824" fill="#f8f2e7"/>
+<rect x="52" y="48" width="1176" height="728" rx="22" fill="#fffaf2" stroke="#e1d8ca" stroke-width="2"/>
+<text x="83" y="95" font-size="19" fill="#5e6259" font-weight="700">HOLODECK   /   PROJECTED SOFTWARE</text>
+<text x="83" y="153" font-size="42" fill="#202928" font-weight="700">Today a project.</text>
+<text x="651" y="153" font-size="42" fill="#9c351e" font-weight="700">In a deck a property.</text>
+<path d="M623 118v624" stroke="#e1d8ca" stroke-width="2"/>
+<rect x="70" y="181" width="1140" height="87" rx="8" fill="#f5eee3"/>
+<text x="83" y="213" font-size="21" fill="#5e6259" font-weight="700">Personalization</text>
+<text x="83" y="246" font-size="23" fill="#202928" font-weight="400">Build storefront segments and variants.</text>
+<text x="651" y="213" font-size="21" fill="#9c351e" font-weight="700">Personalization</text>
+<text x="651" y="246" font-size="23" fill="#202928" font-weight="400">Compose the view for this person and task.</text>
+<text x="83" y="305" font-size="21" fill="#5e6259" font-weight="700">Search</text>
+<text x="83" y="338" font-size="23" fill="#202928" font-weight="400">Build separate paths for text, photos and files.</text>
+<text x="651" y="305" font-size="21" fill="#9c351e" font-weight="700">Search</text>
+<text x="651" y="338" font-size="23" fill="#202928" font-weight="400">Start with the evidence at hand.</text>
+<rect x="70" y="365" width="1140" height="87" rx="8" fill="#f5eee3"/>
+<text x="83" y="397" font-size="21" fill="#5e6259" font-weight="700">Languages</text>
+<text x="83" y="430" font-size="23" fill="#202928" font-weight="400">Maintain parallel versions of the journey.</text>
+<text x="651" y="397" font-size="21" fill="#9c351e" font-weight="700">Languages</text>
+<text x="651" y="430" font-size="23" fill="#202928" font-weight="400">Present one workflow in the person’s language.</text>
+<text x="83" y="489" font-size="21" fill="#5e6259" font-weight="700">Customization</text>
+<text x="83" y="522" font-size="23" fill="#202928" font-weight="400">Build and maintain a plugin.</text>
+<text x="651" y="489" font-size="21" fill="#9c351e" font-weight="700">Customization</text>
+<text x="651" y="522" font-size="23" fill="#202928" font-weight="400">Teach a policy and rehearse it on real cases.</text>
+<rect x="70" y="549" width="1140" height="87" rx="8" fill="#f5eee3"/>
+<text x="83" y="581" font-size="21" fill="#5e6259" font-weight="700">New channels</text>
+<text x="83" y="614" font-size="23" fill="#202928" font-weight="400">Rebuild the flow for a new surface.</text>
+<text x="651" y="581" font-size="21" fill="#9c351e" font-weight="700">New channels</text>
+<text x="651" y="614" font-size="23" fill="#202928" font-weight="400">Project the same workflow to that surface.</text>
+<text x="83" y="673" font-size="21" fill="#5e6259" font-weight="700">Analysis</text>
+<text x="83" y="706" font-size="23" fill="#202928" font-weight="400">Specify and build another report.</text>
+<text x="651" y="673" font-size="21" fill="#9c351e" font-weight="700">Analysis</text>
+<text x="651" y="706" font-size="23" fill="#202928" font-weight="400">Ask a question and get a view you can act on.</text>
+</svg>
