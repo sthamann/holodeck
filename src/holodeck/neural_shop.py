@@ -4,33 +4,19 @@ from pathlib import Path
 from uuid import uuid4
 
 from .neural import Weights
+from .projection import INTENTS, Projector, materialize
 from .runtime import Refusal, digest
 
 
-TASKS = {'storefront':'Sortiment','checkout':'Kasse','order':'Bestellstatus','admin':'Shop verwalten'}
+TASKS = {'storefront':'Sortiment','checkout':'Kasse','order':'Bestellstatus','admin':'Verwaltung'}
 ORDER_EVENTS = {
-    'order.process':('stage','In Bearbeitung nehmen'),
-    'order.complete':('stage','Bestellung abschließen'),
-    'order_transaction.paid':('payment','Testzahlung bestätigen'),
-    'order_transaction.refund':('payment','Testzahlung erstatten'),
-    'order_delivery.ship':('delivery','Als versendet markieren'),
-    'order_delivery.retour':('delivery','Retoure erfassen'),
+    'order.process':'stage', 'order.complete':'stage',
+    'order_transaction.paid':'payment', 'order_transaction.refund':'payment',
+    'order_delivery.ship':'delivery', 'order_delivery.retour':'delivery',
 }
 CART_EVENTS = {'cart.add','cart.set','cart.remove'}
 EMPTY_CART = {'items':{},'last':''}
 AMOUNTS = ('goods','shipping','gross','tax','net')
-
-
-def field(name, label, kind='text', value=''):
-    return {'name':name,'label':label,'type':kind,'value':value}
-
-
-def control(event, title, args, fields=(), navigate=None):
-    return {'event':event,'title':title,'args':args,'fields':list(fields),'navigate':navigate}
-
-
-def panel(component, title, **data):
-    return {'component':component,'title':title,**data}
 
 
 def presence(value):
@@ -46,6 +32,10 @@ class NeuralDeck:
     def __init__(self, checkpoint, merchant):
         self.weights = Weights(checkpoint)
         fixture = json.loads(Path(merchant).read_text())
+        self.brand = {'name': 'Holoshop', 'tone': 'visual', 'theme': 'kanne', **fixture.get('brand', {})}
+        if self.brand['tone'] not in ('visual', 'dense') or self.brand['theme'] not in ('kanne', 'werkraum'):
+            raise ValueError('Unknown merchant presentation profile')
+        self.projector = Projector(self.weights.values) if 'ui.schema' in self.weights.values else None
         self.shipping = fixture['shipping']
         self.rate = fixture['rate']
         if self.rate not in (7,19) or any(p['rate']!=self.rate for p in fixture['catalog'].values()):
@@ -142,7 +132,7 @@ class NeuralDeck:
                 refuse_unless(ok)
                 changed = {'tracking':proposed if value=='<argument>' else order['tracking']}
             else:
-                key,_ = ORDER_EVENTS[event]
+                key = ORDER_EVENTS[event]
                 ok,value = decide(event,order[key])
                 refuse_unless(ok)
                 changed = {key:value}
@@ -152,73 +142,81 @@ class NeuralDeck:
         return {'writes':writes,'result':result,'outbox':outbox,
                 'trace':{'checkpoint':self.identity,'weights':self.weights.identity,'action':event}}
 
-    def order_view(self, order, admin=False):
-        visible = {k:order[k] for k in ('id','name','address','stage','payment','delivery','quote','tracking')}
-        actions = []
-        if admin:
-            args = {'order_id':order['id']}
-            for event,(key,label) in ORDER_EVENTS.items():
-                current = order[key]
-                ok, next_value = self.weights.decide(event,current)
-                if ok and current!=next_value:
-                    actions.append(control(event,label,args))
-            if self.weights.decide('order_delivery.track',presence(order['tracking']))[0]:
-                actions.append(control('order_delivery.track','Sendungsnummer speichern',args,
-                                       [field('tracking','Sendungsnummer',value=order['tracking'])]))
-        return {**visible,'actions':actions}
+    def order_affordances(self, order):
+        decide = self.weights.decide
+        actions = set()
+        for event, key in ORDER_EVENTS.items():
+            before = order[key]
+            ok, after = decide(event, before)
+            if ok and before != after:
+                actions.add(event)
+        if decide('order_delivery.track', presence(order['tracking']))[0]:
+            actions.add('order_delivery.track')
+        return actions
+
+    @staticmethod
+    def order_record(order):
+        return {**{k: order[k] for k in ('id', 'name', 'address', 'stage', 'payment', 'delivery', 'tracking')},
+                'gross': order['quote']['gross'],
+                'items': [{k: line[k] for k in ('name', 'quantity')} for line in order['quote']['lines']]}
+
+    def read_model(self, state, actor):
+        """Expose typed records and live commerce capabilities, without UI decisions."""
+        role = actor['role']
+        decide = self.weights.decide
+        catalog = state['catalog']
+        cart = state['carts'].get(actor['id'], EMPTY_CART)
+        products = [{**item, 'availability': 'in_stock' if item['stock'] else 'sold_out'}
+                    for item in catalog.values() if item['active'] or role == 'admin']
+        sources, affordances = {'catalog': products}, {}
+        if role == 'admin':
+            orders = sorted(state['orders'].values(), key=lambda order: order['sequence'], reverse=True)
+            sources['orders'] = [self.order_record(order) for order in orders]
+            sources['metrics'] = [{
+                'total_orders': len(orders), 'paid_orders': sum(o['payment']=='paid' for o in orders),
+                'open_deliveries': sum(o['delivery']=='open' for o in orders),
+                'active_products': sum(p['active'] for p in products),
+            }]
+            return sources, affordances, '', 'empty', 'absent'
+
+        quote = self.quote(catalog, cart['items'])
+        sources['cart'] = quote['lines']
+        sources['quote'] = [{key:quote[key] for key in AMOUNTS}]
+        order = state['orders'].get(cart['last'])
+        owned = order is not None and order['buyer'] == actor['id']
+        sources['receipt'] = [self.order_record(order)] if owned else []
+        for product in products:
+            sku = product['sku']
+            before = cart['items'].get(sku, 0)
+            ok = decide('cart.add', presence(before))[0]
+            if ok and self.weights.integer('cart.add', before, 1, product['stock']) > before:
+                affordances[('catalog', sku)] = {'cart.add'}
+        for row in sources['cart']:
+            observed = presence(row['quantity'])
+            affordances[('cart', row['sku'])] = {
+                event for event in ('cart.set', 'cart.remove') if decide(event, observed)[0]
+            }
+        cart_status = 'empty'
+        if decide('checkout.place', presence(cart['items']))[0]:
+            shortage = any(self.remaining_stock(catalog[sku], qty) is None for sku, qty in cart['items'].items())
+            cart_status = 'blocked' if shortage else 'ready'
+            if not shortage:
+                affordances[('_', None)] = {'checkout.place'}
+        return sources, affordances, digest(quote), cart_status, 'present' if owned else 'absent'
 
     def project(self, task, state, actor, args):
         refuse_unless(actor['role'] in self.roles(task))
-        cart = state['carts'].get(actor['id'],EMPTY_CART)
-        catalog = state['catalog']
-        query = args.get('q','').casefold()
-        if task=='admin':
-            page = args.get('page',0)
-            orders = [o for o in state['orders'].values() if query in o['id'] or query in o['name'].casefold()]
-            orders.sort(key=lambda order:order['sequence'],reverse=True)
-            rows = [self.order_view(order,admin=True) for order in orders[page*20:page*20+20]]
-            nodes = [panel('orders','Bestellungen',data=rows,page=page,size=20,total=len(orders))]
-        elif task=='order':
-            order = state['orders'].get(cart['last'])
-            nodes = [panel('order','Deine Bestellung',data=self.order_view(order),actions=[])] if order else [
-                panel('empty','Hier erscheint deine Bestellung',text='Im Sortiment kannst du einen Kauf starten.',
-                      link={'task':'storefront','label':'Zum Sortiment'})]
-        else:
-            quote = self.quote(catalog,cart['items'])
-            lines = []
-            for row in quote['lines']:
-                sku,qty = row['sku'],row['quantity']
-                actions = []
-                if self.weights.decide('cart.set',presence(qty))[0]:
-                    actions.append(control('cart.set','Menge ändern',{'sku':sku},[field('quantity','Menge','number',qty)]))
-                if self.weights.decide('cart.remove',presence(qty))[0]:
-                    actions.append(control('cart.remove','Entfernen',{'sku':sku}))
-                lines.append({**row,'actions':actions})
-            checkout = self.weights.decide('checkout.place',presence(cart['items']))[0]
-            shortage = any(self.remaining_stock(catalog[sku],qty) is None for sku,qty in cart['items'].items())
-            if task=='storefront':
-                products = []
-                for sku,row in catalog.items():
-                    if not row['active'] or query not in (row['name']+' '+row['variant']).casefold():
-                        continue
-                    previous = cart['items'].get(sku,0)
-                    ok,_ = self.weights.decide('cart.add',presence(previous))
-                    changed = ok and self.weights.integer('cart.add',previous,1,row['stock'])>previous
-                    actions = [control('cart.add','In den Warenkorb',{'sku':sku,'quantity':1})] if changed else []
-                    products.append({**row,'actions':actions})
-                nodes = [panel('products','Kannen und Zubehör',data=products)]
-                if checkout:
-                    nodes.append(panel('lines','Warenkorb',data=lines,link={'task':'checkout','label':'Zur Kasse'}))
-            elif checkout and shortage:
-                nodes = [panel('lines','Deine Auswahl',data=lines),
-                         panel('empty','Der Bestand hat sich geändert',text='Passe die Menge an oder entferne den Artikel.')]
-            elif checkout:
-                fields = [field('name','Vollständiger Name'),field('email','E-Mail','email'),field('address','Lieferadresse'),
-                          field('consent','Ich bestätige die Testbestellung zum angezeigten Preis.','checkbox',False)]
-                buy = control('checkout.place','Testbestellung aufgeben',{'quote_key':digest(quote)},fields,'order')
-                nodes = [panel('lines','Deine Auswahl',data=lines),panel('totals','Zusammenfassung',data=quote),
-                         panel('controls','Lieferung und Testzahlung',actions=[buy])]
-            else:
-                nodes = [panel('empty','Dein Warenkorb ist leer',text='Wähle zuerst einen Artikel aus.',
-                               link={'task':'storefront','label':'Zum Sortiment'})]
-        return {'title':TASKS[task],'nodes':nodes,'checkpoint':self.identity,'projection':uuid4().hex}
+        if self.projector is None:
+            raise Refusal('Dieser Modellstand enthält keine Oberflächengewichte.')
+        intents = INTENTS[task]
+        intent = args.get('intent') or intents[0]
+        if intent not in intents:
+            raise Refusal('Unbekannte Ansicht.')
+        sources, actions, quote_key, cart, receipt = self.read_model(state, actor)
+        context = (task, intent, self.brand['tone'], cart, receipt)
+        program = self.projector.decode(context)
+        queries = args.get('ops', {})
+        tree = materialize(program, actor['role'], sources, actions, quote_key, self.brand, queries,
+                           lambda oid: self.order_affordances(state['orders'][oid]))
+        return {'title':TASKS[task], 'tree':tree, 'program':program, 'brand':self.brand,
+                'context':context, 'checkpoint':self.identity, 'projection':uuid4().hex}

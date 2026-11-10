@@ -4,11 +4,11 @@
 
 Today, intelligence sits on top of software. The application is the fixed part, and AI helps you use it. Now take that layer away. One multimodal model holds everything the application knows and creates whatever the moment needs. The things we build today as features, projects and plugins become properties of the architecture.
 
-That is the vision. **Holoshop is the first experiment.** It learns and transfers a small commerce rule, executes recorded Shopware transitions and binds saved views to live demo data. The broader architecture is the research target. [What runs today](#what-runs-today)
+That is the vision. **Holoshop is the first experiment.** It learns commerce transitions from Shopware and generates shop surfaces and their bindings from context. The broader architecture is the research target. [What runs today](#what-runs-today)
 
 **The first delivery is a complete standard shop.** A customer shops and orders through a Holo Storefront and Holo Checkout. The merchant handles that same order in Holo Admin. The deck generates all three surfaces as they are needed and owns the commerce logic that drives them. Shopware teaches the deck during development. The delivered shop runs with the teacher offline. [First delivery and acceptance](docs/roadmap.md#first-delivery-and-acceptance)
 
-**A first standalone shop runs today.** A checkpoint trained on live Shopware traces drives the storefront, checkout and merchant workflow while the teacher is offline. The server uses the weights to decide state changes and select exact arithmetic. [Run the shop and see the evidence](docs/standalone-shop.md)
+**Two shops now run from the same deck.** Kanne and Werkraum use one checkpoint with learned commerce and projection heads. It builds the storefront, checkout and admin and binds each action to the current records. Both shops completed a purchase with Shopware switched off. [See the generated surfaces and run the proof](docs/neural-projection.md)
 
 ![Inside a deck. Intent and live business state enter one multimodal model. Its executable business graph produces working holos and proposes effects for the generic runtime and durable records.](assets/illustrations/inside-a-deck.png)
 
@@ -102,7 +102,7 @@ An observed failure can become a new teaching case. A corrected checkpoint is te
 | **Execute exactly** | The native backend matches all 168 recorded reference transitions. The local regression suite exercises quote freshness, checkout retries and contention for the last unit. |
 | **Project reusable views** | Stored shopper and merchant compositions bind to current data. The original local run observed 108 warm requests with no large model calls. |
 
-The prototype trains small categorical selection heads. Its saved views expose a catalog, a test order flow, catalog edits and an order list. Some commercial decisions still live in host code. The first delivery completes order handling and runs the customer and merchant journey on learned decisions and freshly generated holos. [Experiment evidence](experiments/shopware/README.md) · [Milestones and tasks](docs/roadmap.md)
+Earlier experiments use small selection heads and saved views. The current two shop proof runs the customer and merchant journey on trained commerce decisions and freshly generated holos. [Experiment evidence](experiments/shopware/README.md) · [Milestones and tasks](docs/roadmap.md)
 
 ![The learned service credit runs with two merchants' rates and caps.](assets/experiments/learned-rule.png)
 

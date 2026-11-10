@@ -158,6 +158,8 @@ The existing native experiment validates a much narrower version of this idea fo
 
 ## 8. Holos are grounded projections
 
+The current prototype trains the projection head to emit a typed tree, field pointers and action bindings. Its interpreter restricts reads and writes to the current role and binds them to the same business state used by the commerce head. The two shop proof includes a comparison and cart combination withheld from training. [Implementation and observed results](neural-projection.md)
+
 A projection contains components, data bindings and action references from the model’s permitted action set. The renderer supports familiar controls: product cards, comparison, editable grids, forms, totals, history and action bars.
 
 Local input is draft state. Authoritative business data changes only through an accepted command. A stale button is not authorization; the current event is evaluated again on the server through the same model semantics.

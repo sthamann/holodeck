@@ -2,7 +2,7 @@
 
 The first product milestone is a working standard shop. A customer shops in a **generated Holo Storefront**, completes a purchase in **generated Holo Checkout** and sees the order progress after the merchant handles it in **generated Holo Admin**. The shop runs on one deployed deck, including its learned commerce specialists, and one set of durable business records.
 
-The milestones describe the broader development plan. The first standalone shop now demonstrates the local purchase and merchant flow with live projections and an offline teacher. The serving path executes a checkpoint trained from Shopware API observations. [Runnable prototype and evidence](standalone-shop.md) · [Earlier experiments](../experiments/shopware/README.md)
+The current prototype completes the purchase and merchant flow in two local shops with the same checkpoint and Shopware offline. The deck uses learned commerce decisions and emits the component tree, data and action bindings for each surface. [Runnable two shop proof](neural-projection.md) · [Commerce experiment](standalone-shop.md)
 
 ## First delivery and acceptance
 

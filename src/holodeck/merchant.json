@@ -35,5 +35,10 @@
       "active": true,
       "image": "press.jpg"
     }
+  },
+  "brand": {
+    "name": "Kanne",
+    "tone": "visual",
+    "theme": "kanne"
   }
 }

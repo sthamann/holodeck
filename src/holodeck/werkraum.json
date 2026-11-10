@@ -1,0 +1,44 @@
+{
+  "shipping": 625,
+  "rate": 19,
+  "brand": {
+    "name": "Werkraum Handel",
+    "tone": "dense",
+    "theme": "werkraum"
+  },
+  "catalog": {
+    "WR-FILTER-10": {
+      "sku": "WR-FILTER-10",
+      "name": "Pressfilter Gastro",
+      "variant": "1 Liter",
+      "image": "press.jpg",
+      "price": 4850,
+      "stock": 24,
+      "description": "Glaskanne mit Stahlfilter für die Theke.",
+      "rate": 19,
+      "active": true
+    },
+    "WR-HERD-06": {
+      "sku": "WR-HERD-06",
+      "name": "Herdkocher Service",
+      "variant": "6 Tassen",
+      "image": "moka-pair.jpg",
+      "price": 6950,
+      "stock": 12,
+      "description": "Servicegröße für Küche und Gästebereich.",
+      "rate": 19,
+      "active": true
+    },
+    "WR-HERD-03": {
+      "sku": "WR-HERD-03",
+      "name": "Herdkocher Kompakt",
+      "variant": "3 Tassen",
+      "image": "moka.jpg",
+      "price": 3950,
+      "stock": 0,
+      "description": "Aluminiumkocher für kleine Arbeitsplätze.",
+      "rate": 19,
+      "active": true
+    }
+  }
+}

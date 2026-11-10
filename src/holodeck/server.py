@@ -16,7 +16,8 @@ from .runtime import Ledger, Refusal, digest, encode
 
 HERE = Path(__file__).resolve().parent
 ASSETS = HERE.parents[1] / "experiments/shopware/native/public/assets"
-FILES = {"/": (HERE / "surface.html", "text/html; charset=utf-8")}
+FILES = {"/": (HERE / "surface.html", "text/html; charset=utf-8"),
+         "/surface.js": (HERE / "surface.js", "text/javascript; charset=utf-8")}
 FILES.update({"/media/" + name: (ASSETS / name, "image/jpeg")
               for name in ("moka.jpg", "moka-pair.jpg", "press.jpg")})
 
@@ -79,7 +80,11 @@ class Handler(BaseHTTPRequestHandler):
             task = query.get("task", ["storefront"])[0]
             actor = self.actor(task)
             page = int(query.get("page", ["0"])[0])
-            args = {"q":query.get("q", [""])[0][:120], "page":max(0,min(page,500))}
+            args = {"q":query.get("q", [""])[0][:120], "page":max(0,min(page,500)),
+                    "intent":query.get("intent", [""])[0][:32]}
+            raw_ops = query.get("ops", ["{}"])[0]
+            ops = json.loads(raw_ops) if len(raw_ops) < 2500 else {}
+            args["ops"] = ops if isinstance(ops, dict) else {}
             projection = self.ledger.deck.project(task,self.ledger.read(),actor,args)
             return self.respond(200,projection)
         if self.command == "GET" and url.path == "/health":
@@ -125,12 +130,14 @@ def main():
     cli = argparse.ArgumentParser(description=__doc__)
     cli.add_argument("--port",type=int,default=18779)
     cli.add_argument("--database",type=Path,default=None)
-    cli.add_argument("--checkpoint",type=Path,default=HERE/"weights.npz")
+    cli.add_argument("--checkpoint",type=Path,default=HERE/"deck.npz")
     cli.add_argument("--merchant",type=Path,default=HERE/"merchant.json")
     cli.add_argument("--admin-password",default="deck-demo")
     args = cli.parse_args()
     deck = NeuralDeck(args.checkpoint,args.merchant)
-    database = args.database or Path(".holodeck/shop-neural.sqlite")
+    if deck.projector is None:
+        cli.error("The shop requires a checkpoint with projection weights.")
+    database = args.database or Path(".holodeck") / f"projection-{args.merchant.stem}.sqlite"
     database.parent.mkdir(parents=True,exist_ok=True)
     ledger = Ledger(database,deck,deck.initial)
     ledger.settle(test_payment)

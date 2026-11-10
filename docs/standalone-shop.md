@@ -1,5 +1,7 @@
 # Standalone Holoshop with trained weights
 
+This page records the commerce checkpoint experiment. The current server adds a learned UI generator to the same weights. [Run the two shop prototype](neural-projection.md)
+
 The local shop completes a purchase through storefront, checkout and merchant admin with the Shopware teacher switched off. It loads a small neural checkpoint and a merchant data file. The previous experiment used exported rule graphs. The current server reads the weights at runtime to decide transitions and select exact integer operations.
 
 ## Run the shop
