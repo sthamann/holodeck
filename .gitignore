@@ -8,3 +8,5 @@ experiments/shopware/*/state/
 experiments/shopware/*/results/
 experiments/shopware/*/training/
 experiments/shopware/core/data/disagreements.jsonl
+
+.holodeck/

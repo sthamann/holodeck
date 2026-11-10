@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Holoshop</title>
+<style>
+:root{color-scheme:light;--paper:#f5f2e8;--white:#fffdf7;--ink:#202b26;--muted:#566459;--line:#d6d9cc;--green:#294e3e;--soft:#e8eee4;--danger:#a52f25;font:16px/1.5 system-ui,sans-serif;color:var(--ink);background:var(--paper);accent-color:var(--green)}
+*{box-sizing:border-box}body{margin:0}::selection{background:#d9e8d2;color:var(--ink)}:focus-visible{outline:2px solid var(--green);outline-offset:3px}a{color:var(--green);text-underline-offset:.22em}a:hover{text-decoration-thickness:2px}header{border-bottom:1px solid var(--line)}.wrap{width:min(1120px,calc(100% - 48px));margin:auto}.bar{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font:700 1.6rem Georgia,serif;color:var(--ink);text-decoration:none}nav{display:flex;gap:4px;flex-wrap:wrap}nav a{padding:8px 12px;border-radius:6px;text-decoration:none;font-size:.92rem}nav [aria-current=page]{background:var(--soft);font-weight:650}main{padding:32px 0 70px}h1,h2,h3,p{margin:0}h1{font:700 3rem/1.12 Georgia,serif;letter-spacing:-.02em;margin:0 0 23px}h2{font-size:1.3rem;line-height:1.25;margin-bottom:14px}h3{font-size:1.08rem;line-height:1.3}p{max-width:66ch}.subtle{color:var(--muted)}.surface{display:grid;gap:26px;align-items:start}.surface:has(>.totals){grid-template-columns:minmax(0,1fr) minmax(245px,.45fr)}.surface:has(>.totals)>:not(.totals){grid-column:1}.totals{grid-column:2;grid-row:1/span 3;background:var(--soft);border-radius:14px;padding:22px}.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.product{display:flex;flex-direction:column;overflow:hidden;background:var(--white);border:1px solid var(--line);border-radius:14px}.product img{width:100%;height:210px;object-fit:contain;background:#ecebe1;padding:14px}.product-body{display:grid;gap:7px;padding:17px}.product .price{font-size:1.2rem;font-weight:700;margin-top:6px}.panel{border:1px solid var(--line);border-radius:14px;background:var(--white);padding:20px}.row{border-top:1px solid var(--line);padding:13px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:14px}.row:first-of-type{border-top:0}.row:last-child{padding-bottom:0}.row-actions{display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap}.metrics{margin:0;font-variant-numeric:tabular-nums}.metrics div{display:flex;justify-content:space-between;gap:15px;margin:7px 0}.metrics dd{margin:0;font-weight:650}.metrics .total{padding-top:10px;margin-top:10px;border-top:1px solid var(--line);font-size:1.1rem}form{display:grid;gap:10px;align-content:start;justify-items:start}.compact{display:flex;align-items:flex-end;gap:8px;flex-wrap:wrap}.form-fields{display:grid;gap:10px;width:100%;max-width:500px}.compact .form-fields{display:flex;gap:8px;width:auto;flex-wrap:wrap}label{display:grid;gap:4px;font-size:.89rem;font-weight:600}input,select,button{font:inherit}input,select{width:100%;min-width:0;min-height:40px;padding:7px 10px;border:1px solid #a9b4a8;border-radius:6px;background:var(--white);color:var(--ink)}input[type=number]{max-width:105px}input[inputmode=decimal]{max-width:110px}button,.button-link{display:inline-flex;align-items:center;min-height:40px;padding:8px 13px;border:1px solid transparent;border-radius:7px;color:white;background:var(--green);font-size:.91rem;font-weight:650;line-height:1.25;text-decoration:none;cursor:pointer}button:hover,.button-link:hover{background:#173d2e}button:disabled{cursor:wait;opacity:.55}.secondary{border-color:var(--line);color:var(--green);background:var(--white)}.secondary:hover{background:var(--soft)}.search{margin-bottom:16px}.search input{width:min(300px,100%)}.notice{padding:11px 14px;background:var(--soft);border:1px solid var(--line);border-radius:8px;margin:0 0 16px}.notice.error{color:var(--danger);background:#fff1e9;border-color:#e5b2a7}.tag{display:inline-block;padding:3px 8px;margin:4px 4px 4px 0;border-radius:5px;background:var(--soft);font-size:.85rem;color:var(--green)}.order-info{display:grid;gap:6px;margin:9px 0}.order+.order{margin-top:15px;padding-top:15px;border-top:1px solid var(--line)}.line-amount{font-variant-numeric:tabular-nums;font-weight:650}.progress{min-height:100px;color:var(--muted)}footer{border-top:1px solid var(--line);padding:18px 0;color:var(--muted);font-size:.88rem}
+@media(max-width:760px){.wrap{width:calc(100% - 30px)}.bar{align-items:flex-start;flex-direction:column;gap:5px;padding:13px 0}nav a{padding:6px 8px}h1{font-size:2.35rem}main{padding-top:24px}.products{grid-template-columns:repeat(2,minmax(0,1fr))}.product img{height:155px}.surface:has(>.totals){grid-template-columns:1fr}.totals{grid-column:1;grid-row:auto}.row{flex-wrap:wrap}.compact{align-items:flex-end}}
+@media(max-width:460px){.products{grid-template-columns:1fr}.product{display:grid;grid-template-columns:minmax(96px,.7fr) minmax(0,1fr)}.product img{height:100%;min-height:140px;padding:6px}.product-body,.panel{padding:13px}.row-actions{width:100%}}
+.checkbox{display:flex;align-items:center;gap:9px}.checkbox input{width:18px;height:18px;min-height:0;flex:none}
+</style>
+</head>
+<body>
+<header><div class="wrap bar"><a class="brand" href="?task=storefront">Holoshop</a><nav aria-label="Shopbereiche"></nav></div></header>
+<main class="wrap"><h1 id="title">Holoshop</h1><p id="notice" class="notice" role="status" hidden></p><div id="surface" class="surface" aria-live="polite"></div></main>
+<footer><div class="wrap">Holoshop · Lokaler Testshop</div></footer>
+<script>
+const surface=document.querySelector('#surface'), title=document.querySelector('#title');
+const notice=document.querySelector('#notice'), nav=document.querySelector('nav');
+const tasks={storefront:'Sortiment',checkout:'Kasse',order:'Bestellung',admin:'Verwaltung'};
+const stages={pending:'Zahlung offen',ready:'Versandbereit',shipped:'Versendet',completed:'Zugestellt',cancelled:'Storniert',returned:'Retoure abgeschlossen',payment_failed:'Zahlung abgelehnt'};
+const payments={pending:'Zahlung offen',paid:'Bezahlt',failed:'Nicht bezahlt',refunded:'Erstattet'};
+const money=new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR'});
+const eur=n=>money.format(n/100);
+let task='storefront', query='', page=0, sequence=0;
+function el(tag,text,cls){
+  const node=document.createElement(tag);
+  if(text!==undefined)node.textContent=text;
+  if(cls)node.className=cls;
+  return node;
+}
+function setNotice(message='',error=false){
+  notice.hidden=!message;notice.textContent=message;notice.classList.toggle('error',error);
+}
+function link(destination,label,style=''){
+  const a=el('a',label,style);a.href='?task='+encodeURIComponent(destination);
+  a.addEventListener('click',e=>{if(e.button===0&&!e.metaKey&&!e.ctrlKey){e.preventDefault();go(destination);}});
+  return a;
+}
+function go(destination){
+  history.pushState({},'', '?task='+encodeURIComponent(destination)); query=''; page=0; setNotice(); load();
+}
+function displayField(field){
+  const label=el('label',field.label);
+  const input=el(field.type==='select'?'select':'input');
+  input.name=field.name;input.required=field.name!=='code';
+  if(field.type==='select'){
+    for(const [value,copy] of field.options){const option=el('option',copy);option.value=value;input.append(option);}
+  }else{
+    input.type=field.type==='money'?'text':field.type;
+    if(field.type==='money') input.inputMode='decimal';
+    if(field.type==='number'){input.min='0';input.step='1';}
+    if(field.type==='email') input.autocomplete='email';
+  }
+  if(field.type==='checkbox'){
+    label.classList.add('checkbox');input.checked=Boolean(field.value);label.prepend(input);
+  }else{
+    input.value=field.type==='money'?(field.value/100).toFixed(2).replace('.',','):field.value??'';
+    label.append(input);
+  }
+  return label;
+}
+function readField(form, field){
+  const value=new FormData(form).get(field.name);
+  if(field.type==='checkbox')return value!==null;
+  if(field.type==='number')return Number(value);
+  if(field.type==='money'){
+    const match=/^([0-9]+)(?:[,.]([0-9]{1,2}))?$/.exec(value);
+    if(!match)throw Error('Bitte einen Preis in Euro angeben, zum Beispiel 29,90.');
+    return Number(match[1])*100+Number((match[2]??'').padEnd(2,'0'));
+  }
+  return value;
+}
+async function request(path, body){
+  const headers={'X-Deck-Session':sessionStorage.getItem('deck-session')??'',
+                 'X-Deck-Admin':sessionStorage.getItem('deck-admin')??''};
+  const options={headers};
+  if(body!==undefined){headers['Content-Type']='application/json';options.method='POST';options.body=JSON.stringify(body);}
+  const response=await fetch(path,options);
+  const data=await response.json();
+  if(data.session)sessionStorage.setItem('deck-session',data.session);
+  if(data.admin_session)sessionStorage.setItem('deck-admin',data.admin_session);
+  if(!response.ok){const error=new Error(data.error);error.status=response.status;throw error;}
+  return data;
+}
+function action(control, compact=false){
+  const form=el('form',undefined,compact?'compact':'');
+  const fields=el('div',undefined,'form-fields');
+  for(const field of control.fields) fields.append(displayField(field));
+  if(fields.childElementCount)form.append(fields);
+  const button=el('button',control.title);form.append(button);
+  let attempt, previousPayload;
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();button.disabled=true;
+    try{
+      const args={...control.args};
+      for(const field of control.fields)args[field.name]=readField(form,field);
+      const payload=JSON.stringify(args);
+      if(payload!==previousPayload){previousPayload=payload;attempt=crypto.randomUUID();}
+      await request('/command',{task,event:control.event,id:attempt,args});
+      if(control.navigate)go(control.navigate);
+      else{setNotice('Gespeichert.');await load();}
+    }catch(error){setNotice(error.message,true);}
+    finally{button.disabled=false;}
+  });
+  return form;
+}
+function controls(parent, items, compact=false){
+  for(const item of items??[])parent.append(action(item,compact));
+}
+function searchForm(label){
+  const form=el('form',undefined,'compact search');
+  const field=displayField({name:'search',label,type:'search',value:query});
+  field.querySelector('input').required=false;
+  form.append(field,el('button','Suchen','secondary'));
+  form.addEventListener('submit',e=>{e.preventDefault();query=new FormData(form).get('search');page=0;load();});
+  return form;
+}
+function products(node){
+  const section=el('section');
+  section.append(el('h2',node.title),searchForm('Sortiment durchsuchen'));
+  if(!node.data.length)section.append(el('p','Keine Artikel gefunden. Versuche einen anderen Suchbegriff.','subtle'));
+  const grid=el('div',undefined,'products');
+  for(const p of node.data){
+    const card=el('article',undefined,'product'), img=el('img'), body=el('div',undefined,'product-body');
+    img.src='/media/'+encodeURIComponent(p.image);img.alt=p.name+' · '+p.variant;img.width=300;img.height=210;
+    body.append(el('h3',p.name),el('p',p.variant,'subtle'),el('p',p.description),el('p',eur(p.price),'price'));
+    body.append(el('p',p.stock>0?p.stock+' verfügbar':'Derzeit ausverkauft','subtle'));
+    controls(body,p.actions);card.append(img,body);grid.append(card);
+  }
+  section.append(grid);return section;
+}
+function lines(node){
+  const panel=el('section',undefined,'panel');panel.append(el('h2',node.title));
+  for(const item of node.data){
+    const row=el('div',undefined,'row'), label=el('div'), actions=el('div',undefined,'row-actions');
+    label.append(el('h3',item.name),el('p',item.quantity+' × '+eur(item.unit)+' · '+eur(item.gross),'line-amount'));
+    controls(actions,item.actions,true);row.append(label,actions);panel.append(row);
+  }
+  if(node.link)panel.append(link(node.link.task,node.link.label,'button-link'));
+  return panel;
+}
+function totals(node){
+  const panel=el('aside',undefined,'totals'), list=el('dl',undefined,'metrics');
+  panel.append(el('h2',node.title));
+  for(const [key,value,cls] of [
+    ['Warenwert',eur(node.data.goods)],['Versand',eur(node.data.shipping)],
+    ['Enthaltene MwSt.',eur(node.data.tax)],['Gesamtsumme',eur(node.data.gross),'total'],
+  ]){
+    const line=el('div',undefined,cls);line.append(el('dt',key),el('dd',value));list.append(line);
+  }
+  panel.append(list);return panel;
+}
+function orderCard(record){
+  const card=el('article',undefined,'order'), info=el('div',undefined,'order-info');
+  card.append(el('h3','Bestellung '+record.id.slice(0,8).toUpperCase()),el('span',stages[record.stage]??record.stage,'tag'),el('span',payments[record.payment]??record.payment,'tag'));
+  info.append(el('p',record.name+' · '+eur(record.quote.gross),'line-amount'),el('p',record.address,'subtle'));
+  for(const item of record.quote.lines)info.append(el('p',item.quantity+' × '+item.name));
+  if(record.tracking)info.append(el('p','Sendungsnummer '+record.tracking,'subtle'));
+  card.append(info);
+  const actions=el('div',undefined,'row-actions');controls(actions,record.actions,true);card.append(actions);
+  return card;
+}
+function panel(node){
+  const section=el('section',undefined,'panel');section.append(el('h2',node.title));
+  if(node.component==='order')section.append(orderCard({...node.data,actions:node.actions}));
+  if(node.component==='orders'){
+    section.append(searchForm('Bestellungen durchsuchen'));
+    if(!node.data.length)section.append(el('p',query?'Keine passende Bestellung.':'Bestellungen erscheinen hier nach dem Checkout.','subtle'));
+    for(const order of node.data)section.append(orderCard(order));
+    if(node.total>node.size){
+      const pager=el('div',undefined,'row-actions');
+      for(const [label,delta,enabled] of [['Zurück',-1,node.page>0],['Weiter',1,(node.page+1)*node.size<node.total]]){
+        const button=el('button',label,'secondary');button.disabled=!enabled;
+        button.addEventListener('click',()=>{page=node.page+delta;load();});pager.append(button);
+      }
+      section.append(pager);
+    }
+  }
+  if(node.component==='inventory')for(const p of node.data){
+    const row=el('div',undefined,'row'), label=el('div'), actions=el('div',undefined,'row-actions');
+    label.append(el('h3',p.name),el('p',p.variant+' · '+p.sku,'subtle'));
+    controls(actions,p.actions,true);row.append(label,actions);section.append(row);
+  }
+  if(node.text)section.append(el('p',node.text,'subtle'));
+  if(node.link)section.append(link(node.link.task,node.link.label,'button-link'));
+  controls(section,node.actions);
+  return section;
+}
+const renderers={products,lines,totals,order:panel,orders:panel,inventory:panel,controls:panel,empty:panel};
+function login(){
+  title.textContent='Verwaltung';
+  const section=el('section',undefined,'panel'), form=el('form');
+  form.append(displayField({name:'password',label:'Admin-Passwort',type:'password',value:''}),el('button','Anmelden'));
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();try{await request('/admin-login',{password:new FormData(form).get('password')});setNotice();load();}
+    catch(error){setNotice(error.message,true);}
+  });
+  section.append(el('h2','Admin anmelden'),form);surface.replaceChildren(section);
+}
+async function load(){
+  const current=++sequence;
+  const requested=new URLSearchParams(location.search).get('task');
+  task=Object.hasOwn(tasks,requested)?requested:'storefront';
+  nav.replaceChildren(...Object.entries(tasks).map(([key,value])=>{
+    const a=link(key,value);if(key===task)a.setAttribute('aria-current','page');return a;
+  }));
+  surface.setAttribute('aria-busy','true');
+  if(!surface.children.length)surface.replaceChildren(el('p','Ansicht wird vorbereitet …','progress'));
+  try{
+    const result=await request('/projection?'+new URLSearchParams({task,q:query,page}));
+    if(current!==sequence)return;
+    title.textContent=result.title;
+    document.title=result.title+' · Holoshop';
+    surface.replaceChildren(...result.nodes.map(node=>renderers[node.component](node)));
+  }catch(error){
+    if(current!==sequence)return;
+    if(task==='admin'&&error.status===403)login();
+    else{setNotice(error.message,true);surface.replaceChildren();}
+  }finally{if(current===sequence)surface.removeAttribute('aria-busy');}
+}
+window.addEventListener('popstate',()=>{query='';page=0;setNotice();load();});load();
+</script>
+</body>
+</html>

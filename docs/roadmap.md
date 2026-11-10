@@ -2,7 +2,7 @@
 
 The first product milestone is a working standard shop. A customer shops in a **generated Holo Storefront**, completes a purchase in **generated Holo Checkout** and sees the order progress after the merchant handles it in **generated Holo Admin**. The shop runs on one deployed deck, including its learned commerce specialists, and one set of durable business records.
 
-The milestones are planned. The published experiments provide the starting evidence. [What already runs](../experiments/shopware/README.md)
+The milestones describe the broader development plan. The first standalone shop now demonstrates the local purchase and merchant flow with fresh holos and an offline teacher. [Runnable prototype and evidence](standalone-shop.md) · [Earlier experiments](../experiments/shopware/README.md)
 
 ## First delivery and acceptance
 

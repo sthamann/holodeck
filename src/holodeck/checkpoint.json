@@ -1,0 +1,2801 @@
+{
+  "format": 1,
+  "config": {
+    "shipping_gross": 490,
+    "shipping_rate": 19,
+    "free_shipping_at": 5000,
+    "promo_code": "KAFFEE10",
+    "promo_percent": 10
+  },
+  "bindings": [
+    [
+      "catalog",
+      [
+        "ref",
+        "state",
+        "catalog"
+      ]
+    ],
+    [
+      "cart",
+      [
+        "get",
+        [
+          "ref",
+          "state",
+          "carts"
+        ],
+        [
+          "ref",
+          "actor",
+          "id"
+        ],
+        {
+          "items": {},
+          "promo": "",
+          "last": ""
+        }
+      ]
+    ],
+    [
+      "items",
+      [
+        "ref",
+        "cart",
+        "items"
+      ]
+    ],
+    [
+      "item",
+      [
+        "get",
+        [
+          "ref",
+          "catalog"
+        ],
+        [
+          "ref",
+          "arg",
+          "sku"
+        ],
+        {}
+      ]
+    ],
+    [
+      "order",
+      [
+        "get",
+        [
+          "ref",
+          "state",
+          "orders"
+        ],
+        [
+          "get",
+          [
+            "ref",
+            "arg"
+          ],
+          "order_id",
+          [
+            "ref",
+            "cart",
+            "last"
+          ]
+        ],
+        {}
+      ]
+    ],
+    [
+      "quote",
+      [
+        "call",
+        "quote",
+        [
+          "ref",
+          "catalog"
+        ],
+        [
+          "ref",
+          "cart"
+        ],
+        [
+          "ref",
+          "config"
+        ]
+      ]
+    ],
+    [
+      "quote_key",
+      [
+        "hash",
+        [
+          "ref",
+          "quote"
+        ]
+      ]
+    ]
+  ],
+  "functions": {
+    "quote": {
+      "args": [
+        "catalog",
+        "cart",
+        "config"
+      ],
+      "bindings": [
+        [
+          "promo",
+          [
+            "eq",
+            [
+              "ref",
+              "cart",
+              "promo"
+            ],
+            [
+              "ref",
+              "config",
+              "promo_code"
+            ]
+          ]
+        ],
+        [
+          "lines",
+          [
+            "map",
+            [
+              "keys",
+              [
+                "ref",
+                "cart",
+                "items"
+              ]
+            ],
+            {
+              "sku": [
+                "ref",
+                "row"
+              ],
+              "quantity": [
+                "get",
+                [
+                  "ref",
+                  "cart",
+                  "items"
+                ],
+                [
+                  "ref",
+                  "row"
+                ],
+                null
+              ],
+              "name": [
+                "get",
+                [
+                  "get",
+                  [
+                    "ref",
+                    "catalog"
+                  ],
+                  [
+                    "ref",
+                    "row"
+                  ],
+                  {}
+                ],
+                "name",
+                null
+              ],
+              "rate": [
+                "get",
+                [
+                  "get",
+                  [
+                    "ref",
+                    "catalog"
+                  ],
+                  [
+                    "ref",
+                    "row"
+                  ],
+                  {}
+                ],
+                "rate",
+                null
+              ],
+              "unit": [
+                "if",
+                [
+                  "ref",
+                  "promo"
+                ],
+                [
+                  "muldiv",
+                  [
+                    "get",
+                    [
+                      "get",
+                      [
+                        "ref",
+                        "catalog"
+                      ],
+                      [
+                        "ref",
+                        "row"
+                      ],
+                      {}
+                    ],
+                    "price",
+                    null
+                  ],
+                  [
+                    "sub",
+                    100,
+                    [
+                      "ref",
+                      "config",
+                      "promo_percent"
+                    ]
+                  ],
+                  100
+                ],
+                [
+                  "get",
+                  [
+                    "get",
+                    [
+                      "ref",
+                      "catalog"
+                    ],
+                    [
+                      "ref",
+                      "row"
+                    ],
+                    {}
+                  ],
+                  "price",
+                  null
+                ]
+              ]
+            }
+          ]
+        ],
+        [
+          "subtotal",
+          [
+            "sum",
+            [
+              "map",
+              [
+                "ref",
+                "lines"
+              ],
+              [
+                "mul",
+                [
+                  "ref",
+                  "row",
+                  "unit"
+                ],
+                [
+                  "ref",
+                  "row",
+                  "quantity"
+                ]
+              ]
+            ]
+          ]
+        ],
+        [
+          "shipping",
+          [
+            "if",
+            [
+              "or",
+              [
+                "eq",
+                [
+                  "len",
+                  [
+                    "ref",
+                    "lines"
+                  ]
+                ],
+                0
+              ],
+              [
+                "le",
+                [
+                  "ref",
+                  "config",
+                  "free_shipping_at"
+                ],
+                [
+                  "ref",
+                  "subtotal"
+                ]
+              ]
+            ],
+            0,
+            [
+              "ref",
+              "config",
+              "shipping_gross"
+            ]
+          ]
+        ],
+        [
+          "price",
+          [
+            "dataflow",
+            {
+              "shipping_gross": [
+                "ref",
+                "shipping"
+              ],
+              "shipping_tax": [
+                "muldiv",
+                [
+                  "ref",
+                  "shipping"
+                ],
+                [
+                  "ref",
+                  "config",
+                  "shipping_rate"
+                ],
+                [
+                  "add",
+                  100,
+                  [
+                    "ref",
+                    "config",
+                    "shipping_rate"
+                  ]
+                ]
+              ]
+            },
+            [
+              "ref",
+              "lines"
+            ]
+          ]
+        ],
+        [
+          "quote",
+          [
+            "merge",
+            [
+              "ref",
+              "price"
+            ],
+            {
+              "shipping": [
+                "ref",
+                "shipping"
+              ],
+              "promo": [
+                "ref",
+                "promo"
+              ]
+            }
+          ]
+        ]
+      ],
+      "result": "quote"
+    }
+  },
+  "actions": {
+    "cart.set": {
+      "roles": [
+        "buyer"
+      ],
+      "inputs": {
+        "sku": "text",
+        "quantity": "number"
+      },
+      "guards": [
+        {
+          "expression": [
+            "or",
+            [
+              "eq",
+              [
+                "ref",
+                "arg",
+                "quantity"
+              ],
+              0
+            ],
+            [
+              "eq",
+              [
+                "ref",
+                "item",
+                "active"
+              ],
+              true
+            ]
+          ],
+          "message": "Dieser Artikel ist nicht verfügbar.",
+          "preview": true
+        },
+        {
+          "expression": [
+            "and",
+            [
+              "int",
+              [
+                "ref",
+                "arg",
+                "quantity"
+              ]
+            ],
+            [
+              "int",
+              [
+                "ref",
+                "item",
+                "stock"
+              ]
+            ],
+            [
+              "le",
+              [
+                "ref",
+                "arg",
+                "quantity"
+              ],
+              [
+                "ref",
+                "item",
+                "stock"
+              ]
+            ]
+          ],
+          "message": "Nicht genügend Bestand.",
+          "preview": false
+        }
+      ],
+      "effects": {
+        "writes": {
+          "carts": [
+            "assoc",
+            [
+              "ref",
+              "state",
+              "carts"
+            ],
+            [
+              "ref",
+              "actor",
+              "id"
+            ],
+            [
+              "merge",
+              [
+                "ref",
+                "cart"
+              ],
+              {
+                "items": [
+                  "if",
+                  [
+                    "eq",
+                    [
+                      "ref",
+                      "arg",
+                      "quantity"
+                    ],
+                    0
+                  ],
+                  [
+                    "drop",
+                    [
+                      "ref",
+                      "items"
+                    ],
+                    [
+                      "ref",
+                      "arg",
+                      "sku"
+                    ]
+                  ],
+                  [
+                    "assoc",
+                    [
+                      "ref",
+                      "items"
+                    ],
+                    [
+                      "ref",
+                      "arg",
+                      "sku"
+                    ],
+                    [
+                      "ref",
+                      "arg",
+                      "quantity"
+                    ]
+                  ]
+                ]
+              }
+            ]
+          ]
+        },
+        "result": {},
+        "outbox": [
+          "literal",
+          []
+        ]
+      }
+    },
+    "cart.promo": {
+      "roles": [
+        "buyer"
+      ],
+      "inputs": {
+        "code": "text"
+      },
+      "guards": [
+        {
+          "expression": [
+            "in",
+            [
+              "ref",
+              "arg",
+              "code"
+            ],
+            [
+              "list",
+              "",
+              [
+                "ref",
+                "config",
+                "promo_code"
+              ]
+            ]
+          ],
+          "message": "Dieser Rabattcode gilt hier nicht.",
+          "preview": false
+        }
+      ],
+      "effects": {
+        "writes": {
+          "carts": [
+            "assoc",
+            [
+              "ref",
+              "state",
+              "carts"
+            ],
+            [
+              "ref",
+              "actor",
+              "id"
+            ],
+            [
+              "merge",
+              [
+                "ref",
+                "cart"
+              ],
+              {
+                "promo": [
+                  "ref",
+                  "arg",
+                  "code"
+                ]
+              }
+            ]
+          ]
+        },
+        "result": {},
+        "outbox": [
+          "literal",
+          []
+        ]
+      }
+    },
+    "checkout.place": {
+      "roles": [
+        "buyer"
+      ],
+      "inputs": {
+        "name": "text",
+        "email": "text",
+        "address": "text",
+        "quote_key": "text",
+        "method": "text",
+        "consent": "flag"
+      },
+      "guards": [
+        {
+          "expression": [
+            "lt",
+            0,
+            [
+              "len",
+              [
+                "ref",
+                "items"
+              ]
+            ]
+          ],
+          "message": "Der Warenkorb ist leer.",
+          "preview": true
+        },
+        {
+          "expression": [
+            "all",
+            [
+              "keys",
+              [
+                "ref",
+                "items"
+              ]
+            ],
+            [
+              "and",
+              [
+                "eq",
+                [
+                  "get",
+                  [
+                    "get",
+                    [
+                      "ref",
+                      "catalog"
+                    ],
+                    [
+                      "ref",
+                      "row"
+                    ],
+                    {}
+                  ],
+                  "active",
+                  null
+                ],
+                true
+              ],
+              [
+                "le",
+                [
+                  "get",
+                  [
+                    "ref",
+                    "items"
+                  ],
+                  [
+                    "ref",
+                    "row"
+                  ],
+                  null
+                ],
+                [
+                  "get",
+                  [
+                    "get",
+                    [
+                      "ref",
+                      "catalog"
+                    ],
+                    [
+                      "ref",
+                      "row"
+                    ],
+                    {}
+                  ],
+                  "stock",
+                  0
+                ]
+              ]
+            ]
+          ],
+          "message": "Der Bestand hat sich geändert.",
+          "preview": true
+        },
+        {
+          "expression": [
+            "eq",
+            [
+              "ref",
+              "arg",
+              "quote_key"
+            ],
+            [
+              "ref",
+              "quote_key"
+            ]
+          ],
+          "message": "Der Warenkorb hat sich geändert. Bitte bestätige den aktuellen Preis.",
+          "preview": false
+        },
+        {
+          "expression": [
+            "present",
+            [
+              "ref",
+              "arg",
+              "name"
+            ]
+          ],
+          "message": "Bitte den Namen angeben.",
+          "preview": false
+        },
+        {
+          "expression": [
+            "email",
+            [
+              "ref",
+              "arg",
+              "email"
+            ]
+          ],
+          "message": "Bitte eine gültige E-Mail-Adresse angeben.",
+          "preview": false
+        },
+        {
+          "expression": [
+            "present",
+            [
+              "ref",
+              "arg",
+              "address"
+            ]
+          ],
+          "message": "Bitte eine Lieferadresse angeben.",
+          "preview": false
+        },
+        {
+          "expression": [
+            "in",
+            [
+              "ref",
+              "arg",
+              "method"
+            ],
+            [
+              "literal",
+              [
+                "test",
+                "declined"
+              ]
+            ]
+          ],
+          "message": "Bitte eine Testzahlung wählen.",
+          "preview": false
+        },
+        {
+          "expression": [
+            "eq",
+            [
+              "ref",
+              "arg",
+              "consent"
+            ],
+            true
+          ],
+          "message": "Bitte bestätige die Testbestellung zum angezeigten Preis.",
+          "preview": false
+        }
+      ],
+      "effects": {
+        "writes": {
+          "catalog": [
+            "map_dict",
+            [
+              "ref",
+              "catalog"
+            ],
+            [
+              "merge",
+              [
+                "ref",
+                "row"
+              ],
+              {
+                "stock": [
+                  "add",
+                  [
+                    "ref",
+                    "row",
+                    "stock"
+                  ],
+                  [
+                    "mul",
+                    -1,
+                    [
+                      "get",
+                      [
+                        "ref",
+                        "items"
+                      ],
+                      [
+                        "ref",
+                        "key"
+                      ],
+                      0
+                    ]
+                  ]
+                ]
+              }
+            ]
+          ],
+          "orders": [
+            "assoc",
+            [
+              "ref",
+              "state",
+              "orders"
+            ],
+            [
+              "ref",
+              "new_id"
+            ],
+            {
+              "id": [
+                "ref",
+                "new_id"
+              ],
+              "buyer": [
+                "ref",
+                "actor",
+                "id"
+              ],
+              "name": [
+                "ref",
+                "arg",
+                "name"
+              ],
+              "email": [
+                "ref",
+                "arg",
+                "email"
+              ],
+              "address": [
+                "ref",
+                "arg",
+                "address"
+              ],
+              "items": [
+                "ref",
+                "items"
+              ],
+              "quote": [
+                "ref",
+                "quote"
+              ],
+              "tracking": "",
+              "consent": {
+                "quote_key": [
+                  "ref",
+                  "arg",
+                  "quote_key"
+                ],
+                "confirmed": [
+                  "ref",
+                  "arg",
+                  "consent"
+                ]
+              },
+              "sequence": [
+                "add",
+                [
+                  "len",
+                  [
+                    "ref",
+                    "state",
+                    "orders"
+                  ]
+                ],
+                1
+              ],
+              "stage": "pending",
+              "payment": "pending"
+            }
+          ],
+          "carts": [
+            "assoc",
+            [
+              "ref",
+              "state",
+              "carts"
+            ],
+            [
+              "ref",
+              "actor",
+              "id"
+            ],
+            [
+              "merge",
+              {
+                "items": {},
+                "promo": "",
+                "last": ""
+              },
+              {
+                "last": [
+                  "ref",
+                  "new_id"
+                ]
+              }
+            ]
+          ]
+        },
+        "result": {
+          "order_id": [
+            "ref",
+            "new_id"
+          ]
+        },
+        "outbox": [
+          "list",
+          {
+            "kind": "payment",
+            "order_id": [
+              "ref",
+              "new_id"
+            ],
+            "method": [
+              "ref",
+              "arg",
+              "method"
+            ]
+          }
+        ]
+      }
+    },
+    "payment.result": {
+      "roles": [
+        "provider"
+      ],
+      "inputs": {
+        "order_id": "text",
+        "outcome": "text"
+      },
+      "guards": [
+        {
+          "expression": [
+            "in",
+            [
+              "ref",
+              "arg",
+              "outcome"
+            ],
+            [
+              "literal",
+              [
+                "approved",
+                "declined"
+              ]
+            ]
+          ],
+          "message": "Unbekanntes Zahlungsergebnis.",
+          "preview": false
+        },
+        {
+          "expression": [
+            "eq",
+            [
+              "ref",
+              "order",
+              "stage"
+            ],
+            "pending"
+          ],
+          "message": "Diese Aktion passt nicht zum aktuellen Bestellstatus.",
+          "preview": true
+        }
+      ],
+      "effects": {
+        "writes": {
+          "orders": [
+            "assoc",
+            [
+              "ref",
+              "state",
+              "orders"
+            ],
+            [
+              "ref",
+              "order",
+              "id"
+            ],
+            [
+              "merge",
+              [
+                "ref",
+                "order"
+              ],
+              {
+                "stage": [
+                  "if",
+                  [
+                    "eq",
+                    [
+                      "ref",
+                      "arg",
+                      "outcome"
+                    ],
+                    "approved"
+                  ],
+                  "ready",
+                  "payment_failed"
+                ],
+                "payment": [
+                  "if",
+                  [
+                    "eq",
+                    [
+                      "ref",
+                      "arg",
+                      "outcome"
+                    ],
+                    "approved"
+                  ],
+                  "paid",
+                  "failed"
+                ]
+              }
+            ]
+          ],
+          "catalog": [
+            "if",
+            [
+              "eq",
+              [
+                "ref",
+                "arg",
+                "outcome"
+              ],
+              "approved"
+            ],
+            [
+              "ref",
+              "catalog"
+            ],
+            [
+              "map_dict",
+              [
+                "ref",
+                "catalog"
+              ],
+              [
+                "merge",
+                [
+                  "ref",
+                  "row"
+                ],
+                {
+                  "stock": [
+                    "add",
+                    [
+                      "ref",
+                      "row",
+                      "stock"
+                    ],
+                    [
+                      "mul",
+                      1,
+                      [
+                        "get",
+                        [
+                          "ref",
+                          "order",
+                          "items"
+                        ],
+                        [
+                          "ref",
+                          "key"
+                        ],
+                        0
+                      ]
+                    ]
+                  ]
+                }
+              ]
+            ]
+          ]
+        },
+        "result": {},
+        "outbox": [
+          "literal",
+          []
+        ]
+      }
+    },
+    "catalog.edit": {
+      "roles": [
+        "admin"
+      ],
+      "inputs": {
+        "sku": "text",
+        "price": "number",
+        "stock": "number",
+        "expected_price": "number",
+        "expected_stock": "number"
+      },
+      "guards": [
+        {
+          "expression": [
+            "and",
+            [
+              "int",
+              [
+                "ref",
+                "arg",
+                "price"
+              ]
+            ],
+            [
+              "lt",
+              0,
+              [
+                "ref",
+                "arg",
+                "price"
+              ]
+            ]
+          ],
+          "message": "Der Preis muss größer als null sein.",
+          "preview": false
+        },
+        {
+          "expression": [
+            "int",
+            [
+              "ref",
+              "arg",
+              "stock"
+            ]
+          ],
+          "message": "Bitte den Bestand angeben.",
+          "preview": false
+        },
+        {
+          "expression": [
+            "eq",
+            [
+              "ref",
+              "arg",
+              "expected_price"
+            ],
+            [
+              "ref",
+              "item",
+              "price"
+            ]
+          ],
+          "message": "Der Preis wurde geändert. Bitte lade die Ansicht neu.",
+          "preview": true
+        },
+        {
+          "expression": [
+            "eq",
+            [
+              "ref",
+              "arg",
+              "expected_stock"
+            ],
+            [
+              "ref",
+              "item",
+              "stock"
+            ]
+          ],
+          "message": "Der Bestand wurde geändert. Bitte lade die Ansicht neu.",
+          "preview": true
+        }
+      ],
+      "effects": {
+        "writes": {
+          "catalog": [
+            "assoc",
+            [
+              "ref",
+              "catalog"
+            ],
+            [
+              "ref",
+              "arg",
+              "sku"
+            ],
+            [
+              "merge",
+              [
+                "ref",
+                "item"
+              ],
+              {
+                "price": [
+                  "ref",
+                  "arg",
+                  "price"
+                ],
+                "stock": [
+                  "ref",
+                  "arg",
+                  "stock"
+                ]
+              }
+            ]
+          ]
+        },
+        "result": {},
+        "outbox": [
+          "literal",
+          []
+        ]
+      }
+    },
+    "order.ship": {
+      "roles": [
+        "admin"
+      ],
+      "inputs": {
+        "order_id": "text",
+        "tracking": "text"
+      },
+      "guards": [
+        {
+          "expression": [
+            "present",
+            [
+              "ref",
+              "arg",
+              "tracking"
+            ]
+          ],
+          "message": "Bitte eine Sendungsnummer eingeben.",
+          "preview": false
+        },
+        {
+          "expression": [
+            "eq",
+            [
+              "ref",
+              "order",
+              "payment"
+            ],
+            "paid"
+          ],
+          "message": "Die Bestellung ist noch nicht bezahlt.",
+          "preview": true
+        },
+        {
+          "expression": [
+            "eq",
+            [
+              "ref",
+              "order",
+              "stage"
+            ],
+            "ready"
+          ],
+          "message": "Diese Aktion passt nicht zum aktuellen Bestellstatus.",
+          "preview": true
+        }
+      ],
+      "effects": {
+        "writes": {
+          "orders": [
+            "assoc",
+            [
+              "ref",
+              "state",
+              "orders"
+            ],
+            [
+              "ref",
+              "order",
+              "id"
+            ],
+            [
+              "merge",
+              [
+                "ref",
+                "order"
+              ],
+              {
+                "stage": "shipped",
+                "tracking": [
+                  "ref",
+                  "arg",
+                  "tracking"
+                ]
+              }
+            ]
+          ]
+        },
+        "result": {},
+        "outbox": [
+          "literal",
+          []
+        ]
+      }
+    },
+    "order.complete": {
+      "roles": [
+        "admin"
+      ],
+      "inputs": {
+        "order_id": "text"
+      },
+      "guards": [
+        {
+          "expression": [
+            "eq",
+            [
+              "ref",
+              "order",
+              "stage"
+            ],
+            "shipped"
+          ],
+          "message": "Diese Aktion passt nicht zum aktuellen Bestellstatus.",
+          "preview": true
+        }
+      ],
+      "effects": {
+        "writes": {
+          "orders": [
+            "assoc",
+            [
+              "ref",
+              "state",
+              "orders"
+            ],
+            [
+              "ref",
+              "order",
+              "id"
+            ],
+            [
+              "merge",
+              [
+                "ref",
+                "order"
+              ],
+              {
+                "stage": "completed"
+              }
+            ]
+          ]
+        },
+        "result": {},
+        "outbox": [
+          "literal",
+          []
+        ]
+      }
+    },
+    "order.cancel": {
+      "roles": [
+        "admin"
+      ],
+      "inputs": {
+        "order_id": "text"
+      },
+      "guards": [
+        {
+          "expression": [
+            "eq",
+            [
+              "ref",
+              "order",
+              "payment"
+            ],
+            "paid"
+          ],
+          "message": "Die Bestellung ist noch nicht bezahlt.",
+          "preview": true
+        },
+        {
+          "expression": [
+            "eq",
+            [
+              "ref",
+              "order",
+              "stage"
+            ],
+            "ready"
+          ],
+          "message": "Diese Aktion passt nicht zum aktuellen Bestellstatus.",
+          "preview": true
+        }
+      ],
+      "effects": {
+        "writes": {
+          "orders": [
+            "assoc",
+            [
+              "ref",
+              "state",
+              "orders"
+            ],
+            [
+              "ref",
+              "order",
+              "id"
+            ],
+            [
+              "merge",
+              [
+                "ref",
+                "order"
+              ],
+              {
+                "stage": "cancelled",
+                "payment": "refunded"
+              }
+            ]
+          ],
+          "catalog": [
+            "map_dict",
+            [
+              "ref",
+              "catalog"
+            ],
+            [
+              "merge",
+              [
+                "ref",
+                "row"
+              ],
+              {
+                "stock": [
+                  "add",
+                  [
+                    "ref",
+                    "row",
+                    "stock"
+                  ],
+                  [
+                    "mul",
+                    1,
+                    [
+                      "get",
+                      [
+                        "ref",
+                        "order",
+                        "items"
+                      ],
+                      [
+                        "ref",
+                        "key"
+                      ],
+                      0
+                    ]
+                  ]
+                ]
+              }
+            ]
+          ]
+        },
+        "result": {},
+        "outbox": [
+          "literal",
+          []
+        ]
+      }
+    },
+    "order.return": {
+      "roles": [
+        "admin"
+      ],
+      "inputs": {
+        "order_id": "text",
+        "inspection": "text"
+      },
+      "guards": [
+        {
+          "expression": [
+            "in",
+            [
+              "ref",
+              "arg",
+              "inspection"
+            ],
+            [
+              "literal",
+              [
+                "resellable",
+                "damaged"
+              ]
+            ]
+          ],
+          "message": "Bitte den Zustand auswählen.",
+          "preview": false
+        },
+        {
+          "expression": [
+            "eq",
+            [
+              "ref",
+              "order",
+              "payment"
+            ],
+            "paid"
+          ],
+          "message": "Die Bestellung ist noch nicht bezahlt.",
+          "preview": true
+        },
+        {
+          "expression": [
+            "eq",
+            [
+              "ref",
+              "order",
+              "stage"
+            ],
+            "completed"
+          ],
+          "message": "Diese Aktion passt nicht zum aktuellen Bestellstatus.",
+          "preview": true
+        }
+      ],
+      "effects": {
+        "writes": {
+          "orders": [
+            "assoc",
+            [
+              "ref",
+              "state",
+              "orders"
+            ],
+            [
+              "ref",
+              "order",
+              "id"
+            ],
+            [
+              "merge",
+              [
+                "ref",
+                "order"
+              ],
+              {
+                "stage": "returned",
+                "payment": "refunded"
+              }
+            ]
+          ],
+          "catalog": [
+            "if",
+            [
+              "eq",
+              [
+                "ref",
+                "arg",
+                "inspection"
+              ],
+              "resellable"
+            ],
+            [
+              "map_dict",
+              [
+                "ref",
+                "catalog"
+              ],
+              [
+                "merge",
+                [
+                  "ref",
+                  "row"
+                ],
+                {
+                  "stock": [
+                    "add",
+                    [
+                      "ref",
+                      "row",
+                      "stock"
+                    ],
+                    [
+                      "mul",
+                      1,
+                      [
+                        "get",
+                        [
+                          "ref",
+                          "order",
+                          "items"
+                        ],
+                        [
+                          "ref",
+                          "key"
+                        ],
+                        0
+                      ]
+                    ]
+                  ]
+                }
+              ]
+            ],
+            [
+              "ref",
+              "catalog"
+            ]
+          ]
+        },
+        "result": {},
+        "outbox": [
+          "literal",
+          []
+        ]
+      }
+    }
+  },
+  "numeric_program": [
+    {
+      "kind": "item",
+      "field": "gross",
+      "expr": [
+        "mul",
+        [
+          "read",
+          "self",
+          "unit"
+        ],
+        [
+          "read",
+          "self",
+          "quantity"
+        ]
+      ],
+      "head": "h0"
+    },
+    {
+      "kind": "root",
+      "field": "goods",
+      "expr": [
+        "sum",
+        "item",
+        "gross"
+      ],
+      "head": "h1"
+    },
+    {
+      "kind": "root",
+      "field": "gross",
+      "expr": [
+        "add",
+        [
+          "read",
+          "self",
+          "goods"
+        ],
+        [
+          "read",
+          "config",
+          "shipping_gross"
+        ]
+      ],
+      "head": "h2"
+    },
+    {
+      "kind": "item",
+      "field": "tax",
+      "expr": [
+        "muldiv",
+        [
+          "read",
+          "self",
+          "gross"
+        ],
+        [
+          "read",
+          "self",
+          "rate"
+        ],
+        [
+          "add",
+          [
+            "const",
+            100
+          ],
+          [
+            "read",
+            "self",
+            "rate"
+          ]
+        ]
+      ],
+      "head": "h3"
+    },
+    {
+      "kind": "item",
+      "field": "net",
+      "expr": [
+        "sub",
+        [
+          "read",
+          "self",
+          "gross"
+        ],
+        [
+          "read",
+          "self",
+          "tax"
+        ]
+      ],
+      "head": "h4"
+    },
+    {
+      "kind": "root",
+      "field": "tax",
+      "expr": [
+        "add",
+        [
+          "sum",
+          "item",
+          "tax"
+        ],
+        [
+          "read",
+          "config",
+          "shipping_tax"
+        ]
+      ],
+      "head": "h5"
+    },
+    {
+      "kind": "root",
+      "field": "net",
+      "expr": [
+        "sub",
+        [
+          "read",
+          "self",
+          "gross"
+        ],
+        [
+          "read",
+          "self",
+          "tax"
+        ]
+      ],
+      "head": "h6"
+    }
+  ],
+  "surfaces": {
+    "storefront": {
+      "title": "Sortiment",
+      "roles": [
+        "buyer"
+      ],
+      "readouts": [
+        {
+          "when": true,
+          "component": {
+            "component": "products",
+            "title": "Kannen und Zubehör",
+            "data": [
+              "map",
+              [
+                "filter",
+                [
+                  "values",
+                  [
+                    "ref",
+                    "catalog"
+                  ]
+                ],
+                [
+                  "and",
+                  [
+                    "eq",
+                    [
+                      "ref",
+                      "row",
+                      "active"
+                    ],
+                    true
+                  ],
+                  [
+                    "contains",
+                    [
+                      "ref",
+                      "row",
+                      "name"
+                    ],
+                    [
+                      "get",
+                      [
+                        "ref",
+                        "arg"
+                      ],
+                      "q",
+                      ""
+                    ]
+                  ]
+                ]
+              ],
+              [
+                "merge",
+                [
+                  "ref",
+                  "row"
+                ],
+                {
+                  "actions": [
+                    "list",
+                    {
+                      "event": "cart.set",
+                      "title": "In den Warenkorb",
+                      "args": {
+                        "sku": [
+                          "ref",
+                          "row",
+                          "sku"
+                        ],
+                        "quantity": [
+                          "add",
+                          [
+                            "get",
+                            [
+                              "ref",
+                              "items"
+                            ],
+                            [
+                              "ref",
+                              "row",
+                              "sku"
+                            ],
+                            0
+                          ],
+                          1
+                        ]
+                      },
+                      "fields": [
+                        "list"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        {
+          "when": [
+            "lt",
+            0,
+            [
+              "len",
+              [
+                "ref",
+                "items"
+              ]
+            ]
+          ],
+          "component": {
+            "component": "lines",
+            "title": "Warenkorb",
+            "data": [
+              "map",
+              [
+                "ref",
+                "quote",
+                "lines"
+              ],
+              [
+                "merge",
+                [
+                  "ref",
+                  "row"
+                ],
+                {
+                  "actions": [
+                    "list",
+                    {
+                      "event": "cart.set",
+                      "title": "Menge ändern",
+                      "args": {
+                        "sku": [
+                          "ref",
+                          "row",
+                          "sku"
+                        ]
+                      },
+                      "fields": [
+                        "list",
+                        {
+                          "name": "quantity",
+                          "label": "Menge",
+                          "type": "number",
+                          "value": [
+                            "ref",
+                            "row",
+                            "quantity"
+                          ],
+                          "options": [
+                            "literal",
+                            []
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "event": "cart.set",
+                      "title": "Entfernen",
+                      "args": {
+                        "sku": [
+                          "ref",
+                          "row",
+                          "sku"
+                        ],
+                        "quantity": 0
+                      },
+                      "fields": [
+                        "list"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ],
+            "link": {
+              "task": "checkout",
+              "label": "Zur Kasse"
+            }
+          }
+        }
+      ]
+    },
+    "checkout": {
+      "title": "Kasse",
+      "roles": [
+        "buyer"
+      ],
+      "readouts": [
+        {
+          "when": [
+            "eq",
+            [
+              "len",
+              [
+                "ref",
+                "items"
+              ]
+            ],
+            0
+          ],
+          "component": {
+            "component": "empty",
+            "title": "Dein Warenkorb ist leer",
+            "text": "Wähle im Sortiment einen Artikel aus.",
+            "link": {
+              "task": "storefront",
+              "label": "Zum Sortiment"
+            }
+          }
+        },
+        {
+          "when": [
+            "lt",
+            0,
+            [
+              "len",
+              [
+                "ref",
+                "items"
+              ]
+            ]
+          ],
+          "component": {
+            "component": "lines",
+            "title": "Deine Auswahl",
+            "data": [
+              "map",
+              [
+                "ref",
+                "quote",
+                "lines"
+              ],
+              [
+                "merge",
+                [
+                  "ref",
+                  "row"
+                ],
+                {
+                  "actions": [
+                    "list",
+                    {
+                      "event": "cart.set",
+                      "title": "Menge ändern",
+                      "args": {
+                        "sku": [
+                          "ref",
+                          "row",
+                          "sku"
+                        ]
+                      },
+                      "fields": [
+                        "list",
+                        {
+                          "name": "quantity",
+                          "label": "Menge",
+                          "type": "number",
+                          "value": [
+                            "ref",
+                            "row",
+                            "quantity"
+                          ],
+                          "options": [
+                            "literal",
+                            []
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "event": "cart.set",
+                      "title": "Entfernen",
+                      "args": {
+                        "sku": [
+                          "ref",
+                          "row",
+                          "sku"
+                        ],
+                        "quantity": 0
+                      },
+                      "fields": [
+                        "list"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        {
+          "when": [
+            "lt",
+            0,
+            [
+              "len",
+              [
+                "ref",
+                "items"
+              ]
+            ]
+          ],
+          "component": {
+            "component": "controls",
+            "title": "Rabattcode",
+            "actions": [
+              "list",
+              {
+                "event": "cart.promo",
+                "title": "Anwenden",
+                "args": {},
+                "fields": [
+                  "list",
+                  {
+                    "name": "code",
+                    "label": "Code",
+                    "type": "text",
+                    "value": [
+                      "ref",
+                      "cart",
+                      "promo"
+                    ],
+                    "options": [
+                      "literal",
+                      []
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "when": [
+            "lt",
+            0,
+            [
+              "len",
+              [
+                "ref",
+                "items"
+              ]
+            ]
+          ],
+          "component": {
+            "component": "controls",
+            "title": "Lieferung und Testzahlung",
+            "actions": [
+              "list",
+              {
+                "event": "checkout.place",
+                "title": "Testbestellung aufgeben",
+                "args": {
+                  "quote_key": [
+                    "ref",
+                    "quote_key"
+                  ]
+                },
+                "fields": [
+                  "list",
+                  {
+                    "name": "name",
+                    "label": "Vollständiger Name",
+                    "type": "text",
+                    "value": "",
+                    "options": [
+                      "literal",
+                      []
+                    ]
+                  },
+                  {
+                    "name": "email",
+                    "label": "E-Mail",
+                    "type": "email",
+                    "value": "",
+                    "options": [
+                      "literal",
+                      []
+                    ]
+                  },
+                  {
+                    "name": "address",
+                    "label": "Lieferadresse",
+                    "type": "text",
+                    "value": "",
+                    "options": [
+                      "literal",
+                      []
+                    ]
+                  },
+                  {
+                    "name": "method",
+                    "label": "Zahlungsart",
+                    "type": "select",
+                    "value": "test",
+                    "options": [
+                      "literal",
+                      [
+                        [
+                          "test",
+                          "Testzahlung"
+                        ],
+                        [
+                          "declined",
+                          "Testzahlung ablehnen"
+                        ]
+                      ]
+                    ]
+                  },
+                  {
+                    "name": "consent",
+                    "label": "Ich bestätige die Testbestellung zum angezeigten Preis.",
+                    "type": "checkbox",
+                    "value": false,
+                    "options": [
+                      "literal",
+                      []
+                    ]
+                  }
+                ],
+                "navigate": "order"
+              }
+            ]
+          }
+        },
+        {
+          "when": [
+            "lt",
+            0,
+            [
+              "len",
+              [
+                "ref",
+                "items"
+              ]
+            ]
+          ],
+          "component": {
+            "component": "totals",
+            "title": "Zusammenfassung",
+            "data": [
+              "ref",
+              "quote"
+            ]
+          }
+        }
+      ]
+    },
+    "order": {
+      "title": "Bestellstatus",
+      "roles": [
+        "buyer"
+      ],
+      "readouts": [
+        {
+          "when": [
+            "and",
+            [
+              "present",
+              [
+                "ref",
+                "order",
+                "id"
+              ]
+            ],
+            [
+              "eq",
+              [
+                "ref",
+                "order",
+                "buyer"
+              ],
+              [
+                "ref",
+                "actor",
+                "id"
+              ]
+            ]
+          ],
+          "component": {
+            "component": "order",
+            "title": "Deine Bestellung",
+            "data": {
+              "id": [
+                "ref",
+                "order",
+                "id"
+              ],
+              "name": [
+                "ref",
+                "order",
+                "name"
+              ],
+              "address": [
+                "ref",
+                "order",
+                "address"
+              ],
+              "stage": [
+                "ref",
+                "order",
+                "stage"
+              ],
+              "payment": [
+                "ref",
+                "order",
+                "payment"
+              ],
+              "quote": [
+                "ref",
+                "order",
+                "quote"
+              ],
+              "tracking": [
+                "ref",
+                "order",
+                "tracking"
+              ],
+              "consent": [
+                "ref",
+                "order",
+                "consent"
+              ]
+            },
+            "actions": [
+              "literal",
+              []
+            ]
+          }
+        },
+        {
+          "when": [
+            "not",
+            [
+              "and",
+              [
+                "present",
+                [
+                  "ref",
+                  "order",
+                  "id"
+                ]
+              ],
+              [
+                "eq",
+                [
+                  "ref",
+                  "order",
+                  "buyer"
+                ],
+                [
+                  "ref",
+                  "actor",
+                  "id"
+                ]
+              ]
+            ]
+          ],
+          "component": {
+            "component": "empty",
+            "title": "Dein Warenkorb ist leer",
+            "text": "Wähle im Sortiment einen Artikel aus.",
+            "link": {
+              "task": "storefront",
+              "label": "Zum Sortiment"
+            }
+          }
+        }
+      ]
+    },
+    "admin": {
+      "title": "Shop verwalten",
+      "roles": [
+        "admin"
+      ],
+      "readouts": [
+        {
+          "when": true,
+          "component": {
+            "component": "orders",
+            "title": "Bestellungen",
+            "data": [
+              "map",
+              [
+                "slice",
+                [
+                  "latest",
+                  [
+                    "filter",
+                    [
+                      "values",
+                      [
+                        "ref",
+                        "state",
+                        "orders"
+                      ]
+                    ],
+                    [
+                      "or",
+                      [
+                        "contains",
+                        [
+                          "ref",
+                          "row",
+                          "id"
+                        ],
+                        [
+                          "get",
+                          [
+                            "ref",
+                            "arg"
+                          ],
+                          "q",
+                          ""
+                        ]
+                      ],
+                      [
+                        "contains",
+                        [
+                          "ref",
+                          "row",
+                          "name"
+                        ],
+                        [
+                          "get",
+                          [
+                            "ref",
+                            "arg"
+                          ],
+                          "q",
+                          ""
+                        ]
+                      ]
+                    ]
+                  ],
+                  "sequence"
+                ],
+                [
+                  "mul",
+                  [
+                    "get",
+                    [
+                      "ref",
+                      "arg"
+                    ],
+                    "page",
+                    0
+                  ],
+                  20
+                ],
+                20
+              ],
+              [
+                "merge",
+                {
+                  "id": [
+                    "ref",
+                    "row",
+                    "id"
+                  ],
+                  "name": [
+                    "ref",
+                    "row",
+                    "name"
+                  ],
+                  "address": [
+                    "ref",
+                    "row",
+                    "address"
+                  ],
+                  "stage": [
+                    "ref",
+                    "row",
+                    "stage"
+                  ],
+                  "payment": [
+                    "ref",
+                    "row",
+                    "payment"
+                  ],
+                  "quote": [
+                    "ref",
+                    "row",
+                    "quote"
+                  ],
+                  "tracking": [
+                    "ref",
+                    "row",
+                    "tracking"
+                  ]
+                },
+                {
+                  "actions": [
+                    "list",
+                    {
+                      "event": "order.ship",
+                      "title": "Versand erfassen",
+                      "args": {
+                        "order_id": [
+                          "ref",
+                          "row",
+                          "id"
+                        ]
+                      },
+                      "fields": [
+                        "list",
+                        {
+                          "name": "tracking",
+                          "label": "Sendungsnummer",
+                          "type": "text",
+                          "value": "",
+                          "options": [
+                            "literal",
+                            []
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "event": "order.complete",
+                      "title": "Als zugestellt markieren",
+                      "args": {
+                        "order_id": [
+                          "ref",
+                          "row",
+                          "id"
+                        ]
+                      },
+                      "fields": [
+                        "list"
+                      ]
+                    },
+                    {
+                      "event": "order.cancel",
+                      "title": "Stornieren und erstatten",
+                      "args": {
+                        "order_id": [
+                          "ref",
+                          "row",
+                          "id"
+                        ]
+                      },
+                      "fields": [
+                        "list"
+                      ]
+                    },
+                    {
+                      "event": "order.return",
+                      "title": "Retoure abschließen",
+                      "args": {
+                        "order_id": [
+                          "ref",
+                          "row",
+                          "id"
+                        ]
+                      },
+                      "fields": [
+                        "list",
+                        {
+                          "name": "inspection",
+                          "label": "Zustand",
+                          "type": "select",
+                          "value": "resellable",
+                          "options": [
+                            "literal",
+                            [
+                              [
+                                "resellable",
+                                "Wiederverkaufbar"
+                              ],
+                              [
+                                "damaged",
+                                "Nicht wiederverkaufbar"
+                              ]
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ],
+            "page": [
+              "get",
+              [
+                "ref",
+                "arg"
+              ],
+              "page",
+              0
+            ],
+            "size": 20,
+            "total": [
+              "len",
+              [
+                "filter",
+                [
+                  "values",
+                  [
+                    "ref",
+                    "state",
+                    "orders"
+                  ]
+                ],
+                [
+                  "or",
+                  [
+                    "contains",
+                    [
+                      "ref",
+                      "row",
+                      "id"
+                    ],
+                    [
+                      "get",
+                      [
+                        "ref",
+                        "arg"
+                      ],
+                      "q",
+                      ""
+                    ]
+                  ],
+                  [
+                    "contains",
+                    [
+                      "ref",
+                      "row",
+                      "name"
+                    ],
+                    [
+                      "get",
+                      [
+                        "ref",
+                        "arg"
+                      ],
+                      "q",
+                      ""
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "when": true,
+          "component": {
+            "component": "inventory",
+            "title": "Sortiment pflegen",
+            "data": [
+              "map",
+              [
+                "values",
+                [
+                  "ref",
+                  "catalog"
+                ]
+              ],
+              [
+                "merge",
+                [
+                  "ref",
+                  "row"
+                ],
+                {
+                  "actions": [
+                    "list",
+                    {
+                      "event": "catalog.edit",
+                      "title": "Speichern",
+                      "args": {
+                        "sku": [
+                          "ref",
+                          "row",
+                          "sku"
+                        ],
+                        "expected_price": [
+                          "ref",
+                          "row",
+                          "price"
+                        ],
+                        "expected_stock": [
+                          "ref",
+                          "row",
+                          "stock"
+                        ]
+                      },
+                      "fields": [
+                        "list",
+                        {
+                          "name": "price",
+                          "label": "Preis in Euro",
+                          "type": "money",
+                          "value": [
+                            "ref",
+                            "row",
+                            "price"
+                          ],
+                          "options": [
+                            "literal",
+                            []
+                          ]
+                        },
+                        {
+                          "name": "stock",
+                          "label": "Bestand",
+                          "type": "number",
+                          "value": [
+                            "ref",
+                            "row",
+                            "stock"
+                          ],
+                          "options": [
+                            "literal",
+                            []
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "initial": {
+    "catalog": {
+      "moka-3": {
+        "sku": "moka-3",
+        "name": "Moka Express",
+        "variant": "3 Tassen",
+        "description": "Klassischer Espressokocher aus Aluminium.",
+        "price": 3490,
+        "rate": 19,
+        "stock": 8,
+        "active": true,
+        "image": "moka.jpg"
+      },
+      "moka-6": {
+        "sku": "moka-6",
+        "name": "Moka Express",
+        "variant": "6 Tassen",
+        "description": "Die größere Kanne für den gemeinsamen Kaffee.",
+        "price": 5490,
+        "rate": 19,
+        "stock": 5,
+        "active": true,
+        "image": "moka-pair.jpg"
+      },
+      "press": {
+        "sku": "press",
+        "name": "French Press",
+        "variant": "1 Liter",
+        "description": "Glaskanne mit Edelstahlfilter für kräftigen Filterkaffee.",
+        "price": 2990,
+        "rate": 19,
+        "stock": 6,
+        "active": true,
+        "image": "press.jpg"
+      }
+    },
+    "carts": {},
+    "orders": {}
+  },
+  "training": {
+    "numeric_checkpoint": "2a89e06f7428e07e9b3790a490dddeac76c4c19e7b181d856076cb2f059a2ac8",
+    "shopware_price_traces": {
+      "train": 30,
+      "test": 12
+    },
+    "lab_policy": "Independent synthetic teacher in teach.py",
+    "quote_cases": 186,
+    "actions": {
+      "cart.set": {
+        "training": 810,
+        "held_out": 810,
+        "consistent_effect_candidates": 1,
+        "guards": 2
+      },
+      "cart.promo": {
+        "training": 720,
+        "held_out": 720,
+        "consistent_effect_candidates": 1,
+        "guards": 1
+      },
+      "checkout.place": {
+        "training": 1080,
+        "held_out": 1080,
+        "consistent_effect_candidates": 1,
+        "guards": 8
+      },
+      "payment.result": {
+        "training": 720,
+        "held_out": 720,
+        "consistent_effect_candidates": 1,
+        "guards": 2
+      },
+      "catalog.edit": {
+        "training": 990,
+        "held_out": 990,
+        "consistent_effect_candidates": 1,
+        "guards": 4
+      },
+      "order.ship": {
+        "training": 720,
+        "held_out": 720,
+        "consistent_effect_candidates": 1,
+        "guards": 3
+      },
+      "order.complete": {
+        "training": 630,
+        "held_out": 630,
+        "consistent_effect_candidates": 1,
+        "guards": 1
+      },
+      "order.cancel": {
+        "training": 630,
+        "held_out": 630,
+        "consistent_effect_candidates": 1,
+        "guards": 2
+      },
+      "order.return": {
+        "training": 720,
+        "held_out": 720,
+        "consistent_effect_candidates": 1,
+        "guards": 3
+      }
+    },
+    "projection_cases": 14
+  }
+}
