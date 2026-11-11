@@ -1,0 +1,122 @@
+[
+  {
+    "id": "17c41a22ebe74ac5b1606b40881120f9",
+    "name": "Papierwerft Artikel 1",
+    "tabs": [
+      {
+        "key": "base",
+        "label": "General",
+        "nativeControls": 34,
+        "generatedControls": 34
+      },
+      {
+        "key": "specifications",
+        "label": "Specifications",
+        "nativeControls": 12,
+        "generatedControls": 12
+      },
+      {
+        "key": "prices",
+        "label": "Advanced pricing",
+        "nativeControls": 3,
+        "generatedControls": 3
+      },
+      {
+        "key": "variants",
+        "label": "Variants",
+        "nativeControls": 2,
+        "generatedControls": 2
+      },
+      {
+        "key": "layout",
+        "label": "Layout",
+        "nativeControls": 2,
+        "generatedControls": 2
+      },
+      {
+        "key": "seo",
+        "label": "SEO",
+        "nativeControls": 9,
+        "generatedControls": 9
+      },
+      {
+        "key": "cross-selling",
+        "label": "Cross Selling",
+        "nativeControls": 2,
+        "generatedControls": 2
+      },
+      {
+        "key": "reviews",
+        "label": "Reviews",
+        "nativeControls": 2,
+        "generatedControls": 2
+      }
+    ],
+    "validation": "empty stock refused",
+    "before": 58,
+    "after": 71,
+    "syncStatus": 200,
+    "reloaded": true,
+    "storeApiRead": true
+  },
+  {
+    "id": "20b103d575a6453ea39d5c1cb64ff364",
+    "name": "Papierwerft Artikel 2",
+    "tabs": [
+      {
+        "key": "base",
+        "label": "General",
+        "nativeControls": 34,
+        "generatedControls": 34
+      },
+      {
+        "key": "specifications",
+        "label": "Specifications",
+        "nativeControls": 12,
+        "generatedControls": 12
+      },
+      {
+        "key": "prices",
+        "label": "Advanced pricing",
+        "nativeControls": 3,
+        "generatedControls": 3
+      },
+      {
+        "key": "variants",
+        "label": "Variants",
+        "nativeControls": 2,
+        "generatedControls": 2
+      },
+      {
+        "key": "layout",
+        "label": "Layout",
+        "nativeControls": 2,
+        "generatedControls": 2
+      },
+      {
+        "key": "seo",
+        "label": "SEO",
+        "nativeControls": 9,
+        "generatedControls": 9
+      },
+      {
+        "key": "cross-selling",
+        "label": "Cross Selling",
+        "nativeControls": 2,
+        "generatedControls": 2
+      },
+      {
+        "key": "reviews",
+        "label": "Reviews",
+        "nativeControls": 2,
+        "generatedControls": 2
+      }
+    ],
+    "validation": "empty stock refused",
+    "before": 58,
+    "after": 71,
+    "syncStatus": 200,
+    "reloaded": true,
+    "storeApiRead": true
+  }
+]

@@ -22,6 +22,8 @@ The film explains the target architecture and shows a test purchase through chec
 
 The [absorption pipeline](docs/absorption-pipeline.md) reads the installed OpenAPI inventory, records native HTTP and browser behavior, fits a model candidate and replays it with Shopware stopped before installing it. In the first catalog profile, the generated Admin **Stock → Save** control issues the same native Sync API request and reopens the saved value at the original Shopware URL. Four operation profiles passed **96 of 96** held-out HTTP checks and two native-to-Holo browser journeys. The ledger tracks the other **1,232** installed operations as unmeasured.
 
+The [product mask experiment](docs/product-mask.md) now compiles the eight observed Admin product tabs from native browser trees and layout measurements. On two fresh products with Shopware off, Chrome opened all eight tabs and saved stock through the learned Sync contract. [Shopware and the Holo side by side](assets/experiments/product-mask/base-side-by-side.png)
+
 ### Execute commerce inside the model
 
 The new **forward-pass shop** runs commerce, workflow and projection cells in compiled PyTorch subgraphs. Nine expressions were learned from Shopware observations and lowered into the model. The interpreter baseline, the same program bank in the model and the trace-induced model each matched **36 of 36 full journeys across four fresh shops** with Shopware switched off. [How it works, what was learned and how to run it](docs/forward-pass.md)

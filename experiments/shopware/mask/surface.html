@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Product · Holodeck</title>
+<style>
+html,body{margin:0;width:100%;min-height:100%;background:#f7f8fa;color:#252a32;font-family:Inter,system-ui,sans-serif}#view{position:relative;min-height:100vh}#message{position:fixed;bottom:20px;right:20px;z-index:99999;max-width:360px;padding:12px 18px;background:#172641;color:white;border-radius:8px}#message:empty{display:none}a[href],button:not([disabled]){cursor:pointer}:focus-visible{outline:2px solid #0870d3;outline-offset:2px}[data-skip]:not(:focus){clip-path:inset(50%);overflow:hidden}
+</style>
+<div id="view" aria-busy="true"></div>
+<p id="message" role="status"></p>
+<script type="module">
+const host = document.querySelector('#view');
+const message = document.querySelector('#message');
+const tags = new Set('div span section article main header footer nav aside h1 h2 h3 h4 p ul ol li a button label input textarea select option table tbody thead tr td th form fieldset legend strong small b i hr'.split(' '));
+const attrs = new Set('role aria-label aria-selected title placeholder type id for colspan rowspan'.split(' '));
+let generation = 0;
+let current;
+const interpolate = (value, slots) => typeof value === 'string'
+  ? value.replace(/\{\{(name|stock|productNumber|id)\}\}/g, (_, key) => String(slots[key])) : value;
+
+function create(tree, tokens, slots) {
+  if (typeof tree === 'string') return document.createTextNode(interpolate(tree, slots));
+  const [tag, token, attributes, children] = tree;
+  const element = document.createElement(tags.has(tag) ? tag : 'div');
+  for (const [name, value] of Object.entries(tokens[token])) {
+    if (!String(value).includes('url(')) element.style.setProperty(name,
+      name === 'font-family' && value === 'Inter' ? 'Inter, system-ui, sans-serif' : value);
+  }
+  for (const [name, raw] of Object.entries(attributes)) {
+    const value = interpolate(raw, slots);
+    if (attrs.has(name)) element.setAttribute(name, value);
+    if (name === 'route' && value.startsWith('#/sw/product/detail/' + slots.id + '/')) element.href = value;
+    if (name === 'data-stock') element.dataset.stock = value;
+  }
+  for (const child of children) element.append(create(child, tokens, slots));
+  if (tag === 'a' && element.textContent.trim() === 'Skip to content') {
+    element.dataset.skip = '';
+    element.href = '#main';
+    element.addEventListener('click', event => {
+      event.preventDefault();
+      host.querySelector('main')?.focus();
+    });
+  }
+  if (tag === 'main') element.tabIndex = -1;
+  if ('value' in attributes && 'value' in element) element.value = interpolate(attributes.value, slots);
+  if (attributes.checked) element.checked = true;
+  if (attributes.disabled) element.disabled = true;
+  if (['INPUT','TEXTAREA'].includes(element.tagName) && element.dataset.stock !== 'editable') element.readOnly = true;
+  return element;
+}
+
+function bind(template, stock) {
+  if (Array.isArray(template)) return template.map(item => bind(item, stock));
+  if (template && typeof template === 'object') {
+    if (template.$field === 'stock') return stock;
+    return Object.fromEntries(Object.entries(template).map(([key, value]) => [key, bind(value, stock)]));
+  }
+  return template;
+}
+
+async function render() {
+  const id = ++generation;
+  host.setAttribute('aria-busy', 'true');
+  const match = location.hash.match(/^#\/sw\/product\/detail\/([0-9a-f]{32})(?:\/(.+))?$/);
+  if (!match) throw new Error('Open an imported product by its original Admin route.');
+  const query = new URLSearchParams({product:match[1], tab:match[2] || 'base'});
+  const response = await fetch('/mask?' + query);
+  if (!response.ok) throw new Error('This product tab has no compiled profile.');
+  const result = await response.json();
+  if (id !== generation) return;
+  const {tab, slots} = result;
+  current = result;
+  host.replaceChildren(create(tab.root, tab.tokens, slots));
+  host.dataset.tab = tab.key;
+  document.title = `${slots.name} · Holodeck`;
+  host.setAttribute('aria-busy', 'false');
+}
+
+host.addEventListener('submit', event => event.preventDefault());
+host.addEventListener('click', async event => {
+  const button = event.target.closest('button');
+  if (!button) return;
+  event.preventDefault();
+  if (button.textContent.trim() !== 'Save' || !current) return;
+  const input = host.querySelector('[data-stock=editable]');
+  if (!input) {message.textContent = 'This tab has no verified write profile.'; return;}
+  const stock = Number(input.value);
+  if (!input.value.trim() || !Number.isSafeInteger(stock) || stock < 0) {message.textContent = 'Enter a whole stock quantity.'; return;}
+  const action = current.action;
+  try {
+    const response = await fetch(action.route, {method:action.method, headers:{'Content-Type':'application/json',
+      Authorization:'Bearer absorption-admin'}, body:JSON.stringify(bind(action.body, stock))});
+    if (!response.ok) throw new Error('Stock could not be saved.');
+    await render();
+    message.textContent = 'Stock saved.';
+  } catch (error) { message.textContent = error.message; }
+});
+function update() {render().catch(error => {host.textContent = error.message; host.setAttribute('aria-busy', 'false');});}
+window.addEventListener('hashchange', update);
+update();
+</script>
+</html>

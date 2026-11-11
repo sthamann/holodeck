@@ -1,0 +1,90 @@
+{
+  "observed_candidates": [
+    {
+      "name": "product",
+      "route": "#/sw/product/index?limit=25&page=1&sortBy=createdAt&sortDirection=DESC&naturalSorting=true&grid.filter.product=null",
+      "counts": {
+        "nodes": 784,
+        "fields": 12,
+        "bound_fields": 0,
+        "buttons": 40,
+        "live_stock": 0
+      }
+    },
+    {
+      "name": "manufacturer",
+      "route": "#/sw/manufacturer/index?limit=25&page=1&sortBy=name&sortDirection=ASC&naturalSorting=false",
+      "counts": {
+        "nodes": 403,
+        "fields": 7,
+        "bound_fields": 0,
+        "buttons": 22,
+        "live_stock": 0
+      }
+    },
+    {
+      "name": "property",
+      "route": "#/sw/property/index?limit=25&page=1&sortBy=name&sortDirection=ASC&naturalSorting=false",
+      "counts": {
+        "nodes": 415,
+        "fields": 2,
+        "bound_fields": 0,
+        "buttons": 26,
+        "live_stock": 0
+      }
+    },
+    {
+      "name": "customer",
+      "route": "#/sw/customer/index?limit=25&page=1&sortBy=createdAt&sortDirection=DESC&naturalSorting=false&grid.filter.customer=null",
+      "counts": {
+        "nodes": 385,
+        "fields": 4,
+        "bound_fields": 0,
+        "buttons": 27,
+        "live_stock": 0
+      }
+    },
+    {
+      "name": "flow",
+      "route": "#/sw/flow/index/flows?limit=25&page=1&sortBy=createdAt&sortDirection=DESC&naturalSorting=false",
+      "counts": {
+        "nodes": 1058,
+        "fields": 28,
+        "bound_fields": 0,
+        "buttons": 43,
+        "live_stock": 0
+      }
+    },
+    {
+      "name": "category",
+      "route": "#/sw/category/index",
+      "counts": {
+        "nodes": 375,
+        "fields": 6,
+        "bound_fields": 0,
+        "buttons": 19,
+        "live_stock": 0
+      }
+    },
+    {
+      "name": "rule",
+      "route": "#/sw/settings/rule/index?limit=25&page=1&sortBy=name&sortDirection=ASC&naturalSorting=false&grid.filter.rule=null",
+      "counts": {
+        "nodes": 629,
+        "fields": 11,
+        "bound_fields": 0,
+        "buttons": 32,
+        "live_stock": 0
+      }
+    }
+  ],
+  "unmeasured": [
+    "order",
+    "promotion",
+    "media"
+  ],
+  "writable_candidates_promoted": 0,
+  "checkout_expressions": 9,
+  "shipping_prior_sha256": "d75ead9d7e0121fc238aecfabd77237489079d59d338edc36e81853e66205fea",
+  "shipping_replay_matches_published": true
+}
