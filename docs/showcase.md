@@ -2,13 +2,17 @@
 
 Birkenkai begins with a shop catalogue, builds a cart and saves an order for €471.06. In Admin, the merchant asks to see delivery and payment status and work on returns and refunds. The basis deck opens the order. After explicit activation of the trained service specialist, the same request exposes refund controls for the same order. The return control appears once the delivery is marked shipped. Shopware stays offline throughout.
 
+[Watch the English film](https://github.com/sthamann/holodeck/releases/tag/holodeck-explainer) · [Download the MP4](https://github.com/sthamann/holodeck/releases/download/holodeck-explainer/Holodeck-From-Software-to-a-Deck-EN.mp4) · [English subtitles](https://github.com/sthamann/holodeck/releases/download/holodeck-explainer/Holodeck-From-Software-to-a-Deck-EN.en.srt)
+
+The film combines architecture illustrations with a browser capture of the Birkenkai run. The English capture uses both trained [Strands heads](strands.md) and a presentation stylesheet.
+
 ![Birkenkai during the live demo, with the local deck status above the generated storefront.](../assets/experiments/showcase/storefront.webp)
 
 | Before activation | After activation |
 | --- | --- |
 | ![Birkenkai order with the basis deck active.](../assets/experiments/showcase/before.webp) | ![The same order with the service specialist active and bound refund controls.](../assets/experiments/showcase/after.webp) |
 
-The demo displays the loaded checkpoint, bound order and revision, and can expand the current component and action bindings. The browser verifies the native cart, discount and saved order, and checks that a premature return is rejected. It runs the workflow in Birkenkai and Sandfracht. The filmed Birkenkai order was reopened on the same service checkpoint at revision 10 after restarting the server. The [earlier replay](learning.md#one-specialist-from-training-to-activation) documents the specialist's training and native comparisons.
+The demo displays the loaded checkpoint, bound order and revision, and can expand the current component and action bindings. The browser verifies the native cart, discount and saved order, and checks that a premature return is rejected. It runs the workflow in Birkenkai and Sandfracht. In the verification run with both Strands heads, both orders reopened at revision 10 on the same service checkpoint after restarting the server. The [earlier replay](learning.md#one-specialist-from-training-to-activation) documents the sparse specialist's training and native comparisons.
 
 [Checkout capture](../assets/experiments/showcase/checkout.webp) · [Saved order after the service workflow](../assets/experiments/showcase/final.webp)
 

@@ -1,7 +1,7 @@
 {
   "schema": "holodeck.roadmap/1",
-  "revision": 9,
-  "date": "2026-11-10",
+  "revision": 10,
+  "date": "2026-11-11",
   "status": "planned",
   "milestones": [
     {
@@ -574,6 +574,16 @@
         ],
         "scope": "A trained structural prior changes which native carts teach nested shipping rules. Independent checkout replay separates availability, tier price and wrong admission from outside the grammar.",
         "evidence": "experiments/shopware/evidence/shipping-rules/summary.json"
+      },
+      {
+        "tasks": [
+          "H12",
+          "H16",
+          "H21",
+          "H22"
+        ],
+        "scope": "Two independent Strands heads compare free-text Admin intent and typed service program selection. The fitted program head matches the reserved service journeys. The existing intent readout remains the default.",
+        "evidence": "experiments/shopware/evidence/joint-deck/strands-comparison.json"
       }
     ]
   }

@@ -16,6 +16,16 @@ The first product milestone is a working standard shop. A customer shops in a **
 
 The current joint deck completes the measured purchase and merchant flow in four shops with Shopware offline. It uses the same checkpoint for commerce decisions, component selection and action bindings. The earlier [two shop proof](neural-projection.md) and [Nordlager workspace](native-shopware-workspace.md) document the path to this experiment. [One order through the three current surfaces](joint-deck.md#one-order-in-the-browser)
 
+## Next experiments
+
+**1. Accept the same ordinary shop across unfamiliar configurations.** Start with catalog and variants, availability, cart, price, checkout, payment and merchant fulfilment. Reserve whole merchant configurations and combinations of pricing, delivery and state rules. Run the complete journeys with Shopware offline, compare offers, writes and refusals against native traces, and remove a relevant learned dependency to check that the recorded outcome and visible action depend on it. Publish coverage by behaviour family. [Acceptance matrix](shopware-absorption.md#6-prüfprogramm-für-den-systemersatz)
+
+**2. Follow a purchase across people and channels.** Start with a photo or a text request, compose an interactive buyer view and continue the same purchase through a buying agent and the merchant’s Admin. Use the same authorised facts to compare price, available actions and the final order across paths. Then change stock or the actor’s role mid-journey and check which offers must change. An accepted commitment should survive a change of surface and a restart.
+
+**3. Teach a business to work differently.** Give the deck a policy or a short demonstration set that introduces a new rule family. Hold the host, primitives and retrieval budget fixed. Compare with the existing specialist and a model that produces a rule for a conventional engine. Require the new behaviour to transfer to another merchant, shape the visible controls and survive an activation and rollback with an order still open. Report separately what changed in weights, executable structure and merchant inputs. [What the present learning experiments establish](learning.md)
+
+**4. Measure the cost of using it every day.** Once the same journeys pass, measure first projection, reopening a saved holo and executing a routine action at p50 and p95. Compare on equal hardware and record model calls and cost. Reuse a projection or compile a learned path only when it preserves offers, refusals, effects and permissions.
+
 ## First delivery and acceptance
 
 | Area | What the first shop must do |

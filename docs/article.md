@@ -4,6 +4,8 @@ A spreadsheet lets a small team make a tool while the work is still in front of 
 
 *This is the vision behind Holodeck, the technical companion to Stefan Hamann’s* The End of Software as We Know It. *The published Holoshop experiments demonstrate selected parts of it.* [Experiment evidence](../experiments/shopware/README.md)
 
+[Read the original LinkedIn article](https://www.linkedin.com/pulse/end-software-we-know-stefan-hamann-z81he/) · [Watch the Agentic Commerce Labs film](https://github.com/sthamann/holodeck/releases/tag/holodeck-explainer) · [Run the prototype](showcase.md)
+
 ![Article cover showing a deck projecting working software.](../assets/illustrations/article-cover.png)
 
 ## The reversal

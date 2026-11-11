@@ -14,6 +14,8 @@ The current checkpoint has a shared sparse decoder for commerce, workflow and pr
 
 The offline comparison reproduced 48 of 48 new journeys across four merchant configurations. The arithmetic expressions were designed from source and selected against traces. A shipping output intervention shows that the executed choice depends on the trained decoder. The current result covers those journeys. The target calls for a jointly trained multimodal representation, broader acquisition of business logic and a complete product profile. [Read the results and run the same checkpoint](joint-deck.md)
 
+The optional [Strands heads](strands.md) add two measured alternatives for Admin intent and service program selection. The service head matches the sparse specialist on the reserved workflows. The existing language readout remains the default after the exact facet comparison.
+
 The [specialist activation test](learning.md#one-specialist-from-training-to-activation) verifies a version change on a live order with the published checkpoint. The old and new decks can run in one process. The order records its bound version, and the first projection after restart resolves that version from the record.
 
 The [trace induction trial](trace-induction.md) replaces selected scalar expressions inside the checkpoint with programs learned from observations. It holds the renderer, executor and sparse selectors fixed and compares the result on fresh shops and a deliberately changed teacher.

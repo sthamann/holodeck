@@ -16,6 +16,8 @@ The joint deck runs an ordinary shopping and order handling journey over a defin
 | **Renderer** | Draws the finite component vocabulary and submits bound actions. It handles controls such as a table, delivery filter and row action. |
 | **Optional service specialist** | Adds observed return and refund state decisions and Admin action cells. It can be attached as a versioned extension. |
 
+[The Strands experiment](strands.md) adds optional trained heads for intent and service program selection and compares them with this checkpoint.
+
 ## Measured results
 
 The numeric checkpoint was frozen before Shopware recorded the 48 holdout cases. The replay compares full journeys, including the persisted order and stock, workflow effects and checkout idempotency across reopening SQLite.

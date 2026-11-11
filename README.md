@@ -2,13 +2,19 @@
 
 **One multimodal model for the business. Working software for each moment.**
 
-Today, intelligence sits on top of software. The application is the fixed part, and AI helps you use it. Now take that layer away. One multimodal model holds everything the application knows and creates whatever the moment needs. The things we build today as features, projects and plugins become properties of the architecture.
+What if the AI model itself were the application? A **deck** learns the rules, workflows and actions of a business and runs them against its live records. Reasoning is available throughout the application. A **holo** is a working interface the deck assembles for the task at hand. The views can change as people work. Their orders and commitments persist.
 
-![The target design. A multimodal deck takes intent and current business state, generates working holos and proposes effects to a generic transaction core.](assets/illustrations/inside-a-deck.png)
+**Holoshop is the first experiment.** A shopper uses Holo Storefront and Holo Checkout. The merchant opens the same order in Holo Admin and asks for the view they need. The deck is responsible for the commerce decisions behind all three. Shopware teaches the deck during development. The prototype runs the tested journeys on its own records with the teacher offline.
 
-**Holoshop is the first experiment.** A shopper uses Holo Storefront and Holo Checkout. The merchant opens the same order in Holo Admin and asks for the view they need. The deck is responsible for the commerce decisions behind all three. Shopware teaches the deck during development. The delivered shop runs with its own records and the teacher offline.
+[What runs today](#what-runs-today) · [Run Holoshop](#run-the-experiments) · [Architecture](docs/architecture.md) · [Next experiments](docs/roadmap.md#next-experiments) · [The original article](https://www.linkedin.com/pulse/end-software-we-know-stefan-hamann-z81he/)
 
-[What runs today](#what-runs-today) · [Run Holoshop](#run-the-experiments) · [Architecture](docs/architecture.md) · [From Apps to Holos](docs/article.md)
+## Watch the film
+
+[![Watch From Software to a Deck, a 97 second film from Agentic Commerce Labs.](assets/experiments/showcase/film-cover.jpg)](https://github.com/sthamann/holodeck/releases/tag/holodeck-explainer)
+
+[MP4](https://github.com/sthamann/holodeck/releases/download/holodeck-explainer/Holodeck-From-Software-to-a-Deck-EN.mp4) · [English subtitles](https://github.com/sthamann/holodeck/releases/download/holodeck-explainer/Holodeck-From-Software-to-a-Deck-EN.en.srt) · [Run the interactive demo](docs/showcase.md)
+
+The film explains the target architecture and shows a test purchase through checkout and a saved return with Shopware switched off. The browser sequence uses the optional Strands heads.
 
 ## What runs today
 
@@ -44,6 +50,10 @@ A service specialist learned which return and refund status changes Shopware acc
 
 [See the before and after captures and reproduce the activation](docs/learning.md#one-specialist-from-training-to-activation)
 
+### What Strands learns
+
+Two optional heads share a frozen Qwen3.5 2B Strands backbone. The fitted service head chose the correct result on **80 of 80** reserved commands. The released head scored **44 of 80**. The fitted head and the existing sparse specialist both matched all **16 complete service journeys**. The fitted Strands Admin readout was faster in the local comparison and matched **8 of 14** requested facet sets. The existing readout matched **11 of 14** and remains the default. [Training, comparison and run instructions](docs/strands.md)
+
 ### Discover expressions from Shopware traces
 
 The next experiment recovers nine executable expressions without providing formula labels. On four fresh shops, deliberately varied observations yield **38 of 40** exact journeys, compared with **6 of 40** from the same number of earlier passive observations. A separately fitted checkpoint follows a deliberately changed Shopware teacher in **16 of 16** fresh journeys. The sparse selector weights stay identical. The acquired knowledge is the executable expression grammar.
@@ -68,6 +78,8 @@ The next trial hides nested Shopware availability rules and price tiers. A train
 
 ## Deck, holo and projected software
 
+![The target design. A multimodal deck takes intent and current business state, generates working holos and proposes effects to a generic transaction core.](assets/illustrations/inside-a-deck.png)
+
 | Concept | What it does |
 | --- | --- |
 | **Deck** | Carries the executable knowledge of a business. It understands the situation, chooses the relevant facts and rules, and determines the next action and its effects. |
@@ -88,7 +100,7 @@ The next trial hides nested Shopware availability rules and price tiers. A train
 - **You can ask the business.** “Which customers stopped reordering after the price change?” can lead to an answer and a view to work through those accounts.
 - **It gets better by working.** A correction can become a tested, approved version of how the business runs.
 
-Amazon already demonstrates some of this at scale. The bet is that a merchant with twelve people could get it from the architecture itself. [Article companion](docs/article.md)
+The bet is that a small merchant can get these capabilities from the architecture itself. [Article companion](docs/article.md)
 
 ## How a deck is made
 

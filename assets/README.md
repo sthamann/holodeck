@@ -27,3 +27,5 @@ The local demo uses these photographs from Wikimedia Commons. The cited licenses
 The photographs are bundled as resized demo assets. Product names, prices, stock, customers and orders in the experiments are synthetic.
 
 The [live showcase](../docs/showcase.md) uses generated catalogue illustrations for the two synthetic merchants. The screenshots record the running application.
+
+The [film cover](experiments/showcase/film-cover.jpg) is a frame from [From Software to a Deck](https://github.com/sthamann/holodeck/releases/tag/holodeck-explainer), the Agentic Commerce Labs film. Its browser segment records the local Birkenkai prototype. Its diagrams explain the target architecture.

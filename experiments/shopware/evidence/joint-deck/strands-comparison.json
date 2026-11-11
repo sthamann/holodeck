@@ -1,0 +1,3032 @@
+{
+  "setup": {
+    "hardware": "Apple Silicon",
+    "runtime": "MLX",
+    "strands_source_revision": "846b69ebe7603038caa3bfe250e50f1137b141d7",
+    "strands_model": "amazon/strands-decider-2B-qwen3.5-v1-2610",
+    "strands_model_revision": "974685f92d5930b2d37e9cb5eacec7a8f882d9fa",
+    "training_trace_sha256": "ca6ba863a2541bd4d3c5ebeac7017775201a1d50b4a3428695d2361b658bf186",
+    "holdout_trace_sha256": "469a7ab6584c9a611839d76c78c0feb182a031f934b28ee5bf7431d33fd4c439"
+  },
+  "service_program_selection": {
+    "training_signatures": 14,
+    "heldout_commands": 80,
+    "upstream_correct": 44,
+    "fitted_correct": 80,
+    "misses": []
+  },
+  "readouts": {
+    "existing": {
+      "exact": 11,
+      "total": 14,
+      "median_ms": 55.1,
+      "p95_ms": 71.0,
+      "rows": [
+        {
+          "text": "Welche Umsatzsteuer ist bei den einzelnen Sätzen angefallen?",
+          "expected": [
+            "order_taxes"
+          ],
+          "observed": [
+            "order_taxes"
+          ],
+          "exact": true
+        },
+        {
+          "text": "Ich will den Lieferstand und den Gesamtwert jeder Bestellung sehen",
+          "expected": [
+            "delivery",
+            "gross"
+          ],
+          "observed": [
+            "delivery",
+            "gross"
+          ],
+          "exact": true
+        },
+        {
+          "text": "Den Versand keinesfalls bestätigen. Zeig den Lieferstatus.",
+          "expected": [
+            "delivery"
+          ],
+          "observed": [
+            "delivery"
+          ],
+          "exact": true
+        },
+        {
+          "text": "Ich brauche eine Suche nach Bestellreferenz. Mach die Zeilen sortierbar.",
+          "expected": [
+            "search",
+            "sort"
+          ],
+          "observed": [
+            "details",
+            "gross",
+            "search",
+            "sort",
+            "stage"
+          ],
+          "exact": false
+        },
+        {
+          "text": "Ich möchte nur offene oder versandte Lieferungen auswählen können",
+          "expected": [
+            "delivery_filter"
+          ],
+          "observed": [
+            "delivery"
+          ],
+          "exact": false
+        },
+        {
+          "text": "Zahlung als eingegangen verbuchen. Ich will den Bezahlstatus wieder öffnen.",
+          "expected": [
+            "pay",
+            "reopen"
+          ],
+          "observed": [
+            "pay",
+            "reopen"
+          ],
+          "exact": true
+        },
+        {
+          "text": "Stell die Sendung auf verschickt",
+          "expected": [
+            "ship"
+          ],
+          "observed": [
+            "ship"
+          ],
+          "exact": true
+        },
+        {
+          "text": "Die Lieferung soll nur sichtbar sein. Versand darf man hier nicht auslösen.",
+          "expected": [
+            "delivery"
+          ],
+          "observed": [
+            "delivery"
+          ],
+          "exact": true
+        },
+        {
+          "text": "Was hat der Kunde gekauft? Zeig die Steueranteile nach Prozent. Ich möchte die Ablaufmarkierung sehen.",
+          "expected": [
+            "details",
+            "order_taxes",
+            "workflow"
+          ],
+          "observed": [
+            "details",
+            "order_taxes",
+            "workflow"
+          ],
+          "exact": true
+        },
+        {
+          "text": "Ich will nur Auftragsnummern.",
+          "expected": [],
+          "observed": [],
+          "exact": true
+        },
+        {
+          "text": "Kann ich den Geldeingang hier erfassen?",
+          "expected": [
+            "pay"
+          ],
+          "observed": [
+            "pay"
+          ],
+          "exact": true
+        },
+        {
+          "text": "Zeig Zahlungsstatus und Versandstatus ohne Zahlungen anzustoßen",
+          "expected": [
+            "delivery",
+            "payment"
+          ],
+          "observed": [
+            "delivery",
+            "payment",
+            "payment_filter"
+          ],
+          "exact": false
+        },
+        {
+          "text": "Bitte Filter für offene und bezahlte Rechnungen",
+          "expected": [
+            "payment_filter"
+          ],
+          "observed": [
+            "payment_filter"
+          ],
+          "exact": true
+        },
+        {
+          "text": "Wie verteilen sich die Steuern auf die einzelnen Prozentsätze?",
+          "expected": [
+            "order_taxes"
+          ],
+          "observed": [
+            "order_taxes"
+          ],
+          "exact": true
+        }
+      ]
+    },
+    "upstream_strands": {
+      "exact": 0,
+      "total": 14,
+      "median_ms": 45.4,
+      "p95_ms": 46.5,
+      "rows": [
+        {
+          "text": "Welche Umsatzsteuer ist bei den einzelnen Sätzen angefallen?",
+          "expected": [
+            "order_taxes"
+          ],
+          "observed": [
+            "details",
+            "gross",
+            "order_taxes"
+          ],
+          "exact": false
+        },
+        {
+          "text": "Ich will den Lieferstand und den Gesamtwert jeder Bestellung sehen",
+          "expected": [
+            "delivery",
+            "gross"
+          ],
+          "observed": [
+            "delivery",
+            "delivery_filter",
+            "details",
+            "gross",
+            "order_taxes",
+            "payment",
+            "sort",
+            "stage"
+          ],
+          "exact": false
+        },
+        {
+          "text": "Den Versand keinesfalls bestätigen. Zeig den Lieferstatus.",
+          "expected": [
+            "delivery"
+          ],
+          "observed": [
+            "delivery",
+            "delivery_filter",
+            "stage"
+          ],
+          "exact": false
+        },
+        {
+          "text": "Ich brauche eine Suche nach Bestellreferenz. Mach die Zeilen sortierbar.",
+          "expected": [
+            "search",
+            "sort"
+          ],
+          "observed": [
+            "details",
+            "search",
+            "sort"
+          ],
+          "exact": false
+        },
+        {
+          "text": "Ich möchte nur offene oder versandte Lieferungen auswählen können",
+          "expected": [
+            "delivery_filter"
+          ],
+          "observed": [
+            "delivery",
+            "delivery_filter",
+            "payment_filter",
+            "ship",
+            "sort",
+            "stage"
+          ],
+          "exact": false
+        },
+        {
+          "text": "Zahlung als eingegangen verbuchen. Ich will den Bezahlstatus wieder öffnen.",
+          "expected": [
+            "pay",
+            "reopen"
+          ],
+          "observed": [
+            "pay",
+            "payment",
+            "payment_filter",
+            "reopen",
+            "stage",
+            "workflow"
+          ],
+          "exact": false
+        },
+        {
+          "text": "Stell die Sendung auf verschickt",
+          "expected": [
+            "ship"
+          ],
+          "observed": [
+            "delivery",
+            "delivery_filter",
+            "pay",
+            "ship",
+            "stage",
+            "workflow"
+          ],
+          "exact": false
+        },
+        {
+          "text": "Die Lieferung soll nur sichtbar sein. Versand darf man hier nicht auslösen.",
+          "expected": [
+            "delivery"
+          ],
+          "observed": [
+            "delivery",
+            "delivery_filter",
+            "ship"
+          ],
+          "exact": false
+        },
+        {
+          "text": "Was hat der Kunde gekauft? Zeig die Steueranteile nach Prozent. Ich möchte die Ablaufmarkierung sehen.",
+          "expected": [
+            "details",
+            "order_taxes",
+            "workflow"
+          ],
+          "observed": [
+            "delivery",
+            "details",
+            "gross",
+            "order_taxes",
+            "payment",
+            "ship",
+            "stage",
+            "workflow"
+          ],
+          "exact": false
+        },
+        {
+          "text": "Ich will nur Auftragsnummern.",
+          "expected": [],
+          "observed": [
+            "search"
+          ],
+          "exact": false
+        },
+        {
+          "text": "Kann ich den Geldeingang hier erfassen?",
+          "expected": [
+            "pay"
+          ],
+          "observed": [
+            "payment"
+          ],
+          "exact": false
+        },
+        {
+          "text": "Zeig Zahlungsstatus und Versandstatus ohne Zahlungen anzustoßen",
+          "expected": [
+            "delivery",
+            "payment"
+          ],
+          "observed": [
+            "delivery",
+            "delivery_filter",
+            "payment",
+            "payment_filter",
+            "ship",
+            "stage"
+          ],
+          "exact": false
+        },
+        {
+          "text": "Bitte Filter für offene und bezahlte Rechnungen",
+          "expected": [
+            "payment_filter"
+          ],
+          "observed": [
+            "delivery",
+            "delivery_filter",
+            "pay",
+            "payment",
+            "payment_filter",
+            "search",
+            "sort",
+            "stage"
+          ],
+          "exact": false
+        },
+        {
+          "text": "Wie verteilen sich die Steuern auf die einzelnen Prozentsätze?",
+          "expected": [
+            "order_taxes"
+          ],
+          "observed": [
+            "details",
+            "gross",
+            "order_taxes"
+          ],
+          "exact": false
+        }
+      ]
+    },
+    "fitted_strands": {
+      "exact": 8,
+      "total": 14,
+      "median_ms": 45.4,
+      "p95_ms": 46.4,
+      "rows": [
+        {
+          "text": "Welche Umsatzsteuer ist bei den einzelnen Sätzen angefallen?",
+          "expected": [
+            "order_taxes"
+          ],
+          "observed": [
+            "order_taxes"
+          ],
+          "exact": true
+        },
+        {
+          "text": "Ich will den Lieferstand und den Gesamtwert jeder Bestellung sehen",
+          "expected": [
+            "delivery",
+            "gross"
+          ],
+          "observed": [
+            "delivery",
+            "details",
+            "gross"
+          ],
+          "exact": false
+        },
+        {
+          "text": "Den Versand keinesfalls bestätigen. Zeig den Lieferstatus.",
+          "expected": [
+            "delivery"
+          ],
+          "observed": [
+            "delivery"
+          ],
+          "exact": true
+        },
+        {
+          "text": "Ich brauche eine Suche nach Bestellreferenz. Mach die Zeilen sortierbar.",
+          "expected": [
+            "search",
+            "sort"
+          ],
+          "observed": [
+            "search",
+            "sort"
+          ],
+          "exact": true
+        },
+        {
+          "text": "Ich möchte nur offene oder versandte Lieferungen auswählen können",
+          "expected": [
+            "delivery_filter"
+          ],
+          "observed": [
+            "delivery_filter"
+          ],
+          "exact": true
+        },
+        {
+          "text": "Zahlung als eingegangen verbuchen. Ich will den Bezahlstatus wieder öffnen.",
+          "expected": [
+            "pay",
+            "reopen"
+          ],
+          "observed": [
+            "reopen"
+          ],
+          "exact": false
+        },
+        {
+          "text": "Stell die Sendung auf verschickt",
+          "expected": [
+            "ship"
+          ],
+          "observed": [
+            "ship"
+          ],
+          "exact": true
+        },
+        {
+          "text": "Die Lieferung soll nur sichtbar sein. Versand darf man hier nicht auslösen.",
+          "expected": [
+            "delivery"
+          ],
+          "observed": [
+            "delivery"
+          ],
+          "exact": true
+        },
+        {
+          "text": "Was hat der Kunde gekauft? Zeig die Steueranteile nach Prozent. Ich möchte die Ablaufmarkierung sehen.",
+          "expected": [
+            "details",
+            "order_taxes",
+            "workflow"
+          ],
+          "observed": [
+            "order_taxes"
+          ],
+          "exact": false
+        },
+        {
+          "text": "Ich will nur Auftragsnummern.",
+          "expected": [],
+          "observed": [
+            "search"
+          ],
+          "exact": false
+        },
+        {
+          "text": "Kann ich den Geldeingang hier erfassen?",
+          "expected": [
+            "pay"
+          ],
+          "observed": [],
+          "exact": false
+        },
+        {
+          "text": "Zeig Zahlungsstatus und Versandstatus ohne Zahlungen anzustoßen",
+          "expected": [
+            "delivery",
+            "payment"
+          ],
+          "observed": [
+            "delivery",
+            "payment",
+            "ship"
+          ],
+          "exact": false
+        },
+        {
+          "text": "Bitte Filter für offene und bezahlte Rechnungen",
+          "expected": [
+            "payment_filter"
+          ],
+          "observed": [
+            "payment_filter"
+          ],
+          "exact": true
+        },
+        {
+          "text": "Wie verteilen sich die Steuern auf die einzelnen Prozentsätze?",
+          "expected": [
+            "order_taxes"
+          ],
+          "observed": [
+            "order_taxes"
+          ],
+          "exact": true
+        }
+      ]
+    }
+  },
+  "program_replay": {
+    "sparse": {
+      "journeys": 16,
+      "exact": 16,
+      "mutations": {
+        "total": 44,
+        "exact": 44
+      },
+      "no_mutations": {
+        "total": 36,
+        "exact": 36
+      },
+      "details": [
+        {
+          "shop": "Birkenkai",
+          "case": 0,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            }
+          ]
+        },
+        {
+          "shop": "Birkenkai",
+          "case": 1,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            }
+          ]
+        },
+        {
+          "shop": "Birkenkai",
+          "case": 2,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            }
+          ]
+        },
+        {
+          "shop": "Birkenkai",
+          "case": 3,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            }
+          ]
+        },
+        {
+          "shop": "Sandfracht",
+          "case": 0,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            }
+          ]
+        },
+        {
+          "shop": "Sandfracht",
+          "case": 1,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            }
+          ]
+        },
+        {
+          "shop": "Sandfracht",
+          "case": 2,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            }
+          ]
+        },
+        {
+          "shop": "Sandfracht",
+          "case": 3,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            }
+          ]
+        },
+        {
+          "shop": "Lindenlager",
+          "case": 0,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            }
+          ]
+        },
+        {
+          "shop": "Lindenlager",
+          "case": 1,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            }
+          ]
+        },
+        {
+          "shop": "Lindenlager",
+          "case": 2,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            }
+          ]
+        },
+        {
+          "shop": "Lindenlager",
+          "case": 3,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            }
+          ]
+        },
+        {
+          "shop": "Werksand",
+          "case": 0,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            }
+          ]
+        },
+        {
+          "shop": "Werksand",
+          "case": 1,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            }
+          ]
+        },
+        {
+          "shop": "Werksand",
+          "case": 2,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            }
+          ]
+        },
+        {
+          "shop": "Werksand",
+          "case": 3,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            }
+          ]
+        }
+      ]
+    },
+    "strands": {
+      "journeys": 16,
+      "exact": 16,
+      "mutations": {
+        "total": 44,
+        "exact": 44
+      },
+      "no_mutations": {
+        "total": 36,
+        "exact": 36
+      },
+      "details": [
+        {
+          "shop": "Birkenkai",
+          "case": 0,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            }
+          ]
+        },
+        {
+          "shop": "Birkenkai",
+          "case": 1,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            }
+          ]
+        },
+        {
+          "shop": "Birkenkai",
+          "case": 2,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            }
+          ]
+        },
+        {
+          "shop": "Birkenkai",
+          "case": 3,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            }
+          ]
+        },
+        {
+          "shop": "Sandfracht",
+          "case": 0,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            }
+          ]
+        },
+        {
+          "shop": "Sandfracht",
+          "case": 1,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            }
+          ]
+        },
+        {
+          "shop": "Sandfracht",
+          "case": 2,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            }
+          ]
+        },
+        {
+          "shop": "Sandfracht",
+          "case": 3,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            }
+          ]
+        },
+        {
+          "shop": "Lindenlager",
+          "case": 0,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            }
+          ]
+        },
+        {
+          "shop": "Lindenlager",
+          "case": 1,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            }
+          ]
+        },
+        {
+          "shop": "Lindenlager",
+          "case": 2,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            }
+          ]
+        },
+        {
+          "shop": "Lindenlager",
+          "case": 3,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            }
+          ]
+        },
+        {
+          "shop": "Werksand",
+          "case": 0,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            }
+          ]
+        },
+        {
+          "shop": "Werksand",
+          "case": 1,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            }
+          ]
+        },
+        {
+          "shop": "Werksand",
+          "case": 2,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            }
+          ]
+        },
+        {
+          "shop": "Werksand",
+          "case": 3,
+          "exact": true,
+          "steps": [
+            {
+              "event": "cart.add",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "cart.promo",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "checkout.place",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.refund_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_delivery.ship",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_transaction.paid",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour_partially",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            },
+            {
+              "event": "order_transaction.refund",
+              "exact": true,
+              "expected_write": true,
+              "committed": true,
+              "refusal": null
+            },
+            {
+              "event": "order_delivery.retour",
+              "exact": true,
+              "expected_write": false,
+              "committed": false,
+              "refusal": "Für den aktuellen Zustand ergibt die Aktion keine Änderung."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
