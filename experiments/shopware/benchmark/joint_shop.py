@@ -20,7 +20,12 @@ from service_intent import EXTRA
 class JointShop(App):
     def __init__(self, args):
         self.store = Store(args.db)
-        commerce = load(args.checkpoint)
+        if getattr(args, 'forward_vm', False):
+            from forward_vm import load_forward
+
+            commerce = load_forward(args.checkpoint)
+        else:
+            commerce = load(args.checkpoint)
         if getattr(args, 'quantity_program', None):
             from quantity_program import with_quantity
             commerce = with_quantity(commerce, args.quantity_program)
@@ -239,6 +244,7 @@ if __name__ == '__main__':
     parser.add_argument('--active-specialist', action='store_true')
     parser.add_argument('--quantity-program', type=Path)
     parser.add_argument('--showcase', action='store_true')
+    parser.add_argument('--forward-vm', action='store_true', help='Run compiled expert graphs in model forward passes')
     args = parser.parse_args()
     require_offline(args.teacher_port)
     if args.mode == 'import':
@@ -259,4 +265,6 @@ if __name__ == '__main__':
             parser.error('provide matching specialist and language weights without an intervention')
         if args.quantity_program and (args.specialist or args.intervention):
             parser.error('the quantity experiment uses the standalone joint checkpoint')
+        if args.forward_vm and (args.specialist or args.quantity_program or args.intervention):
+            parser.error('the forward-pass experiment uses one frozen joint checkpoint')
         serve(JointShop(args), args.port)

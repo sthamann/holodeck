@@ -1,7 +1,6 @@
 """Compose views and transaction offers from one learned cell checkpoint."""
 from hashlib import sha256
 
-from collection_vm import run
 from graph_contract import encode, root_of
 from program_deck import signature
 
@@ -48,7 +47,7 @@ class JointDeck:
         cells = self.deck.predict(context)
         if not cells or any(not name.startswith('view:') for name, _ in cells):
             raise ValueError('Das Deck hat keine reine Leseprojektion erzeugt.')
-        data = run(cells, {})
+        data = self.deck.run_program(cells, {})
         nodes = {}
         for cell, item in sorted(data.items(), key=lambda pair: pair[1]['rank']):
             if cell.startswith('view:node:'):

@@ -1,0 +1,246 @@
+{
+  "holdout_sha256": "2a26b4262efa807bc38849e4a2ae756a689917f57ab8964fbab6349d0ab95283",
+  "training_sha256": "c36dc89754ca50bbdb235ba735f36403d552d84da466343647a0f27832a04d74",
+  "teacher_ports_refused_before_and_after": [
+    55740
+  ],
+  "platform": "Darwin arm64",
+  "torch": "2.15.0",
+  "port_forward_effects_identical": true,
+  "compared_steps": 96,
+  "gross_weight_changed_steps": 96,
+  "arms": {
+    "A-port-interpreter": {
+      "exact": 2,
+      "total": 16,
+      "by_shop": {
+        "Ankerfluss": [
+          0,
+          4
+        ],
+        "Drahtufer": [
+          1,
+          4
+        ],
+        "Seidenhafen": [
+          1,
+          4
+        ],
+        "Walzwerk": [
+          0,
+          4
+        ]
+      },
+      "by_event": {
+        "cart.add": [
+          5,
+          16
+        ],
+        "cart.promo": [
+          4,
+          16
+        ],
+        "checkout.place": [
+          4,
+          16
+        ],
+        "order_delivery.reopen": [
+          8,
+          8
+        ],
+        "order_delivery.ship": [
+          16,
+          16
+        ],
+        "order_transaction.paid": [
+          16,
+          16
+        ],
+        "order_transaction.reopen": [
+          8,
+          8
+        ]
+      },
+      "p50_p95_apply_ms": [
+        0.7693124935030937,
+        1.0829162347363308
+      ],
+      "replayed_checkout_receipts": 16,
+      "forward_calls": 0
+    },
+    "B-port-forward": {
+      "exact": 2,
+      "total": 16,
+      "by_shop": {
+        "Ankerfluss": [
+          0,
+          4
+        ],
+        "Drahtufer": [
+          1,
+          4
+        ],
+        "Seidenhafen": [
+          1,
+          4
+        ],
+        "Walzwerk": [
+          0,
+          4
+        ]
+      },
+      "by_event": {
+        "cart.add": [
+          5,
+          16
+        ],
+        "cart.promo": [
+          4,
+          16
+        ],
+        "checkout.place": [
+          4,
+          16
+        ],
+        "order_delivery.reopen": [
+          8,
+          8
+        ],
+        "order_delivery.ship": [
+          16,
+          16
+        ],
+        "order_transaction.paid": [
+          16,
+          16
+        ],
+        "order_transaction.reopen": [
+          8,
+          8
+        ]
+      },
+      "p50_p95_apply_ms": [
+        0.8674794953549281,
+        1.0908227559411898
+      ],
+      "replayed_checkout_receipts": 16,
+      "forward_calls": 144
+    },
+    "C-trace-forward": {
+      "exact": 2,
+      "total": 16,
+      "by_shop": {
+        "Ankerfluss": [
+          0,
+          4
+        ],
+        "Drahtufer": [
+          1,
+          4
+        ],
+        "Seidenhafen": [
+          1,
+          4
+        ],
+        "Walzwerk": [
+          0,
+          4
+        ]
+      },
+      "by_event": {
+        "cart.add": [
+          5,
+          16
+        ],
+        "cart.promo": [
+          4,
+          16
+        ],
+        "checkout.place": [
+          4,
+          16
+        ],
+        "order_delivery.reopen": [
+          8,
+          8
+        ],
+        "order_delivery.ship": [
+          16,
+          16
+        ],
+        "order_transaction.paid": [
+          16,
+          16
+        ],
+        "order_transaction.reopen": [
+          8,
+          8
+        ]
+      },
+      "p50_p95_apply_ms": [
+        0.9122705087065697,
+        1.19213575089816
+      ],
+      "replayed_checkout_receipts": 16,
+      "forward_calls": 144
+    },
+    "C-gross-weight-control": {
+      "exact": 0,
+      "total": 16,
+      "by_shop": {
+        "Ankerfluss": [
+          0,
+          4
+        ],
+        "Drahtufer": [
+          0,
+          4
+        ],
+        "Seidenhafen": [
+          0,
+          4
+        ],
+        "Walzwerk": [
+          0,
+          4
+        ]
+      },
+      "by_event": {
+        "cart.add": [
+          0,
+          16
+        ],
+        "cart.promo": [
+          0,
+          16
+        ],
+        "checkout.place": [
+          0,
+          16
+        ],
+        "order_delivery.reopen": [
+          8,
+          8
+        ],
+        "order_delivery.ship": [
+          16,
+          16
+        ],
+        "order_transaction.paid": [
+          16,
+          16
+        ],
+        "order_transaction.reopen": [
+          8,
+          8
+        ]
+      },
+      "p50_p95_apply_ms": [
+        0.9498540166532621,
+        1.2542290132842027
+      ],
+      "replayed_checkout_receipts": 16,
+      "forward_calls": 144
+    }
+  }
+}

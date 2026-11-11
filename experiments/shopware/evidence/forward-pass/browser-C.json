@@ -1,0 +1,62 @@
+[
+  {
+    "shop": "Lichtwerft",
+    "root": "ec50ef0518d447dbac08bd5ab9449af4",
+    "control": false,
+    "gross": 20290,
+    "cartExact": true,
+    "checkoutExact": true,
+    "foreignOrderRejected": false,
+    "staleOfferRejected": true,
+    "invalidBindingRejected": true,
+    "statusTransitionsChecked": 3,
+    "finalRevision": 6,
+    "workflowEffects": 1,
+    "delivery": "shipped"
+  },
+  {
+    "shop": "Kieselmarkt",
+    "root": "b5196950b13741a28887514e38115192",
+    "control": false,
+    "gross": 33855,
+    "cartExact": true,
+    "checkoutExact": true,
+    "foreignOrderRejected": true,
+    "staleOfferRejected": true,
+    "invalidBindingRejected": true,
+    "statusTransitionsChecked": 3,
+    "finalRevision": 6,
+    "workflowEffects": 1,
+    "delivery": "shipped"
+  },
+  {
+    "shop": "Eichenkai",
+    "root": "e219f9d643ae48528bc68074c3c347d7",
+    "control": false,
+    "gross": 39950,
+    "cartExact": true,
+    "checkoutExact": true,
+    "foreignOrderRejected": true,
+    "staleOfferRejected": true,
+    "invalidBindingRejected": true,
+    "statusTransitionsChecked": 3,
+    "finalRevision": 6,
+    "workflowEffects": 1,
+    "delivery": "shipped"
+  },
+  {
+    "shop": "Formufer",
+    "root": "7ba9fbd516d34a9d8273cfbe460459e0",
+    "control": false,
+    "gross": 46864,
+    "cartExact": true,
+    "checkoutExact": true,
+    "foreignOrderRejected": true,
+    "staleOfferRejected": true,
+    "invalidBindingRejected": true,
+    "statusTransitionsChecked": 3,
+    "finalRevision": 6,
+    "workflowEffects": 1,
+    "delivery": "shipped"
+  }
+]

@@ -18,6 +18,10 @@ PROFILES = {
                 ('Drahtufer', 859, 2, 10, 14, 31, 839),
                 ('Walzwerk', 943, 1, 2, 16, 37, 547),
                 ('Seidenhafen', 721, 2, 5, None, 29, 967)),
+    'forward-holdout': (('Lichtwerft', 679, 1, 10, 16, 21, 617),
+                        ('Kieselmarkt', 583, 2, 5, None, 19, 743),
+                        ('Eichenkai', 821, 5, 10, 14, 29, 937),
+                        ('Formufer', 457, 1, 2, None, 13, 559)),
 }
 
 
@@ -75,7 +79,8 @@ def main():
     tags = install(api.Oracle(500))
     with args.output.open('x') as out:
         for profile in PROFILES[args.phase]:
-            for row in capture(profile, args.phase, args.count, tags):
+            split = 'holdout' if args.phase == 'forward-holdout' else args.phase
+            for row in capture(profile, split, args.count, tags):
                 out.write(json.dumps(row) + '\n')
                 out.flush()
 

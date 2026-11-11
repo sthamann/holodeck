@@ -1,6 +1,6 @@
 # The deck architecture
 
-This page describes the target architecture. The [joint deck](joint-deck.md) documents the current implementation and replay. The complete model must carry commerce semantics across merchant configurations, actions and surfaces.
+This page describes the target architecture. The [forward-pass shop](forward-pass.md) documents the latest execution experiment, built on the [joint deck](joint-deck.md). The complete model must carry commerce semantics across merchant configurations, actions and surfaces.
 
 The target is one multimodal, executable model of the business. Search, pricing, checkout, service and analysis draw on the same learned business semantics. The model interprets what happened, determines the consequences, carries the process forward and projects the software needed for the work. Standard commerce supplies the first evidence. [The eight properties](../README.md#what-becomes-a-property-of-the-architecture)
 
@@ -8,7 +8,11 @@ The [Shopware absorption plan](shopware-absorption.md) specifies the teacher, ex
 
 ## Where the prototype stands
 
-![The current joint deck and its offline teacher.](../assets/illustrations/joint-deck-runtime.svg)
+![The new execution path inside model forwards and its offline teacher.](../assets/illustrations/forward-pass-architecture.svg)
+
+The forward-pass experiment compiles the cell bank to PyTorch FX subgraphs. It runs the published sparse router as a tensor operation and dispatches the selected subgraphs for commerce, workflow and projection. The interpreter remains a separate comparison path. Nine expressions are induced from Shopware observations before lowering. The compared variants each matched 36 complete journeys in four new shops with Shopware stopped. [Execution boundary, comparison and Chrome evidence](forward-pass.md)
+
+### The joint deck underneath
 
 The current checkpoint has a shared sparse decoder for commerce, workflow and projection cells. A frozen Qwen encoder and separate language readouts interpret Admin requests. The model selects expressions from a versioned grammar and binds them to merchant inputs. A typed interpreter executes those expressions and a SQLite store commits the result. The working Storefront, Checkout and Admin use a bounded component set and the same available action programs.
 
@@ -75,8 +79,8 @@ flowchart TB
     I[Text, image, typed event and state references] --> ENC
     subgraph DECK[Deck model and checkpoint]
         ENC[Shared representation] --> OP[Learned operand and operator selection]
-        OP --> GRAPH[Learned business graph]
-        GRAPH --> EXACT[Exact typed primitive execution]
+        OP --> GRAPH[Select compiled experts]
+        GRAPH --> EXACT[Exact execution in the model forward]
         EXACT --> EFFECT[Changes and commercial decisions]
         EXACT --> FLOW[Continuation and dependencies]
         EXACT --> UI[Action and projection readout]
@@ -93,7 +97,7 @@ flowchart TB
 
 The representation connects language and images with typed entities, events, relations and merchant configuration. A foundation model such as Qwen can supply the language and image features. Exact amounts, quantities and identities remain referenced typed operands, not values reconstructed from embeddings.
 
-Learned selections determine which operands, operations, conditions and transitions apply. The primitive executor evaluates those choices exactly. It supplies arithmetic, comparison, collections, typed object changes and continuation mechanics. It does not supply commerce formulas.
+Learned selections determine which operands, operations, conditions and transitions apply. The model's execution graph evaluates those choices using exact arithmetic, comparison, collection and state primitives. A bounded forward can return a continuation for a later business event.
 
 The learned graph chooses which records, conditions and operations are relevant to a business event. The primitive executor supplies exact subtraction, comparison and record operations. That distinction lets the same machinery run learned semantics from different parts of the business.
 

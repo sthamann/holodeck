@@ -81,7 +81,9 @@ class Sparse:
     def __call__(self, context):
         values = set(context[0])
         missing = np.array([tag not in values for tag in self.tags], dtype=np.int32)
-        enabled = (self.weights @ missing) == 0
+        return self.decode_enabled((self.weights @ missing) == 0)
+
+    def decode_enabled(self, enabled):
         choices = defaultdict(list)
         for cell, label in zip(self.cells[enabled], self.labels[enabled], strict=True):
             choices[int(cell)].append(int(label))

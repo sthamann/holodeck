@@ -18,7 +18,15 @@ The film explains the target architecture and shows a test purchase through chec
 
 ## What runs today
 
-The latest Holoshop checkpoint selects commerce programs, workflow transitions and UI components from the same learned cell vocabulary. A merchant import supplies products, prices, stock, shipping and tax settings. The same checkpoint handled four new shops, including one with an end total rounding interval it had never seen in training.
+The new **forward-pass shop** runs commerce, workflow and projection cells in compiled PyTorch subgraphs. Nine expressions were learned from Shopware observations and lowered into the model. The interpreter baseline, the same program bank in the model and the trace-induced model each matched **36 of 36 full journeys across four fresh shops** with Shopware switched off. [How it works, what was learned and how to run it](docs/forward-pass.md)
+
+[![Shopware traces teach experts that run inside the model forward. The same deck serves Holos and proposes durable changes.](assets/illustrations/forward-pass-architecture.svg)](docs/forward-pass.md)
+
+**See the same order in Lichtwerft.** A 21% test coupon brings the checkout to €202.90. A generated Admin workspace shows the order and saves its delivery status. [Storefront](assets/experiments/forward-pass/lichtwerft-storefront.png) · [Checkout](assets/experiments/forward-pass/lichtwerft-checkout.png) · [Admin](assets/experiments/forward-pass/lichtwerft-admin.png) · [Three-way comparison](docs/forward-pass.md#compare-the-three-paths)
+
+### The earlier joint deck
+
+The joint checkpoint selects commerce programs, workflow transitions and UI components from the same learned cell vocabulary. A merchant import supplies products, prices, stock, shipping and tax settings. The checkpoint handled four new shops, including one with an end total rounding interval it had never seen in training.
 
 ![Current runtime. Shopware supplies offline traces. Frozen Qwen interprets Admin text, sparse weights select business and UI cells, and the VM and SQLite commit the effects.](assets/illustrations/joint-deck-runtime.svg)
 

@@ -1,6 +1,7 @@
 """Compare whole-program retrieval and learned composition on sealed Shopware cohorts."""
 from argparse import ArgumentParser
 from collections import Counter
+from hashlib import sha256
 import json
 from pathlib import Path
 from time import perf_counter
@@ -99,7 +100,7 @@ def score(row, index, receipt, state):
             'notification': [step['event'] for step in receipt['workflow_steps']] == [expected['event']]}
 
 
-def measure(rows, deck, path, training):
+def measure(rows, deck, path, training, *, record_effects=False):
     store = Store(path)
     details, repeats, timings = [], 0, []
     counts = Counter()
@@ -128,6 +129,13 @@ def measure(rows, deck, path, training):
                 steps.append({'kind': kind, 'exact': exact, 'checks': checks,
                               'new_program': encode(dict(receipt['program'])) not in training,
                               'program': receipt['program']})
+                if record_effects:
+                    steps[-1]['effect_sha256'] = sha256(encode({
+                        'objects': state['objects'], 'revision': state['revision'], 'writes': receipt['writes'],
+                        'steps': receipt['workflow_steps'],
+                        'effects': [{key: value for key, value in effect.items() if key != 'id'}
+                                    for effect in state['workflow_effects']],
+                    }).encode()).hexdigest()
                 if index == 2:
                     store.close()
                     store = Store(path)

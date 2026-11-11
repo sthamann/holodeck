@@ -1,6 +1,6 @@
 # Holoshop experiments with Shopware
 
-**Current experiment.** The [joint deck](../../docs/joint-deck.md) runs four new shops with Shopware offline. The [published evidence](evidence/joint-deck/) includes its checkpoints and separate native training, holdout and regression traces. The [benchmark log](benchmark/README.md) records the controller comparisons, counterexamples, specialization and browser tests that led to it. The [Qwen adapter comparison](qwen/README.md) is a separate direct generation experiment.
+**Current experiment.** The [forward-pass shop](../../docs/forward-pass.md) compares the same source-informed programs in an interpreter and in the model, then runs the model with nine expressions acquired from native Shopware observations. The [new cohort](evidence/forward-pass/) has four fresh shops and 36 full journeys with Shopware stopped. The [joint deck](../../docs/joint-deck.md) supplies the original checkpoint, action bindings and surfaces. The [Qwen adapter comparison](qwen/README.md) is a separate direct generation experiment.
 
 The [interactive showcase](../../docs/showcase.md) runs the same order through generated surfaces and activates a service specialist on it. The optional [Strands experiment](../../docs/strands.md) measures intent selection and service program selection independently. [Film](https://github.com/sthamann/holodeck/releases/tag/holodeck-explainer) · [Strands comparison](evidence/joint-deck/strands-comparison.json)
 

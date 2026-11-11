@@ -1,0 +1,248 @@
+{
+  "holdout_sha256": "7c153f8ee20343bb598152370b0555d39cf5b5cccc963e7086ebfacd5c6d6f23",
+  "training_sha256": "c36dc89754ca50bbdb235ba735f36403d552d84da466343647a0f27832a04d74",
+  "teacher_ports_refused_before_and_after": [
+    55729,
+    55739,
+    55740
+  ],
+  "platform": "Darwin arm64",
+  "torch": "2.15.0",
+  "port_forward_effects_identical": true,
+  "compared_steps": 216,
+  "gross_weight_changed_steps": 216,
+  "arms": {
+    "A-port-interpreter": {
+      "exact": 36,
+      "total": 36,
+      "by_shop": {
+        "Eichenkai": [
+          9,
+          9
+        ],
+        "Formufer": [
+          9,
+          9
+        ],
+        "Kieselmarkt": [
+          9,
+          9
+        ],
+        "Lichtwerft": [
+          9,
+          9
+        ]
+      },
+      "by_event": {
+        "cart.add": [
+          36,
+          36
+        ],
+        "cart.promo": [
+          36,
+          36
+        ],
+        "checkout.place": [
+          36,
+          36
+        ],
+        "order_delivery.reopen": [
+          20,
+          20
+        ],
+        "order_delivery.ship": [
+          36,
+          36
+        ],
+        "order_transaction.paid": [
+          36,
+          36
+        ],
+        "order_transaction.reopen": [
+          16,
+          16
+        ]
+      },
+      "p50_p95_apply_ms": [
+        0.6998959870543331,
+        0.9357187373097986
+      ],
+      "replayed_checkout_receipts": 36,
+      "forward_calls": 0
+    },
+    "B-port-forward": {
+      "exact": 36,
+      "total": 36,
+      "by_shop": {
+        "Eichenkai": [
+          9,
+          9
+        ],
+        "Formufer": [
+          9,
+          9
+        ],
+        "Kieselmarkt": [
+          9,
+          9
+        ],
+        "Lichtwerft": [
+          9,
+          9
+        ]
+      },
+      "by_event": {
+        "cart.add": [
+          36,
+          36
+        ],
+        "cart.promo": [
+          36,
+          36
+        ],
+        "checkout.place": [
+          36,
+          36
+        ],
+        "order_delivery.reopen": [
+          20,
+          20
+        ],
+        "order_delivery.ship": [
+          36,
+          36
+        ],
+        "order_transaction.paid": [
+          36,
+          36
+        ],
+        "order_transaction.reopen": [
+          16,
+          16
+        ]
+      },
+      "p50_p95_apply_ms": [
+        0.8187085040844977,
+        1.0762812598841265
+      ],
+      "replayed_checkout_receipts": 36,
+      "forward_calls": 324
+    },
+    "C-trace-forward": {
+      "exact": 36,
+      "total": 36,
+      "by_shop": {
+        "Eichenkai": [
+          9,
+          9
+        ],
+        "Formufer": [
+          9,
+          9
+        ],
+        "Kieselmarkt": [
+          9,
+          9
+        ],
+        "Lichtwerft": [
+          9,
+          9
+        ]
+      },
+      "by_event": {
+        "cart.add": [
+          36,
+          36
+        ],
+        "cart.promo": [
+          36,
+          36
+        ],
+        "checkout.place": [
+          36,
+          36
+        ],
+        "order_delivery.reopen": [
+          20,
+          20
+        ],
+        "order_delivery.ship": [
+          36,
+          36
+        ],
+        "order_transaction.paid": [
+          36,
+          36
+        ],
+        "order_transaction.reopen": [
+          16,
+          16
+        ]
+      },
+      "p50_p95_apply_ms": [
+        0.831061988719739,
+        1.0755522598628886
+      ],
+      "replayed_checkout_receipts": 36,
+      "forward_calls": 324
+    },
+    "C-gross-weight-control": {
+      "exact": 0,
+      "total": 36,
+      "by_shop": {
+        "Eichenkai": [
+          0,
+          9
+        ],
+        "Formufer": [
+          0,
+          9
+        ],
+        "Kieselmarkt": [
+          0,
+          9
+        ],
+        "Lichtwerft": [
+          0,
+          9
+        ]
+      },
+      "by_event": {
+        "cart.add": [
+          0,
+          36
+        ],
+        "cart.promo": [
+          0,
+          36
+        ],
+        "checkout.place": [
+          0,
+          36
+        ],
+        "order_delivery.reopen": [
+          20,
+          20
+        ],
+        "order_delivery.ship": [
+          36,
+          36
+        ],
+        "order_transaction.paid": [
+          36,
+          36
+        ],
+        "order_transaction.reopen": [
+          16,
+          16
+        ]
+      },
+      "p50_p95_apply_ms": [
+        0.8407499990426004,
+        1.1093647553934716
+      ],
+      "replayed_checkout_receipts": 36,
+      "forward_calls": 324
+    }
+  }
+}

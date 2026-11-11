@@ -165,10 +165,10 @@ def feature_encoder(base, contexts):
     return Features(base, contexts, contexts)
 
 
-def execute(state, event, program):
+def execute(state, event, program, run_program=run):
     if len(program) > 64:
         raise ValueError('Program exceeds cell budget')
-    env = run(program, {'state': root_of(state)['fields'], 'event': event['args'], 'config': state['config']})
+    env = run_program(program, {'state': root_of(state)['fields'], 'event': event['args'], 'config': state['config']})
     writes = {name.removeprefix('write:'): env[name] for name, _ in program if name.startswith('write:')}
     if not writes or any(key not in FIELD_TYPES or type(value) is not FIELD_TYPES[key]
                          for key, value in writes.items()):
@@ -181,14 +181,15 @@ def execute(state, event, program):
 
 
 class ProgramDeck:
-    def __init__(self, predict, checkpoint):
+    def __init__(self, predict, checkpoint, run_program=run):
         self.predict = predict
         self.checkpoint = checkpoint
+        self.run_program = run_program
 
     def forward(self, state, event, tenant):
         retrieve(state, event, tenant)
         program = self.predict(signature(state, event))
-        after, writes = execute(state, event, program)
+        after, writes = execute(state, event, program, self.run_program)
         before = root_of(state)['fields']
         steps, effects = [], []
         for key, prefix in NOTIFY.items():
@@ -197,7 +198,7 @@ class ProgramDeck:
             child = {'id': f"{event['id']}:{key}", 'kind': f'{prefix}.{writes[key]}',
                      'root': event['root'], 'args': {}}
             cells = self.predict(signature(after, child))
-            after, change = execute(after, child, cells)
+            after, change = execute(after, child, cells, self.run_program)
             if set(change) & NOTIFY.keys():
                 raise ValueError('An internal program attempted a nested notification')
             steps.append({'event': child['kind'], 'program': cells, 'writes': change})

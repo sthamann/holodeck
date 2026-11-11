@@ -2,7 +2,7 @@
 
 Der [aktuelle gemeinsame Checkpoint](joint-deck.md) verbindet Commerce, Workflow und Oberfläche. Die öffentliche Auswertung enthält die eingefrorenen Gewichte, synthetische Referenzverläufe und einen Kontrollversuch mit geändertem Modellausgang. Dieser Plan definiert, wie daraus eine vollständige Profilprüfung wird.
 
-Stand 10. November 2026. Das Ziel ist der vollständige Ersatz von Shopware für ein ausgewiesenes Produktprofil. Ein multimodales Deck trägt die Shopware Geschäftssemantik in seinen gelernten Parametern und erzeugt die fachlichen Entscheidungen, Abläufe und Oberflächen für jeden Händler. Der feste Kern führt die daraus erzeugten Programme aus und sichert die Transaktionen. Die bisherigen Ergebnisse messen Teilfähigkeiten. Der folgende Prüfplan entscheidet über die Architektur, bevor aus den bestandenen Fähigkeiten eine Demo entsteht.
+Das Ziel ist der vollständige Ersatz von Shopware für ein ausgewiesenes Produktprofil. Ein multimodales Deck trägt die Shopware Geschäftssemantik in seinen gelernten Parametern und erzeugt die fachlichen Entscheidungen, Abläufe und Oberflächen für jeden Händler. Die ausgewählten Experten laufen im Modellgraphen. Der feste Transaktionskern prüft und speichert die daraus entstehenden Änderungen. Der [Forward-Pass-Versuch](forward-pass.md) vergleicht diesen Pfad mit dem früheren Interpreter. Die bisherigen Ergebnisse messen Teilfähigkeiten.
 
 ## Entscheidung nach dem Review mit Claude Fable 5.2
 
@@ -25,12 +25,9 @@ Das Deck soll in einem vollständigen Standardshop lernen, **welche Fakten es br
 Ein versioniertes Deck besteht aus einem multimodalen Backbone, einem Encoder für typisierte Geschäftsobjekte und gelernten Köpfen. Ein Kopf kann ein kleines neuronales Netz sein, das die nächste Instruktion, ihre Operanden oder einen Teilgraphen auswählt. Zuerst gibt es einen gemeinsamen Kopf für Geschäftsentscheidungen und einen Kopf für Projektionen. Aufteilung in weitere Spezialisten folgt einem nachgewiesenen Fehlerbild.
 
 ```text
-Deck.step(
+Deck.forward(
   actor, observation_or_event, allowed_snapshot, continuation, merchant_configuration
-) → program, offers, holo, evidence
-
-VM.evaluate(program, allowed_snapshot)
-  → effect_plan | need_data | refused
+) → effect_plan, offers, holo, evidence | need_data | refused
 
 Commit.apply(effect_plan, read_versions, command_id)
   → receipt | conflict
@@ -39,13 +36,15 @@ Commit.apply(effect_plan, read_versions, command_id)
 ```mermaid
 flowchart LR
     T[Isoliertes Shopware] --> D[Spuren und Gegenbeispiele]
-    D --> C[Versionierter Deck Checkpoint]
     E[Text, Bild oder Ereignis] --> C
     S[(Geschäftsdaten und Fortsetzungen)] --> C
-    C -->|Programm| V[Exakte VM]
-    V --> K[Commit Kern]
+    D --> C
+    subgraph DECK[Deck Modell]
+        C[Versionierter Checkpoint] -->|Ausgewählte Experten| V[Ausführung im Forward Pass]
+        V -->|Aktionsangebote| C
+    end
+    V -->|Änderungsplan| K[Commit Kern]
     K --> S
-    V -->|Aktionsangebote| C
     C -->|Komponenten und Bindungen| H[Holo]
     H -->|Klick| E
 ```
@@ -58,7 +57,7 @@ Die Programmausgabe ist ein getypter, endlicher Datenflussgraph mit überprüfba
 | --- | --- |
 | Gemeinsame Modellrepräsentation | Verbindet Text, Bild, Ereignis, Geschäftsobjekte und ihre Beziehungen. Der Geschäfts- und Projektionskopf können daraus dieselben referenzierten Objekte lesen. |
 | Trainierbarer Geschäftskopf | Wählt die relevanten Fakten, Operatoren, Geschäftsbedingungen, Schreibziele und Fortsetzungen. Ein dekodierter Graph ist versioniert, lesbar und mit seinen Ursprungsgewichten verknüpft. |
-| Generischer VM Executor | Typen, Ressourcenbudget, exakte Rechenoperationen, Auswertung des Graphen ohne externe Effekte. |
+| Ausführung im Modellgraphen | Typen, Ressourcenbudget und exakte Rechenoperationen. Der Forward Pass wertet den Graphen aus und gibt Änderungen als Daten zurück. |
 | Commit Kern | Rollen und Mandantengrenzen unabhängig prüfen, gelesene Versionen bestätigen und Änderungen, Fortsetzung, Quittung und Outbox atomar speichern. |
 | I/O und Renderer | Eingaben normalisieren, erlaubte Komponenten darstellen, Ereignisse an denselben Einstieg übergeben und externe Effektquittungen einspielen. |
 

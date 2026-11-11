@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 612" role="img" aria-labelledby="title desc">
+  <title id="title">How the forward-pass Holoshop works</title>
+  <desc id="desc">Shopware observations teach scalar expressions offline. The compiler lowers the expert bank to PyTorch FX. Live merchant facts and actions reach the sparse router and expert graph inside the model. A renderer draws the holo and SQLite commits the proposed changes.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#3869a0"/></marker>
+    <style>
+      .title{font:700 48px system-ui,sans-serif;fill:#102648}.subtitle{font:21px system-ui,sans-serif;fill:#405676}
+      .label{font:700 15px ui-monospace,monospace;letter-spacing:1.5px;fill:#245d9c}.name{font:700 20px system-ui,sans-serif;fill:#102648}
+      .detail{font:17px system-ui,sans-serif;fill:#405676}.box{fill:white;stroke:#c8d7ec;stroke-width:1.5}.line{stroke:#3869a0;stroke-width:2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="612" rx="24" fill="#f4f8ff"/>
+  <text class="label" x="44" y="43">HOLODECK / SHOPWARE EXPERIMENT</text>
+  <text class="title" x="44" y="105">The shop runs through the model</text>
+  <text class="subtitle" x="44" y="144">Learn expressions from a running teacher. Execute them in a shop of their own.</text>
+  <rect x="44" y="177" width="1112" height="133" rx="16" fill="#edf3fc" stroke="#a6bbd8" stroke-dasharray="6 6"/>
+  <text class="label" x="68" y="207">OFFLINE · TRAINING AND LOWERING</text>
+  <path class="line" d="M357 258H445"/><path class="line" d="M751 258H835"/>
+  <rect class="box" x="68" y="224" width="289" height="66" rx="10"/>
+  <text class="name" x="86" y="251">Isolated Shopware</text><text class="detail" x="86" y="276">Native carts, orders and effects</text>
+  <rect class="box" x="448" y="224" width="304" height="66" rx="10"/>
+  <text class="name" x="466" y="251">Typed expression induction</text><text class="detail" x="466" y="276">Find nine rules from observations</text>
+  <rect class="box" x="838" y="224" width="294" height="66" rx="10"/>
+  <text class="name" x="856" y="251">Compile the expert bank</text><text class="detail" x="856" y="276">PyTorch FX graphs and weights</text>
+  <path class="line" d="M985 290V322H604V382" stroke-dasharray="5 5"/>
+  <text class="label" x="44" y="354">LIVE · SHOPWARE OFF</text>
+  <rect class="box" x="44" y="388" width="280" height="72" rx="10"/>
+  <text class="name" x="62" y="416">Action or Admin request</text><text class="detail" x="62" y="442">Frozen Qwen for free text</text>
+  <rect class="box" x="44" y="479" width="280" height="72" rx="10"/>
+  <text class="name" x="62" y="507">Merchant and live records</text><text class="detail" x="62" y="533">Catalog, configuration, state</text>
+  <path class="line" d="M324 424H392"/><path class="line" d="M324 515H392"/>
+  <rect x="397" y="383" width="408" height="172" rx="16" fill="#e0edff" stroke="#3176bd" stroke-width="2"/>
+  <text class="label" x="421" y="414">DECK MODEL</text>
+  <text class="name" x="421" y="447">Sparse tensor router</text><text class="detail" x="421" y="470">Selects cells and their typed operands</text>
+  <text class="name" x="421" y="507">Exact compiled expert forwards</text><text class="detail" x="421" y="530">Commerce, workflow and projection cells</text>
+  <path class="line" d="M805 424H875"/><path class="line" d="M805 515H875"/>
+  <rect class="box" x="880" y="388" width="276" height="72" rx="10"/>
+  <text class="name" x="898" y="416">Holo renderer</text><text class="detail" x="898" y="442">Storefront, checkout and Admin</text>
+  <rect class="box" x="880" y="479" width="276" height="72" rx="10"/>
+  <text class="name" x="898" y="507">SQLite commit</text><text class="detail" x="898" y="533">Versioned state and receipts</text>
+  <text class="label" x="44" y="588">BOUNDED COMMERCE PROFILE · SYNTHETIC SHOPWARE SHOPS</text>
+</svg>
