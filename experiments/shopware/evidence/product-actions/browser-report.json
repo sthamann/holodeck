@@ -1,0 +1,33 @@
+{
+  "results": [
+    {
+      "product": "Papierwerft Katalog 4",
+      "price": [
+        74.45,
+        57.36
+      ],
+      "variant": "HD-95e26edef1d4-INDIGO",
+      "stock": 14,
+      "imageSha256": "f8d4a69210e813bc923ce2ab247bfe4667cad42cecf71bea9f1377fbe5533537",
+      "cover": true,
+      "requests": 7,
+      "actionStatusParity": true,
+      "verifiedAfterRestart": false
+    },
+    {
+      "product": "Papierwerft Katalog 5",
+      "price": [
+        81.6,
+        62.48
+      ],
+      "variant": "HD-2944d1908076-IVORY",
+      "stock": 17,
+      "imageSha256": "89c2d54564e62c7902600623b5fdb73e25d1b6533b44372d6d6e9063db9fea97",
+      "cover": true,
+      "requests": 7,
+      "actionStatusParity": true,
+      "verifiedAfterRestart": false
+    }
+  ],
+  "externalRequests": []
+}

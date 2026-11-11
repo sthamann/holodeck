@@ -1,0 +1,114 @@
+{
+  "nativeAdminViews": [
+    "product",
+    "category",
+    "manufacturer",
+    "property",
+    "customer",
+    "rule",
+    "flow"
+  ],
+  "unmeasuredAdminViews": [
+    "order",
+    "promotion",
+    "media"
+  ],
+  "checkout": {
+    "trainingCases": 18,
+    "fittedExpressions": [
+      "quantity",
+      "line",
+      "remaining",
+      "absolute",
+      "percentage",
+      "shipping",
+      "goods",
+      "gross",
+      "net"
+    ]
+  },
+  "shipping": {
+    "fittedStructuralWeights": 45
+  },
+  "workflow": {
+    "teacherPortClosed": 55753,
+    "heldoutShops": [
+      "Farnlogistik",
+      "Nordkai"
+    ],
+    "arms": {
+      "both-learned": {
+        "sequences": 28,
+        "exact_sequences": 28,
+        "steps": 132,
+        "exact_steps": 132,
+        "emitted": 16,
+        "expected_emissions": 16,
+        "duplicate_receipts": 132
+      },
+      "both-swapped": {
+        "sequences": 28,
+        "exact_sequences": 0,
+        "steps": 132,
+        "exact_steps": 48,
+        "emitted": 28,
+        "expected_emissions": 16,
+        "duplicate_receipts": 132
+      },
+      "both-current": {
+        "sequences": 28,
+        "exact_sequences": 20,
+        "steps": 132,
+        "exact_steps": 112,
+        "emitted": 8,
+        "expected_emissions": 16,
+        "duplicate_receipts": 132
+      },
+      "both-symbolic": {
+        "sequences": 28,
+        "exact_sequences": 28,
+        "steps": 132,
+        "exact_steps": 132,
+        "emitted": 16,
+        "expected_emissions": 16,
+        "duplicate_receipts": 132
+      },
+      "either-learned": {
+        "sequences": 28,
+        "exact_sequences": 28,
+        "steps": 132,
+        "exact_steps": 132,
+        "emitted": 28,
+        "expected_emissions": 28,
+        "duplicate_receipts": 132
+      },
+      "either-swapped": {
+        "sequences": 28,
+        "exact_sequences": 0,
+        "steps": 132,
+        "exact_steps": 48,
+        "emitted": 16,
+        "expected_emissions": 28,
+        "duplicate_receipts": 132
+      },
+      "either-current": {
+        "sequences": 28,
+        "exact_sequences": 28,
+        "steps": 132,
+        "exact_steps": 132,
+        "emitted": 28,
+        "expected_emissions": 28,
+        "duplicate_receipts": 132
+      },
+      "either-symbolic": {
+        "sequences": 28,
+        "exact_sequences": 28,
+        "steps": 132,
+        "exact_steps": 132,
+        "emitted": 28,
+        "expected_emissions": 28,
+        "duplicate_receipts": 132
+      }
+    }
+  }
+}

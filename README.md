@@ -22,7 +22,7 @@ The film explains the target architecture and shows a test purchase through chec
 
 The [absorption pipeline](docs/absorption-pipeline.md) reads the installed OpenAPI inventory, records native HTTP and browser behavior, fits a model candidate and replays it with Shopware stopped before installing it. In the first catalog profile, the generated Admin **Stock → Save** control issues the same native Sync API request and reopens the saved value at the original Shopware URL. Four operation profiles passed **96 of 96** held-out HTTP checks and two native-to-Holo browser journeys. The ledger tracks the other **1,232** installed operations as unmeasured.
 
-The [product mask experiment](docs/product-mask.md) now compiles the eight observed Admin product tabs from native browser trees and layout measurements. On two fresh products with Shopware off, Chrome opened all eight tabs and saved stock through the learned Sync contract. [Shopware and the Holo side by side](assets/experiments/product-mask/base-side-by-side.png)
+The [product mask experiment](docs/product-mask.md) compiles eight observed Admin tabs from native browser traces. It fits request and state change programs for base prices, variant creation and JPEG assignment from 21 Shopware writes. With Shopware off, Chrome ran 14 writes across two new Papierwerft products and verified the saved results after a Deck restart. [Native Shopware and the Holo side by side](assets/experiments/product-mask/actions-variants-side-by-side.png)
 
 ### Execute commerce inside the model
 

@@ -31,7 +31,7 @@ The catalog profile connects a Shopware Storefront product URL and the original 
 
 The profile is limited to one-record product reads with the recorded `includes`, stock updates and one-record product upserts. The generated pages reproduce the observed controls and bindings on those paths. Pixel layout, surrounding native Administration navigation, arbitrary criteria, bulk writes and the rest of the Shopware UI are outside this profile. The lab uses fixed loopback credentials and a SQLite record store. The learner currently fits structural programs with a generic search over observed fields. It does not retrain a foundation model.
 
-The [product mask experiment](product-mask.md) extends the projection to eight observed native tab layouts and retains this Sync contract for the verified write.
+The [product mask experiment](product-mask.md) extends the projection to eight observed native tab layouts. A second round acquired seven request and effect programs for base prices, variant creation and JPEG assignment. Its browser replay verified route, status and selected persisted fields separately from the exact JSON benchmark below.
 
 ## Measured parity
 

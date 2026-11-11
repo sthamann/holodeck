@@ -4,7 +4,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Product · Holodeck</title>
 <style>
-html,body{margin:0;width:100%;min-height:100%;background:#f7f8fa;color:#252a32;font-family:Inter,system-ui,sans-serif}#view{position:relative;min-height:100vh}#message{position:fixed;bottom:20px;right:20px;z-index:99999;max-width:360px;padding:12px 18px;background:#172641;color:white;border-radius:8px}#message:empty{display:none}a[href],button:not([disabled]){cursor:pointer}:focus-visible{outline:2px solid #0870d3;outline-offset:2px}[data-skip]:not(:focus){clip-path:inset(50%);overflow:hidden}
+html,body{margin:0;width:100%;min-height:100%;background:#f7f8fa;color:#252a32;font-family:Inter,system-ui,sans-serif}#view{position:relative;min-height:100vh}#message{position:fixed;bottom:20px;right:20px;z-index:99999;max-width:360px;padding:12px 18px;background:#172641;color:white;border-radius:8px}#message:empty{display:none}.action-controls{padding:14px;display:grid;gap:12px;border:1px solid #d7e0ed;border-radius:6px;background:white;color:#253450}.action-controls label{display:grid;gap:4px}.action-controls input,.action-controls select{padding:8px;border:1px solid #b9c6d7;border-radius:4px}.action-controls button{padding:8px 12px;background:#0870d3;color:white;border:0;border-radius:4px;justify-self:start}.action-controls img{width:80px;height:80px;object-fit:contain}.action-controls ul{margin:0;padding-left:20px}.variant-controls,.media-controls{margin:0 24px 24px}.media-controls{display:flex;flex-wrap:wrap}.media-controls figure{margin:0;display:grid;gap:8px}.media-controls img{width:112px;height:112px;border-radius:5px;background:#f5f7fa}.variant-controls[hidden]{display:none}
+a[href],button:not([disabled]){cursor:pointer}:focus-visible{outline:2px solid #0870d3;outline-offset:2px}[data-skip]:not(:focus){clip-path:inset(50%);overflow:hidden}
 </style>
 <div id="view" aria-busy="true"></div>
 <p id="message" role="status"></p>
@@ -30,6 +31,7 @@ function create(tree, tokens, slots) {
     const value = interpolate(raw, slots);
     if (attrs.has(name)) element.setAttribute(name, value);
     if (name === 'route' && value.startsWith('#/sw/product/detail/' + slots.id + '/')) element.href = value;
+    if (name === 'label' && (raw === 'Price (gross)' || raw === 'Price (net)')) element.dataset.price = raw.includes('gross') ? 'gross' : 'net';
     if (name === 'data-stock') element.dataset.stock = value;
   }
   for (const child of children) element.append(create(child, tokens, slots));
@@ -58,6 +60,167 @@ function bind(template, stock) {
   return template;
 }
 
+function evaluate(program, input) {
+  const [op, ...args] = program;
+  if (op === 'literal') return args[0];
+  if (op === 'ref' && args[0] === 'input' && args[1] in input) return input[args[1]];
+  if (op === 'vector') return args.map(child => evaluate(child, input));
+  if (op === 'record') return Object.fromEntries(Object.entries(args[0]).map(
+    ([key, child]) => [key, evaluate(child, input)]));
+  throw new Error('Missing input for this action.');
+}
+
+const makeId = () => crypto.randomUUID().replaceAll('-', '');
+const headers = {Authorization:'Bearer absorption-admin'};
+let working = false;
+
+async function perform(name, input, file) {
+  const request = evaluate(current.actionPrograms[name], input);
+  const query = new URLSearchParams(request.query).toString();
+  const url = request.path.join('/') + (query ? '?' + query : '');
+  const response = await fetch(url, {method:request.method,
+    headers:{...headers, 'Content-Type':file ? 'image/jpeg' : 'application/json'},
+    body:file || JSON.stringify(request.body)});
+  if (!response.ok) throw new Error((await response.json()).error || 'The action failed.');
+}
+
+async function work(operation, success) {
+  if (working) return;
+  working = true;
+  message.textContent = '';
+  try {
+    await operation();
+    await render();
+    message.textContent = success;
+  } catch (error) { message.textContent = error.message; }
+  finally { working = false; }
+}
+
+function control(parent, tag, text, type) {
+  const element = document.createElement(tag);
+  if (type) element.type = type;
+  if (text) element.textContent = text;
+  parent.append(element);
+  return element;
+}
+
+function editProduct({tab, slots, product}) {
+  if (!product) return;
+  const buttons = [...host.querySelectorAll('button')];
+  if (tab.key === 'base') {
+    const price = product.price[0];
+    const priceFields = [...host.querySelectorAll('[data-price]')];
+    for (const input of priceFields) {
+      input.readOnly = false;
+      input.value = price[input.dataset.price];
+    }
+    if (priceFields.length) {
+      const label = control(priceFields.at(-1).parentElement, 'label', 'Linked price flag');
+      const linked = control(label, 'input', '', 'checkbox');
+      linked.dataset.linked = '';
+      linked.checked = price.linked;
+    }
+    const upload = buttons.find(button => button.textContent.trim() === 'Upload file');
+    if (!upload) return;
+    const card = upload.closest('article');
+    if (!card) return;
+    card.style.height = 'auto';
+    card.parentElement.style.height = 'auto';
+    card.parentElement.parentElement.style.height = 'auto';
+    const panel = control(card, 'div');
+    panel.className = 'action-controls media-controls';
+    panel.hidden = !product.media.some(row => row.id !== product.coverId);
+    if (panel.hidden) panel.style.display = 'none';
+    const label = control(panel, 'label', 'Product image');
+    const file = control(label, 'input', '', 'file');
+    file.accept = 'image/jpeg';
+    file.hidden = true;
+    upload.addEventListener('click', () => file.click());
+    const attach = image => {
+      if (!image) return;
+      if (!/^[a-zA-Z0-9_-]+\.jpe?g$/i.test(image.name) || image.size > 8_000_000) {
+        message.textContent = 'Choose a JPEG up to 8 MB with a simple file name.';
+        return;
+      }
+      work(async () => {
+        const media = makeId(), relation = makeId();
+        await perform('media_create', {media});
+        await perform('media_upload', {media, name:image.name.replace(/\.jpe?g$/i, ''), blob:''}, image);
+        await perform('media_link', {product:slots.id, relation, media, position:product.media.length});
+        if (!product.coverId) await perform('cover', {product:slots.id, relation});
+      }, 'Image uploaded and assigned.');
+    };
+    file.addEventListener('change', () => attach(file.files[0]));
+    card.addEventListener('dragover', event => event.preventDefault());
+    card.addEventListener('drop', event => {
+      event.preventDefault();
+      attach(event.dataTransfer.files[0]);
+    });
+    buttons.find(button => button.textContent.trim() === 'Open media')?.addEventListener('click', () => {
+      if (product.media.length) card.querySelector('img')?.scrollIntoView({block:'nearest'});
+      else file.click();
+    });
+    for (const row of product.media) {
+      const cover = row.id === product.coverId && [...card.querySelectorAll('div')].find(
+        element => element.childElementCount === 0 && element.textContent.trim() === 'Cover');
+      if (cover) cover.replaceChildren();
+      const figure = cover || control(panel, 'figure');
+      const image = control(figure, 'img');
+      image.src = '/mask-media/' + row.mediaId;
+      image.alt = row.file?.fileName || 'Product image';
+      if (cover) Object.assign(image.style, {width:'100%', height:'100%', objectFit:'contain'});
+      if (row.id !== product.coverId) control(figure, 'button', 'Set as cover', 'button').addEventListener('click', () =>
+        work(() => perform('cover', {product:slots.id, relation:row.id}), 'Cover saved.'));
+    }
+  }
+  if (tab.key === 'variants') {
+    const generate = buttons.find(button => button.textContent.trim() === 'Generate variants');
+    if (!generate) return;
+    const card = generate.closest('article');
+    if (!card) return;
+    card.style.height = 'auto';
+    const panel = control(card, 'section');
+    panel.className = 'action-controls variant-controls';
+    panel.hidden = !product.variants.length;
+    panel.setAttribute('aria-label', 'Product variants');
+    if (product.variants.length) {
+      const empty = [...host.querySelectorAll('h2')].find(el => el.textContent.trim() === 'This product has no variants yet.');
+      if (empty) empty.textContent = 'Product variants';
+      const list = control(panel, 'ul');
+      for (const variant of product.variants) {
+        const option = product.options.find(entry => variant.optionIds.includes(entry.id));
+        control(list, 'li', `${option?.name || ''} · ${variant.productNumber} · Stock ${variant.stock}`);
+      }
+    }
+    const fields = control(panel, 'div');
+    fields.className = 'action-controls';
+    fields.hidden = true;
+    fields.style.display = 'none';
+    const option = control(control(fields, 'label', 'Variant option'), 'select');
+    for (const entry of product.options) control(option, 'option', entry.name).value = entry.id;
+    const number = control(control(fields, 'label', 'Variant product number'), 'input', '', 'text');
+    const stock = control(control(fields, 'label', 'Variant stock'), 'input', '', 'number');
+    stock.min = 0;
+    generate.addEventListener('click', () => {
+      panel.hidden = false;
+      fields.hidden = false;
+      fields.style.removeProperty('display');
+      number.focus();
+    });
+    control(fields, 'button', 'Create variant', 'button').addEventListener('click', () => {
+      if (!number.value.trim() || !stock.value.trim() || !Number.isSafeInteger(Number(stock.value)) || Number(stock.value) < 0) {
+        message.textContent = 'Enter a product number and a whole stock quantity.';
+        return;
+      }
+      work(async () => {
+        const input = {product:slots.id, option:option.value, number:number.value, stock:Number(stock.value)};
+        await perform('configure', {...input, setting:makeId()});
+        await perform('variant', {...input, variant:makeId()});
+      }, 'Variant created.');
+    });
+  }
+}
+
 async function render() {
   const id = ++generation;
   host.setAttribute('aria-busy', 'true');
@@ -72,6 +235,13 @@ async function render() {
   current = result;
   host.replaceChildren(create(tab.root, tab.tokens, slots));
   host.dataset.tab = tab.key;
+  for (const link of host.querySelectorAll('a[href^="#/sw/product/detail/"]')) {
+    if (!result.tabs.includes(link.hash.split('/').at(-1))) continue;
+    const selected = link.hash === location.hash;
+    link.style.borderBottom = selected ? '2px solid #0870ff' : '2px solid transparent';
+    if (selected) link.setAttribute('aria-current', 'page');
+  }
+  editProduct(result);
   document.title = `${slots.name} · Holodeck`;
   host.setAttribute('aria-busy', 'false');
 }
@@ -87,13 +257,24 @@ host.addEventListener('click', async event => {
   const stock = Number(input.value);
   if (!input.value.trim() || !Number.isSafeInteger(stock) || stock < 0) {message.textContent = 'Enter a whole stock quantity.'; return;}
   const action = current.action;
-  try {
-    const response = await fetch(action.route, {method:action.method, headers:{'Content-Type':'application/json',
-      Authorization:'Bearer absorption-admin'}, body:JSON.stringify(bind(action.body, stock))});
-    if (!response.ok) throw new Error('Stock could not be saved.');
-    await render();
-    message.textContent = 'Stock saved.';
-  } catch (error) { message.textContent = error.message; }
+  const price = current.product?.price[0];
+  const prices = Object.fromEntries([...host.querySelectorAll('[data-price]')].map(
+    field => [field.dataset.price, field.value.trim() ? Number(field.value) : NaN]));
+  if (price && !['gross','net'].every(key => Number.isFinite(prices[key]) && prices[key] >= 0)) {
+    message.textContent = 'Enter a gross price and a net price.';
+    return;
+  }
+  if (price) prices.linked = host.querySelector('[data-linked]').checked;
+  work(async () => {
+    if (price && (price.gross !== prices.gross || price.net !== prices.net || price.linked !== prices.linked)) {
+      await perform('price', {...price, ...prices, product:current.slots.id, version:current.product.version});
+    }
+    if (stock !== current.slots.stock) {
+      const response = await fetch(action.route, {method:action.method, headers:{...headers, 'Content-Type':'application/json'},
+        body:JSON.stringify(bind(action.body, stock))});
+      if (!response.ok) throw new Error('Stock could not be saved.');
+    }
+  }, price ? 'Product saved.' : 'Stock saved.');
 });
 function update() {render().catch(error => {host.textContent = error.message; host.setAttribute('aria-busy', 'false');});}
 window.addEventListener('hashchange', update);

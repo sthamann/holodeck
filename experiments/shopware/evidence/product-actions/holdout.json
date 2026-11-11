@@ -1,0 +1,592 @@
+[
+  {
+    "split": "holdout",
+    "channel": "3a14e574e31247b8bc68a3f952d7b941",
+    "record": {
+      "id": "95e26edef1d44690a3555ed02b46575c",
+      "name": "Papierwerft Katalog 4",
+      "stock": 23,
+      "productNumber": "HD-95e26edef1d4"
+    },
+    "version": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+    "options": [
+      {
+        "id": "595c55dea32345b58debc1ce67f80c8e",
+        "name": "Indigo"
+      }
+    ],
+    "price": [
+      {
+        "extensions": [],
+        "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+        "net": 24.68,
+        "gross": 28.81,
+        "linked": false,
+        "listPrice": null,
+        "percentage": null,
+        "regulationPrice": null,
+        "apiAlias": "price"
+      }
+    ],
+    "image_sha256": "f8d4a69210e813bc923ce2ab247bfe4667cad42cecf71bea9f1377fbe5533537",
+    "steps": [
+      {
+        "action": "price",
+        "inputs": {
+          "product": "95e26edef1d44690a3555ed02b46575c",
+          "version": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+          "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+          "gross": 74.45,
+          "net": 57.36,
+          "linked": true
+        },
+        "request": {
+          "method": "POST",
+          "path": "/api/_action/sync",
+          "query": {},
+          "body": [
+            {
+              "key": "write",
+              "action": "upsert",
+              "entity": "product",
+              "payload": [
+                {
+                  "id": "95e26edef1d44690a3555ed02b46575c",
+                  "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+                  "price": [
+                    {
+                      "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+                      "gross": 74.45,
+                      "net": 57.36,
+                      "linked": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "status": 200,
+        "observed": {
+          "collection": "product",
+          "id": "95e26edef1d44690a3555ed02b46575c",
+          "values": {
+            "price": [
+              {
+                "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+                "gross": 74.45,
+                "net": 57.36,
+                "linked": true
+              }
+            ]
+          }
+        }
+      },
+      {
+        "action": "configure",
+        "inputs": {
+          "product": "95e26edef1d44690a3555ed02b46575c",
+          "setting": "1145d4f418034824b796e64b84681910",
+          "option": "595c55dea32345b58debc1ce67f80c8e"
+        },
+        "request": {
+          "method": "POST",
+          "path": "/api/_action/sync",
+          "query": {},
+          "body": [
+            {
+              "key": "write",
+              "action": "upsert",
+              "entity": "product",
+              "payload": [
+                {
+                  "id": "95e26edef1d44690a3555ed02b46575c",
+                  "configuratorSettings": [
+                    {
+                      "id": "1145d4f418034824b796e64b84681910",
+                      "optionId": "595c55dea32345b58debc1ce67f80c8e"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "status": 200,
+        "observed": {
+          "collection": "configurator",
+          "id": "1145d4f418034824b796e64b84681910",
+          "values": {
+            "productId": "95e26edef1d44690a3555ed02b46575c",
+            "optionId": "595c55dea32345b58debc1ce67f80c8e"
+          }
+        }
+      },
+      {
+        "action": "variant",
+        "inputs": {
+          "product": "95e26edef1d44690a3555ed02b46575c",
+          "variant": "3d2b88422fad4a408bfd559c97f866bf",
+          "option": "595c55dea32345b58debc1ce67f80c8e",
+          "number": "HD-95e26edef1d4-INDIGO",
+          "stock": 14
+        },
+        "request": {
+          "method": "POST",
+          "path": "/api/_action/sync",
+          "query": {},
+          "body": [
+            {
+              "key": "write",
+              "action": "upsert",
+              "entity": "product",
+              "payload": [
+                {
+                  "id": "3d2b88422fad4a408bfd559c97f866bf",
+                  "parentId": "95e26edef1d44690a3555ed02b46575c",
+                  "productNumber": "HD-95e26edef1d4-INDIGO",
+                  "stock": 14,
+                  "options": [
+                    {
+                      "id": "595c55dea32345b58debc1ce67f80c8e"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "status": 200,
+        "observed": {
+          "collection": "variant",
+          "id": "3d2b88422fad4a408bfd559c97f866bf",
+          "values": {
+            "parentId": "95e26edef1d44690a3555ed02b46575c",
+            "productNumber": "HD-95e26edef1d4-INDIGO",
+            "stock": 14,
+            "optionIds": [
+              "595c55dea32345b58debc1ce67f80c8e"
+            ]
+          }
+        }
+      },
+      {
+        "action": "media_create",
+        "inputs": {
+          "media": "7a1fc8fc7be048a99291974ae8c6a8e1"
+        },
+        "request": {
+          "method": "POST",
+          "path": "/api/media",
+          "query": {},
+          "body": {
+            "id": "7a1fc8fc7be048a99291974ae8c6a8e1"
+          }
+        },
+        "status": 204,
+        "observed": {
+          "collection": "media",
+          "id": "7a1fc8fc7be048a99291974ae8c6a8e1",
+          "values": {}
+        }
+      },
+      {
+        "action": "media_upload",
+        "inputs": {
+          "media": "7a1fc8fc7be048a99291974ae8c6a8e1",
+          "name": "product-888c1ce14e",
+          "blob": "f8d4a69210e813bc923ce2ab247bfe4667cad42cecf71bea9f1377fbe5533537",
+          "size": 36604
+        },
+        "request": {
+          "method": "POST",
+          "path": "/api/_action/media/7a1fc8fc7be048a99291974ae8c6a8e1/upload",
+          "query": {
+            "extension": "jpg",
+            "fileName": "product-888c1ce14e"
+          },
+          "body": "f8d4a69210e813bc923ce2ab247bfe4667cad42cecf71bea9f1377fbe5533537"
+        },
+        "status": 204,
+        "observed": {
+          "collection": "media",
+          "id": "7a1fc8fc7be048a99291974ae8c6a8e1",
+          "values": {
+            "fileName": "product-888c1ce14e",
+            "fileExtension": "jpg",
+            "mimeType": "image/jpeg",
+            "fileSize": 36604
+          }
+        }
+      },
+      {
+        "action": "media_link",
+        "inputs": {
+          "product": "95e26edef1d44690a3555ed02b46575c",
+          "relation": "f9c0d9760f2d4dd9822fd57aee0c3568",
+          "media": "7a1fc8fc7be048a99291974ae8c6a8e1",
+          "position": 3
+        },
+        "request": {
+          "method": "POST",
+          "path": "/api/_action/sync",
+          "query": {},
+          "body": [
+            {
+              "key": "write",
+              "action": "upsert",
+              "entity": "product_media",
+              "payload": [
+                {
+                  "id": "f9c0d9760f2d4dd9822fd57aee0c3568",
+                  "productId": "95e26edef1d44690a3555ed02b46575c",
+                  "mediaId": "7a1fc8fc7be048a99291974ae8c6a8e1",
+                  "position": 3
+                }
+              ]
+            }
+          ]
+        },
+        "status": 200,
+        "observed": {
+          "collection": "product_media",
+          "id": "f9c0d9760f2d4dd9822fd57aee0c3568",
+          "values": {
+            "productId": "95e26edef1d44690a3555ed02b46575c",
+            "mediaId": "7a1fc8fc7be048a99291974ae8c6a8e1",
+            "position": 3
+          }
+        }
+      },
+      {
+        "action": "cover",
+        "inputs": {
+          "product": "95e26edef1d44690a3555ed02b46575c",
+          "relation": "f9c0d9760f2d4dd9822fd57aee0c3568"
+        },
+        "request": {
+          "method": "POST",
+          "path": "/api/_action/sync",
+          "query": {},
+          "body": [
+            {
+              "key": "write",
+              "action": "upsert",
+              "entity": "product",
+              "payload": [
+                {
+                  "id": "95e26edef1d44690a3555ed02b46575c",
+                  "coverId": "f9c0d9760f2d4dd9822fd57aee0c3568"
+                }
+              ]
+            }
+          ]
+        },
+        "status": 200,
+        "observed": {
+          "collection": "product",
+          "id": "95e26edef1d44690a3555ed02b46575c",
+          "values": {
+            "coverId": "f9c0d9760f2d4dd9822fd57aee0c3568"
+          }
+        }
+      }
+    ],
+    "image_fixture": "moka.jpg"
+  },
+  {
+    "split": "holdout",
+    "channel": "3a14e574e31247b8bc68a3f952d7b941",
+    "record": {
+      "id": "2944d19080764740bc7fdcf0deb9d82b",
+      "name": "Papierwerft Katalog 5",
+      "stock": 24,
+      "productNumber": "HD-2944d1908076"
+    },
+    "version": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+    "options": [
+      {
+        "id": "2334226496a749a08e7f35f6cb24da9c",
+        "name": "Ivory"
+      }
+    ],
+    "price": [
+      {
+        "extensions": [],
+        "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+        "net": 25.68,
+        "gross": 29.81,
+        "linked": false,
+        "listPrice": null,
+        "percentage": null,
+        "regulationPrice": null,
+        "apiAlias": "price"
+      }
+    ],
+    "image_sha256": "89c2d54564e62c7902600623b5fdb73e25d1b6533b44372d6d6e9063db9fea97",
+    "steps": [
+      {
+        "action": "price",
+        "inputs": {
+          "product": "2944d19080764740bc7fdcf0deb9d82b",
+          "version": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+          "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+          "gross": 81.6,
+          "net": 62.48,
+          "linked": false
+        },
+        "request": {
+          "method": "POST",
+          "path": "/api/_action/sync",
+          "query": {},
+          "body": [
+            {
+              "key": "write",
+              "action": "upsert",
+              "entity": "product",
+              "payload": [
+                {
+                  "id": "2944d19080764740bc7fdcf0deb9d82b",
+                  "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+                  "price": [
+                    {
+                      "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+                      "gross": 81.6,
+                      "net": 62.48,
+                      "linked": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "status": 200,
+        "observed": {
+          "collection": "product",
+          "id": "2944d19080764740bc7fdcf0deb9d82b",
+          "values": {
+            "price": [
+              {
+                "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+                "gross": 81.6,
+                "net": 62.48,
+                "linked": false
+              }
+            ]
+          }
+        }
+      },
+      {
+        "action": "configure",
+        "inputs": {
+          "product": "2944d19080764740bc7fdcf0deb9d82b",
+          "setting": "0586490588a841a194b340bd3855c512",
+          "option": "2334226496a749a08e7f35f6cb24da9c"
+        },
+        "request": {
+          "method": "POST",
+          "path": "/api/_action/sync",
+          "query": {},
+          "body": [
+            {
+              "key": "write",
+              "action": "upsert",
+              "entity": "product",
+              "payload": [
+                {
+                  "id": "2944d19080764740bc7fdcf0deb9d82b",
+                  "configuratorSettings": [
+                    {
+                      "id": "0586490588a841a194b340bd3855c512",
+                      "optionId": "2334226496a749a08e7f35f6cb24da9c"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "status": 200,
+        "observed": {
+          "collection": "configurator",
+          "id": "0586490588a841a194b340bd3855c512",
+          "values": {
+            "productId": "2944d19080764740bc7fdcf0deb9d82b",
+            "optionId": "2334226496a749a08e7f35f6cb24da9c"
+          }
+        }
+      },
+      {
+        "action": "variant",
+        "inputs": {
+          "product": "2944d19080764740bc7fdcf0deb9d82b",
+          "variant": "b42a61708fd44ee293fdff8dc4944660",
+          "option": "2334226496a749a08e7f35f6cb24da9c",
+          "number": "HD-2944d1908076-IVORY",
+          "stock": 17
+        },
+        "request": {
+          "method": "POST",
+          "path": "/api/_action/sync",
+          "query": {},
+          "body": [
+            {
+              "key": "write",
+              "action": "upsert",
+              "entity": "product",
+              "payload": [
+                {
+                  "id": "b42a61708fd44ee293fdff8dc4944660",
+                  "parentId": "2944d19080764740bc7fdcf0deb9d82b",
+                  "productNumber": "HD-2944d1908076-IVORY",
+                  "stock": 17,
+                  "options": [
+                    {
+                      "id": "2334226496a749a08e7f35f6cb24da9c"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "status": 200,
+        "observed": {
+          "collection": "variant",
+          "id": "b42a61708fd44ee293fdff8dc4944660",
+          "values": {
+            "parentId": "2944d19080764740bc7fdcf0deb9d82b",
+            "productNumber": "HD-2944d1908076-IVORY",
+            "stock": 17,
+            "optionIds": [
+              "2334226496a749a08e7f35f6cb24da9c"
+            ]
+          }
+        }
+      },
+      {
+        "action": "media_create",
+        "inputs": {
+          "media": "f0651e2b8ee54ebe84faed6376cef3ec"
+        },
+        "request": {
+          "method": "POST",
+          "path": "/api/media",
+          "query": {},
+          "body": {
+            "id": "f0651e2b8ee54ebe84faed6376cef3ec"
+          }
+        },
+        "status": 204,
+        "observed": {
+          "collection": "media",
+          "id": "f0651e2b8ee54ebe84faed6376cef3ec",
+          "values": {}
+        }
+      },
+      {
+        "action": "media_upload",
+        "inputs": {
+          "media": "f0651e2b8ee54ebe84faed6376cef3ec",
+          "name": "product-a1135c2c8e",
+          "blob": "89c2d54564e62c7902600623b5fdb73e25d1b6533b44372d6d6e9063db9fea97",
+          "size": 1495993
+        },
+        "request": {
+          "method": "POST",
+          "path": "/api/_action/media/f0651e2b8ee54ebe84faed6376cef3ec/upload",
+          "query": {
+            "extension": "jpg",
+            "fileName": "product-a1135c2c8e"
+          },
+          "body": "89c2d54564e62c7902600623b5fdb73e25d1b6533b44372d6d6e9063db9fea97"
+        },
+        "status": 204,
+        "observed": {
+          "collection": "media",
+          "id": "f0651e2b8ee54ebe84faed6376cef3ec",
+          "values": {
+            "fileName": "product-a1135c2c8e",
+            "fileExtension": "jpg",
+            "mimeType": "image/jpeg",
+            "fileSize": 1495993
+          }
+        }
+      },
+      {
+        "action": "media_link",
+        "inputs": {
+          "product": "2944d19080764740bc7fdcf0deb9d82b",
+          "relation": "facb6d7f0dd748809f86c76ccc6cbc3e",
+          "media": "f0651e2b8ee54ebe84faed6376cef3ec",
+          "position": 4
+        },
+        "request": {
+          "method": "POST",
+          "path": "/api/_action/sync",
+          "query": {},
+          "body": [
+            {
+              "key": "write",
+              "action": "upsert",
+              "entity": "product_media",
+              "payload": [
+                {
+                  "id": "facb6d7f0dd748809f86c76ccc6cbc3e",
+                  "productId": "2944d19080764740bc7fdcf0deb9d82b",
+                  "mediaId": "f0651e2b8ee54ebe84faed6376cef3ec",
+                  "position": 4
+                }
+              ]
+            }
+          ]
+        },
+        "status": 200,
+        "observed": {
+          "collection": "product_media",
+          "id": "facb6d7f0dd748809f86c76ccc6cbc3e",
+          "values": {
+            "productId": "2944d19080764740bc7fdcf0deb9d82b",
+            "mediaId": "f0651e2b8ee54ebe84faed6376cef3ec",
+            "position": 4
+          }
+        }
+      },
+      {
+        "action": "cover",
+        "inputs": {
+          "product": "2944d19080764740bc7fdcf0deb9d82b",
+          "relation": "facb6d7f0dd748809f86c76ccc6cbc3e"
+        },
+        "request": {
+          "method": "POST",
+          "path": "/api/_action/sync",
+          "query": {},
+          "body": [
+            {
+              "key": "write",
+              "action": "upsert",
+              "entity": "product",
+              "payload": [
+                {
+                  "id": "2944d19080764740bc7fdcf0deb9d82b",
+                  "coverId": "facb6d7f0dd748809f86c76ccc6cbc3e"
+                }
+              ]
+            }
+          ]
+        },
+        "status": 200,
+        "observed": {
+          "collection": "product",
+          "id": "2944d19080764740bc7fdcf0deb9d82b",
+          "values": {
+            "coverId": "facb6d7f0dd748809f86c76ccc6cbc3e"
+          }
+        }
+      }
+    ],
+    "image_fixture": "moka-pair.jpg"
+  }
+]

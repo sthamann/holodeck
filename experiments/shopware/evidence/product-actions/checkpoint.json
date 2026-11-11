@@ -1,0 +1,746 @@
+{
+  "channels": [
+    "ccb08c6e81cb44aebabd4a6d915a7315"
+  ],
+  "actions": {
+    "price": {
+      "request": [
+        "record",
+        {
+          "method": [
+            "literal",
+            "POST"
+          ],
+          "path": [
+            "literal",
+            [
+              "",
+              "api",
+              "_action",
+              "sync"
+            ]
+          ],
+          "query": [
+            "literal",
+            {}
+          ],
+          "body": [
+            "vector",
+            [
+              "record",
+              {
+                "key": [
+                  "literal",
+                  "write"
+                ],
+                "action": [
+                  "literal",
+                  "upsert"
+                ],
+                "entity": [
+                  "literal",
+                  "product"
+                ],
+                "payload": [
+                  "vector",
+                  [
+                    "record",
+                    {
+                      "id": [
+                        "ref",
+                        "input",
+                        "product"
+                      ],
+                      "versionId": [
+                        "literal",
+                        "0fa91ce3e96a4bc2be4bd9ce752c3425"
+                      ],
+                      "price": [
+                        "vector",
+                        [
+                          "record",
+                          {
+                            "currencyId": [
+                              "literal",
+                              "b7d2554b0ce847cd82f3ac9bd1c0dfca"
+                            ],
+                            "gross": [
+                              "ref",
+                              "input",
+                              "gross"
+                            ],
+                            "net": [
+                              "ref",
+                              "input",
+                              "net"
+                            ],
+                            "linked": [
+                              "ref",
+                              "input",
+                              "linked"
+                            ]
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        }
+      ],
+      "effect": [
+        "record",
+        {
+          "collection": [
+            "literal",
+            "product"
+          ],
+          "id": [
+            "ref",
+            "input",
+            "product"
+          ],
+          "values": [
+            "record",
+            {
+              "price": [
+                "vector",
+                [
+                  "record",
+                  {
+                    "currencyId": [
+                      "literal",
+                      "b7d2554b0ce847cd82f3ac9bd1c0dfca"
+                    ],
+                    "gross": [
+                      "ref",
+                      "input",
+                      "gross"
+                    ],
+                    "net": [
+                      "ref",
+                      "input",
+                      "net"
+                    ],
+                    "linked": [
+                      "ref",
+                      "input",
+                      "linked"
+                    ]
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "status": [
+        "literal",
+        200
+      ],
+      "examples": 3
+    },
+    "configure": {
+      "request": [
+        "record",
+        {
+          "method": [
+            "literal",
+            "POST"
+          ],
+          "path": [
+            "literal",
+            [
+              "",
+              "api",
+              "_action",
+              "sync"
+            ]
+          ],
+          "query": [
+            "literal",
+            {}
+          ],
+          "body": [
+            "vector",
+            [
+              "record",
+              {
+                "key": [
+                  "literal",
+                  "write"
+                ],
+                "action": [
+                  "literal",
+                  "upsert"
+                ],
+                "entity": [
+                  "literal",
+                  "product"
+                ],
+                "payload": [
+                  "vector",
+                  [
+                    "record",
+                    {
+                      "id": [
+                        "ref",
+                        "input",
+                        "product"
+                      ],
+                      "configuratorSettings": [
+                        "vector",
+                        [
+                          "record",
+                          {
+                            "id": [
+                              "ref",
+                              "input",
+                              "setting"
+                            ],
+                            "optionId": [
+                              "ref",
+                              "input",
+                              "option"
+                            ]
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        }
+      ],
+      "effect": [
+        "record",
+        {
+          "collection": [
+            "literal",
+            "configurator"
+          ],
+          "id": [
+            "ref",
+            "input",
+            "setting"
+          ],
+          "values": [
+            "record",
+            {
+              "productId": [
+                "ref",
+                "input",
+                "product"
+              ],
+              "optionId": [
+                "ref",
+                "input",
+                "option"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": [
+        "literal",
+        200
+      ],
+      "examples": 3
+    },
+    "variant": {
+      "request": [
+        "record",
+        {
+          "method": [
+            "literal",
+            "POST"
+          ],
+          "path": [
+            "literal",
+            [
+              "",
+              "api",
+              "_action",
+              "sync"
+            ]
+          ],
+          "query": [
+            "literal",
+            {}
+          ],
+          "body": [
+            "vector",
+            [
+              "record",
+              {
+                "key": [
+                  "literal",
+                  "write"
+                ],
+                "action": [
+                  "literal",
+                  "upsert"
+                ],
+                "entity": [
+                  "literal",
+                  "product"
+                ],
+                "payload": [
+                  "vector",
+                  [
+                    "record",
+                    {
+                      "id": [
+                        "ref",
+                        "input",
+                        "variant"
+                      ],
+                      "parentId": [
+                        "ref",
+                        "input",
+                        "product"
+                      ],
+                      "productNumber": [
+                        "ref",
+                        "input",
+                        "number"
+                      ],
+                      "stock": [
+                        "ref",
+                        "input",
+                        "stock"
+                      ],
+                      "options": [
+                        "vector",
+                        [
+                          "record",
+                          {
+                            "id": [
+                              "ref",
+                              "input",
+                              "option"
+                            ]
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        }
+      ],
+      "effect": [
+        "record",
+        {
+          "collection": [
+            "literal",
+            "variant"
+          ],
+          "id": [
+            "ref",
+            "input",
+            "variant"
+          ],
+          "values": [
+            "record",
+            {
+              "parentId": [
+                "ref",
+                "input",
+                "product"
+              ],
+              "productNumber": [
+                "ref",
+                "input",
+                "number"
+              ],
+              "stock": [
+                "ref",
+                "input",
+                "stock"
+              ],
+              "optionIds": [
+                "vector",
+                [
+                  "ref",
+                  "input",
+                  "option"
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "status": [
+        "literal",
+        200
+      ],
+      "examples": 3
+    },
+    "media_create": {
+      "request": [
+        "record",
+        {
+          "method": [
+            "literal",
+            "POST"
+          ],
+          "path": [
+            "literal",
+            [
+              "",
+              "api",
+              "media"
+            ]
+          ],
+          "query": [
+            "literal",
+            {}
+          ],
+          "body": [
+            "record",
+            {
+              "id": [
+                "ref",
+                "input",
+                "media"
+              ]
+            }
+          ]
+        }
+      ],
+      "effect": [
+        "record",
+        {
+          "collection": [
+            "literal",
+            "media"
+          ],
+          "id": [
+            "ref",
+            "input",
+            "media"
+          ],
+          "values": [
+            "literal",
+            {}
+          ]
+        }
+      ],
+      "status": [
+        "literal",
+        204
+      ],
+      "examples": 3
+    },
+    "media_upload": {
+      "request": [
+        "record",
+        {
+          "method": [
+            "literal",
+            "POST"
+          ],
+          "path": [
+            "vector",
+            [
+              "literal",
+              ""
+            ],
+            [
+              "literal",
+              "api"
+            ],
+            [
+              "literal",
+              "_action"
+            ],
+            [
+              "literal",
+              "media"
+            ],
+            [
+              "ref",
+              "input",
+              "media"
+            ],
+            [
+              "literal",
+              "upload"
+            ]
+          ],
+          "query": [
+            "record",
+            {
+              "extension": [
+                "literal",
+                "jpg"
+              ],
+              "fileName": [
+                "ref",
+                "input",
+                "name"
+              ]
+            }
+          ],
+          "body": [
+            "ref",
+            "input",
+            "blob"
+          ]
+        }
+      ],
+      "effect": [
+        "record",
+        {
+          "collection": [
+            "literal",
+            "media"
+          ],
+          "id": [
+            "ref",
+            "input",
+            "media"
+          ],
+          "values": [
+            "record",
+            {
+              "fileName": [
+                "ref",
+                "input",
+                "name"
+              ],
+              "fileExtension": [
+                "literal",
+                "jpg"
+              ],
+              "mimeType": [
+                "literal",
+                "image/jpeg"
+              ],
+              "fileSize": [
+                "ref",
+                "input",
+                "size"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": [
+        "literal",
+        204
+      ],
+      "examples": 3
+    },
+    "media_link": {
+      "request": [
+        "record",
+        {
+          "method": [
+            "literal",
+            "POST"
+          ],
+          "path": [
+            "literal",
+            [
+              "",
+              "api",
+              "_action",
+              "sync"
+            ]
+          ],
+          "query": [
+            "literal",
+            {}
+          ],
+          "body": [
+            "vector",
+            [
+              "record",
+              {
+                "key": [
+                  "literal",
+                  "write"
+                ],
+                "action": [
+                  "literal",
+                  "upsert"
+                ],
+                "entity": [
+                  "literal",
+                  "product_media"
+                ],
+                "payload": [
+                  "vector",
+                  [
+                    "record",
+                    {
+                      "id": [
+                        "ref",
+                        "input",
+                        "relation"
+                      ],
+                      "productId": [
+                        "ref",
+                        "input",
+                        "product"
+                      ],
+                      "mediaId": [
+                        "ref",
+                        "input",
+                        "media"
+                      ],
+                      "position": [
+                        "ref",
+                        "input",
+                        "position"
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        }
+      ],
+      "effect": [
+        "record",
+        {
+          "collection": [
+            "literal",
+            "product_media"
+          ],
+          "id": [
+            "ref",
+            "input",
+            "relation"
+          ],
+          "values": [
+            "record",
+            {
+              "productId": [
+                "ref",
+                "input",
+                "product"
+              ],
+              "mediaId": [
+                "ref",
+                "input",
+                "media"
+              ],
+              "position": [
+                "ref",
+                "input",
+                "position"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": [
+        "literal",
+        200
+      ],
+      "examples": 3
+    },
+    "cover": {
+      "request": [
+        "record",
+        {
+          "method": [
+            "literal",
+            "POST"
+          ],
+          "path": [
+            "literal",
+            [
+              "",
+              "api",
+              "_action",
+              "sync"
+            ]
+          ],
+          "query": [
+            "literal",
+            {}
+          ],
+          "body": [
+            "vector",
+            [
+              "record",
+              {
+                "key": [
+                  "literal",
+                  "write"
+                ],
+                "action": [
+                  "literal",
+                  "upsert"
+                ],
+                "entity": [
+                  "literal",
+                  "product"
+                ],
+                "payload": [
+                  "vector",
+                  [
+                    "record",
+                    {
+                      "id": [
+                        "ref",
+                        "input",
+                        "product"
+                      ],
+                      "coverId": [
+                        "ref",
+                        "input",
+                        "relation"
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        }
+      ],
+      "effect": [
+        "record",
+        {
+          "collection": [
+            "literal",
+            "product"
+          ],
+          "id": [
+            "ref",
+            "input",
+            "product"
+          ],
+          "values": [
+            "record",
+            {
+              "coverId": [
+                "ref",
+                "input",
+                "relation"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": [
+        "literal",
+        200
+      ],
+      "examples": 3
+    }
+  },
+  "sha256": "2df36d00765ff1a6f498a1e6df5a7c1b1f500fb8658c079b5a059e28174df77c"
+}
