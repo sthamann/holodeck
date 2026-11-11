@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Holodeck</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#152c4a;background:#f3f7fc}body{margin:0}header{background:#fff;border-bottom:1px solid #dce5ef;padding:18px max(20px,calc((100% - 1040px)/2));white-space:nowrap;font-weight:700;color:#1269ba}main{max-width:1040px;margin:56px auto;padding:0 20px}h1{font-size:clamp(27px,4vw,42px);margin:0 0 24px}form{max-width:440px;background:#fff;border:1px solid #dce5ef;border-radius:12px;padding:24px}label{display:block;font-weight:600}input{display:block;width:100%;box-sizing:border-box;padding:10px;margin:7px 0 18px;font:inherit;border:1px solid #9fb3c9;border-radius:6px}button{background:#1269ba;color:#fff;border:0;border-radius:6px;padding:10px 18px;font:inherit;font-weight:600}button:focus-visible,input:focus-visible{outline:3px solid #5fbcff;outline-offset:3px}
+</style>
+<header>Holodeck</header>
+<main id="surface" aria-busy="true"></main>
+<script type="module">
+const surface = document.querySelector('#surface');
+function element(tag, text) {
+  const node = document.createElement(tag);
+  node.textContent = text;
+  return node;
+}
+function bind(template, values) {
+  if (Array.isArray(template)) return template.map(item => bind(item, values));
+  if (template && typeof template === 'object') {
+    if ('$field' in template) return values[template.$field];
+    return Object.fromEntries(Object.entries(template).map(([key, value]) => [key, bind(value, values)]));
+  }
+  return template;
+}
+async function project() {
+  const response = await fetch('/__project?' + new URLSearchParams({url: location.pathname + location.hash}));
+  if (!response.ok) throw new Error('This view has no installed profile.');
+  const view = await response.json();
+  surface.append(element('h1', view.title));
+  if (!view.action) return;
+  const form = element('form', '');
+  for (const control of view.controls) {
+    const label = element('label', control.label);
+    const input = element('input', '');
+    input.type = control.kind;
+    input.name = control.field;
+    input.value = control.value;
+    label.append(input);
+    form.append(label);
+  }
+  form.append(element('button', view.action.label));
+  const status = element('p', '');
+  status.role = 'status';
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    const body = Object.fromEntries([...form.elements].filter(node => node.name).map(node => [node.name, node.valueAsNumber]));
+    const result = await fetch(view.action.route, {method: view.action.method, body: JSON.stringify(bind(view.action.body, body)),
+      headers: {'Content-Type': 'application/json', Authorization: 'Bearer absorption-admin'}});
+    status.textContent = result.ok ? 'Saved' : 'The change could not be saved';
+  });
+  surface.append(form, status);
+}
+try { await project(); } catch (error) { surface.append(element('p', error.message)); }
+surface.setAttribute('aria-busy', 'false');
+</script>
+</html>

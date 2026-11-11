@@ -1,0 +1,448 @@
+{
+  "training_channels": [
+    "753eb1c5e0e14714bb176152196600d4"
+  ],
+  "training_sha256": "0a98cad55ac20f73beb512b5d24d8f81dc577d167d5b15be3c79fafce3830823",
+  "ui_sha256": "d8daf6ac36609193904a8e5970aa787ccdb62483abf8a739c3140bbf148cff67",
+  "operations": [
+    {
+      "scope": "admin",
+      "method": "POST",
+      "path": "/api/search/product",
+      "operation": "searchProduct",
+      "record_id": [
+        "ref",
+        "body",
+        "ids",
+        0
+      ],
+      "body_slots": [
+        [
+          "ids",
+          0
+        ]
+      ],
+      "body_contract": [
+        "record",
+        {
+          "includes": [
+            "literal",
+            {
+              "product": [
+                "id",
+                "name",
+                "stock",
+                "productNumber"
+              ]
+            }
+          ],
+          "ids": [
+            "ref",
+            "operands"
+          ]
+        }
+      ],
+      "writes": null,
+      "response": [
+        "record",
+        {
+          "total": [
+            "literal",
+            1
+          ],
+          "data": [
+            "vector",
+            [
+              "record",
+              {
+                "productNumber": [
+                  "ref",
+                  "record",
+                  "productNumber"
+                ],
+                "stock": [
+                  "ref",
+                  "record",
+                  "stock"
+                ],
+                "name": [
+                  "ref",
+                  "record",
+                  "name"
+                ],
+                "id": [
+                  "ref",
+                  "record",
+                  "id"
+                ],
+                "apiAlias": [
+                  "literal",
+                  "product"
+                ]
+              }
+            ]
+          ],
+          "aggregations": [
+            "literal",
+            []
+          ]
+        }
+      ],
+      "status": [
+        "literal",
+        200
+      ],
+      "examples": 24
+    },
+    {
+      "scope": "store",
+      "method": "POST",
+      "path": "/store-api/product/{productId}",
+      "operation": "readProductDetail",
+      "record_id": [
+        "ref",
+        "params",
+        "productId"
+      ],
+      "body_slots": [],
+      "body_contract": [
+        "literal",
+        {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        }
+      ],
+      "writes": null,
+      "response": [
+        "record",
+        {
+          "apiAlias": [
+            "literal",
+            "product_detail"
+          ],
+          "product": [
+            "record",
+            {
+              "productNumber": [
+                "ref",
+                "record",
+                "productNumber"
+              ],
+              "stock": [
+                "ref",
+                "record",
+                "stock"
+              ],
+              "name": [
+                "ref",
+                "record",
+                "name"
+              ],
+              "id": [
+                "ref",
+                "params",
+                "productId"
+              ],
+              "apiAlias": [
+                "literal",
+                "product"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": [
+        "literal",
+        200
+      ],
+      "examples": 24
+    },
+    {
+      "scope": "admin",
+      "method": "PATCH",
+      "path": "/api/product/{id}",
+      "operation": "updateProduct",
+      "record_id": [
+        "ref",
+        "params",
+        "id"
+      ],
+      "body_slots": [
+        [
+          "stock"
+        ]
+      ],
+      "body_contract": [
+        "record",
+        {
+          "stock": [
+            "ref",
+            "operands",
+            0
+          ]
+        }
+      ],
+      "writes": [
+        "record",
+        {
+          "id": [
+            "ref",
+            "params",
+            "id"
+          ],
+          "name": [
+            "ref",
+            "record",
+            "name"
+          ],
+          "stock": [
+            "ref",
+            "body",
+            "stock"
+          ],
+          "productNumber": [
+            "ref",
+            "record",
+            "productNumber"
+          ]
+        }
+      ],
+      "response": [
+        "literal",
+        null
+      ],
+      "status": [
+        "literal",
+        204
+      ],
+      "examples": 8
+    },
+    {
+      "scope": "admin",
+      "method": "POST",
+      "path": "/api/_action/sync",
+      "operation": "sync",
+      "record_id": [
+        "ref",
+        "body",
+        0,
+        "payload",
+        0,
+        "id"
+      ],
+      "body_slots": [
+        [
+          0,
+          "payload",
+          0,
+          "id"
+        ],
+        [
+          0,
+          "payload",
+          0,
+          "stock"
+        ]
+      ],
+      "body_contract": [
+        "vector",
+        [
+          "record",
+          {
+            "key": [
+              "literal",
+              "write"
+            ],
+            "action": [
+              "literal",
+              "upsert"
+            ],
+            "entity": [
+              "literal",
+              "product"
+            ],
+            "payload": [
+              "vector",
+              [
+                "record",
+                {
+                  "id": [
+                    "ref",
+                    "record_id"
+                  ],
+                  "versionId": [
+                    "literal",
+                    "0fa91ce3e96a4bc2be4bd9ce752c3425"
+                  ],
+                  "stock": [
+                    "ref",
+                    "operands",
+                    1
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      ],
+      "writes": [
+        "record",
+        {
+          "id": [
+            "ref",
+            "record",
+            "id"
+          ],
+          "name": [
+            "ref",
+            "record",
+            "name"
+          ],
+          "stock": [
+            "ref",
+            "body",
+            0,
+            "payload",
+            0,
+            "stock"
+          ],
+          "productNumber": [
+            "ref",
+            "record",
+            "productNumber"
+          ]
+        }
+      ],
+      "response": [
+        "record",
+        {
+          "extensions": [
+            "literal",
+            []
+          ],
+          "data": [
+            "record",
+            {
+              "product": [
+                "vector",
+                [
+                  "ref",
+                  "record",
+                  "id"
+                ]
+              ],
+              "product_translation": [
+                "vector",
+                [
+                  "record",
+                  {
+                    "productId": [
+                      "ref",
+                      "record",
+                      "id"
+                    ],
+                    "languageId": [
+                      "literal",
+                      "2fbb5fe2e29a4d70aa5854ce7ce3e20b"
+                    ]
+                  }
+                ]
+              ]
+            }
+          ],
+          "notFound": [
+            "literal",
+            []
+          ],
+          "deleted": [
+            "literal",
+            []
+          ]
+        }
+      ],
+      "status": [
+        "literal",
+        200
+      ],
+      "examples": 8
+    }
+  ],
+  "views": [
+    {
+      "route": "/detail/{record}",
+      "surface": "storefront",
+      "heading": "name",
+      "controls": []
+    },
+    {
+      "route": "/admin#/sw/product/detail/{record}/base",
+      "surface": "admin",
+      "heading": "name",
+      "controls": [
+        {
+          "kind": "number",
+          "label": "Stock",
+          "field": "stock"
+        }
+      ],
+      "action": {
+        "label": "Save",
+        "method": "POST",
+        "route": "/api/_action/sync",
+        "body": [
+          "vector",
+          [
+            "record",
+            {
+              "key": [
+                "literal",
+                "write"
+              ],
+              "action": [
+                "literal",
+                "upsert"
+              ],
+              "entity": [
+                "literal",
+                "product"
+              ],
+              "payload": [
+                "vector",
+                [
+                  "record",
+                  {
+                    "id": [
+                      "ref",
+                      "record",
+                      "id"
+                    ],
+                    "versionId": [
+                      "literal",
+                      "0fa91ce3e96a4bc2be4bd9ce752c3425"
+                    ],
+                    "stock": [
+                      "literal",
+                      {
+                        "$field": "stock"
+                      }
+                    ]
+                  }
+                ]
+              ]
+            }
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+[
+  {
+    "surface": "storefront",
+    "route": "/detail/cc1145eb84644e54acc13ebf15cf7753",
+    "record": {
+      "id": "cc1145eb84644e54acc13ebf15cf7753",
+      "name": "Kornufer Artikel 1",
+      "stock": 10,
+      "productNumber": "HD-cc1145eb8464"
+    },
+    "heading": "Kornufer Artikel 1"
+  },
+  {
+    "surface": "admin",
+    "route": "/admin#/sw/product/detail/cc1145eb84644e54acc13ebf15cf7753/base",
+    "record": {
+      "id": "cc1145eb84644e54acc13ebf15cf7753",
+      "name": "Kornufer Artikel 1",
+      "stock": 10,
+      "productNumber": "HD-cc1145eb8464"
+    },
+    "heading": "Kornufer Artikel 1",
+    "action": {
+      "label": "Stock",
+      "button": "Save",
+      "method": "POST",
+      "path": "/api/_action/sync",
+      "body": [
+        {
+          "key": "write",
+          "action": "upsert",
+          "entity": "product",
+          "payload": [
+            {
+              "id": "cc1145eb84644e54acc13ebf15cf7753",
+              "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+              "stock": 64
+            }
+          ]
+        }
+      ],
+      "status": 200,
+      "before": 60,
+      "value": 64,
+      "persisted": 64
+    }
+  },
+  {
+    "surface": "storefront",
+    "route": "/detail/347b106918be498aae505a7ad09300e7",
+    "record": {
+      "id": "347b106918be498aae505a7ad09300e7",
+      "name": "Kornufer Artikel 2",
+      "stock": 7,
+      "productNumber": "HD-347b106918be"
+    },
+    "heading": "Kornufer Artikel 2"
+  },
+  {
+    "surface": "admin",
+    "route": "/admin#/sw/product/detail/347b106918be498aae505a7ad09300e7/base",
+    "record": {
+      "id": "347b106918be498aae505a7ad09300e7",
+      "name": "Kornufer Artikel 2",
+      "stock": 7,
+      "productNumber": "HD-347b106918be"
+    },
+    "heading": "Kornufer Artikel 2",
+    "action": {
+      "label": "Stock",
+      "button": "Save",
+      "method": "POST",
+      "path": "/api/_action/sync",
+      "body": [
+        {
+          "key": "write",
+          "action": "upsert",
+          "entity": "product",
+          "payload": [
+            {
+              "id": "347b106918be498aae505a7ad09300e7",
+              "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+              "stock": 65
+            }
+          ]
+        }
+      ],
+      "status": 200,
+      "before": 61,
+      "value": 65,
+      "persisted": 65
+    }
+  }
+]

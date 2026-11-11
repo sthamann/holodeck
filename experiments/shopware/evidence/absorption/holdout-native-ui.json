@@ -1,0 +1,94 @@
+[
+  {
+    "surface": "storefront",
+    "route": "/detail/2bbd6c3fdf82446e86d07ade21c663a7",
+    "record": {
+      "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+      "name": "Papierwerft Artikel 1",
+      "stock": 11,
+      "productNumber": "HD-2bbd6c3fdf82"
+    },
+    "heading": "Papierwerft Artikel 1"
+  },
+  {
+    "surface": "admin",
+    "route": "/admin#/sw/product/detail/2bbd6c3fdf82446e86d07ade21c663a7/base",
+    "record": {
+      "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+      "name": "Papierwerft Artikel 1",
+      "stock": 11,
+      "productNumber": "HD-2bbd6c3fdf82"
+    },
+    "heading": "Papierwerft Artikel 1",
+    "action": {
+      "label": "Stock",
+      "button": "Save",
+      "method": "POST",
+      "path": "/api/_action/sync",
+      "body": [
+        {
+          "key": "write",
+          "action": "upsert",
+          "entity": "product",
+          "payload": [
+            {
+              "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+              "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+              "stock": 72
+            }
+          ]
+        }
+      ],
+      "status": 200,
+      "before": 58,
+      "value": 72,
+      "persisted": 72
+    }
+  },
+  {
+    "surface": "storefront",
+    "route": "/detail/a7ff4c0b9bf34ff981281dc8e5dc5847",
+    "record": {
+      "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+      "name": "Papierwerft Artikel 2",
+      "stock": 9,
+      "productNumber": "HD-a7ff4c0b9bf3"
+    },
+    "heading": "Papierwerft Artikel 2"
+  },
+  {
+    "surface": "admin",
+    "route": "/admin#/sw/product/detail/a7ff4c0b9bf34ff981281dc8e5dc5847/base",
+    "record": {
+      "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+      "name": "Papierwerft Artikel 2",
+      "stock": 9,
+      "productNumber": "HD-a7ff4c0b9bf3"
+    },
+    "heading": "Papierwerft Artikel 2",
+    "action": {
+      "label": "Stock",
+      "button": "Save",
+      "method": "POST",
+      "path": "/api/_action/sync",
+      "body": [
+        {
+          "key": "write",
+          "action": "upsert",
+          "entity": "product",
+          "payload": [
+            {
+              "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+              "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+              "stock": 73
+            }
+          ]
+        }
+      ],
+      "status": 200,
+      "before": 58,
+      "value": 73,
+      "persisted": 73
+    }
+  }
+]

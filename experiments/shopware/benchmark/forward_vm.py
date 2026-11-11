@@ -18,7 +18,7 @@ from program_deck import ProgramDeck
 from program_deck_sparse import load
 
 
-def record(**values):
+def record(values):
     return values
 
 
@@ -104,8 +104,8 @@ class Lowering:
                     value = self.graph.call_function(getitem, (value, key))
                 return value
             case 'record':
-                return self.graph.call_function(record, kwargs={key: self.expression(term)
-                                                               for key, term in args[0].items()})
+                return self.graph.call_function(record, ({key: self.expression(term)
+                                                          for key, term in args[0].items()},))
             case 'map':
                 source, name, body = args
                 return self.call(MapRows(name, Lowering().compile(body)), self.expression(source), self.env)

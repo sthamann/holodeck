@@ -2,6 +2,8 @@
 
 Der [aktuelle gemeinsame Checkpoint](joint-deck.md) verbindet Commerce, Workflow und Oberfläche. Die öffentliche Auswertung enthält die eingefrorenen Gewichte, synthetische Referenzverläufe und einen Kontrollversuch mit geändertem Modellausgang. Dieser Plan definiert, wie daraus eine vollständige Profilprüfung wird.
 
+Die [Absorptionspipeline](absorption-pipeline.md) implementiert den ersten automatisierten Durchlauf vom nativen API- und UI-Mitschnitt bis zur Freigabe eines kompilierten Profils. Die Abdeckung wird je Operation ausgewiesen.
+
 Das Ziel ist der vollständige Ersatz von Shopware für ein ausgewiesenes Produktprofil. Ein multimodales Deck trägt die Shopware Geschäftssemantik in seinen gelernten Parametern und erzeugt die fachlichen Entscheidungen, Abläufe und Oberflächen für jeden Händler. Die ausgewählten Experten laufen im Modellgraphen. Der feste Transaktionskern prüft und speichert die daraus entstehenden Änderungen. Der [Forward-Pass-Versuch](forward-pass.md) vergleicht diesen Pfad mit dem früheren Interpreter. Die bisherigen Ergebnisse messen Teilfähigkeiten.
 
 ## Entscheidung nach dem Review mit Claude Fable 5.2

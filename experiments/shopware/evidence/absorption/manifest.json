@@ -1,0 +1,12 @@
+{
+  "candidate_sha256": "6d4fa7f600cd1fa29415e3a5d6f7b30fd42bde96fa9ec5a6c9542f5ef7e2db31",
+  "api_sha256": "fcda3f40f5be6dad8e436ad139cb47e003079a74bfbc47d028b0a594c53ff89d",
+  "native_ui_sha256": "f96051ddb7ec47a1300097c687ed5735122a5f802a993f7ac70b2403dc23fcda",
+  "deck_ui_sha256": "f96051ddb7ec47a1300097c687ed5735122a5f802a993f7ac70b2403dc23fcda",
+  "inventory_operations": 1236,
+  "scoped_pass": 4,
+  "unmeasured": 1232,
+  "exact_http": 96,
+  "browser_observations": 4,
+  "browser_writes": 2
+}

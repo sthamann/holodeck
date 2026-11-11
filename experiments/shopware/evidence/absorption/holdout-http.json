@@ -1,0 +1,3986 @@
+[
+  {
+    "split": "holdout",
+    "channel": "9cf12440fdd1490c9792bf16e0d6abd7",
+    "record": {
+      "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+      "name": "Papierwerft Artikel 1",
+      "stock": 11,
+      "productNumber": "HD-2bbd6c3fdf82"
+    },
+    "requests": [
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "2bbd6c3fdf82446e86d07ade21c663a7"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-2bbd6c3fdf82",
+              "stock": 11,
+              "name": "Papierwerft Artikel 1",
+              "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+          "name": "Papierwerft Artikel 1",
+          "stock": 11,
+          "productNumber": "HD-2bbd6c3fdf82"
+        },
+        "after": {
+          "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+          "name": "Papierwerft Artikel 1",
+          "stock": 11,
+          "productNumber": "HD-2bbd6c3fdf82"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/2bbd6c3fdf82446e86d07ade21c663a7",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-2bbd6c3fdf82",
+            "stock": 11,
+            "name": "Papierwerft Artikel 1",
+            "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+          "name": "Papierwerft Artikel 1",
+          "stock": 11,
+          "productNumber": "HD-2bbd6c3fdf82"
+        },
+        "after": {
+          "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+          "name": "Papierwerft Artikel 1",
+          "stock": 11,
+          "productNumber": "HD-2bbd6c3fdf82"
+        }
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/product/2bbd6c3fdf82446e86d07ade21c663a7",
+        "body": {
+          "stock": 26
+        },
+        "status": 204,
+        "response": null,
+        "before": {
+          "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+          "name": "Papierwerft Artikel 1",
+          "stock": 11,
+          "productNumber": "HD-2bbd6c3fdf82"
+        },
+        "after": {
+          "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+          "name": "Papierwerft Artikel 1",
+          "stock": 26,
+          "productNumber": "HD-2bbd6c3fdf82"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "2bbd6c3fdf82446e86d07ade21c663a7"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-2bbd6c3fdf82",
+              "stock": 26,
+              "name": "Papierwerft Artikel 1",
+              "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+          "name": "Papierwerft Artikel 1",
+          "stock": 26,
+          "productNumber": "HD-2bbd6c3fdf82"
+        },
+        "after": {
+          "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+          "name": "Papierwerft Artikel 1",
+          "stock": 26,
+          "productNumber": "HD-2bbd6c3fdf82"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/2bbd6c3fdf82446e86d07ade21c663a7",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-2bbd6c3fdf82",
+            "stock": 26,
+            "name": "Papierwerft Artikel 1",
+            "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+          "name": "Papierwerft Artikel 1",
+          "stock": 26,
+          "productNumber": "HD-2bbd6c3fdf82"
+        },
+        "after": {
+          "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+          "name": "Papierwerft Artikel 1",
+          "stock": 26,
+          "productNumber": "HD-2bbd6c3fdf82"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/_action/sync",
+        "body": [
+          {
+            "key": "write",
+            "action": "upsert",
+            "entity": "product",
+            "payload": [
+              {
+                "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+                "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+                "stock": 58
+              }
+            ]
+          }
+        ],
+        "status": 200,
+        "response": {
+          "extensions": [],
+          "data": {
+            "product": [
+              "2bbd6c3fdf82446e86d07ade21c663a7"
+            ],
+            "product_translation": [
+              {
+                "productId": "2bbd6c3fdf82446e86d07ade21c663a7",
+                "languageId": "2fbb5fe2e29a4d70aa5854ce7ce3e20b"
+              }
+            ]
+          },
+          "notFound": [],
+          "deleted": []
+        },
+        "before": {
+          "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+          "name": "Papierwerft Artikel 1",
+          "stock": 26,
+          "productNumber": "HD-2bbd6c3fdf82"
+        },
+        "after": {
+          "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+          "name": "Papierwerft Artikel 1",
+          "stock": 58,
+          "productNumber": "HD-2bbd6c3fdf82"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "2bbd6c3fdf82446e86d07ade21c663a7"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-2bbd6c3fdf82",
+              "stock": 58,
+              "name": "Papierwerft Artikel 1",
+              "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+          "name": "Papierwerft Artikel 1",
+          "stock": 58,
+          "productNumber": "HD-2bbd6c3fdf82"
+        },
+        "after": {
+          "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+          "name": "Papierwerft Artikel 1",
+          "stock": 58,
+          "productNumber": "HD-2bbd6c3fdf82"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/2bbd6c3fdf82446e86d07ade21c663a7",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-2bbd6c3fdf82",
+            "stock": 58,
+            "name": "Papierwerft Artikel 1",
+            "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+          "name": "Papierwerft Artikel 1",
+          "stock": 58,
+          "productNumber": "HD-2bbd6c3fdf82"
+        },
+        "after": {
+          "id": "2bbd6c3fdf82446e86d07ade21c663a7",
+          "name": "Papierwerft Artikel 1",
+          "stock": 58,
+          "productNumber": "HD-2bbd6c3fdf82"
+        }
+      }
+    ]
+  },
+  {
+    "split": "holdout",
+    "channel": "9cf12440fdd1490c9792bf16e0d6abd7",
+    "record": {
+      "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+      "name": "Papierwerft Artikel 2",
+      "stock": 9,
+      "productNumber": "HD-a7ff4c0b9bf3"
+    },
+    "requests": [
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "a7ff4c0b9bf34ff981281dc8e5dc5847"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-a7ff4c0b9bf3",
+              "stock": 9,
+              "name": "Papierwerft Artikel 2",
+              "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+          "name": "Papierwerft Artikel 2",
+          "stock": 9,
+          "productNumber": "HD-a7ff4c0b9bf3"
+        },
+        "after": {
+          "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+          "name": "Papierwerft Artikel 2",
+          "stock": 9,
+          "productNumber": "HD-a7ff4c0b9bf3"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/a7ff4c0b9bf34ff981281dc8e5dc5847",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-a7ff4c0b9bf3",
+            "stock": 9,
+            "name": "Papierwerft Artikel 2",
+            "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+          "name": "Papierwerft Artikel 2",
+          "stock": 9,
+          "productNumber": "HD-a7ff4c0b9bf3"
+        },
+        "after": {
+          "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+          "name": "Papierwerft Artikel 2",
+          "stock": 9,
+          "productNumber": "HD-a7ff4c0b9bf3"
+        }
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/product/a7ff4c0b9bf34ff981281dc8e5dc5847",
+        "body": {
+          "stock": 21
+        },
+        "status": 204,
+        "response": null,
+        "before": {
+          "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+          "name": "Papierwerft Artikel 2",
+          "stock": 9,
+          "productNumber": "HD-a7ff4c0b9bf3"
+        },
+        "after": {
+          "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+          "name": "Papierwerft Artikel 2",
+          "stock": 21,
+          "productNumber": "HD-a7ff4c0b9bf3"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "a7ff4c0b9bf34ff981281dc8e5dc5847"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-a7ff4c0b9bf3",
+              "stock": 21,
+              "name": "Papierwerft Artikel 2",
+              "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+          "name": "Papierwerft Artikel 2",
+          "stock": 21,
+          "productNumber": "HD-a7ff4c0b9bf3"
+        },
+        "after": {
+          "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+          "name": "Papierwerft Artikel 2",
+          "stock": 21,
+          "productNumber": "HD-a7ff4c0b9bf3"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/a7ff4c0b9bf34ff981281dc8e5dc5847",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-a7ff4c0b9bf3",
+            "stock": 21,
+            "name": "Papierwerft Artikel 2",
+            "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+          "name": "Papierwerft Artikel 2",
+          "stock": 21,
+          "productNumber": "HD-a7ff4c0b9bf3"
+        },
+        "after": {
+          "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+          "name": "Papierwerft Artikel 2",
+          "stock": 21,
+          "productNumber": "HD-a7ff4c0b9bf3"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/_action/sync",
+        "body": [
+          {
+            "key": "write",
+            "action": "upsert",
+            "entity": "product",
+            "payload": [
+              {
+                "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+                "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+                "stock": 58
+              }
+            ]
+          }
+        ],
+        "status": 200,
+        "response": {
+          "extensions": [],
+          "data": {
+            "product": [
+              "a7ff4c0b9bf34ff981281dc8e5dc5847"
+            ],
+            "product_translation": [
+              {
+                "productId": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+                "languageId": "2fbb5fe2e29a4d70aa5854ce7ce3e20b"
+              }
+            ]
+          },
+          "notFound": [],
+          "deleted": []
+        },
+        "before": {
+          "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+          "name": "Papierwerft Artikel 2",
+          "stock": 21,
+          "productNumber": "HD-a7ff4c0b9bf3"
+        },
+        "after": {
+          "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+          "name": "Papierwerft Artikel 2",
+          "stock": 58,
+          "productNumber": "HD-a7ff4c0b9bf3"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "a7ff4c0b9bf34ff981281dc8e5dc5847"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-a7ff4c0b9bf3",
+              "stock": 58,
+              "name": "Papierwerft Artikel 2",
+              "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+          "name": "Papierwerft Artikel 2",
+          "stock": 58,
+          "productNumber": "HD-a7ff4c0b9bf3"
+        },
+        "after": {
+          "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+          "name": "Papierwerft Artikel 2",
+          "stock": 58,
+          "productNumber": "HD-a7ff4c0b9bf3"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/a7ff4c0b9bf34ff981281dc8e5dc5847",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-a7ff4c0b9bf3",
+            "stock": 58,
+            "name": "Papierwerft Artikel 2",
+            "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+          "name": "Papierwerft Artikel 2",
+          "stock": 58,
+          "productNumber": "HD-a7ff4c0b9bf3"
+        },
+        "after": {
+          "id": "a7ff4c0b9bf34ff981281dc8e5dc5847",
+          "name": "Papierwerft Artikel 2",
+          "stock": 58,
+          "productNumber": "HD-a7ff4c0b9bf3"
+        }
+      }
+    ]
+  },
+  {
+    "split": "holdout",
+    "channel": "9cf12440fdd1490c9792bf16e0d6abd7",
+    "record": {
+      "id": "25e0a6a3c09f4b19a5c872e15342e852",
+      "name": "Papierwerft Artikel 3",
+      "stock": 16,
+      "productNumber": "HD-25e0a6a3c09f"
+    },
+    "requests": [
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "25e0a6a3c09f4b19a5c872e15342e852"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-25e0a6a3c09f",
+              "stock": 16,
+              "name": "Papierwerft Artikel 3",
+              "id": "25e0a6a3c09f4b19a5c872e15342e852",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "25e0a6a3c09f4b19a5c872e15342e852",
+          "name": "Papierwerft Artikel 3",
+          "stock": 16,
+          "productNumber": "HD-25e0a6a3c09f"
+        },
+        "after": {
+          "id": "25e0a6a3c09f4b19a5c872e15342e852",
+          "name": "Papierwerft Artikel 3",
+          "stock": 16,
+          "productNumber": "HD-25e0a6a3c09f"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/25e0a6a3c09f4b19a5c872e15342e852",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-25e0a6a3c09f",
+            "stock": 16,
+            "name": "Papierwerft Artikel 3",
+            "id": "25e0a6a3c09f4b19a5c872e15342e852",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "25e0a6a3c09f4b19a5c872e15342e852",
+          "name": "Papierwerft Artikel 3",
+          "stock": 16,
+          "productNumber": "HD-25e0a6a3c09f"
+        },
+        "after": {
+          "id": "25e0a6a3c09f4b19a5c872e15342e852",
+          "name": "Papierwerft Artikel 3",
+          "stock": 16,
+          "productNumber": "HD-25e0a6a3c09f"
+        }
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/product/25e0a6a3c09f4b19a5c872e15342e852",
+        "body": {
+          "stock": 44
+        },
+        "status": 204,
+        "response": null,
+        "before": {
+          "id": "25e0a6a3c09f4b19a5c872e15342e852",
+          "name": "Papierwerft Artikel 3",
+          "stock": 16,
+          "productNumber": "HD-25e0a6a3c09f"
+        },
+        "after": {
+          "id": "25e0a6a3c09f4b19a5c872e15342e852",
+          "name": "Papierwerft Artikel 3",
+          "stock": 44,
+          "productNumber": "HD-25e0a6a3c09f"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "25e0a6a3c09f4b19a5c872e15342e852"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-25e0a6a3c09f",
+              "stock": 44,
+              "name": "Papierwerft Artikel 3",
+              "id": "25e0a6a3c09f4b19a5c872e15342e852",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "25e0a6a3c09f4b19a5c872e15342e852",
+          "name": "Papierwerft Artikel 3",
+          "stock": 44,
+          "productNumber": "HD-25e0a6a3c09f"
+        },
+        "after": {
+          "id": "25e0a6a3c09f4b19a5c872e15342e852",
+          "name": "Papierwerft Artikel 3",
+          "stock": 44,
+          "productNumber": "HD-25e0a6a3c09f"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/25e0a6a3c09f4b19a5c872e15342e852",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-25e0a6a3c09f",
+            "stock": 44,
+            "name": "Papierwerft Artikel 3",
+            "id": "25e0a6a3c09f4b19a5c872e15342e852",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "25e0a6a3c09f4b19a5c872e15342e852",
+          "name": "Papierwerft Artikel 3",
+          "stock": 44,
+          "productNumber": "HD-25e0a6a3c09f"
+        },
+        "after": {
+          "id": "25e0a6a3c09f4b19a5c872e15342e852",
+          "name": "Papierwerft Artikel 3",
+          "stock": 44,
+          "productNumber": "HD-25e0a6a3c09f"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/_action/sync",
+        "body": [
+          {
+            "key": "write",
+            "action": "upsert",
+            "entity": "product",
+            "payload": [
+              {
+                "id": "25e0a6a3c09f4b19a5c872e15342e852",
+                "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+                "stock": 58
+              }
+            ]
+          }
+        ],
+        "status": 200,
+        "response": {
+          "extensions": [],
+          "data": {
+            "product": [
+              "25e0a6a3c09f4b19a5c872e15342e852"
+            ],
+            "product_translation": [
+              {
+                "productId": "25e0a6a3c09f4b19a5c872e15342e852",
+                "languageId": "2fbb5fe2e29a4d70aa5854ce7ce3e20b"
+              }
+            ]
+          },
+          "notFound": [],
+          "deleted": []
+        },
+        "before": {
+          "id": "25e0a6a3c09f4b19a5c872e15342e852",
+          "name": "Papierwerft Artikel 3",
+          "stock": 44,
+          "productNumber": "HD-25e0a6a3c09f"
+        },
+        "after": {
+          "id": "25e0a6a3c09f4b19a5c872e15342e852",
+          "name": "Papierwerft Artikel 3",
+          "stock": 58,
+          "productNumber": "HD-25e0a6a3c09f"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "25e0a6a3c09f4b19a5c872e15342e852"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-25e0a6a3c09f",
+              "stock": 58,
+              "name": "Papierwerft Artikel 3",
+              "id": "25e0a6a3c09f4b19a5c872e15342e852",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "25e0a6a3c09f4b19a5c872e15342e852",
+          "name": "Papierwerft Artikel 3",
+          "stock": 58,
+          "productNumber": "HD-25e0a6a3c09f"
+        },
+        "after": {
+          "id": "25e0a6a3c09f4b19a5c872e15342e852",
+          "name": "Papierwerft Artikel 3",
+          "stock": 58,
+          "productNumber": "HD-25e0a6a3c09f"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/25e0a6a3c09f4b19a5c872e15342e852",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-25e0a6a3c09f",
+            "stock": 58,
+            "name": "Papierwerft Artikel 3",
+            "id": "25e0a6a3c09f4b19a5c872e15342e852",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "25e0a6a3c09f4b19a5c872e15342e852",
+          "name": "Papierwerft Artikel 3",
+          "stock": 58,
+          "productNumber": "HD-25e0a6a3c09f"
+        },
+        "after": {
+          "id": "25e0a6a3c09f4b19a5c872e15342e852",
+          "name": "Papierwerft Artikel 3",
+          "stock": 58,
+          "productNumber": "HD-25e0a6a3c09f"
+        }
+      }
+    ]
+  },
+  {
+    "split": "holdout",
+    "channel": "9cf12440fdd1490c9792bf16e0d6abd7",
+    "record": {
+      "id": "f79cd7fa7a964076879405a01e596f2c",
+      "name": "Papierwerft Artikel 4",
+      "stock": 16,
+      "productNumber": "HD-f79cd7fa7a96"
+    },
+    "requests": [
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "f79cd7fa7a964076879405a01e596f2c"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-f79cd7fa7a96",
+              "stock": 16,
+              "name": "Papierwerft Artikel 4",
+              "id": "f79cd7fa7a964076879405a01e596f2c",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "f79cd7fa7a964076879405a01e596f2c",
+          "name": "Papierwerft Artikel 4",
+          "stock": 16,
+          "productNumber": "HD-f79cd7fa7a96"
+        },
+        "after": {
+          "id": "f79cd7fa7a964076879405a01e596f2c",
+          "name": "Papierwerft Artikel 4",
+          "stock": 16,
+          "productNumber": "HD-f79cd7fa7a96"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/f79cd7fa7a964076879405a01e596f2c",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-f79cd7fa7a96",
+            "stock": 16,
+            "name": "Papierwerft Artikel 4",
+            "id": "f79cd7fa7a964076879405a01e596f2c",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "f79cd7fa7a964076879405a01e596f2c",
+          "name": "Papierwerft Artikel 4",
+          "stock": 16,
+          "productNumber": "HD-f79cd7fa7a96"
+        },
+        "after": {
+          "id": "f79cd7fa7a964076879405a01e596f2c",
+          "name": "Papierwerft Artikel 4",
+          "stock": 16,
+          "productNumber": "HD-f79cd7fa7a96"
+        }
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/product/f79cd7fa7a964076879405a01e596f2c",
+        "body": {
+          "stock": 37
+        },
+        "status": 204,
+        "response": null,
+        "before": {
+          "id": "f79cd7fa7a964076879405a01e596f2c",
+          "name": "Papierwerft Artikel 4",
+          "stock": 16,
+          "productNumber": "HD-f79cd7fa7a96"
+        },
+        "after": {
+          "id": "f79cd7fa7a964076879405a01e596f2c",
+          "name": "Papierwerft Artikel 4",
+          "stock": 37,
+          "productNumber": "HD-f79cd7fa7a96"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "f79cd7fa7a964076879405a01e596f2c"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-f79cd7fa7a96",
+              "stock": 37,
+              "name": "Papierwerft Artikel 4",
+              "id": "f79cd7fa7a964076879405a01e596f2c",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "f79cd7fa7a964076879405a01e596f2c",
+          "name": "Papierwerft Artikel 4",
+          "stock": 37,
+          "productNumber": "HD-f79cd7fa7a96"
+        },
+        "after": {
+          "id": "f79cd7fa7a964076879405a01e596f2c",
+          "name": "Papierwerft Artikel 4",
+          "stock": 37,
+          "productNumber": "HD-f79cd7fa7a96"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/f79cd7fa7a964076879405a01e596f2c",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-f79cd7fa7a96",
+            "stock": 37,
+            "name": "Papierwerft Artikel 4",
+            "id": "f79cd7fa7a964076879405a01e596f2c",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "f79cd7fa7a964076879405a01e596f2c",
+          "name": "Papierwerft Artikel 4",
+          "stock": 37,
+          "productNumber": "HD-f79cd7fa7a96"
+        },
+        "after": {
+          "id": "f79cd7fa7a964076879405a01e596f2c",
+          "name": "Papierwerft Artikel 4",
+          "stock": 37,
+          "productNumber": "HD-f79cd7fa7a96"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/_action/sync",
+        "body": [
+          {
+            "key": "write",
+            "action": "upsert",
+            "entity": "product",
+            "payload": [
+              {
+                "id": "f79cd7fa7a964076879405a01e596f2c",
+                "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+                "stock": 62
+              }
+            ]
+          }
+        ],
+        "status": 200,
+        "response": {
+          "extensions": [],
+          "data": {
+            "product": [
+              "f79cd7fa7a964076879405a01e596f2c"
+            ],
+            "product_translation": [
+              {
+                "productId": "f79cd7fa7a964076879405a01e596f2c",
+                "languageId": "2fbb5fe2e29a4d70aa5854ce7ce3e20b"
+              }
+            ]
+          },
+          "notFound": [],
+          "deleted": []
+        },
+        "before": {
+          "id": "f79cd7fa7a964076879405a01e596f2c",
+          "name": "Papierwerft Artikel 4",
+          "stock": 37,
+          "productNumber": "HD-f79cd7fa7a96"
+        },
+        "after": {
+          "id": "f79cd7fa7a964076879405a01e596f2c",
+          "name": "Papierwerft Artikel 4",
+          "stock": 62,
+          "productNumber": "HD-f79cd7fa7a96"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "f79cd7fa7a964076879405a01e596f2c"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-f79cd7fa7a96",
+              "stock": 62,
+              "name": "Papierwerft Artikel 4",
+              "id": "f79cd7fa7a964076879405a01e596f2c",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "f79cd7fa7a964076879405a01e596f2c",
+          "name": "Papierwerft Artikel 4",
+          "stock": 62,
+          "productNumber": "HD-f79cd7fa7a96"
+        },
+        "after": {
+          "id": "f79cd7fa7a964076879405a01e596f2c",
+          "name": "Papierwerft Artikel 4",
+          "stock": 62,
+          "productNumber": "HD-f79cd7fa7a96"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/f79cd7fa7a964076879405a01e596f2c",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-f79cd7fa7a96",
+            "stock": 62,
+            "name": "Papierwerft Artikel 4",
+            "id": "f79cd7fa7a964076879405a01e596f2c",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "f79cd7fa7a964076879405a01e596f2c",
+          "name": "Papierwerft Artikel 4",
+          "stock": 62,
+          "productNumber": "HD-f79cd7fa7a96"
+        },
+        "after": {
+          "id": "f79cd7fa7a964076879405a01e596f2c",
+          "name": "Papierwerft Artikel 4",
+          "stock": 62,
+          "productNumber": "HD-f79cd7fa7a96"
+        }
+      }
+    ]
+  },
+  {
+    "split": "holdout",
+    "channel": "9cf12440fdd1490c9792bf16e0d6abd7",
+    "record": {
+      "id": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+      "name": "Papierwerft Artikel 5",
+      "stock": 7,
+      "productNumber": "HD-f52ca85d9ea4"
+    },
+    "requests": [
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "f52ca85d9ea44f5e8eb6c6692d58b5b5"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-f52ca85d9ea4",
+              "stock": 7,
+              "name": "Papierwerft Artikel 5",
+              "id": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+          "name": "Papierwerft Artikel 5",
+          "stock": 7,
+          "productNumber": "HD-f52ca85d9ea4"
+        },
+        "after": {
+          "id": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+          "name": "Papierwerft Artikel 5",
+          "stock": 7,
+          "productNumber": "HD-f52ca85d9ea4"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/f52ca85d9ea44f5e8eb6c6692d58b5b5",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-f52ca85d9ea4",
+            "stock": 7,
+            "name": "Papierwerft Artikel 5",
+            "id": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+          "name": "Papierwerft Artikel 5",
+          "stock": 7,
+          "productNumber": "HD-f52ca85d9ea4"
+        },
+        "after": {
+          "id": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+          "name": "Papierwerft Artikel 5",
+          "stock": 7,
+          "productNumber": "HD-f52ca85d9ea4"
+        }
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/product/f52ca85d9ea44f5e8eb6c6692d58b5b5",
+        "body": {
+          "stock": 36
+        },
+        "status": 204,
+        "response": null,
+        "before": {
+          "id": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+          "name": "Papierwerft Artikel 5",
+          "stock": 7,
+          "productNumber": "HD-f52ca85d9ea4"
+        },
+        "after": {
+          "id": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+          "name": "Papierwerft Artikel 5",
+          "stock": 36,
+          "productNumber": "HD-f52ca85d9ea4"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "f52ca85d9ea44f5e8eb6c6692d58b5b5"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-f52ca85d9ea4",
+              "stock": 36,
+              "name": "Papierwerft Artikel 5",
+              "id": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+          "name": "Papierwerft Artikel 5",
+          "stock": 36,
+          "productNumber": "HD-f52ca85d9ea4"
+        },
+        "after": {
+          "id": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+          "name": "Papierwerft Artikel 5",
+          "stock": 36,
+          "productNumber": "HD-f52ca85d9ea4"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/f52ca85d9ea44f5e8eb6c6692d58b5b5",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-f52ca85d9ea4",
+            "stock": 36,
+            "name": "Papierwerft Artikel 5",
+            "id": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+          "name": "Papierwerft Artikel 5",
+          "stock": 36,
+          "productNumber": "HD-f52ca85d9ea4"
+        },
+        "after": {
+          "id": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+          "name": "Papierwerft Artikel 5",
+          "stock": 36,
+          "productNumber": "HD-f52ca85d9ea4"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/_action/sync",
+        "body": [
+          {
+            "key": "write",
+            "action": "upsert",
+            "entity": "product",
+            "payload": [
+              {
+                "id": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+                "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+                "stock": 57
+              }
+            ]
+          }
+        ],
+        "status": 200,
+        "response": {
+          "extensions": [],
+          "data": {
+            "product": [
+              "f52ca85d9ea44f5e8eb6c6692d58b5b5"
+            ],
+            "product_translation": [
+              {
+                "productId": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+                "languageId": "2fbb5fe2e29a4d70aa5854ce7ce3e20b"
+              }
+            ]
+          },
+          "notFound": [],
+          "deleted": []
+        },
+        "before": {
+          "id": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+          "name": "Papierwerft Artikel 5",
+          "stock": 36,
+          "productNumber": "HD-f52ca85d9ea4"
+        },
+        "after": {
+          "id": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+          "name": "Papierwerft Artikel 5",
+          "stock": 57,
+          "productNumber": "HD-f52ca85d9ea4"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "f52ca85d9ea44f5e8eb6c6692d58b5b5"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-f52ca85d9ea4",
+              "stock": 57,
+              "name": "Papierwerft Artikel 5",
+              "id": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+          "name": "Papierwerft Artikel 5",
+          "stock": 57,
+          "productNumber": "HD-f52ca85d9ea4"
+        },
+        "after": {
+          "id": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+          "name": "Papierwerft Artikel 5",
+          "stock": 57,
+          "productNumber": "HD-f52ca85d9ea4"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/f52ca85d9ea44f5e8eb6c6692d58b5b5",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-f52ca85d9ea4",
+            "stock": 57,
+            "name": "Papierwerft Artikel 5",
+            "id": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+          "name": "Papierwerft Artikel 5",
+          "stock": 57,
+          "productNumber": "HD-f52ca85d9ea4"
+        },
+        "after": {
+          "id": "f52ca85d9ea44f5e8eb6c6692d58b5b5",
+          "name": "Papierwerft Artikel 5",
+          "stock": 57,
+          "productNumber": "HD-f52ca85d9ea4"
+        }
+      }
+    ]
+  },
+  {
+    "split": "holdout",
+    "channel": "9cf12440fdd1490c9792bf16e0d6abd7",
+    "record": {
+      "id": "c620492c8b1d4e14a6fffbcbb6eaad63",
+      "name": "Papierwerft Artikel 6",
+      "stock": 5,
+      "productNumber": "HD-c620492c8b1d"
+    },
+    "requests": [
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "c620492c8b1d4e14a6fffbcbb6eaad63"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-c620492c8b1d",
+              "stock": 5,
+              "name": "Papierwerft Artikel 6",
+              "id": "c620492c8b1d4e14a6fffbcbb6eaad63",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "c620492c8b1d4e14a6fffbcbb6eaad63",
+          "name": "Papierwerft Artikel 6",
+          "stock": 5,
+          "productNumber": "HD-c620492c8b1d"
+        },
+        "after": {
+          "id": "c620492c8b1d4e14a6fffbcbb6eaad63",
+          "name": "Papierwerft Artikel 6",
+          "stock": 5,
+          "productNumber": "HD-c620492c8b1d"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/c620492c8b1d4e14a6fffbcbb6eaad63",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-c620492c8b1d",
+            "stock": 5,
+            "name": "Papierwerft Artikel 6",
+            "id": "c620492c8b1d4e14a6fffbcbb6eaad63",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "c620492c8b1d4e14a6fffbcbb6eaad63",
+          "name": "Papierwerft Artikel 6",
+          "stock": 5,
+          "productNumber": "HD-c620492c8b1d"
+        },
+        "after": {
+          "id": "c620492c8b1d4e14a6fffbcbb6eaad63",
+          "name": "Papierwerft Artikel 6",
+          "stock": 5,
+          "productNumber": "HD-c620492c8b1d"
+        }
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/product/c620492c8b1d4e14a6fffbcbb6eaad63",
+        "body": {
+          "stock": 23
+        },
+        "status": 204,
+        "response": null,
+        "before": {
+          "id": "c620492c8b1d4e14a6fffbcbb6eaad63",
+          "name": "Papierwerft Artikel 6",
+          "stock": 5,
+          "productNumber": "HD-c620492c8b1d"
+        },
+        "after": {
+          "id": "c620492c8b1d4e14a6fffbcbb6eaad63",
+          "name": "Papierwerft Artikel 6",
+          "stock": 23,
+          "productNumber": "HD-c620492c8b1d"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "c620492c8b1d4e14a6fffbcbb6eaad63"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-c620492c8b1d",
+              "stock": 23,
+              "name": "Papierwerft Artikel 6",
+              "id": "c620492c8b1d4e14a6fffbcbb6eaad63",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "c620492c8b1d4e14a6fffbcbb6eaad63",
+          "name": "Papierwerft Artikel 6",
+          "stock": 23,
+          "productNumber": "HD-c620492c8b1d"
+        },
+        "after": {
+          "id": "c620492c8b1d4e14a6fffbcbb6eaad63",
+          "name": "Papierwerft Artikel 6",
+          "stock": 23,
+          "productNumber": "HD-c620492c8b1d"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/c620492c8b1d4e14a6fffbcbb6eaad63",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-c620492c8b1d",
+            "stock": 23,
+            "name": "Papierwerft Artikel 6",
+            "id": "c620492c8b1d4e14a6fffbcbb6eaad63",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "c620492c8b1d4e14a6fffbcbb6eaad63",
+          "name": "Papierwerft Artikel 6",
+          "stock": 23,
+          "productNumber": "HD-c620492c8b1d"
+        },
+        "after": {
+          "id": "c620492c8b1d4e14a6fffbcbb6eaad63",
+          "name": "Papierwerft Artikel 6",
+          "stock": 23,
+          "productNumber": "HD-c620492c8b1d"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/_action/sync",
+        "body": [
+          {
+            "key": "write",
+            "action": "upsert",
+            "entity": "product",
+            "payload": [
+              {
+                "id": "c620492c8b1d4e14a6fffbcbb6eaad63",
+                "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+                "stock": 57
+              }
+            ]
+          }
+        ],
+        "status": 200,
+        "response": {
+          "extensions": [],
+          "data": {
+            "product": [
+              "c620492c8b1d4e14a6fffbcbb6eaad63"
+            ],
+            "product_translation": [
+              {
+                "productId": "c620492c8b1d4e14a6fffbcbb6eaad63",
+                "languageId": "2fbb5fe2e29a4d70aa5854ce7ce3e20b"
+              }
+            ]
+          },
+          "notFound": [],
+          "deleted": []
+        },
+        "before": {
+          "id": "c620492c8b1d4e14a6fffbcbb6eaad63",
+          "name": "Papierwerft Artikel 6",
+          "stock": 23,
+          "productNumber": "HD-c620492c8b1d"
+        },
+        "after": {
+          "id": "c620492c8b1d4e14a6fffbcbb6eaad63",
+          "name": "Papierwerft Artikel 6",
+          "stock": 57,
+          "productNumber": "HD-c620492c8b1d"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "c620492c8b1d4e14a6fffbcbb6eaad63"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-c620492c8b1d",
+              "stock": 57,
+              "name": "Papierwerft Artikel 6",
+              "id": "c620492c8b1d4e14a6fffbcbb6eaad63",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "c620492c8b1d4e14a6fffbcbb6eaad63",
+          "name": "Papierwerft Artikel 6",
+          "stock": 57,
+          "productNumber": "HD-c620492c8b1d"
+        },
+        "after": {
+          "id": "c620492c8b1d4e14a6fffbcbb6eaad63",
+          "name": "Papierwerft Artikel 6",
+          "stock": 57,
+          "productNumber": "HD-c620492c8b1d"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/c620492c8b1d4e14a6fffbcbb6eaad63",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-c620492c8b1d",
+            "stock": 57,
+            "name": "Papierwerft Artikel 6",
+            "id": "c620492c8b1d4e14a6fffbcbb6eaad63",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "c620492c8b1d4e14a6fffbcbb6eaad63",
+          "name": "Papierwerft Artikel 6",
+          "stock": 57,
+          "productNumber": "HD-c620492c8b1d"
+        },
+        "after": {
+          "id": "c620492c8b1d4e14a6fffbcbb6eaad63",
+          "name": "Papierwerft Artikel 6",
+          "stock": 57,
+          "productNumber": "HD-c620492c8b1d"
+        }
+      }
+    ]
+  },
+  {
+    "split": "holdout",
+    "channel": "9cf12440fdd1490c9792bf16e0d6abd7",
+    "record": {
+      "id": "2ad5ea94162649c2a26bc7fcb7f899cd",
+      "name": "Papierwerft Artikel 7",
+      "stock": 9,
+      "productNumber": "HD-2ad5ea941626"
+    },
+    "requests": [
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "2ad5ea94162649c2a26bc7fcb7f899cd"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-2ad5ea941626",
+              "stock": 9,
+              "name": "Papierwerft Artikel 7",
+              "id": "2ad5ea94162649c2a26bc7fcb7f899cd",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "2ad5ea94162649c2a26bc7fcb7f899cd",
+          "name": "Papierwerft Artikel 7",
+          "stock": 9,
+          "productNumber": "HD-2ad5ea941626"
+        },
+        "after": {
+          "id": "2ad5ea94162649c2a26bc7fcb7f899cd",
+          "name": "Papierwerft Artikel 7",
+          "stock": 9,
+          "productNumber": "HD-2ad5ea941626"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/2ad5ea94162649c2a26bc7fcb7f899cd",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-2ad5ea941626",
+            "stock": 9,
+            "name": "Papierwerft Artikel 7",
+            "id": "2ad5ea94162649c2a26bc7fcb7f899cd",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "2ad5ea94162649c2a26bc7fcb7f899cd",
+          "name": "Papierwerft Artikel 7",
+          "stock": 9,
+          "productNumber": "HD-2ad5ea941626"
+        },
+        "after": {
+          "id": "2ad5ea94162649c2a26bc7fcb7f899cd",
+          "name": "Papierwerft Artikel 7",
+          "stock": 9,
+          "productNumber": "HD-2ad5ea941626"
+        }
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/product/2ad5ea94162649c2a26bc7fcb7f899cd",
+        "body": {
+          "stock": 45
+        },
+        "status": 204,
+        "response": null,
+        "before": {
+          "id": "2ad5ea94162649c2a26bc7fcb7f899cd",
+          "name": "Papierwerft Artikel 7",
+          "stock": 9,
+          "productNumber": "HD-2ad5ea941626"
+        },
+        "after": {
+          "id": "2ad5ea94162649c2a26bc7fcb7f899cd",
+          "name": "Papierwerft Artikel 7",
+          "stock": 45,
+          "productNumber": "HD-2ad5ea941626"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "2ad5ea94162649c2a26bc7fcb7f899cd"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-2ad5ea941626",
+              "stock": 45,
+              "name": "Papierwerft Artikel 7",
+              "id": "2ad5ea94162649c2a26bc7fcb7f899cd",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "2ad5ea94162649c2a26bc7fcb7f899cd",
+          "name": "Papierwerft Artikel 7",
+          "stock": 45,
+          "productNumber": "HD-2ad5ea941626"
+        },
+        "after": {
+          "id": "2ad5ea94162649c2a26bc7fcb7f899cd",
+          "name": "Papierwerft Artikel 7",
+          "stock": 45,
+          "productNumber": "HD-2ad5ea941626"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/2ad5ea94162649c2a26bc7fcb7f899cd",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-2ad5ea941626",
+            "stock": 45,
+            "name": "Papierwerft Artikel 7",
+            "id": "2ad5ea94162649c2a26bc7fcb7f899cd",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "2ad5ea94162649c2a26bc7fcb7f899cd",
+          "name": "Papierwerft Artikel 7",
+          "stock": 45,
+          "productNumber": "HD-2ad5ea941626"
+        },
+        "after": {
+          "id": "2ad5ea94162649c2a26bc7fcb7f899cd",
+          "name": "Papierwerft Artikel 7",
+          "stock": 45,
+          "productNumber": "HD-2ad5ea941626"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/_action/sync",
+        "body": [
+          {
+            "key": "write",
+            "action": "upsert",
+            "entity": "product",
+            "payload": [
+              {
+                "id": "2ad5ea94162649c2a26bc7fcb7f899cd",
+                "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+                "stock": 60
+              }
+            ]
+          }
+        ],
+        "status": 200,
+        "response": {
+          "extensions": [],
+          "data": {
+            "product": [
+              "2ad5ea94162649c2a26bc7fcb7f899cd"
+            ],
+            "product_translation": [
+              {
+                "productId": "2ad5ea94162649c2a26bc7fcb7f899cd",
+                "languageId": "2fbb5fe2e29a4d70aa5854ce7ce3e20b"
+              }
+            ]
+          },
+          "notFound": [],
+          "deleted": []
+        },
+        "before": {
+          "id": "2ad5ea94162649c2a26bc7fcb7f899cd",
+          "name": "Papierwerft Artikel 7",
+          "stock": 45,
+          "productNumber": "HD-2ad5ea941626"
+        },
+        "after": {
+          "id": "2ad5ea94162649c2a26bc7fcb7f899cd",
+          "name": "Papierwerft Artikel 7",
+          "stock": 60,
+          "productNumber": "HD-2ad5ea941626"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "2ad5ea94162649c2a26bc7fcb7f899cd"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-2ad5ea941626",
+              "stock": 60,
+              "name": "Papierwerft Artikel 7",
+              "id": "2ad5ea94162649c2a26bc7fcb7f899cd",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "2ad5ea94162649c2a26bc7fcb7f899cd",
+          "name": "Papierwerft Artikel 7",
+          "stock": 60,
+          "productNumber": "HD-2ad5ea941626"
+        },
+        "after": {
+          "id": "2ad5ea94162649c2a26bc7fcb7f899cd",
+          "name": "Papierwerft Artikel 7",
+          "stock": 60,
+          "productNumber": "HD-2ad5ea941626"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/2ad5ea94162649c2a26bc7fcb7f899cd",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-2ad5ea941626",
+            "stock": 60,
+            "name": "Papierwerft Artikel 7",
+            "id": "2ad5ea94162649c2a26bc7fcb7f899cd",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "2ad5ea94162649c2a26bc7fcb7f899cd",
+          "name": "Papierwerft Artikel 7",
+          "stock": 60,
+          "productNumber": "HD-2ad5ea941626"
+        },
+        "after": {
+          "id": "2ad5ea94162649c2a26bc7fcb7f899cd",
+          "name": "Papierwerft Artikel 7",
+          "stock": 60,
+          "productNumber": "HD-2ad5ea941626"
+        }
+      }
+    ]
+  },
+  {
+    "split": "holdout",
+    "channel": "9cf12440fdd1490c9792bf16e0d6abd7",
+    "record": {
+      "id": "b073497eeb664346b59008eb7425fd1f",
+      "name": "Papierwerft Artikel 8",
+      "stock": 9,
+      "productNumber": "HD-b073497eeb66"
+    },
+    "requests": [
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "b073497eeb664346b59008eb7425fd1f"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-b073497eeb66",
+              "stock": 9,
+              "name": "Papierwerft Artikel 8",
+              "id": "b073497eeb664346b59008eb7425fd1f",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "b073497eeb664346b59008eb7425fd1f",
+          "name": "Papierwerft Artikel 8",
+          "stock": 9,
+          "productNumber": "HD-b073497eeb66"
+        },
+        "after": {
+          "id": "b073497eeb664346b59008eb7425fd1f",
+          "name": "Papierwerft Artikel 8",
+          "stock": 9,
+          "productNumber": "HD-b073497eeb66"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/b073497eeb664346b59008eb7425fd1f",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-b073497eeb66",
+            "stock": 9,
+            "name": "Papierwerft Artikel 8",
+            "id": "b073497eeb664346b59008eb7425fd1f",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "b073497eeb664346b59008eb7425fd1f",
+          "name": "Papierwerft Artikel 8",
+          "stock": 9,
+          "productNumber": "HD-b073497eeb66"
+        },
+        "after": {
+          "id": "b073497eeb664346b59008eb7425fd1f",
+          "name": "Papierwerft Artikel 8",
+          "stock": 9,
+          "productNumber": "HD-b073497eeb66"
+        }
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/product/b073497eeb664346b59008eb7425fd1f",
+        "body": {
+          "stock": 52
+        },
+        "status": 204,
+        "response": null,
+        "before": {
+          "id": "b073497eeb664346b59008eb7425fd1f",
+          "name": "Papierwerft Artikel 8",
+          "stock": 9,
+          "productNumber": "HD-b073497eeb66"
+        },
+        "after": {
+          "id": "b073497eeb664346b59008eb7425fd1f",
+          "name": "Papierwerft Artikel 8",
+          "stock": 52,
+          "productNumber": "HD-b073497eeb66"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "b073497eeb664346b59008eb7425fd1f"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-b073497eeb66",
+              "stock": 52,
+              "name": "Papierwerft Artikel 8",
+              "id": "b073497eeb664346b59008eb7425fd1f",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "b073497eeb664346b59008eb7425fd1f",
+          "name": "Papierwerft Artikel 8",
+          "stock": 52,
+          "productNumber": "HD-b073497eeb66"
+        },
+        "after": {
+          "id": "b073497eeb664346b59008eb7425fd1f",
+          "name": "Papierwerft Artikel 8",
+          "stock": 52,
+          "productNumber": "HD-b073497eeb66"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/b073497eeb664346b59008eb7425fd1f",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-b073497eeb66",
+            "stock": 52,
+            "name": "Papierwerft Artikel 8",
+            "id": "b073497eeb664346b59008eb7425fd1f",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "b073497eeb664346b59008eb7425fd1f",
+          "name": "Papierwerft Artikel 8",
+          "stock": 52,
+          "productNumber": "HD-b073497eeb66"
+        },
+        "after": {
+          "id": "b073497eeb664346b59008eb7425fd1f",
+          "name": "Papierwerft Artikel 8",
+          "stock": 52,
+          "productNumber": "HD-b073497eeb66"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/_action/sync",
+        "body": [
+          {
+            "key": "write",
+            "action": "upsert",
+            "entity": "product",
+            "payload": [
+              {
+                "id": "b073497eeb664346b59008eb7425fd1f",
+                "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+                "stock": 63
+              }
+            ]
+          }
+        ],
+        "status": 200,
+        "response": {
+          "extensions": [],
+          "data": {
+            "product": [
+              "b073497eeb664346b59008eb7425fd1f"
+            ],
+            "product_translation": [
+              {
+                "productId": "b073497eeb664346b59008eb7425fd1f",
+                "languageId": "2fbb5fe2e29a4d70aa5854ce7ce3e20b"
+              }
+            ]
+          },
+          "notFound": [],
+          "deleted": []
+        },
+        "before": {
+          "id": "b073497eeb664346b59008eb7425fd1f",
+          "name": "Papierwerft Artikel 8",
+          "stock": 52,
+          "productNumber": "HD-b073497eeb66"
+        },
+        "after": {
+          "id": "b073497eeb664346b59008eb7425fd1f",
+          "name": "Papierwerft Artikel 8",
+          "stock": 63,
+          "productNumber": "HD-b073497eeb66"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "b073497eeb664346b59008eb7425fd1f"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-b073497eeb66",
+              "stock": 63,
+              "name": "Papierwerft Artikel 8",
+              "id": "b073497eeb664346b59008eb7425fd1f",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "b073497eeb664346b59008eb7425fd1f",
+          "name": "Papierwerft Artikel 8",
+          "stock": 63,
+          "productNumber": "HD-b073497eeb66"
+        },
+        "after": {
+          "id": "b073497eeb664346b59008eb7425fd1f",
+          "name": "Papierwerft Artikel 8",
+          "stock": 63,
+          "productNumber": "HD-b073497eeb66"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/b073497eeb664346b59008eb7425fd1f",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-b073497eeb66",
+            "stock": 63,
+            "name": "Papierwerft Artikel 8",
+            "id": "b073497eeb664346b59008eb7425fd1f",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "b073497eeb664346b59008eb7425fd1f",
+          "name": "Papierwerft Artikel 8",
+          "stock": 63,
+          "productNumber": "HD-b073497eeb66"
+        },
+        "after": {
+          "id": "b073497eeb664346b59008eb7425fd1f",
+          "name": "Papierwerft Artikel 8",
+          "stock": 63,
+          "productNumber": "HD-b073497eeb66"
+        }
+      }
+    ]
+  },
+  {
+    "split": "holdout",
+    "channel": "9cf12440fdd1490c9792bf16e0d6abd7",
+    "record": {
+      "id": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+      "name": "Papierwerft Artikel 9",
+      "stock": 10,
+      "productNumber": "HD-4e9b6927df4d"
+    },
+    "requests": [
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "4e9b6927df4d41e5aad36c03ae8ec0fa"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-4e9b6927df4d",
+              "stock": 10,
+              "name": "Papierwerft Artikel 9",
+              "id": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+          "name": "Papierwerft Artikel 9",
+          "stock": 10,
+          "productNumber": "HD-4e9b6927df4d"
+        },
+        "after": {
+          "id": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+          "name": "Papierwerft Artikel 9",
+          "stock": 10,
+          "productNumber": "HD-4e9b6927df4d"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/4e9b6927df4d41e5aad36c03ae8ec0fa",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-4e9b6927df4d",
+            "stock": 10,
+            "name": "Papierwerft Artikel 9",
+            "id": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+          "name": "Papierwerft Artikel 9",
+          "stock": 10,
+          "productNumber": "HD-4e9b6927df4d"
+        },
+        "after": {
+          "id": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+          "name": "Papierwerft Artikel 9",
+          "stock": 10,
+          "productNumber": "HD-4e9b6927df4d"
+        }
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/product/4e9b6927df4d41e5aad36c03ae8ec0fa",
+        "body": {
+          "stock": 51
+        },
+        "status": 204,
+        "response": null,
+        "before": {
+          "id": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+          "name": "Papierwerft Artikel 9",
+          "stock": 10,
+          "productNumber": "HD-4e9b6927df4d"
+        },
+        "after": {
+          "id": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+          "name": "Papierwerft Artikel 9",
+          "stock": 51,
+          "productNumber": "HD-4e9b6927df4d"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "4e9b6927df4d41e5aad36c03ae8ec0fa"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-4e9b6927df4d",
+              "stock": 51,
+              "name": "Papierwerft Artikel 9",
+              "id": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+          "name": "Papierwerft Artikel 9",
+          "stock": 51,
+          "productNumber": "HD-4e9b6927df4d"
+        },
+        "after": {
+          "id": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+          "name": "Papierwerft Artikel 9",
+          "stock": 51,
+          "productNumber": "HD-4e9b6927df4d"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/4e9b6927df4d41e5aad36c03ae8ec0fa",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-4e9b6927df4d",
+            "stock": 51,
+            "name": "Papierwerft Artikel 9",
+            "id": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+          "name": "Papierwerft Artikel 9",
+          "stock": 51,
+          "productNumber": "HD-4e9b6927df4d"
+        },
+        "after": {
+          "id": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+          "name": "Papierwerft Artikel 9",
+          "stock": 51,
+          "productNumber": "HD-4e9b6927df4d"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/_action/sync",
+        "body": [
+          {
+            "key": "write",
+            "action": "upsert",
+            "entity": "product",
+            "payload": [
+              {
+                "id": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+                "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+                "stock": 62
+              }
+            ]
+          }
+        ],
+        "status": 200,
+        "response": {
+          "extensions": [],
+          "data": {
+            "product": [
+              "4e9b6927df4d41e5aad36c03ae8ec0fa"
+            ],
+            "product_translation": [
+              {
+                "productId": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+                "languageId": "2fbb5fe2e29a4d70aa5854ce7ce3e20b"
+              }
+            ]
+          },
+          "notFound": [],
+          "deleted": []
+        },
+        "before": {
+          "id": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+          "name": "Papierwerft Artikel 9",
+          "stock": 51,
+          "productNumber": "HD-4e9b6927df4d"
+        },
+        "after": {
+          "id": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+          "name": "Papierwerft Artikel 9",
+          "stock": 62,
+          "productNumber": "HD-4e9b6927df4d"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "4e9b6927df4d41e5aad36c03ae8ec0fa"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-4e9b6927df4d",
+              "stock": 62,
+              "name": "Papierwerft Artikel 9",
+              "id": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+          "name": "Papierwerft Artikel 9",
+          "stock": 62,
+          "productNumber": "HD-4e9b6927df4d"
+        },
+        "after": {
+          "id": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+          "name": "Papierwerft Artikel 9",
+          "stock": 62,
+          "productNumber": "HD-4e9b6927df4d"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/4e9b6927df4d41e5aad36c03ae8ec0fa",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-4e9b6927df4d",
+            "stock": 62,
+            "name": "Papierwerft Artikel 9",
+            "id": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+          "name": "Papierwerft Artikel 9",
+          "stock": 62,
+          "productNumber": "HD-4e9b6927df4d"
+        },
+        "after": {
+          "id": "4e9b6927df4d41e5aad36c03ae8ec0fa",
+          "name": "Papierwerft Artikel 9",
+          "stock": 62,
+          "productNumber": "HD-4e9b6927df4d"
+        }
+      }
+    ]
+  },
+  {
+    "split": "holdout",
+    "channel": "9cf12440fdd1490c9792bf16e0d6abd7",
+    "record": {
+      "id": "8cbf5de9d68e47b68f4421d9b13ccb73",
+      "name": "Papierwerft Artikel 10",
+      "stock": 9,
+      "productNumber": "HD-8cbf5de9d68e"
+    },
+    "requests": [
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "8cbf5de9d68e47b68f4421d9b13ccb73"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-8cbf5de9d68e",
+              "stock": 9,
+              "name": "Papierwerft Artikel 10",
+              "id": "8cbf5de9d68e47b68f4421d9b13ccb73",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "8cbf5de9d68e47b68f4421d9b13ccb73",
+          "name": "Papierwerft Artikel 10",
+          "stock": 9,
+          "productNumber": "HD-8cbf5de9d68e"
+        },
+        "after": {
+          "id": "8cbf5de9d68e47b68f4421d9b13ccb73",
+          "name": "Papierwerft Artikel 10",
+          "stock": 9,
+          "productNumber": "HD-8cbf5de9d68e"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/8cbf5de9d68e47b68f4421d9b13ccb73",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-8cbf5de9d68e",
+            "stock": 9,
+            "name": "Papierwerft Artikel 10",
+            "id": "8cbf5de9d68e47b68f4421d9b13ccb73",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "8cbf5de9d68e47b68f4421d9b13ccb73",
+          "name": "Papierwerft Artikel 10",
+          "stock": 9,
+          "productNumber": "HD-8cbf5de9d68e"
+        },
+        "after": {
+          "id": "8cbf5de9d68e47b68f4421d9b13ccb73",
+          "name": "Papierwerft Artikel 10",
+          "stock": 9,
+          "productNumber": "HD-8cbf5de9d68e"
+        }
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/product/8cbf5de9d68e47b68f4421d9b13ccb73",
+        "body": {
+          "stock": 29
+        },
+        "status": 204,
+        "response": null,
+        "before": {
+          "id": "8cbf5de9d68e47b68f4421d9b13ccb73",
+          "name": "Papierwerft Artikel 10",
+          "stock": 9,
+          "productNumber": "HD-8cbf5de9d68e"
+        },
+        "after": {
+          "id": "8cbf5de9d68e47b68f4421d9b13ccb73",
+          "name": "Papierwerft Artikel 10",
+          "stock": 29,
+          "productNumber": "HD-8cbf5de9d68e"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "8cbf5de9d68e47b68f4421d9b13ccb73"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-8cbf5de9d68e",
+              "stock": 29,
+              "name": "Papierwerft Artikel 10",
+              "id": "8cbf5de9d68e47b68f4421d9b13ccb73",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "8cbf5de9d68e47b68f4421d9b13ccb73",
+          "name": "Papierwerft Artikel 10",
+          "stock": 29,
+          "productNumber": "HD-8cbf5de9d68e"
+        },
+        "after": {
+          "id": "8cbf5de9d68e47b68f4421d9b13ccb73",
+          "name": "Papierwerft Artikel 10",
+          "stock": 29,
+          "productNumber": "HD-8cbf5de9d68e"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/8cbf5de9d68e47b68f4421d9b13ccb73",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-8cbf5de9d68e",
+            "stock": 29,
+            "name": "Papierwerft Artikel 10",
+            "id": "8cbf5de9d68e47b68f4421d9b13ccb73",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "8cbf5de9d68e47b68f4421d9b13ccb73",
+          "name": "Papierwerft Artikel 10",
+          "stock": 29,
+          "productNumber": "HD-8cbf5de9d68e"
+        },
+        "after": {
+          "id": "8cbf5de9d68e47b68f4421d9b13ccb73",
+          "name": "Papierwerft Artikel 10",
+          "stock": 29,
+          "productNumber": "HD-8cbf5de9d68e"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/_action/sync",
+        "body": [
+          {
+            "key": "write",
+            "action": "upsert",
+            "entity": "product",
+            "payload": [
+              {
+                "id": "8cbf5de9d68e47b68f4421d9b13ccb73",
+                "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+                "stock": 63
+              }
+            ]
+          }
+        ],
+        "status": 200,
+        "response": {
+          "extensions": [],
+          "data": {
+            "product": [
+              "8cbf5de9d68e47b68f4421d9b13ccb73"
+            ],
+            "product_translation": [
+              {
+                "productId": "8cbf5de9d68e47b68f4421d9b13ccb73",
+                "languageId": "2fbb5fe2e29a4d70aa5854ce7ce3e20b"
+              }
+            ]
+          },
+          "notFound": [],
+          "deleted": []
+        },
+        "before": {
+          "id": "8cbf5de9d68e47b68f4421d9b13ccb73",
+          "name": "Papierwerft Artikel 10",
+          "stock": 29,
+          "productNumber": "HD-8cbf5de9d68e"
+        },
+        "after": {
+          "id": "8cbf5de9d68e47b68f4421d9b13ccb73",
+          "name": "Papierwerft Artikel 10",
+          "stock": 63,
+          "productNumber": "HD-8cbf5de9d68e"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "8cbf5de9d68e47b68f4421d9b13ccb73"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-8cbf5de9d68e",
+              "stock": 63,
+              "name": "Papierwerft Artikel 10",
+              "id": "8cbf5de9d68e47b68f4421d9b13ccb73",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "8cbf5de9d68e47b68f4421d9b13ccb73",
+          "name": "Papierwerft Artikel 10",
+          "stock": 63,
+          "productNumber": "HD-8cbf5de9d68e"
+        },
+        "after": {
+          "id": "8cbf5de9d68e47b68f4421d9b13ccb73",
+          "name": "Papierwerft Artikel 10",
+          "stock": 63,
+          "productNumber": "HD-8cbf5de9d68e"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/8cbf5de9d68e47b68f4421d9b13ccb73",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-8cbf5de9d68e",
+            "stock": 63,
+            "name": "Papierwerft Artikel 10",
+            "id": "8cbf5de9d68e47b68f4421d9b13ccb73",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "8cbf5de9d68e47b68f4421d9b13ccb73",
+          "name": "Papierwerft Artikel 10",
+          "stock": 63,
+          "productNumber": "HD-8cbf5de9d68e"
+        },
+        "after": {
+          "id": "8cbf5de9d68e47b68f4421d9b13ccb73",
+          "name": "Papierwerft Artikel 10",
+          "stock": 63,
+          "productNumber": "HD-8cbf5de9d68e"
+        }
+      }
+    ]
+  },
+  {
+    "split": "holdout",
+    "channel": "9cf12440fdd1490c9792bf16e0d6abd7",
+    "record": {
+      "id": "693e7a5204904d3d99606652f665e7a4",
+      "name": "Papierwerft Artikel 11",
+      "stock": 11,
+      "productNumber": "HD-693e7a520490"
+    },
+    "requests": [
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "693e7a5204904d3d99606652f665e7a4"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-693e7a520490",
+              "stock": 11,
+              "name": "Papierwerft Artikel 11",
+              "id": "693e7a5204904d3d99606652f665e7a4",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "693e7a5204904d3d99606652f665e7a4",
+          "name": "Papierwerft Artikel 11",
+          "stock": 11,
+          "productNumber": "HD-693e7a520490"
+        },
+        "after": {
+          "id": "693e7a5204904d3d99606652f665e7a4",
+          "name": "Papierwerft Artikel 11",
+          "stock": 11,
+          "productNumber": "HD-693e7a520490"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/693e7a5204904d3d99606652f665e7a4",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-693e7a520490",
+            "stock": 11,
+            "name": "Papierwerft Artikel 11",
+            "id": "693e7a5204904d3d99606652f665e7a4",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "693e7a5204904d3d99606652f665e7a4",
+          "name": "Papierwerft Artikel 11",
+          "stock": 11,
+          "productNumber": "HD-693e7a520490"
+        },
+        "after": {
+          "id": "693e7a5204904d3d99606652f665e7a4",
+          "name": "Papierwerft Artikel 11",
+          "stock": 11,
+          "productNumber": "HD-693e7a520490"
+        }
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/product/693e7a5204904d3d99606652f665e7a4",
+        "body": {
+          "stock": 35
+        },
+        "status": 204,
+        "response": null,
+        "before": {
+          "id": "693e7a5204904d3d99606652f665e7a4",
+          "name": "Papierwerft Artikel 11",
+          "stock": 11,
+          "productNumber": "HD-693e7a520490"
+        },
+        "after": {
+          "id": "693e7a5204904d3d99606652f665e7a4",
+          "name": "Papierwerft Artikel 11",
+          "stock": 35,
+          "productNumber": "HD-693e7a520490"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "693e7a5204904d3d99606652f665e7a4"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-693e7a520490",
+              "stock": 35,
+              "name": "Papierwerft Artikel 11",
+              "id": "693e7a5204904d3d99606652f665e7a4",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "693e7a5204904d3d99606652f665e7a4",
+          "name": "Papierwerft Artikel 11",
+          "stock": 35,
+          "productNumber": "HD-693e7a520490"
+        },
+        "after": {
+          "id": "693e7a5204904d3d99606652f665e7a4",
+          "name": "Papierwerft Artikel 11",
+          "stock": 35,
+          "productNumber": "HD-693e7a520490"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/693e7a5204904d3d99606652f665e7a4",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-693e7a520490",
+            "stock": 35,
+            "name": "Papierwerft Artikel 11",
+            "id": "693e7a5204904d3d99606652f665e7a4",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "693e7a5204904d3d99606652f665e7a4",
+          "name": "Papierwerft Artikel 11",
+          "stock": 35,
+          "productNumber": "HD-693e7a520490"
+        },
+        "after": {
+          "id": "693e7a5204904d3d99606652f665e7a4",
+          "name": "Papierwerft Artikel 11",
+          "stock": 35,
+          "productNumber": "HD-693e7a520490"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/_action/sync",
+        "body": [
+          {
+            "key": "write",
+            "action": "upsert",
+            "entity": "product",
+            "payload": [
+              {
+                "id": "693e7a5204904d3d99606652f665e7a4",
+                "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+                "stock": 63
+              }
+            ]
+          }
+        ],
+        "status": 200,
+        "response": {
+          "extensions": [],
+          "data": {
+            "product": [
+              "693e7a5204904d3d99606652f665e7a4"
+            ],
+            "product_translation": [
+              {
+                "productId": "693e7a5204904d3d99606652f665e7a4",
+                "languageId": "2fbb5fe2e29a4d70aa5854ce7ce3e20b"
+              }
+            ]
+          },
+          "notFound": [],
+          "deleted": []
+        },
+        "before": {
+          "id": "693e7a5204904d3d99606652f665e7a4",
+          "name": "Papierwerft Artikel 11",
+          "stock": 35,
+          "productNumber": "HD-693e7a520490"
+        },
+        "after": {
+          "id": "693e7a5204904d3d99606652f665e7a4",
+          "name": "Papierwerft Artikel 11",
+          "stock": 63,
+          "productNumber": "HD-693e7a520490"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "693e7a5204904d3d99606652f665e7a4"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-693e7a520490",
+              "stock": 63,
+              "name": "Papierwerft Artikel 11",
+              "id": "693e7a5204904d3d99606652f665e7a4",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "693e7a5204904d3d99606652f665e7a4",
+          "name": "Papierwerft Artikel 11",
+          "stock": 63,
+          "productNumber": "HD-693e7a520490"
+        },
+        "after": {
+          "id": "693e7a5204904d3d99606652f665e7a4",
+          "name": "Papierwerft Artikel 11",
+          "stock": 63,
+          "productNumber": "HD-693e7a520490"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/693e7a5204904d3d99606652f665e7a4",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-693e7a520490",
+            "stock": 63,
+            "name": "Papierwerft Artikel 11",
+            "id": "693e7a5204904d3d99606652f665e7a4",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "693e7a5204904d3d99606652f665e7a4",
+          "name": "Papierwerft Artikel 11",
+          "stock": 63,
+          "productNumber": "HD-693e7a520490"
+        },
+        "after": {
+          "id": "693e7a5204904d3d99606652f665e7a4",
+          "name": "Papierwerft Artikel 11",
+          "stock": 63,
+          "productNumber": "HD-693e7a520490"
+        }
+      }
+    ]
+  },
+  {
+    "split": "holdout",
+    "channel": "9cf12440fdd1490c9792bf16e0d6abd7",
+    "record": {
+      "id": "9c4f0ce9191443ff8539413c1edb0635",
+      "name": "Papierwerft Artikel 12",
+      "stock": 3,
+      "productNumber": "HD-9c4f0ce91914"
+    },
+    "requests": [
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "9c4f0ce9191443ff8539413c1edb0635"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-9c4f0ce91914",
+              "stock": 3,
+              "name": "Papierwerft Artikel 12",
+              "id": "9c4f0ce9191443ff8539413c1edb0635",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "9c4f0ce9191443ff8539413c1edb0635",
+          "name": "Papierwerft Artikel 12",
+          "stock": 3,
+          "productNumber": "HD-9c4f0ce91914"
+        },
+        "after": {
+          "id": "9c4f0ce9191443ff8539413c1edb0635",
+          "name": "Papierwerft Artikel 12",
+          "stock": 3,
+          "productNumber": "HD-9c4f0ce91914"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/9c4f0ce9191443ff8539413c1edb0635",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-9c4f0ce91914",
+            "stock": 3,
+            "name": "Papierwerft Artikel 12",
+            "id": "9c4f0ce9191443ff8539413c1edb0635",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "9c4f0ce9191443ff8539413c1edb0635",
+          "name": "Papierwerft Artikel 12",
+          "stock": 3,
+          "productNumber": "HD-9c4f0ce91914"
+        },
+        "after": {
+          "id": "9c4f0ce9191443ff8539413c1edb0635",
+          "name": "Papierwerft Artikel 12",
+          "stock": 3,
+          "productNumber": "HD-9c4f0ce91914"
+        }
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/product/9c4f0ce9191443ff8539413c1edb0635",
+        "body": {
+          "stock": 42
+        },
+        "status": 204,
+        "response": null,
+        "before": {
+          "id": "9c4f0ce9191443ff8539413c1edb0635",
+          "name": "Papierwerft Artikel 12",
+          "stock": 3,
+          "productNumber": "HD-9c4f0ce91914"
+        },
+        "after": {
+          "id": "9c4f0ce9191443ff8539413c1edb0635",
+          "name": "Papierwerft Artikel 12",
+          "stock": 42,
+          "productNumber": "HD-9c4f0ce91914"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "9c4f0ce9191443ff8539413c1edb0635"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-9c4f0ce91914",
+              "stock": 42,
+              "name": "Papierwerft Artikel 12",
+              "id": "9c4f0ce9191443ff8539413c1edb0635",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "9c4f0ce9191443ff8539413c1edb0635",
+          "name": "Papierwerft Artikel 12",
+          "stock": 42,
+          "productNumber": "HD-9c4f0ce91914"
+        },
+        "after": {
+          "id": "9c4f0ce9191443ff8539413c1edb0635",
+          "name": "Papierwerft Artikel 12",
+          "stock": 42,
+          "productNumber": "HD-9c4f0ce91914"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/9c4f0ce9191443ff8539413c1edb0635",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-9c4f0ce91914",
+            "stock": 42,
+            "name": "Papierwerft Artikel 12",
+            "id": "9c4f0ce9191443ff8539413c1edb0635",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "9c4f0ce9191443ff8539413c1edb0635",
+          "name": "Papierwerft Artikel 12",
+          "stock": 42,
+          "productNumber": "HD-9c4f0ce91914"
+        },
+        "after": {
+          "id": "9c4f0ce9191443ff8539413c1edb0635",
+          "name": "Papierwerft Artikel 12",
+          "stock": 42,
+          "productNumber": "HD-9c4f0ce91914"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/_action/sync",
+        "body": [
+          {
+            "key": "write",
+            "action": "upsert",
+            "entity": "product",
+            "payload": [
+              {
+                "id": "9c4f0ce9191443ff8539413c1edb0635",
+                "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+                "stock": 60
+              }
+            ]
+          }
+        ],
+        "status": 200,
+        "response": {
+          "extensions": [],
+          "data": {
+            "product": [
+              "9c4f0ce9191443ff8539413c1edb0635"
+            ],
+            "product_translation": [
+              {
+                "productId": "9c4f0ce9191443ff8539413c1edb0635",
+                "languageId": "2fbb5fe2e29a4d70aa5854ce7ce3e20b"
+              }
+            ]
+          },
+          "notFound": [],
+          "deleted": []
+        },
+        "before": {
+          "id": "9c4f0ce9191443ff8539413c1edb0635",
+          "name": "Papierwerft Artikel 12",
+          "stock": 42,
+          "productNumber": "HD-9c4f0ce91914"
+        },
+        "after": {
+          "id": "9c4f0ce9191443ff8539413c1edb0635",
+          "name": "Papierwerft Artikel 12",
+          "stock": 60,
+          "productNumber": "HD-9c4f0ce91914"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "9c4f0ce9191443ff8539413c1edb0635"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-9c4f0ce91914",
+              "stock": 60,
+              "name": "Papierwerft Artikel 12",
+              "id": "9c4f0ce9191443ff8539413c1edb0635",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "9c4f0ce9191443ff8539413c1edb0635",
+          "name": "Papierwerft Artikel 12",
+          "stock": 60,
+          "productNumber": "HD-9c4f0ce91914"
+        },
+        "after": {
+          "id": "9c4f0ce9191443ff8539413c1edb0635",
+          "name": "Papierwerft Artikel 12",
+          "stock": 60,
+          "productNumber": "HD-9c4f0ce91914"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/9c4f0ce9191443ff8539413c1edb0635",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-9c4f0ce91914",
+            "stock": 60,
+            "name": "Papierwerft Artikel 12",
+            "id": "9c4f0ce9191443ff8539413c1edb0635",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "9c4f0ce9191443ff8539413c1edb0635",
+          "name": "Papierwerft Artikel 12",
+          "stock": 60,
+          "productNumber": "HD-9c4f0ce91914"
+        },
+        "after": {
+          "id": "9c4f0ce9191443ff8539413c1edb0635",
+          "name": "Papierwerft Artikel 12",
+          "stock": 60,
+          "productNumber": "HD-9c4f0ce91914"
+        }
+      }
+    ]
+  }
+]

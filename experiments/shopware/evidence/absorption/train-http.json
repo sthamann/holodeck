@@ -1,0 +1,2658 @@
+[
+  {
+    "split": "train",
+    "channel": "753eb1c5e0e14714bb176152196600d4",
+    "record": {
+      "id": "cc1145eb84644e54acc13ebf15cf7753",
+      "name": "Kornufer Artikel 1",
+      "stock": 10,
+      "productNumber": "HD-cc1145eb8464"
+    },
+    "requests": [
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "cc1145eb84644e54acc13ebf15cf7753"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-cc1145eb8464",
+              "stock": 10,
+              "name": "Kornufer Artikel 1",
+              "id": "cc1145eb84644e54acc13ebf15cf7753",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "cc1145eb84644e54acc13ebf15cf7753",
+          "name": "Kornufer Artikel 1",
+          "stock": 10,
+          "productNumber": "HD-cc1145eb8464"
+        },
+        "after": {
+          "id": "cc1145eb84644e54acc13ebf15cf7753",
+          "name": "Kornufer Artikel 1",
+          "stock": 10,
+          "productNumber": "HD-cc1145eb8464"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/cc1145eb84644e54acc13ebf15cf7753",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-cc1145eb8464",
+            "stock": 10,
+            "name": "Kornufer Artikel 1",
+            "id": "cc1145eb84644e54acc13ebf15cf7753",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "cc1145eb84644e54acc13ebf15cf7753",
+          "name": "Kornufer Artikel 1",
+          "stock": 10,
+          "productNumber": "HD-cc1145eb8464"
+        },
+        "after": {
+          "id": "cc1145eb84644e54acc13ebf15cf7753",
+          "name": "Kornufer Artikel 1",
+          "stock": 10,
+          "productNumber": "HD-cc1145eb8464"
+        }
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/product/cc1145eb84644e54acc13ebf15cf7753",
+        "body": {
+          "stock": 46
+        },
+        "status": 204,
+        "response": null,
+        "before": {
+          "id": "cc1145eb84644e54acc13ebf15cf7753",
+          "name": "Kornufer Artikel 1",
+          "stock": 10,
+          "productNumber": "HD-cc1145eb8464"
+        },
+        "after": {
+          "id": "cc1145eb84644e54acc13ebf15cf7753",
+          "name": "Kornufer Artikel 1",
+          "stock": 46,
+          "productNumber": "HD-cc1145eb8464"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "cc1145eb84644e54acc13ebf15cf7753"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-cc1145eb8464",
+              "stock": 46,
+              "name": "Kornufer Artikel 1",
+              "id": "cc1145eb84644e54acc13ebf15cf7753",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "cc1145eb84644e54acc13ebf15cf7753",
+          "name": "Kornufer Artikel 1",
+          "stock": 46,
+          "productNumber": "HD-cc1145eb8464"
+        },
+        "after": {
+          "id": "cc1145eb84644e54acc13ebf15cf7753",
+          "name": "Kornufer Artikel 1",
+          "stock": 46,
+          "productNumber": "HD-cc1145eb8464"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/cc1145eb84644e54acc13ebf15cf7753",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-cc1145eb8464",
+            "stock": 46,
+            "name": "Kornufer Artikel 1",
+            "id": "cc1145eb84644e54acc13ebf15cf7753",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "cc1145eb84644e54acc13ebf15cf7753",
+          "name": "Kornufer Artikel 1",
+          "stock": 46,
+          "productNumber": "HD-cc1145eb8464"
+        },
+        "after": {
+          "id": "cc1145eb84644e54acc13ebf15cf7753",
+          "name": "Kornufer Artikel 1",
+          "stock": 46,
+          "productNumber": "HD-cc1145eb8464"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/_action/sync",
+        "body": [
+          {
+            "key": "write",
+            "action": "upsert",
+            "entity": "product",
+            "payload": [
+              {
+                "id": "cc1145eb84644e54acc13ebf15cf7753",
+                "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+                "stock": 60
+              }
+            ]
+          }
+        ],
+        "status": 200,
+        "response": {
+          "extensions": [],
+          "data": {
+            "product": [
+              "cc1145eb84644e54acc13ebf15cf7753"
+            ],
+            "product_translation": [
+              {
+                "productId": "cc1145eb84644e54acc13ebf15cf7753",
+                "languageId": "2fbb5fe2e29a4d70aa5854ce7ce3e20b"
+              }
+            ]
+          },
+          "notFound": [],
+          "deleted": []
+        },
+        "before": {
+          "id": "cc1145eb84644e54acc13ebf15cf7753",
+          "name": "Kornufer Artikel 1",
+          "stock": 46,
+          "productNumber": "HD-cc1145eb8464"
+        },
+        "after": {
+          "id": "cc1145eb84644e54acc13ebf15cf7753",
+          "name": "Kornufer Artikel 1",
+          "stock": 60,
+          "productNumber": "HD-cc1145eb8464"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "cc1145eb84644e54acc13ebf15cf7753"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-cc1145eb8464",
+              "stock": 60,
+              "name": "Kornufer Artikel 1",
+              "id": "cc1145eb84644e54acc13ebf15cf7753",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "cc1145eb84644e54acc13ebf15cf7753",
+          "name": "Kornufer Artikel 1",
+          "stock": 60,
+          "productNumber": "HD-cc1145eb8464"
+        },
+        "after": {
+          "id": "cc1145eb84644e54acc13ebf15cf7753",
+          "name": "Kornufer Artikel 1",
+          "stock": 60,
+          "productNumber": "HD-cc1145eb8464"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/cc1145eb84644e54acc13ebf15cf7753",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-cc1145eb8464",
+            "stock": 60,
+            "name": "Kornufer Artikel 1",
+            "id": "cc1145eb84644e54acc13ebf15cf7753",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "cc1145eb84644e54acc13ebf15cf7753",
+          "name": "Kornufer Artikel 1",
+          "stock": 60,
+          "productNumber": "HD-cc1145eb8464"
+        },
+        "after": {
+          "id": "cc1145eb84644e54acc13ebf15cf7753",
+          "name": "Kornufer Artikel 1",
+          "stock": 60,
+          "productNumber": "HD-cc1145eb8464"
+        }
+      }
+    ]
+  },
+  {
+    "split": "train",
+    "channel": "753eb1c5e0e14714bb176152196600d4",
+    "record": {
+      "id": "347b106918be498aae505a7ad09300e7",
+      "name": "Kornufer Artikel 2",
+      "stock": 7,
+      "productNumber": "HD-347b106918be"
+    },
+    "requests": [
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "347b106918be498aae505a7ad09300e7"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-347b106918be",
+              "stock": 7,
+              "name": "Kornufer Artikel 2",
+              "id": "347b106918be498aae505a7ad09300e7",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "347b106918be498aae505a7ad09300e7",
+          "name": "Kornufer Artikel 2",
+          "stock": 7,
+          "productNumber": "HD-347b106918be"
+        },
+        "after": {
+          "id": "347b106918be498aae505a7ad09300e7",
+          "name": "Kornufer Artikel 2",
+          "stock": 7,
+          "productNumber": "HD-347b106918be"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/347b106918be498aae505a7ad09300e7",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-347b106918be",
+            "stock": 7,
+            "name": "Kornufer Artikel 2",
+            "id": "347b106918be498aae505a7ad09300e7",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "347b106918be498aae505a7ad09300e7",
+          "name": "Kornufer Artikel 2",
+          "stock": 7,
+          "productNumber": "HD-347b106918be"
+        },
+        "after": {
+          "id": "347b106918be498aae505a7ad09300e7",
+          "name": "Kornufer Artikel 2",
+          "stock": 7,
+          "productNumber": "HD-347b106918be"
+        }
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/product/347b106918be498aae505a7ad09300e7",
+        "body": {
+          "stock": 43
+        },
+        "status": 204,
+        "response": null,
+        "before": {
+          "id": "347b106918be498aae505a7ad09300e7",
+          "name": "Kornufer Artikel 2",
+          "stock": 7,
+          "productNumber": "HD-347b106918be"
+        },
+        "after": {
+          "id": "347b106918be498aae505a7ad09300e7",
+          "name": "Kornufer Artikel 2",
+          "stock": 43,
+          "productNumber": "HD-347b106918be"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "347b106918be498aae505a7ad09300e7"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-347b106918be",
+              "stock": 43,
+              "name": "Kornufer Artikel 2",
+              "id": "347b106918be498aae505a7ad09300e7",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "347b106918be498aae505a7ad09300e7",
+          "name": "Kornufer Artikel 2",
+          "stock": 43,
+          "productNumber": "HD-347b106918be"
+        },
+        "after": {
+          "id": "347b106918be498aae505a7ad09300e7",
+          "name": "Kornufer Artikel 2",
+          "stock": 43,
+          "productNumber": "HD-347b106918be"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/347b106918be498aae505a7ad09300e7",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-347b106918be",
+            "stock": 43,
+            "name": "Kornufer Artikel 2",
+            "id": "347b106918be498aae505a7ad09300e7",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "347b106918be498aae505a7ad09300e7",
+          "name": "Kornufer Artikel 2",
+          "stock": 43,
+          "productNumber": "HD-347b106918be"
+        },
+        "after": {
+          "id": "347b106918be498aae505a7ad09300e7",
+          "name": "Kornufer Artikel 2",
+          "stock": 43,
+          "productNumber": "HD-347b106918be"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/_action/sync",
+        "body": [
+          {
+            "key": "write",
+            "action": "upsert",
+            "entity": "product",
+            "payload": [
+              {
+                "id": "347b106918be498aae505a7ad09300e7",
+                "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+                "stock": 61
+              }
+            ]
+          }
+        ],
+        "status": 200,
+        "response": {
+          "extensions": [],
+          "data": {
+            "product": [
+              "347b106918be498aae505a7ad09300e7"
+            ],
+            "product_translation": [
+              {
+                "productId": "347b106918be498aae505a7ad09300e7",
+                "languageId": "2fbb5fe2e29a4d70aa5854ce7ce3e20b"
+              }
+            ]
+          },
+          "notFound": [],
+          "deleted": []
+        },
+        "before": {
+          "id": "347b106918be498aae505a7ad09300e7",
+          "name": "Kornufer Artikel 2",
+          "stock": 43,
+          "productNumber": "HD-347b106918be"
+        },
+        "after": {
+          "id": "347b106918be498aae505a7ad09300e7",
+          "name": "Kornufer Artikel 2",
+          "stock": 61,
+          "productNumber": "HD-347b106918be"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "347b106918be498aae505a7ad09300e7"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-347b106918be",
+              "stock": 61,
+              "name": "Kornufer Artikel 2",
+              "id": "347b106918be498aae505a7ad09300e7",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "347b106918be498aae505a7ad09300e7",
+          "name": "Kornufer Artikel 2",
+          "stock": 61,
+          "productNumber": "HD-347b106918be"
+        },
+        "after": {
+          "id": "347b106918be498aae505a7ad09300e7",
+          "name": "Kornufer Artikel 2",
+          "stock": 61,
+          "productNumber": "HD-347b106918be"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/347b106918be498aae505a7ad09300e7",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-347b106918be",
+            "stock": 61,
+            "name": "Kornufer Artikel 2",
+            "id": "347b106918be498aae505a7ad09300e7",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "347b106918be498aae505a7ad09300e7",
+          "name": "Kornufer Artikel 2",
+          "stock": 61,
+          "productNumber": "HD-347b106918be"
+        },
+        "after": {
+          "id": "347b106918be498aae505a7ad09300e7",
+          "name": "Kornufer Artikel 2",
+          "stock": 61,
+          "productNumber": "HD-347b106918be"
+        }
+      }
+    ]
+  },
+  {
+    "split": "train",
+    "channel": "753eb1c5e0e14714bb176152196600d4",
+    "record": {
+      "id": "f6872915d9184155a34741eb28e396a6",
+      "name": "Kornufer Artikel 3",
+      "stock": 6,
+      "productNumber": "HD-f6872915d918"
+    },
+    "requests": [
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "f6872915d9184155a34741eb28e396a6"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-f6872915d918",
+              "stock": 6,
+              "name": "Kornufer Artikel 3",
+              "id": "f6872915d9184155a34741eb28e396a6",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "f6872915d9184155a34741eb28e396a6",
+          "name": "Kornufer Artikel 3",
+          "stock": 6,
+          "productNumber": "HD-f6872915d918"
+        },
+        "after": {
+          "id": "f6872915d9184155a34741eb28e396a6",
+          "name": "Kornufer Artikel 3",
+          "stock": 6,
+          "productNumber": "HD-f6872915d918"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/f6872915d9184155a34741eb28e396a6",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-f6872915d918",
+            "stock": 6,
+            "name": "Kornufer Artikel 3",
+            "id": "f6872915d9184155a34741eb28e396a6",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "f6872915d9184155a34741eb28e396a6",
+          "name": "Kornufer Artikel 3",
+          "stock": 6,
+          "productNumber": "HD-f6872915d918"
+        },
+        "after": {
+          "id": "f6872915d9184155a34741eb28e396a6",
+          "name": "Kornufer Artikel 3",
+          "stock": 6,
+          "productNumber": "HD-f6872915d918"
+        }
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/product/f6872915d9184155a34741eb28e396a6",
+        "body": {
+          "stock": 43
+        },
+        "status": 204,
+        "response": null,
+        "before": {
+          "id": "f6872915d9184155a34741eb28e396a6",
+          "name": "Kornufer Artikel 3",
+          "stock": 6,
+          "productNumber": "HD-f6872915d918"
+        },
+        "after": {
+          "id": "f6872915d9184155a34741eb28e396a6",
+          "name": "Kornufer Artikel 3",
+          "stock": 43,
+          "productNumber": "HD-f6872915d918"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "f6872915d9184155a34741eb28e396a6"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-f6872915d918",
+              "stock": 43,
+              "name": "Kornufer Artikel 3",
+              "id": "f6872915d9184155a34741eb28e396a6",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "f6872915d9184155a34741eb28e396a6",
+          "name": "Kornufer Artikel 3",
+          "stock": 43,
+          "productNumber": "HD-f6872915d918"
+        },
+        "after": {
+          "id": "f6872915d9184155a34741eb28e396a6",
+          "name": "Kornufer Artikel 3",
+          "stock": 43,
+          "productNumber": "HD-f6872915d918"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/f6872915d9184155a34741eb28e396a6",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-f6872915d918",
+            "stock": 43,
+            "name": "Kornufer Artikel 3",
+            "id": "f6872915d9184155a34741eb28e396a6",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "f6872915d9184155a34741eb28e396a6",
+          "name": "Kornufer Artikel 3",
+          "stock": 43,
+          "productNumber": "HD-f6872915d918"
+        },
+        "after": {
+          "id": "f6872915d9184155a34741eb28e396a6",
+          "name": "Kornufer Artikel 3",
+          "stock": 43,
+          "productNumber": "HD-f6872915d918"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/_action/sync",
+        "body": [
+          {
+            "key": "write",
+            "action": "upsert",
+            "entity": "product",
+            "payload": [
+              {
+                "id": "f6872915d9184155a34741eb28e396a6",
+                "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+                "stock": 56
+              }
+            ]
+          }
+        ],
+        "status": 200,
+        "response": {
+          "extensions": [],
+          "data": {
+            "product": [
+              "f6872915d9184155a34741eb28e396a6"
+            ],
+            "product_translation": [
+              {
+                "productId": "f6872915d9184155a34741eb28e396a6",
+                "languageId": "2fbb5fe2e29a4d70aa5854ce7ce3e20b"
+              }
+            ]
+          },
+          "notFound": [],
+          "deleted": []
+        },
+        "before": {
+          "id": "f6872915d9184155a34741eb28e396a6",
+          "name": "Kornufer Artikel 3",
+          "stock": 43,
+          "productNumber": "HD-f6872915d918"
+        },
+        "after": {
+          "id": "f6872915d9184155a34741eb28e396a6",
+          "name": "Kornufer Artikel 3",
+          "stock": 56,
+          "productNumber": "HD-f6872915d918"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "f6872915d9184155a34741eb28e396a6"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-f6872915d918",
+              "stock": 56,
+              "name": "Kornufer Artikel 3",
+              "id": "f6872915d9184155a34741eb28e396a6",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "f6872915d9184155a34741eb28e396a6",
+          "name": "Kornufer Artikel 3",
+          "stock": 56,
+          "productNumber": "HD-f6872915d918"
+        },
+        "after": {
+          "id": "f6872915d9184155a34741eb28e396a6",
+          "name": "Kornufer Artikel 3",
+          "stock": 56,
+          "productNumber": "HD-f6872915d918"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/f6872915d9184155a34741eb28e396a6",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-f6872915d918",
+            "stock": 56,
+            "name": "Kornufer Artikel 3",
+            "id": "f6872915d9184155a34741eb28e396a6",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "f6872915d9184155a34741eb28e396a6",
+          "name": "Kornufer Artikel 3",
+          "stock": 56,
+          "productNumber": "HD-f6872915d918"
+        },
+        "after": {
+          "id": "f6872915d9184155a34741eb28e396a6",
+          "name": "Kornufer Artikel 3",
+          "stock": 56,
+          "productNumber": "HD-f6872915d918"
+        }
+      }
+    ]
+  },
+  {
+    "split": "train",
+    "channel": "753eb1c5e0e14714bb176152196600d4",
+    "record": {
+      "id": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+      "name": "Kornufer Artikel 4",
+      "stock": 5,
+      "productNumber": "HD-de1e8bdc23cb"
+    },
+    "requests": [
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "de1e8bdc23cb4e78bc8dbd2ae8a30b2c"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-de1e8bdc23cb",
+              "stock": 5,
+              "name": "Kornufer Artikel 4",
+              "id": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+          "name": "Kornufer Artikel 4",
+          "stock": 5,
+          "productNumber": "HD-de1e8bdc23cb"
+        },
+        "after": {
+          "id": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+          "name": "Kornufer Artikel 4",
+          "stock": 5,
+          "productNumber": "HD-de1e8bdc23cb"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-de1e8bdc23cb",
+            "stock": 5,
+            "name": "Kornufer Artikel 4",
+            "id": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+          "name": "Kornufer Artikel 4",
+          "stock": 5,
+          "productNumber": "HD-de1e8bdc23cb"
+        },
+        "after": {
+          "id": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+          "name": "Kornufer Artikel 4",
+          "stock": 5,
+          "productNumber": "HD-de1e8bdc23cb"
+        }
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/product/de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+        "body": {
+          "stock": 20
+        },
+        "status": 204,
+        "response": null,
+        "before": {
+          "id": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+          "name": "Kornufer Artikel 4",
+          "stock": 5,
+          "productNumber": "HD-de1e8bdc23cb"
+        },
+        "after": {
+          "id": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+          "name": "Kornufer Artikel 4",
+          "stock": 20,
+          "productNumber": "HD-de1e8bdc23cb"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "de1e8bdc23cb4e78bc8dbd2ae8a30b2c"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-de1e8bdc23cb",
+              "stock": 20,
+              "name": "Kornufer Artikel 4",
+              "id": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+          "name": "Kornufer Artikel 4",
+          "stock": 20,
+          "productNumber": "HD-de1e8bdc23cb"
+        },
+        "after": {
+          "id": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+          "name": "Kornufer Artikel 4",
+          "stock": 20,
+          "productNumber": "HD-de1e8bdc23cb"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-de1e8bdc23cb",
+            "stock": 20,
+            "name": "Kornufer Artikel 4",
+            "id": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+          "name": "Kornufer Artikel 4",
+          "stock": 20,
+          "productNumber": "HD-de1e8bdc23cb"
+        },
+        "after": {
+          "id": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+          "name": "Kornufer Artikel 4",
+          "stock": 20,
+          "productNumber": "HD-de1e8bdc23cb"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/_action/sync",
+        "body": [
+          {
+            "key": "write",
+            "action": "upsert",
+            "entity": "product",
+            "payload": [
+              {
+                "id": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+                "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+                "stock": 59
+              }
+            ]
+          }
+        ],
+        "status": 200,
+        "response": {
+          "extensions": [],
+          "data": {
+            "product": [
+              "de1e8bdc23cb4e78bc8dbd2ae8a30b2c"
+            ],
+            "product_translation": [
+              {
+                "productId": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+                "languageId": "2fbb5fe2e29a4d70aa5854ce7ce3e20b"
+              }
+            ]
+          },
+          "notFound": [],
+          "deleted": []
+        },
+        "before": {
+          "id": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+          "name": "Kornufer Artikel 4",
+          "stock": 20,
+          "productNumber": "HD-de1e8bdc23cb"
+        },
+        "after": {
+          "id": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+          "name": "Kornufer Artikel 4",
+          "stock": 59,
+          "productNumber": "HD-de1e8bdc23cb"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "de1e8bdc23cb4e78bc8dbd2ae8a30b2c"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-de1e8bdc23cb",
+              "stock": 59,
+              "name": "Kornufer Artikel 4",
+              "id": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+          "name": "Kornufer Artikel 4",
+          "stock": 59,
+          "productNumber": "HD-de1e8bdc23cb"
+        },
+        "after": {
+          "id": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+          "name": "Kornufer Artikel 4",
+          "stock": 59,
+          "productNumber": "HD-de1e8bdc23cb"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-de1e8bdc23cb",
+            "stock": 59,
+            "name": "Kornufer Artikel 4",
+            "id": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+          "name": "Kornufer Artikel 4",
+          "stock": 59,
+          "productNumber": "HD-de1e8bdc23cb"
+        },
+        "after": {
+          "id": "de1e8bdc23cb4e78bc8dbd2ae8a30b2c",
+          "name": "Kornufer Artikel 4",
+          "stock": 59,
+          "productNumber": "HD-de1e8bdc23cb"
+        }
+      }
+    ]
+  },
+  {
+    "split": "train",
+    "channel": "753eb1c5e0e14714bb176152196600d4",
+    "record": {
+      "id": "e16b58f047704b49afb280436beb0d58",
+      "name": "Kornufer Artikel 5",
+      "stock": 15,
+      "productNumber": "HD-e16b58f04770"
+    },
+    "requests": [
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "e16b58f047704b49afb280436beb0d58"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-e16b58f04770",
+              "stock": 15,
+              "name": "Kornufer Artikel 5",
+              "id": "e16b58f047704b49afb280436beb0d58",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "e16b58f047704b49afb280436beb0d58",
+          "name": "Kornufer Artikel 5",
+          "stock": 15,
+          "productNumber": "HD-e16b58f04770"
+        },
+        "after": {
+          "id": "e16b58f047704b49afb280436beb0d58",
+          "name": "Kornufer Artikel 5",
+          "stock": 15,
+          "productNumber": "HD-e16b58f04770"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/e16b58f047704b49afb280436beb0d58",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-e16b58f04770",
+            "stock": 15,
+            "name": "Kornufer Artikel 5",
+            "id": "e16b58f047704b49afb280436beb0d58",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "e16b58f047704b49afb280436beb0d58",
+          "name": "Kornufer Artikel 5",
+          "stock": 15,
+          "productNumber": "HD-e16b58f04770"
+        },
+        "after": {
+          "id": "e16b58f047704b49afb280436beb0d58",
+          "name": "Kornufer Artikel 5",
+          "stock": 15,
+          "productNumber": "HD-e16b58f04770"
+        }
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/product/e16b58f047704b49afb280436beb0d58",
+        "body": {
+          "stock": 37
+        },
+        "status": 204,
+        "response": null,
+        "before": {
+          "id": "e16b58f047704b49afb280436beb0d58",
+          "name": "Kornufer Artikel 5",
+          "stock": 15,
+          "productNumber": "HD-e16b58f04770"
+        },
+        "after": {
+          "id": "e16b58f047704b49afb280436beb0d58",
+          "name": "Kornufer Artikel 5",
+          "stock": 37,
+          "productNumber": "HD-e16b58f04770"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "e16b58f047704b49afb280436beb0d58"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-e16b58f04770",
+              "stock": 37,
+              "name": "Kornufer Artikel 5",
+              "id": "e16b58f047704b49afb280436beb0d58",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "e16b58f047704b49afb280436beb0d58",
+          "name": "Kornufer Artikel 5",
+          "stock": 37,
+          "productNumber": "HD-e16b58f04770"
+        },
+        "after": {
+          "id": "e16b58f047704b49afb280436beb0d58",
+          "name": "Kornufer Artikel 5",
+          "stock": 37,
+          "productNumber": "HD-e16b58f04770"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/e16b58f047704b49afb280436beb0d58",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-e16b58f04770",
+            "stock": 37,
+            "name": "Kornufer Artikel 5",
+            "id": "e16b58f047704b49afb280436beb0d58",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "e16b58f047704b49afb280436beb0d58",
+          "name": "Kornufer Artikel 5",
+          "stock": 37,
+          "productNumber": "HD-e16b58f04770"
+        },
+        "after": {
+          "id": "e16b58f047704b49afb280436beb0d58",
+          "name": "Kornufer Artikel 5",
+          "stock": 37,
+          "productNumber": "HD-e16b58f04770"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/_action/sync",
+        "body": [
+          {
+            "key": "write",
+            "action": "upsert",
+            "entity": "product",
+            "payload": [
+              {
+                "id": "e16b58f047704b49afb280436beb0d58",
+                "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+                "stock": 60
+              }
+            ]
+          }
+        ],
+        "status": 200,
+        "response": {
+          "extensions": [],
+          "data": {
+            "product": [
+              "e16b58f047704b49afb280436beb0d58"
+            ],
+            "product_translation": [
+              {
+                "productId": "e16b58f047704b49afb280436beb0d58",
+                "languageId": "2fbb5fe2e29a4d70aa5854ce7ce3e20b"
+              }
+            ]
+          },
+          "notFound": [],
+          "deleted": []
+        },
+        "before": {
+          "id": "e16b58f047704b49afb280436beb0d58",
+          "name": "Kornufer Artikel 5",
+          "stock": 37,
+          "productNumber": "HD-e16b58f04770"
+        },
+        "after": {
+          "id": "e16b58f047704b49afb280436beb0d58",
+          "name": "Kornufer Artikel 5",
+          "stock": 60,
+          "productNumber": "HD-e16b58f04770"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "e16b58f047704b49afb280436beb0d58"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-e16b58f04770",
+              "stock": 60,
+              "name": "Kornufer Artikel 5",
+              "id": "e16b58f047704b49afb280436beb0d58",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "e16b58f047704b49afb280436beb0d58",
+          "name": "Kornufer Artikel 5",
+          "stock": 60,
+          "productNumber": "HD-e16b58f04770"
+        },
+        "after": {
+          "id": "e16b58f047704b49afb280436beb0d58",
+          "name": "Kornufer Artikel 5",
+          "stock": 60,
+          "productNumber": "HD-e16b58f04770"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/e16b58f047704b49afb280436beb0d58",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-e16b58f04770",
+            "stock": 60,
+            "name": "Kornufer Artikel 5",
+            "id": "e16b58f047704b49afb280436beb0d58",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "e16b58f047704b49afb280436beb0d58",
+          "name": "Kornufer Artikel 5",
+          "stock": 60,
+          "productNumber": "HD-e16b58f04770"
+        },
+        "after": {
+          "id": "e16b58f047704b49afb280436beb0d58",
+          "name": "Kornufer Artikel 5",
+          "stock": 60,
+          "productNumber": "HD-e16b58f04770"
+        }
+      }
+    ]
+  },
+  {
+    "split": "train",
+    "channel": "753eb1c5e0e14714bb176152196600d4",
+    "record": {
+      "id": "1bcce88b8686417ca663eb07e1a27005",
+      "name": "Kornufer Artikel 6",
+      "stock": 5,
+      "productNumber": "HD-1bcce88b8686"
+    },
+    "requests": [
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "1bcce88b8686417ca663eb07e1a27005"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-1bcce88b8686",
+              "stock": 5,
+              "name": "Kornufer Artikel 6",
+              "id": "1bcce88b8686417ca663eb07e1a27005",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "1bcce88b8686417ca663eb07e1a27005",
+          "name": "Kornufer Artikel 6",
+          "stock": 5,
+          "productNumber": "HD-1bcce88b8686"
+        },
+        "after": {
+          "id": "1bcce88b8686417ca663eb07e1a27005",
+          "name": "Kornufer Artikel 6",
+          "stock": 5,
+          "productNumber": "HD-1bcce88b8686"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/1bcce88b8686417ca663eb07e1a27005",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-1bcce88b8686",
+            "stock": 5,
+            "name": "Kornufer Artikel 6",
+            "id": "1bcce88b8686417ca663eb07e1a27005",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "1bcce88b8686417ca663eb07e1a27005",
+          "name": "Kornufer Artikel 6",
+          "stock": 5,
+          "productNumber": "HD-1bcce88b8686"
+        },
+        "after": {
+          "id": "1bcce88b8686417ca663eb07e1a27005",
+          "name": "Kornufer Artikel 6",
+          "stock": 5,
+          "productNumber": "HD-1bcce88b8686"
+        }
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/product/1bcce88b8686417ca663eb07e1a27005",
+        "body": {
+          "stock": 38
+        },
+        "status": 204,
+        "response": null,
+        "before": {
+          "id": "1bcce88b8686417ca663eb07e1a27005",
+          "name": "Kornufer Artikel 6",
+          "stock": 5,
+          "productNumber": "HD-1bcce88b8686"
+        },
+        "after": {
+          "id": "1bcce88b8686417ca663eb07e1a27005",
+          "name": "Kornufer Artikel 6",
+          "stock": 38,
+          "productNumber": "HD-1bcce88b8686"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "1bcce88b8686417ca663eb07e1a27005"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-1bcce88b8686",
+              "stock": 38,
+              "name": "Kornufer Artikel 6",
+              "id": "1bcce88b8686417ca663eb07e1a27005",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "1bcce88b8686417ca663eb07e1a27005",
+          "name": "Kornufer Artikel 6",
+          "stock": 38,
+          "productNumber": "HD-1bcce88b8686"
+        },
+        "after": {
+          "id": "1bcce88b8686417ca663eb07e1a27005",
+          "name": "Kornufer Artikel 6",
+          "stock": 38,
+          "productNumber": "HD-1bcce88b8686"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/1bcce88b8686417ca663eb07e1a27005",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-1bcce88b8686",
+            "stock": 38,
+            "name": "Kornufer Artikel 6",
+            "id": "1bcce88b8686417ca663eb07e1a27005",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "1bcce88b8686417ca663eb07e1a27005",
+          "name": "Kornufer Artikel 6",
+          "stock": 38,
+          "productNumber": "HD-1bcce88b8686"
+        },
+        "after": {
+          "id": "1bcce88b8686417ca663eb07e1a27005",
+          "name": "Kornufer Artikel 6",
+          "stock": 38,
+          "productNumber": "HD-1bcce88b8686"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/_action/sync",
+        "body": [
+          {
+            "key": "write",
+            "action": "upsert",
+            "entity": "product",
+            "payload": [
+              {
+                "id": "1bcce88b8686417ca663eb07e1a27005",
+                "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+                "stock": 56
+              }
+            ]
+          }
+        ],
+        "status": 200,
+        "response": {
+          "extensions": [],
+          "data": {
+            "product": [
+              "1bcce88b8686417ca663eb07e1a27005"
+            ],
+            "product_translation": [
+              {
+                "productId": "1bcce88b8686417ca663eb07e1a27005",
+                "languageId": "2fbb5fe2e29a4d70aa5854ce7ce3e20b"
+              }
+            ]
+          },
+          "notFound": [],
+          "deleted": []
+        },
+        "before": {
+          "id": "1bcce88b8686417ca663eb07e1a27005",
+          "name": "Kornufer Artikel 6",
+          "stock": 38,
+          "productNumber": "HD-1bcce88b8686"
+        },
+        "after": {
+          "id": "1bcce88b8686417ca663eb07e1a27005",
+          "name": "Kornufer Artikel 6",
+          "stock": 56,
+          "productNumber": "HD-1bcce88b8686"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "1bcce88b8686417ca663eb07e1a27005"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-1bcce88b8686",
+              "stock": 56,
+              "name": "Kornufer Artikel 6",
+              "id": "1bcce88b8686417ca663eb07e1a27005",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "1bcce88b8686417ca663eb07e1a27005",
+          "name": "Kornufer Artikel 6",
+          "stock": 56,
+          "productNumber": "HD-1bcce88b8686"
+        },
+        "after": {
+          "id": "1bcce88b8686417ca663eb07e1a27005",
+          "name": "Kornufer Artikel 6",
+          "stock": 56,
+          "productNumber": "HD-1bcce88b8686"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/1bcce88b8686417ca663eb07e1a27005",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-1bcce88b8686",
+            "stock": 56,
+            "name": "Kornufer Artikel 6",
+            "id": "1bcce88b8686417ca663eb07e1a27005",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "1bcce88b8686417ca663eb07e1a27005",
+          "name": "Kornufer Artikel 6",
+          "stock": 56,
+          "productNumber": "HD-1bcce88b8686"
+        },
+        "after": {
+          "id": "1bcce88b8686417ca663eb07e1a27005",
+          "name": "Kornufer Artikel 6",
+          "stock": 56,
+          "productNumber": "HD-1bcce88b8686"
+        }
+      }
+    ]
+  },
+  {
+    "split": "train",
+    "channel": "753eb1c5e0e14714bb176152196600d4",
+    "record": {
+      "id": "ce449f2708e74c26b909043fcf6d9254",
+      "name": "Kornufer Artikel 7",
+      "stock": 4,
+      "productNumber": "HD-ce449f2708e7"
+    },
+    "requests": [
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "ce449f2708e74c26b909043fcf6d9254"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-ce449f2708e7",
+              "stock": 4,
+              "name": "Kornufer Artikel 7",
+              "id": "ce449f2708e74c26b909043fcf6d9254",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "ce449f2708e74c26b909043fcf6d9254",
+          "name": "Kornufer Artikel 7",
+          "stock": 4,
+          "productNumber": "HD-ce449f2708e7"
+        },
+        "after": {
+          "id": "ce449f2708e74c26b909043fcf6d9254",
+          "name": "Kornufer Artikel 7",
+          "stock": 4,
+          "productNumber": "HD-ce449f2708e7"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/ce449f2708e74c26b909043fcf6d9254",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-ce449f2708e7",
+            "stock": 4,
+            "name": "Kornufer Artikel 7",
+            "id": "ce449f2708e74c26b909043fcf6d9254",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "ce449f2708e74c26b909043fcf6d9254",
+          "name": "Kornufer Artikel 7",
+          "stock": 4,
+          "productNumber": "HD-ce449f2708e7"
+        },
+        "after": {
+          "id": "ce449f2708e74c26b909043fcf6d9254",
+          "name": "Kornufer Artikel 7",
+          "stock": 4,
+          "productNumber": "HD-ce449f2708e7"
+        }
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/product/ce449f2708e74c26b909043fcf6d9254",
+        "body": {
+          "stock": 39
+        },
+        "status": 204,
+        "response": null,
+        "before": {
+          "id": "ce449f2708e74c26b909043fcf6d9254",
+          "name": "Kornufer Artikel 7",
+          "stock": 4,
+          "productNumber": "HD-ce449f2708e7"
+        },
+        "after": {
+          "id": "ce449f2708e74c26b909043fcf6d9254",
+          "name": "Kornufer Artikel 7",
+          "stock": 39,
+          "productNumber": "HD-ce449f2708e7"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "ce449f2708e74c26b909043fcf6d9254"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-ce449f2708e7",
+              "stock": 39,
+              "name": "Kornufer Artikel 7",
+              "id": "ce449f2708e74c26b909043fcf6d9254",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "ce449f2708e74c26b909043fcf6d9254",
+          "name": "Kornufer Artikel 7",
+          "stock": 39,
+          "productNumber": "HD-ce449f2708e7"
+        },
+        "after": {
+          "id": "ce449f2708e74c26b909043fcf6d9254",
+          "name": "Kornufer Artikel 7",
+          "stock": 39,
+          "productNumber": "HD-ce449f2708e7"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/ce449f2708e74c26b909043fcf6d9254",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-ce449f2708e7",
+            "stock": 39,
+            "name": "Kornufer Artikel 7",
+            "id": "ce449f2708e74c26b909043fcf6d9254",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "ce449f2708e74c26b909043fcf6d9254",
+          "name": "Kornufer Artikel 7",
+          "stock": 39,
+          "productNumber": "HD-ce449f2708e7"
+        },
+        "after": {
+          "id": "ce449f2708e74c26b909043fcf6d9254",
+          "name": "Kornufer Artikel 7",
+          "stock": 39,
+          "productNumber": "HD-ce449f2708e7"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/_action/sync",
+        "body": [
+          {
+            "key": "write",
+            "action": "upsert",
+            "entity": "product",
+            "payload": [
+              {
+                "id": "ce449f2708e74c26b909043fcf6d9254",
+                "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+                "stock": 61
+              }
+            ]
+          }
+        ],
+        "status": 200,
+        "response": {
+          "extensions": [],
+          "data": {
+            "product": [
+              "ce449f2708e74c26b909043fcf6d9254"
+            ],
+            "product_translation": [
+              {
+                "productId": "ce449f2708e74c26b909043fcf6d9254",
+                "languageId": "2fbb5fe2e29a4d70aa5854ce7ce3e20b"
+              }
+            ]
+          },
+          "notFound": [],
+          "deleted": []
+        },
+        "before": {
+          "id": "ce449f2708e74c26b909043fcf6d9254",
+          "name": "Kornufer Artikel 7",
+          "stock": 39,
+          "productNumber": "HD-ce449f2708e7"
+        },
+        "after": {
+          "id": "ce449f2708e74c26b909043fcf6d9254",
+          "name": "Kornufer Artikel 7",
+          "stock": 61,
+          "productNumber": "HD-ce449f2708e7"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "ce449f2708e74c26b909043fcf6d9254"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-ce449f2708e7",
+              "stock": 61,
+              "name": "Kornufer Artikel 7",
+              "id": "ce449f2708e74c26b909043fcf6d9254",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "ce449f2708e74c26b909043fcf6d9254",
+          "name": "Kornufer Artikel 7",
+          "stock": 61,
+          "productNumber": "HD-ce449f2708e7"
+        },
+        "after": {
+          "id": "ce449f2708e74c26b909043fcf6d9254",
+          "name": "Kornufer Artikel 7",
+          "stock": 61,
+          "productNumber": "HD-ce449f2708e7"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/ce449f2708e74c26b909043fcf6d9254",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-ce449f2708e7",
+            "stock": 61,
+            "name": "Kornufer Artikel 7",
+            "id": "ce449f2708e74c26b909043fcf6d9254",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "ce449f2708e74c26b909043fcf6d9254",
+          "name": "Kornufer Artikel 7",
+          "stock": 61,
+          "productNumber": "HD-ce449f2708e7"
+        },
+        "after": {
+          "id": "ce449f2708e74c26b909043fcf6d9254",
+          "name": "Kornufer Artikel 7",
+          "stock": 61,
+          "productNumber": "HD-ce449f2708e7"
+        }
+      }
+    ]
+  },
+  {
+    "split": "train",
+    "channel": "753eb1c5e0e14714bb176152196600d4",
+    "record": {
+      "id": "738d1770e17c48c795344bc10c4fb891",
+      "name": "Kornufer Artikel 8",
+      "stock": 6,
+      "productNumber": "HD-738d1770e17c"
+    },
+    "requests": [
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "738d1770e17c48c795344bc10c4fb891"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-738d1770e17c",
+              "stock": 6,
+              "name": "Kornufer Artikel 8",
+              "id": "738d1770e17c48c795344bc10c4fb891",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "738d1770e17c48c795344bc10c4fb891",
+          "name": "Kornufer Artikel 8",
+          "stock": 6,
+          "productNumber": "HD-738d1770e17c"
+        },
+        "after": {
+          "id": "738d1770e17c48c795344bc10c4fb891",
+          "name": "Kornufer Artikel 8",
+          "stock": 6,
+          "productNumber": "HD-738d1770e17c"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/738d1770e17c48c795344bc10c4fb891",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-738d1770e17c",
+            "stock": 6,
+            "name": "Kornufer Artikel 8",
+            "id": "738d1770e17c48c795344bc10c4fb891",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "738d1770e17c48c795344bc10c4fb891",
+          "name": "Kornufer Artikel 8",
+          "stock": 6,
+          "productNumber": "HD-738d1770e17c"
+        },
+        "after": {
+          "id": "738d1770e17c48c795344bc10c4fb891",
+          "name": "Kornufer Artikel 8",
+          "stock": 6,
+          "productNumber": "HD-738d1770e17c"
+        }
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/product/738d1770e17c48c795344bc10c4fb891",
+        "body": {
+          "stock": 36
+        },
+        "status": 204,
+        "response": null,
+        "before": {
+          "id": "738d1770e17c48c795344bc10c4fb891",
+          "name": "Kornufer Artikel 8",
+          "stock": 6,
+          "productNumber": "HD-738d1770e17c"
+        },
+        "after": {
+          "id": "738d1770e17c48c795344bc10c4fb891",
+          "name": "Kornufer Artikel 8",
+          "stock": 36,
+          "productNumber": "HD-738d1770e17c"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "738d1770e17c48c795344bc10c4fb891"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-738d1770e17c",
+              "stock": 36,
+              "name": "Kornufer Artikel 8",
+              "id": "738d1770e17c48c795344bc10c4fb891",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "738d1770e17c48c795344bc10c4fb891",
+          "name": "Kornufer Artikel 8",
+          "stock": 36,
+          "productNumber": "HD-738d1770e17c"
+        },
+        "after": {
+          "id": "738d1770e17c48c795344bc10c4fb891",
+          "name": "Kornufer Artikel 8",
+          "stock": 36,
+          "productNumber": "HD-738d1770e17c"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/738d1770e17c48c795344bc10c4fb891",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-738d1770e17c",
+            "stock": 36,
+            "name": "Kornufer Artikel 8",
+            "id": "738d1770e17c48c795344bc10c4fb891",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "738d1770e17c48c795344bc10c4fb891",
+          "name": "Kornufer Artikel 8",
+          "stock": 36,
+          "productNumber": "HD-738d1770e17c"
+        },
+        "after": {
+          "id": "738d1770e17c48c795344bc10c4fb891",
+          "name": "Kornufer Artikel 8",
+          "stock": 36,
+          "productNumber": "HD-738d1770e17c"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/_action/sync",
+        "body": [
+          {
+            "key": "write",
+            "action": "upsert",
+            "entity": "product",
+            "payload": [
+              {
+                "id": "738d1770e17c48c795344bc10c4fb891",
+                "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+                "stock": 56
+              }
+            ]
+          }
+        ],
+        "status": 200,
+        "response": {
+          "extensions": [],
+          "data": {
+            "product": [
+              "738d1770e17c48c795344bc10c4fb891"
+            ],
+            "product_translation": [
+              {
+                "productId": "738d1770e17c48c795344bc10c4fb891",
+                "languageId": "2fbb5fe2e29a4d70aa5854ce7ce3e20b"
+              }
+            ]
+          },
+          "notFound": [],
+          "deleted": []
+        },
+        "before": {
+          "id": "738d1770e17c48c795344bc10c4fb891",
+          "name": "Kornufer Artikel 8",
+          "stock": 36,
+          "productNumber": "HD-738d1770e17c"
+        },
+        "after": {
+          "id": "738d1770e17c48c795344bc10c4fb891",
+          "name": "Kornufer Artikel 8",
+          "stock": 56,
+          "productNumber": "HD-738d1770e17c"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/search/product",
+        "body": {
+          "includes": {
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          },
+          "ids": [
+            "738d1770e17c48c795344bc10c4fb891"
+          ]
+        },
+        "status": 200,
+        "response": {
+          "total": 1,
+          "data": [
+            {
+              "productNumber": "HD-738d1770e17c",
+              "stock": 56,
+              "name": "Kornufer Artikel 8",
+              "id": "738d1770e17c48c795344bc10c4fb891",
+              "apiAlias": "product"
+            }
+          ],
+          "aggregations": []
+        },
+        "before": {
+          "id": "738d1770e17c48c795344bc10c4fb891",
+          "name": "Kornufer Artikel 8",
+          "stock": 56,
+          "productNumber": "HD-738d1770e17c"
+        },
+        "after": {
+          "id": "738d1770e17c48c795344bc10c4fb891",
+          "name": "Kornufer Artikel 8",
+          "stock": 56,
+          "productNumber": "HD-738d1770e17c"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/store-api/product/738d1770e17c48c795344bc10c4fb891",
+        "body": {
+          "includes": {
+            "product_detail": [
+              "product",
+              "apiAlias"
+            ],
+            "product": [
+              "id",
+              "name",
+              "stock",
+              "productNumber"
+            ]
+          }
+        },
+        "status": 200,
+        "response": {
+          "apiAlias": "product_detail",
+          "product": {
+            "productNumber": "HD-738d1770e17c",
+            "stock": 56,
+            "name": "Kornufer Artikel 8",
+            "id": "738d1770e17c48c795344bc10c4fb891",
+            "apiAlias": "product"
+          }
+        },
+        "before": {
+          "id": "738d1770e17c48c795344bc10c4fb891",
+          "name": "Kornufer Artikel 8",
+          "stock": 56,
+          "productNumber": "HD-738d1770e17c"
+        },
+        "after": {
+          "id": "738d1770e17c48c795344bc10c4fb891",
+          "name": "Kornufer Artikel 8",
+          "stock": 56,
+          "productNumber": "HD-738d1770e17c"
+        }
+      }
+    ]
+  }
+]

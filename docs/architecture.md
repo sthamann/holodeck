@@ -4,7 +4,7 @@ This page describes the target architecture. The [forward-pass shop](forward-pas
 
 The target is one multimodal, executable model of the business. Search, pricing, checkout, service and analysis draw on the same learned business semantics. The model interprets what happened, determines the consequences, carries the process forward and projects the software needed for the work. Standard commerce supplies the first evidence. [The eight properties](../README.md#what-becomes-a-property-of-the-architecture)
 
-The [Shopware absorption plan](shopware-absorption.md) specifies the teacher, execution boundary and experiments that distinguish learned acquisition from a learned decision in the live shop.
+The [Shopware absorption plan](shopware-absorption.md) specifies the teacher, execution boundary and experiments that distinguish learned acquisition from a learned decision in the live shop. The [absorption pipeline](absorption-pipeline.md) now connects the installed API inventory, native browser actions, model compilation and promotion for its first tested profile.
 
 ## Where the prototype stands
 

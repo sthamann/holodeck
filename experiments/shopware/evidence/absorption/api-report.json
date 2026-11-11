@@ -1,0 +1,37 @@
+{
+  "model_sha256": "6d4fa7f600cd1fa29415e3a5d6f7b30fd42bde96fa9ec5a6c9542f5ef7e2db31",
+  "native_episodes_sha256": "996c133584fd43e7cf4d5e8c3c426601c908cdf40e45a4d47ce96b36b37da53f",
+  "teacher_port_refused": 55745,
+  "operations_in_inventory": 1236,
+  "entities_in_inventory": 230,
+  "exact": 96,
+  "requests": 96,
+  "uninstalled_route_status": 501,
+  "profiles": [
+    {
+      "method": "POST",
+      "path": "/api/search/product",
+      "exact": 36,
+      "total": 36
+    },
+    {
+      "method": "POST",
+      "path": "/store-api/product/{productId}",
+      "exact": 36,
+      "total": 36
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/product/{id}",
+      "exact": 12,
+      "total": 12
+    },
+    {
+      "method": "POST",
+      "path": "/api/_action/sync",
+      "exact": 12,
+      "total": 12
+    }
+  ],
+  "failures": []
+}
