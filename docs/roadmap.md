@@ -2,6 +2,8 @@
 
 Holodeck aims to replace complete applications with learned, executable decks. The first question is whether the model can acquire a capability and own its effects. The next question is whether a trainable backbone and reusable learned components make acquisition, composition or use better than the strongest simpler implementation. We test both. [Target architecture](architecture.md)
 
+Start with [learning the semantics of an application](learning-application-semantics.md) for the acquisition hypothesis and the matched comparison. [Current results and their limits](research-status.md)
+
 ![The validation plan advances from discrete execution through acquisition and causal fusion to independent application replacement.](../assets/illustrations/deck-target-validation.svg)
 
 ## Next experiments
@@ -45,6 +47,8 @@ A customer can open a fresh Holo Storefront and Checkout. A merchant works on th
 ### A third application
 
 Use an independent team to choose a profile structurally different from commerce and spreadsheets, such as a document editor with dependency-sensitive operations or an algorithmic tool with strict resource bounds. Record how it was acquired and what external contracts it requires. Compare the same acquisition and runtime machinery. Progress across pure computation, structured state, variable-length workloads, time and concurrency, external effects, and algorithmically demanding software. Report the highest profile actually passed.
+
+[MyNotes](../experiments/mynotes/deck/README.md) now runs the covered note workflow through one exact parameter artifact, including the Holo and its action bindings. The native reference and earlier WebAssembly control remain available for comparison. The next milestone is to acquire complete operations and Holo bindings from mixed traces, measure what the foundation model contributes, and reuse the execution vocabulary on a second application. The proof should include unfamiliar request families, data and view arrangements.
 
 ### Operational measurement
 

@@ -1,0 +1,508 @@
+{
+  "empty workspace": {
+    "status": 200,
+    "body": {
+      "total": 0,
+      "notes": []
+    }
+  },
+  "create project tag": {
+    "status": 201,
+    "body": {
+      "slug": "field"
+    }
+  },
+  "create review tag": {
+    "status": 201,
+    "body": {
+      "slug": "review"
+    }
+  },
+  "create link destination": {
+    "status": 201,
+    "body": {
+      "slug": "brief",
+      "title": "Project brief",
+      "content": "",
+      "tags": [],
+      "incoming_links": [],
+      "outgoing_links": []
+    }
+  },
+  "reserve split slug": {
+    "status": 201,
+    "body": {
+      "slug": "decisions",
+      "title": "Earlier decisions",
+      "content": "",
+      "tags": [],
+      "incoming_links": [],
+      "outgoing_links": []
+    }
+  },
+  "write project notes": {
+    "status": 201,
+    "body": {
+      "slug": "field-log",
+      "title": "Field log",
+      "content": "## Decisions\n\nA fulcrum result. See [[brief]].\n\n## Follow-up\n\nPrepare the next visit.",
+      "tags": [
+        {
+          "slug": "field"
+        }
+      ],
+      "incoming_links": [],
+      "outgoing_links": [
+        {
+          "slug": "brief",
+          "title": "Project brief"
+        }
+      ]
+    }
+  },
+  "open draft": {
+    "status": 200,
+    "body": {
+      "slug": "field-log",
+      "title": "Field log",
+      "content": "## Decisions\n\nA fulcrum result. See [[brief]].\n\n## Follow-up\n\nPrepare the next visit.",
+      "tags": [
+        {
+          "slug": "field"
+        }
+      ],
+      "incoming_links": [],
+      "outgoing_links": [
+        {
+          "slug": "brief",
+          "title": "Project brief"
+        }
+      ]
+    }
+  },
+  "inspect backlink": {
+    "status": 200,
+    "body": {
+      "slug": "brief",
+      "title": "Project brief",
+      "content": "",
+      "tags": [],
+      "incoming_links": [
+        {
+          "slug": "field-log",
+          "title": "Field log"
+        }
+      ],
+      "outgoing_links": []
+    }
+  },
+  "edit title, content and tags": {
+    "status": 200,
+    "body": {
+      "slug": "field-log",
+      "title": "Field log revised",
+      "content": "## Decisions\n\nA fulcrum result. See [[brief]].\n\n## Follow-up\n\nPrepare the next visit.\n\nSend the notes.",
+      "tags": [
+        {
+          "slug": "field"
+        },
+        {
+          "slug": "review"
+        }
+      ],
+      "incoming_links": [],
+      "outgoing_links": [
+        {
+          "slug": "brief",
+          "title": "Project brief"
+        }
+      ]
+    }
+  },
+  "refuse stale overwrite": {
+    "status": 412,
+    "body": {
+      "error": "version mismatch"
+    }
+  },
+  "unchanged edit": {
+    "status": 200,
+    "body": {
+      "slug": "field-log",
+      "title": "Field log revised",
+      "content": "## Decisions\n\nA fulcrum result. See [[brief]].\n\n## Follow-up\n\nPrepare the next visit.\n\nSend the notes.",
+      "tags": [
+        {
+          "slug": "field"
+        },
+        {
+          "slug": "review"
+        }
+      ],
+      "incoming_links": [],
+      "outgoing_links": [
+        {
+          "slug": "brief",
+          "title": "Project brief"
+        }
+      ]
+    }
+  },
+  "reject unknown tag": {
+    "status": 400,
+    "body": {
+      "error": "unknown tag: missing"
+    }
+  },
+  "search text with two tags": {
+    "status": 200,
+    "body": {
+      "total": 1,
+      "notes": [
+        {
+          "slug": "field-log",
+          "title": "Field log revised",
+          "tags": [
+            {
+              "slug": "field"
+            },
+            {
+              "slug": "review"
+            }
+          ],
+          "incoming_links": [],
+          "outgoing_links": [
+            {
+              "slug": "brief",
+              "title": "Project brief"
+            }
+          ],
+          "excerpt": "## Decisions\n\nA \u0002fulcrum\u0003 result. See [[brief]].\n\n## Follow-up\n\nPrepare the next visit.\n\nSend the notes."
+        }
+      ]
+    }
+  },
+  "find title prefix": {
+    "status": 200,
+    "body": {
+      "total": 1,
+      "notes": [
+        {
+          "slug": "field-log",
+          "title": "Field log revised",
+          "tags": [
+            {
+              "slug": "field"
+            },
+            {
+              "slug": "review"
+            }
+          ],
+          "incoming_links": [],
+          "outgoing_links": [
+            {
+              "slug": "brief",
+              "title": "Project brief"
+            }
+          ],
+          "excerpt": "A fulcrum result. See brief."
+        }
+      ]
+    }
+  },
+  "list tags": {
+    "status": 200,
+    "body": {
+      "tags": [
+        {
+          "slug": "field",
+          "note_count": 1
+        },
+        {
+          "slug": "review",
+          "note_count": 1
+        }
+      ]
+    }
+  },
+  "reject split with unknown tag": {
+    "status": 400,
+    "body": {
+      "error": "unknown tag: missing"
+    }
+  },
+  "split into linked and tagged notes": {
+    "status": 201,
+    "body": {
+      "notes": [
+        {
+          "slug": "decisions-2",
+          "title": "Decisions",
+          "tags": [
+            {
+              "slug": "review"
+            }
+          ],
+          "incoming_links": [],
+          "outgoing_links": [],
+          "excerpt": "A fulcrum result. See brief."
+        },
+        {
+          "slug": "follow-up",
+          "title": "Follow-up",
+          "tags": [
+            {
+              "slug": "review"
+            }
+          ],
+          "incoming_links": [],
+          "outgoing_links": [],
+          "excerpt": "Prepare the next visit."
+        }
+      ]
+    }
+  },
+  "open split decisions-2": {
+    "status": 200,
+    "body": {
+      "slug": "decisions-2",
+      "title": "Decisions",
+      "content": "## Decisions\n\nA fulcrum result. See [[brief]].",
+      "tags": [
+        {
+          "slug": "review"
+        }
+      ],
+      "incoming_links": [],
+      "outgoing_links": [
+        {
+          "slug": "brief",
+          "title": "Project brief"
+        }
+      ]
+    }
+  },
+  "open split follow-up": {
+    "status": 200,
+    "body": {
+      "slug": "follow-up",
+      "title": "Follow-up",
+      "content": "## Follow-up\n\nPrepare the next visit.\n\nSend the notes.",
+      "tags": [
+        {
+          "slug": "review"
+        }
+      ],
+      "incoming_links": [],
+      "outgoing_links": []
+    }
+  },
+  "check split preserves source": {
+    "status": 200,
+    "body": {
+      "slug": "field-log",
+      "title": "Field log revised",
+      "content": "## Decisions\n\nA fulcrum result. See [[brief]].\n\n## Follow-up\n\nPrepare the next visit.\n\nSend the notes.",
+      "tags": [
+        {
+          "slug": "field"
+        },
+        {
+          "slug": "review"
+        }
+      ],
+      "incoming_links": [],
+      "outgoing_links": [
+        {
+          "slug": "brief",
+          "title": "Project brief"
+        }
+      ]
+    }
+  },
+  "download markdown": {
+    "status": 200,
+    "body": "---\ntitle: Field log revised\nslug: field-log\ndate: \"<clock>\"\ntags:\n    - field\n    - review\ndialect: mynotes\n---\n## Decisions\n\nA fulcrum result. See [[brief]].\n\n## Follow-up\n\nPrepare the next visit.\n\nSend the notes.",
+    "attachment": "attachment; filename=\"field-log.md\""
+  },
+  "import supporting markdown": {
+    "status": 201,
+    "body": {
+      "slug": "visit-agenda",
+      "title": "Visit agenda",
+      "content": "# Visit agenda\n\nDiscuss [[brief]].",
+      "tags": [],
+      "incoming_links": [],
+      "outgoing_links": [
+        {
+          "slug": "brief",
+          "title": "Project brief"
+        }
+      ]
+    }
+  },
+  "delete split note": {
+    "status": 204,
+    "body": ""
+  },
+  "deleted note is gone": {
+    "status": 404,
+    "body": {
+      "error": "not found"
+    }
+  },
+  "browse final workspace": {
+    "status": 200,
+    "body": {
+      "total": 5,
+      "notes": [
+        {
+          "slug": "decisions-2",
+          "title": "Decisions",
+          "tags": [
+            {
+              "slug": "review"
+            }
+          ],
+          "incoming_links": [],
+          "outgoing_links": [
+            {
+              "slug": "brief",
+              "title": "Project brief"
+            }
+          ],
+          "excerpt": "A fulcrum result. See brief."
+        },
+        {
+          "slug": "decisions",
+          "title": "Earlier decisions",
+          "tags": [],
+          "incoming_links": [],
+          "outgoing_links": [],
+          "excerpt": ""
+        },
+        {
+          "slug": "field-log",
+          "title": "Field log revised",
+          "tags": [
+            {
+              "slug": "field"
+            },
+            {
+              "slug": "review"
+            }
+          ],
+          "incoming_links": [],
+          "outgoing_links": [
+            {
+              "slug": "brief",
+              "title": "Project brief"
+            }
+          ],
+          "excerpt": "A fulcrum result. See brief."
+        },
+        {
+          "slug": "brief",
+          "title": "Project brief",
+          "tags": [],
+          "incoming_links": [
+            {
+              "slug": "decisions-2",
+              "title": "Decisions"
+            },
+            {
+              "slug": "field-log",
+              "title": "Field log revised"
+            },
+            {
+              "slug": "visit-agenda",
+              "title": "Visit agenda"
+            }
+          ],
+          "outgoing_links": [],
+          "excerpt": ""
+        },
+        {
+          "slug": "visit-agenda",
+          "title": "Visit agenda",
+          "tags": [],
+          "incoming_links": [],
+          "outgoing_links": [
+            {
+              "slug": "brief",
+              "title": "Project brief"
+            }
+          ],
+          "excerpt": "Discuss brief."
+        }
+      ]
+    }
+  },
+  "inspect final backlink graph": {
+    "status": 200,
+    "body": {
+      "slug": "brief",
+      "title": "Project brief",
+      "content": "",
+      "tags": [],
+      "incoming_links": [
+        {
+          "slug": "decisions-2",
+          "title": "Decisions"
+        },
+        {
+          "slug": "field-log",
+          "title": "Field log revised"
+        },
+        {
+          "slug": "visit-agenda",
+          "title": "Visit agenda"
+        }
+      ],
+      "outgoing_links": []
+    }
+  },
+  "persisted workspace": {
+    "notes": {
+      "brief": {
+        "slug": "brief",
+        "title": "Project brief",
+        "content": "",
+        "tags": []
+      },
+      "decisions": {
+        "slug": "decisions",
+        "title": "Earlier decisions",
+        "content": "",
+        "tags": []
+      },
+      "decisions-2": {
+        "slug": "decisions-2",
+        "title": "Decisions",
+        "content": "## Decisions\n\nA fulcrum result. See [[brief]].",
+        "tags": [
+          "review"
+        ]
+      },
+      "field-log": {
+        "slug": "field-log",
+        "title": "Field log revised",
+        "content": "## Decisions\n\nA fulcrum result. See [[brief]].\n\n## Follow-up\n\nPrepare the next visit.\n\nSend the notes.",
+        "tags": [
+          "field",
+          "review"
+        ]
+      },
+      "visit-agenda": {
+        "slug": "visit-agenda",
+        "title": "Visit agenda",
+        "content": "# Visit agenda\n\nDiscuss [[brief]].",
+        "tags": []
+      }
+    },
+    "tags": [
+      "field",
+      "review"
+    ]
+  }
+}

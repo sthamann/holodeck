@@ -1,0 +1,84 @@
+:root {
+  color-scheme: light;
+  font-family: "Instrument Sans", system-ui, sans-serif;
+  color: #242933;
+  background: #f8f8f4;
+  --ink: #242933;
+  --muted: #4d5967;
+  --line: #d7dcde;
+  --panel: #f0f2ef;
+  --paper: #fffefa;
+  --accent: #254d66;
+  --accent-hover: #193c51;
+  --focus: #296b99;
+}
+* { box-sizing: border-box; }
+::selection { color: #102e45; background: #d4e8f4; }
+body { margin: 0; }
+h1, h2, p, ul, ol { margin: 0; }
+h1 { font-size: 2.375rem; line-height: 1.12; letter-spacing: -.035em; overflow-wrap: anywhere; }
+h2 { font-size: 1.125rem; letter-spacing: -.015em; margin-top: .375rem; }
+p { max-width: 72ch; line-height: 1.6; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: .2em; }
+a:hover { color: var(--accent-hover); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+button, input, select, textarea { font: inherit; }
+button, .primary {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 2.5rem; width: fit-content; padding: .5rem .9rem;
+  border: 1px solid var(--accent); border-radius: .45rem;
+  background: var(--accent); color: #fff; font-weight: 650; text-decoration: none;
+}
+button:disabled { opacity: .65; }
+button:not(:disabled):hover, .primary:hover { background: var(--accent-hover); color: #fff; cursor: pointer; }
+button.danger { background: #803625; border-color: #803625; }
+button.danger:not(:disabled):hover { background: #672719; }
+.topbar {
+  min-height: 4rem; padding: .6rem clamp(1rem, 3vw, 2.75rem);
+  border-bottom: 1px solid var(--line); background: var(--paper);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.brand { text-decoration: none; color: var(--ink); font-size: 1.35rem; font-weight: 750; letter-spacing: -.025em; }
+.frame { display: grid; grid-template-columns: minmax(16rem, 20rem) minmax(0, 1fr); min-height: calc(100vh - 4rem); }
+aside { background: var(--panel); border-right: 1px solid var(--line); padding: 1.5rem; min-width: 0; }
+main { padding: clamp(1.5rem, 5vw, 4.5rem); min-width: 0; }
+main > .stack { max-width: 54rem; }
+.stack { display: grid; gap: 1.15rem; align-items: start; }
+.row, .tags { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem; }
+.tags:empty { display: none; }
+.tags a { font-size: .875rem; color: var(--muted); }
+.notelist { display: grid; }
+.note-item { display: block; border-top: 1px solid var(--line); padding: .75rem .6rem; overflow-wrap: anywhere; text-decoration: none; }
+.note-item:hover, .note-item[aria-current="page"] { background: #e2ebee; }
+.note-item[aria-current="page"] { font-weight: 650; }
+.note-item small {
+  display: block; color: var(--muted); margin-top: .25rem; font-weight: 400; font-size: .875rem;
+  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+}
+form { display: grid; align-items: start; gap: .9rem; }
+.field { display: grid; gap: .35rem; font-weight: 600; }
+input:not([type="checkbox"]), textarea, select {
+  width: 100%; min-width: 0; min-height: 2.5rem; padding: .55rem .65rem;
+  border: 1px solid #84919a; border-radius: .4rem; background: var(--paper); color: var(--ink); font-weight: 400;
+}
+textarea { resize: vertical; line-height: 1.5; }
+input::placeholder { color: var(--muted); }
+fieldset { margin: 0; border: 1px solid var(--line); border-radius: .4rem; min-width: 0; }
+legend { font-weight: 650; }
+.check { display: inline-flex; align-items: center; gap: .3rem; margin: .2rem .75rem .2rem 0; }
+.check input { accent-color: var(--accent); }
+.form-status { color: #8b3624; }
+.form-status:empty { display: none; }
+.prose { padding-top: 1.15rem; border-top: 1px solid var(--line); display: grid; gap: .9rem; }
+.prose p { white-space: pre-wrap; overflow-wrap: anywhere; }
+.prose pre { margin: 0; padding: .85rem 1rem; background: var(--panel); border: 1px solid var(--line); border-radius: .4rem; overflow-x: auto; }
+.prose h2, .prose h3, .prose h4, .prose h5, .prose h6 { margin: .3rem 0 -.5rem; }
+.linklist, .ordered { padding-left: 1.25rem; }
+.linklist li, .ordered li { margin-bottom: .35rem; }
+.message { margin: 2rem; }
+@media (max-width: 44rem) {
+  .frame { display: flex; flex-direction: column-reverse; min-height: auto; }
+  aside { border: 0; border-top: 1px solid var(--line); padding: 1.25rem 1rem; }
+  main { padding: 1.75rem 1rem 2.5rem; }
+  h1 { font-size: 1.875rem; }
+}

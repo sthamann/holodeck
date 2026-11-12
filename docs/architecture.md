@@ -4,6 +4,8 @@ A **deck** is a deployable AI model that learns an application's behavior and ru
 
 The long-term goal is to fuse arbitrary software with a foundation model such as Qwen. The architecture must accommodate very different kinds of software through the same execution machinery. For each application, replacement means meeting a declared behavioral, compatibility and operational contract with the original application off. Learnability from limited evidence, access to external systems and achievable performance are separate questions. [Acceptance and experiment design](roadmap.md)
 
+The [research status](research-status.md) records what the published experiments have demonstrated. The [semantics learning proposal](learning-application-semantics.md) defines the transition to acquire, the conditions under which evidence can distinguish it and the comparisons that would show whether a learned Deck adds value.
+
 ![A Qwen backbone and learned exact specialists form the Deck. A generic runtime supplies state, commits and delivery.](../assets/illustrations/deck-target-system.svg)
 
 ## 1. What belongs in a deck
@@ -101,4 +103,8 @@ Start with a structured editing application such as Calc and an application with
 
 The [independent Rust core](../experiments/model-core/README.md) fitted three bounded integer behaviors with 9–11 teacher queries each. All three matched 15,024 held-out inputs apiece. The previous checkpoint missed 536 cases after the teacher changed. A single operator selector changed after refitting. This establishes causal execution from discrete parameters and a fixed forward for a bounded grammar. The test also exercises durable receipts, restart and competing revisions.
 
-The [Shopware forward comparison](forward-pass.md) matched 36 journeys in each execution arm. The [product mask](product-mask.md) binds recorded layouts and scoped API effects. Its browser orchestration and some application validation are authored code. Those experiments provide teaching and comparison assets. The integrated Qwen target, general acquisition, fresh Holos with learned interactions and complete software replacement remain research milestones.
+The [MyNotes Deck](../experiments/mynotes/deck/README.md) uses an exact parameter graph for a connected document workspace and generates its Holo from the same checkpoint. The original server and the earlier WebAssembly build are absent from its runtime. Three selectors were identified against teacher traces. One intervention changed both the Holo preview and the real write. The remaining parameter graph and Holo vocabulary are authored.
+
+The [Qwen follow-up](../experiments/mynotes/learned/README.md) fits intent grounding from native browser observations. A guided generated Holo and generated tag operations passed 78 reserved HTTP interactions and a browser workflow with the reference stopped. The attempted full generated application did not qualify, so this run retains the earlier graph for the other operations.
+
+The [Shopware forward comparison](forward-pass.md) matched 36 journeys in each execution arm. The [product mask](product-mask.md) binds recorded layouts and scoped API effects. Its browser orchestration and some application validation are authored code. Those experiments provide teaching and comparison assets. Integrated Qwen grounding, learned Holo composition and general application acquisition remain research milestones.

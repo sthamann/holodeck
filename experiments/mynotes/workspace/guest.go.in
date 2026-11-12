@@ -1,0 +1,76 @@
+// This entry point is injected into the pinned source checkout. The original
+// handler and migrations are compiled as part of the guest application.
+package main
+
+import (
+	"bytes"
+	"database/sql"
+	"encoding/json"
+	"net/http"
+	"net/http/httptest"
+	"unsafe"
+
+	"github.com/mikaelstaldal/mynotes/internal/api"
+	"github.com/mikaelstaldal/mynotes/internal/deckwire"
+	"github.com/mikaelstaldal/mynotes/internal/handler"
+	"github.com/mikaelstaldal/mynotes/internal/repository"
+	"github.com/mikaelstaldal/mynotes/internal/service"
+)
+
+var router http.Handler
+var input, output []byte
+
+func main() {}
+
+func pointer(data []byte) uint32 {
+	return uint32(uintptr(unsafe.Pointer(&data[0])))
+}
+
+//go:wasmexport reserve
+func reserve(size uint32) uint32 {
+	input = make([]byte, size)
+	return pointer(input)
+}
+
+//go:wasmexport response
+func response() uint32 { return pointer(output) }
+
+//go:wasmexport setup
+func setup() uint32 {
+	db, err := sql.Open("sqlite", "")
+	if err != nil {
+		panic(err)
+	}
+	db.SetMaxOpenConns(1)
+	if err := repository.InitSchema(db); err != nil {
+		panic(err)
+	}
+	notes, tags, artifacts := repository.NewNoteRepository(db), repository.NewTagRepository(db), repository.NewArtifactRepository(db)
+	h := handler.New(service.NewNoteService(notes, tags), service.NewArtifactService(artifacts),
+		service.NewTagService(tags), service.NewPublishService(notes, repository.NewPublishedNoteRepository(db), artifacts))
+	router, err = api.NewServer(h, api.WithPathPrefix("/api/v1"))
+	if err != nil {
+		panic(err)
+	}
+	return 1
+}
+
+//go:wasmexport dispatch
+func dispatch() uint32 {
+	var incoming wire.Request
+	if err := json.Unmarshal(input, &incoming); err != nil {
+		panic(err)
+	}
+	request, err := http.NewRequest(incoming.Method, incoming.URL, bytes.NewReader(incoming.Body))
+	if err != nil {
+		panic(err)
+	}
+	request.Header = http.Header(incoming.Header)
+	recorder := httptest.NewRecorder()
+	router.ServeHTTP(recorder, request)
+	output, err = json.Marshal(wire.Response{Status: recorder.Code, Header: recorder.Header(), Body: recorder.Body.Bytes()})
+	if err != nil {
+		panic(err)
+	}
+	return uint32(len(output))
+}

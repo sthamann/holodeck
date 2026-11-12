@@ -1,0 +1,122 @@
+// The only MyNotes-specific code here is the type adapter at the bottom.
+// The rules and routing are loaded from the source compiler's weight file.
+package repository
+
+import (
+	_ "embed"
+	"encoding/json"
+	"errors"
+	"time"
+)
+
+const circuitInputs = 9
+const circuitCells = 14
+const circuitLanes = circuitInputs + circuitCells
+const circuitOps = 6
+
+type parameterGate struct {
+	Operation [circuitOps]uint8
+	Left      [circuitLanes]uint8
+	Right     [circuitLanes]uint8
+	Alternate [circuitLanes]uint8
+}
+
+type parameterCircuit struct {
+	Gates   [circuitCells]parameterGate
+	Outputs [4][circuitLanes]uint8
+}
+
+//go:embed deck_revision.json
+var circuitParameters []byte
+
+var revisionCircuit = loadRevisionCircuit()
+
+func validSelector(mask []uint8, available int) bool {
+	ones := 0
+	for index, weight := range mask {
+		if weight > 1 || (weight != 0 && index >= available) {
+			return false
+		}
+		ones += int(weight)
+	}
+	return ones == 1
+}
+
+func loadRevisionCircuit() parameterCircuit {
+	var circuit parameterCircuit
+	if err := json.Unmarshal(circuitParameters, &circuit); err != nil {
+		panic(err)
+	}
+	for index, gate := range circuit.Gates {
+		if !validSelector(gate.Operation[:], circuitOps) ||
+			!validSelector(gate.Left[:], circuitInputs+index) ||
+			!validSelector(gate.Right[:], circuitInputs+index) ||
+			!validSelector(gate.Alternate[:], circuitInputs+index) {
+			panic("invalid transition circuit")
+		}
+	}
+	for _, output := range circuit.Outputs {
+		if !validSelector(output[:], circuitLanes) {
+			panic("invalid transition circuit output")
+		}
+	}
+	return circuit
+}
+
+func weighted(mask []uint8, values []int64) int64 {
+	var result int64
+	for index, weight := range mask {
+		result += int64(weight) * values[index]
+	}
+	return result
+}
+
+func truth(value bool) int64 {
+	if value {
+		return 1
+	}
+	return 0
+}
+
+func (c parameterCircuit) forward(input [circuitInputs]int64) [4]int64 {
+	var lanes [circuitLanes]int64
+	copy(lanes[:], input[:])
+	for index, gate := range c.Gates {
+		a := weighted(gate.Left[:], lanes[:])
+		b := weighted(gate.Right[:], lanes[:])
+		alternative := weighted(gate.Alternate[:], lanes[:])
+		selected := alternative
+		if a != 0 {
+			selected = b
+		}
+		bank := [circuitOps]int64{truth(a == b), a + b, truth(a < b), truth(a <= b), selected, a}
+		lanes[circuitInputs+index] = weighted(gate.Operation[:], bank[:])
+	}
+	var result [4]int64
+	for index, mask := range c.Outputs {
+		result[index] = weighted(mask[:], lanes[:])
+	}
+	return result
+}
+
+func compiledRevision(stored time.Time, expected *time.Time, now time.Time) (time.Time, error) {
+	provided := stored
+	if expected != nil {
+		provided = *expected
+	}
+	// MyNotes writes revisions at millisecond precision. Fail explicitly
+	// if someone passes a database from outside that storage contract.
+	if stored != stored.Truncate(time.Millisecond) || provided != provided.Truncate(time.Millisecond) {
+		return time.Time{}, errors.New("revision is outside the millisecond storage contract")
+	}
+	read := stored.UnixMilli()
+	output := revisionCircuit.forward([circuitInputs]int64{0, 1, read, provided.UnixMilli(), now.UnixMilli(), read, 0, 1, 412})
+	switch output[0] {
+	case 0:
+		return time.UnixMilli(output[2]).UTC(), nil
+	case 412:
+		return time.Time{}, ErrVersionMismatch
+	default:
+		return time.Time{}, errors.New("invalid circuit decision")
+	}
+}

@@ -6,7 +6,7 @@ A **Deck** learns executable software behavior and applies it to live, versioned
 
 [![Qwen and learned exact specialists form one Deck with Holos, APIs and a generic commit host.](assets/illustrations/deck-target-system.svg)](docs/architecture.md)
 
-[Target architecture](docs/architecture.md) · [Experiments and acceptance](docs/roadmap.md) · [Fable 5.2 challenge](docs/architecture-review.md) · [The original article](https://www.linkedin.com/pulse/end-software-we-know-stefan-hamann-z81he/)
+[Current research status](docs/research-status.md) · [Learning an application](docs/learning-application-semantics.md) · [Target architecture](docs/architecture.md) · [Experiments and acceptance](docs/roadmap.md) · [Fable 5.2 challenge](docs/architecture-review.md) · [The original article](https://www.linkedin.com/pulse/end-software-we-know-stefan-hamann-z81he/)
 
 Holoshop is the commerce testbed. Shopware teaches the Deck during development. The existing prototype runs selected shopper and merchant journeys on its own records with the teacher offline. [Run Holoshop](#run-the-experiments)
 
@@ -23,6 +23,12 @@ The film illustrates the vision and its original Shopware experiment and shows a
 ### An independent model core
 
 The Rust experiment learns exact transitions from a separate teacher. Three bounded behaviors matched **15,024 held-out inputs each** after 9–11 queries apiece. Changing the teacher's boundary caused 536 mismatches with the old checkpoint. The refitted checkpoint changed the corresponding operator selector and passed the same offline evaluation. This is a bounded discrete execution result. The roadmap tests whether a learned prior, Qwen and reusable composition improve on equivalent symbolic and code-generation baselines. [Reproduce the Rust experiment](experiments/model-core/README.md)
+
+### Transfer a connected application outside commerce
+
+The standalone MyNotes Deck creates, edits, tags, links and splits notes through an exact parameter graph. Its generated browser workspace and HTTP API share the same operations and durable records. With the teacher switched off and no original code in the runtime, it matched **26 reference HTTP responses and the persisted workspace**. Three teacher traces selected three parameters from eight candidates. Changing one parameter changed both the split preview and the notes saved by that control. [Run the Deck and reproduce the comparison](experiments/mynotes/deck/README.md)
+
+The Qwen follow up used native browser traces to fit intent grounding. Its mixed checkpoint matched **78 of 78 API interactions** and ran a browser workflow with MyNotes off. It contains generated tag operations and a generated Holo with human corrections. The remaining note operations use the earlier authored graph. The attempt to synthesize the whole graph did not pass compilation. [What was learned and what failed](docs/research-status.md)
 
 ### Learn Shopware's API and UI together
 

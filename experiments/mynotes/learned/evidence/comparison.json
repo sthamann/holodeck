@@ -1,0 +1,396 @@
+{
+  "matched": 78,
+  "total": 78,
+  "comparisons": [
+    {
+      "workspace": "workshop",
+      "label": "tag created",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "second tag created",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "duplicate tag",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "link destination",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "new note",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "duplicate explicit slug",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "derive and disambiguate slug",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "open",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "backlinks",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "edit text and tags",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "stale edit",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "no-op tag order",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "bad tag",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "unknown split tag",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "split shallow headings",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "read child",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "read child",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "retained source",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "no headings",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "filter notes",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "tag counts",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "delete tag",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "read after tag detach",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "delete note",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "missing note",
+      "equal": true
+    },
+    {
+      "workspace": "workshop",
+      "label": "remaining backlinks",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "tag created",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "second tag created",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "duplicate tag",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "link destination",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "new note",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "duplicate explicit slug",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "derive and disambiguate slug",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "open",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "backlinks",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "edit text and tags",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "stale edit",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "no-op tag order",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "bad tag",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "unknown split tag",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "split shallow headings",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "read child",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "read child",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "retained source",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "no headings",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "filter notes",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "tag counts",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "delete tag",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "read after tag detach",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "delete note",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "missing note",
+      "equal": true
+    },
+    {
+      "workspace": "meadow",
+      "label": "remaining backlinks",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "tag created",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "second tag created",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "duplicate tag",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "link destination",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "new note",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "duplicate explicit slug",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "derive and disambiguate slug",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "open",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "backlinks",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "edit text and tags",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "stale edit",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "no-op tag order",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "bad tag",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "unknown split tag",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "split shallow headings",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "read child",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "read child",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "retained source",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "no headings",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "filter notes",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "tag counts",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "delete tag",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "read after tag detach",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "delete note",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "missing note",
+      "equal": true
+    },
+    {
+      "workspace": "bridge",
+      "label": "remaining backlinks",
+      "equal": true
+    }
+  ]
+}

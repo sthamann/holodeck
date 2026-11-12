@@ -1,0 +1,71 @@
+{
+  "examples": [
+    {
+      "target": "new",
+      "caption": "New note"
+    },
+    {
+      "target": "new",
+      "caption": "Title"
+    },
+    {
+      "target": "edit",
+      "caption": "Edit"
+    },
+    {
+      "target": "edit",
+      "caption": "Save"
+    },
+    {
+      "target": "split",
+      "caption": "Split by headings"
+    },
+    {
+      "target": "split",
+      "caption": "Split note by headings"
+    },
+    {
+      "target": "tags",
+      "caption": "Tags"
+    },
+    {
+      "target": "tags",
+      "caption": "Add tag…"
+    },
+    {
+      "target": "index",
+      "caption": "Full-text search"
+    },
+    {
+      "target": "index",
+      "caption": "Filter by title"
+    }
+  ],
+  "results": [
+    {
+      "text": "I want to create a new note",
+      "expected": "new",
+      "actual": "new"
+    },
+    {
+      "text": "Edit the note I have open",
+      "expected": "edit",
+      "actual": "edit"
+    },
+    {
+      "text": "Break this note into sections at its headings",
+      "expected": "split",
+      "actual": "split"
+    },
+    {
+      "text": "Show the tags I can use",
+      "expected": "tags",
+      "actual": "tags"
+    },
+    {
+      "text": "Search the full text of my notes",
+      "expected": "index",
+      "actual": "index"
+    }
+  ]
+}
