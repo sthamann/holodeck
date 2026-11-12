@@ -1,303 +1,53 @@
-# Roadmap for the first complete commerce deck
+# Experiments and acceptance
 
-## Progress against the first shop
+Holodeck aims to replace complete applications with learned, executable decks. The first question is whether the model can acquire a capability and own its effects. The next question is whether a trainable backbone and reusable learned components make acquisition, composition or use better than the strongest simpler implementation. We test both. [Target architecture](architecture.md)
 
-| Workstream | Observed | Still needed for acceptance |
-| --- | --- | --- |
-| Commerce and merchant import | The same joint checkpoint passes 48 new configured journeys and 72 earlier ones. | Full catalog and variant lifecycle, broader pricing, promotions, tax and availability coverage. |
-| Storefront, checkout and Admin | Eight Chrome journeys carry one order through the three generated surfaces. | More independent tasks and interaction types, complete role separation, and multimodal product discovery. |
-| Transactions and service | Checkout receipts survive reopening SQLite. A separate service specialist matches 16 status journeys. | Independent payment provider outcomes, quantity and financial returns, and the complete continuation and authority tests. |
-| Model and learning | Sparse choices change the executed programs. Four orders keep their [activated specialist after restart](learning.md#one-specialist-from-training-to-activation). | Shared multimodal training, learning new rule families with a fixed runtime, and improvement under controlled activation across merchants. |
-| Performance | Local apply p95 was 0.85 ms for the numeric comparison. | Cold and warm UI timings, load and comparison with Shopware on the same hardware. |
-
-[Evidence, artifacts and reproduction](joint-deck.md) · [Trace induction and changed teacher control](trace-induction.md) · [Full product profile and acceptance tests](shopware-absorption.md#6-prüfprogramm-für-den-systemersatz)
-
-The first product milestone is a working standard shop. A customer shops in a **generated Holo Storefront**, completes a purchase in **generated Holo Checkout** and sees the order progress after the merchant handles it in **generated Holo Admin**. The shop runs on one deployed deck, including its learned commerce specialists, and one set of durable business records.
-
-The current joint deck completes the measured purchase and merchant flow in four shops with Shopware offline. It uses the same checkpoint for commerce decisions, component selection and action bindings. The earlier [two shop proof](neural-projection.md) and [Nordlager workspace](native-shopware-workspace.md) document the path to this experiment. [One order through the three current surfaces](joint-deck.md#one-order-in-the-browser)
+![The validation plan advances from discrete execution through acquisition and causal fusion to independent application replacement.](../assets/illustrations/deck-target-validation.svg)
 
 ## Next experiments
 
-**1. Accept the same ordinary shop across unfamiliar configurations.** Start with catalog and variants, availability, cart, price, checkout, payment and merchant fulfilment. Reserve whole merchant configurations and combinations of pricing, delivery and state rules. Run the complete journeys with Shopware offline, compare offers, writes and refusals against native traces, and remove a relevant learned dependency to check that the recorded outcome and visible action depend on it. Publish coverage by behaviour family. [Acceptance matrix](shopware-absorption.md#6-prüfprogramm-für-den-systemersatz)
+Run the gates in order of dependency. Transaction and renderer work can progress once the contract is fixed. The larger joint model run depends on a decisive result from the inexpensive learning and baseline comparisons.
 
-**2. Follow a purchase across people and channels.** Start with a photo or a text request, compose an interactive buyer view and continue the same purchase through a buying agent and the merchant’s Admin. Use the same authorised facts to compare price, available actions and the final order across paths. Then change stock or the actor’s role mid-journey and check which offers must change. An accepted commitment should survive a change of surface and a restart.
+| Gate | Build and run | Pass condition and decision |
+| --- | --- | --- |
+| **G0 · Reproduce and freeze** | Publish the independent Rust experiment. Freeze the operator vocabulary, trace schema, train/test boundary, scoring rules, budgets and baseline versions for G1. | Reproduce the three offline comparisons and verify checkpoint intervention, restart, idempotency and conflict handling. Freeze the next evaluation manifest before generating its hidden cases. The existing run is a bounded mechanism check. |
+| **G1 · Identify rules** | Extend the isolated teacher and learner to multiple hidden families of guards and effects. Compare candidate pairs and request distinguishing examples. | On 240 independently generated cases, qualify at least 108 of 120 identifiable cases. There must be zero false qualifications. Forty observationally ambiguous and 80 behaviorally outside-grammar cases must abstain in the declared domain. The outside-grammar cases need a reference witness or a distinguishing probe inside the declared budget. Cases indistinguishable at the allowed interfaces belong to the ambiguity cohort. Count how many cases timeout. |
+| **G2 · Learn reusable structure** | Compare a symbolic interpreter with the exact parameter forward on the same synthesized program. Add library induction and a trainable proposal distribution. Run library-only, prior-only, joint and uniform arms. | The execution paths agree on decisions, effects and declared resource behavior. The joint learner reduces median teacher calls by at least 30% at matched qualified coverage, or improves coverage by at least 10 percentage points at the fixed query budget. A paired family-level interval must support an improvement on the declared primary endpoint. If the benefit comes entirely from the symbolic library, record that. |
+| **G3 · Scale and resume** | Learn rules over structured objects, variable-length collections, multi-step state, loops and delayed events. Include held-out structures and larger dependency graphs. | Fit and replay families with effective program sizes above 15 nodes. Exact effects and continuations must match on predeclared holdouts, including restart and checkpoint pinning. Report teacher calls, time and memory as curves across sizes. A failure to acquire the larger family within budget stops progression on that capability. |
+| **G4 · Compare to ordinary code generation** | Give a pinned LLM the same evidence, active teacher access, verifier, action contracts and budget. Let it generate ordinary executable code in the isolated evaluator. Compare also with a symbolic learner using the same grammar. | Measure qualified coverage, false promotions, teacher calls, compute and time. The Deck must improve a preregistered primary endpoint at matched correctness, cost or query budget. If the controls tie, attribute the demonstrated result to the generic runtime and synthesis method. |
+| **G5 · Prove Qwen's contribution** | Compare the trained multimodal model, frozen Qwen with a trained router, a small encoder and shuffled grounding or composition heads. Use equivalent typed actions as the deterministic reference. | On held-out paraphrases, images, documents and novel compositions, the trained arm must improve exact completed tasks by at least 10 percentage points over the strongest matched non-joint arm, with a paired family-level interval excluding zero. A grounding or composition intervention must produce a predicted downstream decision or effect under controlled input. A text quality improvement alone passes only a language claim. |
+| **G6 · Replace and transfer** | Learn the Calc and Shopware profiles below. Freeze the host and vocabulary, then let an independent contributor onboard a third application profile through evidence, schemas and model artifacts. | Full requirement coverage for each declared profile, with the corresponding teacher off. Publish identical runtime and primitive hashes for the frozen transfer arms. Publish compatibility exclusions and stop claiming full replacement when a required behavior is open. |
+| **G7 · Change rules while work is open** | Exercise deterministic interleavings, optimistic conflicts, crash before commit, crash after commit before reply, duplicate events, outbox retry and revision migration. | Each sequence preserves all declared invariants, produces the expected effects and receipts, and gives every continuation a reproducible version. Faults in the new release leave the previous release and its active work recoverable. |
+| **G8 · Make Holos useful** | Generate views for tasks absent from the browser corpus, starting with empty projection storage. Compare with an automatically built form over the same allowed actions. Include changed roles, stale objects and malformed bindings. | Equal action correctness and zero unauthorized effects. Require a preregistered improvement in task completion or task time without increasing errors. Record screen structure and visual fidelity separately from functional and user outcomes. |
 
-**3. Teach a business to work differently.** Give the deck a policy or a short demonstration set that introduces a new rule family. Hold the host, primitives and retrieval budget fixed. Compare with the existing specialist and a model that produces a rule for a conventional engine. Require the new behaviour to transfer to another merchant, shape the visible controls and survive an activation and rollback with an order still open. Report separately what changed in weights, executable structure and merchant inputs. [What the present learning experiments establish](learning.md)
+These numerical thresholds are proposed design targets. Each executable benchmark pins the cohort seed commitment, sample size, estimand, allowed interfaces, timeout, resource budget and statistical method before opening its final holdout. Run each learned arm over five declared training seeds where training is stochastic. Report individual seeds, paired results and uncertainty. One policy family is one cluster for inferential comparisons. Thousands of input variations of one rule do not count as thousands of independent rule acquisitions.
 
-**4. Measure the cost of using it every day.** Once the same journeys pass, measure first projection, reopening a saved holo and executing a routine action at p50 and p95. Compare on equal hardware and record model calls and cost. Reuse a projection or compile a learned path only when it preserves offers, refusals, effects and permissions.
+### How to build the first decisive benchmark
+
+1. **Publish a task envelope.** Each task exposes an authorized snapshot, typed inputs, a reset operation and a deterministic observation contract. The label includes accept/refuse, exact effects, subsequent state and any continuation.
+2. **Seal families before fitting.** Split by program topology and rule family as well as by object identity, values and application. Keep generated teacher code, seeds and labels in an independent evaluator. Score direct API events and UI events through the same model. Normalize unstable IDs only through a declared semantic mapping.
+3. **Prove what is identifiable.** Record the grammar $G$, domain $D$, evidence $E$ and candidate $h$. Search for a second hypothesis in $G$ that fits $E$ and differs from $h$ on an allowed input in $D$. A satisfiable result produces a teaching question. An unsatisfiable result is a relative certificate if the search is complete for the declared encoding. Timeouts and incomplete search stay unresolved. Prove mandatory invariants separately. The independent hidden evaluator checks teacher parity.
+4. **Compare at equal opportunity.** Start G1 with a 64-query cap per case including seed probes. Freeze larger task caps before G3/G4. The enrollment rule also fixes which cases carry a formal specification and which rely on independently recorded behavior. Give all arms the same initial evidence, reset privileges, candidate-validation feedback and time/compute envelopes. Report wall time and teacher calls separately. Count an abstention as unqualified coverage and an incorrect qualification as an error.
+5. **Keep the causal tests.** Replay the same checked program in the symbolic and parameter paths. Intervene separately in an exact selector, grounding and composition. Hold runtime, input facts and projection context constant for each relevant intervention. Use a counterfactual expectation fixed before the test. Publish the first divergence and the complete outcome, including held-out cases that did not qualify.
 
 ## First delivery and acceptance
 
-| Area | What the first shop must do |
-|---|---|
-| **Holo Storefront** | Browse and search a product catalog, show product details and variants, expose availability and let the customer build or change a cart. |
-| **Holo Checkout** | Apply the merchant’s pricing, tax, shipping and discount rules, collect required customer data and consent, handle test payment events and create one durable order. |
-| **Holo Admin** | Maintain the catalog, find and open the order, handle fulfilment and tracking, and carry out supported cancellation and return actions. The shopper can see the resulting order status. |
+### Calc
 
-The first reference shop uses synthetic merchant data and a test payment adapter. Shopware supplies teaching traces and comparison results. The deployed shop serves the full journey with Shopware stopped. The deck owns catalog and cart decisions, pricing, order creation, payment handling, fulfilment and standard after-sales decisions. Generic storage, access checks, exact primitives, atomic commit and the component renderer provide the execution machinery.
+Use LibreOffice Calc as the first foreign teacher. Declare a profile with multi-sheet references, relative and absolute copy, formula evaluation, dependency invalidation, visible errors, save and restore. Reserve sheet shapes, dependency topologies and combinations of edits. Generate a grid and an error-repair Holo with working interactions. The runtime receives typed workbook data and model artifacts. Evaluate with Calc stopped. [Calc reference and recalculation API](https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1sheet_1_1XCalculatable.html)
 
-The acceptance run starts with a clean database and empty projection storage. The deck composes each surface at request time with real bindings and actions, and the same learned graph governs the action when invoked. The run traces each commercial decision to its model version and graph, checks independently specified results, and covers ordinary refusals such as unavailable stock and failed payment. An archived or reopened holo can reuse the generated composition after this path has been demonstrated.
+### Holoshop
 
-The general model is planned under `src/holodeck`. Existing experiments remain under `experiments/shopware`. The machine-readable [task plan](tasks.json) links the current evidence to relevant tasks and tracks acceptance of the complete shop separately. See the [architecture](architecture.md), [contracts](interfaces.md) and [learning design](learning.md).
+Use a pinned Shopware edition and an explicit standard commerce profile. Capture linked Store API, Admin API, browser and persistence observations. The old product mask, shopping journeys and state-transition probes are curriculum and baselines. The full first journey is browse and search, select a variant, cart, price and availability, checkout, receive a test payment event, fulfil in Admin and reopen the resulting order. Include expected refusals, catalog changes and ordinary after-sales actions covered by the selected profile. Reserve whole merchants, tax and pricing combinations, data shapes and permissions.
 
-## M0: Boundary and teaching contract
+A customer can open a fresh Holo Storefront and Checkout. A merchant works on the same order in a fresh Holo Admin. Each path binds real capabilities and writes, using one deployed model and one set of durable records. Shopware is stopped for the run. Route compatibility and generated view usability are separate checks. The [Shopware inventory and acceptance design](shopware-absorption.md) describes the domain detail.
 
-### H01: Locate current business decisions
+### A third application
 
-**Depends on:** Existing experiments.
+Use an independent team to choose a profile structurally different from commerce and spreadsheets, such as a document editor with dependency-sensitive operations or an algorithmic tool with strict resource bounds. Record how it was acquired and what external contracts it requires. Compare the same acquisition and runtime machinery. Progress across pure computation, structured state, variable-length workloads, time and concurrency, external effects, and algorithmically demanding software. Report the highest profile actually passed.
 
-**Paths:** `experiments/shopware/native/service.py`, `docs/decision-inventory.json`.
+### Operational measurement
 
-Trace the current native demo from a catalog request through cart, checkout and the merchant order view. Identify which decisions come from the model and which are still supplied by host code.
+Once a profile passes, compare cold first Holo, warm action, time to commit, steady-state throughput and resource use on the same hardware against its native reference and code-generation arm. Report p50, p95 and p99 plus timeout and failure rates. The first provisional targets are p95 below 10 ms for a small warmed local model action excluding network/render and below 400 ms to first useful Holo content on the declared workstation. Performance is measured only under an explicit workload, concurrency and correctness contract.
 
-### H02: Define the shared model contract
-
-**Depends on:** H01.
-
-**Paths:** `src/holodeck/contracts.py`, `src/holodeck/primitives.py`.
-
-Specify DeckStep, checkpoint, effects, continuation and projection. Freeze generic primitives with exact type and rounding semantics. No tax, checkout or return primitive may hide the business rule.
-
-### H03: Collect complete commerce teaching cases
-
-**Depends on:** H02.
-
-**Paths:** `experiments/shopware/oracle/`, `datasets/commerce/schema.json`.
-
-Use Shopware as an offline teacher. Capture complete shopper and merchant journeys with authorized actions, effects, refusals and unchanged records across configurations. Define independently checked expectations for behaviours outside the available reference.
-
-### H04: Freeze independent evaluation families
-
-**Depends on:** H03.
-
-**Paths:** `experiments/shopware/evaluation/`, `docs/evaluation.md`.
-
-Separate merchants and rule combinations across training and evaluation. Equalize baseline context and verification access. Resolve the trainable model, tokenizer and hardware early. Evaluate against independent outcomes rather than the candidate validator.
-
-## M1: Learn and project the storefront
-
-### H05: Connect exact objects to the representation
-
-**Depends on:** H02.
-
-**Paths:** `src/holodeck/encoder.py`, `src/holodeck/state.py`.
-
-Connect text and image features to typed objects, events and configuration. Preserve exact prices, quantities and identities as referenced operands. Declare completeness of required collections.
-
-### H06: Implement the learnable business graph
-
-**Depends on:** H02, H05.
-
-**Paths:** `src/holodeck/model.py`, `src/holodeck/graph.py`, `src/holodeck/heads.py`.
-
-Extend learned operand and operator selection to guards, object changes and continuations inside one Deck step. The output must carry business conditions and effects rather than a host function name.
-
-### H07: Build the generic commit boundary
-
-**Depends on:** H02, H05.
-
-**Paths:** `src/holodeck/store.py`, `src/holodeck/commit.py`.
-
-Commit typed changes, continuation, receipt and outbox together. Check access and versions. Stable effect identity prevents duplicate effects. Return conflicts to the model without calculating a replacement business decision.
-
-### H08: Learn catalog, cart and pricing behaviour
-
-**Depends on:** H03, H04, H06, H07.
-
-**Paths:** `src/holodeck/learning.py`, `tests/test_learned_cart.py`.
-
-Learn product and variant eligibility, quantity and stock rules, gross and net amounts, tax, configured discounts and ordinary shipping choices. Execute the learned graph against independent labels for accepted and rejected actions.
-
-### H09: Run the generated storefront through the learned core
-
-**Depends on:** H01, H08, H15, H16, H17.
-
-**Paths:** `src/holodeck/adapters/http.py`, `tests/test_decision_origin.py`.
-
-Open a storefront holo from an empty projection store and buyable catalog context. Connect catalog and cart interactions to the learned Deck step. Test that disabling the relevant learned graph removes the associated capability.
-
-### H15: Import catalog, media and merchant data
-
-**Depends on:** H05.
-
-**Paths:** `src/holodeck/imports.py`, `experiments/shopware/merchants/`.
-
-Map products, variants, media, conditions and style declaratively. Keep vector retrieval separate from authoritative facts. Replay historical expectations only with the needed historical conditions. ERP stays excluded.
-
-### H16: Generate working projections from the model
-
-**Depends on:** H06, H08.
-
-**Paths:** `src/holodeck/projection.py`, `src/holodeck/heads.py`.
-
-Produce a projection at request time from the model output, role and current business context. Emit a component tree, data bindings and permitted actions tied to the executed business graph. Verify cold generation with no stored storefront, checkout or admin page.
-
-### H17: Render generic components and route model actions
-
-**Depends on:** H16.
-
-**Paths:** `ui/components/`, `ui/bindings/`.
-
-Render typed cards, grids, forms, totals and histories. Route permitted actions to the same model entry point. Component implementations supply interaction mechanics and formatting.
-
-## M2: Complete checkout and merchant operations
-
-### H10: Learn checkout and order formation
-
-**Depends on:** H09.
-
-**Paths:** `src/holodeck/model.py`, `tests/test_learned_checkout.py`.
-
-Learn customer and address requirements, shipping selection, price consent, joint order creation and stock effects. Generate the checkout projection from the current decisions. Exercise an empty cart, price changes, the last unit and repeated confirmation.
-
-### H11: Learn payment continuations
-
-**Depends on:** H10.
-
-**Paths:** `src/holodeck/scheduler.py`, `experiments/shopware/payment_simulator.py`, `tests/test_learned_payment.py`.
-
-Deliver test payment authorization, capture, failure, unknown outcome and refund as events. The model determines waiting, compensation and release for fulfilment. Verify that duplicate or late events do not duplicate charges or orders.
-
-### H12: Learn standard order handling in the admin
-
-**Depends on:** H11.
-
-**Paths:** `tests/test_learned_return.py`, `datasets/commerce/returns/`.
-
-Learn fulfilment, cancellation and a standard return with the associated inventory and payment effects. Produce the permitted merchant actions and the corresponding customer order status from the same decisions.
-
-### H13: Compare the complete shopper and merchant journey
-
-**Depends on:** H10, H11, H12, H18.
-
-**Paths:** `experiments/shopware/evaluation/`, `tests/test_commerce_trajectories.py`.
-
-Run the complete journey through storefront, checkout and admin. Compare record effects, displayed actions and refusals with independent expectations. Attribute each commercial decision to the active model artifact and an executed graph.
-
-### H14: Restore business processes after restart
-
-**Depends on:** H13.
-
-**Paths:** `src/holodeck/checkpoint.py`, `tests/test_restart.py`.
-
-Restart after ordering, payment requests and pending inspection. Preserve model identity, agreements and completed effects. Do not silently change the semantics of an active continuation.
-
-### H18: Connect the generated storefront, checkout and admin
-
-**Depends on:** H10, H11, H12, H15, H16, H17.
-
-**Paths:** `ui/`, `tests/test_projection_contracts.py`.
-
-Generate shopper, checkout and merchant order views from the same model checkpoint and durable records. Operate the order from the admin and observe its new state from the shopper view. Apply server-side actor scope to data and action access.
-
-## M3: Accept the first complete shop
-
-### H19: Keep the model involved as facts change
-
-**Depends on:** H14, H18.
-
-**Paths:** `src/holodeck/dependencies.py`, `tests/test_changed_facts.py`.
-
-Derive dependencies from executed reads. Recompute affected open decisions after price, quantity or state changes. Obtain required new consent while preserving unaffected drafts and completed agreements.
-
-### H29: Start the first shop with its own model and records
-
-**Depends on:** H14, H15, H18.
-
-**Paths:** `experiments/shopware/README.md`, `scripts/demo.py`, `tests/test_api_contracts.py`.
-
-Provide a clean local startup with a loadable deck, synthetic merchant data, media and test payment events. Start with empty projection storage and an offline Shopware teacher. Replay the full buyer and merchant journey through the deployed model.
-
-### H30: Accept the complete standard shop
-
-**Depends on:** H09, H13, H14, H19, H29.
-
-**Paths:** `experiments/shopware/evidence/`, `docs/status.md`, `README.md`.
-
-Demonstrate a complete purchase and merchant handling through newly generated holos. Run with Shopware stopped and use the learned deck as the source of all commercial decisions on the accepted path. Verify record consistency, correct permissions, replay and decision origin before accepting the milestone.
-
-## M4: Deepen joint model training
-
-### H20: Build aligned understanding and execution data
-
-**Depends on:** H04, H30.
-
-**Paths:** `training/export.py`, `training/schema.json`.
-
-Link intents, states, decisions, graphs, continuations and action bindings in each case. Validate generated candidates by independent execution. Attractive UI is not a commercial correctness label.
-
-### H21: Train the connected model path
-
-**Depends on:** H20.
-
-**Paths:** `training/train.py`, `training/model_manifest.json`, `src/holodeck/heads.py`.
-
-Connect the already learned business core to encoder and projection training. Distinguish frozen features, learned selections and optional LoRA weights. Show that the consumer loads the trained artifact.
-
-### H22: Test fusion with causal interventions
-
-**Depends on:** H21.
-
-**Paths:** `tests/test_model_ablation.py`, `experiments/shopware/evaluation/`.
-
-Disable relevant guards, operands or continuations and observe the expected loss. Compare base, retrieval and training with equal knowledge and verification access. Common packaging is not evidence of fusion.
-
-### H23: Compile and restore learned subgraphs
-
-**Depends on:** H21, H22.
-
-**Paths:** `src/holodeck/compile.py`, `src/holodeck/checkpoint.py`, `tests/test_model_equivalence.py`.
-
-Specialize only stable parts and preserve dynamic selections. Compare acceptance, refusal, effects, continuations and action masks between normal and compiled execution. Restore the exact learned semantics.
-
-## M5: Learn new policies and transfer them
-
-### H24: Learn a new early-refund policy
-
-**Depends on:** H20, H22.
-
-**Paths:** `training/policy_adaptation.py`, `tests/test_policy_adaptation.py`.
-
-Learn early refund after confirmed return handover for a configured customer attribute and amount limit. Test boundaries, changed items and partial quantities. Keep restock bound to confirmed resale eligibility.
-
-### H25: Transfer without changing the host
-
-**Depends on:** H23, H24.
-
-**Paths:** `experiments/shopware/evaluation/transfer.py`, `experiments/shopware/merchants/`.
-
-Use one runtime artifact for two merchants. Change only declared data, configuration and model artifacts. Vary products, names and thresholds. Give direct rule generation the same context and checks.
-
-### H26: Turn capability gaps into learning cases
-
-**Depends on:** H19, H25.
-
-**Paths:** `src/holodeck/gaps.py`, `src/holodeck/learning.py`.
-
-Distinguish missing facts, retrieval errors, impossible requests and missing rules. Preserve a concrete counterexample. Open a new learning round with separate development and independent evaluation cases.
-
-### H27: Activate and roll back an improvement
-
-**Depends on:** H14, H25, H26.
-
-**Paths:** `src/holodeck/activation.py`, `tests/test_learning_cycle.py`.
-
-Activate a checked model for new runs, restart and show its actual effect in merchant B. Preserve existing capabilities. Restore the previous artifact. Connect detection, learning, persistence and use.
-
-## M6: Optimize the accepted commerce deck
-
-### H28: Measure speed with semantic provenance
-
-**Depends on:** H19, H23, H27.
-
-**Paths:** `benchmarks/commerce.py`, `docs/performance.md`.
-
-Measure computation, commit, saved views and new projection separately. Count interactions without a large model while retaining Deck semantics. Distinguish target budgets from measured latency.
-
-## What each stage establishes
-
-M1 puts the first learned decisions into a storefront that is generated and usable. M2 follows the purchase through checkout, payment and merchant handling. M3 accepts the first complete shop with live projections and an offline teacher. The serving path executes a checkpoint trained from Shopware API observations. M4, M5 and M6 deepen joint training, test new policy learning and transfer, and measure the speed of the accepted runtime.
-
-The eight target properties have their own mechanisms and evidence requirements. [Properties and how to test them](architecture.md#properties-and-how-to-test-them)
-
-A new early refund policy and a purchase order amendment after partial shipment are later experiments in adaptation and transfer. [Experiment design](learning.md#a-later-b2b-transfer-experiment)
+[Architecture](architecture.md) · [Independent review](architecture-review.md) · [First measured core](../experiments/model-core/README.md) · [Earlier commerce work breakdown](https://github.com/sthamann/holodeck/blob/b572b93/docs/roadmap.md)

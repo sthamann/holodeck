@@ -1,104 +1,64 @@
-# Technical contracts
+# Runtime contracts
 
-These are the target contracts. In the [current joint deck](joint-deck.md), an offered action binds a record ID and revision to the hash of its emitted program. The VM computes typed writes, and SQLite stores changes and an idempotent receipt together. The numeric extension versions the arithmetic vocabulary with the checkpoint. Integer cents remain the stored representation.
-
-**Status: proposed interfaces.** The runnable experiments have their existing smaller APIs. These contracts define the next deck implementation and apply beyond commerce.
+These are the proposed interfaces for the [target architecture](architecture.md). The [Rust core](../experiments/model-core/README.md) implements a smaller typed transition and commit contract. The Shopware experiments retain their own measured interfaces.
 
 ## DeckStep
 
 ```text
-input
-  typed state snapshot and current data references
-  event or understood intent
-  merchant or business configuration
-  durable continuation
-  server-verified actor scope
+StepInput { deck_version, actor_scope, event, context, continuation? }
 
-output
-  decision: allow | reject | need_facts | need_consent | await
-  reason: learned graph and predicate references
-  actual read set
-  typed effect proposal
-  permitted next actions and input schemas
-  next continuation
-  bound projection
-  model and execution provenance
+StepResult =
+  ReadRequest { request_id, authorized_ref, cursor?, continuation }
+  | Clarification { unresolved_bindings, options? }
+  | Decision { outcome, value?, read_set, effects, continuation?,
+               available_actions, projection?, provenance }
+
+Effect =
+  PutRecord { type_ref, id, expected_version, value }
+  | DeleteRecord { type_ref, id, expected_version }
+  | Schedule { event_ref, due, correlation }
+  | InvokePort { port_ref, payload, idempotency_key, correlation }
 ```
 
-A transport adapter may parse input and check its shape. It may not decide commercial eligibility. Server-verified identity and provenance cannot be replaced by model-supplied assertions.
+Identity and authority come from the authenticated runtime. The deck binds intent and facts to typed actions, computes eligibility and produces a complete effect batch. A simulation runs the same model under the same authority and discards effects.
 
 ## Exact values and schemas
 
-The initial type system includes booleans, integers, fixed-scale decimals, money with currency, timestamps, enumerations, references, lists and records. Numeric facts remain exact operands. Required collections declare completeness.
+The fixed ABI supplies booleans, signed integers, fixed-scale decimals with explicit rounding, strings, timestamps, content references, lists and records. Domain schemas, field names, units and constraints are versioned deck artifacts. A field such as currency can be expressed as a typed value in the schema. Tax and settlement semantics live in the specialist. The runtime validates generic shape, numerical bounds, access and referential integrity without dispatching on application concepts.
 
-Business schemas describe structure. Commercial thresholds and allowed state transitions belong to the learned graph, not to hidden validation code in those schemas.
+The loader validates the model and primitive ABI, approved versions and declared limits. Authorized object handles are bound to the actor, namespace and revision. Queries record completeness and dependency versions, including membership changes when a calculation depends on a whole collection.
 
-## Primitive operations
+## Commit and receipt
 
-The proposed vocabulary includes reads, references, record construction, exact arithmetic, comparison, Boolean operations, finite collection operations, typed changes, generic quantity transfer, event emission and waiting. Its precise signatures and failure semantics are fixed before a transfer experiment.
+Only the verified model execution channel can submit an effect batch. The host rechecks access, types, read versions, limits and deduplication at commit. It persists the changes, continuation, outbox and receipt in one atomic operation. A stale batch returns a conflict. The model can then decide again with updated facts.
 
-A new business rule must compose these operations. Introducing a new host operation that already performs the whole business rule is a different architecture change.
-
-## EffectProposal and receipt
-
-An effect proposal contains the read set, typed object changes, generic quantity changes, next continuation, outgoing effects and result references. Only a verified deck execution can submit it to the commit core.
-
-The commit core validates access, current versions, types and generic consistency. It stores the effect and its receipt atomically. The receipt records the command identity, input digest, result, event references and resulting revision.
-
-A stable effect identity includes the business scope, run, model step and attempt. Request deduplication alone is insufficient when two callers use different keys for the same completed step.
+A receipt records the command identity, normalized input digest, model version, status, resulting revisions and effect IDs. A retried command returns its original receipt. A repeated command identity with different input yields a conflict. A stable logical effect ID prevents duplicate effects across independent retry attempts.
 
 ## Continuation
 
 ```text
-run_id and revision
-model and graph references
-active nodes and bound inputs
-expected events and correlations
-deadlines
-accepted agreement references
-completed effects
-pending decisions
+Continuation { run_id, revision, deck_version, resume_ref, bound_inputs,
+               dependencies, waits, deadlines, agreements, completed_effects }
 ```
 
-A continuation survives a process restart. The scheduler handles delivery and timing. The learned graph determines the business consequence of the arriving event.
-
-Technical IDs and the current time are supplied as recorded inputs. Replaying the same model, state and event should preserve the decision. External outcomes are recorded rather than invented during replay.
+A process can restart and recover this versioned state. The scheduler delivers recorded events and timers. The exact specialist determines the next transition. An explicit migration maps open continuations across versions. Event time, provider outcomes and relevant generated identifiers are recorded inputs for a deterministic replay.
 
 ## Projection and transport
 
-A projection contains a component tree, authorized data bindings, local drafts and action references produced by the model. Its actions are bound to a model version and state context. Executing one evaluates the current event again; it does not trust a previously rendered button.
+```text
+Projection { view_id, renderer_abi, component_tree, view_state,
+             data_bindings, actions, dependency_versions }
 
-Sorting, filtering and local form editing can operate without a large model call. The component code provides interaction mechanics. It cannot contain an alternative refund, pricing or approval policy.
+BoundAction { capability_ref, input_schema, object_handles,
+              expected_revisions, deck_version }
+```
 
-Input adapters can convey typed events and evidence from text, photos, transcripts or documents. Evidence carries source references and uncertainty. The deck resolves it to typed inputs or requests more facts. Presentation context and authorized commercial inputs have separate roles in the step contract.
+A renderer implements generic components and local interactions such as sorting, filtering, keyboard navigation and drafts. A model-generated action re-enters the same DeckStep as an API call. The server verifies authority and versions again. Presentation properties stay separate from typed inputs that affect a decision.
 
-A saved projection carries its model and schema version, business and actor scope, surface, component bindings and action references. Reopening checks compatibility and binds current authorized values. Commercial offers come from the model and merchant policy, with consent and current-state checks when an action executes.
-
-For a cold request, the model produces the projection for the requested work, actor and current state. The renderer receives components, bindings and model action references. Storefront, checkout and admin share this contract and the same business records. A stored projection is an optional output of the same mechanism.
-
-[MCP Apps](https://apps.extensions.modelcontextprotocol.io/api/documents/overview.html) provides a protocol and host integration for interactive application views associated with tools. It is a candidate transport for holos in other applications. It does not, by itself, define an order, a shared agreement or cross-company write authority.
-
-[A2UI](https://a2ui.org/specification/v1.0-a2ui/) provides a candidate representation for component and data updates. A deck adapter would declare its supported version and component catalog. Local form bindings remain distinct from authoritative business changes.
-
-The first experiment uses an ordinary browser renderer. Neither protocol is presented as already integrated into the published prototype.
-
-## Proposed service surface
-
-| Interface | Responsibility |
-|---|---|
-| `POST /deck/events` | Send an intent or typed event to the same model entry point |
-| `GET /deck/runs/{id}` | Read authorized state, open decisions and durable outcomes |
-| `GET /deck/runs/{id}/projection` | Retrieve a saved or current bound view |
-| `GET /deck/runs/{id}/events` | Receive updates with a resume cursor |
-| `POST /deck/imports` | Validate and import a business data package |
-| `POST /deck/models/{id}/activate` | Activate a checked model version for new runs |
-
-Existing application APIs can be adapters to this same path. They must not become a second implementation of the business semantics.
+A compatibility adapter translates a native endpoint or event into this contract and maps responses. MCP Apps and A2UI are possible delivery formats for a projection. Application permissions, capabilities and write semantics come from the deployed deck and runtime boundary.
 
 ## State ownership and external effects
 
-Current records have an owner, scope, type, identifier and version. An external provider is authoritative for its own outcome. A local record of a pending payment request is not proof that the provider completed it.
+The deployed deck and store own application state within the replacement profile. The teacher supplies evidence during acquisition and evaluation. A port names a provider, authorized input and output types, deadline, idempotency support, error contract and reconciliation policy. A payment network, clock or device supplies a recorded external result. The runtime persists outbound intent and dispatches it through the outbox. Timeout or an uncertain response remains explicit until confirmed or reconciled. No universal exactly-once guarantee is assumed across providers.
 
-An outbox persists a request with the local transaction. An inbox deduplicates results. An unknown outcome is reconciled with the same operation identity. If a later result requires compensation, that commercial response comes from the learned graph and is itself recorded durably.
-
-The local prototype uses SQLite and a single local write transaction for its authoritative records. SQLite’s concurrency and foreign-key rules remain explicit implementation constraints. [Transactions](https://www.sqlite.org/lang_transaction.html), [foreign keys](https://www.sqlite.org/foreignkeys.html).
+[Architecture](architecture.md) · [Acceptance tests](roadmap.md)

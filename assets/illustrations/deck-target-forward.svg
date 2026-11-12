@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="472" viewBox="0 0 1200 472" role="img" aria-labelledby="title description">
+  <title id="title">Inside one model step</title>
+  <desc id="description">A request is grounded to a capability and operands. A specialist forward computes the exact result and discovers dependencies. The model reads out decisions, effects and Holo actions.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#3869a0"/></marker>
+    <style>
+      .title{font:700 43px system-ui,sans-serif;fill:#102648}
+      .subtitle{font:21px system-ui,sans-serif;fill:#405676}
+      .name{font:700 22px system-ui,sans-serif;fill:#102648}
+      .detail{font:17px system-ui,sans-serif;fill:#405676}
+      .label{font:700 14px ui-monospace,monospace;letter-spacing:1.4px;fill:#245d9c}
+      .line{stroke:#3869a0;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+      .secondary{stroke-dasharray:6 5;stroke-width:1.7}
+    </style>
+  </defs>
+  <rect width="1200" height="472" rx="24" fill="#f4f8ff"/>
+  <text x="40" y="61" class="title" text-anchor="start">Inside one model step</text>
+  <text x="42" y="98" class="subtitle" text-anchor="start">Grounding selects references. The exact forward computes the effect.</text>
+  <path d="M289 230H325" class="line"/>
+  <path d="M579 230H615" class="line"/>
+  <path d="M869 230H905" class="line"/>
+  <path d="M716 300V350" class="line"/>
+  <path d="M768 356V306" class="line secondary"/>
+  <rect x="40" y="160" width="249" height="140" rx="15" fill="white" stroke="#bdcde1" stroke-width="2"/><text x="60" y="195" class="name" text-anchor="start">Resolve input</text><text x="60" y="223" class="detail" text-anchor="start">Actor, event, model version</text><text x="60" y="246" class="detail" text-anchor="start">Authorized snapshot</text><text x="60" y="269" class="detail" text-anchor="start">Text and image context</text>
+  <rect x="330" y="160" width="249" height="140" rx="15" fill="white" stroke="#bdcde1" stroke-width="2"/><text x="350" y="195" class="name" text-anchor="start">Ground and route</text><text x="350" y="223" class="detail" text-anchor="start">Typed capability pointer</text><text x="350" y="246" class="detail" text-anchor="start">Operand handles</text><text x="350" y="269" class="detail" text-anchor="start">Clarify when ambiguous</text>
+  <rect x="620" y="160" width="249" height="140" rx="15" fill="#e0edff" stroke="#3176bd" stroke-width="2"/><text x="640" y="195" class="name" text-anchor="start">Run the specialist</text><text x="640" y="223" class="detail" text-anchor="start">Parameter-selected ops</text><text x="640" y="246" class="detail" text-anchor="start">Exact registers and memory</text><text x="640" y="269" class="detail" text-anchor="start">Bounded execution</text>
+  <rect x="910" y="160" width="250" height="140" rx="15" fill="white" stroke="#bdcde1" stroke-width="2"/><text x="930" y="195" class="name" text-anchor="start">Read out</text><text x="930" y="223" class="detail" text-anchor="start">Decision, effects, next event</text><text x="930" y="246" class="detail" text-anchor="start">Available actions</text><text x="930" y="269" class="detail" text-anchor="start">Bound Holo components</text>
+  <rect x="613" y="356" width="258" height="86" rx="15" fill="white" stroke="#bdcde1" stroke-width="2"/><text x="633" y="391" class="name" text-anchor="start">Versioned records</text><text x="633" y="419" class="detail" text-anchor="start">Resolve typed dependencies</text>
+</svg>

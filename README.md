@@ -1,12 +1,14 @@
 # Holodeck
 
-**One multimodal model for the business. Working software for each moment.**
+**A model that learns and runs the application. An interface for each moment.**
 
-What if the AI model itself were the application? A **deck** learns the rules, workflows and actions of a business and runs them against its live records. Reasoning is available throughout the application. A **holo** is a working interface the deck assembles for the task at hand. The views can change as people work. Their orders and commitments persist.
+A **Deck** learns executable software behavior and applies it to live, versioned records. A **Holo** is the working interface the Deck composes for a person and task. Its controls bind the same capabilities as an API. The long-term goal is to fuse arbitrary software with a foundation model such as Qwen, with one generic runtime for execution and persistence.
 
-**Holoshop is the first experiment.** A shopper uses Holo Storefront and Holo Checkout. The merchant opens the same order in Holo Admin and asks for the view they need. The deck is responsible for the commerce decisions behind all three. Shopware teaches the deck during development. The prototype runs the tested journeys on its own records with the teacher offline.
+[![Qwen and learned exact specialists form one Deck with Holos, APIs and a generic commit host.](assets/illustrations/deck-target-system.svg)](docs/architecture.md)
 
-[What runs today](#what-runs-today) · [Run Holoshop](#run-the-experiments) · [Architecture](docs/architecture.md) · [Next experiments](docs/roadmap.md#next-experiments) · [The original article](https://www.linkedin.com/pulse/end-software-we-know-stefan-hamann-z81he/)
+[Target architecture](docs/architecture.md) · [Experiments and acceptance](docs/roadmap.md) · [Fable 5.2 challenge](docs/architecture-review.md) · [The original article](https://www.linkedin.com/pulse/end-software-we-know-stefan-hamann-z81he/)
+
+Holoshop is the commerce testbed. Shopware teaches the Deck during development. The existing prototype runs selected shopper and merchant journeys on its own records with the teacher offline. [Run Holoshop](#run-the-experiments)
 
 ## Watch the film
 
@@ -14,9 +16,13 @@ What if the AI model itself were the application? A **deck** learns the rules, w
 
 [MP4](https://github.com/sthamann/holodeck/releases/download/holodeck-explainer/Holodeck-From-Software-to-a-Deck-EN.mp4) · [English subtitles](https://github.com/sthamann/holodeck/releases/download/holodeck-explainer/Holodeck-From-Software-to-a-Deck-EN.en.srt) · [Run the interactive demo](docs/showcase.md)
 
-The film explains the target architecture and shows a test purchase through checkout and a saved return with Shopware switched off. The browser sequence uses the optional Strands heads.
+The film illustrates the vision and its original Shopware experiment and shows a test purchase through checkout and a saved return with Shopware switched off. The browser sequence uses the optional Strands heads.
 
 ## What runs today
+
+### An independent model core
+
+The Rust experiment learns exact transitions from a separate teacher. Three bounded behaviors matched **15,024 held-out inputs each** after 9–11 queries apiece. Changing the teacher's boundary caused 536 mismatches with the old checkpoint. The refitted checkpoint changed the corresponding operator selector and passed the same offline evaluation. This is a bounded discrete execution result. The roadmap tests whether a learned prior, Qwen and reusable composition improve on equivalent symbolic and code-generation baselines. [Reproduce the Rust experiment](experiments/model-core/README.md)
 
 ### Learn Shopware's API and UI together
 
@@ -94,7 +100,7 @@ The next trial hides nested Shopware availability rules and price tiers. A train
 
 ## Deck, holo and projected software
 
-![The target design. A multimodal deck takes intent and current business state, generates working holos and proposes effects to a generic transaction core.](assets/illustrations/inside-a-deck.png)
+[![Inside one model step, exact specialists receive typed references and produce effects and bound actions.](assets/illustrations/deck-target-forward.svg)](docs/architecture.md#2-the-forward-owns-application-behavior)
 
 | Concept | What it does |
 | --- | --- |
@@ -120,16 +126,15 @@ The bet is that a small merchant can get these capabilities from the architectur
 
 ## How a deck is made
 
-1. **Observe the domain.** Vary Shopware configurations and record the state, action, result and continuation. Use source and documentation to propose mechanisms. Keep whole shops, configurations and journeys separate for evaluation.
-2. **Learn executable decisions.** Fit the model to select operands, rules, operations, writes and bindings. Replay the resulting programs against the traces. A program needs to explain the effects as well as the initial decision.
-3. **Load a merchant.** Import products, prices, orders and settings as typed records. The same model reads this package for a new shop. New facts become available on import. A new decision rule needs its own evidence and version.
-4. **Prove what transferred.** Stop the teacher and compare full journeys, refusals, browser actions and durable receipts. Change only the learned choice in a control run to find out which effects depend on the model.
-5. **Project, commit and improve.** Compose the views and bind the allowed actions. Save useful holos and rebind them to current data. Teach from confirmed corrections, test for regression and activate a new checkpoint at a defined point in the workflow.
+[![Software traces, source and specifications feed an active learning and verification cycle.](assets/illustrations/deck-target-learning.svg)](docs/architecture.md#4-how-a-deck-learns-an-application)
 
-[Learning design](docs/learning.md) · [Runtime contracts](docs/interfaces.md) · [Roadmap](docs/roadmap.md)
+The learner combines traces, source, tests and explicit policies. It proposes reusable program structure, asks the teacher about cases that distinguish candidates, and verifies the selected behavior before installing it. A live deployment uses the resulting model and its own records. Confirmed corrections can teach a later version.
+
+[Learning design](docs/architecture.md#4-how-a-deck-learns-an-application) · [Runtime contracts](docs/interfaces.md) · [Validation plan](docs/roadmap.md)
 
 ## Run the experiments
 
+- **Independent model core.** Run the compiled Rust teacher, learner and offline Deck. [Commands and evidence](experiments/model-core/README.md)
 - **Current joint deck.** Reproduce the 48 journey comparison with the bundled synthetic traces and frozen checkpoints on Apple Silicon. Start the four shop browser demo with the pinned Qwen snapshot. [Commands and expected results](docs/joint-deck.md#replay-the-published-checkpoints)
 - **Original portable replay.** Run the early rule transfer, native VM and local regression tests on macOS or Linux with Python 3.11 or newer and `clang`. [Experiment guide](experiments/shopware/README.md#reproduce-the-published-runs)
 

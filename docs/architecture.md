@@ -1,229 +1,104 @@
-# The deck architecture
+# The Holodeck target architecture
 
-This page describes the target architecture. The [forward-pass shop](forward-pass.md) documents the latest execution experiment, built on the [joint deck](joint-deck.md). The complete model must carry commerce semantics across merchant configurations, actions and surfaces.
+A **deck** is a deployable AI model that learns an application's behavior and runs it. It carries the rules, algorithms, transitions and interface bindings that make the application work. A **holo** is an interactive surface the deck composes for a person and task. The same application can appear as a browser workspace, a voice interaction or an API while operating on the same durable records.
 
-The target is one multimodal, executable model of the business. Search, pricing, checkout, service and analysis draw on the same learned business semantics. The model interprets what happened, determines the consequences, carries the process forward and projects the software needed for the work. Standard commerce supplies the first evidence. [The eight properties](../README.md#what-becomes-a-property-of-the-architecture)
+The long-term goal is to fuse arbitrary software with a foundation model such as Qwen. The architecture must accommodate very different kinds of software through the same execution machinery. For each application, replacement means meeting a declared behavioral, compatibility and operational contract with the original application off. Learnability from limited evidence, access to external systems and achievable performance are separate questions. [Acceptance and experiment design](roadmap.md)
 
-The [Shopware absorption plan](shopware-absorption.md) specifies the teacher, execution boundary and experiments that distinguish learned acquisition from a learned decision in the live shop. The [absorption pipeline](absorption-pipeline.md) now connects the installed API inventory, native browser actions, model compilation and promotion for its first tested profile.
+![A Qwen backbone and learned exact specialists form the Deck. A generic runtime supplies state, commits and delivery.](../assets/illustrations/deck-target-system.svg)
 
-## Where the prototype stands
+## 1. What belongs in a deck
 
-![The new execution path inside model forwards and its offline teacher.](../assets/illustrations/forward-pass-architecture.svg)
+| Part | Responsibility | Artifact |
+| --- | --- | --- |
+| **Multimodal backbone** | Interpret text and images, ground intent in typed objects, and provide context to learning, execution and presentation. | A pinned Qwen-family checkpoint and trainable adapters. Start with a frozen backbone to measure the value of each head. |
+| **Grounding and routing heads** | Select capability and operand references from authorized candidates. Identify ambiguous or incomplete inputs. | Trained pointer and routing heads. The selected references remain auditable. |
+| **Exact specialists** | Compute acceptance, results, effects, dependencies and continuations. Compose other learned routines. | Discrete executable parameter banks. A stable forward graph reads the parameters and computes their effects. |
+| **Holo head** | Choose information, controls and composition for the current task. Bind them to the exact specialist's data and available actions. | Trained component and binding readouts. One versioned component vocabulary. |
+| **Generic host** | Supply authorized reads, scheduling, atomic commit, durable receipts, external ports and rendering. | A compiled runtime, fixed operator vocabulary, record store and renderers. |
+| **Application and tenant data** | Supply facts, media, configuration, agreements, schema and style. | Versioned, typed records and content references. |
 
-The forward-pass experiment compiles the cell bank to PyTorch FX subgraphs. It runs the published sparse router as a tensor operation and dispatches the selected subgraphs for commerce, workflow and projection. The interpreter remains a separate comparison path. Nine expressions are induced from Shopware observations before lowering. The compared variants each matched 36 complete journeys in four new shops with Shopware stopped. [Execution boundary, comparison and Chrome evidence](forward-pass.md)
+The model may be physically partitioned into a backbone and sparse specialists. They form one release with one semantic interface and a shared representation of typed entities and capabilities. Integration is a causal claim. A test must show that an intervention in a trained component changes the relevant real behavior. A model that only formats a result establishes presentation capability.
 
-### The joint deck underneath
+A capability is an executable unit with typed inputs, outputs, admissible state and observable effects. It can be a pure function, a query, an incremental computation, an atomic update or a continuation that waits for an event. A legacy route can expose several capabilities. A newly generated view can combine several without introducing its own implementation.
 
-The current checkpoint has a shared sparse decoder for commerce, workflow and projection cells. A frozen Qwen encoder and separate language readouts interpret Admin requests. The model selects expressions from a versioned grammar and binds them to merchant inputs. A typed interpreter executes those expressions and a SQLite store commits the result. The working Storefront, Checkout and Admin use a bounded component set and the same available action programs.
+## 2. The forward owns application behavior
 
-The offline comparison reproduced 48 of 48 new journeys across four merchant configurations. The arithmetic expressions were designed from source and selected against traces. A shipping output intervention shows that the executed choice depends on the trained decoder. The current result covers those journeys. The target calls for a jointly trained multimodal representation, broader acquisition of business logic and a complete product profile. [Read the results and run the same checkpoint](joint-deck.md)
+![Three stages inside the Deck. Ground exact operands, run the parameterized machine, and read out effects and bound interactions.](../assets/illustrations/deck-target-forward.svg)
 
-The optional [Strands heads](strands.md) add two measured alternatives for Admin intent and service program selection. The service head matches the sparse specialist on the reserved workflows. The existing language readout remains the default after the exact facet comparison.
+### Grounding
 
-The [specialist activation test](learning.md#one-specialist-from-training-to-activation) verifies a version change on a live order with the published checkpoint. The old and new decks can run in one process. The order records its bound version, and the first projection after restart resolves that version from the record.
+The backbone reads the request and representations of the actor's authorized context. A typed pointer head selects a capability and refers to exact values by handle. The resolved record carries its type, identity, revision and provenance. A numeric operand comes from the record or a verified typed input. Approximate retrieval can find candidates. It does not establish an identity or make a paginated set complete.
 
-The [trace induction trial](trace-induction.md) replaces selected scalar expressions inside the checkpoint with programs learned from observations. It holds the renderer, executor and sparse selectors fixed and compares the result on fresh shops and a deliberately changed teacher.
+The grounding head returns a typed candidate or a request for clarification. Direct API commands can already carry their typed bindings and enter the same exact execution path. Specialists emit read requests for dependencies they discover during execution. The host resolves those requests under the actor's scope, records the versions and resumes the model.
 
-The [quantity transfer experiment](quantity-transfer.md) uses one learned domain for a generated control and the cart writer. Removing one dependency from that domain changes both outputs. The UI fit also shows where the reverse transfer stops because the visible choices do not identify request correction.
+### Exact execution
 
-The [masked quantity trial](hidden-quantity.md) removes purchase policy fields from the merchant import. The acquisition step uses a small number of observed actions to infer an effective rule. It withholds the rule when the evidence permits several behaviors. The resulting program supplies both the rendered choices and the cart write, with live stock as an input.
+The model uses a small programmable recurrent kernel. Generic operations provide typed load and store within scratch memory, checked integer and decimal arithmetic, comparisons, branches, calls and bounded iteration. A specialist contains learned selections over those operations, operands, branch targets and callable subroutines. For a simple dense encoding, one-hot program counter $p_t$ reads instruction $p_t^\top W_e$ from specialist parameters $W_e$. The kernel computes the next register state, program counter and pending effects. The reference implementation defines precision, overflow, ordering, limits and halt semantics explicitly.
 
-The [shipping rule trial](shipping-rules.md) trains a small prior over rule structures, then fits executable trees for new merchants from native observations. Both the quote and the order use the recovered graph. An early wrong checkout plan shows where the deck needs an independent validation stage before it activates an acquired rule.
+The deployed forward consumes the model's parameters and runtime facts. A readable intermediate representation supports learning, proof and inspection. The execution test uses only the model export and authorized input. There is no application handler, rule engine or executable teacher on its call path. An operation named after a domain action is a learned subroutine. Adding a generic primitive is an explicit architecture change and invalidates comparisons that claim a frozen runtime.
 
-## First delivery
+The [Loom paper](https://arxiv.org/html/2604.08816v1) demonstrates a fixed-weight recurrent transformer that executes programs stored in its state tensor. We borrow its explicit machine-state and stepping model. Holodeck's stronger target places the *acquired structure* in model parameters and measures how the backbone learns, selects and composes it. Moving a hand-authored program into a parameter bank would demonstrate storage and execution only.
 
-The first accepted deck operates a complete standard shop. Its learned commerce specialists cover catalog and cart, prices and availability, checkout and payment, and order handling in the admin. These specialists are part of the versioned model. Shopware supplies teaching data and independent comparisons during development. At deployment, the deck reads and writes its own business records through the generic commit core. [First delivery and acceptance](roadmap.md#first-delivery-and-acceptance)
-
-The first shopper and merchant journey starts with an empty projection store and Shopware offline. Storefront, checkout and admin are composed by the deck at request time. They bind the same records and call the same model entry point. Every commercial decision in the journey must be attributable to the executed model graph. The generic renderer renders components and sends actions. It has no shop-specific decision logic.
-
-## 1. One source of business decisions
-
-The proposed semantic entry point is:
+### Typed readout
 
 ```text
-DeckModel.step(state, event, configuration, continuation, actor_scope)
-    → proposed changes
-    → permitted next actions
-    → next continuation
-    → bound projection
-    → decision trace
+Deck.step(checkpoint, actor_scope, event, versioned_context, continuation?)
+    -> read_request | clarification | decision
+
+Decision = { outcome, value?, read_set, effects, continuation?,
+             available_actions, projection?, provenance }
 ```
 
-The same learned structure determines which action is allowed, which effects belong together and which controls can be offered. Each decision is attributed to the model checkpoint and the executable graph that produced it.
+An effect can change records, schedule an event or request a declared external operation. A continuation names the expected event, data dependencies, version, execution budget and any commitments already made. A generated action references a capability and its argument schema. A diagnostic trace identifies the specialist, executed parameter bank and relevant input versions.
 
-The model runs on technical infrastructure. A database stores current facts. A renderer implements controls. A commit core enforces access, versions and atomicity. These remain necessary, but they contain no independent promotion engine, refund policy or order state machine.
+The exact specialist returns typed intermediate results and discovered dependencies to the shared Qwen context. The Holo head reads that context and the exact list of available actions. Multi-step tasks can use it to select the next learned subroutine before the model emits a final batch. Train the heads on capability and pointer selection, approved program structure, intermediate results and usable action bindings. Use executed effects to score discrete candidates. The first joint implementation uses supervised adapters and selected-program targets rather than differentiating through committed state. A presentation preference can change arrangement, wording and interaction. It can change the outcome only by submitting a valid action or providing an explicitly recognized fact. Training includes contrastive pairs that vary style while preserving the effect and vary a relevant fact while changing it.
 
-The distinction is operational rather than cosmetic. A single service, repository or class does not establish fusion. We test the location and cause of each business decision.
+## 3. Persistence, interfaces and performance
 
-“One model” means one versioned deck owns the business semantics across operations and surfaces. Its checkpoint can include a foundation model, trained adapters and an executable learned graph. Typed primitives, storage, access checks and rendering provide general execution machinery. Live facts and accepted agreements remain durable records with authority, provenance and versions.
+The runtime issues reads against a coherent snapshot. The read set includes range or collection versions where membership matters. The model proposes a typed batch. The host checks authenticated authority, capabilities, schema, resource budgets, versions and idempotency. It commits records, continuation, receipt and outbox together. Conflicts go back to the model for a new decision. Concurrent writers cannot both commit against the same stale revision. Externally visible requests use stable idempotency keys where the provider supports them. External responses are recorded as inputs, with explicit pending or uncertain states when delivery cannot be confirmed.
+
+A release manifest binds foundation and tokenizer revision, adapters, exact parameters, schema, operator ABI, renderer vocabulary and evidence. Existing continuations retain their version and accepted agreements. Activation changes routing for new work. Migrating an open continuation requires a checked state mapping. Persisted effects stay bound to the version that produced them.
+
+**Holos.** The Holo head emits a typed component tree, view state and data bindings. A generic renderer implements grids, sorting, filters, forms, drag interactions and accessibility. It evaluates generic bindings and forwards typed commands. The deck chooses which controls to use and what they mean. The same authenticated action executes through the API, a native-compatible surface or a new Holo. A saved composition can be reused with fresh bindings and authority checks. [Runtime and transport contracts](interfaces.md)
+
+**Fast paths.** The reference path records individual exact model steps. The production candidate fuses static steps into tensor blocks derived from the same parameters. The comparison covers reads, refusals, effects and continuations within the declared bounds, including overflow and abort. Cache keys include the relevant model, permissions and dependency versions. Warm typed actions can bypass large-model grounding when the input already contains resolved references. Report separate cold projection, warm action, commit and end-to-end latency and throughput. Loom reports roughly 10 ms per step on one RTX 4080 configuration. Step-level performance remains a design risk. [Loom deployment measurements](https://arxiv.org/html/2604.08816v1#S11)
+
+## 4. How a deck learns an application
+
+![Software traces, source and specifications enter an active learning loop that checks candidates before packaging a Deck.](../assets/illustrations/deck-target-learning.svg)
+
+1. **Record evidence.** Inventory behaviors, configuration, data types, events, interfaces, background work and external dependencies for a pinned version. Correlate initial state, input, interaction, request, result, persisted delta and subsequent events. Include refusals and side effects. Source and tests expose candidate structure and evidence of uncommon paths. Explicit specifications establish intended behavior when the teacher is missing, ambiguous or faulty.
+2. **Learn a proposal distribution.** Qwen and small heads propose typed operators, references, control-flow edges and reusable subroutines. Train on accepted derivations and distinguishing counterexamples. Use exact state and observable behavior as supervision alongside semantic grounding and view/action binding. Start with supervised structural targets from independently verified candidates.
+3. **Choose informative interventions.** Search the typed grammar under a fixed budget. Query the isolated teacher where surviving candidates disagree. Keep disagreements when evidence cannot distinguish them. A class of programs that matches a finite trace set can still disagree elsewhere.
+4. **Learn abstractions.** Factor repeated verified subgraphs into callable units. Reward reuse that shortens independent solutions or reduces teacher calls. Train the proposal distribution again from verified executions and generated exercises, keeping holdout families separate. [DreamCoder](https://arxiv.org/abs/2006.08381)
+5. **Check and install.** Use counterexamples to revise candidates. Prove properties only against explicit specifications and bounded semantics. Compare teacher observations independently. Verify the exported execution against the checked representation. Activate only the qualified behavior profile and record its scope. [Syntax-Guided Synthesis](https://www.cis.upenn.edu/~alur/SyGuS13.pdf)
+6. **Learn from use.** Facts enter the live store immediately. Confirmed corrections and independent reference outcomes become teaching cases. A changed behavior runs as a candidate in replay or shadow mode, then receives a new version. In-use personalization, rule adaptation and weight updates each have separate evaluation.
+
+### Training and deployment decisions
+
+The first joint experiment pins a vision-capable Qwen release and processor. [Qwen3.5-9B-Base](https://huggingface.co/Qwen/Qwen3.5-9B-Base) is the starting candidate. The experiment uses a frozen backbone with adapters and starts with a compact specialist. A pure structured-input model and a frozen-Qwen router are controls. Joint training is justified when a learned grounding decision, intermediate result or dependency materially improves action or projection on independent evidence. The Mac covers reproducible acquisition, export and replay. Use the H200s for adapter training, candidate evaluation and inference comparisons after the CPU-scale causal tests pass. Report dataset size, compute, teacher calls, abstentions and first failures.
+
+## 5. What full replacement means
+
+A replacement profile lists the entire externally required behavior for a named application and version. Include functional, UI and API behavior, roles, error modes, extension contracts, schedules, data migration, consistency and performance. Give each row an independent oracle or specification, an observed execution path, and status. List unmeasured or unsupported requirements explicitly. Complete replacement is earned when all requirements of the declared profile pass and the original application can be removed from the deployment.
+
+Start with a structured editing application such as Calc and an application with durable cross-actor obligations such as Shopware. For wider generality, add an algorithmic or interaction-heavy profile with distinct resource constraints. Universal computation in the model and successful acquisition of a particular application are separate results. A driver, sensor, payment network or device remains a declared external interface. Real-time or system-level software adds timing, memory, isolation or hardware requirements to the replacement contract.
 
 ## Properties and how to test them
 
-| Target property | Mechanism | First convincing check |
-|---|---|---|
-| **Every function thinks** | Search, pricing, checkout and service resolve shared facts and commitments through the deck. | Trace how one learned policy change affects related decisions across functions. |
-| **Personal is the only version** | Compose or reuse a projection for the current person, task and authorized context. Evaluate merchant pricing on declared inputs. | Different presentations of the same authorized pricing facts produce the same offer. A declared contract can change it through the pricing policy. |
-| **Anything is input** | Bind text, image, speech and document evidence to typed facts and intents, preserving source and uncertainty. | Equivalent evidence leads to the same supported workflow. An ambiguous match requests evidence before the affected action proceeds. |
-| **Every surface, without a project** | Use the same action and projection contracts through compatible browser, embedded, voice and agent adapters. | Complete the same journey through two surfaces and compare effects, receipts and access checks. |
-| **Every business gets its own software** | Bind company data and configuration to a shared checkpoint and teach additional semantics through checked adaptation. | Transfer to a second business and measure configured differences and learned changes with a fixed runtime. |
-| **Features are imagined, then they exist** | Express a described policy as a candidate graph and projection over typed primitives. Rehearse and verify its scope before activation. | Demonstrate a new feature against independent cases and activate the accepted version. |
-| **You can ask the business** | Resolve a question against authorized records and project its evidence and available actions. | Reproduce an answer for a defined population and time window and verify access to its drill-down. |
-| **It gets better by working** | Turn a failure or expert correction into a teaching case and evaluate the next checkpoint before adoption. | Measure improvement on fresh journeys and recover the preceding version with open agreements intact. |
+| Property | Evidence required |
+| --- | --- |
+| **Model owns the application** | A controlled parameter change shifts an accepted action and its effects in the predicted way with runtime, inputs and teacher access fixed. |
+| **Intelligence contributes to execution** | Removing or shuffling trained grounding or composition parameters degrades held-out decisions and bindings. Exact typed actions remain reproducible. |
+| **One capability appears on multiple surfaces** | Independent Holo and API clients produce equivalent effects, refusals and receipts for the same authorized request. |
+| **The application learns a new behavior** | It identifies a hidden rule family or an authorized change, activates it with open work and preserves prior commitments through rollback. |
+| **The architecture transfers** | A second application class is learned and replayed with the same generic runtime and operator vocabulary, and with published coverage and costs. |
+| **The approach earns its complexity** | At matched evidence and budget it improves on an ordinary code-generating model or a symbolic learner on a prespecified axis. |
 
-## 2. Inside the model
+[Detailed test gates and first delivery](roadmap.md) · [Fable 5.2 challenge and decisions](architecture-review.md)
 
-We propose a neurosymbolic model with a shared representation and a learned executable business graph.
+## What has been measured
 
-```mermaid
-flowchart TB
-    I[Text, image, typed event and state references] --> ENC
-    subgraph DECK[Deck model and checkpoint]
-        ENC[Shared representation] --> OP[Learned operand and operator selection]
-        OP --> GRAPH[Select compiled experts]
-        GRAPH --> EXACT[Exact execution in the model forward]
-        EXACT --> EFFECT[Changes and commercial decisions]
-        EXACT --> FLOW[Continuation and dependencies]
-        EXACT --> UI[Action and projection readout]
-        EFFECT --> ENC
-        FLOW --> ENC
-    end
-    EFFECT --> COMMIT[Generic commit core]
-    FLOW --> COMMIT
-    COMMIT --> STORE[(Durable state and agreements)]
-    STORE --> ENC
-    UI --> RENDER[Components in a browser or another host]
-    RENDER --> I
-```
+The [independent Rust core](../experiments/model-core/README.md) fitted three bounded integer behaviors with 9–11 teacher queries each. All three matched 15,024 held-out inputs apiece. The previous checkpoint missed 536 cases after the teacher changed. A single operator selector changed after refitting. This establishes causal execution from discrete parameters and a fixed forward for a bounded grammar. The test also exercises durable receipts, restart and competing revisions.
 
-The representation connects language and images with typed entities, events, relations and merchant configuration. A foundation model such as Qwen can supply the language and image features. Exact amounts, quantities and identities remain referenced typed operands, not values reconstructed from embeddings.
-
-Learned selections determine which operands, operations, conditions and transitions apply. The model's execution graph evaluates those choices using exact arithmetic, comparison, collection and state primitives. A bounded forward can return a continuation for a later business event.
-
-The learned graph chooses which records, conditions and operations are relevant to a business event. The primitive executor supplies exact subtraction, comparison and record operations. That distinction lets the same machinery run learned semantics from different parts of the business.
-
-### Structured model state
-
-Let the model be described by
-
-\[
-(\Delta_t,A_t,C_{t+1},U_t)
-=D_{\theta,\Gamma_\theta}(S_t,e_t,c,C_t).
-\]
-
-The parameters `θ` determine learned selections and representations. `Γθ` is the associated learned or discretized executable structure. The outputs are the proposed delta, permitted actions, continuation and projection.
-
-A node can select a typed primitive and its operands through learned categorical parameters; the chosen primitive then operates on exact values. A readable graph is an inspection or execution form of that learned structure. The binding between the parameters and the exported graph must be recorded and checked.
-
-This does not claim that all knowledge is stored only in dense neural weights. It proposes a model with trainable and structured executable state. A separately authored rule engine cannot be relabelled as model memory to satisfy the claim.
-
-Early experiments may freeze the foundation encoder and train the business part. The later joint experiment must demonstrate that language understanding, business decisions and action projection use the same learned semantics. The [learning design](learning.md) distinguishes those stages and their evidence.
-
-## 3. The checkpoint and the merchant
-
-A deck checkpoint contains the foundation model reference, adapters, learned selection parameters, executable graph, schema and primitive vocabulary versions, and the evidence supporting its use.
-
-Each graph records its origin. A manually written seed is useful development material but is not evidence that the model absorbed business logic. A model-synthesized candidate is distinct from a parameter update. The comparison reports both.
-
-A merchant package supplies products, media, conditions, style, organization and current facts. A new price is a data update. A new rule is a change to the deck’s executable knowledge. The same base checkpoint can operate under different merchant configurations without storing their current prices or inventory in weights.
-
-The durable business graph distinguishes confirmed facts, accepted agreements, observations, inferred possibilities and learned structures. This separation matters when a visual search finds a similar product: similarity helps retrieval but cannot establish the selected variant, a current price or an entitlement.
-
-## 4. The fixed boundary
-
-| Generic infrastructure | Decision made by the model |
-|---|---|
-| Exact arithmetic and type checking | Which quantities and formulas apply |
-| Authorized reads and writes | Which permitted commercial action is appropriate in this state |
-| Version checks and atomic changes | Which records must change together |
-| Generic quantity and capacity constraints | When stock should be reserved, consumed or restored |
-| Idempotency and effect identity | Which business consequence follows an event |
-| Durable events and timers | Which fact the process is waiting for |
-| Component rendering | Which controls and data the work requires |
-
-Authorization remains a real trust boundary. The model cannot grant itself access by proposing a more permissive role. Commercial eligibility remains a learned decision within that boundary.
-
-The primitive vocabulary is frozen for a transfer experiment. Adding an operation named `apply_tax` or `process_return` would put business knowledge back into the fixed runtime. New entity schemas can be data; new operational semantics require a new runtime version and a new comparison.
-
-## 5. State, agreement and commitment
-
-The model reads a versioned snapshot and proposes changes. Its actual execution records the read set, including relevant query or collection versions. Required sets must be complete; a calculation cannot silently sum only the first page of order lines.
-
-The commit core checks the actor, types, versions, generic resource conditions and effect identity. It stores local changes, the continuation, outgoing work and the command receipt together.
-
-A retry of the same action returns the same receipt. Reusing an action key with different input is a conflict. A stable server-side effect identity prevents the same completed model step from being applied twice even if callers use different request keys.
-
-A model call does not run while a database write lock is held. If a referenced fact changed, the proposal is rejected and the updated state returns to `DeckModel.step`. The model determines the commercial response. The host does not calculate a replacement price or select a new fulfilment policy.
-
-Accepted agreements are durable objects. Changing a proposed price or promised service requires another agreement. A current catalog change does not retroactively rewrite a paid order.
-
-## 6. The model stays involved
-
-A deck continues to interpret events after it first projects a view. A payment result, quantity change, failed reservation or return inspection is another input to the same semantic model.
-
-A continuation stores the active graph, bound inputs, expected events, deadlines, accepted agreements and completed effects. The scheduler delivers events and resumes that state. It does not contain a separate hand-authored commerce workflow.
-
-Dependencies come from executed reads and typed nodes. When a fact changes, affected open decisions become stale. The next model step can preserve unaffected decisions, request missing evidence and update only the relevant parts of the interface.
-
-Routine steps may use a compiled part of the model. Remaining involved does not require rerunning a large language model for every click. It requires that the same learned business semantics continue to govern the work.
-
-A running process retains its model and agreement references. A new return can start under a later checkpoint while referring to an earlier order’s immutable facts. Changing the interpretation of an already running continuation requires an explicit, checked state transfer.
-
-## 7. Exact fast paths
-
-A stable learned graph can be specialized against merchant configuration and compiled. This is an optimization of the model’s execution, with the same decision semantics.
-
-The cache identity includes the checkpoint, vocabulary, schema, compiler and relevant configuration. Live prices and quantities remain inputs. If a learned selection is dynamic, compilation must preserve it or leave that part in the normal model path.
-
-We require interpreter and compiled execution to agree on rejection as well as success: amounts, writes, continuations, action availability and relevant dependencies. Replacing a learned decision with a handwritten approximation for speed would invalidate this comparison.
-
-Projection has its own reuse path. Save the component structure, bindings and action references with the model, tenant, surface and access scope that make them valid. Reopen a compatible view with current authorized records. Recheck the action against current state at execution, including its consent and agreement references. A model or policy change can invalidate a saved projection or require it to be rebound.
-
-Measure time and inference cost for initial composition, opening a saved holo and executing a routine action separately. Each result records which path ran and whether a large model was called. Personalization can happen through binding and selecting a saved view as well as composing one.
-
-The existing native experiment validates a much narrower version of this idea for selected fixed-schema programs. It does not establish whole-model compilation.
-
-## 8. Holos are grounded projections
-
-The current prototype trains the projection head to emit a typed tree, field pointers and action bindings. Its interpreter restricts reads and writes to the current role and binds them to the same business state used by the commerce head. The two shop proof includes a comparison and cart combination withheld from training. [Implementation and observed results](neural-projection.md)
-
-A projection contains components, data bindings and action references from the model’s permitted action set. The renderer supports familiar controls: product cards, comparison, editable grids, forms, totals, history and action bars.
-
-Local input is draft state. Authoritative business data changes only through an accepted command. A stale button is not authorization; the current event is evaluated again on the server through the same model semantics.
-
-Views can be saved and reopened with fresh data. A merchant’s familiar workspace and an on-demand customer view are both valid holos. Streaming should preserve focus, selection and entered values.
-
-The first shop proves generation before reuse. On a cold request the deck emits the surface structure, live bindings and permitted actions for the work at hand. A compatible saved projection can later reuse that output. Both paths route actions back to the model for evaluation against current state.
-
-Presentation can adapt to intent, language and authorized context. The merchant’s policy determines which facts can affect an offer, such as the customer’s contract, quantity or explicit tier. A person’s presentation context does not independently change a price. Each surface inherits the same separation between presentation context and commercial inputs.
-
-MCP Apps is a possible delivery mechanism for an interactive view inside another host. A2UI is a possible representation for component and data updates. These protocols do not supply the deck’s business semantics or shared agreement model. See [projection and transport boundaries](interfaces.md#projection-and-transport).
-
-## 9. Learning from software
-
-An existing business system can serve as a teacher: vary its configuration, execute events and record relevant before and after states. Capture rejected actions, negative cases and complete trajectories as well as successful transitions.
-
-Source code and tests help identify behaviours and candidate structures. Independent executed outcomes determine whether a candidate is commercially correct. A type-correct program may still implement the wrong policy.
-
-The learner induces or selects executable graphs, learns their applicability and connects them to future actions and projections. Verified new knowledge becomes a versioned checkpoint. Observed failures can propose new learning work, but the triggering example becomes development data. Fresh cases are needed to establish improvement.
-
-Updating a graph, retrieving another example and changing model weights are different interventions. The comparison must hold context, available primitives and verification opportunities constant when attributing an improvement to weight learning.
-
-## 10. Generality and external effects
-
-The initial implementation focuses on standard commerce: catalog, cart, pricing, checkout, payments, fulfilment and returns. That provides an observable test of many dependencies without building a special logistics application.
-
-Later domains can reuse learned meanings such as an accepted offer, a reservation, a partial settlement or an inspection. New applications should arise through new model knowledge and configuration while the generic runtime remains stable.
-
-External payments and partner systems do not share a local database transaction. Durable outbox and inbox records, stable operation identities, reconciliation and explicitly modelled compensation handle this boundary. The adapter performs a technical request and reports its result. The model determines its business consequence. The first commerce experiments use synthetic data and local test payment behaviour.
-
-## 11. What would establish the claim?
-
-- Complete business trajectories match independent reference outcomes, including refusal and recovery.
-- Decision traces attribute commercial conditions, calculations and joint changes to the learned model.
-- Removing a relevant learned part removes the corresponding capability; no host fallback rescues it.
-- Changing only the model changes the intended rule while the host and primitives remain fixed.
-- The same semantic decision governs the visible control and the executed action.
-- Restoring the checkpoint and continuation preserves behaviour.
-- Another merchant and unseen configurations work without a host patch.
-
-These are the first acceptance criteria in the [roadmap](roadmap.md). Broad Shopware parity, general autonomous business redesign and production readiness remain separate future claims requiring their own evidence.
+The [Shopware forward comparison](forward-pass.md) matched 36 journeys in each execution arm. The [product mask](product-mask.md) binds recorded layouts and scoped API effects. Its browser orchestration and some application validation are authored code. Those experiments provide teaching and comparison assets. The integrated Qwen target, general acquisition, fresh Holos with learned interactions and complete software replacement remain research milestones.

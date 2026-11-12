@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="489" viewBox="0 0 1200 489" role="img" aria-labelledby="title description">
+  <title id="title">How an application becomes a deck</title>
+  <desc id="description">Evidence feeds program proposals. Active queries and formal checks distinguish candidates. Counterexamples return to the learner. A verified version is replayed without the teacher before activation.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#3869a0"/></marker>
+    <style>
+      .title{font:700 43px system-ui,sans-serif;fill:#102648}
+      .subtitle{font:21px system-ui,sans-serif;fill:#405676}
+      .name{font:700 22px system-ui,sans-serif;fill:#102648}
+      .detail{font:17px system-ui,sans-serif;fill:#405676}
+      .label{font:700 14px ui-monospace,monospace;letter-spacing:1.4px;fill:#245d9c}
+      .line{stroke:#3869a0;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+      .secondary{stroke-dasharray:6 5;stroke-width:1.7}
+    </style>
+  </defs>
+  <rect width="1200" height="489" rx="24" fill="#f4f8ff"/>
+  <text x="40" y="61" class="title" text-anchor="start">How an application becomes a deck</text>
+  <text x="42" y="98" class="subtitle" text-anchor="start">Test candidate behavior, learn reusable structure, and install a checked version.</text>
+  <path d="M280 226H326" class="line"/>
+  <path d="M580 226H620" class="line"/>
+  <path d="M874 226H910" class="line"/>
+  <path d="M747 293V345 Q747 355 737 355H465 Q455 355 455 345V299" class="line secondary"/>
+  <rect x="40" y="155" width="240" height="138" rx="15" fill="white" stroke="#bdcde1" stroke-width="2"/><text x="60" y="190" class="name" text-anchor="start">Evidence</text><text x="60" y="218" class="detail" text-anchor="start">Runtime and UI traces</text><text x="60" y="241" class="detail" text-anchor="start">Code, tests and policies</text><text x="60" y="264" class="detail" text-anchor="start">Versioned teacher</text>
+  <rect x="332" y="155" width="248" height="138" rx="15" fill="white" stroke="#bdcde1" stroke-width="2"/><text x="352" y="190" class="name" text-anchor="start">Propose a program</text><text x="352" y="218" class="detail" text-anchor="start">Learn a search prior</text><text x="352" y="241" class="detail" text-anchor="start">Reuse verified abstractions</text><text x="352" y="264" class="detail" text-anchor="start">Compose typed operations</text>
+  <rect x="626" y="155" width="248" height="138" rx="15" fill="#e0edff" stroke="#3176bd" stroke-width="2"/><text x="646" y="190" class="name" text-anchor="start">Find disagreements</text><text x="646" y="218" class="detail" text-anchor="start">Probe the isolated teacher</text><text x="646" y="241" class="detail" text-anchor="start">Check invariants and scope</text><text x="646" y="264" class="detail" text-anchor="start">Keep unresolved cases</text>
+  <rect x="916" y="155" width="244" height="138" rx="15" fill="white" stroke="#bdcde1" stroke-width="2"/><text x="936" y="190" class="name" text-anchor="start">Install a version</text><text x="936" y="218" class="detail" text-anchor="start">Export exact parameters</text><text x="936" y="241" class="detail" text-anchor="start">Replay with teacher off</text><text x="936" y="264" class="detail" text-anchor="start">Bind evidence and versions</text>
+  <text x="600" y="392" class="label" text-anchor="middle">Counterexamples return to the learner</text>
+  <text x="600" y="444" class="detail" text-anchor="middle">Confirmed corrections in service start another cycle.</text>
+</svg>
