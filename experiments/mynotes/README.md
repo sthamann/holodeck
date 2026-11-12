@@ -1,5 +1,9 @@
 # MyNotes application transfer
 
+[Learn the publication workflow](publication/README.md) uses the same recurrent core and discovers its state space from native API, browser and SQLite evidence. The offline Holo manages private edits, public snapshots, republication and withdrawal.
+
+[One workspace, two model versions](versions/README.md) compares a source compiled policy with a trained recurrent core. Swapping only the model changes which actions the Holo offers, what it previews and what is persisted.
+
 [Qwen and native MyNotes traces](learned/README.md) records the next experiment. The measured mixed provenance Deck adds free intent grounding, a guided generated Holo and generated tag operations.
 
 The [standalone notes Deck](deck/README.md) runs the covered workspace entirely through model parameters with a generated Holo. The WebAssembly comparison below remains an earlier control.

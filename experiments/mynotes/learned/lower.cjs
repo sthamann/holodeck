@@ -47,7 +47,7 @@ async function compile() {
   const emptyArray = lit([]);
   const emptyRecord = lit({});
   const nil = lit(null);
-  const globals = new Map(['state', 'body', 'params', 'headers', 'query', 'now'].map((name) => [name, name]));
+  const globals = new Map(['state', 'body', 'params', 'headers', 'query', 'mediaType', 'now'].map((name) => [name, name]));
   const primitiveNames = new Map(operations.slice(11).map((op) => [op, op]));
   primitiveNames.set('withKey', 'with');
   primitiveNames.set('equals', 'eq');

@@ -1,0 +1,54 @@
+// The teacher test invokes the native scanner on successive controlled prefixes.
+package service
+
+import (
+	"encoding/json"
+	"os"
+	"strings"
+	"testing"
+)
+
+type reading struct {
+	Level int `json:"level"`
+	Count int `json:"count"`
+}
+
+type row struct {
+	Before reading `json:"before"`
+	Token int `json:"token"`
+	After reading `json:"after"`
+}
+
+func probe(levels []int) reading {
+	var document strings.Builder
+	for _, depth := range levels {
+		document.WriteString(strings.Repeat("#", depth) + " Heading\n\n")
+	}
+	sections := splitByHeadings(document.String())
+	if len(sections) == 0 {
+		return reading{}
+	}
+	depth := len(sections[0].body) - len(strings.TrimLeft(sections[0].body, "#"))
+	return reading{Level: depth, Count: len(sections)}
+}
+
+func TestHolodeckObserve(t *testing.T) {
+	var rows []row
+	seeds := [][]int{nil}
+	for depth := 1; depth <= 6; depth++ {
+		seeds = append(seeds, []int{depth}, []int{depth, depth})
+	}
+	for _, levels := range seeds {
+		for depth := 1; depth <= 6; depth++ {
+			rows = append(rows, row{probe(levels), depth, probe(append(levels, depth))})
+		}
+	}
+	file, err := os.Create(os.Getenv("HOLODECK_OBSERVATIONS"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer file.Close()
+	if err := json.NewEncoder(file).Encode(rows); err != nil {
+		t.Fatal(err)
+	}
+}

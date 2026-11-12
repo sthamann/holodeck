@@ -1,0 +1,228 @@
+{
+  "model_only_comparison": true,
+  "arms": {
+    "original.compiled": {
+      "api": {
+        "matched": 64,
+        "total": 64
+      },
+      "browser": {
+        "draft": "audit-draft",
+        "river": {
+          "exposed": true,
+          "status": 201
+        },
+        "preview": [
+          "cedar part 1",
+          "cedar part 4"
+        ],
+        "inherited": false,
+        "children": [
+          {
+            "slug": "cedar-part-1",
+            "tags": [
+              {
+                "slug": "cedar-review"
+              }
+            ]
+          },
+          {
+            "slug": "cedar-part-4",
+            "tags": [
+              {
+                "slug": "cedar-review"
+              }
+            ]
+          }
+        ]
+      },
+      "restart_passed": true,
+      "native_sqlite_state_matched": true,
+      "manifest": {
+        "runtime": {
+          "host.mjs": "2fe47add24a6fb2ef7b259221f9134ca00175f74539eac4027328c0c2ee734e0",
+          "kernel.mjs": "2ca2a9723ab15a3055836e238abd7670da33180b96fe0ad998d33dca41d6c587",
+          "grounding.mjs": "ff7ea4dd6688ff774070e1b70cc9427cc9138223c3fb6d965b68b3c5ac1db515",
+          "web/index.html": "3aa7b803f592b610209cc50d55630617d594845900597a71558721c0bab6fdc6",
+          "web/render.mjs": "51f07cf7de08dafafb511c4057dd358286824f615b76201f9d35669d571deed1",
+          "web/surface.css": "f38d3c0139d1e34083d7c0d42ab81553e148bfb755b5b3b857b98ffb46e23478"
+        },
+        "database_before": "53bcc6c1d0c9c5eac9be08c3f4189fa2b2ca2c2895e495f99f65aebc3624ee06",
+        "model": "6e4908a9b82ca5369eb42139e66bb5be29a18529f840b70b43dd140e6de930fd"
+      }
+    },
+    "review.compiled": {
+      "api": {
+        "matched": 63,
+        "total": 63
+      },
+      "browser": {
+        "draft": "audit-draft",
+        "river": {
+          "exposed": false,
+          "status": 400
+        },
+        "preview": [
+          "cedar part 2",
+          "cedar part 3"
+        ],
+        "inherited": true,
+        "children": [
+          {
+            "slug": "cedar-part-2",
+            "tags": [
+              {
+                "slug": "cedar-review"
+              },
+              {
+                "slug": "cedar-source"
+              }
+            ]
+          },
+          {
+            "slug": "cedar-part-3",
+            "tags": [
+              {
+                "slug": "cedar-review"
+              },
+              {
+                "slug": "cedar-source"
+              }
+            ]
+          }
+        ]
+      },
+      "restart_passed": true,
+      "native_sqlite_state_matched": true,
+      "manifest": {
+        "runtime": {
+          "host.mjs": "2fe47add24a6fb2ef7b259221f9134ca00175f74539eac4027328c0c2ee734e0",
+          "kernel.mjs": "2ca2a9723ab15a3055836e238abd7670da33180b96fe0ad998d33dca41d6c587",
+          "grounding.mjs": "ff7ea4dd6688ff774070e1b70cc9427cc9138223c3fb6d965b68b3c5ac1db515",
+          "web/index.html": "3aa7b803f592b610209cc50d55630617d594845900597a71558721c0bab6fdc6",
+          "web/render.mjs": "51f07cf7de08dafafb511c4057dd358286824f615b76201f9d35669d571deed1",
+          "web/surface.css": "f38d3c0139d1e34083d7c0d42ab81553e148bfb755b5b3b857b98ffb46e23478"
+        },
+        "database_before": "53bcc6c1d0c9c5eac9be08c3f4189fa2b2ca2c2895e495f99f65aebc3624ee06",
+        "model": "07bec96bfa1a1191c5ed58e9ce53f56611bb725db433715f21667cea9ba88462"
+      }
+    },
+    "original.recurrent": {
+      "api": {
+        "matched": 64,
+        "total": 64
+      },
+      "browser": {
+        "draft": "audit-draft",
+        "river": {
+          "exposed": true,
+          "status": 201
+        },
+        "preview": [
+          "cedar part 1",
+          "cedar part 4"
+        ],
+        "inherited": false,
+        "children": [
+          {
+            "slug": "cedar-part-1",
+            "tags": [
+              {
+                "slug": "cedar-review"
+              }
+            ]
+          },
+          {
+            "slug": "cedar-part-4",
+            "tags": [
+              {
+                "slug": "cedar-review"
+              }
+            ]
+          }
+        ]
+      },
+      "restart_passed": true,
+      "native_sqlite_state_matched": true,
+      "manifest": {
+        "runtime": {
+          "host.mjs": "2fe47add24a6fb2ef7b259221f9134ca00175f74539eac4027328c0c2ee734e0",
+          "kernel.mjs": "2ca2a9723ab15a3055836e238abd7670da33180b96fe0ad998d33dca41d6c587",
+          "grounding.mjs": "ff7ea4dd6688ff774070e1b70cc9427cc9138223c3fb6d965b68b3c5ac1db515",
+          "web/index.html": "3aa7b803f592b610209cc50d55630617d594845900597a71558721c0bab6fdc6",
+          "web/render.mjs": "51f07cf7de08dafafb511c4057dd358286824f615b76201f9d35669d571deed1",
+          "web/surface.css": "f38d3c0139d1e34083d7c0d42ab81553e148bfb755b5b3b857b98ffb46e23478"
+        },
+        "database_before": "53bcc6c1d0c9c5eac9be08c3f4189fa2b2ca2c2895e495f99f65aebc3624ee06",
+        "model": "5886ea6d39901d9a3dc376ac96a3a07976389d6931bc513093d9e287fa61f890"
+      }
+    },
+    "review.recurrent": {
+      "api": {
+        "matched": 63,
+        "total": 63
+      },
+      "browser": {
+        "draft": "audit-draft",
+        "river": {
+          "exposed": false,
+          "status": 400
+        },
+        "preview": [
+          "cedar part 2",
+          "cedar part 3"
+        ],
+        "inherited": true,
+        "children": [
+          {
+            "slug": "cedar-part-2",
+            "tags": [
+              {
+                "slug": "cedar-review"
+              },
+              {
+                "slug": "cedar-source"
+              }
+            ]
+          },
+          {
+            "slug": "cedar-part-3",
+            "tags": [
+              {
+                "slug": "cedar-review"
+              },
+              {
+                "slug": "cedar-source"
+              }
+            ]
+          }
+        ]
+      },
+      "restart_passed": true,
+      "native_sqlite_state_matched": true,
+      "manifest": {
+        "runtime": {
+          "host.mjs": "2fe47add24a6fb2ef7b259221f9134ca00175f74539eac4027328c0c2ee734e0",
+          "kernel.mjs": "2ca2a9723ab15a3055836e238abd7670da33180b96fe0ad998d33dca41d6c587",
+          "grounding.mjs": "ff7ea4dd6688ff774070e1b70cc9427cc9138223c3fb6d965b68b3c5ac1db515",
+          "web/index.html": "3aa7b803f592b610209cc50d55630617d594845900597a71558721c0bab6fdc6",
+          "web/render.mjs": "51f07cf7de08dafafb511c4057dd358286824f615b76201f9d35669d571deed1",
+          "web/surface.css": "f38d3c0139d1e34083d7c0d42ab81553e148bfb755b5b3b857b98ffb46e23478"
+        },
+        "database_before": "53bcc6c1d0c9c5eac9be08c3f4189fa2b2ca2c2895e495f99f65aebc3624ee06",
+        "model": "7fc822d09c47f2adfa6b382bc6b12e7a8786754a04d554bbe72e0995757c4b46"
+      }
+    }
+  },
+  "sequence_tests": {
+    "identicalGraph": true,
+    "original": {
+      "matched": 2321,
+      "maximumLength": 48
+    },
+    "review": {
+      "matched": 2321,
+      "maximumLength": 48
+    }
+  }
+}

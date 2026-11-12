@@ -107,4 +107,6 @@ The [MyNotes Deck](../experiments/mynotes/deck/README.md) uses an exact paramete
 
 The [Qwen follow-up](../experiments/mynotes/learned/README.md) fits intent grounding from native browser observations. A guided generated Holo and generated tag operations passed 78 reserved HTTP interactions and a browser workflow with the reference stopped. The attempted full generated application did not qualify, so this run retains the earlier graph for the other operations.
 
+The [recurrent workflow experiment](recurrent-workflow-acquisition.md) tests the exact specialist and Holo binding in isolation. One checkpoint serves both splitting and publication. The publication learner inferred four states from native observations and fitted recurrent decisions that drive API effects and Holo controls. It passed six reserved workflows with the original stopped.
+
 The [Shopware forward comparison](forward-pass.md) matched 36 journeys in each execution arm. The [product mask](product-mask.md) binds recorded layouts and scoped API effects. Its browser orchestration and some application validation are authored code. Those experiments provide teaching and comparison assets. Integrated Qwen grounding, learned Holo composition and general application acquisition remain research milestones.

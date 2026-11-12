@@ -87,7 +87,8 @@ function renderForm(spec) {
     button.disabled = true;
     try {
       const response = await fetch(url, { method: spec.method,
-        headers: { 'content-type': 'application/json', ...spec.headers }, body: JSON.stringify(input) });
+        headers: { 'content-type': spec.mediaType ?? 'application/json', ...spec.headers },
+        body: spec.payload ?? JSON.stringify(input) });
       const body = response.status === 204 ? null : await response.json();
       if (!response.ok) {
         status.textContent = body?.error ?? 'Request failed';
@@ -182,6 +183,20 @@ function render(spec) {
     case 'text': return element('p', spec.value);
     case 'document': return prose(spec);
     case 'link': return anchor(spec.label, spec.href, spec.tone === 'primary' ? 'primary' : undefined);
+    case 'copy': {
+      const button = element('button', spec.label);
+      button.type = 'button';
+      button.addEventListener('click', async () => {
+        const url = local(spec.href);
+        try {
+          await navigator.clipboard.writeText(String(url));
+          button.textContent = 'Copied';
+        } catch {
+          location.assign(url);
+        }
+      });
+      return button;
+    }
     case 'item': {
       const link = anchor(spec.label, spec.href, 'note-item');
       if (spec.active) link.setAttribute('aria-current', 'page');

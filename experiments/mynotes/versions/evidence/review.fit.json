@@ -1,0 +1,93 @@
+[
+  {
+    "level": 0,
+    "count": 0,
+    "allowed": false,
+    "inherited": null,
+    "refusal": "review split requires at least two sections"
+  },
+  {
+    "level": 1,
+    "count": 1,
+    "allowed": false,
+    "inherited": null,
+    "refusal": "review split requires at least two sections"
+  },
+  {
+    "level": 1,
+    "count": 2,
+    "allowed": true,
+    "inherited": true,
+    "refusal": null
+  },
+  {
+    "level": 2,
+    "count": 1,
+    "allowed": false,
+    "inherited": null,
+    "refusal": "review split requires at least two sections"
+  },
+  {
+    "level": 2,
+    "count": 2,
+    "allowed": true,
+    "inherited": true,
+    "refusal": null
+  },
+  {
+    "level": 3,
+    "count": 1,
+    "allowed": false,
+    "inherited": null,
+    "refusal": "review split requires at least two sections"
+  },
+  {
+    "level": 3,
+    "count": 2,
+    "allowed": true,
+    "inherited": true,
+    "refusal": null
+  },
+  {
+    "level": 4,
+    "count": 1,
+    "allowed": false,
+    "inherited": null,
+    "refusal": "review split requires at least two sections"
+  },
+  {
+    "level": 4,
+    "count": 2,
+    "allowed": true,
+    "inherited": true,
+    "refusal": null
+  },
+  {
+    "level": 5,
+    "count": 1,
+    "allowed": false,
+    "inherited": null,
+    "refusal": "review split requires at least two sections"
+  },
+  {
+    "level": 5,
+    "count": 2,
+    "allowed": true,
+    "inherited": true,
+    "refusal": null
+  },
+  {
+    "level": 6,
+    "count": 1,
+    "allowed": false,
+    "inherited": null,
+    "refusal": "review split requires at least two sections"
+  },
+  {
+    "level": 6,
+    "count": 2,
+    "allowed": true,
+    "inherited": true,
+    "refusal": null
+  }
+]

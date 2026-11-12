@@ -1,0 +1,62 @@
+{
+  "journeys": [
+    {
+      "slug": "holdout-publication-0",
+      "mutations": 10,
+      "passed": true
+    },
+    {
+      "slug": "holdout-publication-1",
+      "mutations": 11,
+      "passed": true
+    },
+    {
+      "slug": "holdout-publication-2",
+      "mutations": 12,
+      "passed": true
+    },
+    {
+      "slug": "holdout-publication-3",
+      "mutations": 6,
+      "passed": true
+    },
+    {
+      "slug": "holdout-publication-4",
+      "mutations": 11,
+      "passed": true
+    },
+    {
+      "slug": "holdout-publication-5",
+      "mutations": 10,
+      "passed": true
+    }
+  ],
+  "mutations": 60,
+  "privateReads": 60,
+  "publicReads": 60,
+  "sqliteSnapshots": 60,
+  "browser": [
+    {
+      "phase": "draft",
+      "passed": true
+    },
+    {
+      "phase": "republish",
+      "passed": true
+    },
+    {
+      "phase": "withdrawn",
+      "passed": true
+    }
+  ],
+  "ablation": {
+    "intact": {
+      "publicStatus": 200,
+      "title": "Published note"
+    },
+    "zeroedRecurrentOutput": {
+      "publicStatus": 404,
+      "title": "Publish note"
+    }
+  }
+}

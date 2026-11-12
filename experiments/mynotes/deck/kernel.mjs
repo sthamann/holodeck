@@ -4,7 +4,7 @@ export const operations = [
   'get', 'has', 'values', 'with', 'without', 'eq', 'not', 'and', 'or', 'coalesce', 'type',
   'length', 'add', 'sub', 'lt', 'lte', 'min', 'max', 'range', 'slice', 'unique', 'includes',
   'text', 'trim', 'lower', 'normalize', 'replace', 'match', 'matches', 'split', 'join',
-  'starts', 'time', 'millis', 'compare', 'number', 'concat', 'keys', 'merge', 'interval',
+  'starts', 'time', 'millis', 'compare', 'number', 'concat', 'keys', 'merge', 'interval', 'sequence',
 ];
 
 const own = (value, key) => value != null && Object.hasOwn(value, key);
@@ -40,6 +40,32 @@ const primitives = {
   interval: (start, end) => Array.from({ length: Math.max(0, Math.min(4096, end - start)) }, (_, i) => start + i),
 };
 
+function sequenceForward(model, tokens) {
+  if (!model) throw new Error('Missing recurrent weights');
+  let state = model.initial;
+  for (const token of tokens) {
+    if (!Number.isInteger(token) || token < 0 || token >= model.inputSize) {
+      throw new Error('Recurrent token out of range');
+    }
+    // The hidden layer combines the current one-hot state and input token.
+    const hidden = model.hiddenBias.map((bias, i) => Math.max(0,
+      bias + model.stateWeights[i][state] + model.tokenWeights[i][token]));
+    let best = -Infinity;
+    let next = 0;
+    for (let i = 0; i < model.nextWeights.length; i++) {
+      const score = model.nextWeights[i].reduce((sum, weight, j) => sum + weight * hidden[j], model.nextBias[i]);
+      if (score > best) { best = score; next = i; }
+    }
+    state = next;
+  }
+  // Readout heads are trained independently on observed terminal outcomes.
+  return [...model.heads.map(({ labels, weights }) => {
+    let best = 0;
+    for (let i = 1; i < weights.length; i++) if (weights[i][state] > weights[best][state]) best = i;
+    return labels[best];
+  }), ...model.constants];
+}
+
 export function loadForward(checkpoint) {
   if (checkpoint.format !== 1 || !Array.isArray(checkpoint.parameters)) throw new Error('Invalid model format');
   const rows = checkpoint.parameters.map(([selector, ...args]) => {
@@ -58,6 +84,8 @@ export function loadForward(checkpoint) {
       const [a, b, c, d] = args;
       switch (op) {
         case 'literal': return a;
+        case 'sequence': return sequenceForward(
+          b === undefined ? checkpoint.sequenceModel : read(checkpoint.sequenceBanks, value(b)), value(a));
         case 'ref': return read(env, a);
         case 'let': return run(c, { ...env, [a]: value(b) });
         case 'if': return value(a) ? value(b) : value(c);

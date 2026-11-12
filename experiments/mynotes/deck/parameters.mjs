@@ -62,6 +62,8 @@ const slugPattern = '^[a-z0-9]+(?:-[a-z0-9]+)*$';
 const wikiPattern = String.raw`\[\[(#?)([a-z0-9](?:-?[a-z0-9]){0,99})(?:\|([^\]\n]{1,256}))?\]\]`;
 const headPattern = String.raw`^(#{1,6})[ \t]+(.+?)(?:[ \t]+#+[ \t]*)?$`;
 const routines = Object.create(null);
+const workspacePolicy = process.env.HOLODECK_NOTES_POLICY
+  ? JSON.parse(process.env.HOLODECK_NOTES_POLICY) : null;
 const routine = (name, inputs, build) => {
   routines[name] = { inputs, body: build(...inputs.map(ref)) };
   return (...args) => call(name, ...args);
@@ -171,7 +173,26 @@ const patch = withExisting(
                     get(existing, 'created_at'), f('time', f('max', ref('now'), f('add', f('millis', get(existing, 'updated_at')), 1)))),
                   save(200, ref('record')))))))))))));
 
-const sections = routine('sections', ['content'], (content) =>
+const layout = (lines, bounds) => many(bounds, 'h', obj({ title: titleOf(ref('h')),
+  content: replace(f('join', slice(lines, get(ref('h'), 'line'),
+    get(get(bounds, f('add', ref('index'), 1)), 'line')), '\n'), '\\n+$', ''),
+}));
+const splitPolicy = workspacePolicy && routine('splitPolicy', ['levels'], (levels) => {
+  if (workspacePolicy.recurrent) return f('sequence', levels);
+  return bind('level', fold(levels, either(first(levels), 0), 'levelInput',
+    f(workspacePolicy.deepest ? 'max' : 'min', ref('acc'), ref('levelInput'))),
+  arr(ref('level'), f('lte', workspacePolicy.minimum, len(keep(levels, 'l', eq(ref('l'), ref('level'))))),
+    workspacePolicy.inherit, workspacePolicy.refusal));
+});
+const splitPlan = workspacePolicy && routine('splitPlan', ['content'], (content) =>
+  bind('lines', f('split', content, '\n'),
+    bind('headings', get(scanLines(ref('lines')), 'headings'),
+      bind('policy', splitPolicy(many(ref('headings'), 'h', get(ref('h'), 'level'))),
+        bind('bounds', keep(ref('headings'), 'h', eq(get(ref('h'), 'level'), get(ref('policy'), 0))),
+          obj({ sections: layout(ref('lines'), ref('bounds')), allowed: get(ref('policy'), 1),
+            inherit: get(ref('policy'), 2), refusal: get(ref('policy'), 3) }))))));
+const sections = routine('sections', ['content'], (content) => workspacePolicy
+  ? get(splitPlan(content), 'sections') :
   bind('lines', f('split', content, '\n'),
     bind('headings', get(scanLines(ref('lines')), 'headings'),
       bind('level', fold(ref('headings'), either(get(first(ref('headings')), 'level'), 0), 'h',
@@ -183,11 +204,16 @@ const sections = routine('sections', ['content'], (content) =>
               get(get(ref('bounds'), f('add', ref('index'), 1)), 'line')), '\n'), '\\n+$', ''),
           })))))));
 const clippedTitle = (value) => when(f('lt', 200, len(value)), text(slice(value, 0, 199), '…'), value);
+const selectedTags = when(bodyField('tag'), arr(bodyField('tag')), []);
+const splitState = (record, project) => workspacePolicy ? bind('plan', splitPlan(contentOf(record)), project) : project;
+const availableSplit = workspacePolicy ? get(ref('plan'), 'allowed') : f('lt', 0, len(sections(contentOf(existing))));
 const splitNote = withExisting(
-  bind('chosen', when(bodyField('tag'), arr(bodyField('tag')), []),
+  splitState(existing, bind('chosen', workspacePolicy
+    ? when(get(ref('plan'), 'inherit'), sorted(uniq(concat(tagIds(existing), selectedTags))), selectedTags) : selectedTags,
     invalidIf(tagError(ref('chosen'), tags),
-      bind('sections', sections(contentOf(existing)),
-        when(eq(len(ref('sections')), 0), refuse('note has no headings to split on'),
+      bind('sections', workspacePolicy ? get(ref('plan'), 'sections') : sections(contentOf(existing)),
+        when(workspacePolicy ? not(get(ref('plan'), 'allowed')) : eq(len(ref('sections')), 0),
+          refuse(workspacePolicy ? get(ref('plan'), 'refusal') : 'note has no headings to split on'),
           when(f('lt', 200, len(ref('sections'))), refuse('note has more than 200 sections'),
             bind('allocation', fold(ref('sections'), obj({ catalog: notes, created: [], failed: false }), 'section',
               bind('title', clippedTitle(titleOf(ref('section'))),
@@ -200,7 +226,7 @@ const splitNote = withExisting(
             when(get(ref('allocation'), 'failed'), failure(500, 'could not allocate unique split slugs'),
               bind('children', get(ref('allocation'), 'created'),
                 result(201, obj({ notes: many(ref('children'), 'child', summary(ref('child'), notes, null, false)) }),
-                many(ref('children'), 'child', put('notes', keyOf(ref('child')), ref('child')))))))))))));
+                many(ref('children'), 'child', put('notes', keyOf(ref('child')), ref('child'))))))))))))));
 
 const allTags = routine('allTags', [], () =>
   many(sorted(many(f('values', tags), 'tag', keyOf(ref('tag')))), 'id',
@@ -272,10 +298,10 @@ const editor = (editing) => stack(
 const linkList = (label, links) => when(eq(len(links), 0), null,
   stack(heading(label), node('linklist', { children: many(links, 'edge',
     link(titleOf(ref('edge')), locationOf('note', keyOf(ref('edge'))))) })));
-const modelNoteView = stack(
+const modelNoteView = splitState(existing, stack(
   title(titleOf(existing)),
   row(link('Edit note', locationOf('edit', pathSlug), 'primary'),
-    when(f('lt', 0, len(sections(contentOf(existing)))), link('Split by headings', locationOf('split', pathSlug)), null),
+    when(availableSplit, link('Split by headings', locationOf('split', pathSlug)), null),
     link('Delete note', locationOf('delete', pathSlug))),
   node('tags', { children: many(tagIds(existing), 'tag', link(ref('tag'), text('/?tag=', ref('tag')))) }),
   node('document', {
@@ -286,14 +312,17 @@ const modelNoteView = stack(
   }),
   linkList('Links', get(ref('document'), 'outgoing_links')),
   linkList('Linked from', get(ref('document'), 'incoming_links')),
-);
-const splitView = bind('preview', sections(contentOf(existing)),
+));
+const splitView = splitState(existing, bind('preview',
+  workspacePolicy ? get(ref('plan'), 'sections') : sections(contentOf(existing)),
   stack(link('Back to note', locationOf('note', pathSlug)),
     title('Split by headings'), paragraph(text('Create notes from “', titleOf(existing), '”. The source stays in place.')),
-    when(eq(len(ref('preview')), 0), paragraph('This note has no headings to split on.'),
-      stack(node('ordered', { children: many(ref('preview'), 'section', paragraph(titleOf(ref('section')))) }),
+    when(workspacePolicy ? not(get(ref('plan'), 'allowed')) : eq(len(ref('preview')), 0),
+      paragraph(workspacePolicy ? get(ref('plan'), 'refusal') : 'This note has no headings to split on.'),
+      stack(...(workspacePolicy ? [when(get(ref('plan'), 'inherit'), paragraph('New notes inherit the source tags.'), null)] : []),
+        node('ordered', { children: many(ref('preview'), 'section', paragraph(titleOf(ref('section')))) }),
         buttonForm('Create split notes', 'POST', text(apiPath(pathSlug), '/split'), locationOf('note', pathSlug),
-          arr(field('select', 'tag', 'Tag the new notes', '', { options: concat(arr(option('No tag', '')), choices) })))))));
+          arr(field('select', 'tag', 'Tag the new notes', '', { options: concat(arr(option('No tag', '')), choices) }))))))));
 const manageTags = stack(title('Tags'),
   buttonForm('Create tag', 'POST', '/api/v1/tags', '/?view=tags',
     arr(field('input', 'slug', 'Tag name', '', { required: true, limit: 100 }))),

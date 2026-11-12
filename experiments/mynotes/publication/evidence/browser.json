@@ -1,0 +1,192 @@
+{
+  "views": [
+    {
+      "history": [],
+      "trigger": "Publish",
+      "heading": "Publish note",
+      "controls": [
+        "Close",
+        "Publish"
+      ],
+      "tree": "- dialog \"Publish note\":\n  - heading \"Publish note\" [level=2]\n  - paragraph: \"Publishes this note as a web page anyone with the link can read, with no password. The page is a snapshot: later edits do not change it until you publish again. Images used by the note become readable at their own public links too.\"\n  - button \"Close\"\n  - button \"Publish\""
+    },
+    {
+      "history": [
+        "publish"
+      ],
+      "trigger": "Published — manage public page",
+      "heading": "Published note",
+      "controls": [
+        "Close",
+        "Copy link",
+        "Unpublish",
+        "Publish again"
+      ],
+      "tree": "- dialog \"Published note\":\n  - heading \"Published note\" [level=2]\n  - paragraph: This note is published. The page is a snapshot taken when you last published — publish again to update it, or unpublish to take it down.\n  - text: Public link\n  - textbox \"Public link\": http://127.0.0.1:55766/public/notes/browser-publication\n  - button \"Close\"\n  - button \"Copy link\"\n  - button \"Unpublish\"\n  - button \"Publish again\""
+    },
+    {
+      "history": [
+        "publish",
+        "edit"
+      ],
+      "trigger": "Published — manage public page",
+      "heading": "Published note",
+      "controls": [
+        "Close",
+        "Copy link",
+        "Unpublish",
+        "Publish again"
+      ],
+      "tree": "- dialog \"Published note\":\n  - heading \"Published note\" [level=2]\n  - paragraph: This note is published. The page is a snapshot taken when you last published — publish again to update it, or unpublish to take it down.\n  - text: Public link\n  - textbox \"Public link\": http://127.0.0.1:55766/public/notes/browser-publication\n  - button \"Close\"\n  - button \"Copy link\"\n  - button \"Unpublish\"\n  - button \"Publish again\""
+    },
+    {
+      "history": [
+        "publish",
+        "edit",
+        "publish",
+        "unpublish"
+      ],
+      "trigger": "Publish",
+      "heading": "Publish note",
+      "controls": [
+        "Close",
+        "Publish"
+      ],
+      "tree": "- dialog \"Publish note\":\n  - heading \"Publish note\" [level=2]\n  - paragraph: \"Publishes this note as a web page anyone with the link can read, with no password. The page is a snapshot: later edits do not change it until you publish again. Images used by the note become readable at their own public links too.\"\n  - button \"Close\"\n  - button \"Publish\""
+    },
+    {
+      "history": [
+        "publish",
+        "edit",
+        "publish",
+        "unpublish",
+        "delete"
+      ],
+      "trigger": null,
+      "heading": null,
+      "controls": []
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/v1/tags",
+      "body": null
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notes",
+      "body": null
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notes/browser-publication",
+      "body": null
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notes/browser-publication",
+      "body": null
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/notes/browser-publication/publish",
+      "body": "<p>Public copy from the browser.</p>\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notes/browser-publication",
+      "body": null
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notes/browser-publication",
+      "body": null
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/tags",
+      "body": null
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/notes/browser-publication",
+      "body": "{\"title\":\"Edited private draft\",\"content\":\"Public copy from the browser.\",\"tags\":[]}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/tags",
+      "body": null
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notes",
+      "body": null
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notes/browser-publication",
+      "body": null
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notes/browser-publication",
+      "body": null
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/notes/browser-publication/publish",
+      "body": "<p>Public copy from the browser.</p>\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notes/browser-publication",
+      "body": null
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/notes/browser-publication/publish",
+      "body": null
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notes/browser-publication",
+      "body": null
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/tags",
+      "body": null
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notes",
+      "body": null
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/notes/browser-publication",
+      "body": null
+    }
+  ],
+  "bindings": [
+    {
+      "label": "Publish",
+      "method": "PUT",
+      "path": "/api/v1/notes/:slug/publish",
+      "mediaType": "text/html"
+    },
+    {
+      "label": "Publish again",
+      "method": "PUT",
+      "path": "/api/v1/notes/:slug/publish",
+      "mediaType": "text/html"
+    },
+    {
+      "label": "Unpublish",
+      "method": "DELETE",
+      "path": "/api/v1/notes/:slug/publish",
+      "mediaType": "application/json"
+    }
+  ]
+}

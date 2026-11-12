@@ -1,0 +1,93 @@
+[
+  {
+    "level": 0,
+    "count": 0,
+    "allowed": false,
+    "inherited": null,
+    "refusal": "note has no headings to split on"
+  },
+  {
+    "level": 1,
+    "count": 1,
+    "allowed": true,
+    "inherited": false,
+    "refusal": null
+  },
+  {
+    "level": 1,
+    "count": 2,
+    "allowed": true,
+    "inherited": false,
+    "refusal": null
+  },
+  {
+    "level": 2,
+    "count": 1,
+    "allowed": true,
+    "inherited": false,
+    "refusal": null
+  },
+  {
+    "level": 2,
+    "count": 2,
+    "allowed": true,
+    "inherited": false,
+    "refusal": null
+  },
+  {
+    "level": 3,
+    "count": 1,
+    "allowed": true,
+    "inherited": false,
+    "refusal": null
+  },
+  {
+    "level": 3,
+    "count": 2,
+    "allowed": true,
+    "inherited": false,
+    "refusal": null
+  },
+  {
+    "level": 4,
+    "count": 1,
+    "allowed": true,
+    "inherited": false,
+    "refusal": null
+  },
+  {
+    "level": 4,
+    "count": 2,
+    "allowed": true,
+    "inherited": false,
+    "refusal": null
+  },
+  {
+    "level": 5,
+    "count": 1,
+    "allowed": true,
+    "inherited": false,
+    "refusal": null
+  },
+  {
+    "level": 5,
+    "count": 2,
+    "allowed": true,
+    "inherited": false,
+    "refusal": null
+  },
+  {
+    "level": 6,
+    "count": 1,
+    "allowed": true,
+    "inherited": false,
+    "refusal": null
+  },
+  {
+    "level": 6,
+    "count": 2,
+    "allowed": true,
+    "inherited": false,
+    "refusal": null
+  }
+]

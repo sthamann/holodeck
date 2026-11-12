@@ -1,0 +1,86 @@
+{
+  "trainingJourneys": 256,
+  "prefixes": 341,
+  "fitSteps": 38,
+  "states": [
+    {
+      "prefix": [],
+      "observable": [
+        200,
+        404,
+        null
+      ],
+      "view": {
+        "trigger": "Publish",
+        "heading": "Publish note",
+        "controls": [
+          "Close",
+          "Publish"
+        ]
+      }
+    },
+    {
+      "prefix": [
+        "delete"
+      ],
+      "observable": [
+        404,
+        404,
+        null
+      ],
+      "view": {
+        "trigger": null,
+        "heading": null,
+        "controls": []
+      }
+    },
+    {
+      "prefix": [
+        "publish"
+      ],
+      "observable": [
+        200,
+        200,
+        true
+      ],
+      "view": {
+        "trigger": "Published \u2014 manage public page",
+        "heading": "Published note",
+        "controls": [
+          "Close",
+          "Copy link",
+          "Unpublish",
+          "Publish again"
+        ]
+      }
+    },
+    {
+      "prefix": [
+        "publish",
+        "edit"
+      ],
+      "observable": [
+        200,
+        200,
+        false
+      ],
+      "view": {
+        "trigger": "Published \u2014 manage public page",
+        "heading": "Published note",
+        "controls": [
+          "Close",
+          "Copy link",
+          "Unpublish",
+          "Publish again"
+        ]
+      }
+    }
+  ],
+  "transitions": 16,
+  "nativeSnapshotWrites": 175,
+  "bindings": {
+    "title": "private.title",
+    "html": "request.body",
+    "published_at": "response.published_at"
+  }
+}

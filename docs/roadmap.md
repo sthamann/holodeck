@@ -4,6 +4,8 @@ Holodeck aims to replace complete applications with learned, executable decks. T
 
 Start with [learning the semantics of an application](learning-application-semantics.md) for the acquisition hypothesis and the matched comparison. [Current results and their limits](research-status.md)
 
+The [recurrent workflow experiment](recurrent-workflow-acquisition.md#how-this-could-scale) connects the latest measured results to a scaling plan for acquisition, workflow composition and runtime.
+
 ![The validation plan advances from discrete execution through acquisition and causal fusion to independent application replacement.](../assets/illustrations/deck-target-validation.svg)
 
 ## Next experiments
