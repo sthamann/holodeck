@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="490" viewBox="0 0 1120 490" role="img" aria-labelledby="title desc">
+  <title id="title">From a copilot to a Deck</title>
+  <desc id="desc">A copilot uses a fixed application whose code decides what happens. In the Holodeck vision, reasoning and learned rules live in the same Deck. It acts on live records and serves on-demand interfaces and an API.</desc>
+  <defs>
+    <marker id="ink-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0l8 4-8 4z" fill="#52627a"/></marker>
+    <marker id="blue-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0l8 4-8 4z" fill="#1664cd"/></marker>
+    <style>
+      text{font-family:system-ui,sans-serif;fill:#152744}
+      .eyebrow{font-size:17px;font-weight:750;letter-spacing:2px;fill:#365579}
+      .title{font-size:33px;font-weight:750;letter-spacing:-.8px}
+      .label{font-size:24px;font-weight:720}
+      .body{font-size:19px;fill:#465a75}
+      .on-dark{fill:#fff}.on-dark-body{fill:#d5e6ff}
+    </style>
+  </defs>
+  <rect width="1120" height="490" rx="28" fill="#edf4fd"/>
+  <rect x="22" y="22" width="516" height="446" rx="19" fill="#fff"/>
+  <rect x="559" y="22" width="539" height="446" rx="19" fill="#fff"/>
+  <text x="53" y="66" class="eyebrow">TODAY</text>
+  <text x="53" y="108" class="title">A copilot uses the app</text>
+  <rect x="53" y="137" width="451" height="70" rx="12" fill="#f4f6fa" stroke="#c8d2e2"/>
+  <text x="76" y="179" class="label">Copilot</text>
+  <path d="M278 207v47" stroke="#52627a" stroke-width="2.4" marker-end="url(#ink-arrow)"/>
+  <text x="294" y="238" class="body">sends a request</text>
+  <rect x="53" y="260" width="451" height="164" rx="13" fill="#edf1f8" stroke="#aabbd2"/>
+  <text x="76" y="303" class="label">Existing application</text>
+  <text x="76" y="344" class="body">Prebuilt screens and API</text>
+  <text x="76" y="379" class="body">Written rules decide what happens.</text>
+
+  <text x="591" y="66" class="eyebrow">HOLODECK VISION</text>
+  <text x="591" y="108" class="title">The model runs the app</text>
+  <rect x="591" y="137" width="475" height="130" rx="13" fill="#112f61"/>
+  <text x="614" y="182" class="label on-dark">Deck</text>
+  <text x="614" y="220" class="body on-dark-body">Reasoning and executable rules work together.</text>
+  <path d="M717 267v59" stroke="#1664cd" stroke-width="2.4" marker-end="url(#blue-arrow)"/>
+  <path d="M960 267v59" stroke="#1664cd" stroke-width="2.4" marker-end="url(#blue-arrow)"/>
+  <rect x="591" y="332" width="253" height="92" rx="13" fill="#e7f1ff" stroke="#a6c6ef"/>
+  <text x="614" y="369" class="label">Holos and API</text>
+  <text x="614" y="400" class="body">Call the same actions</text>
+  <rect x="857" y="332" width="209" height="92" rx="13" fill="#e7f1ff" stroke="#a6c6ef"/>
+  <text x="879" y="369" class="label">Live records</text>
+  <text x="879" y="400" class="body">Keep the outcome</text>
+</svg>

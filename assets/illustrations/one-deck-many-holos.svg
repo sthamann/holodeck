@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="552" viewBox="0 0 1120 552" role="img" aria-labelledby="title desc">
+  <title id="title">One booking, three ways to work on it</title>
+  <desc id="desc">A customer rescheduling, a coordinator resolving conflicts, and an agent calling an API all use the Deck’s scheduling capability. Each sees a surface suited to the task. An authorized change updates the same shared booking record.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0l8 4-8 4z" fill="#1664cd"/></marker>
+    <style>
+      text{font-family:system-ui,sans-serif;fill:#152744}
+      .title{font-size:34px;font-weight:750;letter-spacing:-.7px}
+      .eyebrow{font-size:15px;font-weight:750;letter-spacing:1.2px;fill:#365579}
+      .label{font-size:24px;font-weight:720}
+      .body{font-size:19px;fill:#465a75}
+      .button{font-size:18px;font-weight:700;fill:#1356ad}
+      .on-dark{fill:#fff}.on-dark-body{fill:#d5e6ff}
+    </style>
+  </defs>
+  <rect width="1120" height="552" rx="28" fill="#edf4fd"/>
+  <text x="36" y="58" class="title">One booking, three ways to work on it</text>
+  <g>
+    <rect x="36" y="87" width="336" height="200" rx="15" fill="#fff" stroke="#b6cbe5"/>
+    <text x="59" y="122" class="eyebrow">CUSTOMER HOLO</text>
+    <text x="59" y="163" class="label">Move my appointment</text>
+    <text x="59" y="199" class="body">Wednesday · 14:30 available</text>
+    <rect x="59" y="220" width="164" height="41" rx="8" fill="#e5efff"/>
+    <text x="72" y="246" class="button">Confirm new time</text>
+  </g>
+  <g>
+    <rect x="392" y="87" width="336" height="200" rx="15" fill="#fff" stroke="#b6cbe5"/>
+    <text x="415" y="122" class="eyebrow">COORDINATOR HOLO</text>
+    <text x="415" y="163" class="label">Resolve today's conflicts</text>
+    <text x="415" y="199" class="body">14:30 · Alex available</text>
+    <rect x="415" y="220" width="149" height="41" rx="8" fill="#e5efff"/>
+    <text x="428" y="246" class="button">Move booking</text>
+  </g>
+  <g>
+    <rect x="748" y="87" width="336" height="200" rx="15" fill="#fff" stroke="#b6cbe5"/>
+    <text x="771" y="122" class="eyebrow">AGENT API</text>
+    <text x="771" y="163" class="label">Reschedule booking</text>
+    <text x="771" y="199" class="body">Booking ID and proposed time</text>
+    <rect x="771" y="220" width="163" height="41" rx="8" fill="#e5efff"/>
+    <text x="784" y="246" class="button">Call reschedule</text>
+  </g>
+  <path d="M204 287v21q0 12 12 12h688q12 0 12-12v-21" fill="none" stroke="#1664cd" stroke-width="2.4"/>
+  <path d="M560 287v49" stroke="#1664cd" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <rect x="209" y="342" width="702" height="94" rx="14" fill="#112f61"/>
+  <text x="560" y="379" class="label on-dark" text-anchor="middle">One scheduling capability in the Deck</text>
+  <text x="560" y="411" class="body on-dark-body" text-anchor="middle">Checks availability, permissions and commitments.</text>
+  <path d="M560 436v23" stroke="#1664cd" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <rect x="209" y="466" width="702" height="55" rx="11" fill="#e0edff" stroke="#9ebee9"/>
+  <text x="560" y="500" class="body" text-anchor="middle">One saved booking. Every surface sees the new time.</text>
+</svg>
