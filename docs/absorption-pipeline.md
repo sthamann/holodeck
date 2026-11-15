@@ -18,6 +18,8 @@ flowchart LR
     P --> R[Install version and update coverage]
 ```
 
+The [Causal Semantic Machine](architecture.md) extends this Shopware specific pipeline with state discovery and transfer across unrelated applications. This page records the scoped Shopware implementation and its measured operations.
+
 ## One acquisition cycle
 
 1. **Inventory.** Read the actual installation's Store API, Admin API, entity schema and transition definitions. The current profile uses Shopware Community Edition 6.7.15.1. Record the route, method and operation ID. In later profiles the denominator also includes feature-specific rules, flows, background jobs and UI journeys. Commercial modules and third-party extensions require reference installations with those capabilities enabled.

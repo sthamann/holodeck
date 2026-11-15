@@ -1,5 +1,7 @@
 # MyNotes application transfer
 
+MyNotes supplies an application grounded benchmark for the [Causal Semantic Machine](../../docs/architecture.md). Its published publication experiment is a reference for connecting discovered state to a real transaction and Holo.
+
 [Learn the publication workflow](publication/README.md) uses the same recurrent core and discovers its state space from native API, browser and SQLite evidence. The offline Holo manages private edits, public snapshots, republication and withdrawal.
 
 [One workspace, two model versions](versions/README.md) compares a source compiled policy with a trained recurrent core. Swapping only the model changes which actions the Holo offers, what it previews and what is persisted.

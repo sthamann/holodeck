@@ -2,6 +2,26 @@
 
 These are the proposed interfaces for the [target architecture](architecture.md). The [Rust core](../experiments/model-core/README.md) implements a smaller typed transition and commit contract. The Shopware experiments retain their own measured interfaces.
 
+## Semantic artifact and qualification
+
+This is the target package contract. The finite state experiment implements its own smaller replay format.
+
+```text
+SemanticArtifact {
+  profile, schemas, transitions, invariants, projection_bindings,
+  external_ports, semantic_abi, provenance
+}
+Qualification {
+  semantic_digest, teacher_revision, starting_states, action_context_domain,
+  observation_mapping, bounds, evidence_digests, witnesses,
+  invariant_results, backend_parity, exclusions, status
+}
+```
+
+Each capability identifies which rules were observed, synthesized, supplied or compiled from source. Record a typed refusal and its effects separately, since a refused operation can still affect audit or rate state. Model time, actor scope and external outcomes as explicit inputs. State the observable equivalence used for opaque IDs and nondeterministic results.
+
+The verifier distinguishes bounded conformance, explicit invariant proofs and unresolved obligations. A formal certificate is relative to a versioned encoding and checkable assumptions. A release binds the qualified semantic digest, executable digest and Host ABI. Evidence for a broader domain requires requalification. The Host enforces the active scope and commits effects under authenticated authority, independently of how an executable was produced.
+
 ## DeckStep
 
 ```text

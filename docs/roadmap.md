@@ -10,7 +10,7 @@ The [recurrent workflow experiment](recurrent-workflow-acquisition.md#how-this-c
 
 ## Next experiments
 
-Run the gates in order of dependency. Transaction and renderer work can progress once the contract is fixed. The larger joint model run depends on a decisive result from the inexpensive learning and baseline comparisons.
+The first research milestone is [causal acquisition and transfer](#causal-acquisition-and-transfer). The existing G0 to G8 gates define acceptance for the relevant mechanisms and product profiles. Transaction and renderer work can progress once the contract is fixed. A larger joint model run depends on a gain over the cheaper matched controls.
 
 | Gate | Build and run | Pass condition and decision |
 | --- | --- | --- |
@@ -33,6 +33,22 @@ These numerical thresholds are proposed design targets. Each executable benchmar
 3. **Prove what is identifiable.** Record the grammar $G$, domain $D$, evidence $E$ and candidate $h$. Search for a second hypothesis in $G$ that fits $E$ and differs from $h$ on an allowed input in $D$. A satisfiable result produces a teaching question. An unsatisfiable result is a relative certificate if the search is complete for the declared encoding. Timeouts and incomplete search stay unresolved. Prove mandatory invariants separately. The independent hidden evaluator checks teacher parity.
 4. **Compare at equal opportunity.** Start G1 with a 64-query cap per case including seed probes. Freeze larger task caps before G3/G4. The enrollment rule also fixes which cases carry a formal specification and which rely on independently recorded behavior. Give all arms the same initial evidence, reset privileges, candidate-validation feedback and time/compute envelopes. Report wall time and teacher calls separately. Count an abstention as unqualified coverage and an incorrect qualification as an error.
 5. **Keep the causal tests.** Replay the same checked program in the symbolic and parameter paths. Intervene separately in an exact selector, grounding and composition. Hold runtime, input facts and projection context constant for each relevant intervention. Use a counterfactual expectation fixed before the test. Publish the first divergence and the complete outcome, including held-out cases that did not qualify.
+
+## Causal acquisition and transfer
+
+| Priority | Research question | Decision evidence |
+| --- | --- | --- |
+| 1 | Can we recover hidden state and causal decomposition in unseen applications? | Reconstruct finite behavior and predict held out dependencies. Compare a flat active automaton learner, a factorized learner and passive traces at equal observation access. |
+| 2 | Can the system discover its own executable abstractions? | Freeze typed primitives learned from training worlds. Compare a fixed grammar, an induced library, a learned prior and their combination on an independent topology. Apply G2's prespecified improvement and coverage conditions. |
+| 3 | Do path signatures help learn from traces? | Compare path signatures with a sequence encoder and hand constructed features, then ablate each in the same proposal and verification loop. Measure qualified behavior and query cost as well as retrieval accuracy. |
+| 4 | Can the same acquisition machinery replace different applications? | Use an independently selected real profile in addition to synthetic families. Hold out all application rules, keep the same Host, and compare with a coding agent, symbolic synthesis and the current Holodeck core. Apply G4 and G6. |
+| 5 | Can independently acquired Decks compose safely? | Combine two released Decks in a new workflow. Check state mappings, durable commitments, unauthorized effects and fault interleavings against a declared invariant set. |
+
+Start with generated small applications that contain latent control state, typed records, role dependent guards, delayed events and at least two potentially independent subsystems. Cross these factors during training and seal structurally distinct test families before fitting. The generator builds versions and reset snapshots. The learner gets only declared observation channels and bounded interventions. An independent evaluator owns the reference transition semantics, holdouts and scoring. Source access is a separate arm. A [finite state pilot](../experiments/causal-discovery/README.md) exercises the observation and verification loop on public fixtures.
+
+Publish each world's reachable starting states, admissible action and context domain, conformance bound, timeout and oracle and compute budgets. Publish the hashes of the frozen Host, primitives and holdout commitment. Measure qualified coverage, false qualifications, unauthorized effects, original queries and actions, elapsed time and compute. Count timeouts and abstentions in coverage. Test every mandatory behavior with the original off.
+
+Run the first comparisons on CPU. Use the DGX Spark systems for parallel world generation and learner sweeps once the protocol is frozen. Use the H200s for matched neural proposals and trace encoders after the CPU comparison identifies a measurable bottleneck.
 
 ## First delivery and acceptance
 

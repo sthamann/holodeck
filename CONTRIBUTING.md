@@ -2,6 +2,8 @@
 
 Good contributions make a claim easier to test. Start with the [concepts](docs/concepts.md), the [architecture](docs/architecture.md) and the [experiment replay](experiments/shopware/README.md).
 
+Start new acquisition work from the [causal benchmark protocol](docs/roadmap.md#causal-acquisition-and-transfer). For changes to the finite learner, run `node experiments/causal-discovery/replay.mjs`. Preserve the reset and observation boundary. Keep generator rules and verification results out of the learner. Record the observation horizon and report query and action counts.
+
 An experiment should specify the initial state, event, configuration, expected effects and independent reference. Use synthetic cases. Separate recorded results from future design and show which part of the model or host produces a decision. If a new rule requires a new fixed primitive, describe it as a runtime change.
 
 For a proposed projection, include the data bindings and the actual action. A useful negative case often shows whether the interface and executable semantics really share a source.

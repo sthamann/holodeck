@@ -8,6 +8,8 @@ A spreadsheet lets a small team make a tool while the work is still in front of 
 
 ![Article cover showing a deck projecting working software.](../assets/illustrations/article-cover.png)
 
+The [Causal Semantic Machine](architecture.md) is the research architecture for this vision. It tests whether a system can discover and verify the rules of unfamiliar applications, run them with the originals off and combine them into new workflows. [Research roadmap](roadmap.md)
+
 ## The reversal
 
 > Today, intelligence sits on top of software. The application is the fixed part, and AI helps you use it. Now take that layer away. One multimodal model holds everything the application knows and creates whatever the moment needs. The things we build today as features, projects and plugins become properties of the architecture.

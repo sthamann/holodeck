@@ -1,12 +1,33 @@
 # The Holodeck target architecture
 
-A **deck** is a deployable AI model that learns an application's behavior and runs it. It carries the rules, algorithms, transitions and interface bindings that make the application work. A **holo** is an interactive surface the deck composes for a person and task. The same application can appear as a browser workspace, a voice interaction or an API while operating on the same durable records.
+Holodeck's **Causal Semantic Machine** acquires the executable semantics of unfamiliar software, learns reusable structure and serves a qualified behavior profile with the original off. A **Deck** packages those semantics, their evidence and a compatible executable. A **Holo** is a working projection of the same capabilities. APIs, command line clients and agents reach those capabilities through the same typed contract.
 
-The long-term goal is to fuse arbitrary software with a foundation model such as Qwen. The architecture must accommodate very different kinds of software through the same execution machinery. For each application, replacement means meeting a declared behavioral, compatibility and operational contract with the original application off. Learnability from limited evidence, access to external systems and achievable performance are separate questions. [Acceptance and experiment design](roadmap.md)
+The learned semantic representation is the primary artifact. The target compiler can lower it to an interpreter, native or WebAssembly execution, or an exact model forward. Each backend must preserve the checked observations, effects and resource contract across the supported profile. A Qwen based backbone remains a candidate for multimodal grounding, candidate generation and composition. Its contribution is measured separately from the ability of any backend to execute.
 
-The [research status](research-status.md) records what the published experiments have demonstrated. The [semantics learning proposal](learning-application-semantics.md) defines the transition to acquire, the conditions under which evidence can distinguish it and the comparisons that would show whether a learned Deck adds value.
+The [research status](research-status.md) records published results. [Learning application semantics](learning-application-semantics.md) specifies the acquisition problem and the conditions under which evidence distinguishes candidate behaviors.
 
-![A Qwen backbone and learned exact specialists form the Deck. A generic runtime supplies state, commits and delivery.](../assets/illustrations/deck-target-system.svg)
+```mermaid
+flowchart TD
+    E["Authorized observations"] --> D["Causal discovery"]
+    D --> P["Program induction"]
+    P --> V["Verification"]
+    V -->|"Counterexample"| D
+    V -->|"Qualified semantics"| C["Deck compiler"]
+    C --> H["Deck and Host"]
+    H --> S["Holos, APIs and agents"]
+    H --> F["Semantic fusion"]
+```
+
+| Planned component | Responsibility | Existing starting point |
+| --- | --- | --- |
+| Semantic core | Define typed state, actions, actor context, event time, outcomes, effects, continuations and invariants. | [Runtime contracts](interfaces.md) |
+| Causal discovery | Find latent state and guard or effect dependencies through controlled queries. | [Finite state experiment](../experiments/causal-discovery/README.md) and [MyNotes publication](recurrent-workflow-acquisition.md) |
+| Language induction | Factor recurring verified programs and learn when to propose reusable typed primitives. | [Typed synthesis in the Rust core](../experiments/model-core/README.md) |
+| Trace geometry | Test path signatures as a proposal and retrieval representation for long traces. | [Trace induction evidence](trace-induction.md) |
+| World factory | Produce resettable applications with hidden rules and independent evaluation. | [Benchmark protocol](roadmap.md#causal-acquisition-and-transfer) |
+| Proof engine | Generate distinguishing counterexamples, check invariants and emit scoped evidence attestations or formal certificates. | [Qualification contract](interfaces.md#semantic-artifact-and-qualification) |
+| Deck compiler | Lower the semantic artifact into exact executables and check backend parity. | [Forward comparison](forward-pass.md) and [Rust core](../experiments/model-core/README.md) |
+| Semantic fusion | Define checked mappings across Decks and prove cross application obligations. | [Composition contract](#semantic-fusion) |
 
 ## 1. What belongs in a deck
 
@@ -14,7 +35,7 @@ The [research status](research-status.md) records what the published experiments
 | --- | --- | --- |
 | **Multimodal backbone** | Interpret text and images, ground intent in typed objects, and provide context to learning, execution and presentation. | A pinned Qwen-family checkpoint and trainable adapters. Start with a frozen backbone to measure the value of each head. |
 | **Grounding and routing heads** | Select capability and operand references from authorized candidates. Identify ambiguous or incomplete inputs. | Trained pointer and routing heads. The selected references remain auditable. |
-| **Exact specialists** | Compute acceptance, results, effects, dependencies and continuations. Compose other learned routines. | Discrete executable parameter banks. A stable forward graph reads the parameters and computes their effects. |
+| **Semantic artifact and exact executable** | Define and run acceptance, results, effects, dependencies and continuations. Compose acquired routines. | Typed programs with provenance and an execution artifact, including discrete parameter banks for the model backend. |
 | **Holo head** | Choose information, controls and composition for the current task. Bind them to the exact specialist's data and available actions. | Trained component and binding readouts. One versioned component vocabulary. |
 | **Generic host** | Supply authorized reads, scheduling, atomic commit, durable receipts, external ports and rendering. | A compiled runtime, fixed operator vocabulary, record store and renderers. |
 | **Application and tenant data** | Supply facts, media, configuration, agreements, schema and style. | Versioned, typed records and content references. |
@@ -24,6 +45,8 @@ The model may be physically partitioned into a backbone and sparse specialists. 
 A capability is an executable unit with typed inputs, outputs, admissible state and observable effects. It can be a pure function, a query, an incremental computation, an atomic update or a continuation that waits for an event. A legacy route can expose several capabilities. A newly generated view can combine several without introducing its own implementation.
 
 ## 2. The forward owns application behavior
+
+In the model backend, the forward executes the same semantic contract as the reference interpreter. The paths can be checked against each other before switching a release.
 
 ![Three stages inside the Deck. Ground exact operands, run the parameterized machine, and read out effects and bound interactions.](../assets/illustrations/deck-target-forward.svg)
 
@@ -37,7 +60,7 @@ The grounding head returns a typed candidate or a request for clarification. Dir
 
 The model uses a small programmable recurrent kernel. Generic operations provide typed load and store within scratch memory, checked integer and decimal arithmetic, comparisons, branches, calls and bounded iteration. A specialist contains learned selections over those operations, operands, branch targets and callable subroutines. For a simple dense encoding, one-hot program counter $p_t$ reads instruction $p_t^\top W_e$ from specialist parameters $W_e$. The kernel computes the next register state, program counter and pending effects. The reference implementation defines precision, overflow, ordering, limits and halt semantics explicitly.
 
-The deployed forward consumes the model's parameters and runtime facts. A readable intermediate representation supports learning, proof and inspection. The execution test uses only the model export and authorized input. There is no application handler, rule engine or executable teacher on its call path. An operation named after a domain action is a learned subroutine. Adding a generic primitive is an explicit architecture change and invalidates comparisons that claim a frozen runtime.
+The deployed forward consumes the model's parameters and runtime facts. The intermediate representation is versioned independently and compiled with explicit lowering rules. The execution test uses only the model export and authorized input. There is no application handler, rule engine or executable teacher on its call path. An operation named after a domain action is a learned subroutine. Adding a generic primitive is an explicit architecture change and invalidates comparisons that claim a frozen runtime.
 
 The [Loom paper](https://arxiv.org/html/2604.08816v1) demonstrates a fixed-weight recurrent transformer that executes programs stored in its state tensor. We borrow its explicit machine-state and stepping model. Holodeck's stronger target places the *acquired structure* in model parameters and measures how the backbone learns, selects and composes it. Moving a hand-authored program into a parameter bank would demonstrate storage and execution only.
 
@@ -59,7 +82,7 @@ The exact specialist returns typed intermediate results and discovered dependenc
 
 The runtime issues reads against a coherent snapshot. The read set includes range or collection versions where membership matters. The model proposes a typed batch. The host checks authenticated authority, capabilities, schema, resource budgets, versions and idempotency. It commits records, continuation, receipt and outbox together. Conflicts go back to the model for a new decision. Concurrent writers cannot both commit against the same stale revision. Externally visible requests use stable idempotency keys where the provider supports them. External responses are recorded as inputs, with explicit pending or uncertain states when delivery cannot be confirmed.
 
-A release manifest binds foundation and tokenizer revision, adapters, exact parameters, schema, operator ABI, renderer vocabulary and evidence. Existing continuations retain their version and accepted agreements. Activation changes routing for new work. Migrating an open continuation requires a checked state mapping. Persisted effects stay bound to the version that produced them.
+A release manifest binds the semantic artifact, qualification evidence, backend and build configuration, schema, operator ABI and renderer vocabulary. Where used, it also binds foundation and tokenizer revisions, adapters and exact parameters. Existing continuations retain their version and accepted agreements. Activation changes routing for new work. Migrating an open continuation requires a checked state mapping. Persisted effects stay bound to the version that produced them.
 
 **Holos.** The Holo head emits a typed component tree, view state and data bindings. A generic renderer implements grids, sorting, filters, forms, drag interactions and accessibility. It evaluates generic bindings and forwards typed commands. The deck chooses which controls to use and what they mean. The same authenticated action executes through the API, a native-compatible surface or a new Holo. A saved composition can be reused with fresh bindings and authority checks. [Runtime and transport contracts](interfaces.md)
 
@@ -85,6 +108,12 @@ The first joint experiment pins a vision-capable Qwen release and processor. [Qw
 A replacement profile lists the entire externally required behavior for a named application and version. Include functional, UI and API behavior, roles, error modes, extension contracts, schedules, data migration, consistency and performance. Give each row an independent oracle or specification, an observed execution path, and status. List unmeasured or unsupported requirements explicitly. Complete replacement is earned when all requirements of the declared profile pass and the original application can be removed from the deployment.
 
 Start with a structured editing application such as Calc and an application with durable cross-actor obligations such as Shopware. For wider generality, add an algorithmic or interaction-heavy profile with distinct resource constraints. Universal computation in the model and successful acquisition of a particular application are separate results. A driver, sensor, payment network or device remains a declared external interface. Real-time or system-level software adds timing, memory, isolation or hardware requirements to the replacement contract.
+
+## Semantic fusion
+
+A composed workflow must keep identity mappings, operational authority and commitments explicit. For a state mapping $\phi$ and action mapping $\psi$, test whether $\phi(T_A(s,a)) = T_B(\phi(s),\psi(a))$ on the declared shared part of the two systems. Check refusals, effect traces and cross system invariants in addition to state equality. Undefined or conflicting mappings leave the action unresolved.
+
+An initial commerce test can join a Shop Deck and an independently acquired inventory Deck. Order acceptance creates a reservation through a shared product identity. The invariants cover stock conservation, duplicate order events, explicit cancellation and outstanding commitments. An ERP or CRM can join through the same contract once its model and invariants qualify. The first benchmark includes conflicts, unavailable ports, rollback or compensation, and open work across release changes.
 
 ## Properties and how to test them
 

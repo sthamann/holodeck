@@ -1,12 +1,10 @@
 # Holodeck
 
-**What if the AI model itself were the application?**
+**What if an AI could learn how an application works, then become the application?**
 
-Software decides what can happen and gives people a way to make it happen. Today, those decisions live in code and people work through screens somebody built in advance. A copilot can use the application on your behalf. The application still makes the decisions.
+Holodeck is a research project to acquire the executable semantics of unfamiliar software. It observes an application, runs controlled experiments to discover its hidden state and rules, and learns abstractions it can reuse on the next application. It verifies the acquired behavior and turns it into a **Deck** that can serve generated interfaces called **Holos**, APIs and agent actions over the same live records.
 
-Holodeck explores a different way to build software. Teach a model how an application works, from its rules and calculations to its workflows and interface actions. Give it the live records it needs. The resulting model runs the application and creates the interface the situation calls for. We call the model a **Deck** and the interfaces it creates **Holos**.
-
-This is the research goal. We have run parts of real applications this way with the originals switched off. The next challenge is to learn and verify enough behavior to replace an entire application, then repeat that with a different kind of software.
+We call this architecture the **Causal Semantic Machine**. A Deck owns the application's decisions and effects. A generic **Host** supplies data, transactions, permissions and external connections. A qualified Deck runs a declared application profile with the original switched off. The long term goal is to do this across software families and to compose their capabilities into workflows no single application could provide.
 
 [The original article](https://www.linkedin.com/pulse/end-software-we-know-stefan-hamann-z81he/) · [Architecture](docs/architecture.md) · [Research roadmap](docs/roadmap.md) · [Watch the film](#watch-the-film)
 
@@ -30,10 +28,11 @@ It also changes how software evolves. When the team teaches the Deck a new polic
 
 [![One model combines contextual reasoning and exact capabilities. Holos and API calls use the same actions. A generic host commits effects to durable records.](assets/illustrations/deck-target-system.svg)](docs/architecture.md)
 
-1. **Observe the original.** Record what happened before and after a real operation. Link the screen and the action to the API request, response and database changes. Source, tests and specifications provide additional evidence, including for behavior that is hard to observe.
-2. **Learn how it works.** A foundation model such as Qwen connects language, images and user intent to the right objects and actions. Specialized parts of the Deck acquire precise decisions, transitions and effects as executable capabilities. The learner looks for structures it can reuse in other workflows. When two candidate rules explain the same evidence, it asks the original a question that would make them behave differently.
-3. **Verify and package.** Check the model's behavior on reserved workflows, including failures and conflicting changes. Package the qualified capabilities and their interface bindings in the Deck. The application can then run on the generic runtime with the original switched off.
-4. **Learn from use.** New records take effect as soon as they are committed. Confirmed corrections and new examples can teach the next version of the behavior. Replay and compare that version before activating it, with a way to preserve the rules for work already underway.
+1. **Observe.** Link UI actions, API calls, state changes, refusals and external events. Source and specifications can serve as additional evidence in a separate acquisition mode.
+2. **Discover.** Reconstruct the smallest behaviorally sufficient state the evidence supports. When competing explanations disagree, choose an intervention that tells them apart.
+3. **Abstract.** Extract typed reusable programs from recurring rules. Measure whether a frozen library helps acquire a structurally different application.
+4. **Verify and compile.** Record the scope, evidence and failed cases. Compile the qualified semantics into an exact execution backend and check its parity. Serve the resulting Deck with the original off.
+5. **Learn from use.** Commit new facts through the Host. Rehearse and qualify behavior changes before activating a new Deck version.
 
 In the target design, the **Deck owns the application behavior**. Its model and specialists determine which action is possible, what it returns and which effects to propose. The **runtime** handles network and device I/O, enforces access and record versions, and commits changes atomically. Live prices, orders, documents and other records live in durable storage and enter the model when relevant. This allows the same Deck to work with fresh data and makes it possible to change the behavior while keeping the records.
 
@@ -47,9 +46,11 @@ In the target design, the **Deck owns the application behavior**. Its model and 
 | **Can it acquire the next application faster?** | Freeze the learned building blocks and test them on an independent application. Compare with ordinary code generation and symbolic synthesis at the same correctness, evidence access and query budget. |
 | **Can it replace the original?** | Take a declared version and compatibility profile. Run complete workflows, existing API clients and browser journeys with the original off. Check roles, errors, recovery and performance as well as the happy path. |
 
-The [research roadmap](docs/roadmap.md) starts with individual rules and interface actions, then moves to connected workflows, independent transfer and a full replacement profile. Performance is measured on that complete profile.
+The first decisive experiment gives each learner only bounded observations and interventions on unfamiliar generated applications. It then freezes the learned primitives and tests transfer to a structurally different family. The [roadmap](docs/roadmap.md#causal-acquisition-and-transfer) specifies the comparison and what would count as a gain.
 
 ## What runs today
+
+- **Finite causal state reconstruction.** A small active learner inferred three publication states and four delayed release states from resettable action traces. An independent finite verifier checked both machines and found a counterexample for a deliberately shorter observation horizon. [Run the experiment](experiments/causal-discovery/README.md)
 
 - **One learned workflow across a browser, API and database.** In a small document application, the learner inferred the publication states from native observations. With the original off, six reserved journeys matched 60 steps. Changing the fitted parameters changed both the Holo and the saved outcome. The experiment used a supplied execution vocabulary and existing document operations. [Document workflow experiment](docs/recurrent-workflow-acquisition.md)
 - **One purchase across storefront, checkout and merchant workspace.** An interpreter and two model execution paths each matched 36 reserved journeys across four fresh shops with the reference system off. The tie shows that the model can execute the measured rules with the same results as the interpreter. A separate browser recording shows a purchase and a saved return using test payments. [Commerce comparison](docs/forward-pass.md) · [Browser demo](docs/showcase.md)

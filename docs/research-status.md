@@ -4,6 +4,10 @@ The goal is a model that can take over an application and use what it knows to r
 
 MyNotes is a test of this claim outside commerce. It gives us a small but connected application with documents, relations, mutable state, visible controls and independent API consumers. Shopware is still the commerce test. Its finish line is an ordinary full shop lifecycle and the broader compatibility profile. A second implementation of notes, even one that passes its fixtures, does not by itself show that a system can acquire the next application.
 
+## First causal discovery result
+
+The [finite state pilot](../experiments/causal-discovery/README.md) recovered public synthetic machines with three and four hidden states using 48 and 47 reset queries, respectively. An independent finite product search established parity over the full action language of each fixture. For the delayed release case at horizon two, the learner's bounded result still missed a shortest counterexample of length four. These results cover deterministic transition discovery on two fixtures. Causal factorization, reusable primitive induction and transfer to sealed families remain open.
+
 ## What the experiments established
 
 All MyNotes comparisons use the pinned native reference at `73ef4b7b37109a5209d9fbcfbd5d3799918071be`. “Teacher off” means that the reference process was stopped during the relevant replay. It describes deployment independence. Acquisition is assessed separately.
