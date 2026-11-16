@@ -1,4 +1,4 @@
-name: Replay Shopware experiments
+name: Replay Holodeck experiments
 on:
   push:
   pull_request:
@@ -54,6 +54,11 @@ jobs:
           structural=experiments/model-applications/structural
           python "$structural/replay.py" --sources pinned-ipc > "$RUNNER_TEMP/structural.json"
           cmp "$structural/evidence.json" "$RUNNER_TEMP/structural.json"
+      - name: Verify ambiguity-aware retargeting during durable execution
+        run: |
+          intent=experiments/model-applications/intent
+          python "$intent/verify.py" --sources pinned-ipc > "$RUNNER_TEMP/intent-retarget.json"
+          cmp "$intent/evidence.json" "$RUNNER_TEMP/intent-retarget.json"
       - name: Replay finite causal state discovery
         run: node experiments/causal-discovery/replay.mjs
       - run: python -m pip install -r requirements.txt

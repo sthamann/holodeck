@@ -45,7 +45,9 @@ Start with [learning the semantics of an application](learning-application-seman
 
 The [recurrent workflow experiment](recurrent-workflow-acquisition.md#how-this-could-scale) connects the latest measured results to a scaling plan for acquisition, workflow composition and runtime.
 
-![The validation plan advances from discrete execution through acquisition and causal fusion to independent application replacement.](../assets/illustrations/deck-target-validation.svg)
+![Current formal compilation and bounded intent results, followed by independent definition qualification and a matched model causal test.](../assets/illustrations/deck-target-validation.svg)
+
+The [live intent replay](../experiments/model-applications/intent/README.md) adds a prototype from English constraints to revision-bound execution. The next experiment holds out expressions and definitions from independent authors. Compare a grammar, a frozen foundation grounder and a trained grounder with identical compiled semantics. Count omitted meanings and false commits first, then clarification rate and time to a verified decision. Charge each arm for authoring, inference and verification.
 
 ## Next experiments
 

@@ -62,6 +62,8 @@ The [objective discovery experiments](elicitation/README.md) extract the vocabul
 
 The [structural compilation experiment](structural/README.md) starts from seven original competition definitions across three domains. It compiles shared executable weights, derives exact scoped symmetry, and commits concrete named plans. The weight library for the smallest Gripper task remains frozen when the task scales to 42 objects. A live observer can distinguish a newly protected object and replan while preserving its invariant.
 
+The [live language experiment](intent/README.md) tests when all meanings of a bounded English change request authorize the same optimal plan. It keeps final and persistent conditions distinct, returns a specific clarification when costs diverge, and commits a certified continuation on the original 42-ball task.
+
 ## B3 and B4 · One experiment from contract to running model
 
 The first integrated contract combines delayed holds, versioned allocation pressure and an approval or compensation chain. It has a scarce resource, two actors, revocable authority and an external receipt. A new policy changes a decision in a situation where two apparently similar plans lead to different future effects. An outstanding request was opened before that policy change. An independently authored second contract must use different data and effect topology. Both may be artificial. Exercise a task that requires comparing at least two multi-step continuations before choosing or rendering a plan.

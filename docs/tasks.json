@@ -10,7 +10,8 @@
     "architecture": "model-application-architecture.md",
     "protocol": "../experiments/model-applications/README.md",
     "evidence": "../experiments/model-applications/structural/evidence.json",
-    "status": "structured objective discovery and external formal-definition compilation qualified on bounded domains; broader contracts and natural intent open"
+    "intent_evidence": "../experiments/model-applications/intent/evidence.json",
+    "status": "external bounded compilation, objective discovery and bounded English retargeting replayed; broader contracts and learned grounding remain open"
   },
   "gates": [
     {"id": "G0", "title": "Reproduce and freeze", "depends_on": [], "status": "bounded-core-replayed", "evidence": "../experiments/model-core/README.md"},

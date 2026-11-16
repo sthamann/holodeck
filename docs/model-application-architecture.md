@@ -77,6 +77,12 @@ The [structural compiler](../experiments/model-applications/structural/README.md
 
 The same constraints also determine which states and actions may be collapsed for planning. Generated permutations must preserve the transition relation and the current observation, including path invariants. A user can distinguish previously exchangeable objects by changing that observation. The next plan refines the quotient from the concrete current state, while executable weights continue to implement the same operations. A certified plan carries ordered concrete identities, observes path constraints at every step, and binds its effects to the current epoch for one atomic write. Symmetry is a planning optimization relative to an observer. The durable state retains identities needed to refine future observations.
 
+## Changing a request while a Deck is running
+
+Ground a request against the current Deck vocabulary. A meaning is an end condition with optional path invariants. Keep all meanings admitted by the grounding model. In the unit-cost fragment, compute each meaning's optimal path length and the optimal path length of their conjunction. Joint feasibility implies individual feasibility. The joint optimum is therefore at least each individual optimum. When all lengths are finite and equal, any shortest joint path is optimal for every retained meaning.
+
+The [scope replay](../experiments/model-applications/intent/README.md) implements this rule with a declared lexicon. Its proof binds the request, candidate meanings, Deck checkpoint, epoch and ordered effects. The Host verifies the joint path again when it commits. If costs differ, the pilot names a constraint whose scope needs clarification. This is a semantic filter for a future learned grounder. Independent tests must measure whether the grounder retained the intended meaning.
+
 ## Streaming and data path
 
 The model generates a structured scene for the current goal, authority and state revision. Each frame is a typed patch against a base revision with stable element identities, data dependencies, capabilities and accessibility semantics. The renderer handles layout, input, focus and device presentation. The Host reconciles missing or reordered patches by replay or snapshot and never treats a render event as a committed effect. Inspect bands from first usable patch to settled control states. Compare direct structured patch generation with a generic form and generated UI code using the same actions.
