@@ -65,6 +65,12 @@ If a user objective admits any weight in `[lo, hi]`, a plan is valid for the who
 
 [Compiler, exhaustive check and model comparison](../experiments/model-applications/foundation/README.md)
 
+## Discovering objectives without a fixed effect vocabulary
+
+The [objective discovery pilot](../experiments/model-applications/elicitation/README.md) compiles hypotheses from typed, ordered application effects and keeps all hypotheses consistent with the accessible comparison transcript. A state admits a certified choice when the target optima intersect. No reachable clarification can certify a choice if every feasible complete response signature contains objectives with empty common optima. This gives a second exact terminal condition for the query planner. Both proofs are relative to the declared hypothesis grammar and query interface. Reusing a certified decision on a changed target requires recomputing the intersection from the original evidence and the new effect table.
+
+A separate rational solver extends the same decision condition to a continuum of linear utilities. It first proves that the strict comparisons have a common feasible weight, then checks competitor differences on the closed feasible polytope. A counterexample can be perturbed toward the strict witness without losing its negative margin. The proofs certify behavior across every remaining compatible intent in those models. They do not imply that the grammar represents every possible intent.
+
 ## Streaming and data path
 
 The model generates a structured scene for the current goal, authority and state revision. Each frame is a typed patch against a base revision with stable element identities, data dependencies, capabilities and accessibility semantics. The renderer handles layout, input, focus and device presentation. The Host reconciles missing or reordered patches by replay or snapshot and never treats a render event as a committed effect. Inspect bands from first usable patch to settled control states. Compare direct structured patch generation with a generic form and generated UI code using the same actions.

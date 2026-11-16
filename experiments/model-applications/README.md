@@ -54,6 +54,10 @@ This run establishes exact execution and deployment for these authored finite co
 
 The next [experiment series](foundation/README.md) runs two pretrained checkpoints locally and checks generated proposals against real durable effects. Exact feasibility evidence routed into the same input embeddings ties the external path. Separately grounding the objective and compiling the plan's outcome across policy revisions is a new, measurable architectural result. The proof, effect-table quotient, language-control comparison and negative tests are documented together with pinned weights and commands.
 
+## Discovering objectives from effect traces
+
+The [objective discovery experiments](elicitation/README.md) extract the vocabulary from compiled effects, learn from pairwise calibration choices, and certify a plan or prove the remaining uncertainty. A separate author supplied adversarial fixtures whose target rankings were held back during elicitation. Exact discrete and continuous solvers capture cases where knowing the best action requires less information than identifying the full preference. Retargeting tests show why the preference evidence must outlive a single certified decision.
+
 ## B3 and B4 · One experiment from contract to running model
 
 The first integrated contract combines delayed holds, versioned allocation pressure and an approval or compensation chain. It has a scarce resource, two actors, revocable authority and an external receipt. A new policy changes a decision in a situation where two apparently similar plans lead to different future effects. An outstanding request was opened before that policy change. An independently authored second contract must use different data and effect topology. Both may be artificial. Exercise a task that requires comparing at least two multi-step continuations before choosing or rendering a plan.

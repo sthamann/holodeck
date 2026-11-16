@@ -1,0 +1,558 @@
+{
+  "contradiction_refused": true,
+  "generated": [
+    {
+      "case": "generated_0",
+      "classes": 96,
+      "conflict": 2,
+      "decision_better": 55,
+      "decision_or_deferral_questions": 385,
+      "decision_or_deferral_worst_case": 5,
+      "decision_questions": 405,
+      "fewer_identity_questions": 0,
+      "greedy_decision_questions": 431,
+      "identity_questions": 470,
+      "identity_worst_case": null,
+      "resolved": 94,
+      "rules": 134,
+      "states": 2137,
+      "worst_case": null
+    },
+    {
+      "case": "generated_1",
+      "classes": 83,
+      "conflict": 0,
+      "decision_better": 66,
+      "decision_or_deferral_questions": 298,
+      "decision_or_deferral_worst_case": 4,
+      "decision_questions": 298,
+      "fewer_identity_questions": 0,
+      "greedy_decision_questions": 322,
+      "identity_questions": 403,
+      "identity_worst_case": null,
+      "resolved": 83,
+      "rules": 134,
+      "states": 2172,
+      "worst_case": 4
+    },
+    {
+      "case": "generated_2",
+      "classes": 68,
+      "conflict": 16,
+      "decision_better": 37,
+      "decision_or_deferral_questions": 259,
+      "decision_or_deferral_worst_case": 4,
+      "decision_questions": 276,
+      "fewer_identity_questions": 0,
+      "greedy_decision_questions": 300,
+      "identity_questions": 321,
+      "identity_worst_case": null,
+      "resolved": 52,
+      "rules": 134,
+      "states": 847,
+      "worst_case": null
+    },
+    {
+      "case": "generated_3",
+      "classes": 69,
+      "conflict": 14,
+      "decision_better": 35,
+      "decision_or_deferral_questions": 256,
+      "decision_or_deferral_worst_case": 4,
+      "decision_questions": 270,
+      "fewer_identity_questions": 1,
+      "greedy_decision_questions": 283,
+      "identity_questions": 322,
+      "identity_worst_case": null,
+      "resolved": 55,
+      "rules": 134,
+      "states": 1044,
+      "worst_case": null
+    },
+    {
+      "case": "generated_4",
+      "classes": 63,
+      "conflict": 4,
+      "decision_better": 47,
+      "decision_or_deferral_questions": 221,
+      "decision_or_deferral_worst_case": 4,
+      "decision_questions": 207,
+      "fewer_identity_questions": 0,
+      "greedy_decision_questions": 235,
+      "identity_questions": 293,
+      "identity_worst_case": null,
+      "resolved": 59,
+      "rules": 134,
+      "states": 1539,
+      "worst_case": null
+    },
+    {
+      "case": "generated_5",
+      "classes": 76,
+      "conflict": 12,
+      "decision_better": 43,
+      "decision_or_deferral_questions": 301,
+      "decision_or_deferral_worst_case": 4,
+      "decision_questions": 324,
+      "fewer_identity_questions": 0,
+      "greedy_decision_questions": 345,
+      "identity_questions": 369,
+      "identity_worst_case": null,
+      "resolved": 64,
+      "rules": 134,
+      "states": 1535,
+      "worst_case": null
+    },
+    {
+      "case": "generated_6",
+      "classes": 75,
+      "conflict": 6,
+      "decision_better": 57,
+      "decision_or_deferral_questions": 291,
+      "decision_or_deferral_worst_case": 4,
+      "decision_questions": 295,
+      "fewer_identity_questions": 1,
+      "greedy_decision_questions": 327,
+      "identity_questions": 371,
+      "identity_worst_case": null,
+      "resolved": 69,
+      "rules": 134,
+      "states": 2534,
+      "worst_case": null
+    },
+    {
+      "case": "generated_7",
+      "classes": 95,
+      "conflict": 3,
+      "decision_better": 79,
+      "decision_or_deferral_questions": 355,
+      "decision_or_deferral_worst_case": 4,
+      "decision_questions": 355,
+      "fewer_identity_questions": 3,
+      "greedy_decision_questions": 400,
+      "identity_questions": 457,
+      "identity_worst_case": null,
+      "resolved": 92,
+      "rules": 134,
+      "states": 2483,
+      "worst_case": null
+    },
+    {
+      "case": "generated_8",
+      "classes": 51,
+      "conflict": 3,
+      "decision_better": 33,
+      "decision_or_deferral_questions": 149,
+      "decision_or_deferral_worst_case": 3,
+      "decision_questions": 199,
+      "fewer_identity_questions": 1,
+      "greedy_decision_questions": 209,
+      "identity_questions": 244,
+      "identity_worst_case": null,
+      "resolved": 48,
+      "rules": 134,
+      "states": 575,
+      "worst_case": null
+    },
+    {
+      "case": "generated_9",
+      "classes": 73,
+      "conflict": 4,
+      "decision_better": 46,
+      "decision_or_deferral_questions": 262,
+      "decision_or_deferral_worst_case": 4,
+      "decision_questions": 282,
+      "fewer_identity_questions": 1,
+      "greedy_decision_questions": 292,
+      "identity_questions": 338,
+      "identity_worst_case": null,
+      "resolved": 69,
+      "rules": 134,
+      "states": 1308,
+      "worst_case": null
+    },
+    {
+      "case": "generated_10",
+      "classes": 67,
+      "conflict": 11,
+      "decision_better": 22,
+      "decision_or_deferral_questions": 252,
+      "decision_or_deferral_worst_case": 4,
+      "decision_questions": 274,
+      "fewer_identity_questions": 0,
+      "greedy_decision_questions": 280,
+      "identity_questions": 298,
+      "identity_worst_case": null,
+      "resolved": 56,
+      "rules": 134,
+      "states": 1153,
+      "worst_case": null
+    },
+    {
+      "case": "generated_11",
+      "classes": 103,
+      "conflict": 7,
+      "decision_better": 67,
+      "decision_or_deferral_questions": 409,
+      "decision_or_deferral_worst_case": 5,
+      "decision_questions": 412,
+      "fewer_identity_questions": 1,
+      "greedy_decision_questions": 446,
+      "identity_questions": 511,
+      "identity_worst_case": null,
+      "resolved": 96,
+      "rules": 134,
+      "states": 3299,
+      "worst_case": null
+    }
+  ],
+  "retarget": {
+    "first": "A",
+    "new_target": "underdetermined",
+    "witness": [
+      {
+        "answers": [
+          -1,
+          -1,
+          -1
+        ],
+        "optima": [
+          "A"
+        ],
+        "rule": [
+          [
+            "x",
+            "sum",
+            1
+          ]
+        ]
+      },
+      {
+        "answers": [
+          -1,
+          -1,
+          -1
+        ],
+        "optima": [
+          "B"
+        ],
+        "rule": [
+          [
+            "y",
+            "sum",
+            1
+          ]
+        ]
+      }
+    ]
+  },
+  "separate_author": [
+    {
+      "agrees_with_grader": true,
+      "asked": [
+        [
+          "cal1",
+          "A",
+          "B",
+          1
+        ],
+        [
+          "cal2",
+          "B",
+          "C",
+          -1
+        ]
+      ],
+      "case": "bridge_spans",
+      "classes": 18,
+      "commit_verified": true,
+      "decision_or_deferral_questions": 2,
+      "decision_or_deferral_worst_case": 2,
+      "features": [
+        [
+          "bearings_replaced",
+          "sum"
+        ],
+        [
+          "scaffold_bays",
+          "sum"
+        ],
+        [
+          "spans_restricted",
+          "sum"
+        ]
+      ],
+      "fixture_expected": "resolved",
+      "identity_questions": 3,
+      "observed": "resolved",
+      "oracle_in_grammar": true,
+      "plan": "D",
+      "questions": 2,
+      "remaining_classes": 3,
+      "rules": 30,
+      "states": 73,
+      "worst_case": 2
+    },
+    {
+      "agrees_with_grader": true,
+      "asked": [
+        [
+          "cal1",
+          "B",
+          "C",
+          -1
+        ],
+        [
+          "cal1",
+          "A",
+          "B",
+          1
+        ],
+        [
+          "cal1",
+          "B",
+          "D",
+          1
+        ]
+      ],
+      "case": "substation_feeders",
+      "classes": 18,
+      "commit_verified": true,
+      "decision_or_deferral_questions": 3,
+      "decision_or_deferral_worst_case": 3,
+      "features": [
+        [
+          "customers_notified",
+          "sum"
+        ],
+        [
+          "transformer_load_pct",
+          "sum"
+        ],
+        [
+          "transformer_load_pct",
+          "max"
+        ],
+        [
+          "transformer_load_pct",
+          "last"
+        ],
+        [
+          "transformer_load_pct",
+          "count"
+        ]
+      ],
+      "fixture_expected": "resolved",
+      "identity_questions": 2,
+      "observed": "resolved",
+      "oracle_in_grammar": true,
+      "plan": "C",
+      "questions": 3,
+      "remaining_classes": 3,
+      "rules": 42,
+      "states": 72,
+      "worst_case": 3
+    },
+    {
+      "agrees_with_grader": true,
+      "asked": [
+        [
+          "cal1",
+          "C",
+          "D",
+          1
+        ],
+        [
+          "cal2",
+          "B",
+          "C",
+          1
+        ],
+        [
+          "cal1",
+          "B",
+          "C",
+          -1
+        ],
+        [
+          "cal1",
+          "A",
+          "D",
+          1
+        ]
+      ],
+      "case": "floodgate_basin",
+      "classes": 50,
+      "commit_verified": true,
+      "decision_or_deferral_questions": 4,
+      "decision_or_deferral_worst_case": 4,
+      "features": [
+        [
+          "basin_level_cm",
+          "sum"
+        ],
+        [
+          "basin_level_cm",
+          "max"
+        ],
+        [
+          "basin_level_cm",
+          "last"
+        ],
+        [
+          "basin_level_cm",
+          "count"
+        ],
+        [
+          "gate_travel_cm",
+          "sum"
+        ],
+        [
+          "gate_travel_cm",
+          "max"
+        ],
+        [
+          "gate_travel_cm",
+          "last"
+        ],
+        [
+          "gate_travel_cm",
+          "count"
+        ]
+      ],
+      "fixture_expected": "resolved",
+      "identity_questions": 4,
+      "observed": "resolved",
+      "oracle_in_grammar": true,
+      "plan": "C",
+      "questions": 4,
+      "remaining_classes": 3,
+      "rules": 144,
+      "states": 1403,
+      "worst_case": 4
+    },
+    {
+      "asked": [
+        [
+          "cal2",
+          "A",
+          "C",
+          0
+        ],
+        [
+          "cal1",
+          "A",
+          "C",
+          1
+        ]
+      ],
+      "case": "sewer_overflow",
+      "classes": 22,
+      "conflict": [
+        {
+          "answers": [
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "optima": [
+            "A"
+          ],
+          "rule": [
+            [
+              "overflow_m3",
+              "sum",
+              1
+            ]
+          ]
+        },
+        {
+          "answers": [
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          "optima": [
+            "D"
+          ],
+          "rule": [
+            [
+              "overflow_m3",
+              "max",
+              1
+            ]
+          ]
+        }
+      ],
+      "decision_or_deferral_questions": 3,
+      "decision_or_deferral_worst_case": 3,
+      "features": [
+        [
+          "basements_at_risk",
+          "sum"
+        ],
+        [
+          "overflow_m3",
+          "sum"
+        ],
+        [
+          "overflow_m3",
+          "max"
+        ],
+        [
+          "overflow_m3",
+          "last"
+        ],
+        [
+          "overflow_m3",
+          "count"
+        ]
+      ],
+      "fixture_expected": "unresolved",
+      "identity_questions": 2,
+      "observed": "underdetermined",
+      "oracle_in_grammar": true,
+      "questions": 2,
+      "remaining_classes": 2,
+      "rules": 42,
+      "states": 90,
+      "worst_case": null
+    }
+  ],
+  "totals": {
+    "classes": 919,
+    "conflict": 82,
+    "decision_better": 587,
+    "decision_or_deferral_questions": 3438,
+    "decision_questions": 3597,
+    "fewer_identity_questions": 8,
+    "greedy_decision_questions": 3870,
+    "identity_questions": 4397,
+    "resolved": 837,
+    "rules": 1608
+  }
+}

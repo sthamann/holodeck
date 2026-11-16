@@ -1,0 +1,33 @@
+{"cases":[
+{"name":"bridge_spans","target":"target","boards":{
+"cal1":{"A":[["spans_restricted",4],["bearings_replaced",6],["scaffold_bays",9]],"B":[["scaffold_bays",12],["spans_restricted",2],["bearings_replaced",3]],"C":[["spans_restricted",2],["scaffold_bays",7],["bearings_replaced",5]],"D":[["bearings_replaced",8],["spans_restricted",5],["scaffold_bays",5]]},
+"cal2":{"A":[["scaffold_bays",8],["spans_restricted",1],["bearings_replaced",2]],"B":[["spans_restricted",3],["bearings_replaced",7],["scaffold_bays",10]],"C":[["bearings_replaced",4],["scaffold_bays",6],["spans_restricted",3]]},
+"cal3":{"A":[["spans_restricted",6],["scaffold_bays",3],["bearings_replaced",1]],"B":[["bearings_replaced",9],["spans_restricted",4],["scaffold_bays",11]],"C":[["scaffold_bays",2],["bearings_replaced",9],["spans_restricted",4]],"D":[["spans_restricted",7],["bearings_replaced",10],["scaffold_bays",1]]},
+"target":{"A":[["scaffold_bays",1],["spans_restricted",5],["bearings_replaced",9]],"B":[["spans_restricted",3],["bearings_replaced",2],["scaffold_bays",4]],"C":[["bearings_replaced",10],["scaffold_bays",2],["spans_restricted",8]],"D":[["spans_restricted",3],["scaffold_bays",8],["bearings_replaced",6]]}},
+"ranks":{"cal1":[["C"],["B"],["A"],["D"]],"cal2":[["A"],["B"],["C"]],"cal3":[["B","C"],["A"],["D"]],"target":[["D"],["B"],["A"],["C"]]},
+"expected":"resolved",
+"motivation":"Fewest restricted spans ties the two leading target plans, so only the secondary preference for more bearings replaced separates them, while scaffold bays is a decoy tie breaker that fits cal1 and is refuted on cal2."},
+{"name":"substation_feeders","target":"target","boards":{
+"cal1":{"A":[["transformer_load_pct",40],["transformer_load_pct",70],["customers_notified",3],["transformer_load_pct",50]],"B":[["customers_notified",5],["transformer_load_pct",60],["transformer_load_pct",60]],"C":[["transformer_load_pct",30],["transformer_load_pct",80],["customers_notified",2]],"D":[["transformer_load_pct",55],["customers_notified",4],["transformer_load_pct",20],["transformer_load_pct",20],["transformer_load_pct",20]]},
+"cal2":{"A":[["transformer_load_pct",45],["customers_notified",6],["transformer_load_pct",45],["transformer_load_pct",45]],"B":[["transformer_load_pct",90],["customers_notified",1]],"C":[["customers_notified",2],["transformer_load_pct",45],["transformer_load_pct",10]],"D":[["customers_notified",8]]},
+"target":{"A":[["customers_notified",7],["transformer_load_pct",62]],"B":[["transformer_load_pct",35],["transformer_load_pct",35],["customers_notified",1],["transformer_load_pct",75]],"C":[["transformer_load_pct",50],["customers_notified",2],["transformer_load_pct",58],["transformer_load_pct",30]],"D":[["transformer_load_pct",20],["transformer_load_pct",20],["transformer_load_pct",62],["customers_notified",4],["transformer_load_pct",20]]}},
+"ranks":{"cal1":[["D"],["B"],["A"],["C"]],"cal2":[["D"],["A","C"],["B"]],"target":[["C"],["A","D"],["B"]]},
+"expected":"resolved",
+"motivation":"Only the largest single transformer loading counts (a plan with no loading events scores zero), so lower totals, fewer steps, milder final readings and notification counts are all decoys and equal peaks stay tied."},
+{"name":"floodgate_basin","target":"target","boards":{
+"cal1":{"A":[["gate_travel_cm",5],["basin_level_cm",75],["gate_travel_cm",5],["gate_travel_cm",25],["basin_level_cm",75]],"B":[["gate_travel_cm",20],["basin_level_cm",140],["gate_travel_cm",10],["basin_level_cm",60]],"C":[["basin_level_cm",85],["gate_travel_cm",50],["basin_level_cm",80],["basin_level_cm",95]],"D":[["basin_level_cm",90],["basin_level_cm",120],["gate_travel_cm",45],["basin_level_cm",70]]},
+"cal2":{"A":[["gate_travel_cm",5],["basin_level_cm",40],["basin_level_cm",55]],"B":[["basin_level_cm",70],["gate_travel_cm",10],["basin_level_cm",65],["gate_travel_cm",20],["basin_level_cm",50]],"C":[["basin_level_cm",90],["gate_travel_cm",60],["basin_level_cm",50]]},
+"cal3":{"A":[["gate_travel_cm",30],["gate_travel_cm",40],["basin_level_cm",80]],"B":[["basin_level_cm",95],["gate_travel_cm",12],["gate_travel_cm",8],["basin_level_cm",65]],"C":[["basin_level_cm",100],["gate_travel_cm",10],["basin_level_cm",80]],"D":[["gate_travel_cm",7],["basin_level_cm",30],["gate_travel_cm",33],["basin_level_cm",65]]},
+"target":{"A":[["basin_level_cm",48],["gate_travel_cm",9],["basin_level_cm",60]],"B":[["gate_travel_cm",2],["basin_level_cm",55],["basin_level_cm",110],["basin_level_cm",90]],"C":[["gate_travel_cm",35],["basin_level_cm",130],["gate_travel_cm",25],["basin_level_cm",55]],"D":[["basin_level_cm",50],["gate_travel_cm",5],["basin_level_cm",40],["gate_travel_cm",5],["basin_level_cm",55],["gate_travel_cm",5]]}},
+"ranks":{"cal1":[["B"],["D"],["A"],["C"]],"cal2":[["C"],["B"],["A"]],"cal3":[["B","D"],["C"],["A"]],"target":[["C"],["D"],["A"],["B"]]},
+"expected":"resolved",
+"motivation":"The ranking depends on event order through the lowest final basin reading, with ties split by the number of gate movements rather than their total, largest or last travel, so the target winner has the worst peak and the most travel."},
+{"name":"sewer_overflow","target":"target","boards":{
+"cal1":{"A":[["overflow_m3",40],["basements_at_risk",12],["overflow_m3",10]],"B":[["basements_at_risk",8],["overflow_m3",70]],"C":[["overflow_m3",20],["overflow_m3",25],["basements_at_risk",30]],"D":[["overflow_m3",45],["overflow_m3",15],["basements_at_risk",20],["overflow_m3",5]]},
+"cal2":{"A":[["overflow_m3",30],["overflow_m3",50],["basements_at_risk",25]],"B":[["basements_at_risk",3],["overflow_m3",60],["overflow_m3",35]],"C":[["overflow_m3",50],["basements_at_risk",9],["overflow_m3",30]],"D":[["overflow_m3",15],["overflow_m3",15],["basements_at_risk",5],["overflow_m3",15]]},
+"cal3":{"A":[["overflow_m3",35],["basements_at_risk",6],["overflow_m3",20]],"B":[["overflow_m3",55],["overflow_m3",5],["basements_at_risk",18]],"C":[["basements_at_risk",14],["overflow_m3",10],["overflow_m3",10],["overflow_m3",10],["overflow_m3",10]]},
+"target":{"A":[["overflow_m3",45],["basements_at_risk",22]],"B":[["overflow_m3",30],["basements_at_risk",4],["overflow_m3",30]],"C":[["basements_at_risk",15],["overflow_m3",50],["overflow_m3",25]],"D":[["overflow_m3",20],["overflow_m3",20],["basements_at_risk",10],["overflow_m3",20],["overflow_m3",20]]}},
+"ranks":{"cal1":[["C"],["A"],["D"],["B"]],"cal2":[["D"],["A","C"],["B"]],"cal3":[["C"],["A"],["B"]],"target":[["D"],["B"],["A"],["C"]]},
+"expected":"unresolved",
+"motivation":"Minimizing the largest single overflow (the hidden rule) and minimizing total overflow give identical answers, ties included, on every calibration board but pick D and A respectively on the target, so no calibration question can settle the best plan."}
+]}

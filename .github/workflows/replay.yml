@@ -31,6 +31,13 @@ jobs:
           python "$foundation/certified_replay.py" > "$RUNNER_TEMP/certified-replay.json"
           cmp "$foundation/preference_quotient.json" "$RUNNER_TEMP/preference-quotient.json"
           cmp "$foundation/certified_replay.json" "$RUNNER_TEMP/certified-replay.json"
+      - name: Verify objective discovery and honest refusal
+        run: |
+          elicitation=experiments/model-applications/elicitation
+          python "$elicitation/replay.py" > "$RUNNER_TEMP/elicitation.json"
+          python "$elicitation/continuous.py" > "$RUNNER_TEMP/continuous-intent.json"
+          cmp "$elicitation/evidence.json" "$RUNNER_TEMP/elicitation.json"
+          cmp "$elicitation/continuous.json" "$RUNNER_TEMP/continuous-intent.json"
       - name: Replay finite causal state discovery
         run: node experiments/causal-discovery/replay.mjs
       - run: python -m pip install -r requirements.txt

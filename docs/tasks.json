@@ -10,7 +10,7 @@
     "architecture": "model-application-architecture.md",
     "protocol": "../experiments/model-applications/README.md",
     "evidence": "../experiments/model-applications/foundation/evidence.json",
-    "status": "foundation placement pilot and certified objective replay complete; independent qualification open"
+    "status": "certified objective discovery and independent synthetic blind run complete; real-contract qualification open"
   },
   "gates": [
     {"id": "G0", "title": "Reproduce and freeze", "depends_on": [], "status": "bounded-core-replayed", "evidence": "../experiments/model-core/README.md"},
