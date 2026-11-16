@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 410" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="410" viewBox="0 0 1120 410" role="img" aria-labelledby="title desc">
   <title id="title">Measured transfer of executable weights</title>
   <desc id="desc">Four modules compiled for four Gripper balls are reused for 340 grounded actions with 42 balls. The exact quotient has 336 states. A changed requirement after seven committed steps protects one named ball and permits a 116-step continuation.</desc>
   <defs><style>
