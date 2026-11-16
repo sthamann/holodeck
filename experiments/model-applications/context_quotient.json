@@ -1,0 +1,27 @@
+{
+  "current": {
+    "reachable_states": 16,
+    "classes": 4
+  },
+  "with_activation": {
+    "reachable_states": 40,
+    "classes": 20
+  },
+  "independent_state_pairs_checked": 900,
+  "max_future_classes_in_current_class": 2,
+  "minimum_fixed_retention_bits_beyond_current_class": 1,
+  "witnesses": {
+    "hidden_label_under_current_version": null,
+    "hidden_label_under_activation": [
+      "activate"
+    ],
+    "authority_with_identical_screen_content": [],
+    "ordered_effects_with_identical_screen_content": [
+      "finish"
+    ],
+    "faithful_storage_move": null,
+    "lossy_storage_move": [
+      "finish"
+    ]
+  }
+}

@@ -1,5 +1,7 @@
 # Where Holodeck stands
 
+The active project starts with independently authored new application definitions. See the [research roadmap](roadmap.md) and the [definition to model experiments](../experiments/model-applications/README.md) for current claims and measurements. This page records the earlier acquisition and execution evidence.
+
 The goal is a model that can take over an application and use what it knows to run it, adapt it and present it in new ways. A Deck learns the application's decisions and effects. A Holo is one working projection of that knowledge. The same capability can be reached from a browser control, an API or an agent. The data and commitments of the business stay durable while the experience can change around them. [Vision](article.md) · [Target architecture](architecture.md)
 
 MyNotes is a test of this claim outside commerce. It gives us a small but connected application with documents, relations, mutable state, visible controls and independent API consumers. Shopware is still the commerce test. Its finish line is an ordinary full shop lifecycle and the broader compatibility profile. A second implementation of notes, even one that passes its fixtures, does not by itself show that a system can acquire the next application.

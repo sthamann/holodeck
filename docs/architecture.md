@@ -1,5 +1,7 @@
 # The Holodeck target architecture
 
+The active research architecture begins with an application definition and targets an executable model, streamed Holos and configurable durable state. Its mathematical claims and competing model designs are specified in [From application definition to executable model](model-application-architecture.md). The causal discovery architecture below supplies mechanisms and controls for that program.
+
 Holodeck's **Causal Semantic Machine** acquires the executable semantics of unfamiliar software, learns reusable structure and serves a qualified behavior profile with the original off. A **Deck** packages those semantics, their evidence and a compatible executable. A **Holo** is a working projection of the same capabilities. APIs, command line clients and agents reach those capabilities through the same typed contract.
 
 The learned semantic representation is the primary artifact. The target compiler can lower it to an interpreter, native or WebAssembly execution, or an exact model forward. Each backend must preserve the checked observations, effects and resource contract across the supported profile. A Qwen based backbone remains a candidate for multimodal grounding, candidate generation and composition. Its contribution is measured separately from the ability of any backend to execute.

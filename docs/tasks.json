@@ -1,9 +1,17 @@
 {
   "schema": "holodeck.validation/1",
-  "date": "2026-11-12",
+  "date": "2026-11-16",
   "architecture": "architecture.md",
   "review": "architecture-review.md",
-  "acceptance": "roadmap.md#next-experiments",
+  "acceptance": "roadmap.md#what-would-count-as-solving-it",
+  "research_program": {
+    "objective": "Compile independent application definitions into executable Decks on a shared model, with streamed Holos and configurable durable state.",
+    "priority": "B1 to B4",
+    "architecture": "model-application-architecture.md",
+    "protocol": "../experiments/model-applications/README.md",
+    "evidence": "../experiments/model-applications/context_quotient.json",
+    "status": "finite-context-oracle-replayed; integrated experiment planned"
+  },
   "gates": [
     {"id": "G0", "title": "Reproduce and freeze", "depends_on": [], "status": "bounded-core-replayed", "evidence": "../experiments/model-core/README.md"},
     {"id": "G1", "title": "Identify rules from sealed families", "depends_on": ["G0"], "status": "planned"},

@@ -1,4 +1,43 @@
-# Experiments and acceptance
+# Holodeck research roadmap
+
+The finish line is a compiler from an independently authored application definition to an executable AI model, with shared Foundation Intelligence, generated streamed interfaces and configurable durable state. The acceptance unit is a **new definition run across the complete architecture**. Existing application replays supply measurements, adversarial cases and reference behavior.
+
+[Architecture and mathematical claims](model-application-architecture.md) · [Protocols and executable experiment](../experiments/model-applications/README.md) · [Literature and its implications](model-application-research.md)
+
+## What would count as solving it
+
+An independent team supplies a definition and observable obligations for a domain that was withheld when the runtime, model architecture and operator basis were frozen. The compiler resolves material ambiguity with concrete counterexamples or records an explicit policy choice. It produces a signed Deck artifact and a machine-checkable certificate for the supported obligations. The released inference system and generic Host execute the artifact. The team can configure the physical data layout, carry open work through migration, and use independently generated streamed Holos, the API and agents against the same state. The accepted workload includes concurrency, delayed effects, failures, restore and a policy revision.
+
+Run the same experiment with a matched coding agent and generic web runtime, a symbolic compiler with generated forms, and the same foundation model operating the same exact semantic engine through external tools. Require comparable correctness, price, latency, evidence and data access. The comparison isolates whether the discovery of reusable abstractions and internal access to exact semantic results do something existing stacks cannot do at the same budget.
+
+## Research stages
+
+| Stage | Work that advances the architecture | Evidence required to advance |
+| --- | --- | --- |
+| **1 · Semantics across contexts** | Define contextual equality under ordered effects, mutable authority, revisions and restart. Check that replacing a backend and projecting a Holo commute with execution under explicit conditions. Find minimal witnesses that separate an apparent state alias. | Publish a semantics and proof in a proof assistant for the finite kernel. Replay minimal failure witnesses for an overcoarsened state, a lossy adapter, stale actions and reordered external effects. The first executable finite check is in the repository. |
+| **2 · Compile definitions and expose missing intent** | Develop a typed language of entities, relations, capabilities, effects, clocks and scoped obligations. Compile it into an independently checked intermediate representation and an exact model execution target. Learn deferred definitions from active witness choices. | Two families designed by separate authors produce runnable decks without application specific runtime code. Test each requirement independently of the generator. Detect and keep open inconsistent and ambiguous contracts. Demonstrate a mechanically checked reduction from a general computation model for the idealized core and document the deployed resource envelope. |
+| **3 · Build a complete vertical experiment** | Compile one unfamiliar contract through model execution, actual streaming and a generic Host. Use two independently implemented storage adapters. Interleave model execution, user edits, restart, retries and a single rule change. | One checkpoint serves new HTML or native surfaces and the API, while the same rule change causes the predicted new result everywhere. Run every arm of the integrated experiment. Measure exact end effects, controls, replay and migration, and expose a first divergence for every failed run. |
+| **4 · Invent and test Foundation Intelligence** | Compare compiled sparse modules with a shared recurrent model that induces executable modules. Learn typed abstractions with bound variable transport and reusable proof schemas. Train only on families open at the split. | Show a causal advantage from using exact results inside inference over a strong external arm, and separately show transfer of induced abstractions over a matched symbolic library. Establish cost, footprint and what training preserved. |
+| **5 · Scale, transfer and reproduce** | Scale by effect topology, identities, state size and concurrent histories. Freeze the architecture and let independent authors submit unseen definitions. Bind diverse qualified backends and new renderers through general interfaces. | Independently reproduce compilation, migration, streaming and exact effects on withheld families. Demonstrate a release and later rule revision without changing the host or renderer. Report how costs grow and the profiles the system can qualify. |
+
+Stages 1 to 3 are the shortest path to the first result that tests the whole idea. A Stage 3 tie tells us what architecture remains compatible with the evidence. Failure of deep coupling directs Stage 4 toward a stronger learned semantic machine or a more precise claim. It never turns a compatibility replay into evidence for deep coupling. Model training and larger compute runs follow a measured bottleneck in the structural experiments.
+
+## Experimental decisions
+
+- **B1 · Semantics.** Does a single quotient preserve rights, effects, active controls and open work as observers change? The baseline partitions by displayed state. Reject the proposed rule on one distinguishing context that it loses.
+- **B2 · Compiler.** Can two unseen contracts compile without family handlers or guessed semantics? Give the competing approaches the same language evidence and declared choices. Score which obligations passed, which remain open, and independent task equivalence.
+- **B3 · Coupling.** Does an exact result available within inference change what a model can reason about at fixed budget? Compare equal backbone, actions and result information. Switch one policy cell, sever the internal feedback and intervene on a matched external result. Report the training advantage and the coupling advantage separately.
+- **B4 · Streaming and storage.** Can the same semantic transition survive arbitrary layout edits, reconnect and a qualified backend migration? Use revision bound handles, hostile timing, pre/post commit faults and multi-client races. Score effect/receipt parity, usable patch latency and visible-state convergence.
+- **B5 · Abstraction discovery.** Does a learned library compose mechanisms across new structural families? Freeze the library and test transfer with renamed entities, novel composition and genuinely new structure as separate cohorts. Charge training and proof work, compare with symbolic compression, and remove or shuffle the library.
+- **B6 · Independent challenge.** Have an independent maintainer publish contracts from unfamiliar domains after freeze. Show a second team can build, run and revise a deck from the published artifacts.
+
+The full protocol names budgets, controls, disqualifying outcomes and candidate thresholds. [Experiment protocols](../experiments/model-applications/README.md)
+
+## How work enters the roadmap
+
+Each proposed experiment must name the architectural claim it changes, the strongest simpler explanation, a counterexample that kills the claim and the artifact an independent team can reproduce. Work whose main payoff is route coverage or another domain demo belongs in the supporting evidence unless it exercises a missing architectural operation. The earlier causal acquisition and application acceptance work follows below for reference.
+
+## Earlier validation work
 
 Holodeck aims to replace complete applications with learned, executable decks. The first question is whether the model can acquire a capability and own its effects. The next question is whether a trainable backbone and reusable learned components make acquisition, composition or use better than the strongest simpler implementation. We test both. [Target architecture](architecture.md)
 
