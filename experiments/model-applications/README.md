@@ -33,6 +33,23 @@ Give the same typed definition and a separately authored obligations list to a c
 
 Use three evidence conditions for each reference: a complete formal contract, omitted policy with two compatible implementations, and contradictory obligations. Count qualified exact programs, incorrectly accepted programs, missing obligations raised with a shortest useful witness, and cost to get a complete verified artifact. Run a constructive language front end first; evaluate natural-language authoring later on the same sealed obligations as a distinct experiment. Freeze definition, policy authority, numeric range, reference hashes and resource envelope. A typed replay, an interpreter proof, and a model deployment test are different evidence.
 
+## Executable vertical development run
+
+Two authored definitions compile to an integer affine and threshold checkpoint. The serving process reads that checkpoint and executes it without loading the definition or reference implementation. A separately written reference computes the expected decisions, writes and ordered effects. Reachability is generated from that reference across all supported actors, inputs and activation steps. This covered **24,200 transitions in 1,740 states**. A changed checkpoint policy is rejected at its first divergence. A guard with an integer where the compiler requires a Boolean also fails.
+
+The runtime runs the same content-addressed checkpoint representation on an append-only journal and SQLite with relational tables. It moves an open continuation in both directions, with activation before and after each move. An original rule permits plans reserving 1, 2 or 3 units. Switching one policy parameter removes the 3-unit option from the generated Holo, makes the direct API refuse it, and changes the agent's maximum choice and committed effect to 2 units. An existing 3-unit hold finishes under its original revision and produces the original ordered effects. The same Host and renderer also serve a second definition about recording and adjudicating samples.
+
+Each of the four scenarios runs through the forward graph directly and through a separately marshaled exact tool boundary. All agree on results, affordances and effects. The browser applies actual streamed NDJSON patches and activates a control to commit a write. The deterministic replay tests process termination before and after commit, an incomplete trailing journal frame, compare-and-swap between competing clients, stale and cross-actor controls, idempotency key reuse, and duplicate delivery to a durable, idempotent mock receiver.
+
+```sh
+python3 experiments/model-applications/vertical/replay.py
+python3 experiments/model-applications/vertical/replay.py --browser /path/to/chrome
+```
+
+[Recorded evidence](vertical/evidence.json) · [Definitions](vertical/contracts.json) · [Compiler](vertical/compiler.py) · [Independent oracle and replay](vertical/replay.py)
+
+This run establishes exact execution and deployment for these authored finite contracts. The tool arm is a typed transport control inside the test process. The option chooser is deterministic. The vocabulary, scene layout primitives and lookahead rule are supplied. The migration quiesces writes during handover, and the browser uses a trusted loopback fixture rather than production authentication. Foundation-model reasoning, learned scene composition, simultaneous migration and unrestricted contract compilation require further evidence.
+
 ## B3 and B4 · One experiment from contract to running model
 
 The first integrated contract combines delayed holds, versioned allocation pressure and an approval or compensation chain. It has a scarce resource, two actors, revocable authority and an external receipt. A new policy changes a decision in a situation where two apparently similar plans lead to different future effects. An outstanding request was opened before that policy change. An independently authored second contract must use different data and effect topology. Both may be artificial. Exercise a task that requires comparing at least two multi-step continuations before choosing or rendering a plan.

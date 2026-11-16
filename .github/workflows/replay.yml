@@ -17,6 +17,13 @@ jobs:
         run: |
           python experiments/model-applications/context_quotient.py > "$RUNNER_TEMP/context-quotient.json"
           cmp experiments/model-applications/context_quotient.json "$RUNNER_TEMP/context-quotient.json"
+      - name: Replay definition to model, migration and streamed Holo
+        run: |
+          pilot=experiments/model-applications/vertical
+          python "$pilot/replay.py" > "$RUNNER_TEMP/vertical.json"
+          cmp "$pilot/evidence.json" "$RUNNER_TEMP/vertical.json"
+          python "$pilot/replay.py" --browser "$(command -v google-chrome)" > "$RUNNER_TEMP/vertical-browser.json"
+          python -c 'import json, sys; sys.exit(json.load(open(sys.argv[1])).get("chromium_stream") != "passed")' "$RUNNER_TEMP/vertical-browser.json"
       - name: Replay finite causal state discovery
         run: node experiments/causal-discovery/replay.mjs
       - run: python -m pip install -r requirements.txt

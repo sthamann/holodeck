@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Holodeck experiment</title>
+<style>
+  body { max-width: 46rem; margin: 4rem auto; padding: 0 1rem; font: 17px system-ui; color: #142d31; }
+  section { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.5rem 0; }
+  section > * { padding: .7rem 1rem; border-radius: .4rem; }
+  article { background: #edf4f1; }
+  button { background: #123b40; color: white; border: 0; cursor: pointer; font: inherit; }
+</style>
+<h1>Holodeck</h1>
+<section id="facts" aria-label="Current state"></section>
+<section id="actions" aria-label="Available actions"></section>
+<p id="status" role="status"></p>
+<script type="module">
+  const actor = new URL(location.href).searchParams.get("actor");
+  const scene = Object.create(null);
+  let epoch = null;
+  let busy = false;
+  const nodes = new Map();
+  const status = document.querySelector("#status");
+
+  async function refresh() {
+    const response = await fetch("/scene", {
+      method: "POST", body: JSON.stringify({actor, base: epoch, previous: scene}),
+    });
+    if (!response.ok) throw Error("scene request failed");
+    const reader = response.body.pipeThrough(new TextDecoderStream()).getReader();
+    let buffer = "";
+    let completed = false;
+    let target = null;
+    while (true) {
+      const {done, value} = await reader.read();
+      if (done) break;
+      buffer += value;
+      let newline;
+      while ((newline = buffer.indexOf("\n")) !== -1) {
+        const patch = JSON.parse(buffer.slice(0, newline));
+        buffer = buffer.slice(newline + 1);
+        if (completed || patch.base !== epoch || (target !== null && patch.epoch !== target)) {
+          throw Error("patch sequence mismatch");
+        }
+        target = patch.epoch;
+        if (patch.drop) {
+          nodes.get(patch.drop)?.remove();
+          nodes.delete(patch.drop);
+          delete scene[patch.drop];
+        } else if (patch.put) {
+          const [key, node] = patch.put;
+          if (!nodes.has(key)) {
+            const action = node.kind === "action";
+            const element = document.createElement(action ? "button" : "article");
+            element.dataset.holoKey = key;
+            if (action) element.onclick = () => invoke(key);
+            document.querySelector(action ? "#actions" : "#facts").append(element);
+            nodes.set(key, element);
+          }
+          nodes.get(key).textContent = node.kind === "action" ? node.label : node.label + ": " + node.value;
+          scene[key] = node;
+        }
+        completed = patch.complete === true;
+      }
+    }
+    if (!completed || buffer) throw Error("incomplete patch stream");
+    epoch = target;
+    document.body.dataset.sceneEpoch = target;
+  }
+
+  async function invoke(key) {
+    if (busy || !scene[key]) return;
+    busy = true;
+    try {
+      const response = await fetch("/invoke", {
+        method: "POST",
+        body: JSON.stringify({actor, handle: scene[key].handle, key: crypto.randomUUID()}),
+      });
+      status.textContent = (await response.json()).status;
+      await refresh();
+    } catch (error) {
+      status.textContent = error.message;
+    } finally {
+      busy = false;
+    }
+  }
+
+  await refresh();
+  busy = false;
+  setInterval(async () => {
+    if (busy) return;
+    busy = true;
+    try {
+      await refresh();
+    } catch (error) {
+      status.textContent = error.message;
+    } finally {
+      busy = false;
+    }
+  }, 1000);
+</script>
+</html>
