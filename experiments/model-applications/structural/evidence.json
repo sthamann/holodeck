@@ -1,0 +1,295 @@
+{
+  "parser_controls": true,
+  "tasks": [
+    {
+      "artifact": {
+        "flat_bytes": 10243,
+        "flat_graph_nodes": 284,
+        "grounded_operators": 36,
+        "groundings_reusing_a_prior_module": 0,
+        "shared_bytes": 6389,
+        "shared_graph_nodes": 24,
+        "weight_modules": 4
+      },
+      "distinct_object_blocks": [
+        4
+      ],
+      "explicit_partition_check": {
+        "concrete": 256,
+        "edges": 1152,
+        "orbits": 32
+      },
+      "facts": 20,
+      "frozen_weights_only": false,
+      "inventory": {
+        "action_orbit_edges": 120,
+        "named_edges": 1152,
+        "named_states": 256,
+        "orbit_states": 32,
+        "representative_edges": 156
+      },
+      "local_assignments_verified": 524,
+      "raw_states_until_goal": 255,
+      "scope_blocks_not_used": [
+        2
+      ],
+      "states_until_goal": 31,
+      "steps": 11,
+      "task": "gripper/prob01.pddl",
+      "transaction": {
+        "one_transaction": true,
+        "ordered_named_actions": 11,
+        "restarted": true,
+        "revision_invalidates_proof": true
+      }
+    },
+    {
+      "artifact": {
+        "flat_bytes": 14985,
+        "flat_graph_nodes": 420,
+        "grounded_operators": 52,
+        "groundings_reusing_a_prior_module": 52,
+        "shared_bytes": 8852,
+        "shared_graph_nodes": 24,
+        "weight_modules": 4
+      },
+      "distinct_object_blocks": [
+        6
+      ],
+      "explicit_partition_check": {
+        "concrete": 1856,
+        "edges": 9088,
+        "orbits": 48
+      },
+      "facts": 28,
+      "frozen_weights_only": true,
+      "inventory": {
+        "action_orbit_edges": 184,
+        "named_edges": 9088,
+        "named_states": 1856,
+        "orbit_states": 48,
+        "representative_edges": 284
+      },
+      "local_assignments_verified": 780,
+      "raw_states_until_goal": 1855,
+      "scope_blocks_not_used": [
+        2
+      ],
+      "states_until_goal": 47,
+      "steps": 17,
+      "task": "gripper/prob02.pddl",
+      "transaction": {
+        "one_transaction": true,
+        "ordered_named_actions": 17,
+        "restarted": true,
+        "revision_invalidates_proof": true
+      }
+    },
+    {
+      "artifact": {
+        "flat_bytes": 24417,
+        "flat_graph_nodes": 692,
+        "grounded_operators": 84,
+        "groundings_reusing_a_prior_module": 84,
+        "shared_bytes": 13732,
+        "shared_graph_nodes": 24,
+        "weight_modules": 4
+      },
+      "distinct_object_blocks": [
+        10
+      ],
+      "facts": 44,
+      "frozen_weights_only": true,
+      "inventory": {
+        "action_orbit_edges": 312,
+        "named_edges": 362496,
+        "named_states": 68608,
+        "orbit_states": 80,
+        "representative_edges": 636
+      },
+      "local_assignments_verified": 1292,
+      "raw_states_until_goal": 68607,
+      "scope_blocks_not_used": [
+        2
+      ],
+      "states_until_goal": 79,
+      "steps": 29,
+      "task": "gripper/prob04.pddl",
+      "transaction": {
+        "one_transaction": true,
+        "ordered_named_actions": 29,
+        "restarted": true,
+        "revision_invalidates_proof": true
+      }
+    },
+    {
+      "artifact": {
+        "flat_bytes": 48249,
+        "flat_graph_nodes": 1372,
+        "grounded_operators": 164,
+        "groundings_reusing_a_prior_module": 164,
+        "shared_bytes": 26181,
+        "shared_graph_nodes": 24,
+        "weight_modules": 4
+      },
+      "distinct_object_blocks": [
+        20
+      ],
+      "facts": 84,
+      "frozen_weights_only": true,
+      "inventory": {
+        "action_orbit_edges": 632,
+        "named_edges": 1367343104,
+        "named_states": 243269632,
+        "orbit_states": 160,
+        "representative_edges": 2076
+      },
+      "local_assignments_verified": 2572,
+      "scope_blocks_not_used": [
+        2
+      ],
+      "states_until_goal": 159,
+      "steps": 59,
+      "task": "gripper/prob09.pddl",
+      "transaction": {
+        "one_transaction": true,
+        "ordered_named_actions": 59,
+        "restarted": true,
+        "revision_invalidates_proof": true
+      }
+    },
+    {
+      "artifact": {
+        "flat_bytes": 101853,
+        "flat_graph_nodes": 2868,
+        "grounded_operators": 340,
+        "groundings_reusing_a_prior_module": 340,
+        "shared_bytes": 54397,
+        "shared_graph_nodes": 24,
+        "weight_modules": 4
+      },
+      "asymmetric_policy": {
+        "examined_orbits": 328,
+        "policy_change": "disable pickup for ball42",
+        "status": "unreachable"
+      },
+      "distinct_object_blocks": [
+        42
+      ],
+      "facts": 172,
+      "frozen_weights_only": true,
+      "inventory": {
+        "action_orbit_edges": 1336,
+        "named_edges": 24215644090138624,
+        "named_states": 4164950046015488,
+        "orbit_states": 336,
+        "representative_edges": 8060
+      },
+      "local_assignments_verified": 5388,
+      "retarget": {
+        "old_quotient_collision": true,
+        "pinned_object": "ball42",
+        "pinned_object_untouched_at_every_step": true,
+        "remaining_exchangeable": 41,
+        "states": 327,
+        "steps": 116,
+        "steps_already_committed": 7,
+        "transaction": {
+          "one_transaction": true,
+          "ordered_named_actions": 116,
+          "restarted": true,
+          "revision_invalidates_proof": true
+        }
+      },
+      "scope_blocks_not_used": [
+        2
+      ],
+      "states_until_goal": 335,
+      "steps": 125,
+      "task": "gripper/prob20.pddl",
+      "transaction": {
+        "one_transaction": true,
+        "ordered_named_actions": 125,
+        "restarted": true,
+        "revision_invalidates_proof": true
+      }
+    },
+    {
+      "artifact": {
+        "flat_bytes": 11696,
+        "flat_graph_nodes": 326,
+        "grounded_operators": 40,
+        "groundings_reusing_a_prior_module": 0,
+        "shared_bytes": 7096,
+        "shared_graph_nodes": 48,
+        "weight_modules": 6
+      },
+      "distinct_object_blocks": [],
+      "explicit_partition_check": {
+        "concrete": 125,
+        "edges": 272,
+        "orbits": 125
+      },
+      "facts": 29,
+      "frozen_weights_only": false,
+      "inventory": {
+        "action_orbit_edges": 272,
+        "named_edges": 272,
+        "named_states": 125,
+        "orbit_states": 125,
+        "representative_edges": 272
+      },
+      "local_assignments_verified": 1024,
+      "raw_states_until_goal": 125,
+      "scope_blocks_not_used": [],
+      "states_until_goal": 125,
+      "steps": 6,
+      "task": "blocks/probBLOCKS-4-0.pddl",
+      "transaction": {
+        "one_transaction": true,
+        "ordered_named_actions": 6,
+        "restarted": true,
+        "revision_invalidates_proof": true
+      }
+    },
+    {
+      "artifact": {
+        "flat_bytes": 11647,
+        "flat_graph_nodes": 263,
+        "grounded_operators": 64,
+        "groundings_reusing_a_prior_module": 56,
+        "shared_bytes": 7629,
+        "shared_graph_nodes": 14,
+        "weight_modules": 3
+      },
+      "distinct_object_blocks": [],
+      "explicit_partition_check": {
+        "concrete": 2048,
+        "edges": 15872,
+        "orbits": 2048
+      },
+      "facts": 16,
+      "frozen_weights_only": false,
+      "inventory": {
+        "action_orbit_edges": 15872,
+        "named_edges": 15872,
+        "named_states": 2048,
+        "orbit_states": 2048,
+        "representative_edges": 15872
+      },
+      "local_assignments_verified": 272,
+      "raw_states_until_goal": 1574,
+      "scope_blocks_not_used": [],
+      "states_until_goal": 1574,
+      "steps": 14,
+      "task": "miconic/s4-0.pddl",
+      "transaction": {
+        "one_transaction": true,
+        "ordered_named_actions": 14,
+        "restarted": true,
+        "revision_invalidates_proof": true
+      }
+    }
+  ],
+  "upstream": "e21d49c2cb61d147a46c5966f2581bf6fd422b9f"
+}

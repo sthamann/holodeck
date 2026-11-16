@@ -9,8 +9,8 @@
     "priority": "B1 to B4",
     "architecture": "model-application-architecture.md",
     "protocol": "../experiments/model-applications/README.md",
-    "evidence": "../experiments/model-applications/foundation/evidence.json",
-    "status": "certified objective discovery and independent synthetic blind run complete; real-contract qualification open"
+    "evidence": "../experiments/model-applications/structural/evidence.json",
+    "status": "structured objective discovery and external formal-definition compilation qualified on bounded domains; broader contracts and natural intent open"
   },
   "gates": [
     {"id": "G0", "title": "Reproduce and freeze", "depends_on": [], "status": "bounded-core-replayed", "evidence": "../experiments/model-core/README.md"},

@@ -71,6 +71,12 @@ The [objective discovery pilot](../experiments/model-applications/elicitation/RE
 
 A separate rational solver extends the same decision condition to a continuum of linear utilities. It first proves that the strict comparisons have a common feasible weight, then checks competitor differences on the closed feasible polytope. A counterexample can be perturbed toward the strict witness without losing its negative margin. The proofs certify behavior across every remaining compatible intent in those models. They do not imply that the grammar represents every possible intent.
 
+## Shared weights across formal applications and scoped symmetry
+
+The [structural compiler](../experiments/model-applications/structural/README.md) lowers a bounded fragment of published PDDL definitions to role-indexed affine and threshold modules. An action binds concrete data slots to a shared weight graph. Independent truth-table checks verify its executable obligations against the formal source, grounded transition kernel and flat compiler. The module library is unchanged when object multiplicity changes within its certified role patterns.
+
+The same constraints also determine which states and actions may be collapsed for planning. Generated permutations must preserve the transition relation and the current observation, including path invariants. A user can distinguish previously exchangeable objects by changing that observation. The next plan refines the quotient from the concrete current state, while executable weights continue to implement the same operations. A certified plan carries ordered concrete identities, observes path constraints at every step, and binds its effects to the current epoch for one atomic write. Symmetry is a planning optimization relative to an observer. The durable state retains identities needed to refine future observations.
+
 ## Streaming and data path
 
 The model generates a structured scene for the current goal, authority and state revision. Each frame is a typed patch against a base revision with stable element identities, data dependencies, capabilities and accessibility semantics. The renderer handles layout, input, focus and device presentation. The Host reconciles missing or reordered patches by replay or snapshot and never treats a render event as a committed effect. Inspect bands from first usable patch to settled control states. Compare direct structured patch generation with a generic form and generated UI code using the same actions.
