@@ -1,10 +1,17 @@
 # Where Holodeck stands
 
-The active project starts with independently authored new application definitions. See the [research roadmap](roadmap.md) and the [definition to model experiments](../experiments/model-applications/README.md) for current claims and measurements. This page records the earlier acquisition and execution evidence.
+The active project starts with independently authored new application definitions. See the [research roadmap](roadmap.md) and the [definition to model experiments](../experiments/model-applications/README.md) for current claims and measurements. This page summarizes the active program and preserves the earlier acquisition and execution controls.
 
 The goal is a model that can take over an application and use what it knows to run it, adapt it and present it in new ways. A Deck learns the application's decisions and effects. A Holo is one working projection of that knowledge. The same capability can be reached from a browser control, an API or an agent. The data and commitments of the business stay durable while the experience can change around them. [Vision](article.md) · [Target architecture](architecture.md)
 
 MyNotes is a test of this claim outside commerce. It gives us a small but connected application with documents, relations, mutable state, visible controls and independent API consumers. Shopware is still the commerce test. Its finish line is an ordinary full shop lifecycle and the broader compatibility profile. A second implementation of notes, even one that passes its fixtures, does not by itself show that a system can acquire the next application.
+
+## Current definition-to-model evidence
+
+- Seven external competition tasks across three domains compile to shared exact weight programs. The largest measured Gripper instance has 42 balls, 340 grounded actions and 336 certified state classes. It reuses four weight modules from the four-ball task. The plan is verified against source interpretation, local forward equivalence and durable named execution. [External formal definition replay](../experiments/model-applications/structural/README.md)
+- Exact decision discovery uses executable effects and comparison answers. The separate synthetic author suite contains three certified decisions and one proven ambiguity. [Objective discovery](../experiments/model-applications/elicitation/README.md)
+- Frozen backbone experiments measure language grounding and exact optimization. Matching information at the same input embedding produces equal results. Tested residual placements do not improve decisions. The improvement from exact optimization is also available through a typed external interface. [Foundation experiments](../experiments/model-applications/foundation/README.md)
+- Separate Chromium and storage tests exercise streamed controls, migrations, revision changes and atomic effects. [Vertical replay](../experiments/model-applications/README.md#executable-vertical-development-run)
 
 ## First causal discovery result
 

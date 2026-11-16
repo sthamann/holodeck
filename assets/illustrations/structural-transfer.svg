@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 410" role="img" aria-labelledby="title desc">
+  <title id="title">Measured transfer of executable weights</title>
+  <desc id="desc">Four modules compiled for four Gripper balls are reused for 340 grounded actions with 42 balls. The exact quotient has 336 states. A changed requirement after seven committed steps protects one named ball and permits a 116-step continuation.</desc>
+  <defs><style>
+    .top{font:700 34px 'Helvetica Neue',Arial,sans-serif;fill:#112945}
+    .label{font:700 14px 'Helvetica Neue',Arial,sans-serif;letter-spacing:1.4px;fill:#205945}
+    .n{font:700 28px 'Helvetica Neue',Arial,sans-serif;fill:#112945}
+    .copy{font:17px 'Helvetica Neue',Arial,sans-serif;fill:#36536e}
+  </style></defs>
+  <rect width="1120" height="410" rx="22" fill="#eef3f9"/>
+  <text x="38" y="55" class="top">A larger world with the same weights</text>
+  <rect x="40" y="94" width="310" height="185" rx="16" fill="#fff" stroke="#bccbd9"/>
+  <rect x="373" y="94" width="373" height="185" rx="16" fill="#e5f2ed" stroke="#8aaf9f"/>
+  <rect x="769" y="94" width="311" height="185" rx="16" fill="#fff" stroke="#bccbd9"/>
+  <text x="60" y="132" class="label">COMPILE ONCE</text>
+  <text x="60" y="179" class="n">4 → 42 balls</text>
+  <text x="60" y="217" class="copy">4 frozen weight modules</text>
+  <text x="60" y="242" class="copy">340 grounded actions</text>
+  <text x="393" y="132" class="label">PLAN BY EQUIVALENCE</text>
+  <text x="393" y="178" class="n">336 classes</text>
+  <text x="393" y="218" class="copy">4,164,950,046,015,488</text>
+  <text x="393" y="242" class="copy">reachable named states</text>
+  <text x="789" y="132" class="label">CHANGE THE REQUEST</text>
+  <text x="789" y="178" class="n">7 → 116 steps</text>
+  <text x="789" y="217" class="copy">7 committed before the change</text>
+  <text x="789" y="242" class="copy">116 replanned and executed</text>
+  <path d="M40 320h1040" stroke="#b8c9da"/>
+  <text x="40" y="360" class="copy">Published IPC Gripper tasks · Exact shortest-path replay · Named object protected throughout continuation</text>
+</svg>

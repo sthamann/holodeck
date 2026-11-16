@@ -2,17 +2,19 @@
 
 **Define an application. Compile it into an AI model. Stream every interface from that model.**
 
-Holodeck is a research project about a new form of software. Describe what an application must do: its objects, rules, rights, commitments, time and external effects. A compiler turns that definition into a **Deck**, a deployable application model built on a shared foundation model. Its exact executable semantics determine what happens. Its learned intelligence understands what people mean, reasons over live alternatives and builds an interface for the work at hand.
+Holodeck investigates a different unit of software. Define the objects, rules, rights and effects, then compile the definition into a **Deck**. A Deck packages executable semantics, evidence and the bindings needed by people and agents. The current compiler runs independently authored formal planning definitions using reusable affine and threshold modules. A shared foundation model for broader intent, composition and presentation is the research target.
 
 A **Holo** is a live, streamed interface. It may be a document, a visual workspace, a spreadsheet, a spatial control surface or an interface nobody drew beforehand. The model streams typed changes to that surface. A click, a direct API call and an agent instruction can invoke the same capability, with the same rights, versions and effects. The **Host** supplies configurable storage, transactions, time and external connections. A storage migration preserves the application's commitments under its declared consistency contract.
 
 [Research roadmap](docs/roadmap.md) · [Mathematical and model architecture](docs/model-application-architecture.md) · [Experiments](experiments/model-applications/README.md) · [Research and prior art](docs/model-application-research.md) · [Original article](https://www.linkedin.com/pulse/end-software-we-know-stefan-hamann-z81he/)
 
+![Definitions compile into a versioned Deck. A scope-aware planner and the Host connect its exact semantics to verified actions and durable records.](assets/illustrations/deck-target-system.svg)
+
 ## Foundation Intelligence
 
-The same foundation model serves new Decks without retraining the whole backbone for each application. Holodeck aims to teach it reusable executable abstractions. Within inference, it can inspect the exact consequences of a proposed action, reason about what to do next and generate the controls that let a person act. A qualified change to the Deck's rules should alter the model's reasoning, the Holo's actionable controls and the committed outcome in a predictable way. The interface adapts to the user. The rules remain exact.
+The proposed foundation layer grounds intent, inspects exact outcomes and generates controls bound to Deck actions. The current experiments use frozen language models to read objectives and an exact compiler to select and validate plans. Routing equivalent information internally and externally tied in the measured comparison. The next architecture comparison will need a causal task-level gain at matched correctness and cost.
 
-Application definitions can start in natural language and include examples, invariants, diagrams and data contracts. Before compilation, ambiguity that changes observable outcomes becomes a specific choice or an explicit policy range. Existing software is an optional source of definition evidence. The primary path starts with a definition and runs the resulting model without a separate implementation of that application.
+The primary research path starts with a definition and deploys a Deck on a generic Host. Formal contracts already compile in the measured fragment. Natural language, examples and existing software can supply evidence about a definition. The experiments below test whether the resulting meanings are specific enough to authorize an action.
 
 ## What would establish the vision
 
@@ -27,7 +29,16 @@ The target is open ended across effectively specified application domains with d
 
 ## Evidence today
 
-The existing research establishes bounded exact execution, finite causal state discovery, shared effects across API and browser, and some model internal computations. Those are ingredients and controls for the program above. The first new executable experiment checks what a model would lose by merging histories based on their current screen. Complete definition to model compilation, learned generalization and an advantage from internal coupling remain research questions. [Published results](docs/research-status.md) · [Run the new experiment](experiments/model-applications/README.md)
+![Measured Gripper transfer from four to 42 balls, showing four unchanged modules, 336 search classes and replanning from durable state.](assets/illustrations/structural-transfer.svg)
+
+| Result | Evidence |
+| --- | --- |
+| **External formal definitions** | Seven original tasks across Gripper, Blocks and Miconic compile through one pipeline. The weight modules from four balls execute all 340 grounded actions in the 42-ball task. Its 4,164,950,046,015,488 reachable named states form exactly 336 classes under the certified quotient. [Structural replay](experiments/model-applications/structural/README.md) |
+| **A live change of scope** | After seven durable steps, a named ball becomes protected. The planner keeps its identity, lifts a new 116-step plan, and verifies the constraint across commit, migration and restart. [Retargeting](experiments/model-applications/structural/README.md#reproduced-results) |
+| **Objective discovery** | Three separately authored synthetic targets resolve from two to four calibration comparisons. The fourth exposes two indistinguishable compatible rules with different target optima. [Discovery and refusal proofs](experiments/model-applications/elicitation/README.md) |
+| **Deployment and language** | Two pilot contracts exercise streamed browser controls and atomic writes across journal and SQLite. A frozen model readout with an exact optimizer made 248 of 288 decisions on a 24-utterance synthetic suite. [Deployment](experiments/model-applications/README.md#executable-vertical-development-run) · [Foundation comparison](experiments/model-applications/foundation/README.md) |
+
+[Research status and limitations](docs/research-status.md) · [Reproduce the experiment series](experiments/model-applications/README.md)
 
 [Contributing](CONTRIBUTING.md) · [Demonstration and film](docs/showcase.md) · [Artwork and capture credits](assets/README.md)
 

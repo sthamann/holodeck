@@ -1,33 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="555" viewBox="0 0 1200 555" role="img" aria-labelledby="title description">
-  <title id="title">The model is the application</title>
-  <desc id="description">Inputs enter one versioned Deck. The Qwen backbone grounds them and exact specialists compute decisions. Holos and APIs expose capabilities. The generic host commits effects and stores records.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 580" role="img" aria-labelledby="title desc">
+  <title id="title">Holodeck from definition to durable effects</title>
+  <desc id="desc">Formal definitions compile into a versioned Deck. Typed requests use scope-aware planning and validated actions. The generic Host commits named effects and receipts. A foundation model is the proposed broader interface.</desc>
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#3869a0"/></marker>
+    <marker id="head" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#42628a"/></marker>
     <style>
-      .title{font:700 43px system-ui,sans-serif;fill:#102648}
-      .subtitle{font:21px system-ui,sans-serif;fill:#405676}
-      .name{font:700 22px system-ui,sans-serif;fill:#102648}
-      .detail{font:17px system-ui,sans-serif;fill:#405676}
-      .label{font:700 14px ui-monospace,monospace;letter-spacing:1.4px;fill:#245d9c}
-      .line{stroke:#3869a0;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
-      .secondary{stroke-dasharray:6 5;stroke-width:1.7}
+      .title{font:700 38px 'Helvetica Neue',Arial,sans-serif;fill:#112945}.sub{font:19px 'Helvetica Neue',Arial,sans-serif;fill:#3e5871}
+      .label{font:700 13px 'Helvetica Neue',Arial,sans-serif;letter-spacing:1.8px;fill:#16644e}
+      .name{font:700 24px 'Helvetica Neue',Arial,sans-serif;fill:#112945}.body{font:17px 'Helvetica Neue',Arial,sans-serif;fill:#334f68}
+      .edge{stroke:#42628a;stroke-width:2.4;fill:none;marker-end:url(#head)}
     </style>
   </defs>
-  <rect width="1200" height="555" rx="24" fill="#f4f8ff"/>
-  <text x="40" y="61" class="title" text-anchor="start">The model is the application</text>
-  <text x="42" y="98" class="subtitle" text-anchor="start">One deck owns decisions and projects the software each task needs.</text>
-  <rect x="322" y="129" width="552" height="269" rx="19" fill="#edf3fc" stroke="#a6bbd8" stroke-width="1.5" stroke-dasharray="6 5"/><text x="342" y="155" class="label" text-anchor="start">THE DECK · VERSIONED MODEL</text>
-  <rect x="322" y="426" width="552" height="97" rx="19" fill="#edf3fc" stroke="#a6bbd8" stroke-width="1.5" stroke-dasharray="6 5"/><text x="342" y="452" class="label" text-anchor="start">GENERIC HOST</text>
-  <path d="M280 262H344" class="line"/>
-  <path d="M580 262H614" class="line"/>
-  <path d="M846 262H916" class="line"/>
-  <path d="M737 334V420" class="line"/>
-  <path d="M681 334V359 Q681 368 672 368H475 Q465 368 465 358V340" class="line secondary"/>
-  <text x="570" y="388" class="label" text-anchor="middle">Exact results and actions</text>
-  <rect x="40" y="208" width="240" height="108" rx="15" fill="white" stroke="#bdcde1" stroke-width="2"/><text x="60" y="243" class="name" text-anchor="start">Inputs</text><text x="60" y="271" class="detail" text-anchor="start">Text, images, commands</text><text x="60" y="294" class="detail" text-anchor="start">Events and typed records</text>
-  <rect x="350" y="193" width="230" height="141" rx="15" fill="white" stroke="#bdcde1" stroke-width="2"/><text x="370" y="228" class="name" text-anchor="start">Qwen backbone</text><text x="370" y="256" class="detail" text-anchor="start">Ground intent in objects</text><text x="370" y="279" class="detail" text-anchor="start">Bind exact references</text><text x="370" y="302" class="detail" text-anchor="start">Compose a Holo</text>
-  <rect x="620" y="193" width="226" height="141" rx="15" fill="#e0edff" stroke="#3176bd" stroke-width="2"/><text x="640" y="228" class="name" text-anchor="start">Exact specialists</text><text x="640" y="256" class="detail" text-anchor="start">Run learned programs</text><text x="640" y="279" class="detail" text-anchor="start">Emit decisions, effects</text><text x="640" y="302" class="detail" text-anchor="start">and available actions</text>
-  <rect x="922" y="208" width="238" height="108" rx="15" fill="white" stroke="#bdcde1" stroke-width="2"/><text x="942" y="243" class="name" text-anchor="start">Holos and APIs</text><text x="942" y="271" class="detail" text-anchor="start">Working views and tools</text><text x="942" y="294" class="detail" text-anchor="start">bound to Deck actions</text>
-  <text x="343" y="484" class="detail" text-anchor="start">Authorized reads · atomic commit · timers · rendering</text>
-  <text x="343" y="509" class="detail" text-anchor="start">Durable state, receipts and external effects</text>
+  <rect width="1120" height="580" rx="22" fill="#eef3f9"/>
+  <text x="38" y="62" class="title">From definition to durable effects</text>
+  <text x="40" y="97" class="sub">Executable rules in the Deck, concrete identities in the Host.</text>
+  <g stroke="#bac9d8" stroke-width="1.5">
+    <rect x="40" y="134" width="230" height="135" rx="15" fill="#fff"/>
+    <rect x="310" y="134" width="228" height="135" rx="15" fill="#fff"/>
+    <rect x="578" y="134" width="230" height="135" rx="15" fill="#e5f2ed" stroke="#86b19f"/>
+    <rect x="848" y="134" width="232" height="135" rx="15" fill="#fff"/>
+    <rect x="40" y="325" width="498" height="111" rx="15" fill="#fff"/>
+    <rect x="578" y="325" width="502" height="111" rx="15" fill="#fff"/>
+    <rect x="40" y="477" width="1040" height="65" rx="13" fill="none" stroke="#7f99b4" stroke-dasharray="6 5"/>
+  </g>
+  <path class="edge" d="M273 201h32 M541 201h32 M811 201h32"/>
+  <path class="edge" d="M389 325v-30h307v-21 M963 271v49"/>
+  <text x="58" y="175" class="name">Definition</text><text x="58" y="211" class="body">Objects and rules</text><text x="58" y="235" class="body">Actions and effects</text>
+  <text x="328" y="175" class="name">Compiler</text><text x="328" y="211" class="body">Typed data bindings</text><text x="328" y="235" class="body">Shared exact weights</text>
+  <text x="596" y="175" class="name">Versioned Deck</text><text x="596" y="211" class="body">Executable rules</text><text x="596" y="235" class="body">Planning and validation</text>
+  <text x="866" y="175" class="name">Generic Host</text><text x="866" y="211" class="body">Versioned storage</text><text x="866" y="235" class="body">Atomic commit</text>
+  <text x="58" y="365" class="name">Requests and controls</text><text x="58" y="400" class="body">Typed intent from streamed Holos, APIs or agents</text>
+  <text x="596" y="365" class="name">Durable result</text><text x="596" y="400" class="body">Named objects, ordered effects and receipts</text>
+  <text x="58" y="517" class="label">RESEARCH TARGET</text><text x="248" y="517" class="body">Shared foundation model for broader intent, reasoning and interface composition</text>
 </svg>

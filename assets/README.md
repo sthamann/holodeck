@@ -1,6 +1,8 @@
 # Illustrations and credits
 
-The current target diagrams show [the system boundary](illustrations/deck-target-system.svg), [one model step](illustrations/deck-target-forward.svg), [learning and installation](illustrations/deck-target-learning.svg) and [the validation sequence](illustrations/deck-target-validation.svg). They accompany the [target architecture](../docs/architecture.md) and [validation roadmap](../docs/roadmap.md).
+The [current system diagram](illustrations/deck-target-system.svg) and [measured structural transfer](illustrations/structural-transfer.svg) are the README figures. The first separates the running Deck path from the foundation research target. The second uses values from the [pinned external replay](../experiments/model-applications/structural/evidence.json).
+
+The detailed architecture diagrams show [the system boundary](illustrations/deck-target-system.svg), [one model step](illustrations/deck-target-forward.svg), [learning and installation](illustrations/deck-target-learning.svg) and [the validation sequence](illustrations/deck-target-validation.svg). They accompany the [target architecture](../docs/architecture.md) and [validation roadmap](../docs/roadmap.md).
 
 The [current runtime diagram](illustrations/joint-deck-runtime.svg) and the [blind replay chart](illustrations/joint-deck-evidence.svg) accompany the [joint deck experiment](../docs/joint-deck.md). The [Hafenrechnung journey illustration](illustrations/joint-deck-journey.svg) follows the same synthetic order as the [Storefront](experiments/joint-deck/hafenrechnung-storefront.png), [Checkout](experiments/joint-deck/hafenrechnung-checkout.png) and [Admin](experiments/joint-deck/hafenrechnung-admin.png) captures. Chrome recorded all three in one percentage coupon run with Shopware stopped.
 
