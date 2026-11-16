@@ -28,6 +28,26 @@ class ExternalTools:
         return json.loads(canonical(self.model.propose(*request)))
 
 
+def preview_plan(propose, state, actor, steps):
+    """Apply all steps to a private snapshot and return one atomic proposal."""
+    if not isinstance(steps, list) or len(steps) > 8:
+        raise ValueError("expected a plan of at most eight steps")
+    working = {**state, "fields": dict(state["fields"])}
+    effects = []
+    for step in steps:
+        if not isinstance(step, dict) or step.keys() != {"action", "args"}:
+            raise ValueError("invalid plan step")
+        proposal = propose(working, step["action"], actor, step["args"])
+        if proposal is None:
+            return None
+        working["fields"].update(proposal["writes"])
+        effects.extend(proposal["effects"])
+    return {
+        "writes": {key: value for key, value in working["fields"].items() if state["fields"][key] != value},
+        "effects": effects,
+    }
+
+
 class Host:
     def __init__(self, store, model, tool=None):
         self.store = store
@@ -63,10 +83,19 @@ class Host:
         self.store.save(epoch, state)
 
     def dispatch(self, action, actor, args, key, epoch, fault=None):
+        return self.commit(digest([action, actor, args]), key, epoch,
+                           lambda state: self.propose(state, action, actor, args), fault)
+
+    def dispatch_plan(self, actor, steps, key, epoch, fault=None):
+        if actor not in self.model.checkpoint["actors"]:
+            return {"status": "refused"}
+        return self.commit(digest(["plan", actor, steps, "sequence"]), key, epoch,
+                           lambda state: preview_plan(self.propose, state, actor, steps), fault)
+
+    def commit(self, fingerprint, key, epoch, transition, fault):
         if type(epoch) is not int or not isinstance(key, str) or not key or len(key) > 128:
             raise ValueError("invalid commit envelope")
         state = self.snapshot()
-        fingerprint = digest([action, actor, args])
         prior = state["receipts"].get(key)
         if prior is not None:
             if prior["fingerprint"] != fingerprint:
@@ -74,7 +103,7 @@ class Host:
             return prior["result"]
         if state["epoch"] != epoch:
             return {"status": "stale"}
-        proposal = self.propose(state, action, actor, args)
+        proposal = transition(state)
         if proposal is None:
             return {"status": "refused"}
         state["fields"].update(proposal["writes"])

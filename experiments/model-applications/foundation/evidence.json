@@ -1,0 +1,902 @@
+{
+  "objectives": {
+    "lfm2": {
+      "backbone": "lfm2",
+      "endpoint_grid_checks": 1215,
+      "matched_typed_wire_control": "passed",
+      "readout": {
+        "development_cv_exact": 25,
+        "development_examples": 36,
+        "layer": 4,
+        "penalty": 0.01,
+        "pool": "last"
+      },
+      "reports": {
+        "first_fixture": {
+          "cases": 144,
+          "goal_grounding": [
+            {
+              "ground_truth": "time",
+              "prompt": "time",
+              "readout": "time",
+              "readout_margin": 1.01914,
+              "text": "I need it finished as quickly as possible."
+            },
+            {
+              "ground_truth": "time",
+              "prompt": "time",
+              "readout": "time",
+              "readout_margin": 0.63581,
+              "text": "Prioritize the shortest elapsed time."
+            },
+            {
+              "ground_truth": "time",
+              "prompt": "time",
+              "readout": "price",
+              "readout_margin": 0.0163,
+              "text": "Choose whichever will complete first, even if it costs more."
+            },
+            {
+              "ground_truth": "time",
+              "prompt": "time",
+              "readout": "unknown",
+              "readout_margin": 0.28799,
+              "text": "Getting the result sooner matters more than spending less."
+            },
+            {
+              "ground_truth": "price",
+              "prompt": "price",
+              "readout": "price",
+              "readout_margin": 1.04687,
+              "text": "Pick the lowest price."
+            },
+            {
+              "ground_truth": "price",
+              "prompt": "unknown",
+              "readout": "price",
+              "readout_margin": 0.23661,
+              "text": "I need to keep the total charge as low as possible."
+            },
+            {
+              "ground_truth": "price",
+              "prompt": "unknown",
+              "readout": "price",
+              "readout_margin": 0.04601,
+              "text": "Save my budget, even if completion takes longer."
+            },
+            {
+              "ground_truth": "price",
+              "prompt": "unknown",
+              "readout": "unknown",
+              "readout_margin": 0.05266,
+              "text": "Spending less matters more than getting the result sooner."
+            },
+            {
+              "ground_truth": "unknown",
+              "prompt": "unknown",
+              "readout": "unknown",
+              "readout_margin": 0.72119,
+              "text": "Either quick or inexpensive would be nice. I have not chosen which to prioritize."
+            },
+            {
+              "ground_truth": "unknown",
+              "prompt": "unknown",
+              "readout": "unknown",
+              "readout_margin": 0.77183,
+              "text": "Make a reasonable choice. I haven't stated a preference."
+            },
+            {
+              "ground_truth": "unknown",
+              "prompt": "unknown",
+              "readout": "unknown",
+              "readout_margin": 0.30873,
+              "text": "I need it soon without spending much, with no priority specified."
+            },
+            {
+              "ground_truth": "unknown",
+              "prompt": "unknown",
+              "readout": "unknown",
+              "readout_margin": 0.04322,
+              "text": "If there is a tradeoff, ask me which matters more."
+            }
+          ],
+          "name": "first_fixture",
+          "rank_reversal_pairs": 32,
+          "results": {
+            "blind": {
+              "correct_clarifications": 4,
+              "exact": 64,
+              "rank_reversal_pairs": 0,
+              "unwanted_commits": 28
+            },
+            "external": {
+              "correct_clarifications": 1,
+              "exact": 62,
+              "rank_reversal_pairs": 1,
+              "unwanted_commits": 31
+            },
+            "external_demos": {
+              "correct_clarifications": 32,
+              "exact": 38,
+              "rank_reversal_pairs": 0,
+              "unwanted_commits": 0
+            },
+            "factorized_prompt": {
+              "correct_clarifications": 32,
+              "exact": 120,
+              "rank_reversal_pairs": 20,
+              "unwanted_commits": 0
+            },
+            "factorized_readout": {
+              "correct_clarifications": 32,
+              "exact": 120,
+              "rank_reversal_pairs": 20,
+              "unwanted_commits": 0
+            },
+            "typed_goal_oracle": {
+              "correct_clarifications": 32,
+              "exact": 144,
+              "rank_reversal_pairs": 32,
+              "unwanted_commits": 0
+            }
+          },
+          "rows_sha256": "6731a3f22f68f50f8f5c3f6337e68343f9cc4cb2df7b5a0ea77f58bf70d29029",
+          "unique_utterances": 12
+        },
+        "transfer": {
+          "cases": 288,
+          "goal_grounding": [
+            {
+              "ground_truth": "time",
+              "prompt": "time",
+              "readout": "time",
+              "readout_margin": 0.35068,
+              "text": "Have it back in the fewest hours you can."
+            },
+            {
+              "ground_truth": "time",
+              "prompt": "time",
+              "readout": "unknown",
+              "readout_margin": 0.20227,
+              "text": "Getting this over with takes precedence over the fee."
+            },
+            {
+              "ground_truth": "time",
+              "prompt": "unknown",
+              "readout": "time",
+              "readout_margin": 0.13386,
+              "text": "No need to economize on this one. Cut the wait."
+            },
+            {
+              "ground_truth": "time",
+              "prompt": "time",
+              "readout": "price",
+              "readout_margin": 0.22722,
+              "text": "The first finish is worth the extra charge."
+            },
+            {
+              "ground_truth": "time",
+              "prompt": "unknown",
+              "readout": "price",
+              "readout_margin": 0.30152,
+              "text": "I would trade additional money for a shorter turnaround."
+            },
+            {
+              "ground_truth": "time",
+              "prompt": "time",
+              "readout": "time",
+              "readout_margin": 0.46394,
+              "text": "Just finish it at the earliest opportunity."
+            },
+            {
+              "ground_truth": "time",
+              "prompt": "unknown",
+              "readout": "time",
+              "readout_margin": 0.23269,
+              "text": "Even if the inexpensive route is available, don't make me wait."
+            },
+            {
+              "ground_truth": "time",
+              "prompt": "time",
+              "readout": "unknown",
+              "readout_margin": 0.01032,
+              "text": "The only thing that counts is when it will be ready."
+            },
+            {
+              "ground_truth": "price",
+              "prompt": "unknown",
+              "readout": "price",
+              "readout_margin": 0.18195,
+              "text": "Keep the spend down and give it as long as it needs."
+            },
+            {
+              "ground_truth": "price",
+              "prompt": "unknown",
+              "readout": "price",
+              "readout_margin": 0.23378,
+              "text": "I'd rather wait than add to the invoice."
+            },
+            {
+              "ground_truth": "price",
+              "prompt": "time",
+              "readout": "price",
+              "readout_margin": 0.40316,
+              "text": "The lowest outlay takes precedence here."
+            },
+            {
+              "ground_truth": "price",
+              "prompt": "time",
+              "readout": "price",
+              "readout_margin": 0.33884,
+              "text": "Don't pay a premium for a quicker result."
+            },
+            {
+              "ground_truth": "price",
+              "prompt": "time",
+              "readout": "unknown",
+              "readout_margin": 0.03668,
+              "text": "Can you get this done without spending any more than necessary?"
+            },
+            {
+              "ground_truth": "price",
+              "prompt": "unknown",
+              "readout": "price",
+              "readout_margin": 0.13551,
+              "text": "Every penny counts on this request."
+            },
+            {
+              "ground_truth": "price",
+              "prompt": "time",
+              "readout": "price",
+              "readout_margin": 0.12587,
+              "text": "A later completion is acceptable if we trim the bill."
+            },
+            {
+              "ground_truth": "price",
+              "prompt": "unknown",
+              "readout": "price",
+              "readout_margin": 0.50106,
+              "text": "Make the charge as small as possible."
+            },
+            {
+              "ground_truth": "unknown",
+              "prompt": "unknown",
+              "readout": "unknown",
+              "readout_margin": 0.22022,
+              "text": "I could go either way; show me where the choice changes."
+            },
+            {
+              "ground_truth": "unknown",
+              "prompt": "unknown",
+              "readout": "unknown",
+              "readout_margin": 0.51125,
+              "text": "Present the tradeoff if neither is an obvious winner."
+            },
+            {
+              "ground_truth": "unknown",
+              "prompt": "unknown",
+              "readout": "unknown",
+              "readout_margin": 0.46105,
+              "text": "I want something quick and economical, with neither first."
+            },
+            {
+              "ground_truth": "unknown",
+              "prompt": "unknown",
+              "readout": "unknown",
+              "readout_margin": 0.22823,
+              "text": "I didn't give you a rule for resolving the tradeoff."
+            },
+            {
+              "ground_truth": "unknown",
+              "prompt": "unknown",
+              "readout": "unknown",
+              "readout_margin": 0.12253,
+              "text": "Let me decide if you would have to sacrifice speed for money."
+            },
+            {
+              "ground_truth": "unknown",
+              "prompt": "unknown",
+              "readout": "unknown",
+              "readout_margin": 0.38603,
+              "text": "I am not sure which criterion should win."
+            },
+            {
+              "ground_truth": "unknown",
+              "prompt": "time",
+              "readout": "unknown",
+              "readout_margin": 0.75034,
+              "text": "Show me one best choice only if it is the best by either measure."
+            },
+            {
+              "ground_truth": "unknown",
+              "prompt": "time",
+              "readout": "unknown",
+              "readout_margin": 0.17929,
+              "text": "If one comes sooner for a higher charge, check with me."
+            }
+          ],
+          "name": "transfer",
+          "rank_reversal_pairs": 64,
+          "results": {
+            "blind": {
+              "correct_clarifications": 16,
+              "exact": 133,
+              "rank_reversal_pairs": 0,
+              "unwanted_commits": 48
+            },
+            "external": {
+              "correct_clarifications": 13,
+              "exact": 131,
+              "rank_reversal_pairs": 2,
+              "unwanted_commits": 51
+            },
+            "external_demos": {
+              "correct_clarifications": 58,
+              "exact": 59,
+              "rank_reversal_pairs": 0,
+              "unwanted_commits": 6
+            },
+            "factorized_prompt": {
+              "correct_clarifications": 48,
+              "exact": 184,
+              "rank_reversal_pairs": 20,
+              "unwanted_commits": 16
+            },
+            "factorized_readout": {
+              "correct_clarifications": 64,
+              "exact": 248,
+              "rank_reversal_pairs": 44,
+              "unwanted_commits": 0
+            },
+            "typed_goal_oracle": {
+              "correct_clarifications": 64,
+              "exact": 288,
+              "rank_reversal_pairs": 64,
+              "unwanted_commits": 0
+            }
+          },
+          "rows_sha256": "ea0f1714838de959f8020c0b6619ae6d8aefdbc049dff41b949fc0ded6b9290b",
+          "unique_utterances": 24
+        }
+      },
+      "snapshot": "ec77db7f39f41c028790706fc1e0cb33461e6a7b",
+      "weights_sha256": "112fba7db6c4544d9944002fcfe1c21e23e03d8fc0a0c7e2b6655de6c738583d"
+    },
+    "tinyllama": {
+      "backbone": "tinyllama",
+      "endpoint_grid_checks": 1215,
+      "matched_typed_wire_control": "passed",
+      "readout": {
+        "development_cv_exact": 28,
+        "development_examples": 36,
+        "layer": 8,
+        "penalty": 1.0,
+        "pool": "last"
+      },
+      "reports": {
+        "first_fixture": {
+          "cases": 144,
+          "goal_grounding": [
+            {
+              "ground_truth": "time",
+              "prompt": "time",
+              "readout": "time",
+              "readout_margin": 0.1141,
+              "text": "I need it finished as quickly as possible."
+            },
+            {
+              "ground_truth": "time",
+              "prompt": "time",
+              "readout": "time",
+              "readout_margin": 0.0735,
+              "text": "Prioritize the shortest elapsed time."
+            },
+            {
+              "ground_truth": "time",
+              "prompt": "time",
+              "readout": "price",
+              "readout_margin": 0.05763,
+              "text": "Choose whichever will complete first, even if it costs more."
+            },
+            {
+              "ground_truth": "time",
+              "prompt": "time",
+              "readout": "price",
+              "readout_margin": 0.06854,
+              "text": "Getting the result sooner matters more than spending less."
+            },
+            {
+              "ground_truth": "price",
+              "prompt": "time",
+              "readout": "price",
+              "readout_margin": 0.51173,
+              "text": "Pick the lowest price."
+            },
+            {
+              "ground_truth": "price",
+              "prompt": "time",
+              "readout": "price",
+              "readout_margin": 0.0145,
+              "text": "I need to keep the total charge as low as possible."
+            },
+            {
+              "ground_truth": "price",
+              "prompt": "time",
+              "readout": "price",
+              "readout_margin": 0.04601,
+              "text": "Save my budget, even if completion takes longer."
+            },
+            {
+              "ground_truth": "price",
+              "prompt": "time",
+              "readout": "price",
+              "readout_margin": 0.07599,
+              "text": "Spending less matters more than getting the result sooner."
+            },
+            {
+              "ground_truth": "unknown",
+              "prompt": "time",
+              "readout": "unknown",
+              "readout_margin": 0.19371,
+              "text": "Either quick or inexpensive would be nice. I have not chosen which to prioritize."
+            },
+            {
+              "ground_truth": "unknown",
+              "prompt": "time",
+              "readout": "unknown",
+              "readout_margin": 0.48802,
+              "text": "Make a reasonable choice. I haven't stated a preference."
+            },
+            {
+              "ground_truth": "unknown",
+              "prompt": "time",
+              "readout": "unknown",
+              "readout_margin": 0.13545,
+              "text": "I need it soon without spending much, with no priority specified."
+            },
+            {
+              "ground_truth": "unknown",
+              "prompt": "time",
+              "readout": "unknown",
+              "readout_margin": 0.54618,
+              "text": "If there is a tradeoff, ask me which matters more."
+            }
+          ],
+          "name": "first_fixture",
+          "rank_reversal_pairs": 32,
+          "results": {
+            "blind": {
+              "correct_clarifications": 0,
+              "exact": 56,
+              "rank_reversal_pairs": 0,
+              "unwanted_commits": 32
+            },
+            "external": {
+              "correct_clarifications": 0,
+              "exact": 50,
+              "rank_reversal_pairs": 0,
+              "unwanted_commits": 32
+            },
+            "external_demos": {
+              "correct_clarifications": 0,
+              "exact": 56,
+              "rank_reversal_pairs": 0,
+              "unwanted_commits": 32
+            },
+            "factorized_prompt": {
+              "correct_clarifications": 0,
+              "exact": 80,
+              "rank_reversal_pairs": 16,
+              "unwanted_commits": 32
+            },
+            "factorized_readout": {
+              "correct_clarifications": 32,
+              "exact": 128,
+              "rank_reversal_pairs": 24,
+              "unwanted_commits": 0
+            },
+            "typed_goal_oracle": {
+              "correct_clarifications": 32,
+              "exact": 144,
+              "rank_reversal_pairs": 32,
+              "unwanted_commits": 0
+            }
+          },
+          "rows_sha256": "ba3b583ba7d6342691ee8d84e5c2a26b6bdb66819cd4442575f43702a7fc4db5",
+          "unique_utterances": 12
+        },
+        "transfer": {
+          "cases": 288,
+          "goal_grounding": [
+            {
+              "ground_truth": "time",
+              "prompt": "time",
+              "readout": "time",
+              "readout_margin": 0.05461,
+              "text": "Have it back in the fewest hours you can."
+            },
+            {
+              "ground_truth": "time",
+              "prompt": "time",
+              "readout": "price",
+              "readout_margin": 0.21751,
+              "text": "Getting this over with takes precedence over the fee."
+            },
+            {
+              "ground_truth": "time",
+              "prompt": "time",
+              "readout": "price",
+              "readout_margin": 0.02549,
+              "text": "No need to economize on this one. Cut the wait."
+            },
+            {
+              "ground_truth": "time",
+              "prompt": "time",
+              "readout": "price",
+              "readout_margin": 0.18512,
+              "text": "The first finish is worth the extra charge."
+            },
+            {
+              "ground_truth": "time",
+              "prompt": "time",
+              "readout": "unknown",
+              "readout_margin": 0.20165,
+              "text": "I would trade additional money for a shorter turnaround."
+            },
+            {
+              "ground_truth": "time",
+              "prompt": "time",
+              "readout": "time",
+              "readout_margin": 0.27069,
+              "text": "Just finish it at the earliest opportunity."
+            },
+            {
+              "ground_truth": "time",
+              "prompt": "time",
+              "readout": "price",
+              "readout_margin": 0.03477,
+              "text": "Even if the inexpensive route is available, don't make me wait."
+            },
+            {
+              "ground_truth": "time",
+              "prompt": "time",
+              "readout": "time",
+              "readout_margin": 0.03358,
+              "text": "The only thing that counts is when it will be ready."
+            },
+            {
+              "ground_truth": "price",
+              "prompt": "time",
+              "readout": "price",
+              "readout_margin": 0.14133,
+              "text": "Keep the spend down and give it as long as it needs."
+            },
+            {
+              "ground_truth": "price",
+              "prompt": "time",
+              "readout": "unknown",
+              "readout_margin": 0.25606,
+              "text": "I'd rather wait than add to the invoice."
+            },
+            {
+              "ground_truth": "price",
+              "prompt": "time",
+              "readout": "unknown",
+              "readout_margin": 0.05044,
+              "text": "The lowest outlay takes precedence here."
+            },
+            {
+              "ground_truth": "price",
+              "prompt": "time",
+              "readout": "price",
+              "readout_margin": 0.40308,
+              "text": "Don't pay a premium for a quicker result."
+            },
+            {
+              "ground_truth": "price",
+              "prompt": "time",
+              "readout": "unknown",
+              "readout_margin": 0.01847,
+              "text": "Can you get this done without spending any more than necessary?"
+            },
+            {
+              "ground_truth": "price",
+              "prompt": "time",
+              "readout": "time",
+              "readout_margin": 0.0763,
+              "text": "Every penny counts on this request."
+            },
+            {
+              "ground_truth": "price",
+              "prompt": "price",
+              "readout": "price",
+              "readout_margin": 0.18885,
+              "text": "A later completion is acceptable if we trim the bill."
+            },
+            {
+              "ground_truth": "price",
+              "prompt": "time",
+              "readout": "time",
+              "readout_margin": 0.11469,
+              "text": "Make the charge as small as possible."
+            },
+            {
+              "ground_truth": "unknown",
+              "prompt": "time",
+              "readout": "unknown",
+              "readout_margin": 0.45613,
+              "text": "I could go either way; show me where the choice changes."
+            },
+            {
+              "ground_truth": "unknown",
+              "prompt": "time",
+              "readout": "unknown",
+              "readout_margin": 0.42989,
+              "text": "Present the tradeoff if neither is an obvious winner."
+            },
+            {
+              "ground_truth": "unknown",
+              "prompt": "time",
+              "readout": "unknown",
+              "readout_margin": 0.16577,
+              "text": "I want something quick and economical, with neither first."
+            },
+            {
+              "ground_truth": "unknown",
+              "prompt": "time",
+              "readout": "unknown",
+              "readout_margin": 0.65981,
+              "text": "I didn't give you a rule for resolving the tradeoff."
+            },
+            {
+              "ground_truth": "unknown",
+              "prompt": "time",
+              "readout": "unknown",
+              "readout_margin": 0.09053,
+              "text": "Let me decide if you would have to sacrifice speed for money."
+            },
+            {
+              "ground_truth": "unknown",
+              "prompt": "time",
+              "readout": "unknown",
+              "readout_margin": 0.55245,
+              "text": "I am not sure which criterion should win."
+            },
+            {
+              "ground_truth": "unknown",
+              "prompt": "time",
+              "readout": "unknown",
+              "readout_margin": 0.44344,
+              "text": "Show me one best choice only if it is the best by either measure."
+            },
+            {
+              "ground_truth": "unknown",
+              "prompt": "time",
+              "readout": "price",
+              "readout_margin": 0.259,
+              "text": "If one comes sooner for a higher charge, check with me."
+            }
+          ],
+          "name": "transfer",
+          "rank_reversal_pairs": 64,
+          "results": {
+            "blind": {
+              "correct_clarifications": 0,
+              "exact": 112,
+              "rank_reversal_pairs": 0,
+              "unwanted_commits": 64
+            },
+            "external": {
+              "correct_clarifications": 0,
+              "exact": 108,
+              "rank_reversal_pairs": 1,
+              "unwanted_commits": 64
+            },
+            "external_demos": {
+              "correct_clarifications": 0,
+              "exact": 112,
+              "rank_reversal_pairs": 0,
+              "unwanted_commits": 64
+            },
+            "factorized_prompt": {
+              "correct_clarifications": 0,
+              "exact": 168,
+              "rank_reversal_pairs": 36,
+              "unwanted_commits": 64
+            },
+            "factorized_readout": {
+              "correct_clarifications": 56,
+              "exact": 200,
+              "rank_reversal_pairs": 24,
+              "unwanted_commits": 8
+            },
+            "typed_goal_oracle": {
+              "correct_clarifications": 64,
+              "exact": 288,
+              "rank_reversal_pairs": 64,
+              "unwanted_commits": 0
+            }
+          },
+          "rows_sha256": "9c162b89efd61a8e81c980bb4d1e3316605e6cc89b9f206bfd8ff51fc8af5c3c",
+          "unique_utterances": 24
+        }
+      },
+      "snapshot": "fe8a4ea1ffedaf415f4da2f062534de366a451e6",
+      "weights_sha256": "6e6001da2106d4757498752a021df6c2bdc332c650aae4bae6b0c004dcf14933"
+    }
+  },
+  "placement": {
+    "atomic_refusal_negative_control": "passed",
+    "cached_dense_sanity_max_delta": 0.0,
+    "cases": 72,
+    "checkpoint": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "results": {
+      "blind": {
+        "counterfactual_pairs": {
+          "masked": 11,
+          "selected": 0,
+          "total": 24
+        },
+        "masked": {
+          "by_family": {
+            "alert": 6,
+            "approval": 12,
+            "capacity": 18,
+            "deadline": 9
+          },
+          "committed": 72,
+          "exact": 45
+        },
+        "selected": {
+          "by_family": {
+            "alert": 6,
+            "approval": 10,
+            "capacity": 12,
+            "deadline": 6
+          },
+          "committed": 61,
+          "exact": 34
+        }
+      },
+      "external": {
+        "counterfactual_pairs": {
+          "masked": 12,
+          "selected": 0,
+          "total": 24
+        },
+        "masked": {
+          "by_family": {
+            "alert": 6,
+            "approval": 15,
+            "capacity": 18,
+            "deadline": 9
+          },
+          "committed": 72,
+          "exact": 48
+        },
+        "selected": {
+          "by_family": {
+            "alert": 6,
+            "approval": 12,
+            "capacity": 12,
+            "deadline": 6
+          },
+          "committed": 60,
+          "exact": 36
+        }
+      },
+      "internal_input": {
+        "counterfactual_pairs": {
+          "masked": 12,
+          "selected": 0,
+          "total": 24
+        },
+        "masked": {
+          "by_family": {
+            "alert": 6,
+            "approval": 15,
+            "capacity": 18,
+            "deadline": 9
+          },
+          "committed": 72,
+          "exact": 48
+        },
+        "selected": {
+          "by_family": {
+            "alert": 6,
+            "approval": 12,
+            "capacity": 12,
+            "deadline": 6
+          },
+          "committed": 60,
+          "exact": 36
+        }
+      },
+      "residual_1": {
+        "counterfactual_pairs": {
+          "masked": 12,
+          "selected": 0,
+          "total": 24
+        },
+        "masked": {
+          "by_family": {
+            "alert": 6,
+            "approval": 15,
+            "capacity": 18,
+            "deadline": 9
+          },
+          "committed": 72,
+          "exact": 48
+        },
+        "selected": {
+          "by_family": {
+            "alert": 6,
+            "approval": 12,
+            "capacity": 12,
+            "deadline": 6
+          },
+          "committed": 60,
+          "exact": 36
+        }
+      },
+      "residual_12": {
+        "counterfactual_pairs": {
+          "masked": 12,
+          "selected": 0,
+          "total": 24
+        },
+        "masked": {
+          "by_family": {
+            "alert": 6,
+            "approval": 15,
+            "capacity": 18,
+            "deadline": 9
+          },
+          "committed": 72,
+          "exact": 48
+        },
+        "selected": {
+          "by_family": {
+            "alert": 6,
+            "approval": 12,
+            "capacity": 12,
+            "deadline": 6
+          },
+          "committed": 60,
+          "exact": 36
+        }
+      },
+      "residual_6": {
+        "counterfactual_pairs": {
+          "masked": 12,
+          "selected": 0,
+          "total": 24
+        },
+        "masked": {
+          "by_family": {
+            "alert": 6,
+            "approval": 15,
+            "capacity": 18,
+            "deadline": 9
+          },
+          "committed": 72,
+          "exact": 48
+        },
+        "selected": {
+          "by_family": {
+            "alert": 6,
+            "approval": 12,
+            "capacity": 12,
+            "deadline": 6
+          },
+          "committed": 60,
+          "exact": 36
+        }
+      }
+    },
+    "rows_sha256": "22a3b934193ec69f35eacc07e47d8c477753accd26d8a56bd8ae85d5af50da8f",
+    "same_embedding_max_logit_delta": 0.0,
+    "snapshot": "fe8a4ea1ffedaf415f4da2f062534de366a451e6",
+    "weights_sha256": "6e6001da2106d4757498752a021df6c2bdc332c650aae4bae6b0c004dcf14933"
+  }
+}

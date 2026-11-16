@@ -1,0 +1,14 @@
+{
+  "altered_certificate_rejected": true,
+  "checked_weight_queries": 53440,
+  "common_shift_preserves_choice": true,
+  "decision_classes": 205,
+  "effect_tables": 4096,
+  "identical_rank_witness": {
+    "first_crossing": "1/2",
+    "first_optimum": "A",
+    "second_crossing": "9/13",
+    "second_optimum": "B",
+    "weight": "3/5"
+  }
+}

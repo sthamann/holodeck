@@ -1,0 +1,11 @@
+{
+  "forged_cases_rejected": 3,
+  "late_refusal_atomic": true,
+  "new_selected": "batch",
+  "old_selected": "interactive",
+  "retained_effect_order": [
+    "time",
+    "price"
+  ],
+  "stale_after_migration": true
+}

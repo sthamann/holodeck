@@ -24,6 +24,13 @@ jobs:
           cmp "$pilot/evidence.json" "$RUNNER_TEMP/vertical.json"
           python "$pilot/replay.py" --browser "$(command -v google-chrome)" > "$RUNNER_TEMP/vertical-browser.json"
           python -c 'import json, sys; sys.exit(json.load(open(sys.argv[1])).get("chromium_stream") != "passed")' "$RUNNER_TEMP/vertical-browser.json"
+      - name: Verify decision quotient and revision-bound plan certificates
+        run: |
+          foundation=experiments/model-applications/foundation
+          python "$foundation/preference_quotient.py" > "$RUNNER_TEMP/preference-quotient.json"
+          python "$foundation/certified_replay.py" > "$RUNNER_TEMP/certified-replay.json"
+          cmp "$foundation/preference_quotient.json" "$RUNNER_TEMP/preference-quotient.json"
+          cmp "$foundation/certified_replay.json" "$RUNNER_TEMP/certified-replay.json"
       - name: Replay finite causal state discovery
         run: node experiments/causal-discovery/replay.mjs
       - run: python -m pip install -r requirements.txt
