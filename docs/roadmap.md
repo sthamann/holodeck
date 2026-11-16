@@ -49,6 +49,8 @@ The [recurrent workflow experiment](recurrent-workflow-acquisition.md#how-this-c
 
 The [live intent replay](../experiments/model-applications/intent/README.md) adds a prototype from English constraints to revision-bound execution. The next experiment holds out expressions and definitions from independent authors. Compare a grammar, a frozen foundation grounder and a trained grounder with identical compiled semantics. Count omitted meanings and false commits first, then clarification rate and time to a verified decision. Charge each arm for authoring, inference and verification.
 
+The [development scope replay](../experiments/model-applications/intent/scope.md) isolates two failure modes before that independent trial. Exact planning can use several predicted readings when they share an optimum. A request with an unrepresented clause can still authorize a false commit if grounding omits the clause. The next runtime experiment compares a typed confirmation of the whole supported objective against the same model without confirmation. Its held-out definitions must contain valid new clauses, qualifying qualifiers and requests outside the capability. Score unsafe automatic commits and the cost of recovering a verified decision.
+
 ## Next experiments
 
 The first research milestone is [causal acquisition and transfer](#causal-acquisition-and-transfer). The existing G0 to G8 gates define acceptance for the relevant mechanisms and product profiles. Transaction and renderer work can progress once the contract is fixed. A larger joint model run depends on a gain over the cheaper matched controls.

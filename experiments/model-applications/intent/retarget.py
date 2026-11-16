@@ -107,7 +107,14 @@ def decide(request, vocabulary, start, milestones=None):
         meanings = parse(request, vocabulary, milestones)
     except ValueError as error:
         return {"status": "unsupported", "explanation": str(error)}
-    kernel = vocabulary.kernel
+    return decide_meanings(vocabulary.kernel, start, meanings)
+
+
+def decide_meanings(kernel, start, meanings):
+    """Check typed meaning sets supplied by any grounding arm."""
+    meanings = tuple(sorted(set(meanings), key=Meaning.key))
+    if not meanings:
+        return {"status": "unsupported"}
 
     def shortest(meaning):
         observed = observe(kernel, meaning)
@@ -133,8 +140,11 @@ def decide(request, vocabulary, start, milestones=None):
         result = {"status": failure, "meanings": descriptions, "costs": costs, "joint_cost": joint_cost}
         if failure == "clarify":
             common = frozenset.intersection(*(meaning.invariant for meaning in meanings))
-            _, subject, place = min(joint.invariant - common)
-            result["question"] = f"Must {subject} stay in {place} throughout, or only be there at the end?"
+            for atom in sorted(joint.invariant - common):
+                if len(atom) == 3 and atom in joint.goal and all(atom in meaning.goal for meaning in meanings):
+                    _, subject, place = atom
+                    result["question"] = f"Must {subject} stay in {place} throughout, or only be there at the end?"
+                    break
         return result
     return {
         "status": "resolved", "meanings": descriptions, "costs": costs,

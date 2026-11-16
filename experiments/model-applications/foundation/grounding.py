@@ -80,10 +80,10 @@ def normalize(x):
     return x / np.maximum(np.linalg.norm(x, axis=1, keepdims=True), 1e-9)
 
 
-def fit(x, labels, penalty):
+def fit(x, labels, penalty, class_count=len(GOAL_NAMES)):
     mean = x.mean(axis=0)
     x = normalize(x - mean)
-    y = np.eye(len(GOAL_NAMES))[labels]
+    y = np.eye(class_count)[labels]
     coefficient = np.linalg.solve(x @ x.T + penalty * np.eye(len(x)), y)
     return mean, x.T @ coefficient
 

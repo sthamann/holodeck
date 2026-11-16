@@ -15,6 +15,8 @@ Retargeting verifies concrete actions against the frozen Deck. The certificate b
 
 The grammar recognizes enumerated movement and location phrases, conjunction and named exceptions. The vocabulary is declared for each fixture. The objective is shortest unit-cost action count. The published evidence covers these tasks and interpretations. An independent language benchmark should supply independently written requests, reference meaning sets and deliberate ambiguities, then compare grammar and learned grounders under the same verifier.
 
+The [grounding stress test](scope.md) compares model and grammar predictions on held-back authored requests against the same exact planner in three durable states.
+
 ## Reproduce
 
 Use the source tree at the pinned benchmark revision in [sources.json](../structural/sources.json). Source reads are verified by hash. Run from the repository root:

@@ -1,0 +1,1373 @@
+{
+  "calibration_alpha": "1/5",
+  "candidate_sets_replayed": 48,
+  "contexts": {
+    "cold": {
+      "both": "hold",
+      "final": 2,
+      "outside": "hold",
+      "persistent": 3
+    },
+    "lifted": {
+      "both": "hold",
+      "final": 1,
+      "outside": "hold",
+      "persistent": "hold"
+    },
+    "ready": {
+      "both": 1,
+      "final": 1,
+      "outside": "hold",
+      "persistent": 1
+    }
+  },
+  "results": {
+    "holdout": {
+      "always_both": {
+        "by_context": {
+          "cold": {
+            "cases": 32,
+            "committed": 0,
+            "correct_commit": 0,
+            "false_commit": 0,
+            "unnecessary_hold": 16
+          },
+          "lifted": {
+            "cases": 32,
+            "committed": 0,
+            "correct_commit": 0,
+            "false_commit": 0,
+            "unnecessary_hold": 8
+          },
+          "ready": {
+            "cases": 32,
+            "committed": 32,
+            "correct_commit": 24,
+            "false_commit": 8,
+            "unnecessary_hold": 0
+          }
+        },
+        "decisions": {
+          "cases": 96,
+          "committed": 32,
+          "correct_commit": 24,
+          "false_commit": 8,
+          "unnecessary_hold": 24
+        },
+        "false_by_label": {
+          "outside": 8
+        },
+        "false_witnesses": [
+          {
+            "actions": 1,
+            "context": "ready",
+            "gold": "outside",
+            "request": "Finish with samples in both vault and bench.",
+            "retained": [
+              "both"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "ready",
+            "gold": "outside",
+            "request": "Please exchange sample for the spare.",
+            "retained": [
+              "both"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "ready",
+            "gold": "outside",
+            "request": "After the work is done, lock vault for ten minutes.",
+            "retained": [
+              "both"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "ready",
+            "gold": "outside",
+            "request": "Keep a photograph of sample in vault.",
+            "retained": [
+              "both"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "ready",
+            "gold": "outside",
+            "request": "Do the job but leave sample on bench at the end.",
+            "retained": [
+              "both"
+            ]
+          }
+        ],
+        "utterances": {
+          "missed_label": 24,
+          "omitted_meaning": 8,
+          "total": 32
+        }
+      },
+      "frozen_calibrated_semantic": {
+        "by_context": {
+          "cold": {
+            "cases": 32,
+            "committed": 1,
+            "correct_commit": 1,
+            "false_commit": 0,
+            "unnecessary_hold": 15
+          },
+          "lifted": {
+            "cases": 32,
+            "committed": 1,
+            "correct_commit": 1,
+            "false_commit": 0,
+            "unnecessary_hold": 7
+          },
+          "ready": {
+            "cases": 32,
+            "committed": 14,
+            "correct_commit": 10,
+            "false_commit": 4,
+            "unnecessary_hold": 14
+          }
+        },
+        "decisions": {
+          "cases": 96,
+          "committed": 16,
+          "correct_commit": 12,
+          "false_commit": 4,
+          "unnecessary_hold": 36
+        },
+        "false_by_label": {
+          "outside": 4
+        },
+        "false_witnesses": [
+          {
+            "actions": 1,
+            "context": "ready",
+            "gold": "outside",
+            "request": "Finish with samples in both vault and bench.",
+            "retained": [
+              "final",
+              "persistent",
+              "both"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "ready",
+            "gold": "outside",
+            "request": "After the work is done, lock vault for ten minutes.",
+            "retained": [
+              "final",
+              "persistent",
+              "both"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "ready",
+            "gold": "outside",
+            "request": "Call off the job if the lights go out.",
+            "retained": [
+              "final",
+              "persistent",
+              "both"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "ready",
+            "gold": "outside",
+            "request": "End the job with sample in the other vault.",
+            "retained": [
+              "final",
+              "persistent",
+              "both"
+            ]
+          }
+        ],
+        "utterances": {
+          "missed_label": 4,
+          "omitted_meaning": 4,
+          "total": 32
+        }
+      },
+      "frozen_calibrated_semantic_scope_oracle": {
+        "by_context": {
+          "cold": {
+            "cases": 32,
+            "committed": 1,
+            "correct_commit": 1,
+            "false_commit": 0,
+            "unnecessary_hold": 15
+          },
+          "lifted": {
+            "cases": 32,
+            "committed": 1,
+            "correct_commit": 1,
+            "false_commit": 0,
+            "unnecessary_hold": 7
+          },
+          "ready": {
+            "cases": 32,
+            "committed": 10,
+            "correct_commit": 10,
+            "false_commit": 0,
+            "unnecessary_hold": 14
+          }
+        },
+        "decisions": {
+          "cases": 96,
+          "committed": 12,
+          "correct_commit": 12,
+          "false_commit": 0,
+          "unnecessary_hold": 36
+        },
+        "false_by_label": {},
+        "false_witnesses": [],
+        "utterances": {
+          "missed_label": 0,
+          "omitted_meaning": 0,
+          "total": 32
+        }
+      },
+      "frozen_calibrated_singleton": {
+        "by_context": {
+          "cold": {
+            "cases": 32,
+            "committed": 1,
+            "correct_commit": 1,
+            "false_commit": 0,
+            "unnecessary_hold": 15
+          },
+          "lifted": {
+            "cases": 32,
+            "committed": 1,
+            "correct_commit": 1,
+            "false_commit": 0,
+            "unnecessary_hold": 7
+          },
+          "ready": {
+            "cases": 32,
+            "committed": 1,
+            "correct_commit": 1,
+            "false_commit": 0,
+            "unnecessary_hold": 23
+          }
+        },
+        "decisions": {
+          "cases": 96,
+          "committed": 3,
+          "correct_commit": 3,
+          "false_commit": 0,
+          "unnecessary_hold": 45
+        },
+        "false_by_label": {},
+        "false_witnesses": [],
+        "utterances": {
+          "missed_label": 4,
+          "omitted_meaning": 4,
+          "total": 32
+        }
+      },
+      "frozen_point": {
+        "by_context": {
+          "cold": {
+            "cases": 32,
+            "committed": 32,
+            "correct_commit": 8,
+            "false_commit": 24,
+            "unnecessary_hold": 0
+          },
+          "lifted": {
+            "cases": 32,
+            "committed": 32,
+            "correct_commit": 8,
+            "false_commit": 24,
+            "unnecessary_hold": 0
+          },
+          "ready": {
+            "cases": 32,
+            "committed": 32,
+            "correct_commit": 24,
+            "false_commit": 8,
+            "unnecessary_hold": 0
+          }
+        },
+        "decisions": {
+          "cases": 96,
+          "committed": 96,
+          "correct_commit": 40,
+          "false_commit": 56,
+          "unnecessary_hold": 0
+        },
+        "false_by_label": {
+          "both": 16,
+          "outside": 24,
+          "persistent": 16
+        },
+        "false_witnesses": [
+          {
+            "actions": 2,
+            "context": "cold",
+            "gold": "persistent",
+            "request": "There must be no instant during the job with sample outside vault.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "lifted",
+            "gold": "persistent",
+            "request": "There must be no instant during the job with sample outside vault.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 2,
+            "context": "cold",
+            "gold": "persistent",
+            "request": "I won't accept a detour through bench, even if sample comes back.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "lifted",
+            "gold": "persistent",
+            "request": "I won't accept a detour through bench, even if sample comes back.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 2,
+            "context": "cold",
+            "gold": "persistent",
+            "request": "Vault should contain sample constantly while this runs.",
+            "retained": [
+              "final"
+            ]
+          }
+        ],
+        "utterances": {
+          "missed_label": 24,
+          "omitted_meaning": 24,
+          "total": 32
+        }
+      },
+      "grammar": {
+        "by_context": {
+          "cold": {
+            "cases": 32,
+            "committed": 0,
+            "correct_commit": 0,
+            "false_commit": 0,
+            "unnecessary_hold": 16
+          },
+          "lifted": {
+            "cases": 32,
+            "committed": 0,
+            "correct_commit": 0,
+            "false_commit": 0,
+            "unnecessary_hold": 8
+          },
+          "ready": {
+            "cases": 32,
+            "committed": 0,
+            "correct_commit": 0,
+            "false_commit": 0,
+            "unnecessary_hold": 24
+          }
+        },
+        "decisions": {
+          "cases": 96,
+          "committed": 0,
+          "correct_commit": 0,
+          "false_commit": 0,
+          "unnecessary_hold": 48
+        },
+        "false_by_label": {},
+        "false_witnesses": [],
+        "utterances": {
+          "missed_label": 24,
+          "omitted_meaning": 24,
+          "total": 32
+        }
+      },
+      "oracle": {
+        "by_context": {
+          "cold": {
+            "cases": 32,
+            "committed": 16,
+            "correct_commit": 16,
+            "false_commit": 0,
+            "unnecessary_hold": 0
+          },
+          "lifted": {
+            "cases": 32,
+            "committed": 8,
+            "correct_commit": 8,
+            "false_commit": 0,
+            "unnecessary_hold": 0
+          },
+          "ready": {
+            "cases": 32,
+            "committed": 24,
+            "correct_commit": 24,
+            "false_commit": 0,
+            "unnecessary_hold": 0
+          }
+        },
+        "decisions": {
+          "cases": 96,
+          "committed": 48,
+          "correct_commit": 48,
+          "false_commit": 0,
+          "unnecessary_hold": 0
+        },
+        "false_by_label": {},
+        "false_witnesses": [],
+        "utterances": {
+          "missed_label": 0,
+          "omitted_meaning": 0,
+          "total": 32
+        }
+      },
+      "trained_calibrated_semantic": {
+        "by_context": {
+          "cold": {
+            "cases": 32,
+            "committed": 18,
+            "correct_commit": 11,
+            "false_commit": 7,
+            "unnecessary_hold": 3
+          },
+          "lifted": {
+            "cases": 32,
+            "committed": 12,
+            "correct_commit": 6,
+            "false_commit": 6,
+            "unnecessary_hold": 2
+          },
+          "ready": {
+            "cases": 32,
+            "committed": 27,
+            "correct_commit": 23,
+            "false_commit": 4,
+            "unnecessary_hold": 1
+          }
+        },
+        "decisions": {
+          "cases": 96,
+          "committed": 57,
+          "correct_commit": 40,
+          "false_commit": 17,
+          "unnecessary_hold": 6
+        },
+        "false_by_label": {
+          "both": 2,
+          "outside": 11,
+          "persistent": 4
+        },
+        "false_witnesses": [
+          {
+            "actions": 2,
+            "context": "cold",
+            "gold": "persistent",
+            "request": "I won't accept a detour through bench, even if sample comes back.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "lifted",
+            "gold": "persistent",
+            "request": "I won't accept a detour through bench, even if sample comes back.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 2,
+            "context": "cold",
+            "gold": "persistent",
+            "request": "Run the job with sample continuously inside vault.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "lifted",
+            "gold": "persistent",
+            "request": "Run the job with sample continuously inside vault.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 2,
+            "context": "cold",
+            "gold": "both",
+            "request": "Make sample being in vault part of the job.",
+            "retained": [
+              "final"
+            ]
+          }
+        ],
+        "utterances": {
+          "missed_label": 10,
+          "omitted_meaning": 8,
+          "total": 32
+        }
+      },
+      "trained_calibrated_singleton": {
+        "by_context": {
+          "cold": {
+            "cases": 32,
+            "committed": 18,
+            "correct_commit": 11,
+            "false_commit": 7,
+            "unnecessary_hold": 3
+          },
+          "lifted": {
+            "cases": 32,
+            "committed": 12,
+            "correct_commit": 6,
+            "false_commit": 6,
+            "unnecessary_hold": 2
+          },
+          "ready": {
+            "cases": 32,
+            "committed": 26,
+            "correct_commit": 22,
+            "false_commit": 4,
+            "unnecessary_hold": 2
+          }
+        },
+        "decisions": {
+          "cases": 96,
+          "committed": 56,
+          "correct_commit": 39,
+          "false_commit": 17,
+          "unnecessary_hold": 7
+        },
+        "false_by_label": {
+          "both": 2,
+          "outside": 11,
+          "persistent": 4
+        },
+        "false_witnesses": [
+          {
+            "actions": 2,
+            "context": "cold",
+            "gold": "persistent",
+            "request": "I won't accept a detour through bench, even if sample comes back.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "lifted",
+            "gold": "persistent",
+            "request": "I won't accept a detour through bench, even if sample comes back.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 2,
+            "context": "cold",
+            "gold": "persistent",
+            "request": "Run the job with sample continuously inside vault.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "lifted",
+            "gold": "persistent",
+            "request": "Run the job with sample continuously inside vault.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 2,
+            "context": "cold",
+            "gold": "both",
+            "request": "Make sample being in vault part of the job.",
+            "retained": [
+              "final"
+            ]
+          }
+        ],
+        "utterances": {
+          "missed_label": 10,
+          "omitted_meaning": 8,
+          "total": 32
+        }
+      },
+      "trained_point": {
+        "by_context": {
+          "cold": {
+            "cases": 32,
+            "committed": 18,
+            "correct_commit": 11,
+            "false_commit": 7,
+            "unnecessary_hold": 3
+          },
+          "lifted": {
+            "cases": 32,
+            "committed": 12,
+            "correct_commit": 6,
+            "false_commit": 6,
+            "unnecessary_hold": 2
+          },
+          "ready": {
+            "cases": 32,
+            "committed": 27,
+            "correct_commit": 23,
+            "false_commit": 4,
+            "unnecessary_hold": 1
+          }
+        },
+        "decisions": {
+          "cases": 96,
+          "committed": 57,
+          "correct_commit": 40,
+          "false_commit": 17,
+          "unnecessary_hold": 6
+        },
+        "false_by_label": {
+          "both": 2,
+          "outside": 11,
+          "persistent": 4
+        },
+        "false_witnesses": [
+          {
+            "actions": 2,
+            "context": "cold",
+            "gold": "persistent",
+            "request": "I won't accept a detour through bench, even if sample comes back.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "lifted",
+            "gold": "persistent",
+            "request": "I won't accept a detour through bench, even if sample comes back.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 2,
+            "context": "cold",
+            "gold": "persistent",
+            "request": "Run the job with sample continuously inside vault.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "lifted",
+            "gold": "persistent",
+            "request": "Run the job with sample continuously inside vault.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 2,
+            "context": "cold",
+            "gold": "both",
+            "request": "Make sample being in vault part of the job.",
+            "retained": [
+              "final"
+            ]
+          }
+        ],
+        "utterances": {
+          "missed_label": 10,
+          "omitted_meaning": 8,
+          "total": 32
+        }
+      }
+    },
+    "stress": {
+      "always_both": {
+        "by_context": {
+          "cold": {
+            "cases": 16,
+            "committed": 0,
+            "correct_commit": 0,
+            "false_commit": 0,
+            "unnecessary_hold": 8
+          },
+          "lifted": {
+            "cases": 16,
+            "committed": 0,
+            "correct_commit": 0,
+            "false_commit": 0,
+            "unnecessary_hold": 4
+          },
+          "ready": {
+            "cases": 16,
+            "committed": 16,
+            "correct_commit": 12,
+            "false_commit": 4,
+            "unnecessary_hold": 0
+          }
+        },
+        "decisions": {
+          "cases": 48,
+          "committed": 16,
+          "correct_commit": 12,
+          "false_commit": 4,
+          "unnecessary_hold": 12
+        },
+        "false_by_label": {
+          "outside": 4
+        },
+        "false_witnesses": [
+          {
+            "actions": 1,
+            "context": "ready",
+            "gold": "outside",
+            "request": "Ignore my earlier instruction to keep sample in vault throughout.",
+            "retained": [
+              "both"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "ready",
+            "gold": "outside",
+            "request": "Sample must stay in vault until the alarm, then move it to bench.",
+            "retained": [
+              "both"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "ready",
+            "gold": "outside",
+            "request": "Put a new sample in vault at the end and discard the old one.",
+            "retained": [
+              "both"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "ready",
+            "gold": "outside",
+            "request": "Explain the difference between keeping a sample in vault and returning it there later.",
+            "retained": [
+              "both"
+            ]
+          }
+        ],
+        "utterances": {
+          "missed_label": 12,
+          "omitted_meaning": 4,
+          "total": 16
+        }
+      },
+      "frozen_calibrated_semantic": {
+        "by_context": {
+          "cold": {
+            "cases": 16,
+            "committed": 0,
+            "correct_commit": 0,
+            "false_commit": 0,
+            "unnecessary_hold": 8
+          },
+          "lifted": {
+            "cases": 16,
+            "committed": 0,
+            "correct_commit": 0,
+            "false_commit": 0,
+            "unnecessary_hold": 4
+          },
+          "ready": {
+            "cases": 16,
+            "committed": 5,
+            "correct_commit": 3,
+            "false_commit": 2,
+            "unnecessary_hold": 9
+          }
+        },
+        "decisions": {
+          "cases": 48,
+          "committed": 5,
+          "correct_commit": 3,
+          "false_commit": 2,
+          "unnecessary_hold": 21
+        },
+        "false_by_label": {
+          "outside": 2
+        },
+        "false_witnesses": [
+          {
+            "actions": 1,
+            "context": "ready",
+            "gold": "outside",
+            "request": "Sample must stay in vault until the alarm, then move it to bench.",
+            "retained": [
+              "final",
+              "persistent",
+              "both"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "ready",
+            "gold": "outside",
+            "request": "Put a new sample in vault at the end and discard the old one.",
+            "retained": [
+              "final",
+              "persistent",
+              "both"
+            ]
+          }
+        ],
+        "utterances": {
+          "missed_label": 2,
+          "omitted_meaning": 2,
+          "total": 16
+        }
+      },
+      "frozen_calibrated_semantic_scope_oracle": {
+        "by_context": {
+          "cold": {
+            "cases": 16,
+            "committed": 0,
+            "correct_commit": 0,
+            "false_commit": 0,
+            "unnecessary_hold": 8
+          },
+          "lifted": {
+            "cases": 16,
+            "committed": 0,
+            "correct_commit": 0,
+            "false_commit": 0,
+            "unnecessary_hold": 4
+          },
+          "ready": {
+            "cases": 16,
+            "committed": 3,
+            "correct_commit": 3,
+            "false_commit": 0,
+            "unnecessary_hold": 9
+          }
+        },
+        "decisions": {
+          "cases": 48,
+          "committed": 3,
+          "correct_commit": 3,
+          "false_commit": 0,
+          "unnecessary_hold": 21
+        },
+        "false_by_label": {},
+        "false_witnesses": [],
+        "utterances": {
+          "missed_label": 0,
+          "omitted_meaning": 0,
+          "total": 16
+        }
+      },
+      "frozen_calibrated_singleton": {
+        "by_context": {
+          "cold": {
+            "cases": 16,
+            "committed": 0,
+            "correct_commit": 0,
+            "false_commit": 0,
+            "unnecessary_hold": 8
+          },
+          "lifted": {
+            "cases": 16,
+            "committed": 0,
+            "correct_commit": 0,
+            "false_commit": 0,
+            "unnecessary_hold": 4
+          },
+          "ready": {
+            "cases": 16,
+            "committed": 0,
+            "correct_commit": 0,
+            "false_commit": 0,
+            "unnecessary_hold": 12
+          }
+        },
+        "decisions": {
+          "cases": 48,
+          "committed": 0,
+          "correct_commit": 0,
+          "false_commit": 0,
+          "unnecessary_hold": 24
+        },
+        "false_by_label": {},
+        "false_witnesses": [],
+        "utterances": {
+          "missed_label": 2,
+          "omitted_meaning": 2,
+          "total": 16
+        }
+      },
+      "frozen_point": {
+        "by_context": {
+          "cold": {
+            "cases": 16,
+            "committed": 16,
+            "correct_commit": 4,
+            "false_commit": 12,
+            "unnecessary_hold": 0
+          },
+          "lifted": {
+            "cases": 16,
+            "committed": 16,
+            "correct_commit": 4,
+            "false_commit": 12,
+            "unnecessary_hold": 0
+          },
+          "ready": {
+            "cases": 16,
+            "committed": 16,
+            "correct_commit": 12,
+            "false_commit": 4,
+            "unnecessary_hold": 0
+          }
+        },
+        "decisions": {
+          "cases": 48,
+          "committed": 48,
+          "correct_commit": 20,
+          "false_commit": 28,
+          "unnecessary_hold": 0
+        },
+        "false_by_label": {
+          "both": 8,
+          "outside": 12,
+          "persistent": 8
+        },
+        "false_witnesses": [
+          {
+            "actions": 2,
+            "context": "cold",
+            "gold": "persistent",
+            "request": "Sample in vault at the end is insufficient; it needs to be there continuously.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "lifted",
+            "gold": "persistent",
+            "request": "Sample in vault at the end is insufficient; it needs to be there continuously.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 2,
+            "context": "cold",
+            "gold": "persistent",
+            "request": "Don't just put sample back right before completion. Never remove it.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "lifted",
+            "gold": "persistent",
+            "request": "Don't just put sample back right before completion. Never remove it.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 2,
+            "context": "cold",
+            "gold": "persistent",
+            "request": "Temporary removal is exactly what I don't permit.",
+            "retained": [
+              "final"
+            ]
+          }
+        ],
+        "utterances": {
+          "missed_label": 12,
+          "omitted_meaning": 12,
+          "total": 16
+        }
+      },
+      "grammar": {
+        "by_context": {
+          "cold": {
+            "cases": 16,
+            "committed": 0,
+            "correct_commit": 0,
+            "false_commit": 0,
+            "unnecessary_hold": 8
+          },
+          "lifted": {
+            "cases": 16,
+            "committed": 0,
+            "correct_commit": 0,
+            "false_commit": 0,
+            "unnecessary_hold": 4
+          },
+          "ready": {
+            "cases": 16,
+            "committed": 0,
+            "correct_commit": 0,
+            "false_commit": 0,
+            "unnecessary_hold": 12
+          }
+        },
+        "decisions": {
+          "cases": 48,
+          "committed": 0,
+          "correct_commit": 0,
+          "false_commit": 0,
+          "unnecessary_hold": 24
+        },
+        "false_by_label": {},
+        "false_witnesses": [],
+        "utterances": {
+          "missed_label": 12,
+          "omitted_meaning": 12,
+          "total": 16
+        }
+      },
+      "oracle": {
+        "by_context": {
+          "cold": {
+            "cases": 16,
+            "committed": 8,
+            "correct_commit": 8,
+            "false_commit": 0,
+            "unnecessary_hold": 0
+          },
+          "lifted": {
+            "cases": 16,
+            "committed": 4,
+            "correct_commit": 4,
+            "false_commit": 0,
+            "unnecessary_hold": 0
+          },
+          "ready": {
+            "cases": 16,
+            "committed": 12,
+            "correct_commit": 12,
+            "false_commit": 0,
+            "unnecessary_hold": 0
+          }
+        },
+        "decisions": {
+          "cases": 48,
+          "committed": 24,
+          "correct_commit": 24,
+          "false_commit": 0,
+          "unnecessary_hold": 0
+        },
+        "false_by_label": {},
+        "false_witnesses": [],
+        "utterances": {
+          "missed_label": 0,
+          "omitted_meaning": 0,
+          "total": 16
+        }
+      },
+      "trained_calibrated_semantic": {
+        "by_context": {
+          "cold": {
+            "cases": 16,
+            "committed": 14,
+            "correct_commit": 5,
+            "false_commit": 9,
+            "unnecessary_hold": 1
+          },
+          "lifted": {
+            "cases": 16,
+            "committed": 12,
+            "correct_commit": 4,
+            "false_commit": 8,
+            "unnecessary_hold": 0
+          },
+          "ready": {
+            "cases": 16,
+            "committed": 15,
+            "correct_commit": 12,
+            "false_commit": 3,
+            "unnecessary_hold": 0
+          }
+        },
+        "decisions": {
+          "cases": 48,
+          "committed": 41,
+          "correct_commit": 21,
+          "false_commit": 20,
+          "unnecessary_hold": 1
+        },
+        "false_by_label": {
+          "both": 8,
+          "outside": 8,
+          "persistent": 4
+        },
+        "false_witnesses": [
+          {
+            "actions": 2,
+            "context": "cold",
+            "gold": "persistent",
+            "request": "Sample in vault at the end is insufficient; it needs to be there continuously.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "lifted",
+            "gold": "persistent",
+            "request": "Sample in vault at the end is insufficient; it needs to be there continuously.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 2,
+            "context": "cold",
+            "gold": "persistent",
+            "request": "Temporary removal is exactly what I don't permit.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "lifted",
+            "gold": "persistent",
+            "request": "Temporary removal is exactly what I don't permit.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 2,
+            "context": "cold",
+            "gold": "both",
+            "request": "I said leave sample in vault; what I meant about the intervening steps wasn't specified.",
+            "retained": [
+              "final"
+            ]
+          }
+        ],
+        "utterances": {
+          "missed_label": 9,
+          "omitted_meaning": 9,
+          "total": 16
+        }
+      },
+      "trained_calibrated_singleton": {
+        "by_context": {
+          "cold": {
+            "cases": 16,
+            "committed": 14,
+            "correct_commit": 5,
+            "false_commit": 9,
+            "unnecessary_hold": 1
+          },
+          "lifted": {
+            "cases": 16,
+            "committed": 12,
+            "correct_commit": 4,
+            "false_commit": 8,
+            "unnecessary_hold": 0
+          },
+          "ready": {
+            "cases": 16,
+            "committed": 14,
+            "correct_commit": 11,
+            "false_commit": 3,
+            "unnecessary_hold": 1
+          }
+        },
+        "decisions": {
+          "cases": 48,
+          "committed": 40,
+          "correct_commit": 20,
+          "false_commit": 20,
+          "unnecessary_hold": 2
+        },
+        "false_by_label": {
+          "both": 8,
+          "outside": 8,
+          "persistent": 4
+        },
+        "false_witnesses": [
+          {
+            "actions": 2,
+            "context": "cold",
+            "gold": "persistent",
+            "request": "Sample in vault at the end is insufficient; it needs to be there continuously.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "lifted",
+            "gold": "persistent",
+            "request": "Sample in vault at the end is insufficient; it needs to be there continuously.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 2,
+            "context": "cold",
+            "gold": "persistent",
+            "request": "Temporary removal is exactly what I don't permit.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "lifted",
+            "gold": "persistent",
+            "request": "Temporary removal is exactly what I don't permit.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 2,
+            "context": "cold",
+            "gold": "both",
+            "request": "I said leave sample in vault; what I meant about the intervening steps wasn't specified.",
+            "retained": [
+              "final"
+            ]
+          }
+        ],
+        "utterances": {
+          "missed_label": 9,
+          "omitted_meaning": 9,
+          "total": 16
+        }
+      },
+      "trained_point": {
+        "by_context": {
+          "cold": {
+            "cases": 16,
+            "committed": 15,
+            "correct_commit": 6,
+            "false_commit": 9,
+            "unnecessary_hold": 0
+          },
+          "lifted": {
+            "cases": 16,
+            "committed": 12,
+            "correct_commit": 4,
+            "false_commit": 8,
+            "unnecessary_hold": 0
+          },
+          "ready": {
+            "cases": 16,
+            "committed": 15,
+            "correct_commit": 12,
+            "false_commit": 3,
+            "unnecessary_hold": 0
+          }
+        },
+        "decisions": {
+          "cases": 48,
+          "committed": 42,
+          "correct_commit": 22,
+          "false_commit": 20,
+          "unnecessary_hold": 0
+        },
+        "false_by_label": {
+          "both": 8,
+          "outside": 8,
+          "persistent": 4
+        },
+        "false_witnesses": [
+          {
+            "actions": 2,
+            "context": "cold",
+            "gold": "persistent",
+            "request": "Sample in vault at the end is insufficient; it needs to be there continuously.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "lifted",
+            "gold": "persistent",
+            "request": "Sample in vault at the end is insufficient; it needs to be there continuously.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 2,
+            "context": "cold",
+            "gold": "persistent",
+            "request": "Temporary removal is exactly what I don't permit.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 1,
+            "context": "lifted",
+            "gold": "persistent",
+            "request": "Temporary removal is exactly what I don't permit.",
+            "retained": [
+              "final"
+            ]
+          },
+          {
+            "actions": 2,
+            "context": "cold",
+            "gold": "both",
+            "request": "I said leave sample in vault; what I meant about the intervening steps wasn't specified.",
+            "retained": [
+              "final"
+            ]
+          }
+        ],
+        "utterances": {
+          "missed_label": 9,
+          "omitted_meaning": 9,
+          "total": 16
+        }
+      }
+    }
+  },
+  "thresholds": {
+    "frozen": 2.8310399055480957,
+    "trained": 0.05564
+  }
+}

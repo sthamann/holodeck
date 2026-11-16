@@ -20,7 +20,7 @@ def compiled(task):
     return SharedModel(json.loads(canonical(compile_shared(task, "intent-scope-replay"))))
 
 
-def adversarial_small():
+def relocation():
     source = """(define (domain relocation)
       (:requirements :strips :negative-preconditions)
       (:constants sample vault bench)
@@ -34,7 +34,11 @@ def adversarial_small():
       (:action finish :parameters () :precondition (ready) :effect (done)))"""
     problem = """(define (problem specimen) (:domain relocation)
       (:init (at sample vault)) (:goal (done)))"""
-    kernel = Kernel(parse(source, problem))
+    return Kernel(parse(source, problem))
+
+
+def adversarial_small():
+    kernel = relocation()
     lexicon = Lexicon(kernel, "at", {})
     facts = {"finish the job": {("done",)}}
     ambiguous = "Finish the job and leave sample in vault."

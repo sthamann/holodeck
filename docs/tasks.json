@@ -11,7 +11,8 @@
     "protocol": "../experiments/model-applications/README.md",
     "evidence": "../experiments/model-applications/structural/evidence.json",
     "intent_evidence": "../experiments/model-applications/intent/evidence.json",
-    "status": "external bounded compilation, objective discovery and bounded English retargeting replayed; broader contracts and learned grounding remain open"
+    "grounding_evidence": "../experiments/model-applications/intent/scope_evidence.json",
+    "status": "external bounded compilation and bounded English retargeting replayed; learned scope pilot identifies false commits from omitted obligations; independent qualification remains open"
   },
   "gates": [
     {"id": "G0", "title": "Reproduce and freeze", "depends_on": [], "status": "bounded-core-replayed", "evidence": "../experiments/model-core/README.md"},
