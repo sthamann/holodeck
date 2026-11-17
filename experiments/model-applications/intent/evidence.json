@@ -1,0 +1,55 @@
+{
+  "adversarial": {
+    "ambiguous": {
+      "costs": [
+        2,
+        3
+      ],
+      "joint_cost": 3,
+      "outcome": "clarify",
+      "question": "Must sample stay in vault throughout, or only be there at the end?"
+    },
+    "controls": [
+      {
+        "cost": 3,
+        "status": "resolved"
+      },
+      {
+        "cost": 2,
+        "status": "resolved"
+      },
+      {
+        "cost": null,
+        "status": "unsupported"
+      },
+      {
+        "cost": null,
+        "status": "infeasible"
+      },
+      {
+        "cost": null,
+        "status": "unsupported"
+      },
+      {
+        "cost": 0,
+        "status": "resolved"
+      },
+      {
+        "cost": null,
+        "status": "unsupported"
+      }
+    ]
+  },
+  "original_42_ball_task": {
+    "alternatives": 2,
+    "atomic_retry_after_restart": true,
+    "bound_request_and_plan": true,
+    "executed": 116,
+    "individual_optima": [
+      116,
+      116
+    ],
+    "stale_rejected": true,
+    "steps_already_committed": 7
+  }
+}

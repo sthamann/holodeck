@@ -1,0 +1,123 @@
+{
+  "contract_checks": {
+    "allocation": {
+      "checked_transitions": 24080,
+      "reachable_states": 1720
+    },
+    "quarantine": {
+      "checked_transitions": 120,
+      "reachable_states": 20
+    }
+  },
+  "negative_controls": {
+    "changed_policy_refuted": true,
+    "invalid_boolean_rejected": true
+  },
+  "same_host_second_contract": true,
+  "scenarios": {
+    "journal-to-sqlite-activate-first": {
+      "concurrent_writers": [
+        "committed",
+        "stale"
+      ],
+      "direct_tool_parity": true,
+      "duplicate_delivery_suppressed": true,
+      "effect_order": [
+        "held",
+        "reserve",
+        "notify"
+      ],
+      "external_tool_calls": 65,
+      "hold_delta_patches": 7,
+      "initial_patches": 7,
+      "lost_commit_recovered": true,
+      "new_options": [
+        1,
+        2
+      ],
+      "old_options": [
+        1,
+        2,
+        3
+      ]
+    },
+    "journal-to-sqlite-migrate-first": {
+      "concurrent_writers": [
+        "committed",
+        "stale"
+      ],
+      "direct_tool_parity": true,
+      "duplicate_delivery_suppressed": true,
+      "effect_order": [
+        "held",
+        "reserve",
+        "notify"
+      ],
+      "external_tool_calls": 65,
+      "hold_delta_patches": 7,
+      "initial_patches": 7,
+      "lost_commit_recovered": true,
+      "new_options": [
+        1,
+        2
+      ],
+      "old_options": [
+        1,
+        2,
+        3
+      ]
+    },
+    "sqlite-to-journal-activate-first": {
+      "concurrent_writers": [
+        "committed",
+        "stale"
+      ],
+      "direct_tool_parity": true,
+      "duplicate_delivery_suppressed": true,
+      "effect_order": [
+        "held",
+        "reserve",
+        "notify"
+      ],
+      "external_tool_calls": 65,
+      "hold_delta_patches": 7,
+      "initial_patches": 7,
+      "lost_commit_recovered": true,
+      "new_options": [
+        1,
+        2
+      ],
+      "old_options": [
+        1,
+        2,
+        3
+      ]
+    },
+    "sqlite-to-journal-migrate-first": {
+      "concurrent_writers": [
+        "committed",
+        "stale"
+      ],
+      "direct_tool_parity": true,
+      "duplicate_delivery_suppressed": true,
+      "effect_order": [
+        "held",
+        "reserve",
+        "notify"
+      ],
+      "external_tool_calls": 65,
+      "hold_delta_patches": 7,
+      "initial_patches": 7,
+      "lost_commit_recovered": true,
+      "new_options": [
+        1,
+        2
+      ],
+      "old_options": [
+        1,
+        2,
+        3
+      ]
+    }
+  }
+}

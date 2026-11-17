@@ -1,0 +1,146 @@
+{
+  "train": {
+    "final": [
+      "Leave sample in vault at the end.",
+      "Put sample back before you finish.",
+      "Only the final location matters.",
+      "It can move as long as it ends up in vault.",
+      "Finish with sample inside vault.",
+      "You may take it out if you return it before completion.",
+      "I just need it back in vault when you are done.",
+      "During the job it can be anywhere."
+    ],
+    "persistent": [
+      "Keep sample in vault throughout.",
+      "Sample must never leave vault.",
+      "Do the job without taking sample out.",
+      "It stays in vault every step of the way.",
+      "Keep it in vault from start to finish.",
+      "At no time should sample be outside vault.",
+      "Maintain the location the entire time.",
+      "I need sample to stay put while you work."
+    ],
+    "both": [
+      "Leave sample in vault.",
+      "Make sure sample is in vault.",
+      "I want sample in vault.",
+      "See that the sample is in vault.",
+      "Sample belongs in vault.",
+      "It should be in vault.",
+      "I need sample in vault.",
+      "Ensure that sample is in vault."
+    ],
+    "outside": [
+      "Move sample to bench.",
+      "Tell me the temperature in vault.",
+      "Cancel the job.",
+      "Write down how long the job took.",
+      "Leave the vault unlocked.",
+      "Keep the vault lights off.",
+      "Discard sample after processing.",
+      "Open the window at the end."
+    ]
+  },
+  "calibration": {
+    "final": [
+      "It is fine to move sample temporarily but put it back.",
+      "Return sample to vault by the finish.",
+      "Leave it in vault at the end of the job.",
+      "The delivered state has sample in vault.",
+      "Feel free to shift sample around and restore it at close.",
+      "All I require is its presence in vault once the job has ended."
+    ],
+    "persistent": [
+      "Leave sample in vault throughout.",
+      "Don't let sample out of vault even briefly.",
+      "Vault is its location for the entire operation.",
+      "Do not move sample out while working.",
+      "Keep sample in vault for the rest of the plan.",
+      "Sample needs to remain in vault without interruption."
+    ],
+    "both": [
+      "The sample needs to be in vault.",
+      "Leave the sample in the vault.",
+      "Please make certain sample is in vault.",
+      "Have sample in vault.",
+      "The sample is supposed to be in vault.",
+      "Can we have sample in vault?"
+    ],
+    "outside": [
+      "Keep sample on the bench throughout.",
+      "Leave sample in vault at the end and email the log.",
+      "Count the samples in vault.",
+      "Move two samples into the vault.",
+      "Keep the room quiet for the duration.",
+      "Leave a note that says sample goes in vault."
+    ]
+  },
+  "holdout": {
+    "final": [
+      "When you call the job complete, sample should be in vault.",
+      "So long as sample is in vault at close, do what you need.",
+      "Sample can come out along the way; the last state has it in vault.",
+      "The one thing I care about is where sample is after the job.",
+      "At handover, vault should contain sample.",
+      "Transient removal is fine if you put sample back.",
+      "Bring sample home to vault before you call it done.",
+      "I don't mind what happens midway. Return sample to vault by completion."
+    ],
+    "persistent": [
+      "There must be no instant during the job with sample outside vault.",
+      "I won't accept a detour through bench, even if sample comes back.",
+      "Vault should contain sample constantly while this runs.",
+      "Run the job with sample continuously inside vault.",
+      "No temporary removal of sample from vault.",
+      "Do whatever work is needed in a way that leaves sample there at all times.",
+      "Sample is to remain inside vault during every operation.",
+      "Don't take sample out, full stop."
+    ],
+    "both": [
+      "Have the job run with the condition that sample is in vault.",
+      "The requirement is sample in vault.",
+      "Can you see to it that the sample is inside vault?",
+      "Let's have sample inside vault.",
+      "For this job, I need the sample in the vault.",
+      "Please leave sample where it belongs, in vault.",
+      "I need one thing here: sample inside vault.",
+      "Make sample being in vault part of the job."
+    ],
+    "outside": [
+      "Finish with samples in both vault and bench.",
+      "Please exchange sample for the spare.",
+      "After the work is done, lock vault for ten minutes.",
+      "Keep a photograph of sample in vault.",
+      "Do the job but leave sample on bench at the end.",
+      "Please leave sample in vault and send me a photo.",
+      "Call off the job if the lights go out.",
+      "End the job with sample in the other vault."
+    ]
+  },
+  "stress": {
+    "final": [
+      "Don't worry about keeping it in vault throughout; just return it at the end.",
+      "The rule is not that it never moves. It is that sample is back in vault at signoff.",
+      "Only on the final tick must vault hold sample.",
+      "It needn't stay inside, provided the end condition has it in vault."
+    ],
+    "persistent": [
+      "Sample in vault at the end is insufficient; it needs to be there continuously.",
+      "Don't just put sample back right before completion. Never remove it.",
+      "Temporary removal is exactly what I don't permit.",
+      "Whether or not you finish the job, every intermediate state must have sample in vault."
+    ],
+    "both": [
+      "I said leave sample in vault; what I meant about the intervening steps wasn't specified.",
+      "The sample needs to be in vault, and I haven't said when that first has to hold.",
+      "Leave sample in vault. I have no clarification yet about whether it can come out.",
+      "Sample in vault is the condition. I am deliberately leaving the temporal scope unclear."
+    ],
+    "outside": [
+      "Ignore my earlier instruction to keep sample in vault throughout.",
+      "Sample must stay in vault until the alarm, then move it to bench.",
+      "Put a new sample in vault at the end and discard the old one.",
+      "Explain the difference between keeping a sample in vault and returning it there later."
+    ]
+  }
+}

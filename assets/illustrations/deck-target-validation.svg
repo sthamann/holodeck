@@ -1,27 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="428" viewBox="0 0 1200 428" role="img" aria-labelledby="title description">
-  <title id="title">What would establish the claim</title>
-  <desc id="description">The evidence ladder tests execution, rule acquisition, the model&#x27;s causal contribution, and full replacement across complete application profiles.</desc>
-  <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#3869a0"/></marker>
-    <style>
-      .title{font:700 43px system-ui,sans-serif;fill:#102648}
-      .subtitle{font:21px system-ui,sans-serif;fill:#405676}
-      .name{font:700 22px system-ui,sans-serif;fill:#102648}
-      .detail{font:17px system-ui,sans-serif;fill:#405676}
-      .label{font:700 14px ui-monospace,monospace;letter-spacing:1.4px;fill:#245d9c}
-      .line{stroke:#3869a0;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
-      .secondary{stroke-dasharray:6 5;stroke-width:1.7}
-    </style>
-  </defs>
-  <rect width="1200" height="428" rx="24" fill="#f4f8ff"/>
-  <text x="40" y="61" class="title" text-anchor="start">What would establish the claim</text>
-  <text x="42" y="98" class="subtitle" text-anchor="start">Four distinct results are needed before calling a Deck a full replacement.</text>
-  <path d="M287 224H326" class="line"/>
-  <path d="M580 224H616" class="line"/>
-  <path d="M870 224H906" class="line"/>
-  <rect x="40" y="153" width="247" height="142" rx="15" fill="white" stroke="#bdcde1" stroke-width="2"/><text x="60" y="188" class="name" text-anchor="start">Execution</text><text x="60" y="216" class="detail" text-anchor="start">Fixed runtime</text><text x="60" y="239" class="detail" text-anchor="start">Parameter intervention</text><text x="60" y="262" class="detail" text-anchor="start">Exact offline replay</text>
-  <rect x="332" y="153" width="248" height="142" rx="15" fill="white" stroke="#bdcde1" stroke-width="2"/><text x="352" y="188" class="name" text-anchor="start">Acquisition</text><text x="352" y="216" class="detail" text-anchor="start">Blind rule families</text><text x="352" y="239" class="detail" text-anchor="start">Active learning and reuse</text><text x="352" y="262" class="detail" text-anchor="start">Independent verifier</text>
-  <rect x="622" y="153" width="248" height="142" rx="15" fill="#e0edff" stroke="#3176bd" stroke-width="2"/><text x="642" y="188" class="name" text-anchor="start">Model contribution</text><text x="642" y="216" class="detail" text-anchor="start">Matched code baseline</text><text x="642" y="239" class="detail" text-anchor="start">Qwen and head ablations</text><text x="642" y="262" class="detail" text-anchor="start">Predicted effect changes</text>
-  <rect x="912" y="153" width="248" height="142" rx="15" fill="white" stroke="#bdcde1" stroke-width="2"/><text x="932" y="188" class="name" text-anchor="start">Replacement</text><text x="932" y="216" class="detail" text-anchor="start">Whole declared profile</text><text x="932" y="239" class="detail" text-anchor="start">New domain, same runtime</text><text x="932" y="262" class="detail" text-anchor="start">Live actions and restart</text>
-  <text x="40" y="358" class="label" text-anchor="start">REPORT SCOPE, FALSE PROMOTIONS, COVERAGE AND PERFORMANCE AT EACH STEP</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="416" viewBox="0 0 1120 416" role="img" aria-labelledby="title desc">
+  <title id="title">Evidence and the next independent tests</title>
+  <desc id="desc">Measured formal compilation and bounded English retargeting precede independent definition qualification and a causal test of learned model integration against matched baselines.</desc>
+  <defs><style>
+    .title{font:700 34px 'Helvetica Neue',Arial,sans-serif;fill:#112945}
+    .label{font:700 14px 'Helvetica Neue',Arial,sans-serif;letter-spacing:1.6px;fill:#205945}
+    .pending{fill:#514779}
+    .name{font:700 20px 'Helvetica Neue',Arial,sans-serif;fill:#112945}
+    .copy{font:17px 'Helvetica Neue',Arial,sans-serif;fill:#36536e}
+  </style></defs>
+  <rect width="1120" height="416" rx="22" fill="#eef3f9"/>
+  <text x="40" y="55" class="title">Evidence and the next independent tests</text>
+  <rect x="40" y="92" width="505" height="245" rx="16" fill="#e5f2ed" stroke="#8aaf9f"/>
+  <rect x="575" y="92" width="505" height="245" rx="16" fill="#faf7ff" stroke="#b9add2" stroke-dasharray="6 5"/>
+  <text x="64" y="125" class="label">REPRODUCED IN THE DECLARED SCOPE</text>
+  <text x="64" y="166" class="name">Compile and execute formal definitions</text>
+  <text x="64" y="193" class="copy">Seven published tasks, one shared execution path</text>
+  <path d="M64 220h457" stroke="#b0cdc2"/>
+  <text x="64" y="257" class="name">Replan from a bounded English request</text>
+  <text x="64" y="284" class="copy">Commit a common optimum or ask about scope</text>
+  <text x="599" y="125" class="label pending">RESEARCH GATES</text>
+  <text x="599" y="166" class="name">Qualify independent application definitions</text>
+  <text x="599" y="193" class="copy">Withhold intent, rules and application families</text>
+  <path d="M599 220h457" stroke="#d5cbe5"/>
+  <text x="599" y="257" class="name">Measure the model’s causal contribution</text>
+  <text x="599" y="284" class="copy">Match tool access, knowledge and verification cost</text>
+  <text x="40" y="375" class="copy">Track false qualification, exact coverage, reuse and performance on independently authored evidence.</text>
 </svg>

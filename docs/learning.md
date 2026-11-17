@@ -2,6 +2,8 @@
 
 The [target learning architecture](architecture.md#4-how-a-deck-learns-an-application) combines active acquisition, reusable structure and checked installation. The [validation roadmap](roadmap.md) sets the current sequence and controls. This page records the earlier Shopware specialist activation and the later commerce adaptation proposal.
 
+The [causal acquisition benchmark](roadmap.md#causal-acquisition-and-transfer) extends this program to hidden state, induced primitives and transfer between application families.
+
 ## One specialist from training to activation
 
 ![A tested service specialist is attached to a running order and restored after restart.](../assets/illustrations/joint-deck-learning.svg)

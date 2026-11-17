@@ -1,9 +1,19 @@
 {
   "schema": "holodeck.validation/1",
-  "date": "2026-11-12",
+  "date": "2026-11-16",
   "architecture": "architecture.md",
   "review": "architecture-review.md",
-  "acceptance": "roadmap.md#next-experiments",
+  "acceptance": "roadmap.md#what-would-count-as-solving-it",
+  "research_program": {
+    "objective": "Compile independent application definitions into executable Decks on a shared model, with streamed Holos and configurable durable state.",
+    "priority": "B1 to B4",
+    "architecture": "model-application-architecture.md",
+    "protocol": "../experiments/model-applications/README.md",
+    "evidence": "../experiments/model-applications/structural/evidence.json",
+    "intent_evidence": "../experiments/model-applications/intent/evidence.json",
+    "grounding_evidence": "../experiments/model-applications/intent/scope_evidence.json",
+    "status": "external bounded compilation and bounded English retargeting replayed; learned scope pilot identifies false commits from omitted obligations; independent qualification remains open"
+  },
   "gates": [
     {"id": "G0", "title": "Reproduce and freeze", "depends_on": [], "status": "bounded-core-replayed", "evidence": "../experiments/model-core/README.md"},
     {"id": "G1", "title": "Identify rules from sealed families", "depends_on": ["G0"], "status": "planned"},

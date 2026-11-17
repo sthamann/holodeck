@@ -1,0 +1,66 @@
+{
+  "allocation": {
+    "initial_revision": 1,
+    "revisions": {"1": 1, "2": 2},
+    "fields": {
+      "available": [0, 4, 4], "pending": [0, 3, 0],
+      "pin": [0, 2, 0], "authorized": [0, 1, 1], "expires": [0, 9, 0], "clock": [0, 9, 0]
+    },
+    "public": ["available", "pending", "clock"],
+    "actors": {"member": 0, "controller": 1},
+    "actions": {
+      "hold": {
+        "label": "Hold capacity", "args": {"units": [1, 2, 3]}, "successor": "settle",
+        "guard": ["and", ["eq", "role", 0], ["and", "authorized", ["and", ["eq", "pending", 0], ["and", ["le", ["add", "units", "policy"], "available"], ["le", "clock", 7]]]]],
+        "writes": {"available": ["sub", "available", "units"], "pending": "units", "pin": "revision", "expires": ["add", "clock", 2]},
+        "effects": [["held", "units"]]
+      },
+      "settle": {
+        "label": "Settle hold", "pin": "pin",
+        "guard": ["and", ["eq", "role", 0], ["and", "authorized", ["and", ["le", 1, "pending"], ["and", ["le", "clock", "expires"], ["le", "policy", "available"]]]]],
+        "writes": {"pending": 0, "pin": 0, "expires": 0},
+        "effects": [["reserve", "pending"], ["notify", "pending"]]
+      },
+      "release": {
+        "label": "Release expired hold", "pin": "pin",
+        "guard": ["and", ["eq", "role", 1], ["and", ["le", 1, "pending"], ["le", ["add", "expires", 1], "clock"]]],
+        "writes": {"available": ["add", "available", "pending"], "pending": 0, "pin": 0, "expires": 0},
+        "effects": [["released", "pending"]]
+      },
+      "tick": {
+        "label": "Advance clock",
+        "guard": ["and", ["eq", "role", 1], ["le", "clock", 8]],
+        "writes": {"clock": ["add", "clock", 1]}, "effects": []
+      },
+      "revoke": {
+        "label": "Revoke member authority",
+        "guard": ["and", ["eq", "role", 1], "authorized"],
+        "writes": {"authorized": 0}, "effects": []
+      }
+    }
+  },
+  "quarantine": {
+    "initial_revision": 1,
+    "revisions": {"1": 1, "2": 2},
+    "fields": {"samples": [0, 3, 0], "sealed": [0, 1, 0], "alert": [0, 1, 0]},
+    "public": ["samples", "sealed", "alert"],
+    "actors": {"observer": 0, "reviewer": 1},
+    "actions": {
+      "sample": {
+        "label": "Record sample",
+        "guard": ["and", ["eq", "role", 0], ["and", ["not", "sealed"], ["le", "samples", 2]]],
+        "writes": {"samples": ["add", "samples", 1]}, "effects": []
+      },
+      "seal": {
+        "label": "Seal case",
+        "guard": ["and", ["eq", "role", 1], ["and", ["not", "sealed"], ["le", "policy", "samples"]]],
+        "writes": {"sealed": 1, "alert": 1}, "effects": [["archive", "samples"]]
+      },
+      "dismiss": {
+        "label": "Dismiss alert",
+        "guard": ["and", ["eq", "role", 1], "alert"],
+        "writes": {"alert": 0}, "effects": [["dismissed", "samples"]]
+      }
+    }
+  }
+}

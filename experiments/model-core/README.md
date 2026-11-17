@@ -1,5 +1,7 @@
 # Model core
 
+This is the exact parameter execution and typed synthesis control for the [Causal Semantic Machine](../../docs/architecture.md). The [finite causal discovery pilot](../causal-discovery/README.md) starts from action observations and reconstructs a hidden state machine.
+
 This experiment learns a state transition from an isolated executable teacher and runs it from a parameter checkpoint. It has no Shopware dependency. The same Rust runner loads every checkpoint. It receives only state, an event and configuration.
 
 ```text

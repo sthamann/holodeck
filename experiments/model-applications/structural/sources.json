@@ -1,0 +1,12 @@
+{
+  "gripper/domain.pddl": "4fa38299282aeb0498da66d256feba95aebfab2e",
+  "gripper/prob01.pddl": "c518fed4736dcf79ada96da4a104f24fbf87e918",
+  "gripper/prob02.pddl": "ea494f4cf4eb2f2e8cf286515fdb011444023faf",
+  "gripper/prob04.pddl": "f379373eb354a0313e1e5395ee9fb26de27b540c",
+  "gripper/prob09.pddl": "bac1502d430fdf21dfc20a2a9e344d5549b011c3",
+  "gripper/prob20.pddl": "8670b2c2867173c4a6bdccda0a41a0d88870456a",
+  "blocks/domain.pddl": "f6cadcda320d69cbff83f4fb773ce6c589192d0f",
+  "blocks/probBLOCKS-4-0.pddl": "b0a1c7d87413b0f6dca524de5689bb0d0a875964",
+  "miconic/domain.pddl": "d07d02d1ba25745e8f602be060a852e9fb60392a",
+  "miconic/s4-0.pddl": "f63efc0b9051b28deb15866c2fd9a0a8f4152ca1"
+}

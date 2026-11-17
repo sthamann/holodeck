@@ -6,7 +6,7 @@ Holodeck uses a small vocabulary to describe a large change in how business soft
 
 ## Deck
 
-A **deck** is an executable representation of a business. It combines learned understanding with the rules and operational structure needed to act on that understanding.
+A **Deck** is a versioned executable representation of a qualified application profile. It combines acquired rules with the evidence and operational structure needed to run them. The [Causal Semantic Machine](architecture.md) discovers and verifies those rules. The [Host](interfaces.md) manages durable records, authorized commits and external effects.
 
 The deck understands what a business event means, what must be true before it can proceed, which changes belong together, and what remains to be done. Its learned model determines those relationships. Exact typed operations make them executable and inspectable.
 

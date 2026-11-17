@@ -1,62 +1,48 @@
 # Holodeck
 
-**What if the AI model itself were the application?**
+**Define an application. Compile it into an AI model. Stream every interface from that model.**
 
-Software decides what can happen and gives people a way to make it happen. Today, those decisions live in code and people work through screens somebody built in advance. A copilot can use the application on your behalf. The application still makes the decisions.
+Holodeck investigates a different unit of software. Define the objects, rules, rights and effects, then compile the definition into a **Deck**. A Deck packages executable semantics, evidence and the bindings needed by people and agents. The current compiler runs independently authored formal planning definitions using reusable affine and threshold modules. A shared foundation model for broader intent, composition and presentation is the research target.
 
-Holodeck explores a different way to build software. Teach a model how an application works, from its rules and calculations to its workflows and interface actions. Give it the live records it needs. The resulting model runs the application and creates the interface the situation calls for. We call the model a **Deck** and the interfaces it creates **Holos**.
+A **Holo** is a live, streamed interface. It may be a document, a visual workspace, a spreadsheet, a spatial control surface or an interface nobody drew beforehand. The model streams typed changes to that surface. A click, a direct API call and an agent instruction can invoke the same capability, with the same rights, versions and effects. The **Host** supplies configurable storage, transactions, time and external connections. A storage migration preserves the application's commitments under its declared consistency contract.
 
-This is the research goal. We have run parts of real applications this way with the originals switched off. The next challenge is to learn and verify enough behavior to replace an entire application, then repeat that with a different kind of software.
+[Research roadmap](docs/roadmap.md) · [Mathematical and model architecture](docs/model-application-architecture.md) · [Experiments](experiments/model-applications/README.md) · [Research and prior art](docs/model-application-research.md) · [Original article](https://www.linkedin.com/pulse/end-software-we-know-stefan-hamann-z81he/)
 
-[The original article](https://www.linkedin.com/pulse/end-software-we-know-stefan-hamann-z81he/) · [Architecture](docs/architecture.md) · [Research roadmap](docs/roadmap.md) · [Watch the film](#watch-the-film)
+![Definitions compile into a versioned Deck. A scope-aware planner and the Host connect its exact semantics to verified actions and durable records.](assets/illustrations/deck-target-system.svg)
 
-![A copilot sends requests to an existing app. In the Holodeck vision, one Deck holds reasoning and rules, serves Holos and APIs, and works on live records.](assets/illustrations/from-apps-to-decks.svg)
+## Foundation Intelligence
 
-## What changes when the model runs the application
+The proposed foundation layer grounds intent, inspects exact outcomes and generates controls bound to Deck actions. The current experiments use frozen language models to read objectives and an exact compiler to select and validate plans. Routing equivalent information internally and externally tied in the measured comparison. The next architecture comparison will need a causal task-level gain at matched correctness and cost.
 
-Imagine a scheduling system that knows what a customer booked, what the team promised and which changes the contract allows. A customer who needs to reschedule gets the available times and can confirm one. The person coordinating the team gets a workspace for resolving conflicts across the whole day. An agent can make the same authorized change through the API. All three use the same scheduling capability, and a change made in any of them shows up everywhere.
+The primary research path starts with a definition and deploys a Deck on a generic Host. Formal contracts already compile in the measured fragment. Natural language, examples and existing software can supply evidence about a definition. The experiments below test whether the resulting meanings are specific enough to authorize an action.
 
-![A customer Holo, a coordinator Holo and an agent API use the same scheduling capability and update one booking.](assets/illustrations/one-deck-many-holos.svg)
+## What would establish the vision
 
-A **Holo** is the working interface for one of those situations. It can bring records, explanations and controls together for a job that nobody made a screen for. A frequently used Holo can be saved and reopened with fresh data. The rules and commitments continue to apply as the interfaces change. This is what we mean by **projected software**.
-
-Reasoning is available wherever the application makes a decision. It can understand a vague request, find the relevant records, explain why a change is blocked and assemble the actions that are actually possible. A calculation, permission check or approved state transition still has precise semantics. The model can reason about what the situation calls for and execute the relevant capability as part of the same operation.
-
-It also changes how software evolves. When the team teaches the Deck a new policy, it can rehearse it on past and invented cases, see the proposed effects and check whether existing commitments still hold. Once qualified, the change is available to the interface, API and other workflows that use it. Building a separate feature for each surface stops being the way a policy gets into the product.
-
-[Decks, Holos and projected software](docs/concepts.md) · [The vision in more detail](docs/article.md)
-
-## How a Deck is made
-
-[![One model combines contextual reasoning and exact capabilities. Holos and API calls use the same actions. A generic host commits effects to durable records.](assets/illustrations/deck-target-system.svg)](docs/architecture.md)
-
-1. **Observe the original.** Record what happened before and after a real operation. Link the screen and the action to the API request, response and database changes. Source, tests and specifications provide additional evidence, including for behavior that is hard to observe.
-2. **Learn how it works.** A foundation model such as Qwen connects language, images and user intent to the right objects and actions. Specialized parts of the Deck acquire precise decisions, transitions and effects as executable capabilities. The learner looks for structures it can reuse in other workflows. When two candidate rules explain the same evidence, it asks the original a question that would make them behave differently.
-3. **Verify and package.** Check the model's behavior on reserved workflows, including failures and conflicting changes. Package the qualified capabilities and their interface bindings in the Deck. The application can then run on the generic runtime with the original switched off.
-4. **Learn from use.** New records take effect as soon as they are committed. Confirmed corrections and new examples can teach the next version of the behavior. Replay and compare that version before activating it, with a way to preserve the rules for work already underway.
-
-In the target design, the **Deck owns the application behavior**. Its model and specialists determine which action is possible, what it returns and which effects to propose. The **runtime** handles network and device I/O, enforces access and record versions, and commits changes atomically. Live prices, orders, documents and other records live in durable storage and enter the model when relevant. This allows the same Deck to work with fresh data and makes it possible to change the behavior while keeping the records.
-
-[How the model executes a capability](docs/architecture.md#2-the-forward-owns-application-behavior) · [Training and verification](docs/architecture.md#4-how-a-deck-learns-an-application) · [Execution contracts](docs/interfaces.md)
-
-## What we have to prove
-
-| Question | Decisive test |
+| Research claim | Decisive evidence |
 | --- | --- |
-| **Did the model acquire the behavior?** | Hold the runtime and starting data fixed. Change only the relevant learned part and observe the predicted change in the API result, Holo action and durable effect. Inspect which parts were learned, compiled or supplied. |
-| **Can it acquire the next application faster?** | Freeze the learned building blocks and test them on an independent application. Compare with ordinary code generation and symbolic synthesis at the same correctness, evidence access and query budget. |
-| **Can it replace the original?** | Take a declared version and compatibility profile. Run complete workflows, existing API clients and browser journeys with the original off. Check roles, errors, recovery and performance as well as the happy path. |
+| **The application is a model artifact** | Compile an independently written definition to a Deck. Deploy with a frozen generic host and renderer. A targeted artifact change alters a decision and the persisted result. The same qualification applies across API, agents and streamed Holos. |
+| **Intelligence and execution benefit from coupling** | At equal information and cost, internal semantic feedback improves exact authorized task completion over the same backbone with equally powerful external execution. Cutting that feedback removes the measured gain. |
+| **Interfaces and persistence are projections of one semantics** | Stream new workspaces for unseen tasks. Replay equivalent intents across surfaces, swap between qualified storage backends and resume open work. Verify receipts, visible actions and effects under faults and revision changes. |
+| **Learning compounds across applications** | Freeze the runtime and reusable abstractions before an independent team brings a structurally new definition. Show a measured gain in authoring, qualification or execution at matched correctness. |
 
-The [research roadmap](docs/roadmap.md) starts with individual rules and interface actions, then moves to connected workflows, independent transfer and a full replacement profile. Performance is measured on that complete profile.
+The target is open ended across effectively specified application domains with declared resource and effect contracts. Initial proofs and benchmarks name their scope. A finite trace match cannot establish arbitrary black box equivalence, and natural language alone may leave multiple legitimate applications.
 
-## What runs today
+## Evidence today
 
-- **One learned workflow across a browser, API and database.** In a small document application, the learner inferred the publication states from native observations. With the original off, six reserved journeys matched 60 steps. Changing the fitted parameters changed both the Holo and the saved outcome. The experiment used a supplied execution vocabulary and existing document operations. [Document workflow experiment](docs/recurrent-workflow-acquisition.md)
-- **One purchase across storefront, checkout and merchant workspace.** An interpreter and two model execution paths each matched 36 reserved journeys across four fresh shops with the reference system off. The tie shows that the model can execute the measured rules with the same results as the interpreter. A separate browser recording shows a purchase and a saved return using test payments. [Commerce comparison](docs/forward-pass.md) · [Browser demo](docs/showcase.md)
+![Measured Gripper transfer from four to 42 balls, showing four unchanged modules, 336 search classes and replanning from durable state.](assets/illustrations/structural-transfer.svg)
 
-We use **MyNotes**, an open source document app, to test the architecture outside commerce. **Shopware**, an open source commerce platform, supplies a larger curriculum of pricing, shopping and merchant operations. Both provide reference behavior during development. The prototypes combine learned parts with authored or source informed ones. Independent transfer, complete application replacement and performance at that scale are still open.
+| Result | Evidence |
+| --- | --- |
+| **External formal definitions** | Seven original tasks across Gripper, Blocks and Miconic compile through one pipeline. The weight modules from four balls execute all 340 grounded actions in the 42-ball task. Its 4,164,950,046,015,488 reachable named states form exactly 336 classes under the certified quotient. [Structural replay](experiments/model-applications/structural/README.md) |
+| **A live change of scope** | After seven durable steps, a named ball becomes protected. The planner keeps its identity, lifts a new 116-step plan, and verifies the constraint across commit, migration and restart. [Retargeting](experiments/model-applications/structural/README.md#reproduced-results) |
+| **An ambiguous request** | A bounded English grammar keeps both readings of “leave” alive. Holodeck commits when a single plan is shortest under each reading. It asks for clarification when a shared plan would take three steps for a reading with a two-step optimum. [Language to plan replay](experiments/model-applications/intent/README.md) |
+| **When the model omits a requirement** | With the same calibrated model outputs, checking for a common optimum increased correct commits from 3 to 15 across 144 decisions. It also exposed six false commits, all on requests outside the compiled scope. [Scope grounding replay](experiments/model-applications/intent/scope.md) |
+| **Objective discovery** | Three separately authored synthetic targets resolve from two to four calibration comparisons. The fourth exposes two indistinguishable compatible rules with different target optima. [Discovery and refusal proofs](experiments/model-applications/elicitation/README.md) |
+| **Deployment and language** | Two pilot contracts exercise streamed browser controls and atomic writes across journal and SQLite. A frozen model readout with an exact optimizer made 248 of 288 decisions on a 24-utterance synthetic suite. [Deployment](experiments/model-applications/README.md#executable-vertical-development-run) · [Foundation comparison](experiments/model-applications/foundation/README.md) |
 
-[Research status, including failed candidates](docs/research-status.md) · [How we will test transfer](docs/learning-application-semantics.md) · [Reproduce the model core](experiments/model-core/README.md) · [Shopware experiment index](experiments/shopware/README.md)
+[Research status and limitations](docs/research-status.md) · [Reproduce the experiment series](experiments/model-applications/README.md)
+
+[Contributing](CONTRIBUTING.md) · [Demonstration and film](docs/showcase.md) · [Artwork and capture credits](assets/README.md)
 
 ## Watch the film
 

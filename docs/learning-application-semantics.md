@@ -24,6 +24,14 @@ Finite passive traces cannot identify unrestricted behavior. Given any finite co
 
 This is related to learning from queries and counterexamples. Angluin's theorem requires a particular oracle and a regular language. A running shop supplies observations and can expose counterexamples to a candidate, while it has no general oracle certifying equivalence. Register automata add a relevant idea for IDs, since one small program can reason about equality and freshness over many concrete names. Our application state includes much more than those automata cover. [Angluin](https://homepages.math.uic.edu/~lreyzin/papers/angluin87.pdf) · [Learning register automata with fresh values](https://sws.cs.ru.nl/publications/papers/fvaan/TomteFresh/)
 
+## Causal state and action structure
+
+Start with histories from the same admitted reset conditions. Within a declared context and action domain, two histories describe the same predictive state if every admissible future experiment gives the same observations after either history. Include action availability, refusals, effects and continuations in that comparison. A finite observation horizon yields a provisional distinction. Equivalent histories at one horizon can separate at the next one. The [finite state pilot](../experiments/causal-discovery/README.md) demonstrates both cases.
+
+A flat machine is the control. The next learner should factor state into control, typed records and outstanding obligations. Compare the orders $ab$ and $ba$ on the same reset state and actor context. Compare both the normalized effect traces and resulting state under distinguishing continuations. Some action pairs commute only under specific guards. A counterexample should record the starting conditions and the first relevant difference. Finite observations support independence only for the contexts and suffixes exercised.
+
+Use verified behavior as a filter for library induction. Rank candidate libraries by the combined cost of encoding the library and the programs that use it, then measure the result on a different topology with the library frozen. Trace geometry can help propose useful programs and interventions. Only executable replay and the independent verifier qualify them.
+
 ## How to acquire a Deck
 
 **Capture interventions with complete effects.** Reset an isolated teacher to a known snapshot. Run an interaction through UI or API, then capture the response, database changes and subsequent observations. Vary one causal condition at a time where possible. Use explicit events for clocks, payment callbacks and other sources of nondeterminism. For the same action, exercise acceptance, refusal, no-op, reversal and dependent actions. A refused request that still mutates the state is a different transition.
