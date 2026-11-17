@@ -1,0 +1,874 @@
+{
+ "compiled_transitions_equal_to_definition": 734778,
+ "labels_confirmed_by_independent_search": 277,
+ "scene_grammar": {
+  "reference_scenes_in_grammar": 277,
+  "adversarial_scenes": 2216,
+  "adversarial_tokens": 32197,
+  "unauthorized_or_repeated_controls": 0
+ },
+ "generated_control_on_durable_host": {
+  "patches_streamed": 3,
+  "primary_control": "hold",
+  "args": {
+   "units": 2
+  },
+  "committed_effects": [
+   "held"
+  ],
+  "foreign_actor": "refused",
+  "retry": "same receipt",
+  "controls_after_commit": "stale"
+ },
+ "neural_operators": {
+  "model": "Qwen/Qwen3-0.6B",
+  "revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+  "alpha": 0.1,
+  "criteria": {
+   "urgent": {
+    "held_back": 24,
+    "single_label_correct_at_offset": 15,
+    "set_contains_reference": 19,
+    "set_is_single_label": 13
+   },
+   "refund": {
+    "held_back": 24,
+    "single_label_correct_at_offset": 22,
+    "set_contains_reference": 22,
+    "set_is_single_label": 24
+   }
+  },
+  "support_deck": {
+   "calibrated_sets_with_common_outcome": {
+    "committed_correct": 7,
+    "committed_wrong": 6,
+    "withheld": 11
+   },
+   "highest_scoring_label": {
+    "committed_correct": 3,
+    "committed_wrong": 21
+   },
+   "model_calls": 48,
+   "model_calls_during_replay": 0
+  }
+ },
+ "recorded_training_runs": {
+  "deck+exec": {
+   "backbone": "c1899de289a04d12100db370d81485cdf75e47ca",
+   "seed": 1,
+   "training_examples": 19200,
+   "trainable_parameters": 10140806,
+   "cohorts": {
+    "unseen contracts, names and phrasings": {
+     "tasks": 763,
+     "uniform_choice_among_legal_options": 0.3593,
+     "context_tokens": 32.3,
+     "correct": {
+      "free": 503,
+      "masked": 503,
+      "severed free": 225,
+      "severed masked": 250,
+      "true goal free": 627,
+      "true goal masked": 627,
+      "read goal then exhaustive search": 502
+     },
+     "correct_by_plan_length": {
+      "masked": {
+       "0": [
+        69,
+        102
+       ],
+       "1": [
+        140,
+        218
+       ],
+       "2": [
+        128,
+        193
+       ],
+       "3": [
+        99,
+        152
+       ],
+       "4": [
+        67,
+        98
+       ]
+      },
+      "severed masked": {
+       "0": [
+        93,
+        102
+       ],
+       "1": [
+        26,
+        218
+       ],
+       "2": [
+        47,
+        193
+       ],
+       "3": [
+        48,
+        152
+       ],
+       "4": [
+        36,
+        98
+       ]
+      }
+     },
+     "goal_grounded": [
+      378,
+      763
+     ],
+     "exact_steps_per_decision": 11.2,
+     "holo": {
+      "scenes": 200,
+      "well formed and authorized": 200,
+      "without grammar: well formed and authorized": 173,
+      "matches reference designer": 33,
+      "tasks with a plan": 179,
+      "primary control starts a shortest plan": 132,
+      "controls scanned in Holo": 261,
+      "controls scanned in generated form": 395,
+      "tasks without a plan": 21,
+      "notice shown when no plan exists": 6
+     }
+    },
+    "larger structure than training": {
+     "tasks": 382,
+     "uniform_choice_among_legal_options": 0.3139,
+     "context_tokens": 40.1,
+     "correct": {
+      "free": 246,
+      "masked": 246,
+      "severed free": 120,
+      "severed masked": 159,
+      "true goal free": 311,
+      "true goal masked": 311,
+      "read goal then exhaustive search": 228
+     },
+     "correct_by_plan_length": {
+      "masked": {
+       "0": [
+        39,
+        65
+       ],
+       "1": [
+        52,
+        98
+       ],
+       "2": [
+        67,
+        102
+       ],
+       "3": [
+        57,
+        73
+       ],
+       "4": [
+        31,
+        44
+       ]
+      },
+      "severed masked": {
+       "0": [
+        58,
+        65
+       ],
+       "1": [
+        12,
+        98
+       ],
+       "2": [
+        28,
+        102
+       ],
+       "3": [
+        36,
+        73
+       ],
+       "4": [
+        25,
+        44
+       ]
+      }
+     },
+     "goal_grounded": [
+      151,
+      382
+     ],
+     "exact_steps_per_decision": 15.0,
+     "holo": {
+      "scenes": 200,
+      "well formed and authorized": 200,
+      "without grammar: well formed and authorized": 158,
+      "matches reference designer": 28,
+      "tasks with a plan": 165,
+      "primary control starts a shortest plan": 117,
+      "controls scanned in Holo": 253,
+      "controls scanned in generated form": 376,
+      "tasks without a plan": 35,
+      "notice shown when no plan exists": 21
+     }
+    },
+    "hand-written vertical contracts": {
+     "tasks": 40,
+     "uniform_choice_among_legal_options": 0.4792,
+     "context_tokens": 35.4,
+     "correct": {
+      "free": 20,
+      "masked": 20,
+      "severed free": 5,
+      "severed masked": 6,
+      "true goal free": 26,
+      "true goal masked": 26,
+      "read goal then exhaustive search": 19
+     },
+     "correct_by_plan_length": {
+      "masked": {
+       "0": [
+        3,
+        4
+       ],
+       "1": [
+        5,
+        9
+       ],
+       "2": [
+        7,
+        11
+       ],
+       "3": [
+        1,
+        7
+       ],
+       "4": [
+        4,
+        9
+       ]
+      },
+      "severed masked": {
+       "0": [
+        4,
+        4
+       ],
+       "1": [
+        1,
+        9
+       ],
+       "2": [
+        1,
+        11
+       ],
+       "3": [
+        0,
+        7
+       ],
+       "4": [
+        0,
+        9
+       ]
+      }
+     },
+     "goal_grounded": [
+      7,
+      40
+     ],
+     "exact_steps_per_decision": 8.4,
+     "holo": {
+      "scenes": 40,
+      "well formed and authorized": 40,
+      "without grammar: well formed and authorized": 8,
+      "matches reference designer": 2,
+      "tasks with a plan": 36,
+      "primary control starts a shortest plan": 22,
+      "controls scanned in Holo": 53,
+      "controls scanned in generated form": 44,
+      "tasks without a plan": 4,
+      "notice shown when no plan exists": 0
+     }
+    }
+   }
+  },
+  "deck": {
+   "backbone": "c1899de289a04d12100db370d81485cdf75e47ca",
+   "seed": 1,
+   "training_examples": 19200,
+   "trainable_parameters": 10140806,
+   "cohorts": {
+    "unseen contracts, names and phrasings": {
+     "tasks": 763,
+     "uniform_choice_among_legal_options": 0.3593,
+     "context_tokens": 32.3,
+     "correct": {
+      "free": 375,
+      "masked": 446,
+      "read goal then exhaustive search": 436
+     },
+     "correct_by_plan_length": {
+      "masked": {
+       "0": [
+        48,
+        102
+       ],
+       "1": [
+        93,
+        218
+       ],
+       "2": [
+        120,
+        193
+       ],
+       "3": [
+        107,
+        152
+       ],
+       "4": [
+        78,
+        98
+       ]
+      }
+     },
+     "goal_grounded": [
+      281,
+      763
+     ],
+     "exact_steps_per_decision": 0.0,
+     "holo": {
+      "scenes": 200,
+      "well formed and authorized": 200,
+      "without grammar: well formed and authorized": 83,
+      "matches reference designer": 18,
+      "tasks with a plan": 179,
+      "primary control starts a shortest plan": 106,
+      "controls scanned in Holo": 321,
+      "controls scanned in generated form": 395,
+      "tasks without a plan": 21,
+      "notice shown when no plan exists": 5
+     }
+    },
+    "larger structure than training": {
+     "tasks": 382,
+     "uniform_choice_among_legal_options": 0.3139,
+     "context_tokens": 40.1,
+     "correct": {
+      "free": 158,
+      "masked": 215,
+      "read goal then exhaustive search": 203
+     },
+     "correct_by_plan_length": {
+      "masked": {
+       "0": [
+        40,
+        65
+       ],
+       "1": [
+        34,
+        98
+       ],
+       "2": [
+        58,
+        102
+       ],
+       "3": [
+        53,
+        73
+       ],
+       "4": [
+        30,
+        44
+       ]
+      }
+     },
+     "goal_grounded": [
+      115,
+      382
+     ],
+     "exact_steps_per_decision": 0.0,
+     "holo": {
+      "scenes": 200,
+      "well formed and authorized": 200,
+      "without grammar: well formed and authorized": 38,
+      "matches reference designer": 13,
+      "tasks with a plan": 165,
+      "primary control starts a shortest plan": 80,
+      "controls scanned in Holo": 404,
+      "controls scanned in generated form": 376,
+      "tasks without a plan": 35,
+      "notice shown when no plan exists": 18
+     }
+    },
+    "hand-written vertical contracts": {
+     "tasks": 40,
+     "uniform_choice_among_legal_options": 0.4792,
+     "context_tokens": 35.4,
+     "correct": {
+      "free": 1,
+      "masked": 7,
+      "read goal then exhaustive search": 15
+     },
+     "correct_by_plan_length": {
+      "masked": {
+       "0": [
+        2,
+        4
+       ],
+       "1": [
+        3,
+        9
+       ],
+       "2": [
+        1,
+        11
+       ],
+       "3": [
+        0,
+        7
+       ],
+       "4": [
+        1,
+        9
+       ]
+      }
+     },
+     "goal_grounded": [
+      10,
+      40
+     ],
+     "exact_steps_per_decision": 0.0,
+     "holo": {
+      "scenes": 40,
+      "well formed and authorized": 40,
+      "without grammar: well formed and authorized": 0,
+      "matches reference designer": 2,
+      "tasks with a plan": 36,
+      "primary control starts a shortest plan": 28,
+      "controls scanned in Holo": 51,
+      "controls scanned in generated form": 44,
+      "tasks without a plan": 4,
+      "notice shown when no plan exists": 0
+     }
+    }
+   }
+  },
+  "text+exec": {
+   "backbone": "c1899de289a04d12100db370d81485cdf75e47ca",
+   "seed": 1,
+   "training_examples": 19200,
+   "trainable_parameters": 10140806,
+   "cohorts": {
+    "unseen contracts, names and phrasings": {
+     "tasks": 763,
+     "uniform_choice_among_legal_options": 0.3593,
+     "context_tokens": 270.6,
+     "correct": {
+      "free": 666,
+      "masked": 666,
+      "severed free": 125,
+      "severed masked": 125,
+      "true goal free": 697,
+      "true goal masked": 697,
+      "read goal then exhaustive search": 578
+     },
+     "correct_by_plan_length": {
+      "masked": {
+       "0": [
+        82,
+        102
+       ],
+       "1": [
+        204,
+        218
+       ],
+       "2": [
+        164,
+        193
+       ],
+       "3": [
+        138,
+        152
+       ],
+       "4": [
+        78,
+        98
+       ]
+      },
+      "severed masked": {
+       "0": [
+        102,
+        102
+       ],
+       "1": [
+        7,
+        218
+       ],
+       "2": [
+        6,
+        193
+       ],
+       "3": [
+        4,
+        152
+       ],
+       "4": [
+        6,
+        98
+       ]
+      }
+     },
+     "goal_grounded": [
+      271,
+      763
+     ],
+     "exact_steps_per_decision": 11.4
+    },
+    "larger structure than training": {
+     "tasks": 382,
+     "uniform_choice_among_legal_options": 0.3139,
+     "context_tokens": 382.6,
+     "correct": {
+      "free": 328,
+      "masked": 328,
+      "severed free": 67,
+      "severed masked": 68,
+      "true goal free": 346,
+      "true goal masked": 346,
+      "read goal then exhaustive search": 269
+     },
+     "correct_by_plan_length": {
+      "masked": {
+       "0": [
+        54,
+        65
+       ],
+       "1": [
+        88,
+        98
+       ],
+       "2": [
+        90,
+        102
+       ],
+       "3": [
+        61,
+        73
+       ],
+       "4": [
+        35,
+        44
+       ]
+      },
+      "severed masked": {
+       "0": [
+        65,
+        65
+       ],
+       "1": [
+        2,
+        98
+       ],
+       "2": [
+        0,
+        102
+       ],
+       "3": [
+        1,
+        73
+       ],
+       "4": [
+        0,
+        44
+       ]
+      }
+     },
+     "goal_grounded": [
+      118,
+      382
+     ],
+     "exact_steps_per_decision": 15.3
+    },
+    "hand-written vertical contracts": {
+     "tasks": 40,
+     "uniform_choice_among_legal_options": 0.4792,
+     "context_tokens": 348.4,
+     "correct": {
+      "free": 24,
+      "masked": 24,
+      "severed free": 4,
+      "severed masked": 4,
+      "true goal free": 30,
+      "true goal masked": 30,
+      "read goal then exhaustive search": 25
+     },
+     "correct_by_plan_length": {
+      "masked": {
+       "0": [
+        3,
+        4
+       ],
+       "1": [
+        5,
+        9
+       ],
+       "2": [
+        7,
+        11
+       ],
+       "3": [
+        4,
+        7
+       ],
+       "4": [
+        5,
+        9
+       ]
+      },
+      "severed masked": {
+       "0": [
+        4,
+        4
+       ],
+       "1": [
+        0,
+        9
+       ],
+       "2": [
+        0,
+        11
+       ],
+       "3": [
+        0,
+        7
+       ],
+       "4": [
+        0,
+        9
+       ]
+      }
+     },
+     "goal_grounded": [
+      9,
+      40
+     ],
+     "exact_steps_per_decision": 9.0
+    }
+   }
+  },
+  "text+tool": {
+   "backbone": "c1899de289a04d12100db370d81485cdf75e47ca",
+   "seed": 1,
+   "training_examples": 19200,
+   "trainable_parameters": 2293760,
+   "cohorts": {
+    "unseen contracts, names and phrasings": {
+     "tasks": 763,
+     "uniform_choice_among_legal_options": 0.3593,
+     "context_tokens": 292.8,
+     "correct": {
+      "free": 698,
+      "masked": 698
+     },
+     "correct_by_plan_length": {
+      "masked": {
+       "0": [
+        84,
+        102
+       ],
+       "1": [
+        212,
+        218
+       ],
+       "2": [
+        173,
+        193
+       ],
+       "3": [
+        142,
+        152
+       ],
+       "4": [
+        87,
+        98
+       ]
+      }
+     }
+    },
+    "larger structure than training": {
+     "tasks": 382,
+     "uniform_choice_among_legal_options": 0.3139,
+     "context_tokens": 412.3,
+     "correct": {
+      "free": 345,
+      "masked": 345
+     },
+     "correct_by_plan_length": {
+      "masked": {
+       "0": [
+        56,
+        65
+       ],
+       "1": [
+        98,
+        98
+       ],
+       "2": [
+        89,
+        102
+       ],
+       "3": [
+        64,
+        73
+       ],
+       "4": [
+        38,
+        44
+       ]
+      }
+     }
+    },
+    "hand-written vertical contracts": {
+     "tasks": 40,
+     "uniform_choice_among_legal_options": 0.4792,
+     "context_tokens": 375.9,
+     "correct": {
+      "free": 28,
+      "masked": 28
+     },
+     "correct_by_plan_length": {
+      "masked": {
+       "0": [
+        1,
+        4
+       ],
+       "1": [
+        8,
+        9
+       ],
+       "2": [
+        8,
+        11
+       ],
+       "3": [
+        4,
+        7
+       ],
+       "4": [
+        7,
+        9
+       ]
+      }
+     }
+    }
+   }
+  },
+  "text": {
+   "backbone": "c1899de289a04d12100db370d81485cdf75e47ca",
+   "seed": 1,
+   "training_examples": 19200,
+   "trainable_parameters": 2293760,
+   "cohorts": {
+    "unseen contracts, names and phrasings": {
+     "tasks": 763,
+     "uniform_choice_among_legal_options": 0.3593,
+     "context_tokens": 270.6,
+     "correct": {
+      "free": 651,
+      "masked": 658
+     },
+     "correct_by_plan_length": {
+      "masked": {
+       "0": [
+        87,
+        102
+       ],
+       "1": [
+        190,
+        218
+       ],
+       "2": [
+        159,
+        193
+       ],
+       "3": [
+        137,
+        152
+       ],
+       "4": [
+        85,
+        98
+       ]
+      }
+     }
+    },
+    "larger structure than training": {
+     "tasks": 382,
+     "uniform_choice_among_legal_options": 0.3139,
+     "context_tokens": 382.6,
+     "correct": {
+      "free": 311,
+      "masked": 321
+     },
+     "correct_by_plan_length": {
+      "masked": {
+       "0": [
+        58,
+        65
+       ],
+       "1": [
+        80,
+        98
+       ],
+       "2": [
+        85,
+        102
+       ],
+       "3": [
+        64,
+        73
+       ],
+       "4": [
+        34,
+        44
+       ]
+      }
+     }
+    },
+    "hand-written vertical contracts": {
+     "tasks": 40,
+     "uniform_choice_among_legal_options": 0.4792,
+     "context_tokens": 348.4,
+     "correct": {
+      "free": 19,
+      "masked": 26
+     },
+     "correct_by_plan_length": {
+      "masked": {
+       "0": [
+        4,
+        4
+       ],
+       "1": [
+        4,
+        9
+       ],
+       "2": [
+        8,
+        11
+       ],
+       "3": [
+        3,
+        7
+       ],
+       "4": [
+        7,
+        9
+       ]
+      }
+     }
+    }
+   }
+  }
+ }
+}
