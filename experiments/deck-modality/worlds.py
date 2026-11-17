@@ -5,6 +5,7 @@ from itertools import product
 import json
 from pathlib import Path
 import random
+import re
 import sys
 
 ROOT = Path(__file__).resolve().parent
@@ -381,3 +382,31 @@ def describe(world, task, previews=False, request_first=False):
         lines.append(f"Request: {task['request']}")
     lines.append("Which option starts the shortest way to fulfil the request? Answer:")
     return "\n".join(lines)
+
+
+SIGN = {"eq": "==", "ge": ">=", "le": "<="}
+NAME = {sign: name for name, sign in SIGN.items()}
+ATOM = re.compile(r"^(\S+) (==|>=|<=) (\d+)$")
+
+
+def goal_text(world, goal):
+    return " and ".join(f"{world.names[field]} {SIGN[comparator]} {value}" for field, comparator, value in goal)
+
+
+def parse_goal(world, text):
+    """Typed goal from the model's text, or None when it does not name this contract's fields."""
+    goal = []
+    for part in text.strip().split(" and "):
+        match = ATOM.match(part.strip())
+        if not match or match[1] not in world.names:
+            return None
+        goal.append((world.names.index(match[1]), NAME[match[2]], int(match[3])))
+    return goal if 1 <= len(goal) <= 2 else None
+
+
+def verdict(world, task, goal, choice):
+    """Does exact search under the stated goal agree with the option the model chose?"""
+    if goal is None:
+        return False
+    plans = world.optimal(task["state"], task["actor"], goal)
+    return choice in plans if plans else choice == len(world.candidates)

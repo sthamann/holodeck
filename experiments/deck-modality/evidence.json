@@ -453,6 +453,209 @@
     }
    }
   },
+  "reader": {
+   "backbone": "c1899de289a04d12100db370d81485cdf75e47ca",
+   "seed": 1,
+   "training_examples": 19200,
+   "trainable_parameters": 2293760,
+   "cohorts": {
+    "unseen contracts, names and phrasings": {
+     "tasks": 763,
+     "uniform_choice_among_legal_options": 0.3593,
+     "context_tokens": 309.0,
+     "correct": {
+      "free": 700,
+      "masked": 700,
+      "true goal masked": 700,
+      "read goal then exhaustive search": 743
+     },
+     "commit_rule": {
+      "committed when search under the stated goal agrees": [
+       682,
+       682
+      ],
+      "withheld, answer would have been": [
+       18,
+       81
+      ]
+     },
+     "correct_by_plan_length": {
+      "masked": {
+       "0": [
+        83,
+        102
+       ],
+       "1": [
+        213,
+        218
+       ],
+       "2": [
+        173,
+        193
+       ],
+       "3": [
+        145,
+        152
+       ],
+       "4": [
+        86,
+        98
+       ]
+      }
+     },
+     "goal_parsed": [
+      743,
+      763
+     ],
+     "goal_grounded": [
+      743,
+      763
+     ],
+     "holo": {
+      "scenes": 200,
+      "well formed and authorized": 200,
+      "without grammar: well formed and authorized": 200,
+      "matches reference designer": 55,
+      "tasks with a plan": 179,
+      "primary control starts a shortest plan": 170,
+      "controls scanned in Holo": 190,
+      "controls scanned in generated form": 395,
+      "tasks without a plan": 21,
+      "notice shown when no plan exists": 17
+     }
+    },
+    "larger structure than training": {
+     "tasks": 382,
+     "uniform_choice_among_legal_options": 0.3139,
+     "context_tokens": 429.0,
+     "correct": {
+      "free": 355,
+      "masked": 355,
+      "true goal masked": 356,
+      "read goal then exhaustive search": 373
+     },
+     "commit_rule": {
+      "committed when search under the stated goal agrees": [
+       349,
+       349
+      ],
+      "withheld, answer would have been": [
+       6,
+       33
+      ]
+     },
+     "correct_by_plan_length": {
+      "masked": {
+       "0": [
+        57,
+        65
+       ],
+       "1": [
+        95,
+        98
+       ],
+       "2": [
+        95,
+        102
+       ],
+       "3": [
+        70,
+        73
+       ],
+       "4": [
+        38,
+        44
+       ]
+      }
+     },
+     "goal_parsed": [
+      374,
+      382
+     ],
+     "goal_grounded": [
+      373,
+      382
+     ],
+     "holo": {
+      "scenes": 200,
+      "well formed and authorized": 200,
+      "without grammar: well formed and authorized": 197,
+      "matches reference designer": 27,
+      "tasks with a plan": 165,
+      "primary control starts a shortest plan": 158,
+      "controls scanned in Holo": 182,
+      "controls scanned in generated form": 376,
+      "tasks without a plan": 35,
+      "notice shown when no plan exists": 32
+     }
+    },
+    "hand-written vertical contracts": {
+     "tasks": 40,
+     "uniform_choice_among_legal_options": 0.4792,
+     "context_tokens": 391.4,
+     "correct": {
+      "free": 29,
+      "masked": 29,
+      "true goal masked": 29,
+      "read goal then exhaustive search": 40
+     },
+     "commit_rule": {
+      "committed when search under the stated goal agrees": [
+       29,
+       29
+      ],
+      "withheld, answer would have been": [
+       0,
+       11
+      ]
+     },
+     "correct_by_plan_length": {
+      "masked": {
+       "0": [
+        2,
+        4
+       ],
+       "1": [
+        9,
+        9
+       ],
+       "2": [
+        8,
+        11
+       ],
+       "3": [
+        3,
+        7
+       ],
+       "4": [
+        7,
+        9
+       ]
+      }
+     },
+     "goal_parsed": [
+      40,
+      40
+     ],
+     "goal_grounded": [
+      40,
+      40
+     ],
+     "holo": {
+      "scenes": 40,
+      "well formed and authorized": 40,
+      "without grammar: well formed and authorized": 18,
+      "matches reference designer": 2,
+      "tasks with a plan": 36,
+      "primary control starts a shortest plan": 27,
+      "controls scanned in Holo": 45,
+      "controls scanned in generated form": 44,
+      "tasks without a plan": 4,
+      "notice shown when no plan exists": 2
+     }
+    }
+   }
+  },
   "text+exec": {
    "backbone": "c1899de289a04d12100db370d81485cdf75e47ca",
    "seed": 1,

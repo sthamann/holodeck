@@ -183,10 +183,15 @@ def measured():
                 "tasks": cohort["tasks"],
                 "uniform_choice_among_legal_options": cohort["uniform_choice_among_legal_options"],
                 "context_tokens": cohort["context_tokens"],
-                "correct": {label: tally["correct"] for label, tally in cohort["decisions"].items()},
+                "correct": {label: tally["correct"] for label, tally in cohort["decisions"].items()
+                            if not label.startswith(("committed", "withheld"))},
+                **({"commit_rule": {label: [tally["correct"], tally["n"]]
+                                    for label, tally in cohort["decisions"].items()
+                                    if label.startswith(("committed", "withheld"))}}
+                   if "goal_parsed" in cohort else {}),
                 "correct_by_plan_length": {label: tally["by_depth"] for label, tally in cohort["decisions"].items()
                                            if label in ("masked", "severed masked")},
-                **{key: cohort[key] for key in ("goal_grounded", "exact_steps_per_decision", "holo") if key in cohort},
+                **{key: cohort[key] for key in ("goal_parsed", "goal_grounded", "exact_steps_per_decision", "holo") if key in cohort},
             } for name, cohort in run["cohorts"].items()}}
     return runs
 

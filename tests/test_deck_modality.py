@@ -11,7 +11,7 @@ sys.path.insert(0, str(HERE))
 
 import holo  # noqa: E402
 from neural_ops import Desk  # noqa: E402
-from worlds import authored, build  # noqa: E402
+from worlds import authored, build, goal_text, parse_goal, verdict  # noqa: E402
 
 
 class DeckModality(unittest.TestCase):
@@ -80,6 +80,24 @@ class DeckModality(unittest.TestCase):
             desk = Desk(Path(root) / 'desk.jsonl', judge=lambda text, name: [0, 1] if name == 'urgent' else [0])
             self.assertEqual(desk.resolve('maybe soon', 'k'), {'status': 'withheld', 'ask': ['urgent']})
             self.assertEqual(desk.state['fields']['open'], 3)
+
+    def test_stated_goal_round_trips_and_foreign_names_are_rejected(self):
+        for world, tasks in self.cohort:
+            for task in tasks:
+                goal = [tuple(atom) for atom in task['goal']]
+                self.assertEqual(parse_goal(world, goal_text(world, goal)), goal)
+            self.assertIsNone(parse_goal(world, 'nonexistent >= 1'))
+            self.assertIsNone(parse_goal(world, f'{world.names[0]} is 1'))
+
+    def test_answer_is_confirmed_only_when_exact_search_agrees(self):
+        for world, tasks in self.cohort:
+            refusal = len(world.candidates)
+            for task in tasks:
+                goal = [tuple(atom) for atom in task['goal']]
+                for choice in range(refusal + 1):
+                    expected = choice in task['optimal'] if task['optimal'] else choice == refusal
+                    self.assertEqual(verdict(world, task, goal, choice), expected)
+                self.assertFalse(verdict(world, task, None, refusal))
 
     def test_recorded_evidence_is_valid_json(self):
         evidence = json.loads((HERE / 'evidence.json').read_text())

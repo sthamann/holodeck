@@ -1,4 +1,4 @@
-"""Live demo: type a request, the Deck-native model streams a Holo, a click commits on the durable Host."""
+"""Live demo: type a request, the reader states the goal and streams a Holo, a click commits on the durable Host."""
 
 import argparse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -11,7 +11,8 @@ from threading import Lock
 import torch
 
 import holo
-from fusion import DeckArm, load_backbone
+from fusion import load_backbone
+from reader import ReaderArm
 from worlds import authored, build
 
 ROOT = Path(__file__).resolve().parent
@@ -20,14 +21,14 @@ sys.path.insert(0, str(ROOT.parent / "model-applications" / "vertical"))
 from runtime import Host  # noqa: E402
 from storage import Journal  # noqa: E402
 
-SIGNS = {"eq": "=", "ge": "≥", "le": "≤"}
+SIGNS = {"==": "=", ">=": "≥", "<=": "≤"}
 
 
 class Demo:
     def __init__(self, backbone, checkpoint):
         device = "mps" if torch.backends.mps.is_available() else "cpu"
         tokenizer, lm = load_backbone(backbone, device)
-        self.model = DeckArm(tokenizer, lm, executor=True)
+        self.model = ReaderArm(tokenizer, lm)
         self.model.load_state_dict(torch.load(checkpoint), strict=False)
         self.model.eval()
         self.lock, self.root = Lock(), Path(mkdtemp(prefix="holodeck-demo-"))
@@ -58,10 +59,18 @@ class Demo:
         world, task, snapshot = self.task(name, actor, request)
         with self.lock:
             scenes, output = self.model.decode([(world, task)])
-        goal = " and ".join(f"{world.names[field]} {SIGNS[sign]} {value}" for field, sign, value in output["goals"][0])
-        yield {"understood": goal, "exact_steps": output["steps"], "context_tokens": round(output["tokens"]),
+        goal = output["goal_texts"][0]
+        for sign, shown in SIGNS.items():
+            goal = goal.replace(sign, shown)
+        yield {"understood": goal, "checked": output["agree"][0], "context_tokens": round(output["tokens"]),
                "state": snapshot["fields"], "epoch": snapshot["epoch"]}
-        yield from holo.patches(holo.tree(scenes[0], world, task, snapshot["epoch"]), snapshot["epoch"])
+        scene = holo.tree(scenes[0], world, task, snapshot["epoch"])
+        stated = output["goals"][0]
+        if stated and world.satisfied(task["state"], stated):
+            for node in scene:
+                if node["kind"] == "notice":
+                    node["text"] = "This request is already fulfilled."
+        yield from holo.patches(scene, snapshot["epoch"])
 
     def invoke(self, name, handle, key):
         return self.hosts[name].invoke(handle["actor"], handle, key)
@@ -105,7 +114,7 @@ def handler(demo):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("backbone")
-    parser.add_argument("--checkpoint", default=str(ROOT.parents[1] / ".holodeck" / "deck+exec.pt"))
+    parser.add_argument("--checkpoint", default=str(ROOT.parents[1] / ".holodeck" / "reader.pt"))
     parser.add_argument("--port", type=int, default=8765)
     args = parser.parse_args()
     server = ThreadingHTTPServer(("127.0.0.1", args.port), handler(Demo(args.backbone, args.checkpoint)))

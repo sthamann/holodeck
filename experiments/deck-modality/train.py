@@ -12,11 +12,12 @@ import torch
 
 import holo
 from fusion import DeckArm, HybridArm, TextArm, load_backbone
+from reader import ReaderArm
 from worlds import authored, build
 
 ROOT = Path(__file__).resolve().parent
 ARMS = {"text": ("text", False), "text+tool": ("text", True), "deck": ("deck", False), "deck+exec": ("deck", True),
-        "text+exec": ("hybrid", True)}
+        "text+exec": ("hybrid", True), "reader": ("reader", True)}
 
 
 def flatten(cohort):
@@ -90,6 +91,47 @@ def evaluate(model, tasks, deck, batch_size, scene_limit):
 
 
 @torch.no_grad()
+def evaluate_reader(model, tasks, batch_size, scene_limit):
+    """The reader states a goal and an answer. Exact search under the stated goal checks the answer."""
+    model.eval()
+    rows, tokens, seconds, chance, grounded, parsed = defaultdict(list), 0, 0, 0, 0, 0
+    for batch in chunks(tasks, batch_size):
+        started = time.perf_counter()
+        output = model.run(batch)
+        if torch.backends.mps.is_available():
+            torch.mps.synchronize()
+        seconds += time.perf_counter() - started
+        tokens += output["tokens"] * len(batch)
+        oracle = model.run(batch, oracle_goal=True)
+        for index, (world, task) in enumerate(batch):
+            legal = [candidate for candidate, ok in enumerate(task["legal"]) if ok]
+            chance += len(set(legal) & set(task["optimal"])) / len(legal) if task["optimal"] else 0
+            depth, goal = task["depth"], output["goals"][index]
+            right = decide(output["answers"][index], task, True)
+            rows["free"].append((depth, decide(output["answers"][index], task, False)))
+            rows["masked"].append((depth, right))
+            rows["true goal masked"].append((depth, decide(oracle["answers"][index], task, True)))
+            parsed += goal is not None
+            grounded += goal is not None and sorted(goal) == sorted(map(tuple, task["goal"]))
+            plan = world.optimal(task["state"], task["actor"], goal) if goal is not None else None
+            searched = goal is not None and (
+                plan[0] in task["optimal"] if plan and task["optimal"] else not plan and not task["optimal"])
+            rows["read goal then exhaustive search"].append((depth, searched))
+            if output["agree"][index]:
+                rows["committed when search under the stated goal agrees"].append((depth, right))
+            else:
+                rows["withheld, answer would have been"].append((depth, right))
+    report = {"decisions": {label: tally(values) for label, values in rows.items()},
+              "uniform_choice_among_legal_options": round(chance / len(tasks), 4),
+              "context_tokens": round(tokens / len(tasks), 1),
+              "milliseconds": round(1000 * seconds / len(tasks), 2),
+              "goal_parsed": [parsed, len(tasks)], "goal_grounded": [grounded, len(tasks)]}
+    if scene_limit:
+        report["holo"] = evaluate_scenes(model, tasks[:scene_limit], batch_size)
+    return report
+
+
+@torch.no_grad()
 def evaluate_scenes(model, tasks, batch_size):
     stats = defaultdict(int)
     for batch in chunks(tasks, batch_size):
@@ -137,8 +179,8 @@ def main():
     device = "mps" if torch.backends.mps.is_available() else "cuda" if torch.cuda.is_available() else "cpu"
     kind, flag = ARMS[args.arm]
     tokenizer, lm = load_backbone(args.backbone, device)
-    model = {"deck": DeckArm, "hybrid": HybridArm}[kind](tokenizer, lm, executor=flag) if kind != "text" \
-        else TextArm(tokenizer, lm, previews=flag)
+    model = {"deck": DeckArm, "hybrid": HybridArm}[kind](tokenizer, lm, executor=flag) if kind in ("deck", "hybrid") \
+        else {"text": TextArm, "reader": ReaderArm}[kind](tokenizer, lm, previews=flag)
 
     train = flatten(build(args.seed, args.worlds, "train"))
     cohorts = {
@@ -170,8 +212,9 @@ def main():
         "training": {"steps": args.steps, "batch": args.batch, "examples": args.steps * args.batch,
                      "worlds": args.worlds, "tasks": len(train), "seconds": round(time.time() - started),
                      "trainable_parameters": sum(p.numel() for p in parameters), "loss": curve},
-        "cohorts": {name: {"tasks": len(tasks), **evaluate(model, tasks, kind != "text", args.batch,
-                                                           args.scene_limit if kind == "deck" else 0)}
+        "cohorts": {name: {"tasks": len(tasks), **(
+            evaluate_reader(model, tasks, args.batch, args.scene_limit) if kind == "reader" else
+            evaluate(model, tasks, kind != "text", args.batch, args.scene_limit if kind == "deck" else 0))}
                     for name, tasks in cohorts.items()},
     }
     Path(args.out).mkdir(parents=True, exist_ok=True)

@@ -49,6 +49,10 @@ A tie on C1 to C3 is reported as a tie. It then credits the compiler, the Host a
 
 The pretrained reader is the asset, and typed goal reading is the bottleneck. Phase 2 therefore keeps the application readable as text for the backbone, uses exact Deck tools with masks and the grammar-bound scene head, and tests Deck tokens only where text cannot follow: contracts too large for a prompt and state spaces too large for exhaustive search. [Measured run](../experiments/deck-modality/README.md)
 
+## Outcome of the reader arm
+
+The first step of the narrowed plan is measured. The backbone reads text, states the goal as text over the contract's field names, and the Deck searches and checks. Goals are stated exactly in 97% of unseen requests against 50% for the typed head. Exact search under the stated goal is right in 97%. Committing only when search and model agree gave 1,060 commits on the three cohorts with none wrong and withheld 11% of unseen tasks. The model's own multi-step planning stayed at the level of the text arm with previews. [Numbers](../experiments/deck-modality/README.md#reader-arm)
+
 ## Phases
 
 1. **Deck modality on the existing contract grammar.** Generator, exhaustive oracle, Deck encoder, executor blocks, masked action head, scene head, neural operators. Backbone Qwen3 0.6B with low-rank adapters. Matched text arms. *Implemented in [experiments/deck-modality](../experiments/deck-modality/README.md).*
