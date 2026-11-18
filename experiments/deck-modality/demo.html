@@ -87,7 +87,7 @@
           $("state").replaceChildren(...Object.entries(patch.state).map(([key, value]) =>
             Object.assign(document.createElement("span"), {textContent: `${key} ${value}`})));
           $("meta").textContent = body.request
-            ? `Understood: ${patch.understood} · ${patch.checked ? "suggestion confirmed by exact search" : "suggestion not confirmed, check before you click"} · ${patch.context_tokens} context tokens · epoch ${patch.epoch}`
+            ? `Understood: ${patch.understood} · ${patch.understood === "no goal" ? "nothing suggested" : patch.checked ? "model and exact search agree" : "model and exact search disagree, the search result is shown"} · ${patch.context_tokens} context tokens · epoch ${patch.epoch}`
             : `Epoch ${patch.epoch}`;
         } else if (patch.put) {
           if (fresh) { $("holo").replaceChildren(); fresh = false; }

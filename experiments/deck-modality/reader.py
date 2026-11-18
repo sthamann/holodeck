@@ -31,6 +31,7 @@ class ReaderArm(nn.Module):
         self.facts = [single(" " + "abcdefgh"[i])[0] for i in range(MAX_FIELDS)]
         self.answer, self.screen = self.ids("Answer:"), self.ids("\nScreen:")
         self.pad = tokenizer.pad_token_id
+        self.plan = False  # build the scene from the step exact search found under the stated goal
 
     def ids(self, text):
         return self.tokenizer.encode(text, add_special_tokens=False)
@@ -59,9 +60,10 @@ class ReaderArm(nn.Module):
         rows, marks = [], []
         for world, task in batch:
             prompt = self.prompt(world, task)
-            goal = self.ids(" " + goal_text(world, task["goal"]) + "\n")
+            unclear = task.get("unclear")
+            goal = self.ids(" " + ("unclear" if unclear else goal_text(world, task["goal"])) + "\n")
             best = task["optimal"][0] if task["optimal"] else MAX_CANDIDATES
-            scene = self.scene_ids(holo.reference(world, task))
+            scene = self.scene_ids(holo.unclear(task) if unclear else holo.reference(world, task))
             rows.append(prompt + goal + self.answer + [self.letters[best]] + self.screen + scene)
             marks.append((len(prompt), len(goal), len(scene)))
         ids, mask = self.batch(rows, left=False)
@@ -119,7 +121,13 @@ class ReaderArm(nn.Module):
             masked = scores.clone()
             masked[:count][~torch.tensor(task["legal"])] = float("-inf")
             choices.append(int(masked.argmax()))
+        decisions = []
+        for (world, task), goal, choice in zip(batch, goals, choices):
+            plans = world.optimal(task["state"], task["actor"], goal) if goal is not None else None
+            decisions.append(choice if plans is None or choice in plans else
+                             plans[0] if plans else len(world.candidates))
         result = {"goals": goals, "goal_texts": texts, "answers": answers, "choices": choices,
+                  "decisions": decisions,
                   "agree": [verdict(world, task, goal, choice)
                             for (world, task), goal, choice in zip(batch, goals, choices)],
                   "tokens": sum(map(len, stated)) / size}
@@ -128,7 +136,7 @@ class ReaderArm(nn.Module):
 
         device = ids.device
         said = [[self.letters[choice if choice < len(world.candidates) else MAX_CANDIDATES]] + self.screen
-                for (world, _), choice in zip(batch, choices)]
+                for (world, _), choice in zip(batch, decisions if self.plan else choices)]
         mask = self.extend(mask, len(said[0]))
         logits, past = self.step(torch.tensor(said, device=device), mask, past)
         streams, open_rows = [[] for _ in batch], set(range(size))
@@ -144,6 +152,8 @@ class ReaderArm(nn.Module):
                 if constrained:
                     legal = [index for index, ok in enumerate(task["legal"]) if ok]
                     tokens = holo.allowed(streams[row], range(fields), legal)
+                    if self.plan:
+                        tokens = self.pin(tokens, streams[row], decisions[row], count)
                 options = self.scene_ids(tokens)
                 token = tokens[int(logits[row, options].argmax())]
                 streams[row].append(tuple(token))
@@ -155,6 +165,17 @@ class ReaderArm(nn.Module):
                 logits, past = self.step(torch.tensor(feed, device=device)[:, None], mask, past)
         result["scenes"] = streams
         return result
+
+    @staticmethod
+    def pin(tokens, stream, decision, count):
+        """Narrow the grammar so that the notice and the primary control follow the verified decision."""
+        if not stream:
+            return [holo.NOTICE] if decision == count else [token for token in tokens if token != holo.NOTICE]
+        if stream[-1] == holo.PRIMARY and ("c", decision) in tokens:
+            return [("c", decision)]
+        if decision == count or ("c", decision) in stream:
+            return [token for token in tokens if token != holo.PRIMARY] or tokens
+        return tokens
 
     def decode(self, batch, constrained=True):
         result = self.run(batch, scenes=True, constrained=constrained)

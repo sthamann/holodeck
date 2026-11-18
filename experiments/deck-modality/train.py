@@ -12,6 +12,7 @@ import torch
 
 import holo
 from fusion import DeckArm, HybridArm, TextArm, load_backbone
+from phrasings import augment
 from reader import ReaderArm
 from worlds import authored, build
 
@@ -172,6 +173,7 @@ def main():
     parser.add_argument("--scene-limit", type=int, default=200)
     parser.add_argument("--out", default=str(ROOT / "results"))
     parser.add_argument("--save", default="")
+    parser.add_argument("--augment", action="store_true", help="mix looser and goal-less requests into training")
     args = parser.parse_args()
 
     random.seed(args.seed)
@@ -196,6 +198,8 @@ def main():
     model.train()
     for step in range(args.steps):
         batch = random.sample(train, args.batch)
+        if args.augment:
+            batch = [(world, augment(random, world, task)) for world, task in batch]
         output = model(batch, teacher=0.5) if kind != "hybrid" else model(batch, scenes=[[] for _ in batch], teacher=0.5)
         loss = output["loss"] + (model.scene_loss(output, batch) if kind == "deck" else 0)
         optimizer.zero_grad()
@@ -208,7 +212,7 @@ def main():
             print(f"{args.arm} step {step} loss {float(loss):.4f} {time.time() - started:.0f}s", flush=True)
 
     report = {
-        "arm": args.arm, "backbone": Path(args.backbone).name, "seed": args.seed,
+        "arm": args.arm + ("+loose" if args.augment else ""), "backbone": Path(args.backbone).name, "seed": args.seed,
         "training": {"steps": args.steps, "batch": args.batch, "examples": args.steps * args.batch,
                      "worlds": args.worlds, "tasks": len(train), "seconds": round(time.time() - started),
                      "trainable_parameters": sum(p.numel() for p in parameters), "loss": curve},
@@ -218,7 +222,7 @@ def main():
                     for name, tasks in cohorts.items()},
     }
     Path(args.out).mkdir(parents=True, exist_ok=True)
-    (Path(args.out) / f"{args.arm}.json").write_text(json.dumps(report, indent=1) + "\n")
+    (Path(args.out) / f"{report['arm']}.json").write_text(json.dumps(report, indent=1) + "\n")
     if args.save:
         torch.save({name: value for name, value in model.state_dict().items()
                     if not name.startswith("lm.") or name.endswith((".down", ".up"))}, args.save)

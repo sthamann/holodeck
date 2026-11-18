@@ -53,6 +53,8 @@ The pretrained reader is the asset, and typed goal reading is the bottleneck. Ph
 
 The first step of the narrowed plan is measured. The backbone reads text, states the goal as text over the contract's field names, and the Deck searches and checks. Goals are stated exactly in 97% of unseen requests against 50% for the typed head. Exact search under the stated goal is right in 97%. Committing only when search and model agree gave 1,060 commits on the three cohorts with none wrong and withheld 11% of unseen tasks. The model's own multi-step planning stayed at the level of the text arm with previews. [Numbers](../experiments/deck-modality/README.md#reader-arm)
 
+Looser wordings of the same requests showed the limit of that result. The reader stated 69% of them exactly and committed wrongly on 4%, and it committed on a third of requests without any goal. Retraining with broader wordings and requests marked unclear gave 83% exact goals, 91% correct by search, 3% wrong commits and 19 commits on 240 goal-less requests. Agreement between model and search lowers the risk and does not remove it. Scenes built from the verified step put the right primary control in 378 of 380 cases. [Numbers](../experiments/deck-modality/README.md#looser-requests)
+
 ## Phases
 
 1. **Deck modality on the existing contract grammar.** Generator, exhaustive oracle, Deck encoder, executor blocks, masked action head, scene head, neural operators. Backbone Qwen3 0.6B with low-rank adapters. Matched text arms. *Implemented in [experiments/deck-modality](../experiments/deck-modality/README.md).*

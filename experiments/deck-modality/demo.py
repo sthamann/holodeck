@@ -31,6 +31,7 @@ class Demo:
         self.model = ReaderArm(tokenizer, lm)
         self.model.load_state_dict(torch.load(checkpoint), strict=False)
         self.model.eval()
+        self.model.plan = True
         self.lock, self.root = Lock(), Path(mkdtemp(prefix="holodeck-demo-"))
         hand = authored()
         unseen = build(7, 3, "test")
@@ -59,17 +60,15 @@ class Demo:
         world, task, snapshot = self.task(name, actor, request)
         with self.lock:
             scenes, output = self.model.decode([(world, task)])
-        goal = output["goal_texts"][0]
+        goal, stated = output["goal_texts"][0], output["goals"][0]
         for sign, shown in SIGNS.items():
             goal = goal.replace(sign, shown)
-        yield {"understood": goal, "checked": output["agree"][0], "context_tokens": round(output["tokens"]),
+        yield {"understood": goal if stated else "no goal", "checked": output["agree"][0], "context_tokens": round(output["tokens"]),
                "state": snapshot["fields"], "epoch": snapshot["epoch"]}
-        scene = holo.tree(scenes[0], world, task, snapshot["epoch"])
-        stated = output["goals"][0]
-        if stated and world.satisfied(task["state"], stated):
-            for node in scene:
-                if node["kind"] == "notice":
-                    node["text"] = "This request is already fulfilled."
+        notice = "This request is already fulfilled." if stated and world.satisfied(task["state"], stated) else \
+            "No sequence of allowed actions fulfils this request." if stated else \
+            "I could not turn this into a goal for this application. These actions are possible now."
+        scene = holo.tree(scenes[0], world, task, snapshot["epoch"], notice)
         yield from holo.patches(scene, snapshot["epoch"])
 
     def invoke(self, name, handle, key):
@@ -114,7 +113,7 @@ def handler(demo):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("backbone")
-    parser.add_argument("--checkpoint", default=str(ROOT.parents[1] / ".holodeck" / "reader.pt"))
+    parser.add_argument("--checkpoint", default=str(ROOT.parents[1] / ".holodeck" / "reader+loose.pt"))
     parser.add_argument("--port", type=int, default=8765)
     args = parser.parse_args()
     server = ThreadingHTTPServer(("127.0.0.1", args.port), handler(Demo(args.backbone, args.checkpoint)))

@@ -77,14 +77,20 @@ def reference(world, task):
     return tokens + [END]
 
 
-def tree(tokens, world, task, epoch=0):
+def unclear(task):
+    """Scene for a request that names no goal: say so, then offer what is possible now."""
+    legal = [index for index, ok in enumerate(task["legal"]) if ok]
+    return [NOTICE, ROW] + [("c", index) for index in legal[:4]] + [CLOSE, END] if legal else [NOTICE, END]
+
+
+def tree(tokens, world, task, epoch=0, notice="No sequence of allowed actions fulfils this request."):
     """Scene tree with revision-bound handles, ready for the renderer and for `Host.invoke`."""
     state = world.fields(task["state"])
     root, current, emphasis = [], None, False
     for kind, value in tokens:
         token = (kind, value)
         if token == NOTICE:
-            root.append({"kind": "notice", "text": "No sequence of allowed actions fulfils this request."})
+            root.append({"kind": "notice", "text": notice})
         elif token in (CARD, ROW):
             current = {"kind": STRUCT[value].lower(), "children": []}
             root.append(current)

@@ -170,11 +170,32 @@ def check_judgements():
     return report
 
 
+def study(run):
+    """A saved reader scored on looser requests, on requests without a goal and on verified scenes."""
+    loose = run["looser requests on the unseen cohort"]
+    count = lambda label: [loose["decisions"][label]["correct"], loose["decisions"][label]["n"]] \
+        if label in loose["decisions"] else [0, 0]
+    return {
+        "checkpoint": run["checkpoint"],
+        "looser_requests": {
+            "tasks": loose["tasks"], "goal_stated_exactly": loose["goal_grounded"][0],
+            "exact_search_under_stated_goal": count("read goal then exhaustive search")[0],
+            "model_answer": count("masked")[0],
+            "committed_correct_of": count("committed when search under the stated goal agrees"),
+            "withheld_answer_right_of": count("withheld, answer would have been")},
+        "requests_without_a_goal": {kind: [row["committed"], row["requests"]]
+                                    for kind, row in run["requests without a goal"].items()},
+        "scenes_built_from_the_verified_decision": run["scenes built from the verified decision"]}
+
+
 def measured():
     """Recorded training runs. These numbers come from `train.py` and are not recomputed here."""
     runs = {}
     for path in sorted((ROOT / "results").glob("*.json")):
         run = json.loads(path.read_text())
+        if "training" not in run:
+            runs[run["arm"]] = study(run)
+            continue
         runs[run["arm"]] = {
             "backbone": run["backbone"], "seed": run["seed"],
             "training_examples": run["training"]["examples"],

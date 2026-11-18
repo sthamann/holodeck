@@ -4,7 +4,9 @@ This experiment trains a foundation model to read compiled Decks as tokens, to u
 
 **Result in one paragraph.** The text arms win. The same Qwen3 0.6B with the same adapters and training budget decides 86% of unseen applications correctly from a plain text description and 91% with one round of exact previews. The Deck-token arm reaches 58%, and 66% with executor blocks. Keeping the contract as text and adding executor blocks ties the text arm and stays below the tool arm. The executor blocks have a large causal effect on the models trained with them, and the Deck tokens need a ninth of the context. Neither is a gain at matched correctness. What held without qualification is safety by construction for generated scenes and replay of model judgements from the journal.
 
-**Second run.** The follow-up arm `reader` keeps the application as text and adds no parameters beyond the adapters. It writes the goal it understood over the contract's own field names, then the answer, then the scene. It states the goal exactly in 97% of unseen requests, where the typed head reached 50%. Exact search under the stated goal decides 97% of unseen applications correctly. When that search agrees with the model's own answer the system commits, and none of 1,060 such commits was wrong. [Reader arm](#reader-arm)
+**Second run.** The follow-up arm `reader` keeps the application as text and adds no parameters beyond the adapters. It writes the goal it understood over the contract's own field names, then the answer, then the scene. On template requests it states the goal exactly in 97% of unseen cases, where the typed head reached 50%, and exact search under the stated goal decides 97% correctly. [Reader arm](#reader-arm)
+
+**Third run.** Looser requests break the clean picture. The same reader states only 69% of them exactly and commits wrongly on 4%. It also commits on a third of requests that have no goal. Training with broader wordings and with requests marked as unclear lifts exact goals to 83%, search accuracy to 91% and cuts commits on goal-less requests from 80 to 19 of 240. Wrong commits on looser requests stay at 3%. [Looser requests](#looser-requests)
 
 ## Task
 
@@ -90,7 +92,49 @@ The executor block positions were moved from layers 6, 10, 14 and 18 to 12, 16, 
 | Controls a person scans to reach it, Holo against generated form | 190 against 395 | 182 against 376 | 45 against 44 |
 | Notice shown when no plan exists | 17 of 21 | 32 of 35 | 2 of 4 |
 
-The scene follows the model's own answer. Building it from the search result instead would lift the primary control to the search accuracy and is the obvious next change. The hand-written contracts remain the weak cohort.
+These scenes follow the model's own answer. Scenes built from the search result are reported under [Looser requests](#looser-requests).
+
+## Looser requests
+
+The generator's test split uses one held-out template per kind. A second set rewrites all 763 unseen tasks in a looser register: number words, negations, fragments, complaints (`Too many freight. Cap it at 2.`, `Don't leave me with fewer than three reels.`). A third set of 240 requests has no goal the contract can express. Both were written once before the first scoring and not edited. `reader+loose` is the same arm trained on a mix of 40% generator templates, 45% other loose templates and 15% requests marked `Goal: unclear`. No template or foreign name is shared between training and the scored sets.
+
+| Looser requests, of 763 | `reader` | `reader+loose` |
+| --- | ---: | ---: |
+| Goal stated exactly | 530 | 633 |
+| Exact search under the stated goal | 667 | **697** |
+| Model's own answer | 667 | 680 |
+| Committed | 643 | 662 |
+| Wrong among committed | 28 | 20 |
+| Withheld | 120 | 101 |
+
+| Commits on requests without a goal, of 60 each | `reader` | `reader+loose` |
+| --- | ---: | ---: |
+| Field the application does not have | 0 | 2 |
+| Not a request for a state | 18 | 0 |
+| Too vague to pin down | 40 | 0 |
+| Outside the goal language | 22 | 17 |
+
+| Template requests, `reader+loose` | Unseen, of 763 | Larger, of 382 | Hand-written, of 40 |
+| --- | ---: | ---: | ---: |
+| Goal stated exactly | 759 | 381 | 40 |
+| Exact search under the stated goal | 760 | 381 | 40 |
+| Committed | 699 | 354 | 30 |
+| Wrong among committed | 1 | 0 | 0 |
+
+- **The agreement rule is not a guarantee.** It made no wrong commit on template requests in the first run, one in the retrained run and 20 to 28 on looser requests. A misread goal and an answer that fits the misreading do occur together.
+- **Wording coverage is the lever.** Sixty extra training templates moved exact goals from 69% to 83% without any change to the model. The remaining gap is a data question.
+- **Refusing works where it was taught.** Vague requests and questions are now marked unclear. Requests outside the goal language still get forced into it. Some of those have a defensible reading, such as doubling a known value, and are counted as commits all the same.
+
+**Scenes built from the verified decision.** The scene now follows the step exact search found under the stated goal. The grammar pins the primary control to that step and the notice to the case without a plan. With `reader+loose` on template requests:
+
+| Measure | Unseen | Larger | Hand-written |
+| --- | ---: | ---: | ---: |
+| Well formed and authorized | 200 of 200 | 200 of 200 | 40 of 40 |
+| Primary control starts a shortest plan | 177 of 179 | 165 of 165 | 36 of 36 |
+| Controls a person scans to reach it, Holo against generated form | 179 against 395 | 165 against 376 | 36 against 44 |
+| Notice shown when no plan exists | 21 of 21 | 35 of 35 | 4 of 4 |
+
+The hand-written contracts now beat the generated form as well.
 
 ## Generated Holos
 
@@ -114,10 +158,10 @@ On 24 held-back authored messages the zero-shot 0.6B judge is weak on urgency (1
 
 ## What follows
 
-1. **Done in the reader arm:** the application stays text, the goal is stated as text, the Deck checks.
-2. **Build the scene from the verified plan** and score it with people.
-3. **Leave exhaustive search.** With entities and larger state spaces the Deck can no longer enumerate, and the model has to propose plans that the Deck verifies step by step. That is where model planning starts to matter.
-4. **Requests written by people.** Test phrasings come from held-out templates. The 97% needs free-form and ambiguous requests, and the commit rule needs its false-commit rate on them.
+1. **Done:** the application stays text, the goal is stated as text, the Deck searches and checks, and the scene is built from the verified step.
+2. **Requests from people.** Both loose sets were written by the author of the training templates. The 3% wrong commits need to be measured on collected requests, and driven down with broader data and a confirmation step that shows the stated goal before the first commit.
+3. **A richer goal language.** Inequality, relations between fields and relative changes are outside it today and get forced into it.
+4. **Leave exhaustive search.** With entities and larger state spaces the Deck can no longer enumerate, and the model has to propose plans that the Deck verifies step by step.
 5. **Deck tokens only where text cannot follow:** contracts with hundreds of actions.
 
 ## Reproduce
@@ -136,14 +180,16 @@ cd experiments/deck-modality
 python train.py deck+exec "$QWEN_SNAPSHOT" --save ../../.holodeck/deck+exec.pt
 python train.py text+tool "$QWEN_SNAPSHOT"
 python train.py reader "$QWEN_SNAPSHOT" --save ../../.holodeck/reader.pt
+python train.py reader "$QWEN_SNAPSHOT" --augment --save ../../.holodeck/reader+loose.pt
+python study.py "$QWEN_SNAPSHOT" --checkpoint ../../.holodeck/reader+loose.pt --name reader+loose-study
 python judge.py "$QWEN_SNAPSHOT" > judgement_scores.json
 python demo.py "$QWEN_SNAPSHOT"
 ```
 
-The demo serves five Decks with the reader arm. A typed request becomes a stated goal and a streamed Holo, and a click commits on the Host.
+The demo serves five Decks with the retrained reader. A typed request becomes a stated goal and a streamed Holo, and a click commits on the Host.
 
-[Recorded runs](results) · [Evidence](evidence.json) · [Generator and oracle](worlds.py) · [Fused arms](fusion.py) · [Reader arm](reader.py) · [Scene grammar](holo.py) · [Neural operators](neural_ops.py)
+[Recorded runs](results) · [Evidence](evidence.json) · [Generator and oracle](worlds.py) · [Fused arms](fusion.py) · [Reader arm](reader.py) · [Looser requests](phrasings.py) · [Scene grammar](holo.py) · [Neural operators](neural_ops.py)
 
 ## Limits
 
-Bounded integer fields without entities. One acting role per task. Requests come from templates. One backbone size and one training seed, so differences of a few tasks between arms are not established. The external arm receives one round of previews. The judgement and hand-written cohorts are small and authored for this study.
+Bounded integer fields without entities. One acting role per task. Requests come from templates, including the looser sets. One backbone size and one training seed, so differences of a few tasks between arms are not established. The external arm receives one round of previews. The judgement and hand-written cohorts are small and authored for this study.

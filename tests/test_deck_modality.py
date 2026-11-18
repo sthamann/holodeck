@@ -10,6 +10,7 @@ HERE = Path(__file__).resolve().parents[1] / 'experiments' / 'deck-modality'
 sys.path.insert(0, str(HERE))
 
 import holo  # noqa: E402
+import phrasings  # noqa: E402
 from neural_ops import Desk  # noqa: E402
 from worlds import authored, build, goal_text, parse_goal, verdict  # noqa: E402
 
@@ -98,6 +99,22 @@ class DeckModality(unittest.TestCase):
                     expected = choice in task['optimal'] if task['optimal'] else choice == refusal
                     self.assertEqual(verdict(world, task, goal, choice), expected)
                 self.assertFalse(verdict(world, task, None, refusal))
+
+    def test_scored_requests_share_no_template_with_training(self):
+        scored = {text for group in (*phrasings.LOOSE.values(), *phrasings.NO_GOAL.values(), phrasings.BOTH)
+                  for text in group}
+        trained = {text for group in (*phrasings.TRAIN_LOOSE.values(), phrasings.TRAIN_NO_GOAL, phrasings.TRAIN_BOTH)
+                   for text in group}
+        self.assertFalse(scored & trained)
+        self.assertFalse(set(phrasings.FOREIGN) & set(phrasings.TRAIN_FOREIGN))
+
+    def test_scene_for_an_unclear_request_is_authorized(self):
+        for world, tasks in self.cohort:
+            for task in tasks:
+                legal = [index for index, ok in enumerate(task['legal']) if ok]
+                scene = holo.unclear(task)
+                self.assertEqual(scene[0], holo.NOTICE)
+                self.assertTrue(holo.wellformed(scene, range(len(world.names)), legal))
 
     def test_recorded_evidence_is_valid_json(self):
         evidence = json.loads((HERE / 'evidence.json').read_text())
