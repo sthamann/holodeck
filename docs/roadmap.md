@@ -24,6 +24,8 @@ The [vertical development run](../experiments/model-applications/README.md#execu
 
 The [Deck modality plan](deck-modality-plan.md) reopens B3 with a trained interface. The backbone learns to read compiled Decks as tokens, exact executor blocks run inside its forward, and the scene head decodes only authorized controls. In its first [measured run](../experiments/deck-modality/README.md) the same backbone reading the contract as text decided better than every fused arm. Scene safety by construction and journaled model judgements held. A follow-up arm keeps the application as text, lets the model state the goal in the contract's own terms and lets the Deck search and check. It decides 97% of unseen applications on template requests and 91% on looser wordings, where 3% of its commits were wrong.
 
+All further work uses one reference application, [TodoMVC](../experiments/todomvc/README.md). Its Deck equals the original on 5,600 recorded browser steps. An adapter reads requests for it at 70 prompt tokens, 95% right on known wording and 55% on looser wording. Agreement under relabelling and a composition of experts over exact outcomes do not close that gap. The [next architecture](next-architecture.md) note lists every approach with its outcome.
+
 ## Experimental decisions
 
 - **B1 · Semantics.** Does a single quotient preserve rights, effects, active controls and open work as observers change? The baseline partitions by displayed state. Reject the proposed rule on one distinguishing context that it loses.

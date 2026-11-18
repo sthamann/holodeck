@@ -6,7 +6,7 @@ Holodeck investigates a different unit of software. Define the objects, rules, r
 
 A **Holo** is a live, streamed interface. It may be a document, a visual workspace, a spreadsheet, a spatial control surface or an interface nobody drew beforehand. The model streams typed changes to that surface. A click, a direct API call and an agent instruction can invoke the same capability, with the same rights, versions and effects. The **Host** supplies configurable storage, transactions, time and external connections. A storage migration preserves the application's commitments under its declared consistency contract.
 
-[Research roadmap](docs/roadmap.md) · [The application as a modality](docs/deck-modality-plan.md) · [Mathematical and model architecture](docs/model-application-architecture.md) · [Experiments](experiments/model-applications/README.md) · [Research and prior art](docs/model-application-research.md) · [Original article](https://www.linkedin.com/pulse/end-software-we-know-stefan-hamann-z81he/)
+[Research roadmap](docs/roadmap.md) · [Next architecture](docs/next-architecture.md) · [TodoMVC experiment](experiments/todomvc/README.md) · [The application as a modality](docs/deck-modality-plan.md) · [Mathematical and model architecture](docs/model-application-architecture.md) · [Experiments](experiments/model-applications/README.md) · [Research and prior art](docs/model-application-research.md) · [Original article](https://www.linkedin.com/pulse/end-software-we-know-stefan-hamann-z81he/)
 
 ![Definitions compile into a versioned Deck. A scope-aware planner and the Host connect its exact semantics to verified actions and durable records.](assets/illustrations/deck-target-system.svg)
 

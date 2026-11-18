@@ -1,0 +1,454 @@
+{
+ "deck_equals_original_todomvc": {
+  "source": "https://github.com/tastejs/todomvc",
+  "commit": "ff43b02e59dfa604386bb382034b2cd07c2bcd8a",
+  "example": "examples/javascript-es5/dist",
+  "sequences": 400,
+  "steps_equal_to_original": 5600,
+  "steps_by_action": {
+   "add": 1520,
+   "clear_completed": 272,
+   "destroy": 601,
+   "edit": 834,
+   "edit_cancel": 283,
+   "show": 608,
+   "toggle": 1197,
+   "toggle_all": 285
+  },
+  "most_todos_at_once": 8,
+  "definition_sha256": "1f071518e55b0d8da0c098bb47388411d104d01d7489505681524831bcd15ccd"
+ },
+ "entity_deck_on_durable_host": {
+  "commits": 4,
+  "refused": [
+   "blank title",
+   "unknown actor",
+   "plan with an impossible step"
+  ],
+  "stale_epoch": "refused",
+  "atomic_plan_steps": 3,
+  "retry": "same receipt",
+  "journal_replay": "equal"
+ },
+ "experts_composed_over_exact_outcomes": {
+  "samples_per_labelling": 5,
+  "explainer_weight": 0.1,
+  "weight_selection_right_of_200": {
+   "0.0": 117,
+   "0.1": 120,
+   "0.25": 120,
+   "0.5": 120,
+   "1.0": 120
+  },
+  "tasks": 1000,
+  "ways": {
+   "greedy reader": {
+    "top outcome right": 553,
+    "right outcome among top three": 553,
+    "refused by the Deck": 113,
+    "decisions that change the list": 612,
+    "wrong among the most confident changes": {
+     "50%": [
+      36,
+      306
+     ],
+     "75%": [
+      86,
+      459
+     ],
+     "90%": [
+      126,
+      551
+     ],
+     "100%": [
+      169,
+      612
+     ]
+    }
+   },
+   "reader, mass over outcomes": {
+    "top outcome right": 566,
+    "right outcome among top three": 605,
+    "refused by the Deck": 74,
+    "decisions that change the list": 639,
+    "wrong among the most confident changes": {
+     "50%": [
+      80,
+      320
+     ],
+     "75%": [
+      112,
+      479
+     ],
+     "90%": [
+      143,
+      575
+     ],
+     "100%": [
+      186,
+      639
+     ]
+    }
+   },
+   "reader under three labellings": {
+    "top outcome right": 575,
+    "right outcome among top three": 633,
+    "refused by the Deck": 50,
+    "decisions that change the list": 655,
+    "wrong among the most confident changes": {
+     "50%": [
+      76,
+      328
+     ],
+     "75%": [
+      103,
+      491
+     ],
+     "90%": [
+      151,
+      590
+     ],
+     "100%": [
+      195,
+      655
+     ]
+    }
+   },
+   "reader, labellings and explainer": {
+    "top outcome right": 577,
+    "right outcome among top three": 633,
+    "refused by the Deck": 50,
+    "decisions that change the list": 664,
+    "wrong among the most confident changes": {
+     "50%": [
+      78,
+      332
+     ],
+     "75%": [
+      104,
+      498
+     ],
+     "90%": [
+      157,
+      598
+     ],
+     "100%": [
+      201,
+      664
+     ]
+    }
+   }
+  },
+  "explainer_weight_sweep_on_scored_tasks": {
+   "0.0": 575,
+   "0.1": 577,
+   "0.25": 578,
+   "0.5": 583,
+   "1.0": 590
+  }
+ },
+ "recorded_runs": {
+  "actions": {
+   "backbone": "c1899de289a04d12100db370d81485cdf75e47ca",
+   "training_examples": 19200,
+   "cohorts": {
+    "unseen titles, looser wording": {
+     "tasks": 1000,
+     "right": 628,
+     "program identical to reference": 619,
+     "writes a change": 757,
+     "agreement: committed": 757,
+     "agreement: committed wrong": 239,
+     "wrong": 330,
+     "refused": 42,
+     "prompt_tokens": 68.1
+    },
+    "unseen titles, training wording": {
+     "tasks": 500,
+     "right": 450,
+     "program identical to reference": 450,
+     "writes a change": 429,
+     "agreement: committed": 429,
+     "agreement: committed wrong": 43,
+     "wrong": 47,
+     "refused": 3,
+     "prompt_tokens": 66.4
+    },
+    "training titles, training wording": {
+     "tasks": 500,
+     "right": 460,
+     "program identical to reference": 459,
+     "writes a change": 431,
+     "agreement: committed": 431,
+     "agreement: committed wrong": 37,
+     "wrong": 38,
+     "refused": 2,
+     "prompt_tokens": 64.9
+    }
+   },
+   "looser_wording_by_kind": {
+    "add": [
+     90,
+     113
+    ],
+    "complete": [
+     106,
+     122
+    ],
+    "complete all": [
+     15,
+     31
+    ],
+    "complete category": [
+     37,
+     66
+    ],
+    "delete": [
+     77,
+     77
+    ],
+    "delete category": [
+     15,
+     54
+    ],
+    "delete completed": [
+     14,
+     38
+    ],
+    "empty": [
+     52,
+     53
+    ],
+    "missing": [
+     24,
+     33
+    ],
+    "rename": [
+     67,
+     69
+    ],
+    "reopen": [
+     61,
+     63
+    ],
+    "reopen all": [
+     16,
+     45
+    ],
+    "show": [
+     10,
+     41
+    ],
+    "two requests": [
+     44,
+     195
+    ]
+   }
+  },
+  "adapter": {
+   "backbone": "c1899de289a04d12100db370d81485cdf75e47ca",
+   "training_examples": 19200,
+   "cohorts": {
+    "unseen titles, looser wording": {
+     "tasks": 1000,
+     "right": 553,
+     "program identical to reference": 519,
+     "writes a change": 612,
+     "agreement: committed": 559,
+     "agreement: committed wrong": 130,
+     "refused": 113,
+     "wrong": 334,
+     "prompt_tokens": 71.6
+    },
+    "unseen titles, training wording": {
+     "tasks": 500,
+     "right": 477,
+     "program identical to reference": 467,
+     "writes a change": 433,
+     "agreement: committed": 431,
+     "agreement: committed wrong": 18,
+     "wrong": 22,
+     "refused": 1,
+     "prompt_tokens": 69.9
+    },
+    "training titles, training wording": {
+     "tasks": 500,
+     "right": 499,
+     "program identical to reference": 499,
+     "writes a change": 432,
+     "agreement: committed": 432,
+     "agreement: committed wrong": 0,
+     "wrong": 1,
+     "prompt_tokens": 68.4
+    }
+   },
+   "looser_wording_by_kind": {
+    "add": [
+     53,
+     113
+    ],
+    "complete": [
+     74,
+     122
+    ],
+    "complete all": [
+     18,
+     31
+    ],
+    "complete category": [
+     26,
+     66
+    ],
+    "delete": [
+     76,
+     77
+    ],
+    "delete category": [
+     21,
+     54
+    ],
+    "delete completed": [
+     11,
+     38
+    ],
+    "empty": [
+     53,
+     53
+    ],
+    "missing": [
+     33,
+     33
+    ],
+    "rename": [
+     63,
+     69
+    ],
+    "reopen": [
+     25,
+     63
+    ],
+    "reopen all": [
+     14,
+     45
+    ],
+    "show": [
+     21,
+     41
+    ],
+    "two requests": [
+     65,
+     195
+    ]
+   }
+  },
+  "frozen-8-shots": {
+   "backbone": "c1899de289a04d12100db370d81485cdf75e47ca",
+   "training_examples": 0,
+   "cohorts": {
+    "unseen titles, looser wording": {
+     "tasks": 1000,
+     "right": 180,
+     "program identical to reference": 157,
+     "writes a change": 355,
+     "wrong": 332,
+     "refused": 488,
+     "agreement: committed": 196,
+     "agreement: committed wrong": 84,
+     "prompt_tokens": 829.6
+    },
+    "unseen titles, training wording": {
+     "tasks": 500,
+     "refused": 177,
+     "program identical to reference": 197,
+     "writes a change": 293,
+     "wrong": 119,
+     "agreement: committed": 219,
+     "agreement: committed wrong": 51,
+     "right": 204,
+     "prompt_tokens": 827.9
+    },
+    "training titles, training wording": {
+     "tasks": 500,
+     "right": 208,
+     "program identical to reference": 191,
+     "writes a change": 295,
+     "agreement: committed": 198,
+     "agreement: committed wrong": 40,
+     "refused": 175,
+     "wrong": 117,
+     "prompt_tokens": 826.4
+    }
+   },
+   "looser_wording_by_kind": {
+    "add": [
+     0,
+     113
+    ],
+    "complete": [
+     32,
+     122
+    ],
+    "complete all": [
+     23,
+     31
+    ],
+    "complete category": [
+     4,
+     66
+    ],
+    "delete": [
+     35,
+     77
+    ],
+    "delete category": [
+     1,
+     54
+    ],
+    "delete completed": [
+     9,
+     38
+    ],
+    "empty": [
+     7,
+     53
+    ],
+    "missing": [
+     4,
+     33
+    ],
+    "rename": [
+     37,
+     69
+    ],
+    "reopen": [
+     8,
+     63
+    ],
+    "reopen all": [
+     7,
+     45
+    ],
+    "show": [
+     5,
+     41
+    ],
+    "two requests": [
+     8,
+     195
+    ]
+   }
+  },
+  "frozen model scoring the Deck's descriptions": {
+   "all single statements": {
+    "tasks": 150,
+    "right outcome among the Deck's candidates": 143,
+    "frozen model picks it": 23
+   },
+   "statements without free text": {
+    "tasks": 150,
+    "right outcome among the Deck's candidates": 150,
+    "frozen model picks it": 68
+   }
+  }
+ }
+}

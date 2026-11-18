@@ -1,0 +1,88 @@
+{
+ "all single statements": {
+  "tasks": 150,
+  "right outcome among the Deck's candidates": 143,
+  "frozen model picks it": 23,
+  "by_kind": {
+   "add": [
+    5,
+    25
+   ],
+   "complete": [
+    0,
+    24
+   ],
+   "complete all": [
+    0,
+    6
+   ],
+   "delete": [
+    6,
+    21
+   ],
+   "delete completed": [
+    0,
+    10
+   ],
+   "empty": [
+    0,
+    7
+   ],
+   "missing": [
+    0,
+    9
+   ],
+   "rename": [
+    11,
+    18
+   ],
+   "reopen": [
+    1,
+    14
+   ],
+   "reopen all": [
+    0,
+    8
+   ],
+   "show": [
+    0,
+    8
+   ]
+  }
+ },
+ "statements without free text": {
+  "tasks": 150,
+  "right outcome among the Deck's candidates": 150,
+  "frozen model picks it": 68,
+  "by_kind": {
+   "complete": [
+    3,
+    34
+   ],
+   "complete all": [
+    1,
+    9
+   ],
+   "delete": [
+    23,
+    28
+   ],
+   "delete completed": [
+    12,
+    18
+   ],
+   "reopen": [
+    14,
+    27
+   ],
+   "reopen all": [
+    1,
+    18
+   ],
+   "show": [
+    14,
+    16
+   ]
+  }
+ }
+}

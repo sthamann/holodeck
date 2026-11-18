@@ -1,0 +1,296 @@
+{
+ "arm": "frozen-8-shots",
+ "backbone": "c1899de289a04d12100db370d81485cdf75e47ca",
+ "seed": 1,
+ "training": {
+  "steps": 0,
+  "batch": 16,
+  "examples": 0,
+  "seconds": 0,
+  "trainable_parameters": 2293760,
+  "loss": []
+ },
+ "cohorts": {
+  "unseen titles, looser wording": {
+   "tasks": 1000,
+   "right": 180,
+   "program identical to reference": 157,
+   "writes a change": 355,
+   "wrong": 332,
+   "refused": 488,
+   "agreement: committed": 196,
+   "agreement: committed wrong": 84,
+   "prompt_tokens": 829.6,
+   "by_kind": {
+    "add": {
+     "tasks": 113,
+     "refused": 86,
+     "wrong": 27
+    },
+    "complete": {
+     "tasks": 122,
+     "refused": 69,
+     "wrong": 21,
+     "right": 32
+    },
+    "complete all": {
+     "tasks": 31,
+     "right": 23,
+     "wrong": 6,
+     "refused": 2
+    },
+    "complete category": {
+     "tasks": 66,
+     "refused": 27,
+     "wrong": 35,
+     "right": 4
+    },
+    "delete": {
+     "tasks": 77,
+     "right": 35,
+     "refused": 32,
+     "wrong": 10
+    },
+    "delete category": {
+     "tasks": 54,
+     "wrong": 27,
+     "refused": 26,
+     "right": 1
+    },
+    "delete completed": {
+     "tasks": 38,
+     "wrong": 10,
+     "right": 9,
+     "refused": 19
+    },
+    "empty": {
+     "tasks": 53,
+     "refused": 39,
+     "right": 7,
+     "wrong": 7
+    },
+    "missing": {
+     "tasks": 33,
+     "right": 4,
+     "refused": 12,
+     "wrong": 17
+    },
+    "rename": {
+     "tasks": 69,
+     "wrong": 10,
+     "right": 37,
+     "refused": 22
+    },
+    "reopen": {
+     "tasks": 63,
+     "wrong": 54,
+     "right": 8,
+     "refused": 1
+    },
+    "reopen all": {
+     "tasks": 45,
+     "refused": 38,
+     "right": 7
+    },
+    "show": {
+     "tasks": 41,
+     "wrong": 36,
+     "right": 5
+    },
+    "two requests": {
+     "tasks": 195,
+     "wrong": 72,
+     "refused": 115,
+     "right": 8
+    }
+   }
+  },
+  "unseen titles, training wording": {
+   "tasks": 500,
+   "refused": 177,
+   "program identical to reference": 197,
+   "writes a change": 293,
+   "wrong": 119,
+   "agreement: committed": 219,
+   "agreement: committed wrong": 51,
+   "right": 204,
+   "prompt_tokens": 827.9,
+   "by_kind": {
+    "add": {
+     "tasks": 56,
+     "refused": 51,
+     "right": 5
+    },
+    "complete": {
+     "tasks": 46,
+     "right": 35,
+     "refused": 6,
+     "wrong": 5
+    },
+    "complete all": {
+     "tasks": 19,
+     "right": 19
+    },
+    "complete category": {
+     "tasks": 35,
+     "wrong": 29,
+     "right": 4,
+     "refused": 2
+    },
+    "delete": {
+     "tasks": 42,
+     "right": 35,
+     "wrong": 6,
+     "refused": 1
+    },
+    "delete category": {
+     "tasks": 18,
+     "wrong": 11,
+     "refused": 7
+    },
+    "delete completed": {
+     "tasks": 21,
+     "refused": 5,
+     "right": 15,
+     "wrong": 1
+    },
+    "empty": {
+     "tasks": 22,
+     "refused": 15,
+     "right": 4,
+     "wrong": 3
+    },
+    "missing": {
+     "tasks": 22,
+     "wrong": 18,
+     "right": 2,
+     "refused": 2
+    },
+    "rename": {
+     "tasks": 56,
+     "right": 33,
+     "wrong": 8,
+     "refused": 15
+    },
+    "reopen": {
+     "tasks": 30,
+     "right": 7,
+     "refused": 12,
+     "wrong": 11
+    },
+    "reopen all": {
+     "tasks": 18,
+     "refused": 7,
+     "right": 5,
+     "wrong": 6
+    },
+    "show": {
+     "tasks": 20,
+     "right": 15,
+     "wrong": 4,
+     "refused": 1
+    },
+    "two requests": {
+     "tasks": 95,
+     "refused": 53,
+     "wrong": 17,
+     "right": 25
+    }
+   }
+  },
+  "training titles, training wording": {
+   "tasks": 500,
+   "right": 208,
+   "program identical to reference": 191,
+   "writes a change": 295,
+   "agreement: committed": 198,
+   "agreement: committed wrong": 40,
+   "refused": 175,
+   "wrong": 117,
+   "prompt_tokens": 826.4,
+   "by_kind": {
+    "add": {
+     "tasks": 56,
+     "refused": 46,
+     "wrong": 6,
+     "right": 4
+    },
+    "complete": {
+     "tasks": 49,
+     "right": 41,
+     "wrong": 5,
+     "refused": 3
+    },
+    "complete all": {
+     "tasks": 22,
+     "right": 21,
+     "wrong": 1
+    },
+    "complete category": {
+     "tasks": 31,
+     "wrong": 24,
+     "right": 6,
+     "refused": 1
+    },
+    "delete": {
+     "tasks": 36,
+     "right": 26,
+     "refused": 2,
+     "wrong": 8
+    },
+    "delete category": {
+     "tasks": 14,
+     "wrong": 8,
+     "refused": 5,
+     "right": 1
+    },
+    "delete completed": {
+     "tasks": 15,
+     "right": 10,
+     "wrong": 2,
+     "refused": 3
+    },
+    "empty": {
+     "tasks": 20,
+     "refused": 14,
+     "right": 6
+    },
+    "missing": {
+     "tasks": 21,
+     "wrong": 11,
+     "refused": 10
+    },
+    "rename": {
+     "tasks": 48,
+     "right": 31,
+     "wrong": 6,
+     "refused": 11
+    },
+    "reopen": {
+     "tasks": 34,
+     "wrong": 15,
+     "right": 6,
+     "refused": 13
+    },
+    "reopen all": {
+     "tasks": 22,
+     "refused": 10,
+     "right": 4,
+     "wrong": 8
+    },
+    "show": {
+     "tasks": 30,
+     "right": 25,
+     "refused": 2,
+     "wrong": 3
+    },
+    "two requests": {
+     "tasks": 102,
+     "wrong": 20,
+     "right": 27,
+     "refused": 55
+    }
+   }
+  }
+ }
+}
