@@ -1,0 +1,12008 @@
+{
+"unseen titles, looser wording": [
+[
+"I already did \"review the phone contract\".",
+"nothing",
+"right",
+true
+],
+[
+"You can tick the defrost one, that got handled. While you're at it: \"sweep the balcony\" should really be \"finish the budget forecast\".",
+"toggle 3; edit 2 \"finish the budget forecast\"",
+"right",
+true
+],
+[
+"done with \"reply to Priya's email\"",
+"toggle 2",
+"right",
+true
+],
+[
+"The book thing is sorted.",
+"nothing",
+"wrong",
+true
+],
+[
+"You know what to do.",
+"nothing",
+"right",
+true
+],
+[
+"Don't let me forget to charge the camera.",
+"add \"charge the camera\"",
+"right",
+true
+],
+[
+"I only care about all right now. Oh, and \"dust the bookshelves\" should really be \"send the invoice to Acme\".",
+"edit 1 \"send the invoice to Acme\"",
+"wrong",
+true
+],
+[
+"Actually \"call the doctor's office\" still needs doing.",
+"toggle 2",
+"right",
+true
+],
+[
+"Sort this out.",
+"nothing",
+"right",
+true
+],
+[
+"Forget about \"send the deposit\".",
+"destroy 1",
+"wrong",
+true
+],
+[
+"I already did \"top up the pension\". Oh, and Scrap everything to do with holiday.",
+"toggle 1; destroy 4",
+"wrong",
+true
+],
+[
+"Don't let me forget to book a blood test.",
+"add \"take a blood test\"",
+"wrong",
+true
+],
+[
+"Untick the lot.",
+"toggle 1",
+"wrong",
+true
+],
+[
+"Cross out the medical and fitness bits.",
+"toggle 3; toggle 5",
+"right",
+true
+],
+[
+"Start the list over, all open.",
+"nothing",
+"right",
+true
+],
+[
+"Let me see just the finished ones.",
+"show completed",
+"right",
+true
+],
+[
+"I was wrong, camera is still pending.",
+"toggle 4",
+"right",
+true
+],
+[
+"Cross out the sixth entry.",
+"destroy 6",
+"wrong",
+true
+],
+[
+"done with \"reply to Priya's email\"",
+"toggle 1",
+"right",
+true
+],
+[
+"Untick the lot. Oh, and You can tick the lenses one, that got handled.",
+"toggle 4",
+"wrong",
+true
+],
+[
+"Nothing here is actually finished, reset it.",
+"nothing",
+"wrong",
+true
+],
+[
+"ok",
+"nothing",
+"right",
+true
+],
+[
+"The room thing is sorted.",
+"toggle 1",
+"right",
+true
+],
+[
+"Tick the lot. While you're at it: I don't need \"charge the camera\" anymore.",
+"toggle 2",
+"wrong",
+true
+],
+[
+"I don't need \"defrost the freezer\" anymore.",
+"destroy 4",
+"right",
+true
+],
+[
+"Don't let me forget to book a blood test.",
+"add \"don't let me forget to book a blood test\"",
+"wrong",
+true
+],
+[
+"Nothing here is actually finished, reset it.",
+"nothing",
+"wrong",
+true
+],
+[
+"All of it is finished.",
+"toggle_all",
+"right",
+true
+],
+[
+"I don't need \"replace the hallway bulb\" anymore.",
+"destroy 5",
+"right",
+true
+],
+[
+"You can tick the deposit one, that got handled.",
+"toggle 1",
+"right",
+true
+],
+[
+"I'm not doing any of the office entries, bin them.",
+"toggle 6; destroy 6",
+"wrong",
+true
+],
+[
+"Cross out the fourth entry.",
+"toggle 4",
+"right",
+true
+],
+[
+"Don't let me forget to book a blood test. While you're at it: Tick the lot.",
+"add \"tick the lot\"",
+"wrong",
+true
+],
+[
+"Everything to do with around the house is finished.",
+"nothing",
+"right",
+true
+],
+[
+"Two things. Untick the lot. Hide everything that isn't all.",
+"toggle 2; toggle_all",
+"refused",
+false
+],
+[
+"Remind me to call the doctor's office.",
+"add \"call the doctor's office\"",
+"right",
+true
+],
+[
+"Cross out the first entry.",
+"toggle 1",
+"right",
+true
+],
+[
+"I only care about finished right now.",
+"clear_completed",
+"wrong",
+true
+],
+[
+"Two things. I was wrong, minutes is still pending. Everything to do with around the house is finished.",
+"toggle 3; toggle 1",
+"right",
+true
+],
+[
+"How many lists can I have?",
+"nothing",
+"right",
+true
+],
+[
+"Sort this out.",
+"nothing",
+"right",
+true
+],
+[
+"Let me see just the finished ones. Oh, and Bin the ticked ones.",
+"show completed; toggle 1",
+"wrong",
+true
+],
+[
+"one more thing for the list: reply to Priya's email",
+"add \"reply to Priya's email\"",
+"right",
+true
+],
+[
+"I got through the whole list.",
+"toggle_all",
+"wrong",
+true
+],
+[
+"You can tick the defrost one, that got handled.",
+"toggle 3",
+"right",
+true
+],
+[
+"Take the groceries and purchases bits off the list.",
+"toggle 1",
+"wrong",
+true
+],
+[
+"Start the list over, all open.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Cross out the second entry. While you're at it: I don't need to see the finished stuff, remove it.",
+"destroy 2",
+"wrong",
+true
+],
+[
+"The defrost thing is not sorted yet.",
+"toggle 4",
+"right",
+true
+],
+[
+"Two things. Stick \"pay the water bill\" on there. I don't need \"order new contact lenses\" anymore.",
+"add \"pay the water bill\"; destroy 5",
+"right",
+true
+],
+[
+"Everything to do with office is finished.",
+"nothing",
+"wrong",
+true
+],
+[
+"Two things. Hide everything that isn't finished. one more thing for the list: unclog the shower drain",
+"add \"unclog the shower drain\"",
+"wrong",
+true
+],
+[
+"\"defrost the freezer\" should really be \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"The room thing is not sorted yet.",
+"toggle 2",
+"right",
+true
+],
+[
+"Make the first entry read top up the pension instead.",
+"edit 1 \"top up the pension\"",
+"right",
+true
+],
+[
+"Scrap the minutes thing.",
+"destroy 3",
+"right",
+true
+],
+[
+"Take the second entry off the list.",
+"destroy 2",
+"right",
+true
+],
+[
+"Take the third entry off the list. While you're at it: I'm not doing any of the groceries and purchases entries, bin them.",
+"destroy 3",
+"wrong",
+true
+],
+[
+"Good morning!",
+"nothing",
+"right",
+true
+],
+[
+"Take the second entry off the list.",
+"destroy 2",
+"right",
+true
+],
+[
+"Sort this out.",
+"nothing",
+"right",
+true
+],
+[
+"Untick the lot. While you're at it: I took care of all the office entries.",
+"toggle 4",
+"wrong",
+true
+],
+[
+"Remind me to book a hotel in Kyoto.",
+"add \"book a hotel in Kyoto\"",
+"right",
+true
+],
+[
+"I don't need to see the finished stuff, remove it. While you're at it: Cross out the first entry.",
+"show finished; destroy 1",
+"refused",
+false
+],
+[
+"Hide everything that isn't unfinished. Oh, and Don't let me forget to book a hotel in Kyoto.",
+"show unfinished; add \"don't let me forget to book a hotel in Kyoto\"",
+"refused",
+false
+],
+[
+"\"exchange some currency\" should really be \"something else\".",
+"\"something else\"",
+"refused",
+false
+],
+[
+"Cross out the errands at the shops bits.",
+"nothing",
+"right",
+true
+],
+[
+"Cross out the medical and fitness bits.",
+"toggle 2",
+"right",
+true
+],
+[
+"Take the second entry off the list.",
+"destroy 2",
+"right",
+true
+],
+[
+"Scrap everything to do with holiday. While you're at it: I only care about finished right now.",
+"edit 1",
+"refused",
+false
+],
+[
+"\"check the train times\" should really be \"grab oat milk\".",
+"edit 6 \"grab oat milk\"",
+"right",
+true
+],
+[
+"Bin the ticked ones.",
+"toggle 1; toggle 4; toggle 6",
+"wrong",
+true
+],
+[
+"Stick \"top up the pension\" on there.",
+"add \"top up the pension\"",
+"right",
+true
+],
+[
+"Sort this out.",
+"nothing",
+"right",
+true
+],
+[
+"Actually \"replace the hallway bulb\" still needs doing.",
+"toggle 5",
+"right",
+true
+],
+[
+"Let me see just the finished ones.",
+"show completed",
+"right",
+true
+],
+[
+"The grab thing is sorted.",
+"toggle 5",
+"right",
+true
+],
+[
+"Make the last entry read finish the budget forecast instead.",
+"edit 2 \"finish the budget forecast\"",
+"right",
+true
+],
+[
+"Let me see just the all ones.",
+"show all",
+"right",
+true
+],
+[
+"Start the list over, all open. While you're at it: Make the fourth entry read buy wrapping paper instead.",
+"toggle 4; edit 4 \"buy wrapping paper\"",
+"wrong",
+true
+],
+[
+"I don't need \"unclog the shower drain\" anymore.",
+"destroy 6",
+"right",
+true
+],
+[
+"Remind me to pay the water bill.",
+"toggle 3",
+"wrong",
+true
+],
+[
+"I already did \"defrost the freezer\".",
+"nothing",
+"right",
+true
+],
+[
+"I took care of all the holiday entries. Oh, and All of it is finished.",
+"toggle 6; toggle 4",
+"wrong",
+true
+],
+[
+"Make the last entry read stretch for ten minutes instead.",
+"edit 5 \"stretch for ten minutes\"",
+"right",
+true
+],
+[
+"I already did \"top up the pension\".",
+"toggle 2",
+"right",
+true
+],
+[
+"Stick \"grab oat milk\" on there.",
+"add \"grab oat milk\"",
+"right",
+true
+],
+[
+"I don't need to see the finished stuff, remove it. While you're at it: The dust thing is sorted.",
+"nothing",
+"wrong",
+true
+],
+[
+"I'm not doing any of the holiday entries, bin them.",
+"nothing",
+"wrong",
+true
+],
+[
+"Cross out the third entry.",
+"toggle 3",
+"right",
+true
+],
+[
+"I got through the whole list.",
+"toggle_all",
+"wrong",
+true
+],
+[
+"ok",
+"nothing",
+"right",
+true
+],
+[
+"Stick \"apply for the visa\" on there. Oh, and Make the first entry read grab oat milk instead.",
+"add \"apply for the visa\"; edit 1 \"grab oat milk\"",
+"right",
+true
+],
+[
+"Hide everything that isn't all. While you're at it: I don't need \"review the phone contract\" anymore.",
+"destroy 2",
+"wrong",
+true
+],
+[
+"Two things. Remind me to top up the pension. Hide everything that isn't unfinished.",
+"add \"top up the pension\"; show completed",
+"wrong",
+true
+],
+[
+"How many lists can I have?",
+"nothing",
+"right",
+true
+],
+[
+"Forget about \"call the doctor's office\".",
+"destroy 2",
+"right",
+true
+],
+[
+"Everything to do with holiday is finished.",
+"toggle 2",
+"wrong",
+true
+],
+[
+"I don't need to see the finished stuff, remove it.",
+"destroy 3",
+"wrong",
+true
+],
+[
+"Sort this out.",
+"nothing",
+"right",
+true
+],
+[
+"one more thing for the list: apply for the visa",
+"add \"apply for the visa\"",
+"right",
+true
+],
+[
+"Reword the swimming thing as \"stretch for ten minutes\".",
+"edit 1 \"stretch for ten minutes\"",
+"right",
+true
+],
+[
+"I only care about unfinished right now.",
+"show unfinished",
+"refused",
+false
+],
+[
+"Hide everything that isn't unfinished.",
+"nothing",
+"wrong",
+true
+],
+[
+"I'm not doing any of the medical and fitness entries, bin them.",
+"destroy 3",
+"right",
+true
+],
+[
+"I was wrong, contact is still pending.",
+"toggle 5",
+"wrong",
+true
+],
+[
+"Actually \"pay the water bill\" still needs doing.",
+"toggle 3",
+"right",
+true
+],
+[
+"I got through the whole list.",
+"nothing",
+"wrong",
+true
+],
+[
+"I already did \"review the phone contract\".",
+"toggle 2",
+"right",
+true
+],
+[
+"I'm not doing any of the office entries, bin them.",
+"nothing",
+"wrong",
+true
+],
+[
+"I already did \"book a blood test\".",
+"toggle 2",
+"right",
+true
+],
+[
+"Remind me to pay the water bill.",
+"add \"pay the water bill\"",
+"right",
+true
+],
+[
+"Nothing here is actually finished, reset it.",
+"nothing",
+"right",
+true
+],
+[
+"The bookshelves thing is not sorted yet.",
+"toggle 2",
+"right",
+true
+],
+[
+"Take the sixth entry off the list.",
+"destroy 6",
+"right",
+true
+],
+[
+"Don't let me forget to book a hotel in Kyoto. Oh, and I was wrong, sweep is still pending.",
+"add \"book a hotel in Kyoto\"",
+"wrong",
+true
+],
+[
+"\"book a room for the workshop\" should really be \"dust the bookshelves\". Oh, and Stick \"draft the job posting\" on there.",
+"toggle 1; add \"dust the bookshelves\"; add \"draft the job posting\"",
+"wrong",
+true
+],
+[
+"Tick the lot. Oh, and Nothing here is actually finished, reset it.",
+"toggle 1; toggle 4; toggle 4",
+"wrong",
+true
+],
+[
+"Don't let me forget to book a blood test.",
+"add \"don't let me forget to book a blood test\"",
+"wrong",
+true
+],
+[
+"Remind me to send the deposit.",
+"nothing",
+"wrong",
+true
+],
+[
+"done with \"top up the pension\"",
+"toggle 2",
+"right",
+true
+],
+[
+"Make the third entry read order a phone charger instead.",
+"edit 3 \"order a phone charger\"",
+"right",
+true
+],
+[
+"Forget about \"review the phone contract\".",
+"destroy 1",
+"right",
+true
+],
+[
+"Put the third entry back to open. While you're at it: Tidy away what's finished.",
+"toggle 3",
+"wrong",
+true
+],
+[
+"Stick \"reply to Priya's email\" on there.",
+"add \"reply to Priya's email\"",
+"right",
+true
+],
+[
+"Cross out the first entry.",
+"destroy 1",
+"wrong",
+true
+],
+[
+"Make the first entry read go swimming instead.",
+"edit 1 \"go swimming\"",
+"right",
+true
+],
+[
+"I only care about unfinished right now.",
+"show unfinished",
+"refused",
+false
+],
+[
+"The litter thing is sorted.",
+"toggle 3",
+"right",
+true
+],
+[
+"\"book a room for the workshop\" should really be \"charge the camera\".",
+"edit 3 \"charge the camera\"",
+"right",
+true
+],
+[
+"Bin the ticked ones.",
+"nothing",
+"wrong",
+true
+],
+[
+"Make the last entry read sweep the balcony instead.",
+"edit 2 \"sweep the balcony\"",
+"right",
+true
+],
+[
+"Take the last entry off the list.",
+"destroy 2",
+"right",
+true
+],
+[
+"Stick \"defrost the freezer\" on there. Oh, and Tick the lot.",
+"add \"defrost the freezer\"; toggle 2",
+"wrong",
+true
+],
+[
+"Stick \"grab oat milk\" on there.",
+"add \"grab oat milk\"",
+"right",
+true
+],
+[
+"done with \"send the invoice to Acme\"",
+"toggle 1",
+"right",
+true
+],
+[
+"Make the second entry read defrost the freezer instead.",
+"edit 2 \"defrost the freezer\"",
+"right",
+true
+],
+[
+"I don't need \"buy wrapping paper\" anymore.",
+"destroy 3",
+"right",
+true
+],
+[
+"The swimming thing is sorted.",
+"toggle 4",
+"right",
+true
+],
+[
+"You can tick the grab one, that got handled.",
+"toggle 3",
+"right",
+true
+],
+[
+"Cross out the second entry.",
+"destroy 2",
+"wrong",
+true
+],
+[
+"Forget about \"check the train times\".",
+"nothing",
+"right",
+true
+],
+[
+"Cross out the first entry.",
+"toggle 1",
+"right",
+true
+],
+[
+"Let me see just the unfinished ones. Oh, and Everything to do with errands at the shops is finished.",
+"show unfinished; add \"everything to do with errands is finished\"",
+"refused",
+false
+],
+[
+"I don't need to see the finished stuff, remove it.",
+"destroy 4",
+"wrong",
+true
+],
+[
+"I already did \"reply to Priya's email\".",
+"toggle 4",
+"right",
+true
+],
+[
+"Scrap everything to do with holiday.",
+"destroy 6",
+"wrong",
+true
+],
+[
+"All of it is finished.",
+"toggle_all",
+"right",
+true
+],
+[
+"Two things. The bulb thing is not sorted yet. Scrap the posting thing.",
+"toggle 2; toggle 4; destroy 4",
+"right",
+true
+],
+[
+"Scrap everything to do with office.",
+"destroy 2",
+"wrong",
+true
+],
+[
+"I only care about unfinished right now.",
+"show unfinished",
+"refused",
+false
+],
+[
+"You can tick the review one, that got handled.",
+"toggle 1",
+"right",
+true
+],
+[
+"I took care of all the errands at the shops entries.",
+"toggle 2",
+"right",
+true
+],
+[
+"Remind me to charge the camera.",
+"add \"charge the camera\"",
+"right",
+true
+],
+[
+"Tidy away what's finished.",
+"clear_completed",
+"right",
+true
+],
+[
+"Two things. All of it is finished. done with \"finish the budget forecast\"",
+"toggle 1",
+"wrong",
+true
+],
+[
+"The office thing is sorted. While you're at it: The water thing is not sorted yet.",
+"toggle 2; toggle 1",
+"right",
+true
+],
+[
+"ok",
+"nothing",
+"right",
+true
+],
+[
+"Cross out the office bits.",
+"toggle 5",
+"right",
+true
+],
+[
+"Tidy away what's finished. While you're at it: I took care of all the groceries and purchases entries.",
+"toggle 5",
+"wrong",
+true
+],
+[
+"\"exchange some currency\" should really be \"pay the water bill\".",
+"edit 5 \"pay the water bill\"",
+"right",
+true
+],
+[
+"\"book a hotel in Kyoto\" should really be \"something else\".",
+"add \"something else\"",
+"wrong",
+true
+],
+[
+"I already did \"defrost the freezer\".",
+"nothing",
+"right",
+true
+],
+[
+"Two things. The train thing is sorted. Everything to do with medical and fitness is finished.",
+"toggle 6; toggle 1",
+"wrong",
+true
+],
+[
+"Everything to do with bills and banking is finished.",
+"nothing",
+"right",
+true
+],
+[
+"I was wrong, milk is still pending.",
+"toggle 3",
+"right",
+true
+],
+[
+"Cross out the first entry.",
+"destroy 1",
+"wrong",
+true
+],
+[
+"one more thing for the list: book a blood test",
+"add \"book a blood test\"",
+"right",
+true
+],
+[
+"I took care of all the office entries.",
+"toggle 4",
+"right",
+true
+],
+[
+"ok",
+"nothing",
+"right",
+true
+],
+[
+"You can tick the hotel one, that got handled.",
+"toggle 1",
+"right",
+true
+],
+[
+"Cross out the medical and fitness bits.",
+"toggle 2; toggle 4",
+"wrong",
+true
+],
+[
+"Stick \"top up the pension\" on there.",
+"add \"top up the pension\"",
+"right",
+true
+],
+[
+"Two things. Start the list over, all open. Let me see just the unfinished ones.",
+"show unfinished",
+"refused",
+false
+],
+[
+"Remind me to stretch for ten minutes.",
+"add \"remind me to stretch for ten minutes\"",
+"wrong",
+true
+],
+[
+"Two things. Take the first entry off the list. I got through the whole list.",
+"destroy 1",
+"wrong",
+true
+],
+[
+"\"replace the hallway bulb\" should really be \"something else\".",
+"edit 3 \"something else\"",
+"wrong",
+true
+],
+[
+"Untick the lot.",
+"nothing",
+"right",
+true
+],
+[
+"I don't need \"call the doctor's office\" anymore.",
+"destroy 3",
+"right",
+true
+],
+[
+"Scrap everything to do with holiday.",
+"destroy 1; destroy 1",
+"wrong",
+true
+],
+[
+"I took care of all the office entries.",
+"toggle 3",
+"right",
+true
+],
+[
+"Take the third entry off the list. While you're at it: Everything to do with bills and banking is finished.",
+"destroy 3",
+"wrong",
+true
+],
+[
+"done with \"reply to Priya's email\"",
+"toggle 2",
+"right",
+true
+],
+[
+"I'm not doing any of the bills and banking entries, bin them.",
+"nothing",
+"wrong",
+true
+],
+[
+"Take the second entry off the list.",
+"destroy 2",
+"right",
+true
+],
+[
+"You can tick the shower one, that got handled.",
+"toggle 1",
+"right",
+true
+],
+[
+"Two things. Hide everything that isn't unfinished. Tick the lot.",
+"toggle 2",
+"wrong",
+true
+],
+[
+"\"top up the pension\" should really be \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"The tomatoes thing is sorted.",
+"toggle 6",
+"right",
+true
+],
+[
+"Untick the lot.",
+"toggle 1",
+"wrong",
+true
+],
+[
+"Forget about \"dust the bookshelves\".",
+"destroy 1",
+"right",
+true
+],
+[
+"Nothing here is actually finished, reset it. Oh, and Don't let me forget to order a phone charger.",
+"nothing",
+"wrong",
+true
+],
+[
+"\"review the phone contract\" should really be \"sweep the balcony\".",
+"edit 2 \"sweep the balcony\"",
+"right",
+true
+],
+[
+"Start the list over, all open.",
+"toggle_all; toggle_all",
+"wrong",
+true
+],
+[
+"Forget about \"unclog the shower drain\". Oh, and Start the list over, all open.",
+"destroy 1; toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Good morning!",
+"nothing",
+"right",
+true
+],
+[
+"Cross out the last entry.",
+"toggle 2",
+"right",
+true
+],
+[
+"Two things. Scrap the water thing. Cross out the second entry.",
+"destroy 3; toggle 2",
+"right",
+true
+],
+[
+"Scrap everything to do with housework. While you're at it: Nothing here is actually finished, reset it.",
+"clear_completed",
+"wrong",
+true
+],
+[
+"Scrap everything to do with holiday.",
+"destroy 1; destroy 2",
+"wrong",
+true
+],
+[
+"Let me see just the unfinished ones. While you're at it: Bin the ticked ones.",
+"show unfinished; toggle 1",
+"refused",
+false
+],
+[
+"one more thing for the list: sweep the balcony Oh, and Bin the ticked ones.",
+"add \"sweep the balcony\"; toggle 7",
+"wrong",
+true
+],
+[
+"I was wrong, sweep is still pending.",
+"toggle 1",
+"right",
+true
+],
+[
+"Reword the book thing as \"call the doctor's office\".",
+"edit 1 \"call the doctor's office\"",
+"right",
+true
+],
+[
+"Nothing here is actually finished, reset it.",
+"clear_completed",
+"wrong",
+true
+],
+[
+"Two things. Forget about \"go swimming\". done with \"order new contact lenses\"",
+"destroy 2; toggle 5",
+"refused",
+false
+],
+[
+"You can tick the camera one, that got handled.",
+"toggle 3",
+"right",
+true
+],
+[
+"You can tick the Acme one, that got handled.",
+"toggle 2",
+"right",
+true
+],
+[
+"The dust thing is not sorted yet.",
+"toggle 1",
+"right",
+true
+],
+[
+"Forget about \"book a hotel in Kyoto\".",
+"destroy 1",
+"right",
+true
+],
+[
+"Cross out the medical and fitness bits.",
+"toggle 2",
+"right",
+true
+],
+[
+"Two things. Cross out the office bits. Let me see just the finished ones.",
+"toggle 5; toggle 6; show completed",
+"wrong",
+true
+],
+[
+"You can tick the draft one, that got handled.",
+"toggle 1",
+"right",
+true
+],
+[
+"Start the list over, all open. While you're at it: Scrap the office thing.",
+"toggle 3; toggle 3; destroy 3",
+"right",
+true
+],
+[
+"Scrap the train thing.",
+"destroy 6",
+"right",
+true
+],
+[
+"The phone thing is not sorted yet.",
+"toggle 5",
+"right",
+true
+],
+[
+"Start the list over, all open.",
+"toggle_all; toggle_all",
+"wrong",
+true
+],
+[
+"Don't let me forget to get cat litter.",
+"nothing",
+"wrong",
+true
+],
+[
+"I don't need to see the finished stuff, remove it.",
+"show finished",
+"refused",
+false
+],
+[
+"I'm not doing any of the housework entries, bin them.",
+"nothing",
+"wrong",
+true
+],
+[
+"ok",
+"nothing",
+"right",
+true
+],
+[
+"Two things. Reword the pension thing as \"unclog the shower drain\". I only care about all right now.",
+"edit 1 \"unclog the shower drain\"",
+"wrong",
+true
+],
+[
+"Let me see just the all ones.",
+"show all",
+"right",
+true
+],
+[
+"Two things. Cross out the housework bits. The hotel thing is not sorted yet.",
+"toggle 1",
+"right",
+true
+],
+[
+"Good morning!",
+"nothing",
+"right",
+true
+],
+[
+"I only care about unfinished right now.",
+"show unfinished",
+"refused",
+false
+],
+[
+"Two things. Reword the card thing as \"order new contact lenses\". Everything to do with bills and banking is finished.",
+"edit 3 \"order new contact lenses\"",
+"wrong",
+true
+],
+[
+"Don't let me forget to pay the water bill.",
+"toggle 5",
+"wrong",
+true
+],
+[
+"Scrap the charge thing.",
+"destroy 4",
+"right",
+true
+],
+[
+"one more thing for the list: grab oat milk",
+"add \"grab oat milk\"",
+"right",
+true
+],
+[
+"Scrap everything to do with office. Oh, and Tick the lot.",
+"toggle 1; toggle 4; toggle 5; toggle 2",
+"wrong",
+true
+],
+[
+"Forget about \"send the deposit\".",
+"nothing",
+"right",
+true
+],
+[
+"Make the fourth entry read send the deposit instead.",
+"edit 4 \"send the deposit\"",
+"right",
+true
+],
+[
+"Tidy away what's finished. Oh, and Stick \"pay the water bill\" on there.",
+"add \"pay the water bill\"",
+"wrong",
+true
+],
+[
+"The room thing is not sorted yet.",
+"toggle 4",
+"right",
+true
+],
+[
+"Scrap the defrost thing. While you're at it: You can tick the pension one, that got handled.",
+"destroy 4",
+"wrong",
+true
+],
+[
+"Nothing here is actually finished, reset it.",
+"clear_completed",
+"wrong",
+true
+],
+[
+"Stick \"go swimming\" on there.",
+"add \"go swimming\"",
+"right",
+true
+],
+[
+"Take the fifth entry off the list.",
+"destroy 5",
+"right",
+true
+],
+[
+"Remind me to top up the pension.",
+"add \"top up the pension\"",
+"right",
+true
+],
+[
+"Reword the workshop thing as \"get cat litter\". While you're at it: The defrost thing is sorted.",
+"edit 1 \"get cat litter\"; toggle 2",
+"right",
+true
+],
+[
+"Take the first entry off the list.",
+"destroy 1",
+"right",
+true
+],
+[
+"Take the fifth entry off the list.",
+"destroy 5",
+"right",
+true
+],
+[
+"Don't let me forget to send the deposit.",
+"nothing",
+"wrong",
+true
+],
+[
+"\"call the doctor's office\" should really be \"defrost the freezer\".",
+"edit 7 \"defrost the freezer\"",
+"right",
+true
+],
+[
+"Put the third entry back to open.",
+"toggle 3",
+"right",
+true
+],
+[
+"I already did \"stretch for ten minutes\".",
+"toggle 6",
+"right",
+true
+],
+[
+"Take the office bits off the list.",
+"destroy 4",
+"right",
+true
+],
+[
+"Sort this out.",
+"nothing",
+"right",
+true
+],
+[
+"The workshop thing is sorted. Oh, and Nothing here is actually finished, reset it.",
+"toggle 5; clear_completed",
+"wrong",
+true
+],
+[
+"The phone thing is not sorted yet. Oh, and Nothing here is actually finished, reset it.",
+"toggle 4; clear_completed",
+"wrong",
+true
+],
+[
+"I took care of all the groceries and purchases entries.",
+"nothing",
+"right",
+true
+],
+[
+"Stick \"get cat litter\" on there.",
+"add \"get cat litter\"",
+"right",
+true
+],
+[
+"Don't let me forget to buy wrapping paper.",
+"add \"buy wrapping paper\"",
+"right",
+true
+],
+[
+"Don't let me forget to charge the camera.",
+"nothing",
+"wrong",
+true
+],
+[
+"Everything to do with bills and banking is finished.",
+"nothing",
+"right",
+true
+],
+[
+"I took care of all the groceries and purchases entries.",
+"toggle 1; toggle 2; toggle 3",
+"refused",
+false
+],
+[
+"Put the first entry back to open.",
+"toggle 1",
+"right",
+true
+],
+[
+"I got through the whole list.",
+"toggle_all",
+"right",
+true
+],
+[
+"Stick \"reply to Priya's email\" on there.",
+"add \"reply to Priya's email\"",
+"right",
+true
+],
+[
+"I took care of all the housework entries. Oh, and Don't let me forget to go swimming.",
+"toggle 1; add \"don't let me forget to go swimming\"",
+"wrong",
+true
+],
+[
+"Scrap everything to do with medical and fitness.",
+"destroy 1; destroy 1; destroy 1; destroy 1",
+"refused",
+false
+],
+[
+"I took care of all the around the house entries.",
+"nothing",
+"right",
+true
+],
+[
+"Actually \"reply to Priya's email\" still needs doing.",
+"toggle 5",
+"right",
+true
+],
+[
+"The charger thing is not sorted yet.",
+"toggle 3",
+"right",
+true
+],
+[
+"Cross out the last entry.",
+"destroy 2",
+"wrong",
+true
+],
+[
+"\"dust the bookshelves\" should really be \"buy wrapping paper\".",
+"edit 2 \"buy wrapping paper\"",
+"right",
+true
+],
+[
+"How many lists can I have?",
+"nothing",
+"right",
+true
+],
+[
+"The sweep thing is not sorted yet.",
+"toggle 5",
+"right",
+true
+],
+[
+"Tidy away what's finished. Oh, and All of it is finished.",
+"clear_completed",
+"wrong",
+true
+],
+[
+"The deposit thing is not sorted yet.",
+"toggle 2",
+"right",
+true
+],
+[
+"I already did \"dust the bookshelves\".",
+"toggle 2",
+"right",
+true
+],
+[
+"Two things. done with \"replace the hallway bulb\" I got through the whole list.",
+"toggle 4",
+"wrong",
+true
+],
+[
+"Untick the lot.",
+"toggle 6",
+"wrong",
+true
+],
+[
+"You can tick the contact one, that got handled.",
+"toggle 2",
+"right",
+true
+],
+[
+"I'm not doing any of the around the house entries, bin them.",
+"destroy 2",
+"right",
+true
+],
+[
+"Remind me to call the doctor's office.",
+"add \"call the doctor's office\"",
+"right",
+true
+],
+[
+"I already did \"get cat litter\".",
+"toggle 5",
+"right",
+true
+],
+[
+"Stick \"dispute the card charge\" on there.",
+"add \"dispute the card charge\"",
+"right",
+true
+],
+[
+"Cross out the last entry.",
+"destroy 6",
+"wrong",
+true
+],
+[
+"The deposit thing is not sorted yet.",
+"toggle 1",
+"right",
+true
+],
+[
+"All of it is finished. While you're at it: Start the list over, all open.",
+"toggle_all; toggle_all",
+"wrong",
+true
+],
+[
+"I'm not doing any of the office entries, bin them.",
+"destroy 2; destroy 3",
+"wrong",
+true
+],
+[
+"Tidy away what's finished.",
+"clear_completed",
+"right",
+true
+],
+[
+"I don't need \"replace the hallway bulb\" anymore.",
+"destroy 3",
+"right",
+true
+],
+[
+"I was wrong, pension is still pending.",
+"toggle 4",
+"right",
+true
+],
+[
+"All of it is finished.",
+"toggle 1",
+"right",
+true
+],
+[
+"Reword the charger thing as \"book a blood test\".",
+"edit 3 \"book a blood test\"",
+"right",
+true
+],
+[
+"I don't need to see the finished stuff, remove it. Oh, and I don't need \"top up the pension\" anymore.",
+"show completed; destroy 2",
+"wrong",
+true
+],
+[
+"Take the second entry off the list.",
+"destroy 2",
+"right",
+true
+],
+[
+"I already did \"go swimming\".",
+"toggle 1",
+"right",
+true
+],
+[
+"\"get cat litter\" should really be \"defrost the freezer\".",
+"edit 2 \"defrost the freezer\"",
+"right",
+true
+],
+[
+"done with \"unclog the shower drain\" While you're at it: Remind me to check the train times.",
+"toggle 4; add \"remind me to check the train times\"",
+"wrong",
+true
+],
+[
+"Don't let me forget to order a phone charger.",
+"add \"order a phone charger\"",
+"right",
+true
+],
+[
+"I don't need to see the finished stuff, remove it.",
+"show finished",
+"refused",
+false
+],
+[
+"I got through the whole list.",
+"toggle_all",
+"right",
+true
+],
+[
+"I don't need \"apply for the visa\" anymore.",
+"destroy 5",
+"right",
+true
+],
+[
+"The charge thing is sorted.",
+"toggle 2",
+"right",
+true
+],
+[
+"Don't let me forget to check the train times.",
+"add \"don't let me forget to check the train times\"",
+"wrong",
+true
+],
+[
+"Two things. Nothing here is actually finished, reset it. Scrap everything to do with around the house.",
+"destroy 3; destroy 3",
+"wrong",
+true
+],
+[
+"\"book a room for the workshop\" should really be \"get cat litter\". Oh, and one more thing for the list: dust the bookshelves",
+"edit 2 \"get cat litter\"; add \"dust the bookshelves\"",
+"right",
+true
+],
+[
+"Nothing here is actually finished, reset it.",
+"nothing",
+"right",
+true
+],
+[
+"one more thing for the list: exchange some currency",
+"add \"exchange some currency\"",
+"right",
+true
+],
+[
+"Take the holiday bits off the list. While you're at it: Reword the wrapping thing as \"buy tomatoes\".",
+"destroy 2; edit 2 \"buy tomatoes\"",
+"wrong",
+true
+],
+[
+"Everything to do with bills and banking is finished.",
+"nothing",
+"right",
+true
+],
+[
+"I already did \"book a blood test\".",
+"nothing",
+"right",
+true
+],
+[
+"The invoice thing is not sorted yet.",
+"toggle 3",
+"right",
+true
+],
+[
+"I don't need \"draft the job posting\" anymore.",
+"destroy 1",
+"right",
+true
+],
+[
+"Good morning!",
+"nothing",
+"right",
+true
+],
+[
+"Stick \"order a phone charger\" on there.",
+"add \"order a phone charger\"",
+"right",
+true
+],
+[
+"Two things. Take the bills and banking bits off the list. Untick the lot.",
+"toggle 1; toggle 2",
+"wrong",
+true
+],
+[
+"Take the first entry off the list.",
+"destroy 1",
+"right",
+true
+],
+[
+"Don't let me forget to replace the hallway bulb.",
+"add \"don't let me forget to replace the hallway bulb\"",
+"wrong",
+true
+],
+[
+"Bin the ticked ones. Oh, and Take the medical and fitness bits off the list.",
+"toggle 2; toggle 4; destroy 2; destroy 4",
+"wrong",
+true
+],
+[
+"\"send the invoice to Acme\" should really be \"go swimming\".",
+"edit 2 \"go swimming\"",
+"right",
+true
+],
+[
+"Don't let me forget to defrost the freezer.",
+"add \"defrost the freezer\"",
+"right",
+true
+],
+[
+"Tick the lot.",
+"toggle 5",
+"wrong",
+true
+],
+[
+"Two things. Untick the lot. Actually \"grab oat milk\" still needs doing.",
+"toggle 1",
+"wrong",
+true
+],
+[
+"All of it is finished.",
+"toggle_all",
+"right",
+true
+],
+[
+"You can tick the Acme one, that got handled.",
+"toggle 4",
+"right",
+true
+],
+[
+"done with \"stretch for ten minutes\"",
+"toggle 1",
+"right",
+true
+],
+[
+"I was wrong, charge is still pending.",
+"toggle 3",
+"right",
+true
+],
+[
+"Make the last entry read check the train times instead. While you're at it: Cross out the around the house bits.",
+"edit 4 \"check the train times\"; toggle 3",
+"wrong",
+true
+],
+[
+"All of it is finished.",
+"toggle_all",
+"wrong",
+true
+],
+[
+"Nothing here is actually finished, reset it.",
+"nothing",
+"wrong",
+true
+],
+[
+"Two things. I got through the whole list. Put the first entry back to open.",
+"toggle 1",
+"right",
+true
+],
+[
+"done with \"reply to Priya's email\"",
+"toggle 1",
+"right",
+true
+],
+[
+"Forget about \"dust the bookshelves\".",
+"nothing",
+"right",
+true
+],
+[
+"Start the list over, all open.",
+"nothing",
+"right",
+true
+],
+[
+"You know what to do.",
+"nothing",
+"right",
+true
+],
+[
+"\"replace the hallway bulb\" should really be \"book a blood test\".",
+"edit 2 \"book a blood test\"",
+"right",
+true
+],
+[
+"I took care of all the groceries and purchases entries.",
+"toggle 7",
+"right",
+true
+],
+[
+"one more thing for the list: send the invoice to Acme",
+"add \"send the invoice to Acme\"",
+"right",
+true
+],
+[
+"Stick \"sweep the balcony\" on there.",
+"add \"sweep the balcony\"",
+"right",
+true
+],
+[
+"Take the first entry off the list.",
+"destroy 1",
+"right",
+true
+],
+[
+"Two things. I got through the whole list. Start the list over, all open.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Actually \"charge the camera\" still needs doing.",
+"toggle 1",
+"right",
+true
+],
+[
+"I already did \"finish the budget forecast\".",
+"toggle 6",
+"right",
+true
+],
+[
+"Forget about \"dispute the card charge\".",
+"destroy 1",
+"right",
+true
+],
+[
+"Two things. Start the list over, all open. Hide everything that isn't unfinished.",
+"toggle_all; toggle_all; toggle_all; toggle_all",
+"wrong",
+true
+],
+[
+"Cross out the first entry.",
+"toggle 1",
+"right",
+true
+],
+[
+"You can tick the check one, that got handled. While you're at it: I was wrong, grab is still pending.",
+"toggle 5; toggle 3",
+"right",
+true
+],
+[
+"Hide everything that isn't unfinished.",
+"show unfinished",
+"refused",
+false
+],
+[
+"Stick \"replace the hallway bulb\" on there.",
+"add \"replace the hallway bulb\"",
+"right",
+true
+],
+[
+"I was wrong, order is still pending. While you're at it: Nothing here is actually finished, reset it.",
+"toggle 1",
+"wrong",
+true
+],
+[
+"I don't need to see the finished stuff, remove it.",
+"show finished",
+"refused",
+false
+],
+[
+"Forget about \"book a blood test\".",
+"destroy 4",
+"right",
+true
+],
+[
+"Two things. Nothing here is actually finished, reset it. Cross out the around the house bits.",
+"toggle 4; toggle 3; toggle 4; toggle 3",
+"wrong",
+true
+],
+[
+"The paper thing is not sorted yet.",
+"toggle 2",
+"right",
+true
+],
+[
+"Put the first entry back to open.",
+"toggle 1",
+"right",
+true
+],
+[
+"Sort this out.",
+"nothing",
+"right",
+true
+],
+[
+"Take the office bits off the list.",
+"destroy 1",
+"wrong",
+true
+],
+[
+"Let me see just the unfinished ones.",
+"show unfinished",
+"refused",
+false
+],
+[
+"Hide everything that isn't all. Oh, and Scrap the freezer thing.",
+"destroy 5",
+"wrong",
+true
+],
+[
+"Cross out the second entry.",
+"toggle 2",
+"right",
+true
+],
+[
+"I'm not doing any of the bills and banking entries, bin them.",
+"nothing",
+"wrong",
+true
+],
+[
+"The stretch thing is sorted.",
+"toggle 3",
+"right",
+true
+],
+[
+"Scrap the tomatoes thing.",
+"destroy 4",
+"right",
+true
+],
+[
+"Bin the ticked ones.",
+"toggle 1; toggle 4",
+"wrong",
+true
+],
+[
+"Let me see just the unfinished ones.",
+"show unfinished",
+"refused",
+false
+],
+[
+"The contract thing is not sorted yet.",
+"toggle 1",
+"right",
+true
+],
+[
+"done with \"exchange some currency\"",
+"toggle 3",
+"right",
+true
+],
+[
+"You can tick the times one, that got handled.",
+"toggle 4",
+"right",
+true
+],
+[
+"Nothing here is actually finished, reset it.",
+"nothing",
+"wrong",
+true
+],
+[
+"done with \"check the train times\"",
+"toggle 4",
+"right",
+true
+],
+[
+"Put the last entry back to open.",
+"toggle 2",
+"right",
+true
+],
+[
+"The finish thing is sorted.",
+"toggle 3",
+"right",
+true
+],
+[
+"Tidy away what's finished.",
+"nothing",
+"wrong",
+true
+],
+[
+"Start the list over, all open.",
+"nothing",
+"right",
+true
+],
+[
+"I got through the whole list.",
+"toggle_all",
+"right",
+true
+],
+[
+"I don't need \"pay the water bill\" anymore.",
+"destroy 1",
+"right",
+true
+],
+[
+"one more thing for the list: order new contact lenses",
+"add \"order new contact lenses\"",
+"right",
+true
+],
+[
+"Make the third entry read buy wrapping paper instead.",
+"edit 3 \"buy wrapping paper\"",
+"right",
+true
+],
+[
+"Take the holiday bits off the list.",
+"toggle 2",
+"wrong",
+true
+],
+[
+"I don't need to see the finished stuff, remove it.",
+"nothing",
+"right",
+true
+],
+[
+"I don't need to see the finished stuff, remove it.",
+"nothing",
+"wrong",
+true
+],
+[
+"I already did \"get cat litter\". Oh, and Let me see just the finished ones.",
+"show completed",
+"wrong",
+true
+],
+[
+"I don't need to see the finished stuff, remove it.",
+"show finished",
+"refused",
+false
+],
+[
+"Make the second entry read send the deposit instead.",
+"edit 2 \"send the deposit\"",
+"right",
+true
+],
+[
+"Hide everything that isn't unfinished.",
+"clear_completed",
+"wrong",
+true
+],
+[
+"I'm not doing any of the office entries, bin them.",
+"destroy 4; destroy 4",
+"wrong",
+true
+],
+[
+"Forget about \"stretch for ten minutes\".",
+"destroy 1",
+"right",
+true
+],
+[
+"Stick \"call the doctor's office\" on there.",
+"add \"call the doctor's office\"",
+"right",
+true
+],
+[
+"Remind me to pay the water bill. While you're at it: Hide everything that isn't finished.",
+"add \"pay the water bill\"",
+"wrong",
+true
+],
+[
+"I don't need to see the finished stuff, remove it.",
+"nothing",
+"right",
+true
+],
+[
+"Sort this out.",
+"nothing",
+"right",
+true
+],
+[
+"Start the list over, all open.",
+"nothing",
+"right",
+true
+],
+[
+"Tick the lot.",
+"nothing",
+"wrong",
+true
+],
+[
+"You know what to do.",
+"nothing",
+"right",
+true
+],
+[
+"I don't need \"book a room for the workshop\" anymore.",
+"destroy 3",
+"right",
+true
+],
+[
+"Take the holiday bits off the list.",
+"destroy 1",
+"wrong",
+true
+],
+[
+"All of it is finished. While you're at it: Tidy away what's finished.",
+"toggle_all; toggle_all",
+"wrong",
+true
+],
+[
+"\"grab oat milk\" should really be \"something else\".",
+"add \"something else\"",
+"wrong",
+true
+],
+[
+"Let me see just the finished ones.",
+"show completed",
+"right",
+true
+],
+[
+"Make the fourth entry read go swimming instead.",
+"edit 4 \"go swimming\"",
+"right",
+true
+],
+[
+"The doctor's thing is sorted.",
+"toggle 1",
+"right",
+true
+],
+[
+"Nothing here is actually finished, reset it.",
+"nothing",
+"wrong",
+true
+],
+[
+"Two things. Reword the minutes thing as \"grab oat milk\". I already did \"stretch for ten minutes\".",
+"edit 3 \"grab oat milk\"",
+"wrong",
+true
+],
+[
+"Good morning!",
+"nothing",
+"right",
+true
+],
+[
+"Remind me to book a hotel in Kyoto.",
+"add \"book a hotel in Kyoto\"",
+"right",
+true
+],
+[
+"Two things. Untick the lot. I took care of all the medical and fitness entries.",
+"nothing",
+"wrong",
+true
+],
+[
+"Scrap everything to do with holiday.",
+"destroy 1",
+"right",
+true
+],
+[
+"How many lists can I have?",
+"nothing",
+"right",
+true
+],
+[
+"\"check the train times\" should really be \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"I'm not doing any of the office entries, bin them.",
+"destroy 1; destroy 2",
+"wrong",
+true
+],
+[
+"Untick the lot. While you're at it: Tidy away what's finished.",
+"toggle 1",
+"wrong",
+true
+],
+[
+"All of it is finished. While you're at it: Stick \"replace the hallway bulb\" on there.",
+"toggle 4; add \"replace the hallway bulb\"",
+"wrong",
+true
+],
+[
+"one more thing for the list: buy wrapping paper",
+"add \"buy wrapping paper\"",
+"right",
+true
+],
+[
+"one more thing for the list: exchange some currency",
+"add \"exchange some currency\"",
+"right",
+true
+],
+[
+"I got through the whole list. Oh, and Reword the order thing as \"dispute the card charge\".",
+"toggle_all; edit 5 \"dispute the card charge\"",
+"wrong",
+true
+],
+[
+"Let me see just the finished ones.",
+"show completed",
+"right",
+true
+],
+[
+"I don't need \"top up the pension\" anymore.",
+"destroy 2",
+"right",
+true
+],
+[
+"Don't let me forget to grab oat milk. While you're at it: \"call the doctor's office\" should really be \"send the deposit\".",
+"edit 1 \"send the deposit\"",
+"wrong",
+true
+],
+[
+"Don't let me forget to call the doctor's office.",
+"toggle 5",
+"wrong",
+true
+],
+[
+"Scrap the apply thing.",
+"destroy 6",
+"right",
+true
+],
+[
+"Take the third entry off the list.",
+"destroy 3",
+"right",
+true
+],
+[
+"one more thing for the list: charge the camera Oh, and Bin the ticked ones.",
+"add \"charge the camera\"; toggle 3",
+"wrong",
+true
+],
+[
+"\"apply for the visa\" should really be \"send the invoice to Acme\".",
+"edit 2 \"send the invoice to Acme\"",
+"right",
+true
+],
+[
+"Cross out the last entry.",
+"destroy 7",
+"wrong",
+true
+],
+[
+"Actually \"unclog the shower drain\" still needs doing.",
+"toggle 5",
+"right",
+true
+],
+[
+"\"call the doctor's office\" should really be \"charge the camera\".",
+"edit 5 \"charge the camera\"",
+"right",
+true
+],
+[
+"Bin the ticked ones. While you're at it: Don't let me forget to stretch for ten minutes.",
+"toggle 1; toggle 2; toggle 3; toggle 4; toggle 5",
+"wrong",
+true
+],
+[
+"All of it is finished.",
+"toggle_all",
+"wrong",
+true
+],
+[
+"I only care about unfinished right now. While you're at it: Forget about \"apply for the visa\".",
+"toggle 3",
+"wrong",
+true
+],
+[
+"Scrap everything to do with errands at the shops.",
+"destroy 1; destroy 3",
+"wrong",
+true
+],
+[
+"Two things. Untick the lot. I'm not doing any of the office entries, bin them.",
+"toggle 1; toggle 3; clear_completed",
+"wrong",
+true
+],
+[
+"Put the third entry back to open.",
+"toggle 3",
+"right",
+true
+],
+[
+"Cross out the medical and fitness bits. While you're at it: Reword the budget thing as \"grab oat milk\".",
+"destroy 4; destroy 4; edit 7 \"grab oat milk\"",
+"refused",
+false
+],
+[
+"Remind me to replace the hallway bulb.",
+"nothing",
+"wrong",
+true
+],
+[
+"Reword the milk thing as \"unclog the shower drain\".",
+"edit 3 \"unclog the shower drain\"",
+"right",
+true
+],
+[
+"Remind me to top up the pension.",
+"add \"top up the pension\"",
+"right",
+true
+],
+[
+"Tick the lot.",
+"nothing",
+"wrong",
+true
+],
+[
+"I took care of all the holiday entries.",
+"toggle 4",
+"wrong",
+true
+],
+[
+"All of it is finished.",
+"toggle_all",
+"right",
+true
+],
+[
+"Untick the lot. While you're at it: I got through the whole list.",
+"toggle 1; toggle_all",
+"right",
+true
+],
+[
+"I don't need \"call the doctor's office\" anymore.",
+"destroy 1",
+"right",
+true
+],
+[
+"Put the last entry back to open.",
+"toggle 2",
+"right",
+true
+],
+[
+"Two things. Tick the lot. Reword the freezer thing as \"go swimming\".",
+"toggle 1; edit 2 \"go swimming\"",
+"wrong",
+true
+],
+[
+"I was wrong, card is still pending. Oh, and Bin the ticked ones.",
+"toggle 6; toggle 3",
+"wrong",
+true
+],
+[
+"Remind me to defrost the freezer.",
+"add \"defrost the freezer\"",
+"right",
+true
+],
+[
+"Scrap the finish thing.",
+"destroy 1",
+"right",
+true
+],
+[
+"Nothing here is actually finished, reset it.",
+"clear_completed",
+"wrong",
+true
+],
+[
+"Everything to do with bills and banking is finished.",
+"nothing",
+"right",
+true
+],
+[
+"I'm not doing any of the around the house entries, bin them.",
+"destroy 3",
+"right",
+true
+],
+[
+"ok",
+"nothing",
+"right",
+true
+],
+[
+"Cross out the first entry.",
+"destroy 1",
+"wrong",
+true
+],
+[
+"Everything to do with medical and fitness is finished.",
+"nothing",
+"wrong",
+true
+],
+[
+"Make the last entry read apply for the visa instead.",
+"edit 6 \"apply for the visa\"",
+"right",
+true
+],
+[
+"Make the second entry read finish the budget forecast instead.",
+"edit 2 \"finish the budget forecast\"",
+"right",
+true
+],
+[
+"You know what to do.",
+"nothing",
+"right",
+true
+],
+[
+"\"unclog the shower drain\" should really be \"check the train times\". Oh, and You can tick the budget one, that got handled.",
+"edit 1 \"check the train times\"; toggle 2",
+"right",
+true
+],
+[
+"Forget about \"defrost the freezer\".",
+"destroy 4",
+"right",
+true
+],
+[
+"Everything to do with medical and fitness is finished.",
+"toggle 2; toggle 2",
+"wrong",
+true
+],
+[
+"Don't let me forget to defrost the freezer.",
+"add \"defrost the freezer\"",
+"right",
+true
+],
+[
+"Start the list over, all open.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Cross out the medical and fitness bits.",
+"toggle 3",
+"right",
+true
+],
+[
+"Reword the exchange thing as \"apply for the visa\".",
+"edit 5 \"apply for the visa\"",
+"right",
+true
+],
+[
+"Untick the lot. While you're at it: Bin the ticked ones.",
+"toggle 1; toggle 5",
+"refused",
+false
+],
+[
+"Good morning!",
+"nothing",
+"right",
+true
+],
+[
+"I already did \"reply to Priya's email\".",
+"toggle 2",
+"right",
+true
+],
+[
+"I was wrong, camera is still pending.",
+"toggle 3",
+"right",
+true
+],
+[
+"Untick the lot.",
+"toggle 1",
+"wrong",
+true
+],
+[
+"I took care of all the holiday entries.",
+"toggle 2",
+"right",
+true
+],
+[
+"I took care of all the office entries. While you're at it: Stick \"dust the bookshelves\" on there.",
+"add \"dust the bookshelves\"",
+"right",
+true
+],
+[
+"Sort this out.",
+"nothing",
+"right",
+true
+],
+[
+"Make the first entry read call the doctor's office instead.",
+"edit 1 \"call the doctor's office\"",
+"right",
+true
+],
+[
+"Untick the lot.",
+"toggle 6",
+"wrong",
+true
+],
+[
+"Two things. Cross out the holiday bits. Start the list over, all open.",
+"toggle 2; toggle 4; toggle 5; toggle 4",
+"wrong",
+true
+],
+[
+"I already did \"review the phone contract\".",
+"toggle 4",
+"right",
+true
+],
+[
+"Cross out the sixth entry.",
+"toggle 6",
+"right",
+true
+],
+[
+"You can tick the defrost one, that got handled.",
+"toggle 2",
+"right",
+true
+],
+[
+"done with \"dispute the card charge\"",
+"toggle 1",
+"right",
+true
+],
+[
+"Forget about \"buy tomatoes\".",
+"destroy 1",
+"right",
+true
+],
+[
+"Take the third entry off the list.",
+"destroy 3",
+"right",
+true
+],
+[
+"Cross out the first entry.",
+"destroy 1",
+"wrong",
+true
+],
+[
+"The paper thing is sorted.",
+"toggle 3",
+"right",
+true
+],
+[
+"Tidy away what's finished.",
+"clear_completed",
+"right",
+true
+],
+[
+"Cross out the first entry.",
+"toggle 1",
+"right",
+true
+],
+[
+"I already did \"exchange some currency\".",
+"toggle 1",
+"right",
+true
+],
+[
+"Tidy away what's finished.",
+"nothing",
+"wrong",
+true
+],
+[
+"one more thing for the list: book a blood test",
+"add \"book a blood test\"",
+"right",
+true
+],
+[
+"Remind me to send the deposit.",
+"toggle 7",
+"wrong",
+true
+],
+[
+"Nothing here is actually finished, reset it. While you're at it: one more thing for the list: pay the water bill",
+"add \"pay the water bill\"",
+"right",
+true
+],
+[
+"Sort this out.",
+"nothing",
+"right",
+true
+],
+[
+"Cross out the first entry. While you're at it: I was wrong, times is still pending.",
+"toggle 1",
+"wrong",
+true
+],
+[
+"I took care of all the bills and banking entries.",
+"toggle 4",
+"right",
+true
+],
+[
+"How many lists can I have?",
+"nothing",
+"right",
+true
+],
+[
+"I already did \"order a phone charger\".",
+"nothing",
+"right",
+true
+],
+[
+"Don't let me forget to top up the pension. Oh, and I only care about finished right now.",
+"add \"top up the pension\"; toggle 4",
+"wrong",
+true
+],
+[
+"How many lists can I have?",
+"nothing",
+"right",
+true
+],
+[
+"Cross out the around the house bits. Oh, and I was wrong, some is still pending.",
+"toggle 4; toggle 5",
+"wrong",
+true
+],
+[
+"Start the list over, all open.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Reword the swimming thing as \"dispute the card charge\".",
+"edit 3 \"dispute the card charge\"",
+"right",
+true
+],
+[
+"Remind me to book a hotel in Kyoto.",
+"add \"book a hotel in Kyoto\"",
+"right",
+true
+],
+[
+"Stick \"sweep the balcony\" on there.",
+"add \"sweep the balcony\"",
+"right",
+true
+],
+[
+"Hide everything that isn't unfinished.",
+"nothing",
+"wrong",
+true
+],
+[
+"Cross out the second entry.",
+"toggle 2",
+"right",
+true
+],
+[
+"I already did \"go swimming\".",
+"toggle 5",
+"right",
+true
+],
+[
+"Actually \"draft the job posting\" still needs doing. While you're at it: Remind me to top up the pension.",
+"toggle 4; add \"top up the pension\"",
+"right",
+true
+],
+[
+"I already did \"go swimming\". While you're at it: Cross out the bills and banking bits.",
+"toggle 6",
+"right",
+true
+],
+[
+"All of it is finished.",
+"toggle_all",
+"right",
+true
+],
+[
+"Reword the litter thing as \"book a blood test\".",
+"edit 2 \"book a blood test\"",
+"right",
+true
+],
+[
+"done with \"draft the job posting\"",
+"toggle 3",
+"right",
+true
+],
+[
+"Bin the ticked ones.",
+"nothing",
+"wrong",
+true
+],
+[
+"Hide everything that isn't finished.",
+"nothing",
+"wrong",
+true
+],
+[
+"one more thing for the list: finish the budget forecast",
+"add \"finish the budget forecast\"",
+"right",
+true
+],
+[
+"Actually \"go swimming\" still needs doing.",
+"toggle 3",
+"right",
+true
+],
+[
+"Stick \"buy wrapping paper\" on there. While you're at it: Start the list over, all open.",
+"add \"buy wrapping paper\"; toggle_all",
+"wrong",
+true
+],
+[
+"\"replace the hallway bulb\" should really be \"buy wrapping paper\".",
+"edit 2 \"buy wrapping paper\"",
+"right",
+true
+],
+[
+"done with \"grab oat milk\"",
+"toggle 1",
+"right",
+true
+],
+[
+"Everything to do with around the house is finished. Oh, and Start the list over, all open.",
+"toggle 1; toggle 2; toggle 3; toggle 4; toggle 5; toggle 4",
+"wrong",
+true
+],
+[
+"I only care about finished right now.",
+"nothing",
+"wrong",
+true
+],
+[
+"Don't let me forget to top up the pension.",
+"add \"top up the pension\"",
+"right",
+true
+],
+[
+"Start the list over, all open.",
+"clear_completed",
+"wrong",
+true
+],
+[
+"I'm not doing any of the holiday entries, bin them. While you're at it: Don't let me forget to top up the pension.",
+"toggle 5; toggle 6",
+"wrong",
+true
+],
+[
+"Cross out the second entry.",
+"toggle 2",
+"right",
+true
+],
+[
+"ok",
+"nothing",
+"right",
+true
+],
+[
+"Stick \"draft the job posting\" on there.",
+"add \"draft the job posting\"",
+"right",
+true
+],
+[
+"All of it is finished. While you're at it: one more thing for the list: charge the camera",
+"add \"charge the camera\"",
+"wrong",
+true
+],
+[
+"The deposit thing is sorted.",
+"toggle 4",
+"right",
+true
+],
+[
+"\"order new contact lenses\" should really be \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"I'm not doing any of the office entries, bin them.",
+"destroy 4",
+"right",
+true
+],
+[
+"Let me see just the unfinished ones.",
+"show unfinished",
+"refused",
+false
+],
+[
+"Let me see just the finished ones. While you're at it: Tidy away what's finished.",
+"show completed",
+"wrong",
+true
+],
+[
+"Don't let me forget to top up the pension.",
+"add \"top up the pension\"",
+"right",
+true
+],
+[
+"I don't need \"defrost the freezer\" anymore.",
+"destroy 5",
+"right",
+true
+],
+[
+"one more thing for the list: call the doctor's office",
+"add \"call the doctor's office\"",
+"right",
+true
+],
+[
+"one more thing for the list: buy tomatoes",
+"add \"buy tomatoes\"",
+"right",
+true
+],
+[
+"Stick \"reply to Priya's email\" on there.",
+"add \"reply to Priya's email\"",
+"right",
+true
+],
+[
+"I took care of all the holiday entries.",
+"nothing",
+"wrong",
+true
+],
+[
+"Let me see just the finished ones.",
+"show completed",
+"right",
+true
+],
+[
+"Remind me to get cat litter.",
+"nothing",
+"wrong",
+true
+],
+[
+"All of it is finished.",
+"toggle_all",
+"right",
+true
+],
+[
+"Cross out the around the house bits.",
+"nothing",
+"wrong",
+true
+],
+[
+"Put the third entry back to open.",
+"toggle 3",
+"right",
+true
+],
+[
+"I already did \"book a room for the workshop\".",
+"toggle 2",
+"right",
+true
+],
+[
+"I was wrong, currency is still pending.",
+"toggle 1",
+"right",
+true
+],
+[
+"\"grab oat milk\" should really be \"stretch for ten minutes\".",
+"edit 1 \"stretch for ten minutes\"",
+"right",
+true
+],
+[
+"Scrap the draft thing.",
+"destroy 2",
+"right",
+true
+],
+[
+"All of it is finished.",
+"nothing",
+"wrong",
+true
+],
+[
+"Untick the lot. While you're at it: The camera thing is not sorted yet.",
+"toggle 1",
+"right",
+true
+],
+[
+"Stick \"buy tomatoes\" on there.",
+"add \"buy tomatoes\"",
+"right",
+true
+],
+[
+"Make the last entry read review the phone contract instead.",
+"edit 2 \"review the phone contract\"",
+"right",
+true
+],
+[
+"Hide everything that isn't unfinished.",
+"nothing",
+"wrong",
+true
+],
+[
+"Cross out the medical and fitness bits.",
+"destroy 4; destroy 1",
+"wrong",
+true
+],
+[
+"Hide everything that isn't unfinished.",
+"clear_completed",
+"wrong",
+true
+],
+[
+"Forget about \"draft the job posting\".",
+"destroy 3",
+"right",
+true
+],
+[
+"Take the medical and fitness bits off the list.",
+"toggle 6",
+"wrong",
+true
+],
+[
+"Hide everything that isn't finished.",
+"nothing",
+"wrong",
+true
+],
+[
+"Make the fifth entry read send the invoice to Acme instead.",
+"edit 5 \"send the invoice to Acme\"",
+"right",
+true
+],
+[
+"\"order a phone charger\" should really be \"book a blood test\". While you're at it: Tidy away what's finished.",
+"edit 5 \"book a blood test\"; toggle 5",
+"wrong",
+true
+],
+[
+"Put the fourth entry back to open.",
+"toggle 4",
+"right",
+true
+],
+[
+"You know what to do.",
+"nothing",
+"right",
+true
+],
+[
+"I took care of all the office entries. Oh, and Stick \"pay the water bill\" on there.",
+"toggle 3; add \"pay the water bill\"",
+"right",
+true
+],
+[
+"\"order new contact lenses\" should really be \"dust the bookshelves\".",
+"edit 2 \"dust the bookshelves\"",
+"right",
+true
+],
+[
+"Stick \"exchange some currency\" on there.",
+"add \"exchange some currency\"",
+"right",
+true
+],
+[
+"Two things. Forget about \"dust the bookshelves\". I don't need to see the finished stuff, remove it.",
+"destroy 2",
+"wrong",
+true
+],
+[
+"I took care of all the around the house entries.",
+"toggle 2",
+"right",
+true
+],
+[
+"Two things. Actually \"unclog the shower drain\" still needs doing. Nothing here is actually finished, reset it.",
+"toggle 4; toggle_all; toggle_all",
+"right",
+true
+],
+[
+"I was wrong, bookshelves is still pending.",
+"toggle 1",
+"right",
+true
+],
+[
+"Reword the balcony thing as \"stretch for ten minutes\". Oh, and You can tick the visa one, that got handled.",
+"edit 2 \"stretch for ten minutes\"; toggle 1",
+"right",
+true
+],
+[
+"You know what to do.",
+"nothing",
+"right",
+true
+],
+[
+"done with \"charge the camera\"",
+"toggle 1",
+"right",
+true
+],
+[
+"done with \"go swimming\"",
+"toggle 2",
+"right",
+true
+],
+[
+"I got through the whole list.",
+"toggle_all",
+"right",
+true
+],
+[
+"Let me see just the finished ones.",
+"show completed",
+"right",
+true
+],
+[
+"Forget about \"dust the bookshelves\".",
+"destroy 1",
+"right",
+true
+],
+[
+"Actually \"reply to Priya's email\" still needs doing.",
+"toggle 1",
+"right",
+true
+],
+[
+"Don't let me forget to pay the water bill. Oh, and Scrap the invoice thing.",
+"add \"don't forget to pay the water bill\"",
+"wrong",
+true
+],
+[
+"Make the second entry read charge the camera instead.",
+"edit 2 \"charge the camera\"",
+"right",
+true
+],
+[
+"I got through the whole list.",
+"toggle_all",
+"right",
+true
+],
+[
+"I only care about finished right now.",
+"clear_completed",
+"wrong",
+true
+],
+[
+"Start the list over, all open.",
+"toggle_all; toggle_all",
+"wrong",
+true
+],
+[
+"Everything to do with bills and banking is finished.",
+"toggle 2",
+"right",
+true
+],
+[
+"Let me see just the unfinished ones.",
+"show unfinished",
+"refused",
+false
+],
+[
+"Stick \"dispute the card charge\" on there.",
+"add \"dispute the card charge\"",
+"right",
+true
+],
+[
+"one more thing for the list: buy tomatoes",
+"add \"buy tomatoes\"",
+"right",
+true
+],
+[
+"I was wrong, posting is still pending. Oh, and Nothing here is actually finished, reset it.",
+"toggle 1; toggle_all; toggle_all",
+"wrong",
+true
+],
+[
+"Remind me to charge the camera.",
+"nothing",
+"wrong",
+true
+],
+[
+"\"grab oat milk\" should really be \"something else\".",
+"add \"something else\"",
+"wrong",
+true
+],
+[
+"Two things. Bin the ticked ones. \"get cat litter\" should really be \"defrost the freezer\".",
+"toggle 2; edit 2 \"defrost the freezer\"",
+"wrong",
+true
+],
+[
+"I'm not doing any of the holiday entries, bin them.",
+"toggle 2; toggle 3",
+"wrong",
+true
+],
+[
+"How many lists can I have?",
+"nothing",
+"right",
+true
+],
+[
+"I already did \"defrost the freezer\". Oh, and one more thing for the list: dispute the card charge",
+"toggle 2; add \"dispute the card charge\"",
+"right",
+true
+],
+[
+"Everything to do with bills and banking is finished.",
+"nothing",
+"wrong",
+true
+],
+[
+"Take the second entry off the list. While you're at it: \"reply to Priya's email\" should really be \"sweep the balcony\".",
+"edit 2 \"sweep the balcony\"",
+"wrong",
+true
+],
+[
+"Two things. You can tick the pension one, that got handled. I don't need to see the finished stuff, remove it.",
+"toggle 3; destroy 3",
+"wrong",
+true
+],
+[
+"Reword the order thing as \"send the invoice to Acme\".",
+"edit 1 \"send the invoice to Acme\"",
+"right",
+true
+],
+[
+"Cross out the first entry.",
+"destroy 1",
+"wrong",
+true
+],
+[
+"I don't need to see the finished stuff, remove it. Oh, and Untick the lot.",
+"toggle 1",
+"wrong",
+true
+],
+[
+"Two things. Nothing here is actually finished, reset it. Scrap the workshop thing.",
+"destroy 3",
+"right",
+true
+],
+[
+"Tick the lot. Oh, and Don't let me forget to order new contact lenses.",
+"toggle 3; add \"don't let me forget to order new contact lenses\"",
+"wrong",
+true
+],
+[
+"Untick the lot.",
+"toggle 1",
+"wrong",
+true
+],
+[
+"Make the first entry read stretch for ten minutes instead. Oh, and I don't need \"draft the job posting\" anymore.",
+"edit 1 \"stretch for ten minutes\"; destroy 5",
+"right",
+true
+],
+[
+"Make the third entry read stretch for ten minutes instead.",
+"edit 3 \"stretch for ten minutes\"",
+"right",
+true
+],
+[
+"Everything to do with office is finished. Oh, and All of it is finished.",
+"nothing",
+"wrong",
+true
+],
+[
+"Bin the ticked ones.",
+"nothing",
+"wrong",
+true
+],
+[
+"Remind me to call the doctor's office.",
+"add \"call the doctor's office\"",
+"right",
+true
+],
+[
+"Everything to do with errands at the shops is finished.",
+"nothing",
+"right",
+true
+],
+[
+"Hide everything that isn't finished.",
+"nothing",
+"wrong",
+true
+],
+[
+"Everything to do with holiday is finished. Oh, and Scrap everything to do with office.",
+"toggle 5; toggle 1; toggle 2; toggle 3",
+"refused",
+false
+],
+[
+"You can tick the tomatoes one, that got handled.",
+"toggle 1",
+"right",
+true
+],
+[
+"Put the fourth entry back to open.",
+"toggle 4",
+"right",
+true
+],
+[
+"done with \"review the phone contract\"",
+"toggle 2",
+"right",
+true
+],
+[
+"All of it is finished.",
+"toggle_all",
+"wrong",
+true
+],
+[
+"Tick the lot.",
+"toggle 1",
+"wrong",
+true
+],
+[
+"Make the second entry read top up the pension instead.",
+"edit 2 \"top up the pension\"",
+"right",
+true
+],
+[
+"Make the first entry read book a room for the workshop instead.",
+"edit 1 \"book a room for the workshop\"",
+"right",
+true
+],
+[
+"I'm not doing any of the holiday entries, bin them.",
+"nothing",
+"wrong",
+true
+],
+[
+"Take the groceries and purchases bits off the list.",
+"destroy 2",
+"right",
+true
+],
+[
+"Let me see just the finished ones. Oh, and one more thing for the list: exchange some currency",
+"show completed; add \"exchange some currency\"",
+"right",
+true
+],
+[
+"Two things. Remind me to dust the bookshelves. All of it is finished.",
+"add \"dust the bookshelves\"; toggle_all",
+"right",
+true
+],
+[
+"Two things. All of it is finished. Nothing here is actually finished, reset it.",
+"clear_completed",
+"wrong",
+true
+],
+[
+"I'm not doing any of the holiday entries, bin them.",
+"nothing",
+"wrong",
+true
+],
+[
+"Nothing here is actually finished, reset it. Oh, and Bin the ticked ones.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"one more thing for the list: stretch for ten minutes",
+"add \"stretch for ten minutes\"",
+"right",
+true
+],
+[
+"Let me see just the all ones.",
+"show all ones",
+"refused",
+false
+],
+[
+"I already did \"call the doctor's office\".",
+"nothing",
+"right",
+true
+],
+[
+"Everything to do with medical and fitness is finished. Oh, and Stick \"defrost the freezer\" on there.",
+"add \"defrost the freezer\"",
+"right",
+true
+],
+[
+"Put the first entry back to open.",
+"toggle 1",
+"right",
+true
+],
+[
+"done with \"buy tomatoes\"",
+"toggle 5",
+"right",
+true
+],
+[
+"Actually \"draft the job posting\" still needs doing.",
+"toggle 5",
+"right",
+true
+],
+[
+"Let me see just the all ones.",
+"show all",
+"right",
+true
+],
+[
+"Tidy away what's finished.",
+"nothing",
+"right",
+true
+],
+[
+"I took care of all the housework entries.",
+"toggle 1",
+"right",
+true
+],
+[
+"Bin the ticked ones.",
+"toggle 1; toggle 4",
+"wrong",
+true
+],
+[
+"\"exchange some currency\" should really be \"order new contact lenses\".",
+"edit 4 \"order new contact lenses\"",
+"right",
+true
+],
+[
+"one more thing for the list: defrost the freezer While you're at it: Scrap the bill thing.",
+"add \"defrost the freezer\"; toggle 1",
+"wrong",
+true
+],
+[
+"done with \"buy tomatoes\"",
+"toggle 3",
+"right",
+true
+],
+[
+"Put the fifth entry back to open. While you're at it: The pension thing is sorted.",
+"toggle 5",
+"wrong",
+true
+],
+[
+"Let me see just the unfinished ones.",
+"show unfinished",
+"refused",
+false
+],
+[
+"I was wrong, balcony is still pending.",
+"toggle 6",
+"right",
+true
+],
+[
+"Reword the water thing as \"review the phone contract\".",
+"edit 1 \"review the phone contract\"",
+"right",
+true
+],
+[
+"Two things. All of it is finished. Tidy away what's finished.",
+"toggle_all; toggle_all; destroy 4",
+"wrong",
+true
+],
+[
+"Stick \"send the deposit\" on there.",
+"nothing",
+"wrong",
+true
+],
+[
+"done with \"sweep the balcony\"",
+"toggle 5",
+"right",
+true
+],
+[
+"Take the medical and fitness bits off the list.",
+"destroy 4; destroy 3",
+"right",
+true
+],
+[
+"one more thing for the list: order new contact lenses",
+"add \"order new contact lenses\"",
+"right",
+true
+],
+[
+"done with \"get cat litter\"",
+"toggle 4",
+"right",
+true
+],
+[
+"Make the first entry read call the doctor's office instead.",
+"edit 1 \"call the doctor's office\"",
+"right",
+true
+],
+[
+"Two things. Hide everything that isn't finished. All of it is finished.",
+"toggle_all; toggle_all",
+"wrong",
+true
+],
+[
+"Nothing here is actually finished, reset it.",
+"nothing",
+"wrong",
+true
+],
+[
+"Scrap the swimming thing.",
+"destroy 5",
+"right",
+true
+],
+[
+"Put the third entry back to open.",
+"toggle 3",
+"right",
+true
+],
+[
+"Cross out the medical and fitness bits.",
+"destroy 4",
+"wrong",
+true
+],
+[
+"How many lists can I have?",
+"nothing",
+"right",
+true
+],
+[
+"Start the list over, all open.",
+"nothing",
+"right",
+true
+],
+[
+"Everything to do with bills and banking is finished.",
+"nothing",
+"right",
+true
+],
+[
+"Cross out the around the house bits.",
+"nothing",
+"right",
+true
+],
+[
+"All of it is finished.",
+"toggle_all",
+"wrong",
+true
+],
+[
+"Remind me to draft the job posting.",
+"add \"draft the job posting\"",
+"right",
+true
+],
+[
+"one more thing for the list: send the invoice to Acme",
+"add \"send the invoice to Acme\"",
+"right",
+true
+],
+[
+"Put the third entry back to open.",
+"toggle 3",
+"right",
+true
+],
+[
+"Cross out the first entry.",
+"destroy 1",
+"wrong",
+true
+],
+[
+"ok",
+"toggle 1",
+"wrong",
+true
+],
+[
+"Take the office bits off the list.",
+"destroy 4",
+"wrong",
+true
+],
+[
+"Start the list over, all open. Oh, and I only care about all right now.",
+"nothing",
+"wrong",
+true
+],
+[
+"You can tick the contract one, that got handled.",
+"toggle 1",
+"right",
+true
+],
+[
+"I already did \"sweep the balcony\".",
+"nothing",
+"right",
+true
+],
+[
+"The review thing is sorted.",
+"toggle 3",
+"right",
+true
+],
+[
+"I took care of all the holiday entries.",
+"toggle 3",
+"right",
+true
+],
+[
+"Take the fourth entry off the list.",
+"destroy 4",
+"right",
+true
+],
+[
+"Remind me to replace the hallway bulb.",
+"add \"replace the hallway bulb\"",
+"right",
+true
+],
+[
+"Two things. I don't need to see the finished stuff, remove it. Take the first entry off the list.",
+"toggle 1; destroy 1",
+"wrong",
+true
+],
+[
+"Take the bills and banking bits off the list.",
+"destroy 5",
+"wrong",
+true
+],
+[
+"Nothing here is actually finished, reset it.",
+"nothing",
+"wrong",
+true
+],
+[
+"Tidy away what's finished.",
+"clear_completed",
+"right",
+true
+],
+[
+"Let me see just the finished ones.",
+"show finished",
+"refused",
+false
+],
+[
+"Good morning!",
+"nothing",
+"right",
+true
+],
+[
+"Reword the drain thing as \"send the deposit\".",
+"edit 4 \"send the deposit\"",
+"right",
+true
+],
+[
+"Put the fifth entry back to open.",
+"toggle 5",
+"right",
+true
+],
+[
+"I took care of all the holiday entries.",
+"toggle 3",
+"wrong",
+true
+],
+[
+"All of it is finished. While you're at it: Hide everything that isn't finished.",
+"toggle_all; toggle_all",
+"wrong",
+true
+],
+[
+"Tick the lot.",
+"toggle 4",
+"wrong",
+true
+],
+[
+"I'm not doing any of the medical and fitness entries, bin them.",
+"nothing",
+"wrong",
+true
+],
+[
+"Actually \"dust the bookshelves\" still needs doing.",
+"toggle 5",
+"right",
+true
+],
+[
+"Forget about \"replace the hallway bulb\".",
+"nothing",
+"right",
+true
+],
+[
+"Take the office bits off the list.",
+"toggle 2",
+"wrong",
+true
+],
+[
+"You know what to do.",
+"nothing",
+"right",
+true
+],
+[
+"Start the list over, all open.",
+"nothing",
+"right",
+true
+],
+[
+"Hide everything that isn't unfinished.",
+"nothing",
+"wrong",
+true
+],
+[
+"Stick \"charge the camera\" on there.",
+"add \"charge the camera\"",
+"right",
+true
+],
+[
+"Cross out the medical and fitness bits.",
+"destroy 6; destroy 1",
+"wrong",
+true
+],
+[
+"done with \"book a blood test\"",
+"toggle 5",
+"right",
+true
+],
+[
+"Put the second entry back to open.",
+"toggle 2",
+"right",
+true
+],
+[
+"Let me see just the all ones.",
+"show all",
+"right",
+true
+],
+[
+"Bin the ticked ones. Oh, and Reword the check thing as \"reply to Priya's email\".",
+"toggle 2; edit 2 \"reply to Priya's email\"",
+"wrong",
+true
+],
+[
+"Cross out the holiday bits.",
+"toggle 2",
+"wrong",
+true
+],
+[
+"Make the first entry read draft the job posting instead.",
+"edit 1 \"grab oat milk\"",
+"wrong",
+true
+],
+[
+"Nothing here is actually finished, reset it.",
+"nothing",
+"wrong",
+true
+],
+[
+"I already did \"grab oat milk\".",
+"nothing",
+"right",
+true
+],
+[
+"Start the list over, all open.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Don't let me forget to replace the hallway bulb.",
+"add \"replace the hallway bulb\"",
+"right",
+true
+],
+[
+"Good morning!",
+"nothing",
+"right",
+true
+],
+[
+"Reword the visa thing as \"book a room for the workshop\".",
+"edit 3 \"book a room for the workshop\"",
+"right",
+true
+],
+[
+"Remind me to buy tomatoes. While you're at it: Tick the lot.",
+"add \"buy tomatoes\"; toggle 3",
+"wrong",
+true
+],
+[
+"ok",
+"nothing",
+"right",
+true
+],
+[
+"Cross out the around the house bits.",
+"nothing",
+"wrong",
+true
+],
+[
+"Forget about \"go swimming\".",
+"destroy 5",
+"right",
+true
+],
+[
+"I was wrong, forecast is still pending.",
+"toggle 4",
+"right",
+true
+],
+[
+"Two things. Let me see just the finished ones. I got through the whole list.",
+"show completed",
+"wrong",
+true
+],
+[
+"Good morning!",
+"nothing",
+"right",
+true
+],
+[
+"\"book a hotel in Kyoto\" should really be \"order new contact lenses\".",
+"edit 2 \"order new contact lenses\"",
+"right",
+true
+],
+[
+"Scrap the hallway thing.",
+"destroy 2",
+"right",
+true
+],
+[
+"Nothing here is actually finished, reset it. Oh, and Tidy away what's finished.",
+"toggle_all; toggle_all; toggle_all",
+"wrong",
+true
+],
+[
+"Reword the water thing as \"dispute the card charge\".",
+"edit 7 \"dispute the card charge\"",
+"right",
+true
+],
+[
+"Hide everything that isn't finished. While you're at it: I got through the whole list.",
+"show completed",
+"wrong",
+true
+],
+[
+"Cross out the office bits.",
+"toggle 6",
+"wrong",
+true
+],
+[
+"Put the first entry back to open. While you're at it: Reword the swimming thing as \"reply to Priya's email\".",
+"toggle 1; edit 2 \"reply to Priya's email\"",
+"refused",
+false
+],
+[
+"Everything to do with office is finished.",
+"show 5",
+"refused",
+false
+],
+[
+"I was wrong, phone is still pending.",
+"toggle 3",
+"right",
+true
+],
+[
+"\"book a blood test\" should really be \"unclog the shower drain\".",
+"edit 4 \"unclog the shower drain\"",
+"right",
+true
+],
+[
+"I only care about all right now.",
+"nothing",
+"wrong",
+true
+],
+[
+"Make the first entry read top up the pension instead.",
+"edit 1 \"top up the pension\"",
+"right",
+true
+],
+[
+"Scrap everything to do with errands at the shops.",
+"destroy 1; destroy 2; destroy 2",
+"wrong",
+true
+],
+[
+"done with \"unclog the shower drain\"",
+"toggle 2",
+"right",
+true
+],
+[
+"Take the fifth entry off the list. While you're at it: Reword the camera thing as \"exchange some currency\".",
+"destroy 5; edit 1 \"exchange some currency\"",
+"right",
+true
+],
+[
+"Two things. Make the first entry read reply to Priya's email instead. I don't need \"call the doctor's office\" anymore.",
+"edit 1 \"reply to Priya's email\"; destroy 1",
+"right",
+true
+],
+[
+"Reword the swimming thing as \"book a hotel in Kyoto\".",
+"edit 2 \"book a hotel in Kyoto\"",
+"right",
+true
+],
+[
+"Don't let me forget to apply for the visa.",
+"add \"apply for the visa\"",
+"right",
+true
+],
+[
+"Hide everything that isn't all. While you're at it: The room thing is not sorted yet.",
+"toggle 1",
+"wrong",
+true
+],
+[
+"Scrap everything to do with holiday.",
+"destroy 2; destroy 3; destroy 4",
+"wrong",
+true
+],
+[
+"Cross out the around the house bits.",
+"toggle 3",
+"wrong",
+true
+],
+[
+"Stick \"reply to Priya's email\" on there.",
+"add \"reply to Priya's email\"",
+"right",
+true
+],
+[
+"I don't need \"apply for the visa\" anymore.",
+"destroy 4",
+"right",
+true
+],
+[
+"Cross out the third entry.",
+"toggle 3",
+"right",
+true
+],
+[
+"Forget about \"send the deposit\".",
+"destroy 1",
+"right",
+true
+],
+[
+"Don't let me forget to send the deposit.",
+"nothing",
+"wrong",
+true
+],
+[
+"Tidy away what's finished.",
+"clear_completed",
+"right",
+true
+],
+[
+"Cross out the housework bits.",
+"toggle 4",
+"wrong",
+true
+],
+[
+"Two things. Take the medical and fitness bits off the list. Tick the lot.",
+"toggle 1; toggle 2",
+"refused",
+false
+],
+[
+"Scrap the test thing.",
+"destroy 1",
+"right",
+true
+],
+[
+"Remind me to send the invoice to Acme.",
+"add \"send the invoice to Acme\"",
+"right",
+true
+],
+[
+"Two things. Nothing here is actually finished, reset it. I only care about unfinished right now.",
+"nothing",
+"wrong",
+true
+],
+[
+"Scrap everything to do with office.",
+"destroy 3",
+"wrong",
+true
+],
+[
+"I'm not doing any of the groceries and purchases entries, bin them.",
+"destroy 3; destroy 3",
+"wrong",
+true
+],
+[
+"Two things. Remind me to send the deposit. I got through the whole list.",
+"toggle 5; toggle_all",
+"wrong",
+true
+],
+[
+"Stick \"charge the camera\" on there.",
+"add \"charge the camera\"",
+"right",
+true
+],
+[
+"The review thing is not sorted yet.",
+"toggle 1",
+"right",
+true
+],
+[
+"I don't need \"send the invoice to Acme\" anymore.",
+"destroy 1",
+"right",
+true
+],
+[
+"one more thing for the list: dust the bookshelves",
+"add \"dust the bookshelves\"",
+"right",
+true
+],
+[
+"Two things. Hide everything that isn't unfinished. Don't let me forget to send the invoice to Acme.",
+"nothing",
+"wrong",
+true
+],
+[
+"Stick \"get cat litter\" on there. Oh, and Tidy away what's finished.",
+"add \"get cat litter\"; clear_completed",
+"right",
+true
+],
+[
+"I only care about finished right now. Oh, and I'm not doing any of the bills and banking entries, bin them.",
+"clear_completed; destroy 3",
+"wrong",
+true
+],
+[
+"Tick the lot.",
+"nothing",
+"wrong",
+true
+],
+[
+"\"book a hotel in Kyoto\" should really be \"finish the budget forecast\".",
+"edit 3 \"finish the budget forecast\"",
+"right",
+true
+],
+[
+"Two things. Untick the lot. Cross out the errands at the shops bits.",
+"toggle 3; toggle 4",
+"wrong",
+true
+],
+[
+"I was wrong, litter is still pending.",
+"toggle 2",
+"right",
+true
+],
+[
+"done with \"top up the pension\"",
+"toggle 3",
+"right",
+true
+],
+[
+"Scrap everything to do with office.",
+"destroy 7",
+"right",
+true
+],
+[
+"Good morning!",
+"nothing",
+"right",
+true
+],
+[
+"I already did \"call the doctor's office\".",
+"toggle 2",
+"right",
+true
+],
+[
+"Put the third entry back to open.",
+"toggle 3",
+"right",
+true
+],
+[
+"Make the first entry read replace the hallway bulb instead.",
+"edit 1 \"replace the hallway bulb\"",
+"right",
+true
+],
+[
+"Scrap everything to do with around the house.",
+"destroy 5",
+"right",
+true
+],
+[
+"Two things. Let me see just the finished ones. one more thing for the list: exchange some currency",
+"add \"exchange some currency\"",
+"wrong",
+true
+],
+[
+"Good morning!",
+"nothing",
+"right",
+true
+],
+[
+"Scrap everything to do with medical and fitness.",
+"nothing",
+"wrong",
+true
+],
+[
+"Make the third entry read dust the bookshelves instead. Oh, and Tidy away what's finished.",
+"edit 3 \"dust the bookshelves\"; edit 4 \"toggle 4\"",
+"wrong",
+true
+],
+[
+"Put the second entry back to open.",
+"toggle 2",
+"right",
+true
+],
+[
+"You can tick the balcony one, that got handled.",
+"toggle 2",
+"right",
+true
+],
+[
+"I already did \"buy tomatoes\".",
+"nothing",
+"right",
+true
+],
+[
+"Forget about \"defrost the freezer\".",
+"destroy 3",
+"right",
+true
+],
+[
+"Nothing here is actually finished, reset it.",
+"nothing",
+"wrong",
+true
+],
+[
+"one more thing for the list: send the invoice to Acme",
+"add \"send the invoice to Acme\"",
+"right",
+true
+],
+[
+"Hide everything that isn't finished.",
+"clear_completed",
+"wrong",
+true
+],
+[
+"I only care about finished right now. While you're at it: Remind me to order a phone charger.",
+"show completed; add \"remind me to order a phone charger\"",
+"wrong",
+true
+],
+[
+"I took care of all the medical and fitness entries.",
+"toggle 1",
+"right",
+true
+],
+[
+"Cross out the second entry.",
+"destroy 2",
+"wrong",
+true
+],
+[
+"I don't need \"defrost the freezer\" anymore.",
+"destroy 2",
+"right",
+true
+],
+[
+"I don't need to see the finished stuff, remove it.",
+"show finished",
+"refused",
+false
+],
+[
+"Reword the forecast thing as \"book a room for the workshop\".",
+"edit 3 \"book a room for the workshop\"",
+"right",
+true
+],
+[
+"Bin the ticked ones.",
+"toggle 1; toggle 2",
+"wrong",
+true
+],
+[
+"Don't let me forget to call the doctor's office.",
+"add \"call the doctor's office\"",
+"right",
+true
+],
+[
+"Cross out the holiday bits.",
+"toggle 5",
+"wrong",
+true
+],
+[
+"The bill thing is sorted.",
+"toggle 5",
+"right",
+true
+],
+[
+"Don't let me forget to get cat litter.",
+"add \"get cat litter\"",
+"right",
+true
+],
+[
+"Everything to do with office is finished.",
+"nothing",
+"wrong",
+true
+],
+[
+"Scrap everything to do with errands at the shops.",
+"destroy 3",
+"right",
+true
+],
+[
+"Untick the lot.",
+"toggle 3",
+"wrong",
+true
+],
+[
+"Start the list over, all open.",
+"nothing",
+"right",
+true
+],
+[
+"I'm not doing any of the groceries and purchases entries, bin them.",
+"nothing",
+"wrong",
+true
+],
+[
+"Forget about \"exchange some currency\".",
+"destroy 3",
+"right",
+true
+],
+[
+"Don't let me forget to charge the camera.",
+"nothing",
+"wrong",
+true
+],
+[
+"one more thing for the list: charge the camera",
+"add \"charge the camera\"",
+"right",
+true
+],
+[
+"Tidy away what's finished.",
+"clear_completed",
+"right",
+true
+],
+[
+"Two things. Actually \"replace the hallway bulb\" still needs doing. I only care about finished right now.",
+"toggle 4",
+"wrong",
+true
+],
+[
+"\"exchange some currency\" should really be \"reply to Priya's email\". Oh, and All of it is finished.",
+"edit 3 \"reply to Priya's email\"; toggle_all",
+"right",
+true
+],
+[
+"Tick the lot. While you're at it: Scrap the phone thing.",
+"toggle 5",
+"wrong",
+true
+],
+[
+"Scrap the bulb thing.",
+"destroy 1",
+"right",
+true
+],
+[
+"I'm not doing any of the office entries, bin them.",
+"nothing",
+"wrong",
+true
+],
+[
+"Make the second entry read send the deposit instead.",
+"edit 2 \"send the deposit\"",
+"right",
+true
+],
+[
+"Everything to do with groceries and purchases is finished.",
+"nothing",
+"wrong",
+true
+],
+[
+"Bin the ticked ones.",
+"toggle 1; toggle 2",
+"wrong",
+true
+],
+[
+"You can tick the freezer one, that got handled.",
+"toggle 2",
+"right",
+true
+],
+[
+"I don't need \"grab oat milk\" anymore.",
+"destroy 4",
+"right",
+true
+],
+[
+"\"book a blood test\" should really be \"sweep the balcony\".",
+"edit 6 \"sweep the balcony\"",
+"right",
+true
+],
+[
+"The order thing is not sorted yet. Oh, and Remind me to go swimming.",
+"toggle 4; add \"remind me to go swimming\"",
+"wrong",
+true
+],
+[
+"Cross out the office bits.",
+"toggle 2; toggle 3",
+"wrong",
+true
+],
+[
+"done with \"finish the budget forecast\"",
+"toggle 6",
+"right",
+true
+],
+[
+"Remind me to buy wrapping paper.",
+"add \"buy wrapping paper\"",
+"right",
+true
+],
+[
+"Cross out the second entry.",
+"destroy 2",
+"wrong",
+true
+],
+[
+"Put the seventh entry back to open.",
+"toggle 7",
+"right",
+true
+],
+[
+"Everything to do with errands at the shops is finished.",
+"nothing",
+"right",
+true
+],
+[
+"I already did \"finish the budget forecast\".",
+"toggle 3",
+"wrong",
+true
+],
+[
+"Forget about \"stretch for ten minutes\".",
+"destroy 2",
+"right",
+true
+],
+[
+"Everything to do with holiday is finished.",
+"nothing",
+"wrong",
+true
+],
+[
+"You can tick the forecast one, that got handled.",
+"toggle 1",
+"right",
+true
+],
+[
+"Two things. Make the fifth entry read check the train times instead. Tidy away what's finished.",
+"edit 5 \"check the train times\"; tidy_up",
+"refused",
+false
+],
+[
+"I don't need \"unclog the shower drain\" anymore.",
+"destroy 1",
+"right",
+true
+],
+[
+"Tick the lot.",
+"nothing",
+"wrong",
+true
+],
+[
+"You know what to do.",
+"nothing",
+"right",
+true
+],
+[
+"I already did \"unclog the shower drain\".",
+"toggle 4",
+"right",
+true
+],
+[
+"I was wrong, exchange is still pending.",
+"toggle 2",
+"right",
+true
+],
+[
+"Scrap the train thing.",
+"destroy 1",
+"right",
+true
+],
+[
+"You can tick the charger one, that got handled.",
+"toggle 7",
+"right",
+true
+],
+[
+"Two things. Don't let me forget to order a phone charger. All of it is finished.",
+"toggle 1; toggle 3",
+"wrong",
+true
+],
+[
+"Take the second entry off the list. Oh, and done with \"book a hotel in Kyoto\"",
+"destroy 2; destroy 3",
+"refused",
+false
+],
+[
+"one more thing for the list: pay the water bill",
+"add \"pay the water bill\"",
+"right",
+true
+],
+[
+"I'm not doing any of the groceries and purchases entries, bin them.",
+"nothing",
+"wrong",
+true
+],
+[
+"I only care about unfinished right now. While you're at it: Stick \"dispute the card charge\" on there.",
+"add \"dispute the card charge\"",
+"wrong",
+true
+],
+[
+"I got through the whole list.",
+"toggle_all",
+"right",
+true
+],
+[
+"Everything to do with errands at the shops is finished. Oh, and All of it is finished.",
+"nothing",
+"wrong",
+true
+],
+[
+"I already did \"book a room for the workshop\".",
+"add \"book a room for the workshop\"",
+"wrong",
+true
+],
+[
+"Cross out the first entry.",
+"destroy 1",
+"wrong",
+true
+],
+[
+"I don't need to see the finished stuff, remove it.",
+"show finished",
+"refused",
+false
+],
+[
+"Everything to do with around the house is finished. While you're at it: Put the second entry back to open.",
+"toggle 4",
+"wrong",
+true
+],
+[
+"Reword the drain thing as \"replace the hallway bulb\".",
+"edit 2 \"replace the hallway bulb\"",
+"right",
+true
+],
+[
+"Don't let me forget to grab oat milk.",
+"add \"grab oat milk\"",
+"right",
+true
+],
+[
+"Take the housework bits off the list.",
+"destroy 3",
+"right",
+true
+],
+[
+"I was wrong, test is still pending.",
+"toggle 2",
+"right",
+true
+],
+[
+"Hide everything that isn't finished.",
+"clear_completed",
+"wrong",
+true
+],
+[
+"Reword the Kyoto thing as \"sweep the balcony\".",
+"edit 3 \"sweep the balcony\"",
+"right",
+true
+],
+[
+"Untick the lot.",
+"toggle 7",
+"wrong",
+true
+],
+[
+"I don't need to see the finished stuff, remove it.",
+"show finished",
+"refused",
+false
+],
+[
+"Remind me to book a hotel in Kyoto.",
+"add \"book a hotel in Kyoto\"",
+"right",
+true
+],
+[
+"Take the second entry off the list.",
+"destroy 2",
+"right",
+true
+],
+[
+"Cross out the third entry.",
+"toggle 3",
+"right",
+true
+],
+[
+"Two things. I don't need to see the finished stuff, remove it. Untick the lot.",
+"nothing",
+"right",
+true
+],
+[
+"Untick the lot.",
+"toggle 6",
+"wrong",
+true
+],
+[
+"Two things. I don't need \"replace the hallway bulb\" anymore. Don't let me forget to stretch for ten minutes.",
+"toggle 2; add \"ten minutes\"",
+"wrong",
+true
+],
+[
+"All of it is finished. While you're at it: \"check the train times\" should really be \"send the deposit\".",
+"edit 2 \"send the deposit\"",
+"wrong",
+true
+],
+[
+"done with \"top up the pension\" While you're at it: All of it is finished.",
+"toggle 2; toggle_all",
+"right",
+true
+],
+[
+"Cross out the first entry.",
+"destroy 1",
+"wrong",
+true
+],
+[
+"Scrap everything to do with office.",
+"destroy 7",
+"wrong",
+true
+],
+[
+"I already did \"order a phone charger\".",
+"toggle 5",
+"right",
+true
+],
+[
+"one more thing for the list: draft the job posting",
+"add \"draft the job posting\"",
+"right",
+true
+],
+[
+"You can tick the contract one, that got handled.",
+"toggle 1",
+"right",
+true
+],
+[
+"Put the fourth entry back to open. While you're at it: one more thing for the list: order new contact lenses",
+"toggle 4; add \"order new contact lenses\"",
+"right",
+true
+],
+[
+"Tick the lot.",
+"nothing",
+"wrong",
+true
+],
+[
+"The paper thing is sorted.",
+"toggle 1",
+"right",
+true
+],
+[
+"Stick \"book a hotel in Kyoto\" on there.",
+"add \"book a hotel in Kyoto\"",
+"right",
+true
+],
+[
+"You know what to do.",
+"nothing",
+"right",
+true
+],
+[
+"Take the bills and banking bits off the list.",
+"destroy 1; destroy 4",
+"wrong",
+true
+],
+[
+"All of it is finished.",
+"toggle_all",
+"right",
+true
+],
+[
+"The Acme thing is not sorted yet.",
+"nothing",
+"wrong",
+true
+],
+[
+"Everything to do with housework is finished.",
+"nothing",
+"right",
+true
+],
+[
+"Cross out the office bits.",
+"nothing",
+"right",
+true
+],
+[
+"Tick the lot. While you're at it: Stick \"go swimming\" on there.",
+"add \"go swimming\"",
+"wrong",
+true
+],
+[
+"Remind me to dust the bookshelves.",
+"add \"dust the bookshelves\"",
+"right",
+true
+],
+[
+"Cross out the office bits.",
+"toggle 2",
+"right",
+true
+],
+[
+"Hide everything that isn't unfinished.",
+"nothing",
+"wrong",
+true
+],
+[
+"Scrap everything to do with holiday.",
+"destroy 3",
+"wrong",
+true
+],
+[
+"I already did \"replace the hallway bulb\".",
+"toggle 1",
+"right",
+true
+],
+[
+"Remind me to order a phone charger.",
+"add \"order a phone charger\"",
+"right",
+true
+],
+[
+"Take the around the house bits off the list.",
+"toggle 3",
+"wrong",
+true
+],
+[
+"Scrap everything to do with errands at the shops.",
+"destroy 2",
+"right",
+true
+],
+[
+"Bin the ticked ones.",
+"nothing",
+"wrong",
+true
+],
+[
+"done with \"get cat litter\"",
+"toggle 5",
+"right",
+true
+],
+[
+"I don't need \"go swimming\" anymore.",
+"destroy 1",
+"right",
+true
+],
+[
+"I already did \"pay the water bill\".",
+"toggle 3",
+"right",
+true
+],
+[
+"I don't need \"charge the camera\" anymore.",
+"destroy 2",
+"right",
+true
+],
+[
+"Untick the lot.",
+"nothing",
+"right",
+true
+],
+[
+"one more thing for the list: book a blood test",
+"add \"book a blood test\"",
+"right",
+true
+],
+[
+"Forget about \"dispute the card charge\".",
+"nothing",
+"right",
+true
+],
+[
+"Tidy away what's finished.",
+"nothing",
+"right",
+true
+],
+[
+"Make the second entry read defrost the freezer instead.",
+"edit 2 \"defrost the freezer\"",
+"right",
+true
+],
+[
+"Reword the shower thing as \"top up the pension\".",
+"edit 4 \"top up the pension\"",
+"right",
+true
+],
+[
+"How many lists can I have?",
+"nothing",
+"right",
+true
+],
+[
+"Tidy away what's finished.",
+"clear_completed",
+"right",
+true
+],
+[
+"I got through the whole list. Oh, and Make the last entry read book a blood test instead.",
+"toggle_all; edit 3 \"book a blood test\"",
+"wrong",
+true
+],
+[
+"I took care of all the office entries.",
+"nothing",
+"right",
+true
+],
+[
+"Stick \"dispute the card charge\" on there.",
+"add \"dispute the card charge\"",
+"right",
+true
+],
+[
+"Two things. Let me see just the all ones. one more thing for the list: sweep the balcony",
+"add \"sweep the balcony\"",
+"wrong",
+true
+],
+[
+"Take the last entry off the list.",
+"destroy 5",
+"right",
+true
+],
+[
+"one more thing for the list: replace the hallway bulb",
+"add \"replace the hallway bulb\"",
+"right",
+true
+],
+[
+"I only care about finished right now.",
+"clear_completed",
+"wrong",
+true
+],
+[
+"Forget about \"defrost the freezer\".",
+"nothing",
+"right",
+true
+],
+[
+"Forget about \"stretch for ten minutes\".",
+"nothing",
+"right",
+true
+],
+[
+"Bin the ticked ones.",
+"nothing",
+"wrong",
+true
+],
+[
+"I don't need \"send the invoice to Acme\" anymore.",
+"destroy 5",
+"right",
+true
+],
+[
+"I only care about unfinished right now. While you're at it: I don't need to see the finished stuff, remove it.",
+"show unfinished; destroy 1",
+"refused",
+false
+],
+[
+"done with \"send the invoice to Acme\"",
+"toggle 7",
+"right",
+true
+],
+[
+"The workshop thing is not sorted yet.",
+"toggle 2",
+"right",
+true
+],
+[
+"You can tick the litter one, that got handled.",
+"toggle 2",
+"right",
+true
+],
+[
+"Cross out the first entry.",
+"toggle 1",
+"right",
+true
+],
+[
+"Cross out the bills and banking bits.",
+"nothing",
+"right",
+true
+],
+[
+"Don't let me forget to buy tomatoes.",
+"nothing",
+"wrong",
+true
+],
+[
+"Make the third entry read top up the pension instead.",
+"edit 3 \"top up the pension\"",
+"right",
+true
+],
+[
+"You can tick the Priya's one, that got handled.",
+"toggle 3",
+"right",
+true
+],
+[
+"Tick the lot. While you're at it: You can tick the stretch one, that got handled.",
+"toggle 2",
+"wrong",
+true
+],
+[
+"Hide everything that isn't unfinished. While you're at it: The balcony thing is sorted.",
+"toggle 2",
+"wrong",
+true
+],
+[
+"Remind me to pay the water bill.",
+"nothing",
+"wrong",
+true
+],
+[
+"Nothing here is actually finished, reset it.",
+"nothing",
+"wrong",
+true
+],
+[
+"Hide everything that isn't unfinished.",
+"show completed",
+"wrong",
+true
+],
+[
+"How many lists can I have?",
+"nothing",
+"right",
+true
+],
+[
+"I got through the whole list.",
+"toggle_all",
+"right",
+true
+],
+[
+"You can tick the charge one, that got handled.",
+"toggle 2",
+"right",
+true
+],
+[
+"Two things. Reword the blood thing as \"defrost the freezer\". Bin the ticked ones.",
+"edit 2 \"defrost the freezer\"; toggle 1",
+"wrong",
+true
+],
+[
+"I already did \"pay the water bill\".",
+"toggle 3",
+"right",
+true
+],
+[
+"Don't let me forget to defrost the freezer.",
+"add \"defrost the freezer\"",
+"right",
+true
+],
+[
+"Tidy away what's finished.",
+"nothing",
+"wrong",
+true
+],
+[
+"The review thing is sorted.",
+"toggle 6",
+"right",
+true
+],
+[
+"Nothing here is actually finished, reset it. Oh, and Bin the ticked ones.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Cross out the medical and fitness bits.",
+"toggle 4; toggle 6",
+"wrong",
+true
+],
+[
+"one more thing for the list: dispute the card charge",
+"add \"dispute the card charge\"",
+"right",
+true
+],
+[
+"one more thing for the list: send the invoice to Acme",
+"add \"send the invoice to Acme\"",
+"right",
+true
+],
+[
+"Don't let me forget to call the doctor's office.",
+"add \"call the doctor's office\"",
+"right",
+true
+],
+[
+"Forget about \"go swimming\".",
+"destroy 5",
+"right",
+true
+],
+[
+"\"order a phone charger\" should really be \"top up the pension\".",
+"edit 3 \"top up the pension\"",
+"right",
+true
+],
+[
+"Tidy away what's finished.",
+"nothing",
+"right",
+true
+],
+[
+"Scrap the draft thing.",
+"destroy 5",
+"right",
+true
+],
+[
+"Take the last entry off the list. Oh, and I already did \"pay the water bill\".",
+"destroy 3",
+"wrong",
+true
+],
+[
+"Scrap the email thing.",
+"destroy 1",
+"right",
+true
+],
+[
+"The swimming thing is sorted.",
+"toggle 6",
+"right",
+true
+],
+[
+"\"apply for the visa\" should really be \"something else\".",
+"add \"something else\"",
+"wrong",
+true
+],
+[
+"I already did \"defrost the freezer\".",
+"toggle 1",
+"right",
+true
+],
+[
+"I was wrong, bill is still pending. Oh, and Tidy away what's finished.",
+"toggle 1; toggle 4; toggle 4",
+"wrong",
+true
+],
+[
+"Everything to do with around the house is finished.",
+"nothing",
+"wrong",
+true
+],
+[
+"Don't let me forget to apply for the visa.",
+"add \"apply for the visa\"",
+"right",
+true
+],
+[
+"The bill thing is not sorted yet. Oh, and Let me see just the unfinished ones.",
+"show unfinished",
+"refused",
+false
+],
+[
+"I don't need \"order new contact lenses\" anymore.",
+"destroy 1",
+"right",
+true
+],
+[
+"Nothing here is actually finished, reset it.",
+"nothing",
+"wrong",
+true
+],
+[
+"Stick \"finish the budget forecast\" on there.",
+"add \"finish the budget forecast\"",
+"right",
+true
+],
+[
+"Take the around the house bits off the list.",
+"destroy 5",
+"right",
+true
+],
+[
+"Put the fifth entry back to open.",
+"toggle 5",
+"right",
+true
+],
+[
+"Two things. Let me see just the finished ones. Stick \"go swimming\" on there.",
+"show finished; add \"go swimming\"",
+"refused",
+false
+],
+[
+"The tomatoes thing is not sorted yet.",
+"toggle 7",
+"right",
+true
+],
+[
+"Take the first entry off the list.",
+"destroy 1",
+"right",
+true
+],
+[
+"Tidy away what's finished.",
+"clear_completed",
+"right",
+true
+],
+[
+"I was wrong, posting is still pending.",
+"toggle 2",
+"right",
+true
+],
+[
+"Cross out the bills and banking bits.",
+"toggle 2",
+"right",
+true
+],
+[
+"Put the first entry back to open. Oh, and Tick the lot.",
+"toggle 1",
+"wrong",
+true
+],
+[
+"I don't need \"dispute the card charge\" anymore.",
+"destroy 4",
+"right",
+true
+],
+[
+"All of it is finished. While you're at it: Start the list over, all open.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"done with \"stretch for ten minutes\"",
+"toggle 2",
+"right",
+true
+],
+[
+"Remind me to charge the camera.",
+"add \"remind me to charge the camera\"",
+"wrong",
+true
+],
+[
+"Forget about \"send the deposit\".",
+"nothing",
+"right",
+true
+],
+[
+"I only care about all right now.",
+"nothing",
+"wrong",
+true
+],
+[
+"Two things. Put the first entry back to open. Nothing here is actually finished, reset it.",
+"toggle 1; toggle 1",
+"right",
+true
+],
+[
+"Two things. I don't need to see the finished stuff, remove it. All of it is finished.",
+"show completed; clear_completed",
+"wrong",
+true
+],
+[
+"ok",
+"nothing",
+"right",
+true
+],
+[
+"You can tick the apply one, that got handled.",
+"toggle 2",
+"right",
+true
+],
+[
+"Reword the tomatoes thing as \"reply to Priya's email\".",
+"edit 1 \"reply to Priya's email\"",
+"right",
+true
+],
+[
+"Cross out the second entry. While you're at it: Stick \"grab oat milk\" on there.",
+"toggle 2; add \"grab oat milk\"",
+"right",
+true
+],
+[
+"Start the list over, all open.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"ok",
+"nothing",
+"right",
+true
+],
+[
+"Take the first entry off the list.",
+"destroy 1",
+"right",
+true
+],
+[
+"Make the first entry read draft the job posting instead.",
+"edit 1 \"the job posting\"",
+"wrong",
+true
+],
+[
+"ok",
+"nothing",
+"right",
+true
+],
+[
+"Make the last entry read grab oat milk instead.",
+"edit 5 \"grab oat milk\"",
+"right",
+true
+],
+[
+"Remind me to draft the job posting.",
+"add \"draft the job posting\"",
+"right",
+true
+],
+[
+"Take the first entry off the list.",
+"destroy 1",
+"right",
+true
+],
+[
+"one more thing for the list: apply for the visa",
+"add \"apply for the visa\"",
+"right",
+true
+],
+[
+"Cross out the medical and fitness bits.",
+"toggle 2",
+"right",
+true
+],
+[
+"\"get cat litter\" should really be \"book a room for the workshop\".",
+"edit 3 \"book a room for the workshop\"",
+"right",
+true
+],
+[
+"Take the first entry off the list.",
+"destroy 1",
+"right",
+true
+],
+[
+"You can tick the deposit one, that got handled.",
+"toggle 1",
+"right",
+true
+],
+[
+"The dust thing is not sorted yet.",
+"toggle 1",
+"right",
+true
+],
+[
+"Sort this out.",
+"nothing",
+"right",
+true
+],
+[
+"Stick \"go swimming\" on there. While you're at it: Tidy away what's finished.",
+"add \"go swimming\"; toggle 4",
+"wrong",
+true
+],
+[
+"Scrap the phone thing.",
+"destroy 2",
+"right",
+true
+],
+[
+"I already did \"dust the bookshelves\".",
+"toggle 1",
+"right",
+true
+],
+[
+"I only care about unfinished right now. Oh, and I already did \"buy tomatoes\".",
+"show only unfinished",
+"refused",
+false
+],
+[
+"The forecast thing is sorted.",
+"toggle 1",
+"right",
+true
+],
+[
+"one more thing for the list: order new contact lenses",
+"add \"order new contact lenses\"",
+"right",
+true
+],
+[
+"Nothing here is actually finished, reset it.",
+"nothing",
+"wrong",
+true
+],
+[
+"\"exchange some currency\" should really be \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"Everything to do with office is finished.",
+"nothing",
+"right",
+true
+],
+[
+"Put the fifth entry back to open.",
+"toggle 5",
+"right",
+true
+],
+[
+"I don't need to see the finished stuff, remove it.",
+"nothing",
+"wrong",
+true
+],
+[
+"Everything to do with medical and fitness is finished. While you're at it: Take the last entry off the list.",
+"destroy 3",
+"right",
+true
+],
+[
+"\"send the invoice to Acme\" should really be \"get cat litter\". Oh, and Don't let me forget to exchange some currency.",
+"edit 1 \"get cat litter\"; add \"don't let me forget to exchange some currency\"",
+"wrong",
+true
+],
+[
+"The litter thing is sorted.",
+"toggle 2",
+"right",
+true
+],
+[
+"Make the third entry read sweep the balcony instead.",
+"edit 3 \"sweep the balcony\"",
+"right",
+true
+],
+[
+"Take the groceries and purchases bits off the list.",
+"destroy 1",
+"right",
+true
+],
+[
+"Cross out the bills and banking bits.",
+"toggle 4; toggle 3",
+"wrong",
+true
+],
+[
+"All of it is finished. Oh, and Nothing here is actually finished, reset it.",
+"nothing",
+"wrong",
+true
+],
+[
+"Forget about \"send the deposit\".",
+"nothing",
+"right",
+true
+],
+[
+"\"replace the hallway bulb\" should really be \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"Cross out the housework bits.",
+"toggle 2",
+"right",
+true
+],
+[
+"Cross out the first entry.",
+"toggle 1",
+"right",
+true
+],
+[
+"Don't let me forget to stretch for ten minutes.",
+"add \"stretch for ten minutes\"",
+"right",
+true
+],
+[
+"one more thing for the list: check the train times",
+"add \"check the train times\"",
+"right",
+true
+],
+[
+"Take the last entry off the list.",
+"destroy 7",
+"right",
+true
+],
+[
+"Remind me to get cat litter.",
+"add \"get cat litter\"",
+"right",
+true
+],
+[
+"Tidy away what's finished.",
+"clear_completed",
+"right",
+true
+],
+[
+"I took care of all the bills and banking entries.",
+"toggle 5",
+"wrong",
+true
+],
+[
+"Two things. Remind me to stretch for ten minutes. \"go swimming\" should really be \"book a room for the workshop\".",
+"edit 3 \"book a room for the workshop\"",
+"wrong",
+true
+],
+[
+"Nothing here is actually finished, reset it.",
+"nothing",
+"wrong",
+true
+]
+],
+"unseen titles, training wording": [
+[
+"Delete everything that is done.",
+"clear_completed",
+"right",
+true
+],
+[
+"Drop the health items.",
+"destroy 2",
+"right",
+true
+],
+[
+"Show only active todos.",
+"show active",
+"right",
+true
+],
+[
+"Mark all the health todos as done.",
+"nothing",
+"right",
+true
+],
+[
+"Mark all the travel todos as done.",
+"toggle 2",
+"wrong",
+true
+],
+[
+"First: Drop the health items. Second: Untick the some task.",
+"destroy 1; toggle 2",
+"wrong",
+true
+],
+[
+"Mark \"buy tomatoes\" as done.",
+"toggle 1",
+"right",
+true
+],
+[
+"Uncheck all of them.",
+"nothing",
+"right",
+true
+],
+[
+"Change the tomatoes one to \"book a hotel in Kyoto\".",
+"edit 1 \"book a hotel in Kyoto\"",
+"right",
+true
+],
+[
+"Drop the minutes task.",
+"destroy 1",
+"right",
+true
+],
+[
+"I also need to order new contact lenses.",
+"add \"order new contact lenses\"",
+"right",
+true
+],
+[
+"Delete all the trip todos. Also, Remove finished todos.",
+"destroy 1; clear_completed",
+"refused",
+false
+],
+[
+"Reopen the drain one.",
+"toggle 1",
+"right",
+true
+],
+[
+"New todo: sweep the balcony",
+"add \"sweep the balcony\"",
+"right",
+true
+],
+[
+"Check off the chores items.",
+"nothing",
+"right",
+true
+],
+[
+"New todo: dispute the card charge",
+"add \"dispute the card charge\"",
+"right",
+true
+],
+[
+"Delete \"grab oat milk\".",
+"destroy 1",
+"right",
+true
+],
+[
+"Edit the fifth item to say grab oat milk.",
+"edit 5 \"grab oat milk\"",
+"right",
+true
+],
+[
+"Tick the first one. Then Mark \"apply for the visa\" as not done.",
+"toggle 1; toggle 3",
+"right",
+true
+],
+[
+"Thanks!",
+"nothing",
+"right",
+true
+],
+[
+"Remove finished todos.",
+"clear_completed",
+"right",
+true
+],
+[
+"I finished the grab task. Then Add \"dust the bookshelves\".",
+"toggle 2; add \"dust the bookshelves\"",
+"right",
+true
+],
+[
+"Rename \"review the phone contract\" to \"buy tomatoes\".",
+"edit 1 \"buy tomatoes\"",
+"right",
+true
+],
+[
+"Check off the money items.",
+"toggle 4",
+"right",
+true
+],
+[
+"Mark everything as done.",
+"toggle_all",
+"right",
+true
+],
+[
+"First: Delete \"exchange some currency\". Second: Uncheck all of them.",
+"destroy 4; toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Please add order a phone charger.",
+"add \"order a phone charger\"",
+"right",
+true
+],
+[
+"Untick the sweep task.",
+"toggle 3",
+"right",
+true
+],
+[
+"First: Remove everything about finance. Second: Mark everything as done.",
+"destroy 3; toggle_all",
+"right",
+true
+],
+[
+"Drop the draft task.",
+"destroy 2",
+"right",
+true
+],
+[
+"First: Untick the swimming task. Second: Remove the posting one.",
+"toggle 6; destroy 7",
+"right",
+true
+],
+[
+"Mark all the travel todos as done.",
+"nothing",
+"right",
+true
+],
+[
+"Remove everything about travel.",
+"destroy 3",
+"right",
+true
+],
+[
+"Delete the last item. Also, New todo: get cat litter",
+"destroy 5; add \"get cat litter\"",
+"right",
+true
+],
+[
+"First: Reopen all todos. Second: New todo: sweep the balcony",
+"toggle_all; toggle_all; add \"sweep the balcony\"",
+"right",
+true
+],
+[
+"Check off the health items.",
+"toggle 2",
+"right",
+true
+],
+[
+"Uncheck the seventh item.",
+"toggle 7",
+"right",
+true
+],
+[
+"Filter: completed.",
+"show completed",
+"right",
+true
+],
+[
+"Reopen all todos.",
+"nothing",
+"right",
+true
+],
+[
+"Replace \"order new contact lenses\" with \"book a hotel in Kyoto\".",
+"edit 1 \"book a hotel in Kyoto\"",
+"right",
+true
+],
+[
+"Reopen all todos. Also, \"book a room for the workshop\" is done.",
+"toggle_all; toggle_all",
+"wrong",
+true
+],
+[
+"Uncheck all of them.",
+"toggle_all",
+"wrong",
+true
+],
+[
+"Edit the first item to say unclog the shower drain.",
+"edit 1 \"unclog the shower drain\"",
+"right",
+true
+],
+[
+"Mark all the chores todos as done.",
+"toggle 3",
+"right",
+true
+],
+[
+"\"grab oat milk\" is not finished after all.",
+"toggle 1",
+"right",
+true
+],
+[
+"Mark all the health todos as done.",
+"toggle 2",
+"right",
+true
+],
+[
+"I also need to finish the budget forecast. Then Remove everything about shopping.",
+"add \"finish the budget forecast\"; destroy 2",
+"right",
+true
+],
+[
+"Check off the things to buy items.",
+"nothing",
+"right",
+true
+],
+[
+"Add \"dust the bookshelves\".",
+"add \"dust the bookshelves\"",
+"right",
+true
+],
+[
+"Clear the completed ones.",
+"clear_completed",
+"right",
+true
+],
+[
+"Put \"top up the pension\" on the list.",
+"add \"top up the pension\"",
+"right",
+true
+],
+[
+"Untick the budget task. Then Drop the dispute task.",
+"toggle 4; destroy 3",
+"right",
+true
+],
+[
+"Remove the lenses one.",
+"destroy 5",
+"right",
+true
+],
+[
+"Thanks!",
+"nothing",
+"right",
+true
+],
+[
+"Untick the wrapping task.",
+"toggle 2",
+"right",
+true
+],
+[
+"Complete everything about things to buy.",
+"toggle 3",
+"right",
+true
+],
+[
+"Reopen all todos.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"What is this list for?",
+"nothing",
+"right",
+true
+],
+[
+"Switch to the active view. Then Remove finished todos.",
+"show active",
+"right",
+true
+],
+[
+"New todo: book a room for the workshop",
+"add \"book a room for the workshop\"",
+"right",
+true
+],
+[
+"Edit the fourth item to say finish the budget forecast. Also, Mark \"book a hotel in Kyoto\" as done.",
+"edit 4 \"finish the budget forecast\"; toggle 5",
+"right",
+true
+],
+[
+"Mark \"unclog the shower drain\" as not done.",
+"toggle 6",
+"right",
+true
+],
+[
+"Drop the work items.",
+"destroy 2",
+"right",
+true
+],
+[
+"New todo: dust the bookshelves",
+"add \"dust the bookshelves\"",
+"right",
+true
+],
+[
+"Remove finished todos.",
+"clear_completed",
+"right",
+true
+],
+[
+"First: Uncheck the first item. Second: Check off all of them.",
+"toggle 1",
+"wrong",
+true
+],
+[
+"Remove the hallway one.",
+"destroy 4",
+"right",
+true
+],
+[
+"New todo: apply for the visa Also, Uncheck all of them.",
+"add \"apply for the visa\"; toggle_all; toggle_all",
+"right",
+true
+],
+[
+"I finished the card task.",
+"toggle 2",
+"right",
+true
+],
+[
+"Delete \"book a hotel in Kyoto\".",
+"destroy 3",
+"right",
+true
+],
+[
+"Edit the third item to say dispute the card charge.",
+"edit 3 \"dispute the card charge\"",
+"right",
+true
+],
+[
+"Complete everything about money.",
+"nothing",
+"right",
+true
+],
+[
+"Add \"get cat litter\".",
+"add \"get cat litter\"",
+"right",
+true
+],
+[
+"Rename \"pay the water bill\" to \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"Delete \"replace the hallway bulb\".",
+"destroy 3",
+"right",
+true
+],
+[
+"Complete all todos. Then Get rid of \"pay the water bill\".",
+"toggle_all; destroy 2",
+"right",
+true
+],
+[
+"Delete the first item.",
+"destroy 1",
+"right",
+true
+],
+[
+"Mark all the trip todos as done.",
+"toggle 3",
+"wrong",
+true
+],
+[
+"Switch to the active view.",
+"show active",
+"right",
+true
+],
+[
+"Reopen the call one.",
+"toggle 2",
+"right",
+true
+],
+[
+"Remove everything about things to buy.",
+"destroy 4",
+"wrong",
+true
+],
+[
+"Drop the water task.",
+"destroy 2",
+"right",
+true
+],
+[
+"Rename \"dispute the card charge\" to \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"Remove finished todos.",
+"destroy 4",
+"wrong",
+true
+],
+[
+"Add \"review the phone contract\".",
+"add \"review the phone contract\"",
+"right",
+true
+],
+[
+"Edit the sixth item to say get cat litter.",
+"edit 6 \"get cat litter\"",
+"right",
+true
+],
+[
+"Rename \"defrost the freezer\" to \"send the deposit\".",
+"edit 1 \"send the deposit\"",
+"right",
+true
+],
+[
+"Edit the first item to say finish the budget forecast.",
+"edit 1 \"finish the budget forecast\"",
+"right",
+true
+],
+[
+"Remove the book one.",
+"destroy 2",
+"right",
+true
+],
+[
+"Tick the first one.",
+"toggle 1",
+"right",
+true
+],
+[
+"Complete all todos.",
+"toggle_all",
+"right",
+true
+],
+[
+"Check off all of them. Then Uncheck all of them.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"\"review the phone contract\" is not finished after all.",
+"toggle 2",
+"right",
+true
+],
+[
+"Delete the fourth item.",
+"destroy 4",
+"right",
+true
+],
+[
+"Complete everything about work.",
+"toggle 4; toggle 4",
+"wrong",
+true
+],
+[
+"Check off all of them.",
+"toggle_all",
+"right",
+true
+],
+[
+"Please add book a blood test.",
+"add \"book a blood test\"",
+"right",
+true
+],
+[
+"Show only completed todos.",
+"show completed",
+"right",
+true
+],
+[
+"Delete all the job todos.",
+"destroy 2",
+"wrong",
+true
+],
+[
+"I also need to charge the camera.",
+"add \"charge the camera\"",
+"right",
+true
+],
+[
+"Get rid of \"send the invoice to Acme\". Also, Remove everything about household.",
+"destroy 3; destroy 4",
+"wrong",
+true
+],
+[
+"Remove everything about finance.",
+"destroy 3",
+"wrong",
+true
+],
+[
+"Delete \"send the invoice to Acme\".",
+"destroy 4",
+"right",
+true
+],
+[
+"New todo: send the deposit",
+"add \"send the deposit\"",
+"right",
+true
+],
+[
+"Delete \"defrost the freezer\".",
+"destroy 5",
+"right",
+true
+],
+[
+"Complete everything about things to buy.",
+"toggle 2",
+"right",
+true
+],
+[
+"Uncheck all of them.",
+"nothing",
+"right",
+true
+],
+[
+"Remove everything about trip.",
+"destroy 5",
+"wrong",
+true
+],
+[
+"First: Check off all of them. Second: Delete everything that is done.",
+"toggle_all; clear_completed",
+"right",
+true
+],
+[
+"Replace \"order new contact lenses\" with \"dispute the card charge\".",
+"edit 5 \"dispute the card charge\"",
+"right",
+true
+],
+[
+"Mark \"call the doctor's office\" as done.",
+"nothing",
+"right",
+true
+],
+[
+"Drop the health items.",
+"destroy 2",
+"right",
+true
+],
+[
+"Uncheck all of them.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Mark all the travel todos as done.",
+"nothing",
+"wrong",
+true
+],
+[
+"Change the drain one to \"buy wrapping paper\".",
+"edit 3 \"buy wrapping paper\"",
+"right",
+true
+],
+[
+"Rename \"dispute the card charge\" to \"book a room for the workshop\".",
+"edit 1 \"book a room for the workshop\"",
+"right",
+true
+],
+[
+"Remove the sweep one.",
+"destroy 1",
+"right",
+true
+],
+[
+"\"book a room for the workshop\" is done.",
+"toggle 1",
+"right",
+true
+],
+[
+"Mark all the work todos as done.",
+"toggle 2",
+"right",
+true
+],
+[
+"Add \"defrost the freezer\".",
+"add \"defrost the freezer\"",
+"right",
+true
+],
+[
+"First: Uncheck all of them. Second: Complete all todos.",
+"toggle_all; toggle_all",
+"wrong",
+true
+],
+[
+"I also need to stretch for ten minutes.",
+"add \"stretch for ten minutes\"",
+"right",
+true
+],
+[
+"Rename \"stretch for ten minutes\" to \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"Delete \"draft the job posting\".",
+"nothing",
+"right",
+true
+],
+[
+"I also need to sweep the balcony.",
+"add \"sweep the balcony\"",
+"right",
+true
+],
+[
+"Mark \"get cat litter\" as not done.",
+"toggle 4",
+"right",
+true
+],
+[
+"Rename \"buy tomatoes\" to \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"Change the train one to \"dispute the card charge\".",
+"edit 3 \"dispute the card charge\"",
+"right",
+true
+],
+[
+"Complete the Priya's one.",
+"toggle 3",
+"right",
+true
+],
+[
+"Rename \"grab oat milk\" to \"finish the budget forecast\".",
+"edit 2 \"finish the budget forecast\"",
+"right",
+true
+],
+[
+"Delete the third item.",
+"destroy 3",
+"right",
+true
+],
+[
+"Mark everything as done.",
+"toggle_all",
+"right",
+true
+],
+[
+"Untick the send task.",
+"toggle 4",
+"right",
+true
+],
+[
+"First: \"check the train times\" is not finished after all. Second: I finished the stretch task.",
+"toggle 1; toggle 3",
+"right",
+true
+],
+[
+"Add \"stretch for ten minutes\".",
+"add \"stretch for ten minutes\"",
+"right",
+true
+],
+[
+"Mark \"order a phone charger\" as done.",
+"toggle 1",
+"right",
+true
+],
+[
+"Remove the dust one.",
+"destroy 2",
+"right",
+true
+],
+[
+"Change the office one to \"grab oat milk\".",
+"edit 6 \"grab oat milk\"",
+"right",
+true
+],
+[
+"Remove the posting one.",
+"destroy 1",
+"right",
+true
+],
+[
+"Reopen the litter one.",
+"toggle 1",
+"right",
+true
+],
+[
+"Check off the finance items.",
+"toggle 6; toggle 7",
+"wrong",
+true
+],
+[
+"Tick the second one.",
+"toggle 2",
+"right",
+true
+],
+[
+"Tick the third one.",
+"toggle 3",
+"right",
+true
+],
+[
+"Replace \"pay the water bill\" with \"call the doctor's office\".",
+"edit 1 \"call the doctor's office\"",
+"right",
+true
+],
+[
+"Drop the tomatoes task.",
+"destroy 3",
+"right",
+true
+],
+[
+"Delete the first item.",
+"destroy 1",
+"right",
+true
+],
+[
+"Mark \"check the train times\" as done.",
+"nothing",
+"right",
+true
+],
+[
+"I finished the swimming task.",
+"toggle 1",
+"right",
+true
+],
+[
+"Filter: completed.",
+"show completed",
+"right",
+true
+],
+[
+"What is this list for?",
+"nothing",
+"right",
+true
+],
+[
+"I finished the forecast task.",
+"toggle 5",
+"right",
+true
+],
+[
+"Uncheck all of them.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Replace \"pay the water bill\" with \"top up the pension\".",
+"edit 1 \"top up the pension\"",
+"right",
+true
+],
+[
+"Replace \"replace the hallway bulb\" with \"review the phone contract\".",
+"edit 1 \"review the phone contract\"",
+"right",
+true
+],
+[
+"Make it nicer.",
+"nothing",
+"right",
+true
+],
+[
+"Rename \"book a hotel in Kyoto\" to \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"Complete all todos.",
+"toggle_all",
+"right",
+true
+],
+[
+"Mark \"call the doctor's office\" as done.",
+"toggle 1",
+"right",
+true
+],
+[
+"\"order new contact lenses\" is done.",
+"toggle 3",
+"right",
+true
+],
+[
+"Mark \"defrost the freezer\" as not done.",
+"toggle 2",
+"right",
+true
+],
+[
+"Remove the call one.",
+"destroy 3",
+"right",
+true
+],
+[
+"Show only active todos. Then Remove the bookshelves one.",
+"show active; destroy 5",
+"refused",
+false
+],
+[
+"Complete the Acme one. Also, \"draft the job posting\" is not finished after all.",
+"toggle 1; toggle 2",
+"right",
+true
+],
+[
+"Mark \"call the doctor's office\" as done. Then Complete everything about finance.",
+"toggle 1; toggle 3",
+"wrong",
+true
+],
+[
+"Thanks!",
+"nothing",
+"right",
+true
+],
+[
+"Mark \"reply to Priya's email\" as done.",
+"toggle 1",
+"right",
+true
+],
+[
+"Uncheck all of them.",
+"toggle_all",
+"wrong",
+true
+],
+[
+"Mark \"send the invoice to Acme\" as done.",
+"toggle 2",
+"right",
+true
+],
+[
+"I finished the email task.",
+"toggle 4",
+"right",
+true
+],
+[
+"I also need to unclog the shower drain.",
+"add \"unclog the shower drain\"",
+"right",
+true
+],
+[
+"Show only completed todos. Then I also need to charge the camera.",
+"show completed; add \"charge the camera\"",
+"right",
+true
+],
+[
+"Make it nicer.",
+"nothing",
+"right",
+true
+],
+[
+"Rename \"stretch for ten minutes\" to \"buy tomatoes\".",
+"edit 2 \"buy tomatoes\"",
+"right",
+true
+],
+[
+"Mark everything as not done.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Reopen the swimming one.",
+"toggle 4",
+"right",
+true
+],
+[
+"Rename \"send the deposit\" to \"book a room for the workshop\".",
+"edit 2 \"book a room for the workshop\"",
+"right",
+true
+],
+[
+"\"stretch for ten minutes\" is done.",
+"toggle 1",
+"right",
+true
+],
+[
+"Drop the drain task.",
+"destroy 1",
+"right",
+true
+],
+[
+"Change the review one to \"finish the budget forecast\".",
+"edit 6 \"finish the budget forecast\"",
+"right",
+true
+],
+[
+"First: Remove the phone one. Second: Remove finished todos.",
+"destroy 5; clear_completed",
+"right",
+true
+],
+[
+"Clear the completed ones.",
+"clear_completed",
+"right",
+true
+],
+[
+"Delete the first item.",
+"destroy 1",
+"right",
+true
+],
+[
+"Please add pay the water bill.",
+"add \"pay the water bill\"",
+"right",
+true
+],
+[
+"Delete the fourth item.",
+"destroy 4",
+"right",
+true
+],
+[
+"Drop the shower task. Also, Reopen all todos.",
+"destroy 7; toggle_all",
+"wrong",
+true
+],
+[
+"Get rid of \"unclog the shower drain\".",
+"destroy 4",
+"right",
+true
+],
+[
+"Put \"grab oat milk\" on the list.",
+"add \"grab oat milk\"",
+"right",
+true
+],
+[
+"Tick the third one.",
+"toggle 3",
+"right",
+true
+],
+[
+"Rename \"dust the bookshelves\" to \"defrost the freezer\".",
+"edit 1 \"defrost the freezer\"",
+"right",
+true
+],
+[
+"Mark \"sweep the balcony\" as done.",
+"nothing",
+"right",
+true
+],
+[
+"Remove the drain one. Then Mark all the work todos as done.",
+"destroy 7; toggle 2",
+"wrong",
+true
+],
+[
+"Mark all the job todos as done.",
+"toggle 2",
+"right",
+true
+],
+[
+"New todo: send the invoice to Acme",
+"add \"send the invoice to Acme\"",
+"right",
+true
+],
+[
+"Mark \"sweep the balcony\" as done.",
+"toggle 4",
+"right",
+true
+],
+[
+"Tick the second one.",
+"toggle 2",
+"right",
+true
+],
+[
+"Edit the second item to say reply to Priya's email.",
+"edit 2 \"reply to Priya's email\"",
+"right",
+true
+],
+[
+"Delete everything that is done.",
+"clear_completed",
+"right",
+true
+],
+[
+"Replace \"order a phone charger\" with \"review the phone contract\".",
+"edit 7 \"review the phone contract\"",
+"right",
+true
+],
+[
+"Check off all of them.",
+"toggle_all",
+"right",
+true
+],
+[
+"Mark \"book a room for the workshop\" as done.",
+"nothing",
+"right",
+true
+],
+[
+"Please add get cat litter.",
+"add \"get cat litter\"",
+"right",
+true
+],
+[
+"Complete all todos.",
+"toggle_all",
+"wrong",
+true
+],
+[
+"Get rid of \"reply to Priya's email\".",
+"destroy 1",
+"right",
+true
+],
+[
+"Check off the household items.",
+"nothing",
+"right",
+true
+],
+[
+"Edit the third item to say reply to Priya's email.",
+"edit 3 \"reply to Priya's email\"",
+"right",
+true
+],
+[
+"Check off the second item.",
+"toggle 2",
+"right",
+true
+],
+[
+"Check off the last item.",
+"toggle 2",
+"right",
+true
+],
+[
+"Clear the completed ones.",
+"clear_completed",
+"right",
+true
+],
+[
+"Change the budget one to \"book a blood test\".",
+"edit 5 \"book a blood test\"",
+"right",
+true
+],
+[
+"Rename \"dispute the card charge\" to \"charge the camera\". Then Reopen all todos.",
+"edit 2 \"charge the camera\"; toggle_all",
+"wrong",
+true
+],
+[
+"Drop the charge task.",
+"destroy 1",
+"right",
+true
+],
+[
+"Get rid of \"send the invoice to Acme\".",
+"destroy 5",
+"right",
+true
+],
+[
+"Filter: active.",
+"show active",
+"right",
+true
+],
+[
+"Filter: completed.",
+"show completed",
+"right",
+true
+],
+[
+"Do the usual.",
+"nothing",
+"right",
+true
+],
+[
+"Delete \"send the invoice to Acme\". Also, Complete everything about things to buy.",
+"destroy 1; toggle 2; toggle 4",
+"wrong",
+true
+],
+[
+"Check off all of them.",
+"toggle_all",
+"wrong",
+true
+],
+[
+"Change the replace one to \"finish the budget forecast\".",
+"edit 4 \"finish the budget forecast\"",
+"right",
+true
+],
+[
+"Check off all of them. Then Get rid of \"apply for the visa\".",
+"toggle_all; destroy 2",
+"right",
+true
+],
+[
+"Mark \"review the phone contract\" as not done.",
+"toggle 5",
+"right",
+true
+],
+[
+"Switch to the active view. Also, Reopen all todos.",
+"show active",
+"right",
+true
+],
+[
+"Check off all of them. Then Reopen the bill one.",
+"toggle_all; toggle_all; toggle 2",
+"right",
+true
+],
+[
+"Uncheck the fifth item.",
+"toggle 5",
+"right",
+true
+],
+[
+"Delete \"order new contact lenses\".",
+"destroy 1",
+"right",
+true
+],
+[
+"Remove finished todos.",
+"clear_completed",
+"right",
+true
+],
+[
+"Delete \"dust the bookshelves\".",
+"destroy 3",
+"right",
+true
+],
+[
+"Show only completed todos.",
+"show completed",
+"right",
+true
+],
+[
+"Put \"get cat litter\" on the list.",
+"add \"get cat litter\"",
+"right",
+true
+],
+[
+"Untick the camera task. Also, Please add replace the hallway bulb.",
+"toggle 4; add \"replace the hallway bulb\"",
+"right",
+true
+],
+[
+"Untick the deposit task.",
+"toggle 5",
+"right",
+true
+],
+[
+"I finished the visa task.",
+"toggle 2",
+"right",
+true
+],
+[
+"New todo: buy tomatoes",
+"add \"buy tomatoes\"",
+"right",
+true
+],
+[
+"Reopen all todos. Also, Put \"charge the camera\" on the list.",
+"toggle_all; toggle_all; add \"charge the camera\"",
+"right",
+true
+],
+[
+"Delete \"replace the hallway bulb\".",
+"destroy 3",
+"right",
+true
+],
+[
+"First: Drop the trip items. Second: Replace \"send the deposit\" with \"order new contact lenses\".",
+"destroy 5; edit 2 \"order new contact lenses\"",
+"right",
+true
+],
+[
+"Mark \"replace the hallway bulb\" as done.",
+"nothing",
+"right",
+true
+],
+[
+"Put \"call the doctor's office\" on the list.",
+"add \"call the doctor's office\"",
+"right",
+true
+],
+[
+"First: Uncheck all of them. Second: Uncheck the first item.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Uncheck all of them.",
+"toggle_all",
+"right",
+true
+],
+[
+"Untick the card task.",
+"toggle 5",
+"right",
+true
+],
+[
+"Put \"pay the water bill\" on the list.",
+"add \"pay the water bill\"",
+"right",
+true
+],
+[
+"Remove everything about things to buy.",
+"destroy 2",
+"right",
+true
+],
+[
+"Rename \"sweep the balcony\" to \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"First: Complete the pension one. Second: Drop the apply task.",
+"toggle 2; destroy 3",
+"right",
+true
+],
+[
+"\"send the deposit\" is done.",
+"toggle 2",
+"right",
+true
+],
+[
+"Check off the first item.",
+"toggle 1",
+"right",
+true
+],
+[
+"Tick the last one.",
+"toggle 3",
+"right",
+true
+],
+[
+"Filter: completed.",
+"show completed",
+"right",
+true
+],
+[
+"Replace \"grab oat milk\" with \"send the deposit\".",
+"edit 2 \"send the deposit\"",
+"right",
+true
+],
+[
+"Please add get cat litter.",
+"add \"get cat litter\"",
+"right",
+true
+],
+[
+"Switch to the completed view.",
+"show completed",
+"right",
+true
+],
+[
+"Complete everything about travel.",
+"nothing",
+"right",
+true
+],
+[
+"Rename \"buy tomatoes\" to \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"Reopen the hallway one.",
+"toggle 1",
+"right",
+true
+],
+[
+"Delete \"unclog the shower drain\".",
+"nothing",
+"right",
+true
+],
+[
+"Replace \"check the train times\" with \"dispute the card charge\".",
+"edit 2 \"dispute the card charge\"",
+"right",
+true
+],
+[
+"Filter: completed. Then Complete all todos.",
+"show completed; toggle_all",
+"right",
+true
+],
+[
+"Drop the send task.",
+"destroy 2",
+"right",
+true
+],
+[
+"\"replace the hallway bulb\" is done.",
+"toggle 2",
+"right",
+true
+],
+[
+"Check off all of them.",
+"toggle_all",
+"right",
+true
+],
+[
+"Show only active todos.",
+"show active",
+"right",
+true
+],
+[
+"Delete everything that is done.",
+"clear_completed",
+"right",
+true
+],
+[
+"Mark everything as not done.",
+"nothing",
+"right",
+true
+],
+[
+"Mark everything as done.",
+"toggle_all",
+"right",
+true
+],
+[
+"Get rid of \"unclog the shower drain\".",
+"destroy 2",
+"right",
+true
+],
+[
+"Edit the last item to say buy wrapping paper.",
+"edit 4 \"buy wrapping paper\"",
+"right",
+true
+],
+[
+"Edit the third item to say order a phone charger.",
+"edit 3 \"order a phone charger\"",
+"right",
+true
+],
+[
+"First: Delete \"buy wrapping paper\". Second: Switch to the all view.",
+"destroy 1; show all",
+"right",
+true
+],
+[
+"Tick the first one.",
+"toggle 1",
+"right",
+true
+],
+[
+"Complete the forecast one.",
+"toggle 3",
+"right",
+true
+],
+[
+"Change the camera one to \"top up the pension\". Then Uncheck the fifth item.",
+"edit 5 \"top up the pension\"; toggle 5",
+"right",
+true
+],
+[
+"Complete the wrapping one. Then Get rid of \"defrost the freezer\".",
+"toggle 3; destroy 4",
+"right",
+true
+],
+[
+"Get rid of \"pay the water bill\".",
+"destroy 1",
+"right",
+true
+],
+[
+"Hello.",
+"nothing",
+"right",
+true
+],
+[
+"Filter: active.",
+"show active",
+"right",
+true
+],
+[
+"Put \"top up the pension\" on the list.",
+"add \"top up the pension\"",
+"right",
+true
+],
+[
+"Mark everything as not done.",
+"toggle_all; toggle_all",
+"wrong",
+true
+],
+[
+"Reopen the posting one.",
+"toggle 3",
+"right",
+true
+],
+[
+"First: Uncheck the first item. Second: Get rid of \"book a hotel in Kyoto\".",
+"toggle 1; destroy 1",
+"right",
+true
+],
+[
+"Edit the last item to say top up the pension.",
+"edit 6 \"top up the pension\"",
+"right",
+true
+],
+[
+"Put \"unclog the shower drain\" on the list. Also, Check off all of them.",
+"add \"unclog the shower drain\"; toggle_all",
+"right",
+true
+],
+[
+"I also need to exchange some currency.",
+"add \"exchange some currency\"",
+"right",
+true
+],
+[
+"Check off the chores items.",
+"nothing",
+"right",
+true
+],
+[
+"Add \"unclog the shower drain\".",
+"add \"unclog the shower drain\"",
+"right",
+true
+],
+[
+"Mark \"order a phone charger\" as done. Also, Check off the shopping items.",
+"toggle 2",
+"right",
+true
+],
+[
+"Rename \"exchange some currency\" to \"book a blood test\".",
+"edit 6 \"book a blood test\"",
+"right",
+true
+],
+[
+"Mark \"call the doctor's office\" as done.",
+"toggle 2",
+"right",
+true
+],
+[
+"Complete everything about household.",
+"toggle 3",
+"right",
+true
+],
+[
+"Reopen all todos.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Uncheck the second item.",
+"toggle 2",
+"right",
+true
+],
+[
+"Make it nicer.",
+"nothing",
+"right",
+true
+],
+[
+"Complete everything about things to buy.",
+"toggle 4",
+"right",
+true
+],
+[
+"Delete the last item.",
+"destroy 2",
+"right",
+true
+],
+[
+"Remove everything about things to buy.",
+"destroy 3; destroy 3",
+"wrong",
+true
+],
+[
+"New todo: dispute the card charge",
+"add \"dispute the card charge\"",
+"right",
+true
+],
+[
+"First: Change the book one to \"defrost the freezer\". Second: Reopen all todos.",
+"edit 1 \"defrost the freezer\"; toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Drop the finance items.",
+"destroy 4; destroy 4",
+"wrong",
+true
+],
+[
+"First: Put \"reply to Priya's email\" on the list. Second: Replace \"book a hotel in Kyoto\" with \"defrost the freezer\".",
+"add \"reply to Priya's email\"; edit 3 \"defrost the freezer\"",
+"right",
+true
+],
+[
+"Mark everything as done. Then Mark everything as not done.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Please add stretch for ten minutes.",
+"add \"ten minutes\"",
+"wrong",
+true
+],
+[
+"Uncheck all of them. Also, Drop the health items.",
+"toggle_all; toggle_all; destroy 4",
+"wrong",
+true
+],
+[
+"I also need to unclog the shower drain.",
+"add \"unclog the shower drain\"",
+"right",
+true
+],
+[
+"Reopen the milk one.",
+"toggle 6",
+"right",
+true
+],
+[
+"Put \"finish the budget forecast\" on the list.",
+"add \"finish the budget forecast\"",
+"right",
+true
+],
+[
+"Delete everything that is done.",
+"clear_completed",
+"right",
+true
+],
+[
+"Replace \"replace the hallway bulb\" with \"apply for the visa\". Also, Show only active todos.",
+"edit 5 \"apply for the visa\"; show active",
+"right",
+true
+],
+[
+"Uncheck all of them. Then Show only completed todos.",
+"toggle_all; toggle_all; show completed",
+"wrong",
+true
+],
+[
+"\"buy tomatoes\" is done. Also, Clear the completed ones.",
+"toggle 4; clear_completed",
+"right",
+true
+],
+[
+"Rename \"draft the job posting\" to \"charge the camera\".",
+"edit 5 \"charge the camera\"",
+"right",
+true
+],
+[
+"Delete everything that is done.",
+"clear_completed",
+"right",
+true
+],
+[
+"\"send the deposit\" is done.",
+"toggle 1",
+"right",
+true
+],
+[
+"\"dust the bookshelves\" is done.",
+"toggle 7",
+"right",
+true
+],
+[
+"Add \"book a room for the workshop\".",
+"add \"book a room for the workshop\"",
+"right",
+true
+],
+[
+"Clear the completed ones.",
+"clear_completed",
+"right",
+true
+],
+[
+"Drop the contact task.",
+"destroy 1",
+"right",
+true
+],
+[
+"Complete everything about chores.",
+"toggle 3",
+"right",
+true
+],
+[
+"Check off all of them.",
+"nothing",
+"right",
+true
+],
+[
+"I also need to buy wrapping paper.",
+"add \"buy wrapping paper\"",
+"right",
+true
+],
+[
+"Remove finished todos.",
+"nothing",
+"right",
+true
+],
+[
+"Add \"review the phone contract\".",
+"add \"review the phone contract\"",
+"right",
+true
+],
+[
+"Make it nicer.",
+"nothing",
+"right",
+true
+],
+[
+"Edit the first item to say reply to Priya's email.",
+"edit 1 \"reply to Priya's email\"",
+"right",
+true
+],
+[
+"Check off the fifth item.",
+"toggle 5",
+"right",
+true
+],
+[
+"Mark everything as not done. Also, Rename \"send the deposit\" to \"sweep the balcony\".",
+"toggle_all; toggle_all; edit 3 \"sweep the balcony\"",
+"right",
+true
+],
+[
+"Check off all of them.",
+"toggle_all",
+"wrong",
+true
+],
+[
+"First: Drop the trip items. Second: Switch to the completed view.",
+"destroy 1; show completed",
+"right",
+true
+],
+[
+"Delete everything that is done.",
+"clear_completed",
+"right",
+true
+],
+[
+"Hello.",
+"nothing",
+"right",
+true
+],
+[
+"Get rid of \"draft the job posting\".",
+"destroy 2",
+"right",
+true
+],
+[
+"Filter: completed. Also, Delete all the job todos.",
+"show completed; destroy 1",
+"right",
+true
+],
+[
+"Check off all of them.",
+"toggle_all",
+"right",
+true
+],
+[
+"First: Delete the third item. Second: Mark all the health todos as done.",
+"destroy 3; toggle 1",
+"wrong",
+true
+],
+[
+"Rename \"get cat litter\" to \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"Replace \"draft the job posting\" with \"get cat litter\".",
+"edit 3 \"get cat litter\"",
+"right",
+true
+],
+[
+"I also need to send the deposit.",
+"add \"send the deposit\"",
+"right",
+true
+],
+[
+"Switch to the completed view.",
+"show completed",
+"right",
+true
+],
+[
+"Please add get cat litter.",
+"add \"get cat litter\"",
+"right",
+true
+],
+[
+"Put \"order new contact lenses\" on the list.",
+"add \"order new contact lenses\"",
+"right",
+true
+],
+[
+"\"replace the hallway bulb\" is done.",
+"toggle 2",
+"right",
+true
+],
+[
+"Rename \"draft the job posting\" to \"dispute the card charge\".",
+"edit 1 \"dispute the card charge\"",
+"right",
+true
+],
+[
+"Drop the money items.",
+"destroy 2",
+"right",
+true
+],
+[
+"Check off all of them.",
+"toggle_all",
+"right",
+true
+],
+[
+"Complete the some one.",
+"toggle 1",
+"right",
+true
+],
+[
+"Switch to the active view. Also, Delete all the finance todos.",
+"show active; destroy 2",
+"refused",
+false
+],
+[
+"First: Check off the finance items. Second: I also need to get cat litter.",
+"toggle 1; toggle 3; add \"get cat litter\"",
+"wrong",
+true
+],
+[
+"Complete everything about health.",
+"toggle 6",
+"right",
+true
+],
+[
+"Make it nicer.",
+"nothing",
+"right",
+true
+],
+[
+"Mark all the finance todos as done.",
+"toggle 3",
+"right",
+true
+],
+[
+"Replace \"pay the water bill\" with \"replace the hallway bulb\".",
+"edit 2 \"replace the hallway bulb\"",
+"right",
+true
+],
+[
+"Rename \"replace the hallway bulb\" to \"grab oat milk\".",
+"edit 3 \"grab oat milk\"",
+"right",
+true
+],
+[
+"Please add draft the job posting.",
+"add \"draft the job posting\"",
+"right",
+true
+],
+[
+"Edit the first item to say charge the camera. Then Mark \"exchange some currency\" as not done.",
+"edit 1 \"charge the camera\"; toggle 2",
+"right",
+true
+],
+[
+"Mark \"top up the pension\" as not done.",
+"toggle 1",
+"right",
+true
+],
+[
+"Rename \"apply for the visa\" to \"dust the bookshelves\".",
+"edit 2 \"dust the bookshelves\"",
+"right",
+true
+],
+[
+"Remove finished todos.",
+"clear_completed",
+"right",
+true
+],
+[
+"Delete \"book a room for the workshop\".",
+"nothing",
+"right",
+true
+],
+[
+"Delete \"replace the hallway bulb\".",
+"nothing",
+"right",
+true
+],
+[
+"Put \"dust the bookshelves\" on the list. Then Complete the swimming one.",
+"add \"dust the bookshelves\"; toggle 1",
+"right",
+true
+],
+[
+"Put \"check the train times\" on the list.",
+"add \"check the train times\"",
+"right",
+true
+],
+[
+"Rename \"order a phone charger\" to \"defrost the freezer\".",
+"edit 2 \"defrost the freezer\"",
+"right",
+true
+],
+[
+"Hello.",
+"nothing",
+"right",
+true
+],
+[
+"Tick the last one.",
+"toggle 4",
+"right",
+true
+],
+[
+"Mark \"book a hotel in Kyoto\" as not done. Also, Show only active todos.",
+"toggle 4; show active",
+"right",
+true
+],
+[
+"Mark all the health todos as done.",
+"toggle 6",
+"right",
+true
+],
+[
+"Replace \"get cat litter\" with \"pay the water bill\".",
+"edit 1 \"pay the water bill\"",
+"right",
+true
+],
+[
+"Change the bulb one to \"get cat litter\".",
+"edit 2 \"get cat litter\"",
+"right",
+true
+],
+[
+"Check off the last item.",
+"toggle 2",
+"right",
+true
+],
+[
+"Drop the deposit task.",
+"destroy 1",
+"right",
+true
+],
+[
+"First: Mark \"send the invoice to Acme\" as not done. Second: Edit the fourth item to say defrost the freezer.",
+"toggle 2; edit 4 \"defrost the freezer\"",
+"right",
+true
+],
+[
+"Mark \"review the phone contract\" as done. Then Put \"call the doctor's office\" on the list.",
+"toggle 2; add \"call the doctor's office\"",
+"right",
+true
+],
+[
+"Check off the travel items.",
+"nothing",
+"wrong",
+true
+],
+[
+"Delete everything that is done. Then Complete all todos.",
+"clear_completed; toggle_all",
+"right",
+true
+],
+[
+"Do the usual.",
+"nothing",
+"right",
+true
+],
+[
+"Delete \"top up the pension\".",
+"destroy 4",
+"right",
+true
+],
+[
+"I also need to order a phone charger.",
+"add \"order a phone charger\"",
+"right",
+true
+],
+[
+"Edit the first item to say go swimming.",
+"edit 1 \"go swimming\"",
+"right",
+true
+],
+[
+"New todo: get cat litter",
+"add \"get cat litter\"",
+"right",
+true
+],
+[
+"First: Check off all of them. Second: Drop the travel items.",
+"toggle_all; destroy 5",
+"wrong",
+true
+],
+[
+"Complete the bookshelves one. Also, Remove finished todos.",
+"toggle 1; clear_completed",
+"right",
+true
+],
+[
+"Uncheck the first item.",
+"toggle 1",
+"right",
+true
+],
+[
+"Make it nicer.",
+"nothing",
+"right",
+true
+],
+[
+"\"get cat litter\" is not finished after all.",
+"toggle 4",
+"right",
+true
+],
+[
+"\"grab oat milk\" is done.",
+"toggle 2",
+"right",
+true
+],
+[
+"Change the test one to \"order new contact lenses\". Also, Get rid of \"book a blood test\".",
+"edit 2 \"order new contact lenses\"; destroy 2",
+"right",
+true
+],
+[
+"Get rid of \"check the train times\". Then Remove finished todos.",
+"destroy 1",
+"right",
+true
+],
+[
+"Drop the health items.",
+"destroy 4",
+"right",
+true
+],
+[
+"Rename \"charge the camera\" to \"book a blood test\".",
+"edit 1 \"book a blood test\"",
+"right",
+true
+],
+[
+"Filter: active.",
+"show active",
+"right",
+true
+],
+[
+"Show only active todos.",
+"show active",
+"right",
+true
+],
+[
+"Switch to the completed view.",
+"show completed",
+"right",
+true
+],
+[
+"Reopen all todos. Then Replace \"draft the job posting\" with \"replace the hallway bulb\".",
+"toggle_all; toggle_all; edit 5 \"replace the hallway bulb\"",
+"right",
+true
+],
+[
+"Mark \"draft the job posting\" as done.",
+"toggle 2",
+"right",
+true
+],
+[
+"Mark all the household todos as done.",
+"toggle 5",
+"right",
+true
+],
+[
+"\"charge the camera\" is done.",
+"toggle 2",
+"right",
+true
+],
+[
+"Put \"get cat litter\" on the list.",
+"add \"get cat litter\"",
+"right",
+true
+],
+[
+"Do the usual.",
+"nothing",
+"right",
+true
+],
+[
+"Filter: completed.",
+"show completed",
+"right",
+true
+],
+[
+"Mark everything as not done.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Reopen all todos.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"\"dispute the card charge\" is done. Then Change the card one to \"reply to Priya's email\".",
+"toggle 1; edit 1 \"reply to Priya's email\"",
+"right",
+true
+],
+[
+"Put \"dust the bookshelves\" on the list. Also, Drop the litter task.",
+"add \"dust the bookshelves\"; destroy 1",
+"right",
+true
+],
+[
+"Delete everything that is done. Also, Switch to the active view.",
+"show active",
+"right",
+true
+],
+[
+"Delete \"book a room for the workshop\".",
+"destroy 1",
+"right",
+true
+],
+[
+"Edit the second item to say replace the hallway bulb.",
+"edit 2 \"replace the hallway bulb\"",
+"right",
+true
+],
+[
+"I also need to book a blood test.",
+"add \"book a blood test\"",
+"right",
+true
+],
+[
+"Remove finished todos.",
+"clear_completed",
+"right",
+true
+],
+[
+"\"order a phone charger\" is done. Also, Mark everything as done.",
+"toggle 5; toggle_all",
+"right",
+true
+],
+[
+"Complete the unclog one. Also, Mark everything as done.",
+"toggle 3; toggle_all",
+"wrong",
+true
+],
+[
+"First: Delete everything that is done. Second: Switch to the active view.",
+"clear_completed; show active",
+"right",
+true
+],
+[
+"Check off the third item.",
+"toggle 3",
+"right",
+true
+],
+[
+"Mark \"reply to Priya's email\" as done.",
+"nothing",
+"right",
+true
+],
+[
+"Please add apply for the visa.",
+"add \"apply for the visa\"",
+"right",
+true
+],
+[
+"Check off the second item.",
+"toggle 2",
+"right",
+true
+],
+[
+"Delete all the health todos.",
+"destroy 1; destroy 4",
+"wrong",
+true
+],
+[
+"Edit the second item to say unclog the shower drain.",
+"edit 2 \"unclog the shower drain\"",
+"right",
+true
+],
+[
+"Rename \"go swimming\" to \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"Show only completed todos.",
+"show completed",
+"right",
+true
+],
+[
+"Untick the pension task.",
+"toggle 1",
+"right",
+true
+],
+[
+"Mark everything as done.",
+"toggle_all",
+"right",
+true
+],
+[
+"Delete all the chores todos. Also, Add \"send the invoice to Acme\".",
+"destroy 1; destroy 1; add \"send the invoice to Acme\"",
+"wrong",
+true
+],
+[
+"Mark everything as not done.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"New todo: pay the water bill",
+"add \"pay the water bill\"",
+"right",
+true
+],
+[
+"Delete all the shopping todos.",
+"destroy 2",
+"right",
+true
+],
+[
+"What is this list for?",
+"nothing",
+"right",
+true
+],
+[
+"Replace \"buy wrapping paper\" with \"apply for the visa\".",
+"edit 1 \"apply for the visa\"",
+"right",
+true
+],
+[
+"Delete all the health todos.",
+"destroy 6",
+"right",
+true
+],
+[
+"Check off the health items.",
+"nothing",
+"right",
+true
+],
+[
+"Show only active todos.",
+"show active",
+"right",
+true
+],
+[
+"Please add order new contact lenses.",
+"add \"order new contact lenses\"",
+"right",
+true
+],
+[
+"Rename \"charge the camera\" to \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"Complete everything about job.",
+"nothing",
+"right",
+true
+],
+[
+"Drop the book task. Also, Filter: active.",
+"destroy 3; show active",
+"right",
+true
+],
+[
+"New todo: order a phone charger Also, Replace \"charge the camera\" with \"dispute the card charge\".",
+"add \"order a phone charger\"; edit 3 \"dispute the card charge\"",
+"right",
+true
+],
+[
+"Untick the Acme task.",
+"toggle 2",
+"right",
+true
+],
+[
+"Change the contract one to \"charge the camera\".",
+"edit 2 \"charge the camera\"",
+"right",
+true
+],
+[
+"What is this list for?",
+"nothing",
+"right",
+true
+],
+[
+"Remove everything about shopping. Then Remove finished todos.",
+"destroy 1; destroy 1",
+"wrong",
+true
+],
+[
+"New todo: check the train times",
+"add \"check the train times\"",
+"right",
+true
+],
+[
+"Edit the fourth item to say go swimming.",
+"edit 4 \"go swimming\"",
+"right",
+true
+],
+[
+"Delete \"reply to Priya's email\".",
+"destroy 1",
+"right",
+true
+],
+[
+"Please add unclog the shower drain.",
+"add \"unclog the shower drain\"",
+"right",
+true
+],
+[
+"Mark all the chores todos as done.",
+"toggle 4",
+"right",
+true
+],
+[
+"Change the hotel one to \"dust the bookshelves\".",
+"edit 1 \"dust the bookshelves\"",
+"right",
+true
+],
+[
+"Mark everything as not done.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Replace \"book a hotel in Kyoto\" with \"dust the bookshelves\".",
+"edit 1 \"dust the bookshelves\"",
+"right",
+true
+],
+[
+"Mark \"reply to Priya's email\" as done. Also, Clear the completed ones.",
+"toggle 2; clear_completed",
+"right",
+true
+],
+[
+"Remove finished todos. Also, Please add finish the budget forecast.",
+"clear_completed; add \"finish the budget forecast\"",
+"right",
+true
+],
+[
+"\"book a hotel in Kyoto\" is done.",
+"toggle 5",
+"right",
+true
+],
+[
+"Drop the chores items.",
+"destroy 2",
+"wrong",
+true
+],
+[
+"Switch to the completed view.",
+"show completed",
+"right",
+true
+],
+[
+"Please add get cat litter.",
+"add \"get cat litter\"",
+"right",
+true
+],
+[
+"Complete all todos.",
+"toggle_all",
+"wrong",
+true
+],
+[
+"Check off the job items.",
+"nothing",
+"right",
+true
+],
+[
+"Rename \"order new contact lenses\" to \"book a hotel in Kyoto\".",
+"edit 1 \"book a hotel in Kyoto\"",
+"right",
+true
+],
+[
+"\"stretch for ten minutes\" is not finished after all.",
+"toggle 2",
+"right",
+true
+],
+[
+"Check off the finance items.",
+"toggle 3",
+"wrong",
+true
+],
+[
+"Mark \"buy wrapping paper\" as done. Also, Add \"grab oat milk\".",
+"toggle 6; add \"grab oat milk\"",
+"right",
+true
+],
+[
+"First: Delete everything that is done. Second: Drop the phone task.",
+"destroy 2",
+"right",
+true
+],
+[
+"Get rid of \"top up the pension\".",
+"destroy 1",
+"right",
+true
+],
+[
+"Add \"replace the hallway bulb\". Also, Clear the completed ones.",
+"add \"replace the hallway bulb\"; clear_completed",
+"right",
+true
+],
+[
+"Remove finished todos.",
+"clear_completed",
+"right",
+true
+],
+[
+"Delete everything that is done.",
+"nothing",
+"right",
+true
+],
+[
+"Delete everything that is done.",
+"clear_completed",
+"right",
+true
+],
+[
+"Drop the health items.",
+"destroy 1; destroy 1",
+"wrong",
+true
+],
+[
+"\"sweep the balcony\" is not finished after all.",
+"toggle 4",
+"right",
+true
+],
+[
+"Delete \"call the doctor's office\".",
+"nothing",
+"right",
+true
+],
+[
+"What is this list for?",
+"nothing",
+"right",
+true
+],
+[
+"First: I finished the forecast task. Second: Clear the completed ones.",
+"toggle 3; clear_completed",
+"right",
+true
+],
+[
+"Uncheck all of them. Also, New todo: book a hotel in Kyoto",
+"add \"book a hotel in Kyoto\"",
+"right",
+true
+],
+[
+"Edit the first item to say get cat litter. Also, Get rid of \"draft the job posting\".",
+"edit 1 \"get cat litter\"; destroy 1",
+"right",
+true
+],
+[
+"What is this list for?",
+"nothing",
+"right",
+true
+],
+[
+"Rename \"order new contact lenses\" to \"grab oat milk\". Then Tick the last one.",
+"edit 1 \"grab oat milk\"; toggle 6",
+"right",
+true
+],
+[
+"Add \"grab oat milk\".",
+"add \"grab oat milk\"",
+"right",
+true
+],
+[
+"Complete all todos.",
+"toggle_all",
+"right",
+true
+],
+[
+"Check off the health items.",
+"toggle 3",
+"wrong",
+true
+],
+[
+"Drop the order task.",
+"destroy 1",
+"right",
+true
+],
+[
+"Tick the first one.",
+"toggle 1",
+"right",
+true
+],
+[
+"Mark \"buy wrapping paper\" as not done.",
+"toggle 4",
+"right",
+true
+],
+[
+"Put \"send the deposit\" on the list.",
+"add \"send the deposit\"",
+"right",
+true
+],
+[
+"Change the bookshelves one to \"order new contact lenses\".",
+"edit 2 \"order new contact lenses\"",
+"right",
+true
+],
+[
+"Replace \"draft the job posting\" with \"book a room for the workshop\".",
+"edit 4 \"book a room for the workshop\"",
+"right",
+true
+],
+[
+"Mark all the things to buy todos as done. Then Edit the first item to say stretch for ten minutes.",
+"toggle 7; edit 1 \"stretch for ten minutes\"",
+"right",
+true
+],
+[
+"Reopen all todos.",
+"toggle_all",
+"right",
+true
+],
+[
+"Uncheck the second item.",
+"toggle 2",
+"right",
+true
+],
+[
+"Complete the milk one.",
+"toggle 1",
+"right",
+true
+],
+[
+"Rename \"grab oat milk\" to \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"Complete all todos.",
+"toggle_all",
+"right",
+true
+],
+[
+"Check off the fourth item.",
+"toggle 4",
+"right",
+true
+],
+[
+"First: I also need to finish the budget forecast. Second: \"call the doctor's office\" is done.",
+"add \"call the doctor's office\"",
+"wrong",
+true
+],
+[
+"First: Remove the times one. Second: Switch to the completed view.",
+"destroy 1; show completed",
+"right",
+true
+],
+[
+"Add \"pay the water bill\". Also, Check off the first item.",
+"add \"pay the water bill\"; toggle 1",
+"right",
+true
+],
+[
+"Mark \"get cat litter\" as done.",
+"toggle 1",
+"right",
+true
+],
+[
+"First: \"book a hotel in Kyoto\" is not finished after all. Second: Clear the completed ones.",
+"toggle 1; clear_completed",
+"right",
+true
+],
+[
+"Check off all of them.",
+"toggle_all",
+"wrong",
+true
+],
+[
+"Add \"dispute the card charge\".",
+"add \"dispute the card charge\"",
+"right",
+true
+],
+[
+"New todo: apply for the visa",
+"add \"apply for the visa\"",
+"right",
+true
+],
+[
+"Delete everything that is done.",
+"nothing",
+"right",
+true
+],
+[
+"Change the currency one to \"stretch for ten minutes\".",
+"edit 5 \"stretch for ten minutes\"",
+"right",
+true
+],
+[
+"Show only active todos. Also, Check off the fourth item.",
+"show active; toggle 4",
+"wrong",
+true
+],
+[
+"What is this list for?",
+"nothing",
+"right",
+true
+]
+],
+"training titles, training wording": [
+[
+"\"book flights to Lisbon\" is done.",
+"toggle 1",
+"right",
+true
+],
+[
+"Please add cancel the gym membership.",
+"add \"cancel the gym membership\"",
+"right",
+true
+],
+[
+"Hello.",
+"nothing",
+"right",
+true
+],
+[
+"Delete everything that is done.",
+"nothing",
+"right",
+true
+],
+[
+"Put \"clean the windows\" on the list.",
+"add \"clean the windows\"",
+"right",
+true
+],
+[
+"Complete all todos.",
+"toggle_all",
+"wrong",
+true
+],
+[
+"Delete \"check the bank statement\".",
+"destroy 2",
+"right",
+true
+],
+[
+"Uncheck all of them.",
+"toggle_all",
+"wrong",
+true
+],
+[
+"Delete everything that is done.",
+"nothing",
+"right",
+true
+],
+[
+"First: \"print the boarding passes\" is done. Second: Complete everything about household.",
+"toggle 5; toggle 2",
+"right",
+true
+],
+[
+"I finished the order task.",
+"toggle 2",
+"right",
+true
+],
+[
+"What is this list for?",
+"nothing",
+"right",
+true
+],
+[
+"Reopen all todos.",
+"toggle_all",
+"wrong",
+true
+],
+[
+"\"pack the suitcase\" is done.",
+"toggle 1",
+"right",
+true
+],
+[
+"Rename \"reserve the rental car\" to \"review Tom's pull request\".",
+"edit 3 \"review Tom's pull request\"",
+"right",
+true
+],
+[
+"Drop the work items.",
+"destroy 2",
+"right",
+true
+],
+[
+"Change the bank one to \"reserve the rental car\".",
+"edit 4 \"reserve the rental car\"",
+"right",
+true
+],
+[
+"Rename \"order new headphones\" to \"pay the electricity bill\".",
+"edit 3 \"pay the electricity bill\"",
+"right",
+true
+],
+[
+"Check off all of them. Also, I finished the review task.",
+"toggle_all; toggle 3",
+"wrong",
+true
+],
+[
+"Mark \"update the project plan\" as done.",
+"toggle 5",
+"right",
+true
+],
+[
+"Show only completed todos.",
+"show completed",
+"right",
+true
+],
+[
+"Add \"update the project plan\". Also, Mark everything as done.",
+"add \"update the project plan\"; toggle_all",
+"right",
+true
+],
+[
+"Please add transfer savings.",
+"add \"transfer savings\"",
+"right",
+true
+],
+[
+"Rename \"get dog food\" to \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"Change the team one to \"fix the kitchen tap\".",
+"edit 3 \"fix the kitchen tap\"",
+"right",
+true
+],
+[
+"Check off all of them.",
+"toggle_all",
+"right",
+true
+],
+[
+"Mark all the travel todos as done.",
+"toggle 2",
+"right",
+true
+],
+[
+"Mark all the chores todos as done.",
+"toggle 2",
+"right",
+true
+],
+[
+"Remove the rental one.",
+"destroy 1",
+"right",
+true
+],
+[
+"\"schedule the team offsite\" is done.",
+"toggle 7",
+"right",
+true
+],
+[
+"Change the food one to \"book a dentist appointment\".",
+"edit 3 \"book a dentist appointment\"",
+"right",
+true
+],
+[
+"Replace \"pick up eggs\" with \"transfer savings\".",
+"edit 1 \"transfer savings\"",
+"right",
+true
+],
+[
+"Drop the trip items.",
+"destroy 3",
+"right",
+true
+],
+[
+"Mark \"transfer savings\" as done.",
+"toggle 1",
+"right",
+true
+],
+[
+"New todo: buy travel insurance",
+"add \"buy travel insurance\"",
+"right",
+true
+],
+[
+"Change the water one to \"write meeting notes\".",
+"edit 2 \"write meeting notes\"",
+"right",
+true
+],
+[
+"\"fix the kitchen tap\" is not finished after all.",
+"toggle 6",
+"right",
+true
+],
+[
+"Remove everything about shopping.",
+"destroy 4",
+"right",
+true
+],
+[
+"Mark everything as not done. Then New todo: pay the rent",
+"toggle_all; toggle_all; add \"pay the rent\"",
+"wrong",
+true
+],
+[
+"Switch to the active view. Also, Delete \"do yoga\".",
+"show active; destroy 5",
+"refused",
+false
+],
+[
+"First: Reopen all todos. Second: Check off the first item.",
+"toggle_all; toggle_all",
+"wrong",
+true
+],
+[
+"I also need to buy milk.",
+"add \"buy milk\"",
+"right",
+true
+],
+[
+"\"buy travel insurance\" is not finished after all.",
+"toggle 1",
+"right",
+true
+],
+[
+"Reopen the slides one.",
+"toggle 2",
+"right",
+true
+],
+[
+"Uncheck all of them. Also, Edit the first item to say buy birthday candles.",
+"toggle_all; edit 1 \"buy birthday candles\"",
+"wrong",
+true
+],
+[
+"First: Switch to the active view. Second: Please add change the bed sheets.",
+"show active; add \"change the bed sheets\"",
+"right",
+true
+],
+[
+"Delete the third item.",
+"destroy 3",
+"right",
+true
+],
+[
+"Check off the work items.",
+"toggle 1; toggle 2",
+"right",
+true
+],
+[
+"Put \"buy travel insurance\" on the list.",
+"add \"buy travel insurance\"",
+"right",
+true
+],
+[
+"Delete the last item.",
+"destroy 5",
+"right",
+true
+],
+[
+"Reopen the kettle one.",
+"toggle 1",
+"right",
+true
+],
+[
+"Check off all of them. Also, Remove the electricity one.",
+"toggle_all; destroy 3",
+"right",
+true
+],
+[
+"Mark everything as done.",
+"toggle_all",
+"right",
+true
+],
+[
+"Tick the second one. Also, Mark all the money todos as done.",
+"toggle 2; toggle 1",
+"right",
+true
+],
+[
+"Delete \"renew the car insurance\".",
+"destroy 3",
+"right",
+true
+],
+[
+"Mark \"refill the prescription\" as done.",
+"toggle 1",
+"right",
+true
+],
+[
+"Show only completed todos.",
+"show completed",
+"right",
+true
+],
+[
+"Delete the second item.",
+"destroy 2",
+"right",
+true
+],
+[
+"Complete all todos.",
+"toggle_all",
+"right",
+true
+],
+[
+"Remove the passes one.",
+"destroy 3",
+"right",
+true
+],
+[
+"Make it nicer.",
+"nothing",
+"right",
+true
+],
+[
+"Change the book one to \"pick up coffee beans\".",
+"edit 2 \"pick up coffee beans\"",
+"right",
+true
+],
+[
+"Delete \"clean the windows\".",
+"nothing",
+"right",
+true
+],
+[
+"Complete the suitcase one.",
+"toggle 5",
+"right",
+true
+],
+[
+"First: Edit the first item to say book flights to Lisbon. Second: Remove finished todos.",
+"edit 1 \"book flights to Lisbon\"; clear_completed",
+"right",
+true
+],
+[
+"Switch to the active view.",
+"show active",
+"right",
+true
+],
+[
+"Check off the shopping items.",
+"toggle 4",
+"right",
+true
+],
+[
+"Remove everything about health.",
+"destroy 4",
+"wrong",
+true
+],
+[
+"Mark all the chores todos as done.",
+"nothing",
+"right",
+true
+],
+[
+"Complete everything about job.",
+"nothing",
+"right",
+true
+],
+[
+"First: Remove finished todos. Second: Add \"order new headphones\".",
+"clear_completed; add \"order new headphones\"",
+"right",
+true
+],
+[
+"Switch to the active view.",
+"show active",
+"right",
+true
+],
+[
+"Complete all todos.",
+"toggle_all",
+"right",
+true
+],
+[
+"Rename \"renew my passport\" to \"order new headphones\". Then Tick the sixth one.",
+"edit 7 \"order new headphones\"; toggle 6",
+"right",
+true
+],
+[
+"Replace \"mow the lawn\" with \"buy travel insurance\".",
+"edit 2 \"buy travel insurance\"",
+"right",
+true
+],
+[
+"Mark all the work todos as done.",
+"nothing",
+"right",
+true
+],
+[
+"Put \"email Dana about the contract\" on the list.",
+"add \"email Dana about the contract\"",
+"right",
+true
+],
+[
+"Please add book flights to Lisbon.",
+"add \"book flights to Lisbon\"",
+"right",
+true
+],
+[
+"Mark \"pack the suitcase\" as done.",
+"toggle 4",
+"right",
+true
+],
+[
+"Mark \"schedule the team offsite\" as not done.",
+"toggle 3",
+"right",
+true
+],
+[
+"Remove everything about shopping.",
+"destroy 1",
+"right",
+true
+],
+[
+"Add \"update the project plan\".",
+"add \"update the project plan\"",
+"right",
+true
+],
+[
+"Delete everything that is done. Also, Mark everything as not done.",
+"nothing",
+"right",
+true
+],
+[
+"Clear the completed ones. Also, Remove the eggs one.",
+"clear_completed; destroy 2",
+"wrong",
+true
+],
+[
+"Check off the chores items.",
+"toggle 3",
+"right",
+true
+],
+[
+"Mark \"fix the kitchen tap\" as not done.",
+"toggle 1",
+"right",
+true
+],
+[
+"First: Change the test one to \"schedule the team offsite\". Second: Uncheck all of them.",
+"edit 7 \"schedule the team offsite\"; toggle_all",
+"wrong",
+true
+],
+[
+"Put \"do yoga\" on the list.",
+"add \"do yoga\"",
+"right",
+true
+],
+[
+"Mark all the shopping todos as done.",
+"nothing",
+"right",
+true
+],
+[
+"Mark everything as not done.",
+"nothing",
+"right",
+true
+],
+[
+"Switch to the completed view.",
+"show completed",
+"right",
+true
+],
+[
+"Show only all todos.",
+"show all",
+"right",
+true
+],
+[
+"First: Complete all todos. Second: Remove the yoga one.",
+"toggle_all; destroy 2",
+"right",
+true
+],
+[
+"What is this list for?",
+"nothing",
+"right",
+true
+],
+[
+"Change the flights one to \"pick up eggs\".",
+"edit 1 \"pick up eggs\"",
+"right",
+true
+],
+[
+"Please add fix the kitchen tap.",
+"add \"fix the kitchen tap\"",
+"right",
+true
+],
+[
+"Drop the money items.",
+"destroy 3",
+"wrong",
+true
+],
+[
+"Filter: all.",
+"show all",
+"right",
+true
+],
+[
+"Get rid of \"review Tom's pull request\".",
+"destroy 2",
+"right",
+true
+],
+[
+"Add \"buy travel insurance\".",
+"add \"buy travel insurance\"",
+"right",
+true
+],
+[
+"Mark everything as not done.",
+"toggle_all; toggle_all",
+"wrong",
+true
+],
+[
+"Complete the descale one.",
+"toggle 1",
+"right",
+true
+],
+[
+"Reopen the insurance one.",
+"toggle 6",
+"right",
+true
+],
+[
+"Rename \"vacuum the living room\" to \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"Mark everything as not done. Then Get rid of \"file the tax return\".",
+"toggle_all; toggle_all; destroy 1",
+"right",
+true
+],
+[
+"Uncheck all of them.",
+"toggle_all",
+"wrong",
+true
+],
+[
+"Mark \"order printer ink\" as not done. Then Put \"water the plants\" on the list.",
+"toggle 5; add \"water the plants\"",
+"right",
+true
+],
+[
+"Delete \"reserve the rental car\".",
+"nothing",
+"right",
+true
+],
+[
+"First: Delete \"order printer ink\". Second: Remove everything about chores.",
+"destroy 6; destroy 4",
+"wrong",
+true
+],
+[
+"Delete \"buy travel insurance\". Also, Mark everything as not done.",
+"destroy 1; toggle_all; toggle_all",
+"right",
+true
+],
+[
+"First: Complete all todos. Second: Mark \"take vitamins\" as done.",
+"toggle_all",
+"right",
+true
+],
+[
+"Rename \"get bread\" to \"book a physio session\".",
+"edit 1 \"book a physio session\"",
+"right",
+true
+],
+[
+"Show only completed todos.",
+"show completed",
+"right",
+true
+],
+[
+"Remove everything about travel.",
+"destroy 7",
+"right",
+true
+],
+[
+"What is this list for?",
+"nothing",
+"right",
+true
+],
+[
+"Show only active todos.",
+"show active",
+"right",
+true
+],
+[
+"Mark \"go for a run\" as done.",
+"toggle 4",
+"right",
+true
+],
+[
+"Mark all the trip todos as done.",
+"toggle 2",
+"right",
+true
+],
+[
+"Put \"prepare slides for Monday\" on the list.",
+"add \"prepare slides for Monday\"",
+"right",
+true
+],
+[
+"First: Get rid of \"buy travel insurance\". Second: Delete all the finance todos.",
+"destroy 4; destroy 3",
+"right",
+true
+],
+[
+"Rename \"pack the suitcase\" to \"get bread\". Then Mark everything as not done.",
+"edit 1 \"get bread\"; toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Rename \"renew my passport\" to \"schedule an eye test\".",
+"edit 2 \"schedule an eye test\"",
+"right",
+true
+],
+[
+"Tick the first one.",
+"toggle 1",
+"right",
+true
+],
+[
+"Check off the second item.",
+"toggle 2",
+"right",
+true
+],
+[
+"Uncheck all of them.",
+"nothing",
+"right",
+true
+],
+[
+"Mark \"transfer savings\" as done.",
+"toggle 2",
+"right",
+true
+],
+[
+"First: Remove finished todos. Second: Complete all todos.",
+"clear_completed; toggle_all",
+"wrong",
+true
+],
+[
+"Get rid of \"take out the recycling\".",
+"destroy 1",
+"right",
+true
+],
+[
+"New todo: go for a run",
+"add \"go for a run\"",
+"right",
+true
+],
+[
+"Check off all of them.",
+"toggle_all",
+"right",
+true
+],
+[
+"First: Show only all todos. Second: Edit the first item to say update the project plan.",
+"show all; edit 1 \"update the project plan\"",
+"wrong",
+true
+],
+[
+"Complete the update one.",
+"toggle 7",
+"right",
+true
+],
+[
+"Mark \"fix the kitchen tap\" as done.",
+"toggle 1",
+"right",
+true
+],
+[
+"First: New todo: go for a run Second: \"order printer ink\" is done.",
+"add \"go for a run\"; toggle 2",
+"right",
+true
+],
+[
+"Switch to the all view.",
+"show all",
+"right",
+true
+],
+[
+"Check off the money items.",
+"toggle 2",
+"right",
+true
+],
+[
+"Remove the about one.",
+"destroy 3",
+"right",
+true
+],
+[
+"First: Check off all of them. Second: I also need to do yoga.",
+"toggle_all; add \"do yoga\"",
+"wrong",
+true
+],
+[
+"Complete all todos.",
+"toggle_all",
+"right",
+true
+],
+[
+"Check off the last item.",
+"toggle 4",
+"right",
+true
+],
+[
+"Drop the trip items. Also, Put \"transfer savings\" on the list.",
+"destroy 1; add \"transfer savings\"",
+"right",
+true
+],
+[
+"Mark \"review Tom's pull request\" as not done.",
+"toggle 4",
+"right",
+true
+],
+[
+"Please add vacuum the living room.",
+"add \"vacuum the living room\"",
+"right",
+true
+],
+[
+"Uncheck the sixth item.",
+"toggle 6",
+"right",
+true
+],
+[
+"Rename \"pay the rent\" to \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"Rename \"prepare slides for Monday\" to \"cancel the gym membership\".",
+"edit 4 \"cancel the gym membership\"",
+"right",
+true
+],
+[
+"I finished the Lisbon task.",
+"toggle 2",
+"right",
+true
+],
+[
+"Untick the notes task.",
+"toggle 1",
+"right",
+true
+],
+[
+"Delete \"call the client back\".",
+"nothing",
+"right",
+true
+],
+[
+"Drop the travel task.",
+"destroy 1",
+"right",
+true
+],
+[
+"Mark all the work todos as done.",
+"nothing",
+"wrong",
+true
+],
+[
+"Edit the first item to say descale the kettle. Then Mark \"do yoga\" as not done.",
+"edit 1 \"descale the kettle\"; toggle 3",
+"right",
+true
+],
+[
+"Mark everything as not done.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"\"update the project plan\" is not finished after all. Also, Delete all the health todos.",
+"toggle 7; destroy 1",
+"right",
+true
+],
+[
+"Change the flights one to \"water the plants\".",
+"edit 1 \"water the plants\"",
+"right",
+true
+],
+[
+"Remove finished todos.",
+"clear_completed",
+"right",
+true
+],
+[
+"First: Add \"buy travel insurance\". Second: Check off all of them.",
+"add \"buy travel insurance\"; toggle_all",
+"right",
+true
+],
+[
+"New todo: transfer savings Then \"pick up coffee beans\" is done.",
+"add \"transfer savings\"; toggle 3",
+"right",
+true
+],
+[
+"Edit the first item to say reserve the rental car. Also, Complete the food one.",
+"edit 1 \"reserve the rental car\"; toggle 1",
+"right",
+true
+],
+[
+"Rename \"buy birthday candles\" to \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"Remove everything about health.",
+"destroy 1",
+"right",
+true
+],
+[
+"What is this list for?",
+"nothing",
+"right",
+true
+],
+[
+"Complete all todos.",
+"toggle_all",
+"right",
+true
+],
+[
+"Remove finished todos.",
+"clear_completed",
+"right",
+true
+],
+[
+"Filter: completed. Then Check off all of them.",
+"show completed; toggle_all",
+"wrong",
+true
+],
+[
+"Please add reserve the rental car.",
+"add \"reserve the rental car\"",
+"right",
+true
+],
+[
+"Delete everything that is done.",
+"clear_completed",
+"right",
+true
+],
+[
+"Clear the completed ones.",
+"clear_completed",
+"right",
+true
+],
+[
+"I also need to transfer savings.",
+"add \"transfer savings\"",
+"right",
+true
+],
+[
+"Mark all the money todos as done.",
+"toggle 5",
+"right",
+true
+],
+[
+"Delete \"clean the windows\".",
+"nothing",
+"right",
+true
+],
+[
+"Delete the second item.",
+"destroy 2",
+"right",
+true
+],
+[
+"Rename \"renew my passport\" to \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"Clear the completed ones.",
+"clear_completed",
+"right",
+true
+],
+[
+"Add \"buy travel insurance\".",
+"add \"buy travel insurance\"",
+"right",
+true
+],
+[
+"First: Check off all of them. Second: Complete everything about work.",
+"toggle_all; toggle_all",
+"wrong",
+true
+],
+[
+"Get rid of \"call the client back\".",
+"destroy 5",
+"right",
+true
+],
+[
+"Tick the last one.",
+"toggle 2",
+"right",
+true
+],
+[
+"Complete all todos. Then Replace \"pay the rent\" with \"book a dentist appointment\".",
+"toggle_all; edit 1 \"book a dentist appointment\"",
+"right",
+true
+],
+[
+"Put \"schedule the team offsite\" on the list.",
+"add \"schedule the team offsite\"",
+"right",
+true
+],
+[
+"Rename \"book flights to Lisbon\" to \"transfer savings\".",
+"edit 1 \"transfer savings\"",
+"right",
+true
+],
+[
+"Rename \"book the airport shuttle\" to \"buy birthday candles\".",
+"edit 2 \"buy birthday candles\"",
+"right",
+true
+],
+[
+"Change the book one to \"get bread\".",
+"edit 2 \"get bread\"",
+"right",
+true
+],
+[
+"Clear the completed ones.",
+"clear_completed",
+"right",
+true
+],
+[
+"First: Complete all todos. Second: Mark everything as not done.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"I finished the notes task.",
+"toggle 5",
+"right",
+true
+],
+[
+"Check off the shopping items.",
+"nothing",
+"right",
+true
+],
+[
+"I finished the offsite task.",
+"toggle 1",
+"right",
+true
+],
+[
+"What is this list for?",
+"nothing",
+"right",
+true
+],
+[
+"\"schedule an eye test\" is done.",
+"toggle 6",
+"right",
+true
+],
+[
+"Check off all of them.",
+"toggle_all",
+"right",
+true
+],
+[
+"Switch to the active view.",
+"show active",
+"right",
+true
+],
+[
+"Rename \"update the project plan\" to \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"Drop the windows task.",
+"destroy 2",
+"right",
+true
+],
+[
+"Put \"take vitamins\" on the list.",
+"add \"take vitamins\"",
+"right",
+true
+],
+[
+"\"schedule an eye test\" is not finished after all.",
+"toggle 6",
+"right",
+true
+],
+[
+"I also need to descale the kettle.",
+"add \"descale the kettle\"",
+"right",
+true
+],
+[
+"\"book a dentist appointment\" is done.",
+"toggle 3",
+"right",
+true
+],
+[
+"Complete the pick one.",
+"toggle 6",
+"right",
+true
+],
+[
+"Thanks!",
+"nothing",
+"right",
+true
+],
+[
+"Mark \"check the bank statement\" as not done.",
+"toggle 4",
+"right",
+true
+],
+[
+"I also need to buy travel insurance.",
+"add \"buy travel insurance\"",
+"right",
+true
+],
+[
+"Check off the sixth item.",
+"toggle 6",
+"right",
+true
+],
+[
+"Thanks!",
+"nothing",
+"right",
+true
+],
+[
+"I finished the client task.",
+"toggle 1",
+"right",
+true
+],
+[
+"Put \"get bread\" on the list.",
+"add \"get bread\"",
+"right",
+true
+],
+[
+"First: Mark everything as not done. Second: Filter: active.",
+"toggle_all; toggle_all; show active",
+"right",
+true
+],
+[
+"\"submit the expense claim\" is done.",
+"toggle 3",
+"right",
+true
+],
+[
+"Switch to the all view.",
+"show all",
+"right",
+true
+],
+[
+"Delete the first item.",
+"destroy 1",
+"right",
+true
+],
+[
+"Add \"transfer savings\".",
+"add \"transfer savings\"",
+"right",
+true
+],
+[
+"Switch to the completed view.",
+"show completed",
+"right",
+true
+],
+[
+"Mark \"renew my passport\" as done. Also, Show only all todos.",
+"toggle 1; show all",
+"right",
+true
+],
+[
+"Switch to the all view.",
+"show all",
+"right",
+true
+],
+[
+"Check off the household items. Also, Clear the completed ones.",
+"clear_completed",
+"right",
+true
+],
+[
+"Switch to the active view.",
+"show active",
+"right",
+true
+],
+[
+"Remove finished todos.",
+"clear_completed",
+"right",
+true
+],
+[
+"Add \"take out the recycling\".",
+"add \"take out the recycling\"",
+"right",
+true
+],
+[
+"First: Mark everything as done. Second: Clear the completed ones.",
+"toggle_all; clear_completed",
+"right",
+true
+],
+[
+"Put \"write meeting notes\" on the list.",
+"add \"write meeting notes\"",
+"right",
+true
+],
+[
+"First: I also need to book a physio session. Second: Delete everything that is done.",
+"add \"book a physio session\"; clear_completed",
+"right",
+true
+],
+[
+"Rename \"check the bank statement\" to \"transfer savings\".",
+"edit 3 \"transfer savings\"",
+"right",
+true
+],
+[
+"Delete everything that is done. Then Uncheck all of them.",
+"nothing",
+"right",
+true
+],
+[
+"\"transfer savings\" is done.",
+"toggle 4",
+"right",
+true
+],
+[
+"Add \"pay the rent\".",
+"add \"pay the rent\"",
+"right",
+true
+],
+[
+"Rename \"send the quarterly report\" to \"water the plants\". Also, Delete the second item.",
+"edit 2 \"water the plants\"; destroy 2",
+"right",
+true
+],
+[
+"Rename \"buy milk\" to \"pick up coffee beans\".",
+"edit 3 \"pick up coffee beans\"",
+"right",
+true
+],
+[
+"First: Remove finished todos. Second: Delete the sixth item.",
+"clear_completed; destroy 6",
+"refused",
+false
+],
+[
+"Uncheck all of them.",
+"nothing",
+"right",
+true
+],
+[
+"Delete all the things to buy todos.",
+"destroy 1",
+"right",
+true
+],
+[
+"Remove everything about health.",
+"destroy 1; destroy 1",
+"wrong",
+true
+],
+[
+"Check off all of them.",
+"toggle_all",
+"right",
+true
+],
+[
+"Get rid of \"renew my passport\".",
+"destroy 2",
+"right",
+true
+],
+[
+"Show only completed todos.",
+"show completed",
+"right",
+true
+],
+[
+"Rename \"update the project plan\" to \"check the bank statement\".",
+"edit 1 \"check the bank statement\"",
+"right",
+true
+],
+[
+"Put \"pack the suitcase\" on the list.",
+"add \"pack the suitcase\"",
+"right",
+true
+],
+[
+"Delete the last item.",
+"destroy 2",
+"right",
+true
+],
+[
+"Replace \"pick up coffee beans\" with \"schedule an eye test\".",
+"edit 4 \"schedule an eye test\"",
+"right",
+true
+],
+[
+"Put \"cancel the gym membership\" on the list. Then Mark everything as done.",
+"add \"cancel the gym membership\"; toggle_all",
+"right",
+true
+],
+[
+"Remove the client one.",
+"destroy 4",
+"right",
+true
+],
+[
+"Complete all todos. Then Uncheck all of them.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Clear the completed ones. Then Switch to the active view.",
+"clear_completed; show active",
+"right",
+true
+],
+[
+"Do the usual.",
+"nothing",
+"right",
+true
+],
+[
+"Edit the fifth item to say buy laundry detergent.",
+"edit 5 \"buy laundry detergent\"",
+"right",
+true
+],
+[
+"Complete everything about finance.",
+"nothing",
+"right",
+true
+],
+[
+"Mark all the chores todos as done.",
+"toggle 3",
+"right",
+true
+],
+[
+"Uncheck the sixth item.",
+"toggle 6",
+"right",
+true
+],
+[
+"First: Drop the chores items. Second: Delete \"schedule the team offsite\".",
+"destroy 4; destroy 2",
+"wrong",
+true
+],
+[
+"Edit the second item to say pick up coffee beans.",
+"edit 2 \"pick up coffee beans\"",
+"right",
+true
+],
+[
+"First: Complete all todos. Second: Mark all the money todos as done.",
+"toggle_all",
+"right",
+true
+],
+[
+"Show only completed todos. Also, Add \"update the project plan\".",
+"show completed; add \"update the project plan\"",
+"right",
+true
+],
+[
+"Complete everything about chores.",
+"toggle 4",
+"right",
+true
+],
+[
+"First: Check off all of them. Second: Reopen the schedule one.",
+"toggle_all; toggle 1",
+"right",
+true
+],
+[
+"Complete the headphones one. Then Change the insurance one to \"print the boarding passes\".",
+"toggle 2; edit 3 \"print the boarding passes\"",
+"right",
+true
+],
+[
+"Remove the candles one.",
+"destroy 2",
+"right",
+true
+],
+[
+"Uncheck all of them.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"New todo: fix the kitchen tap",
+"add \"fix the kitchen tap\"",
+"right",
+true
+],
+[
+"Show only completed todos.",
+"show completed",
+"right",
+true
+],
+[
+"I finished the pick task. Also, Put \"vacuum the living room\" on the list.",
+"toggle 3; add \"vacuum the living room\"",
+"right",
+true
+],
+[
+"Mark \"do yoga\" as not done. Also, Complete the contract one.",
+"toggle 3; toggle 2",
+"right",
+true
+],
+[
+"Check off all of them. Also, Delete everything that is done.",
+"toggle_all; clear_completed",
+"right",
+true
+],
+[
+"Filter: active.",
+"show active",
+"right",
+true
+],
+[
+"Add \"submit the expense claim\".",
+"add \"submit the expense claim\"",
+"right",
+true
+],
+[
+"Remove the yoga one. Also, Mark everything as done.",
+"destroy 1; toggle_all",
+"wrong",
+true
+],
+[
+"\"renew my passport\" is done.",
+"toggle 6",
+"right",
+true
+],
+[
+"Mark everything as done.",
+"toggle_all",
+"right",
+true
+],
+[
+"Check off the household items.",
+"toggle 4",
+"right",
+true
+],
+[
+"Add \"renew my passport\".",
+"add \"renew my passport\"",
+"right",
+true
+],
+[
+"Complete everything about things to buy.",
+"nothing",
+"right",
+true
+],
+[
+"Delete \"book flights to Lisbon\".",
+"nothing",
+"right",
+true
+],
+[
+"Mark \"order printer ink\" as not done. Also, Show only completed todos.",
+"toggle 1; show completed",
+"right",
+true
+],
+[
+"Uncheck all of them.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Delete \"change the bed sheets\".",
+"nothing",
+"right",
+true
+],
+[
+"Delete the second item.",
+"destroy 2",
+"right",
+true
+],
+[
+"Drop the food task.",
+"destroy 3",
+"right",
+true
+],
+[
+"\"book flights to Lisbon\" is done.",
+"toggle 3",
+"right",
+true
+],
+[
+"Tick the second one.",
+"toggle 2",
+"right",
+true
+],
+[
+"Put \"reserve the rental car\" on the list.",
+"add \"reserve the rental car\"",
+"right",
+true
+],
+[
+"First: Replace \"go for a run\" with \"book a physio session\". Second: Check off all of them.",
+"edit 3 \"book a physio session\"; toggle_all",
+"right",
+true
+],
+[
+"I also need to change the bed sheets.",
+"add \"change the bed sheets\"",
+"right",
+true
+],
+[
+"Rename \"water the plants\" to \"book flights to Lisbon\". Also, Uncheck all of them.",
+"edit 1 \"book flights to Lisbon\"; toggle_all; toggle_all",
+"wrong",
+true
+],
+[
+"Delete everything that is done.",
+"nothing",
+"right",
+true
+],
+[
+"Uncheck all of them. Then New todo: buy milk",
+"toggle_all; toggle_all; add \"buy milk\"",
+"right",
+true
+],
+[
+"Mark \"do yoga\" as not done.",
+"toggle 3",
+"right",
+true
+],
+[
+"Remove the meeting one.",
+"destroy 2",
+"right",
+true
+],
+[
+"First: Uncheck all of them. Second: Remove finished todos.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Do the usual.",
+"nothing",
+"right",
+true
+],
+[
+"Mark \"book the airport shuttle\" as done.",
+"toggle 5",
+"right",
+true
+],
+[
+"Please add do yoga.",
+"add \"do yoga\"",
+"right",
+true
+],
+[
+"Mark \"email Dana about the contract\" as done.",
+"toggle 5",
+"right",
+true
+],
+[
+"Complete all todos. Also, New todo: change the bed sheets",
+"toggle_all; add \"change the bed sheets\"",
+"wrong",
+true
+],
+[
+"Untick the flights task. Then I finished the passes task.",
+"toggle 4; toggle 1",
+"right",
+true
+],
+[
+"Reopen the back one.",
+"toggle 3",
+"wrong",
+true
+],
+[
+"Check off all of them.",
+"toggle_all",
+"right",
+true
+],
+[
+"Delete all the job todos.",
+"destroy 1",
+"right",
+true
+],
+[
+"Replace \"send the quarterly report\" with \"fix the kitchen tap\".",
+"edit 6 \"fix the kitchen tap\"",
+"right",
+true
+],
+[
+"Complete the suitcase one.",
+"toggle 1",
+"right",
+true
+],
+[
+"Complete everything about household.",
+"nothing",
+"right",
+true
+],
+[
+"Switch to the all view.",
+"show all",
+"right",
+true
+],
+[
+"Edit the first item to say refill the prescription.",
+"edit 1 \"refill the prescription\"",
+"right",
+true
+],
+[
+"Show only completed todos.",
+"show completed",
+"right",
+true
+],
+[
+"Uncheck the first item.",
+"toggle 1",
+"right",
+true
+],
+[
+"Mark everything as done.",
+"toggle_all",
+"right",
+true
+],
+[
+"Add \"review Tom's pull request\". Then Filter: completed.",
+"add \"review Tom's pull request\"; show completed",
+"right",
+true
+],
+[
+"First: Remove everything about health. Second: Mark \"reserve the rental car\" as done.",
+"destroy 2; toggle 1",
+"wrong",
+true
+],
+[
+"Tick the third one.",
+"toggle 3",
+"right",
+true
+],
+[
+"Replace \"get dog food\" with \"transfer savings\".",
+"edit 4 \"transfer savings\"",
+"right",
+true
+],
+[
+"I finished the food task.",
+"toggle 2",
+"right",
+true
+],
+[
+"I also need to transfer savings.",
+"add \"transfer savings\"",
+"right",
+true
+],
+[
+"Show only active todos.",
+"show active",
+"right",
+true
+],
+[
+"Rename \"clean the windows\" to \"book a physio session\".",
+"edit 1 \"book a physio session\"",
+"right",
+true
+],
+[
+"Mark everything as done.",
+"nothing",
+"right",
+true
+],
+[
+"Mark all the chores todos as done.",
+"toggle 1",
+"right",
+true
+],
+[
+"Make it nicer.",
+"nothing",
+"right",
+true
+],
+[
+"Complete all todos.",
+"toggle_all",
+"right",
+true
+],
+[
+"Mark everything as not done.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Mark \"transfer savings\" as not done.",
+"toggle 1",
+"right",
+true
+],
+[
+"Uncheck all of them.",
+"toggle_all",
+"wrong",
+true
+],
+[
+"Change the renew one to \"file the tax return\".",
+"edit 4 \"file the tax return\"",
+"right",
+true
+],
+[
+"Check off the things to buy items.",
+"nothing",
+"right",
+true
+],
+[
+"Tick the sixth one.",
+"toggle 6",
+"right",
+true
+],
+[
+"I finished the laundry task.",
+"toggle 1",
+"right",
+true
+],
+[
+"Complete all todos. Also, Untick the slides task.",
+"toggle_all; toggle_all",
+"wrong",
+true
+],
+[
+"Check off the household items. Also, Check off all of them.",
+"toggle 2; toggle 3",
+"wrong",
+true
+],
+[
+"Switch to the all view.",
+"show all",
+"right",
+true
+],
+[
+"Complete everything about trip. Also, Mark everything as not done.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"\"schedule an eye test\" is done. Also, Mark everything as not done.",
+"toggle 2; toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Filter: completed.",
+"show completed",
+"right",
+true
+],
+[
+"Mark \"write meeting notes\" as done.",
+"toggle 2",
+"right",
+true
+],
+[
+"Mark all the shopping todos as done.",
+"nothing",
+"right",
+true
+],
+[
+"Delete everything that is done.",
+"clear_completed",
+"right",
+true
+],
+[
+"Drop the back task.",
+"destroy 3",
+"right",
+true
+],
+[
+"Untick the kettle task.",
+"toggle 2",
+"right",
+true
+],
+[
+"Remove the detergent one.",
+"destroy 3",
+"right",
+true
+],
+[
+"Mark \"pay the electricity bill\" as done.",
+"nothing",
+"right",
+true
+],
+[
+"Please add pick up eggs.",
+"add \"pick up eggs\"",
+"right",
+true
+],
+[
+"Get rid of \"book a dentist appointment\".",
+"destroy 2",
+"right",
+true
+],
+[
+"Mark everything as not done.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Mark all the finance todos as done.",
+"toggle 1; toggle 5",
+"right",
+true
+],
+[
+"Rename \"schedule the team offsite\" to \"update the project plan\". Also, Put \"take vitamins\" on the list.",
+"edit 4 \"update the project plan\"; add \"take vitamins\"",
+"right",
+true
+],
+[
+"Drop the coffee task.",
+"destroy 1",
+"right",
+true
+],
+[
+"Reopen the project one.",
+"toggle 1",
+"right",
+true
+],
+[
+"Clear the completed ones.",
+"clear_completed",
+"right",
+true
+],
+[
+"Edit the fourth item to say write meeting notes.",
+"edit 4 \"write meeting notes\"",
+"right",
+true
+],
+[
+"Mark \"buy birthday candles\" as done.",
+"toggle 2",
+"right",
+true
+],
+[
+"Add \"schedule an eye test\".",
+"add \"schedule an eye test\"",
+"right",
+true
+],
+[
+"Complete all todos. Also, Delete all the chores todos.",
+"toggle_all; destroy 1",
+"right",
+true
+],
+[
+"Rename \"review Tom's pull request\" to \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"Delete all the household todos.",
+"destroy 4",
+"right",
+true
+],
+[
+"Rename \"check the bank statement\" to \"prepare slides for Monday\".",
+"edit 2 \"prepare slides for Monday\"",
+"right",
+true
+],
+[
+"Remove finished todos.",
+"nothing",
+"right",
+true
+],
+[
+"Delete \"order new headphones\".",
+"nothing",
+"right",
+true
+],
+[
+"Change the offsite one to \"order printer ink\".",
+"edit 3 \"order printer ink\"",
+"right",
+true
+],
+[
+"Complete everything about job.",
+"nothing",
+"right",
+true
+],
+[
+"Rename \"buy laundry detergent\" to \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"New todo: call the client back",
+"add \"call the client back\"",
+"right",
+true
+],
+[
+"I finished the update task.",
+"toggle 2",
+"right",
+true
+],
+[
+"Please add renew my passport.",
+"add \"renew my passport\"",
+"right",
+true
+],
+[
+"I also need to file the tax return.",
+"add \"file the tax return\"",
+"right",
+true
+],
+[
+"Delete \"book the airport shuttle\".",
+"nothing",
+"right",
+true
+],
+[
+"Untick the schedule task.",
+"toggle 2",
+"right",
+true
+],
+[
+"Clear the completed ones.",
+"clear_completed",
+"right",
+true
+],
+[
+"Change the living one to \"call the client back\".",
+"edit 5 \"call the client back\"",
+"right",
+true
+],
+[
+"Reopen all todos.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"I also need to buy travel insurance.",
+"add \"buy travel insurance\"",
+"right",
+true
+],
+[
+"Show only completed todos.",
+"show completed",
+"right",
+true
+],
+[
+"First: \"check the bank statement\" is done. Second: \"submit the expense claim\" is not finished after all.",
+"toggle 2; toggle 1",
+"right",
+true
+],
+[
+"Uncheck all of them.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"First: Delete the first item. Second: Show only all todos.",
+"destroy 1; show all",
+"right",
+true
+],
+[
+"Filter: completed. Also, Reopen all todos.",
+"show completed; toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Delete \"book a physio session\".",
+"destroy 1",
+"right",
+true
+],
+[
+"I also need to book a dentist appointment. Also, Check off the health items.",
+"add \"book a dentist appointment\"; toggle 1",
+"right",
+true
+],
+[
+"Drop the review task.",
+"destroy 1",
+"right",
+true
+],
+[
+"Delete all the things to buy todos.",
+"destroy 2",
+"right",
+true
+],
+[
+"Mark \"reserve the rental car\" as done.",
+"nothing",
+"right",
+true
+],
+[
+"Get rid of \"pay the electricity bill\".",
+"destroy 1",
+"right",
+true
+],
+[
+"Uncheck all of them.",
+"toggle_all; toggle_all",
+"wrong",
+true
+],
+[
+"Reopen all todos. Then Delete everything that is done.",
+"toggle_all; toggle_all",
+"wrong",
+true
+],
+[
+"Mark everything as done. Also, Please add get dog food.",
+"toggle_all; add \"get dog food\"",
+"right",
+true
+],
+[
+"\"fix the kitchen tap\" is not finished after all.",
+"toggle 7",
+"right",
+true
+],
+[
+"Add \"order printer ink\".",
+"add \"order printer ink\"",
+"right",
+true
+],
+[
+"Complete the offsite one.",
+"toggle 1",
+"right",
+true
+],
+[
+"Thanks!",
+"nothing",
+"right",
+true
+],
+[
+"Uncheck all of them.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Rename \"book a physio session\" to \"order printer ink\".",
+"edit 5 \"order printer ink\"",
+"right",
+true
+],
+[
+"Please add pay the rent.",
+"add \"pay the rent\"",
+"right",
+true
+],
+[
+"Complete all todos. Also, Mark all the finance todos as done.",
+"toggle_all",
+"right",
+true
+],
+[
+"Mark \"water the plants\" as not done.",
+"toggle 3",
+"right",
+true
+],
+[
+"I finished the transfer task.",
+"toggle 2",
+"right",
+true
+],
+[
+"Mark everything as not done.",
+"nothing",
+"right",
+true
+],
+[
+"Reopen the yoga one.",
+"toggle 2",
+"right",
+true
+],
+[
+"Do the usual.",
+"nothing",
+"right",
+true
+],
+[
+"Check off all of them.",
+"toggle_all",
+"wrong",
+true
+],
+[
+"I also need to refill the prescription.",
+"add \"refill the prescription\"",
+"right",
+true
+],
+[
+"Complete all todos.",
+"toggle_all",
+"wrong",
+true
+],
+[
+"Filter: completed.",
+"show completed",
+"right",
+true
+],
+[
+"Mark everything as not done. Also, Mark everything as done.",
+"toggle_all",
+"right",
+true
+],
+[
+"Uncheck all of them.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Switch to the completed view.",
+"show completed",
+"right",
+true
+],
+[
+"Replace \"update the project plan\" with \"pay the electricity bill\".",
+"edit 4 \"pay the electricity bill\"",
+"right",
+true
+],
+[
+"Thanks!",
+"nothing",
+"right",
+true
+],
+[
+"Mark everything as done.",
+"toggle_all",
+"right",
+true
+],
+[
+"Filter: completed.",
+"show completed",
+"right",
+true
+],
+[
+"Change the milk one to \"cancel the gym membership\".",
+"edit 1 \"cancel the gym membership\"",
+"right",
+true
+],
+[
+"Rename \"descale the kettle\" to \"file the tax return\". Then Complete all todos.",
+"edit 3 \"file the tax return\"; toggle_all",
+"right",
+true
+],
+[
+"\"reserve the rental car\" is done.",
+"toggle 5",
+"right",
+true
+],
+[
+"Check off all of them. Also, Delete the fifth item.",
+"toggle_all; destroy 5",
+"right",
+true
+],
+[
+"What is this list for?",
+"nothing",
+"right",
+true
+],
+[
+"Tick the fifth one.",
+"toggle 5",
+"right",
+true
+],
+[
+"Please add pack the suitcase. Then Untick the vacuum task.",
+"add \"pack the suitcase\"; toggle 1",
+"right",
+true
+],
+[
+"Delete \"book flights to Lisbon\". Also, Change the send one to \"mow the lawn\".",
+"destroy 1; edit 3 \"mow the lawn\"",
+"wrong",
+true
+],
+[
+"Put \"book the airport shuttle\" on the list.",
+"add \"book the airport shuttle\"",
+"right",
+true
+],
+[
+"Show only completed todos.",
+"show completed",
+"right",
+true
+],
+[
+"Please add refill the prescription.",
+"add \"refill the prescription\"",
+"right",
+true
+],
+[
+"Remove finished todos.",
+"clear_completed",
+"right",
+true
+],
+[
+"Edit the second item to say book a physio session.",
+"edit 2 \"book a physio session\"",
+"right",
+true
+],
+[
+"Untick the order task.",
+"toggle 3",
+"right",
+true
+],
+[
+"Mark all the things to buy todos as done.",
+"toggle 1; toggle 3",
+"right",
+true
+],
+[
+"Delete \"fix the kitchen tap\".",
+"nothing",
+"right",
+true
+],
+[
+"First: Check off all of them. Second: Remove finished todos.",
+"toggle_all; clear_completed",
+"right",
+true
+],
+[
+"Complete the client one.",
+"toggle 1",
+"right",
+true
+],
+[
+"Mark all the things to buy todos as done. Also, Mark \"buy travel insurance\" as not done.",
+"toggle 4",
+"right",
+true
+],
+[
+"Rename \"pay the rent\" to \"schedule an eye test\".",
+"edit 6 \"schedule an eye test\"",
+"right",
+true
+],
+[
+"Switch to the active view.",
+"show active",
+"right",
+true
+],
+[
+"First: Change the team one to \"buy milk\". Second: Delete the sixth item.",
+"edit 1 \"buy milk\"; destroy 6",
+"right",
+true
+],
+[
+"Reopen the plan one.",
+"toggle 5",
+"right",
+true
+],
+[
+"Remove everything about work.",
+"destroy 4",
+"right",
+true
+],
+[
+"First: Edit the first item to say print the boarding passes. Second: Get rid of \"schedule the team offsite\".",
+"edit 1 \"print the boarding passes\"; destroy 1",
+"right",
+true
+],
+[
+"Complete the Monday one.",
+"toggle 1",
+"right",
+true
+],
+[
+"Mark everything as not done.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"Do the usual.",
+"nothing",
+"right",
+true
+],
+[
+"Delete \"write meeting notes\".",
+"destroy 1",
+"right",
+true
+],
+[
+"Reopen all todos.",
+"toggle_all",
+"wrong",
+true
+],
+[
+"I also need to send the quarterly report.",
+"add \"send the quarterly report\"",
+"right",
+true
+],
+[
+"Reopen the food one.",
+"toggle 6",
+"right",
+true
+],
+[
+"Show only completed todos. Then Add \"do yoga\".",
+"show completed; add \"do yoga\"",
+"right",
+true
+],
+[
+"Complete everything about shopping.",
+"nothing",
+"right",
+true
+],
+[
+"Check off all of them.",
+"toggle_all",
+"right",
+true
+],
+[
+"\"file the tax return\" is done. Also, Remove finished todos.",
+"toggle 5; clear_completed",
+"right",
+true
+],
+[
+"Complete all todos.",
+"toggle_all",
+"right",
+true
+],
+[
+"Untick the prescription task.",
+"toggle 5",
+"right",
+true
+],
+[
+"Show only active todos.",
+"show active",
+"right",
+true
+],
+[
+"Complete everything about household.",
+"nothing",
+"right",
+true
+],
+[
+"Replace \"water the plants\" with \"go for a run\".",
+"edit 7 \"go for a run\"",
+"right",
+true
+],
+[
+"Make it nicer.",
+"nothing",
+"right",
+true
+],
+[
+"Mark \"pay the electricity bill\" as not done.",
+"toggle 6",
+"right",
+true
+],
+[
+"Complete everything about job.",
+"toggle 2",
+"right",
+true
+],
+[
+"Please add pick up coffee beans.",
+"add \"pick up coffee beans\"",
+"right",
+true
+],
+[
+"Show only completed todos. Then Uncheck all of them.",
+"show completed",
+"right",
+true
+],
+[
+"Put \"email Dana about the contract\" on the list.",
+"add \"email Dana about the contract\"",
+"right",
+true
+],
+[
+"Replace \"pick up coffee beans\" with \"mow the lawn\".",
+"edit 3 \"mow the lawn\"",
+"right",
+true
+],
+[
+"Change the membership one to \"write meeting notes\".",
+"edit 3 \"write meeting notes\"",
+"right",
+true
+],
+[
+"\"renew the car insurance\" is not finished after all.",
+"toggle 3",
+"right",
+true
+],
+[
+"Rename \"book a physio session\" to \"buy birthday candles\".",
+"edit 6 \"buy birthday candles\"",
+"right",
+true
+],
+[
+"Edit the fourth item to say buy milk.",
+"edit 4 \"buy milk\"",
+"right",
+true
+],
+[
+"Drop the order task.",
+"destroy 1",
+"right",
+true
+],
+[
+"Get rid of \"buy birthday candles\".",
+"destroy 6",
+"right",
+true
+],
+[
+"Rename \"file the tax return\" to \"pick up eggs\".",
+"edit 2 \"pick up eggs\"",
+"right",
+true
+],
+[
+"Delete \"clean the windows\".",
+"destroy 2",
+"right",
+true
+],
+[
+"Mark everything as done.",
+"toggle_all",
+"right",
+true
+],
+[
+"Add \"change the bed sheets\".",
+"add \"change the bed sheets\"",
+"right",
+true
+],
+[
+"Rename \"change the bed sheets\" to \"call the client back\".",
+"edit 1 \"call the client back\"",
+"right",
+true
+],
+[
+"Complete the prescription one. Then Switch to the completed view.",
+"toggle 1; show completed",
+"right",
+true
+],
+[
+"Rename \"cancel the gym membership\" to \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"Mark everything as done.",
+"toggle_all",
+"right",
+true
+],
+[
+"First: Show only active todos. Second: Delete everything that is done.",
+"show active; clear_completed",
+"right",
+true
+],
+[
+"New todo: buy birthday candles",
+"add \"buy birthday candles\"",
+"right",
+true
+],
+[
+"Replace \"clean the windows\" with \"mow the lawn\".",
+"edit 4 \"mow the lawn\"",
+"right",
+true
+],
+[
+"Do the usual.",
+"nothing",
+"right",
+true
+],
+[
+"Put \"clean the windows\" on the list.",
+"add \"clean the windows\"",
+"right",
+true
+],
+[
+"Rename \"review Tom's pull request\" to \"something else\".",
+"nothing",
+"right",
+true
+],
+[
+"Mark everything as not done. Then Mark \"book a physio session\" as done.",
+"toggle_all; toggle_all; toggle 1",
+"right",
+true
+],
+[
+"Reopen the quarterly one.",
+"toggle 3",
+"right",
+true
+],
+[
+"Replace \"clean the windows\" with \"vacuum the living room\". Then Check off all of them.",
+"edit 2 \"vacuum the living room\"; toggle_all",
+"right",
+true
+],
+[
+"Replace \"schedule an eye test\" with \"do yoga\".",
+"edit 1 \"do yoga\"",
+"right",
+true
+],
+[
+"Get rid of \"buy birthday candles\". Also, Show only completed todos.",
+"destroy 1; show completed",
+"right",
+true
+],
+[
+"Delete \"order printer ink\".",
+"destroy 1",
+"right",
+true
+],
+[
+"Please add vacuum the living room.",
+"add \"vacuum the living room\"",
+"right",
+true
+],
+[
+"Put \"water the plants\" on the list.",
+"add \"water the plants\"",
+"right",
+true
+],
+[
+"Untick the descale task.",
+"toggle 6",
+"right",
+true
+],
+[
+"Please add descale the kettle.",
+"add \"descale the kettle\"",
+"right",
+true
+],
+[
+"Untick the descale task.",
+"toggle 2",
+"right",
+true
+],
+[
+"Rename \"order printer ink\" to \"refill the prescription\".",
+"edit 1 \"refill the prescription\"",
+"right",
+true
+],
+[
+"Mark everything as not done.",
+"toggle_all; toggle_all",
+"right",
+true
+],
+[
+"First: Switch to the completed view. Second: Mark \"get dog food\" as not done.",
+"show completed; toggle 1",
+"right",
+true
+],
+[
+"Thanks!",
+"nothing",
+"right",
+true
+],
+[
+"Drop the bread task.",
+"destroy 6",
+"right",
+true
+],
+[
+"Check off all of them. Also, Mark everything as not done.",
+"toggle_all",
+"wrong",
+true
+],
+[
+"Complete all todos. Then New todo: pick up coffee beans",
+"toggle_all; add \"pick up coffee beans\"",
+"right",
+true
+],
+[
+"Switch to the active view. Also, Clear the completed ones.",
+"show active; clear_completed",
+"right",
+true
+],
+[
+"Get rid of \"buy milk\".",
+"destroy 2",
+"right",
+true
+],
+[
+"I finished the file task.",
+"toggle 1",
+"right",
+true
+],
+[
+"Tick the first one.",
+"toggle 1",
+"right",
+true
+],
+[
+"Please add pick up eggs.",
+"add \"pick up eggs\"",
+"right",
+true
+],
+[
+"Complete everything about money.",
+"toggle 1",
+"right",
+true
+],
+[
+"Uncheck the sixth item.",
+"toggle 6",
+"right",
+true
+],
+[
+"Untick the return task.",
+"toggle 2",
+"right",
+true
+],
+[
+"Edit the first item to say call the client back.",
+"edit 1 \"call the client back\"",
+"right",
+true
+],
+[
+"Check off the shopping items.",
+"toggle 5",
+"right",
+true
+],
+[
+"Rename \"pay the electricity bill\" to \"reserve the rental car\". Also, Drop the finance items.",
+"edit 6 \"reserve the rental car\"; destroy 3",
+"wrong",
+true
+]
+]
+}

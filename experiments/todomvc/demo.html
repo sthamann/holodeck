@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Holodeck · TodoMVC</title>
+<style>
+  :root { --ink: #1c2b2d; --soft: #647a7d; --line: #d9e3e1; --wash: #f1f6f4; --accent: #14464c; --add: #e3f4e6; --drop: #fbe9e6; --edit: #fff5d6; }
+  * { box-sizing: border-box; }
+  body { max-width: 44rem; margin: 2.5rem auto; padding: 0 1rem; font: 16px/1.45 system-ui; color: var(--ink); background: #fbfdfc; }
+  h1 { font-size: 1.4rem; margin: 0 0 .25rem; }
+  p.lead { color: var(--soft); margin: 0 0 1.25rem; }
+  form { display: flex; gap: .5rem; }
+  input[type=text], button { font: inherit; padding: .6rem .75rem; border: 1px solid var(--line); border-radius: .4rem; background: white; color: inherit; }
+  input[type=text] { flex: 1; min-width: 0; }
+  button { cursor: pointer; }
+  button.primary { background: var(--accent); border-color: var(--accent); color: white; font-weight: 600; }
+  section { border: 1px solid var(--line); border-radius: .6rem; background: white; margin-top: 1rem; overflow: hidden; }
+  section > header { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding: .6rem .9rem; background: var(--wash); color: var(--soft); font-size: .9rem; }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li { display: flex; align-items: center; gap: .7rem; padding: .6rem .9rem; border-top: 1px solid var(--line); }
+  li span { flex: 1; overflow-wrap: anywhere; }
+  li.done span { text-decoration: line-through; color: var(--soft); }
+  li.new { background: var(--add); } li.removed { background: var(--drop); } li.changed { background: var(--edit); }
+  li small { color: var(--soft); white-space: nowrap; }
+  li button { padding: .2rem .55rem; color: var(--soft); }
+  .bar { display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; padding: .6rem .9rem; border-top: 1px solid var(--line); }
+  .bar button.on { border-color: var(--accent); color: var(--accent); font-weight: 600; }
+  #plan { display: none; } #plan.open { display: block; }
+  #note, #log { color: var(--soft); font-size: .9rem; margin-top: .8rem; white-space: pre-wrap; }
+  code { font: .85rem ui-monospace, monospace; }
+</style>
+<h1>Holodeck · TodoMVC</h1>
+<p class="lead">The list below is the original TodoMVC behaviour as an exact Deck on a durable Host. Say what you want. The model writes a short intent program, the Deck turns it into exact actions and shows the list they lead to. Nothing changes before you confirm.</p>
+<form id="ask">
+  <input id="request" type="text" aria-label="Request" placeholder="e.g. I already did the milk one, and bin everything about travel" autocomplete="off">
+  <button class="primary">Ask</button>
+</form>
+<div id="note" role="status"></div>
+<section id="plan" aria-label="Preview">
+  <header><span id="summary"></span><code id="program"></code></header>
+  <ul id="preview"></ul>
+  <div class="bar"><button id="confirm" class="primary" type="button"></button><button id="cancel" type="button">Discard</button></div>
+</section>
+<section aria-label="Todo list">
+  <header><span id="count"></span><span id="epoch"></span></header>
+  <ul id="list"></ul>
+  <div class="bar" id="tools"></div>
+</section>
+<div id="log"></div>
+<script type="module">
+  const $ = id => document.getElementById(id);
+  const make = (tag, props = {}, ...children) => { const node = Object.assign(document.createElement(tag), props); node.append(...children); return node; };
+  const post = async (path, body) => (await fetch(path, {method: "POST", body: JSON.stringify(body)})).json();
+  let epoch = 0, clicks = 0;
+  const key = () => `ui-${Date.now()}-${clicks++}`;
+  const log = text => { $("log").textContent = text + "\n" + $("log").textContent; };
+
+  async function act(action, args = {}) {
+    const receipt = await post("/act", {action, args, key: key(), epoch});
+    log(`${action} → ${receipt.status}`);
+    close();
+    refresh();
+  }
+
+  async function refresh() {
+    const state = await (await fetch("/state")).json();
+    epoch = state.epoch;
+    $("count").textContent = state.count;
+    $("epoch").textContent = `epoch ${state.epoch}`;
+    $("list").replaceChildren(...state.rows.map((row, index) => {
+      const box = make("input", {type: "checkbox", checked: row.completed, ariaLabel: `Done: ${row.title}`});
+      box.onchange = () => act("toggle", {row: index});
+      const remove = make("button", {type: "button", textContent: "×", ariaLabel: `Delete ${row.title}`});
+      remove.onclick = () => act("destroy", {row: index});
+      return make("li", {className: row.completed ? "done" : ""}, box, make("span", {textContent: row.title}), remove);
+    }));
+    if (!state.rows.length) $("list").append(make("li", {}, make("span", {textContent: "Nothing to show."})));
+    const filters = ["all", "active", "completed"].map(name => {
+      const button = make("button", {type: "button", textContent: name, className: state.filter === name ? "on" : ""});
+      button.onclick = () => act("show", {filter: name});
+      return button;
+    });
+    const tools = [...filters];
+    if (state.chrome) tools.push(Object.assign(make("button", {type: "button", textContent: "Mark all"}), {onclick: () => act("toggle_all")}));
+    if (state.clear) tools.push(Object.assign(make("button", {type: "button", textContent: "Clear completed"}), {onclick: () => act("clear_completed")}));
+    $("tools").replaceChildren(...tools);
+  }
+
+  function close() { $("plan").classList.remove("open"); }
+
+  $("ask").onsubmit = async event => {
+    event.preventDefault();
+    const request = $("request").value.trim();
+    if (!request) return;
+    $("note").textContent = "Reading…";
+    close();
+    const answer = await post("/ask", {request});
+    const agree = answer.readings_agree ? "three readings agree" : "readings differ, look closely";
+    if (answer.status !== "ready") {
+      $("note").textContent = {unclear: "I could not tell what to change. Nothing was done.",
+        "nothing to do": "The list already looks like that. Nothing to do.",
+        refused: `The Deck refused the program “${answer.program}”. Nothing was done.`}[answer.status];
+      return;
+    }
+    $("note").textContent = `${answer.context_tokens} context tokens · ${agree}`;
+    $("summary").textContent = `After ${answer.steps} exact step${answer.steps === 1 ? "" : "s"} · showing ${answer.filter}`;
+    $("program").textContent = answer.program;
+    $("preview").replaceChildren(...answer.preview.map(row => make("li",
+      {className: `${row.change} ${row.completed ? "done" : ""}`},
+      make("span", {textContent: row.title}), make("small", {textContent: row.change === "same" ? "" : row.change}))));
+    $("confirm").textContent = `Confirm and run ${answer.steps} step${answer.steps === 1 ? "" : "s"}`;
+    $("confirm").onclick = async () => {
+      const receipt = await post("/confirm", {ticket: answer.ticket, key: key()});
+      log(`“${request}” → ${receipt.status}`);
+      close();
+      $("note").textContent = receipt.status === "committed" ? "Done." : "The list changed in the meantime. Ask again.";
+      $("request").value = "";
+      refresh();
+    };
+    $("plan").classList.add("open");
+  };
+  $("cancel").onclick = close;
+  refresh();
+</script>

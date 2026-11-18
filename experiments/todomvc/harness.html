@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>TodoMVC trace recorder</title>
+<style>body { font: 15px system-ui; margin: 1rem; } iframe { width: 100%; height: 70vh; border: 1px solid #ccc; }</style>
+<p id="status">Loading…</p>
+<iframe id="app" title="Original TodoMVC"></iframe>
+<script type="module">
+  const frame = document.getElementById("app"), status = document.getElementById("status");
+  const tick = () => new Promise(resolve => setTimeout(resolve, 0));
+  const load = () => new Promise(resolve => { frame.onload = resolve; frame.src = "/index.html?" + Math.random(); });
+  const shown = element => frame.contentWindow.getComputedStyle(element).display !== "none";
+
+  function observe() {
+    const page = frame.contentDocument;
+    const selected = page.querySelector(".filters .selected").getAttribute("href").split("/")[1] || "all";
+    return {
+      items: [...page.querySelectorAll(".todo-list li")].map(row =>
+        [row.querySelector("label").textContent, row.classList.contains("completed")]),
+      chrome: shown(page.querySelector(".main")) && shown(page.querySelector(".footer")),
+      count: page.querySelector(".todo-count").textContent.trim(),
+      clear: shown(page.querySelector(".clear-completed")),
+      all_checked: page.querySelector(".toggle-all").checked,
+      filter: selected,
+    };
+  }
+
+  // Each action is performed the way a person causes it. It returns false when the control is not there.
+  async function act([kind, args]) {
+    const page = frame.contentDocument, view = frame.contentWindow;
+    const rows = [...page.querySelectorAll(".todo-list li")];
+    const fire = (element, type, init = {}) => element.dispatchEvent(new view.Event(type, {bubbles: true, ...init}));
+    if (kind === "add") {
+      const input = page.querySelector(".new-todo");
+      input.value = args.text;
+      fire(input, "change");
+    } else if (kind === "show") {
+      const done = new Promise(resolve => view.addEventListener("hashchange", resolve, {once: true}));
+      const target = "#/" + (args.filter === "all" ? "" : args.filter);
+      if (view.location.hash === target || (view.location.hash === "" && target === "#/")) return true;
+      view.location.hash = target;
+      await done;
+    } else if (kind === "toggle_all") {
+      if (!shown(page.querySelector(".main"))) return false;
+      page.querySelector(".toggle-all-label").click();
+    } else if (kind === "clear_completed") {
+      const button = page.querySelector(".clear-completed");
+      if (!shown(button) || !shown(page.querySelector(".footer"))) return false;
+      button.click();
+    } else {
+      const row = rows[args.row];
+      if (!row) return false;
+      if (kind === "toggle") row.querySelector(".toggle").click();
+      if (kind === "destroy") row.querySelector(".destroy").click();
+      if (kind === "edit" || kind === "edit_cancel") {
+        fire(row.querySelector("label"), "dblclick");
+        const input = row.querySelector(".edit");
+        input.focus();
+        input.value = args.text;
+        const key = kind === "edit" ? ["keypress", 13] : ["keyup", 27];
+        const event = new view.Event(key[0], {bubbles: true});
+        Object.defineProperty(event, "keyCode", {value: key[1]});
+        input.dispatchEvent(event);
+        // The application ends an edit by blurring the field. A frame without focus fires no blur, so send it.
+        if (input.isConnected) fire(input, "blur", {bubbles: false});
+      }
+    }
+    await tick();
+    return true;
+  }
+
+  const plan = await (await fetch("/__plan")).json();
+  const traces = [];
+  for (const [number, steps] of plan.entries()) {
+    await load();
+    await tick();
+    const trace = [{available: true, seen: observe()}];
+    for (const step of steps) trace.push({available: await act(step), seen: observe()});
+    traces.push(trace);
+    if (number % 20 === 0) status.textContent = `Sequence ${number + 1} of ${plan.length}`;
+  }
+  await fetch("/__traces", {method: "POST", body: JSON.stringify(traces)});
+  status.textContent = `Done: ${traces.length} sequences recorded`;
+</script>
