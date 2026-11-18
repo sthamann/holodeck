@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Holodeck · Reader</title>
+<style>
+  :root { --ink: #142d31; --soft: #5b7377; --line: #d5e2df; --wash: #edf4f1; --accent: #123b40; --warn: #8a4b12; }
+  * { box-sizing: border-box; }
+  body { max-width: 52rem; margin: 3rem auto; padding: 0 1rem; font: 16px/1.45 system-ui; color: var(--ink); background: #fbfdfc; }
+  h1 { font-size: 1.4rem; margin: 0 0 .25rem; }
+  p.lead { color: var(--soft); margin: 0 0 1.5rem; }
+  form { display: grid; grid-template-columns: 11rem 9rem 1fr auto; gap: .5rem; }
+  select, input, button { font: inherit; padding: .6rem .7rem; border: 1px solid var(--line); border-radius: .4rem; background: white; color: inherit; min-width: 0; }
+  button { cursor: pointer; }
+  form button, button.primary { background: var(--accent); color: white; border-color: var(--accent); }
+  #meta, #state { color: var(--soft); font-size: .9rem; margin: .9rem 0; min-height: 1.3rem; }
+  #state span { display: inline-block; margin-right: .9rem; font-variant-numeric: tabular-nums; }
+  #holo { display: grid; gap: .75rem; }
+  .card, .row, .notice { border: 1px solid var(--line); border-radius: .6rem; padding: 1rem; display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; background: white; }
+  .card { background: var(--wash); }
+  .notice { color: var(--warn); border-color: #e6cfb5; background: #fdf6ee; }
+  .fact { padding: .5rem .8rem; border-radius: .4rem; background: white; border: 1px solid var(--line); }
+  .fact b { font-variant-numeric: tabular-nums; margin-left: .4rem; }
+  button.primary { font-weight: 600; padding: .7rem 1.2rem; }
+  #confirm { display: none; align-items: center; gap: .8rem; flex-wrap: wrap; border: 1px solid var(--accent); border-radius: .6rem; padding: .8rem 1rem; margin-bottom: .75rem; background: white; }
+  #confirm.open { display: flex; }
+  #confirm span { flex: 1 1 16rem; }
+  #log { margin-top: 1.5rem; font: .85rem ui-monospace, monospace; color: var(--soft); white-space: pre-wrap; }
+  @media (max-width: 40rem) { form { grid-template-columns: 1fr 1fr; } form input, form button { grid-column: 1 / -1; } }
+</style>
+<h1>Holodeck · say what you want</h1>
+<p class="lead">Pick a Deck, say what you want. The model reads the application as text, states the goal it understood and streams the interface. Exact search finds the plan for that goal, and nothing runs on your behalf before you confirm the goal. Every control is a revision-bound handle on the durable Host.</p>
+<form id="ask">
+  <select id="app" aria-label="Deck"></select>
+  <select id="actor" aria-label="Acting as"></select>
+  <input id="request" aria-label="Request" placeholder="Say what you want" autocomplete="off">
+  <button>Generate Holo</button>
+</form>
+<div id="state" aria-label="Durable state"></div>
+<div id="meta" role="status"></div>
+<div id="confirm" aria-live="polite"><span></span><button class="primary" type="button"></button></div>
+<div id="holo" aria-live="polite"></div>
+<div id="log"></div>
+<script type="module">
+  const $ = id => document.getElementById(id);
+  let apps = [], clicks = 0;
+  const examples = {allocation: "Please make sure pending is at least 2.", quarantine: "Get samples to 2."};
+
+  function fillActors() {
+    const app = apps.find(item => item.id === $("app").value);
+    $("actor").replaceChildren(...app.actors.map(name => new Option(name, name)));
+    $("request").value = examples[app.id] ?? "";
+    $("request").placeholder = "Actions: " + app.actions.join(", ");
+    $("holo").replaceChildren();
+    generate();
+  }
+
+  function node(item) {
+    if (item.kind === "notice") return Object.assign(document.createElement("div"), {className: "notice", textContent: item.text});
+    if (item.kind === "fact") {
+      const fact = Object.assign(document.createElement("span"), {className: "fact", textContent: item.label});
+      fact.append(Object.assign(document.createElement("b"), {textContent: item.value}));
+      return fact;
+    }
+    if (item.kind === "control") {
+      const button = Object.assign(document.createElement("button"), {textContent: item.label, type: "button"});
+      if (item.primary) button.className = "primary";
+      button.onclick = () => invoke(item);
+      return button;
+    }
+    const box = Object.assign(document.createElement("div"), {className: item.kind});
+    box.append(...item.children.map(node));
+    return box;
+  }
+
+  async function generate() {
+    const body = {app: $("app").value, actor: $("actor").value, request: $("request").value};
+    $("meta").textContent = "Generating…";
+    const response = await fetch("/holo", {method: "POST", body: JSON.stringify(body)});
+    const reader = response.body.pipeThrough(new TextDecoderStream()).getReader();
+    let buffer = "", fresh = true;
+    for (;;) {
+      const {done, value} = await reader.read();
+      if (done) break;
+      buffer += value;
+      let cut;
+      while ((cut = buffer.indexOf("\n")) !== -1) {
+        const patch = JSON.parse(buffer.slice(0, cut));
+        buffer = buffer.slice(cut + 1);
+        if (patch.understood !== undefined) {
+          $("state").replaceChildren(...Object.entries(patch.state).map(([key, value]) =>
+            Object.assign(document.createElement("span"), {textContent: `${key} ${value}`})));
+          $("meta").textContent = body.request
+            ? `Understood: ${patch.understood} · ${patch.understood === "no goal" ? "nothing suggested" : patch.plan.status === "fulfilled" ? "already fulfilled" : patch.plan.status === "unreachable" ? "no way to get there" : patch.checked ? "model and exact search agree" : "model and exact search disagree, the search result is shown"} · ${patch.context_tokens} context tokens · epoch ${patch.epoch}`
+            : `Epoch ${patch.epoch}`;
+          offer(body.request ? patch : {});
+        } else if (patch.put) {
+          if (fresh) { $("holo").replaceChildren(); fresh = false; }
+          $("holo").append(node(patch.put[1]));
+        }
+      }
+    }
+  }
+
+  function offer(patch) {
+    const plan = patch.plan, box = $("confirm");
+    box.classList.toggle("open", Boolean(plan && plan.status === "ready"));
+    if (!plan || plan.status !== "ready") return;
+    const count = plan.labels.length;
+    box.firstElementChild.textContent = `I understood: ${patch.understood}. Exact plan: ${plan.labels.join(" → ")}.`;
+    const button = box.lastElementChild;
+    button.textContent = `Confirm goal and run ${count} step${count === 1 ? "" : "s"}`;
+    button.onclick = async () => {
+      const response = await fetch("/confirm", {method: "POST", body: JSON.stringify(
+        {app: $("app").value, id: plan.id, key: `confirm-${Date.now()}-${clicks++}`})});
+      const receipt = await response.json();
+      const effects = (receipt.effects ?? []).map(effect => `${effect.kind}(${effect.value})`).join(", ");
+      $("log").textContent = `Confirmed “${patch.understood}” → ${receipt.status}${effects ? " · effects: " + effects : ""}\n` + $("log").textContent;
+      generate();
+    };
+  }
+
+  async function invoke(item) {
+    const response = await fetch("/invoke", {method: "POST", body: JSON.stringify(
+      {app: $("app").value, handle: item.handle, key: `click-${Date.now()}-${clicks++}`})});
+    const receipt = await response.json();
+    const effects = (receipt.effects ?? []).map(effect => `${effect.kind}(${effect.value})`).join(", ");
+    $("log").textContent = `${item.label} → ${receipt.status}${effects ? " · effects: " + effects : ""}\n` + $("log").textContent;
+    generate();
+  }
+
+  $("ask").onsubmit = event => { event.preventDefault(); generate(); };
+  $("app").onchange = fillActors;
+  $("actor").onchange = generate;
+  apps = await (await fetch("/apps")).json();
+  $("app").replaceChildren(...apps.map(app => new Option(app.id, app.id)));
+  fillActors();
+</script>

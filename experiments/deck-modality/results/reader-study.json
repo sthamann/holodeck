@@ -1,0 +1,308 @@
+{
+ "arm": "reader-study",
+ "checkpoint": "reader.pt",
+ "looser requests on the unseen cohort": {
+  "tasks": 763,
+  "decisions": {
+   "free": {
+    "n": 763,
+    "correct": 667,
+    "by_depth": {
+     "0": [
+      80,
+      102
+     ],
+     "1": [
+      199,
+      218
+     ],
+     "2": [
+      166,
+      193
+     ],
+     "3": [
+      139,
+      152
+     ],
+     "4": [
+      83,
+      98
+     ]
+    }
+   },
+   "masked": {
+    "n": 763,
+    "correct": 667,
+    "by_depth": {
+     "0": [
+      80,
+      102
+     ],
+     "1": [
+      199,
+      218
+     ],
+     "2": [
+      166,
+      193
+     ],
+     "3": [
+      139,
+      152
+     ],
+     "4": [
+      83,
+      98
+     ]
+    }
+   },
+   "true goal masked": {
+    "n": 763,
+    "correct": 703,
+    "by_depth": {
+     "0": [
+      83,
+      102
+     ],
+     "1": [
+      214,
+      218
+     ],
+     "2": [
+      174,
+      193
+     ],
+     "3": [
+      144,
+      152
+     ],
+     "4": [
+      88,
+      98
+     ]
+    }
+   },
+   "read goal then exhaustive search": {
+    "n": 763,
+    "correct": 667,
+    "by_depth": {
+     "0": [
+      98,
+      102
+     ],
+     "1": [
+      189,
+      218
+     ],
+     "2": [
+      163,
+      193
+     ],
+     "3": [
+      136,
+      152
+     ],
+     "4": [
+      81,
+      98
+     ]
+    }
+   },
+   "committed when search under the stated goal agrees": {
+    "n": 643,
+    "correct": 615,
+    "by_depth": {
+     "0": [
+      78,
+      79
+     ],
+     "1": [
+      185,
+      196
+     ],
+     "2": [
+      147,
+      155
+     ],
+     "3": [
+      130,
+      135
+     ],
+     "4": [
+      75,
+      78
+     ]
+    }
+   },
+   "withheld, answer would have been": {
+    "n": 120,
+    "correct": 52,
+    "by_depth": {
+     "0": [
+      2,
+      23
+     ],
+     "1": [
+      14,
+      22
+     ],
+     "2": [
+      19,
+      38
+     ],
+     "3": [
+      9,
+      17
+     ],
+     "4": [
+      8,
+      20
+     ]
+    }
+   }
+  },
+  "uniform_choice_among_legal_options": 0.3593,
+  "context_tokens": 306.5,
+  "milliseconds": 96.12,
+  "goal_parsed": [
+   726,
+   763
+  ],
+  "goal_grounded": [
+   530,
+   763
+  ]
+ },
+ "requests without a goal": {
+  "field the application does not have": {
+   "requests": 60,
+   "goal stated in the contract's terms": 0,
+   "committed": 0,
+   "examples": [
+    [
+     "Turn widgets off.",
+     "widgets == 0"
+    ],
+    [
+     "Get credits to 1.",
+     "credits == 1"
+    ],
+    [
+     "Please make sure widgets is at least 2.",
+     "widgets >= 2"
+    ],
+    [
+     "I need three or more gizmos.",
+     "gizmos >= 3"
+    ]
+   ]
+  },
+  "not a request for a state": {
+   "requests": 60,
+   "goal stated in the contract's terms": 22,
+   "committed": 18,
+   "examples": [
+    [
+     "Why is rations so low?",
+     "rations <= 1"
+    ],
+    [
+     "Thanks, that's all for now.",
+     "close card d"
+    ],
+    [
+     "Why is beacons so low?",
+     "beacons <= 3"
+    ],
+    [
+     "What does this application do?",
+     "card game"
+    ]
+   ]
+  },
+  "too vague to pin down": {
+   "requests": 60,
+   "goal stated in the contract's terms": 47,
+   "committed": 40,
+   "examples": [
+    [
+     "Do whatever is usual here.",
+     "close"
+    ],
+    [
+     "Sort out freight.",
+     "freight == 3"
+    ],
+    [
+     "Make it better.",
+     "beacons >= 4"
+    ],
+    [
+     "Do whatever is usual here.",
+     "shifts == 1 and rails == 1 and warrants == 2"
+    ]
+   ]
+  },
+  "outside the goal language": {
+   "requests": 60,
+   "goal stated in the contract's terms": 25,
+   "committed": 22,
+   "examples": [
+    [
+     "Keep probes anything but 3.",
+     "probes != 3"
+    ],
+    [
+     "Keep doses anything but 0.",
+     "doses == 1"
+    ],
+    [
+     "Double reels.",
+     "reels == 4"
+    ],
+    [
+     "Keep shifts anything but 0.",
+     "shifts == 0"
+    ]
+   ]
+  }
+ },
+ "scenes built from the verified decision": {
+  "unseen contracts, names and phrasings": {
+   "scenes": 200,
+   "well formed and authorized": 200,
+   "without grammar: well formed and authorized": 200,
+   "matches reference designer": 57,
+   "tasks with a plan": 179,
+   "primary control starts a shortest plan": 177,
+   "controls scanned in Holo": 182,
+   "controls scanned in generated form": 395,
+   "tasks without a plan": 21,
+   "notice shown when no plan exists": 21
+  },
+  "larger structure than training": {
+   "scenes": 200,
+   "well formed and authorized": 200,
+   "without grammar: well formed and authorized": 197,
+   "matches reference designer": 27,
+   "tasks with a plan": 165,
+   "primary control starts a shortest plan": 164,
+   "controls scanned in Holo": 166,
+   "controls scanned in generated form": 376,
+   "tasks without a plan": 35,
+   "notice shown when no plan exists": 35
+  },
+  "hand-written vertical contracts": {
+   "scenes": 40,
+   "well formed and authorized": 40,
+   "without grammar: well formed and authorized": 18,
+   "matches reference designer": 3,
+   "tasks with a plan": 36,
+   "primary control starts a shortest plan": 36,
+   "controls scanned in Holo": 36,
+   "controls scanned in generated form": 44,
+   "tasks without a plan": 4,
+   "notice shown when no plan exists": 4
+  }
+ }
+}

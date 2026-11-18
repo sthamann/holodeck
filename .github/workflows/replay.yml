@@ -61,6 +61,11 @@ jobs:
           cmp "$intent/evidence.json" "$RUNNER_TEMP/intent-retarget.json"
           python "$intent/scope_eval.py" > "$RUNNER_TEMP/scope-grounding.json"
           cmp "$intent/scope_evidence.json" "$RUNNER_TEMP/scope-grounding.json"
+      - name: Replay Deck modality invariants and recorded runs
+        run: |
+          modality=experiments/deck-modality
+          python "$modality/replay.py" > "$RUNNER_TEMP/deck-modality.json"
+          cmp "$modality/evidence.json" "$RUNNER_TEMP/deck-modality.json"
       - name: Replay finite causal state discovery
         run: node experiments/causal-discovery/replay.mjs
       - run: python -m pip install -r requirements.txt

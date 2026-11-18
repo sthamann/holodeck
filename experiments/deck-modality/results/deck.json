@@ -1,0 +1,427 @@
+{
+ "arm": "deck",
+ "backbone": "c1899de289a04d12100db370d81485cdf75e47ca",
+ "seed": 1,
+ "training": {
+  "steps": 1200,
+  "batch": 16,
+  "examples": 19200,
+  "worlds": 2000,
+  "tasks": 6091,
+  "seconds": 1623,
+  "trainable_parameters": 10140806,
+  "loss": [
+   [
+    0,
+    18.7753
+   ],
+   [
+    50,
+    10.3051
+   ],
+   [
+    100,
+    9.272
+   ],
+   [
+    150,
+    6.8101
+   ],
+   [
+    200,
+    4.7743
+   ],
+   [
+    250,
+    3.6202
+   ],
+   [
+    300,
+    4.1829
+   ],
+   [
+    350,
+    3.0787
+   ],
+   [
+    400,
+    3.1682
+   ],
+   [
+    450,
+    3.1073
+   ],
+   [
+    500,
+    3.4388
+   ],
+   [
+    550,
+    2.7123
+   ],
+   [
+    600,
+    3.3394
+   ],
+   [
+    650,
+    2.5135
+   ],
+   [
+    700,
+    2.4392
+   ],
+   [
+    750,
+    2.4054
+   ],
+   [
+    800,
+    2.5095
+   ],
+   [
+    850,
+    2.6077
+   ],
+   [
+    900,
+    2.0671
+   ],
+   [
+    950,
+    2.7843
+   ],
+   [
+    1000,
+    1.7523
+   ],
+   [
+    1050,
+    1.7335
+   ],
+   [
+    1100,
+    1.9269
+   ],
+   [
+    1150,
+    1.8884
+   ],
+   [
+    1199,
+    1.5403
+   ]
+  ]
+ },
+ "cohorts": {
+  "unseen contracts, names and phrasings": {
+   "tasks": 763,
+   "decisions": {
+    "free": {
+     "n": 763,
+     "correct": 375,
+     "by_depth": {
+      "0": [
+       33,
+       102
+      ],
+      "1": [
+       76,
+       218
+      ],
+      "2": [
+       111,
+       193
+      ],
+      "3": [
+       91,
+       152
+      ],
+      "4": [
+       64,
+       98
+      ]
+     }
+    },
+    "masked": {
+     "n": 763,
+     "correct": 446,
+     "by_depth": {
+      "0": [
+       48,
+       102
+      ],
+      "1": [
+       93,
+       218
+      ],
+      "2": [
+       120,
+       193
+      ],
+      "3": [
+       107,
+       152
+      ],
+      "4": [
+       78,
+       98
+      ]
+     }
+    },
+    "read goal then exhaustive search": {
+     "n": 763,
+     "correct": 436,
+     "by_depth": {
+      "0": [
+       87,
+       102
+      ],
+      "1": [
+       94,
+       218
+      ],
+      "2": [
+       100,
+       193
+      ],
+      "3": [
+       90,
+       152
+      ],
+      "4": [
+       65,
+       98
+      ]
+     }
+    }
+   },
+   "uniform_choice_among_legal_options": 0.3593,
+   "context_tokens": 32.3,
+   "milliseconds": 13.7,
+   "goal_grounded": [
+    281,
+    763
+   ],
+   "exact_steps_per_decision": 0.0,
+   "holo": {
+    "scenes": 200,
+    "well formed and authorized": 200,
+    "without grammar: well formed and authorized": 83,
+    "matches reference designer": 18,
+    "tasks with a plan": 179,
+    "primary control starts a shortest plan": 106,
+    "controls scanned in Holo": 321,
+    "controls scanned in generated form": 395,
+    "tasks without a plan": 21,
+    "notice shown when no plan exists": 5
+   }
+  },
+  "larger structure than training": {
+   "tasks": 382,
+   "decisions": {
+    "free": {
+     "n": 382,
+     "correct": 158,
+     "by_depth": {
+      "0": [
+       29,
+       65
+      ],
+      "1": [
+       24,
+       98
+      ],
+      "2": [
+       42,
+       102
+      ],
+      "3": [
+       40,
+       73
+      ],
+      "4": [
+       23,
+       44
+      ]
+     }
+    },
+    "masked": {
+     "n": 382,
+     "correct": 215,
+     "by_depth": {
+      "0": [
+       40,
+       65
+      ],
+      "1": [
+       34,
+       98
+      ],
+      "2": [
+       58,
+       102
+      ],
+      "3": [
+       53,
+       73
+      ],
+      "4": [
+       30,
+       44
+      ]
+     }
+    },
+    "read goal then exhaustive search": {
+     "n": 382,
+     "correct": 203,
+     "by_depth": {
+      "0": [
+       57,
+       65
+      ],
+      "1": [
+       31,
+       98
+      ],
+      "2": [
+       54,
+       102
+      ],
+      "3": [
+       35,
+       73
+      ],
+      "4": [
+       26,
+       44
+      ]
+     }
+    }
+   },
+   "uniform_choice_among_legal_options": 0.3139,
+   "context_tokens": 40.1,
+   "milliseconds": 14.17,
+   "goal_grounded": [
+    115,
+    382
+   ],
+   "exact_steps_per_decision": 0.0,
+   "holo": {
+    "scenes": 200,
+    "well formed and authorized": 200,
+    "without grammar: well formed and authorized": 38,
+    "matches reference designer": 13,
+    "tasks with a plan": 165,
+    "primary control starts a shortest plan": 80,
+    "controls scanned in Holo": 404,
+    "controls scanned in generated form": 376,
+    "tasks without a plan": 35,
+    "notice shown when no plan exists": 18
+   }
+  },
+  "hand-written vertical contracts": {
+   "tasks": 40,
+   "decisions": {
+    "free": {
+     "n": 40,
+     "correct": 1,
+     "by_depth": {
+      "0": [
+       0,
+       4
+      ],
+      "1": [
+       1,
+       9
+      ],
+      "2": [
+       0,
+       11
+      ],
+      "3": [
+       0,
+       7
+      ],
+      "4": [
+       0,
+       9
+      ]
+     }
+    },
+    "masked": {
+     "n": 40,
+     "correct": 7,
+     "by_depth": {
+      "0": [
+       2,
+       4
+      ],
+      "1": [
+       3,
+       9
+      ],
+      "2": [
+       1,
+       11
+      ],
+      "3": [
+       0,
+       7
+      ],
+      "4": [
+       1,
+       9
+      ]
+     }
+    },
+    "read goal then exhaustive search": {
+     "n": 40,
+     "correct": 15,
+     "by_depth": {
+      "0": [
+       4,
+       4
+      ],
+      "1": [
+       1,
+       9
+      ],
+      "2": [
+       3,
+       11
+      ],
+      "3": [
+       4,
+       7
+      ],
+      "4": [
+       3,
+       9
+      ]
+     }
+    }
+   },
+   "uniform_choice_among_legal_options": 0.4792,
+   "context_tokens": 35.4,
+   "milliseconds": 13.34,
+   "goal_grounded": [
+    10,
+    40
+   ],
+   "exact_steps_per_decision": 0.0,
+   "holo": {
+    "scenes": 40,
+    "well formed and authorized": 40,
+    "without grammar: well formed and authorized": 0,
+    "matches reference designer": 2,
+    "tasks with a plan": 36,
+    "primary control starts a shortest plan": 28,
+    "controls scanned in Holo": 51,
+    "controls scanned in generated form": 44,
+    "tasks without a plan": 4,
+    "notice shown when no plan exists": 0
+   }
+  }
+ }
+}

@@ -1,0 +1,8838 @@
+{
+"template requests": [
+[
+"reels >= 3",
+5,
+true
+],
+[
+"reels == 2",
+2,
+false
+],
+[
+"freight >= 4",
+4,
+true
+],
+[
+"probes <= 5",
+1,
+true
+],
+[
+"probes == 3",
+1,
+true
+],
+[
+"queues == 1",
+3,
+true
+],
+[
+"doses == 1",
+5,
+true
+],
+[
+"freight >= 3",
+7,
+true
+],
+[
+"beacons <= 0",
+2,
+true
+],
+[
+"beacons <= 1",
+2,
+true
+],
+[
+"beacons <= 3",
+2,
+true
+],
+[
+"reels >= 4",
+3,
+true
+],
+[
+"ballast >= 1 and vials <= 1",
+1,
+true
+],
+[
+"backlog == 2 and rails == 1",
+3,
+true
+],
+[
+"shifts >= 3 and rails <= 0",
+6,
+false
+],
+[
+"rails == 0 and shifts >= 2",
+4,
+true
+],
+[
+"rails <= 3",
+4,
+true
+],
+[
+"queues == 5 and doses >= 3",
+5,
+false
+],
+[
+"doses >= 3",
+7,
+true
+],
+[
+"rations == 2",
+3,
+true
+],
+[
+"ballast == 2 and rations == 0",
+1,
+true
+],
+[
+"probes == 1 and beacons == 8",
+5,
+true
+],
+[
+"rations == 1 and rails == 0",
+3,
+true
+],
+[
+"freight <= 0 and doses == 5",
+3,
+true
+],
+[
+"doses >= 4",
+1,
+true
+],
+[
+"doses == 7",
+1,
+true
+],
+[
+"beacons == 2 and doses == 5",
+1,
+true
+],
+[
+"ledger == 4",
+0,
+true
+],
+[
+"signals >= 2 and sensors == 1",
+6,
+true
+],
+[
+"ledger >= 4",
+1,
+true
+],
+[
+"rails >= 7",
+3,
+true
+],
+[
+"rails >= 4",
+3,
+true
+],
+[
+"backlog >= 6 and sensors == 1",
+1,
+true
+],
+[
+"backlog <= 2 and hooks == 0",
+0,
+true
+],
+[
+"backlog <= 1 and hooks == 0",
+0,
+true
+],
+[
+"hooks == 4 and rails == 1",
+3,
+true
+],
+[
+"ballast == 1 and hooks <= 5",
+3,
+true
+],
+[
+"meters == 1 and pledges <= 0",
+1,
+true
+],
+[
+"doses <= 2 and pledges == 2",
+3,
+true
+],
+[
+"doses >= 2",
+4,
+true
+],
+[
+"ballast == 8",
+6,
+true
+],
+[
+"rosters <= 4 and ballast == 8",
+6,
+true
+],
+[
+"reels >= 2",
+2,
+false
+],
+[
+"queues <= 1",
+0,
+true
+],
+[
+"rosters <= 2 and probes == 0",
+0,
+false
+],
+[
+"probes <= 0",
+0,
+false
+],
+[
+"probes == 0 and cargo == 1",
+5,
+true
+],
+[
+"queues == 2",
+4,
+true
+],
+[
+"shifts <= 1",
+3,
+true
+],
+[
+"shifts == 1 and permits >= 2",
+3,
+true
+],
+[
+"signals >= 2 and hooks <= 2",
+0,
+true
+],
+[
+"hooks <= 0",
+4,
+true
+],
+[
+"sensors == 0",
+8,
+true
+],
+[
+"rails <= 0",
+4,
+true
+],
+[
+"reels == 1 and rails >= 2",
+0,
+true
+],
+[
+"reels >= 4",
+6,
+true
+],
+[
+"sensors == 0 and rosters == 1",
+1,
+true
+],
+[
+"warrants >= 5 and permits <= 2",
+6,
+true
+],
+[
+"rosters <= 1 and signals <= 1",
+1,
+true
+],
+[
+"rosters <= 1",
+1,
+true
+],
+[
+"cargo >= 2 and freight >= 6",
+6,
+true
+],
+[
+"freight >= 6 and rosters >= 3",
+2,
+true
+],
+[
+"doses == 6",
+3,
+true
+],
+[
+"sensors == 0 and beacons <= 1",
+1,
+true
+],
+[
+"rations == 1",
+5,
+true
+],
+[
+"rails >= 2",
+4,
+true
+],
+[
+"doses >= 9 and rails >= 3",
+3,
+true
+],
+[
+"rails == 1 and doses >= 4",
+4,
+true
+],
+[
+"margin == 9",
+0,
+true
+],
+[
+"freight == 0 and margin <= 6",
+4,
+true
+],
+[
+"rosters <= 1",
+4,
+true
+],
+[
+"sensors == 1 and rosters == 0",
+4,
+true
+],
+[
+"rosters <= 0",
+4,
+true
+],
+[
+"rosters <= 3",
+4,
+true
+],
+[
+"rails == 1",
+1,
+true
+],
+[
+"licences == 4",
+3,
+true
+],
+[
+"ledger == 3",
+4,
+true
+],
+[
+"ledger == 0 and reels == 1",
+1,
+false
+],
+[
+"gates == 1 and reels == 4",
+0,
+true
+],
+[
+"gates == 1 and panels == 0",
+1,
+true
+],
+[
+"deposits >= 4",
+5,
+true
+],
+[
+"deposits == 1",
+2,
+true
+],
+[
+"cells == 0",
+4,
+true
+],
+[
+"queues <= 0 and ballast == 3",
+3,
+true
+],
+[
+"ballast == 8",
+6,
+true
+],
+[
+"permits <= 0",
+2,
+true
+],
+[
+"permits == 0 and rails >= 2",
+5,
+true
+],
+[
+"rails <= 3 and licences == 0",
+7,
+true
+],
+[
+"rails == 8",
+6,
+true
+],
+[
+"cargo == 3 and reels >= 2",
+3,
+true
+],
+[
+"cargo == 2 and reels <= 1",
+2,
+true
+],
+[
+"pledges == 2",
+2,
+true
+],
+[
+"ballast <= 0 and meters <= 1",
+5,
+true
+],
+[
+"pledges >= 2 and ballast <= 2",
+5,
+true
+],
+[
+"ballast == 7",
+3,
+false
+],
+[
+"ballast >= 1",
+0,
+true
+],
+[
+"ballast >= 2",
+0,
+true
+],
+[
+"vials == 1 and doses <= 1",
+4,
+true
+],
+[
+"doses >= 3",
+2,
+true
+],
+[
+"valves >= 4",
+0,
+true
+],
+[
+"valves == 3",
+0,
+true
+],
+[
+"shifts <= 0",
+0,
+true
+],
+[
+"cargo == 3",
+5,
+true
+],
+[
+"valves == 1",
+2,
+true
+],
+[
+"margin >= 3",
+0,
+true
+],
+[
+"reels == 1 and margin == 4",
+0,
+true
+],
+[
+"margin >= 4",
+0,
+true
+],
+[
+"backlog >= 1 and meters == 5",
+6,
+true
+],
+[
+"meters == 2 and pledges >= 1",
+0,
+false
+],
+[
+"meters == 7",
+6,
+true
+],
+[
+"meters <= 1",
+6,
+false
+],
+[
+"hooks == 5 and margin == 1",
+4,
+true
+],
+[
+"hooks == 8",
+2,
+true
+],
+[
+"ballast >= 1",
+1,
+true
+],
+[
+"ballast == 2 and hooks >= 2",
+1,
+true
+],
+[
+"rosters <= 2 and cells <= 3",
+0,
+true
+],
+[
+"rosters >= 4",
+3,
+true
+],
+[
+"rosters == 4",
+3,
+true
+],
+[
+"cells == 0",
+2,
+true
+],
+[
+"signals <= 3",
+6,
+true
+],
+[
+"probes == 2 and freight >= 4",
+5,
+false
+],
+[
+"freight == 0 and licences >= 8",
+4,
+true
+],
+[
+"gates == 0 and licences <= 3",
+5,
+true
+],
+[
+"gates == 0",
+6,
+true
+],
+[
+"licences <= 3",
+5,
+true
+],
+[
+"hooks == 0 and pledges == 0",
+4,
+true
+],
+[
+"meters == 6 and pledges == 1",
+4,
+true
+],
+[
+"hooks <= 2 and pledges == 0",
+3,
+true
+],
+[
+"ballast >= 4",
+2,
+true
+],
+[
+"sensors == 4",
+4,
+true
+],
+[
+"shifts <= 1 and ballast >= 2",
+3,
+true
+],
+[
+"margin == 3 and permits <= 3",
+3,
+false
+],
+[
+"permits <= 0 and margin <= 3",
+1,
+true
+],
+[
+"cargo == 8",
+1,
+true
+],
+[
+"permits == 2 and cargo == 2",
+5,
+true
+],
+[
+"cargo == 6 and permits <= 0",
+1,
+true
+],
+[
+"cargo == 3",
+2,
+true
+],
+[
+"backlog >= 3 and ballast == 0",
+0,
+true
+],
+[
+"valves == 1",
+2,
+true
+],
+[
+"ballast == 1 and valves == 0",
+1,
+false
+],
+[
+"ballast >= 8",
+4,
+true
+],
+[
+"ballast >= 4",
+6,
+true
+],
+[
+"probes == 3",
+1,
+true
+],
+[
+"ballast >= 2",
+2,
+true
+],
+[
+"ballast >= 5",
+2,
+true
+],
+[
+"gates == 0 and ballast == 6",
+2,
+true
+],
+[
+"ballast >= 2",
+2,
+true
+],
+[
+"margin <= 0",
+0,
+true
+],
+[
+"warrants >= 2 and margin == 0",
+0,
+true
+],
+[
+"rations <= 1",
+7,
+true
+],
+[
+"rations >= 1",
+4,
+true
+],
+[
+"shifts == 2",
+1,
+true
+],
+[
+"rails == 5",
+5,
+true
+],
+[
+"meters <= 1",
+3,
+true
+],
+[
+"rails <= 1 and probes == 0",
+1,
+true
+],
+[
+"rosters >= 2 and sensors == 2",
+3,
+true
+],
+[
+"rosters == 1 and sensors == 1",
+3,
+true
+],
+[
+"rosters == 3",
+0,
+true
+],
+[
+"rosters <= 1 and warrants >= 2",
+3,
+true
+],
+[
+"meters == 0 and ballast == 2",
+0,
+true
+],
+[
+"panels == 2 and doses == 1",
+3,
+true
+],
+[
+"rails == 0",
+2,
+true
+],
+[
+"gates <= 2",
+0,
+true
+],
+[
+"gates <= 0",
+3,
+true
+],
+[
+"cargo == 2 and probes == 2",
+6,
+false
+],
+[
+"margin == 1",
+8,
+true
+],
+[
+"shifts == 1 and backlog == 1",
+7,
+true
+],
+[
+"margin == 2",
+5,
+true
+],
+[
+"pledges <= 4 and margin == 0",
+5,
+true
+],
+[
+"valves <= 2",
+1,
+true
+],
+[
+"hooks == 1 and valves <= 2",
+4,
+true
+],
+[
+"hooks <= 1",
+4,
+true
+],
+[
+"gates == 2",
+4,
+true
+],
+[
+"meters == 2",
+0,
+true
+],
+[
+"meters <= 0 and rails == 0",
+0,
+true
+],
+[
+"cargo == 0",
+5,
+true
+],
+[
+"meters <= 1",
+0,
+true
+],
+[
+"deposits <= 0",
+1,
+true
+],
+[
+"rosters == 4",
+0,
+true
+],
+[
+"rosters >= 4",
+0,
+true
+],
+[
+"rosters == 2 and cells == 0",
+0,
+true
+],
+[
+"ballast <= 0 and beacons <= 1",
+1,
+true
+],
+[
+"shifts >= 3 and deposits <= 1",
+6,
+true
+],
+[
+"doses <= 2 and signals == 1",
+3,
+true
+],
+[
+"doses == 3",
+3,
+false
+],
+[
+"valves <= 1 and doses <= 3",
+3,
+true
+],
+[
+"rations <= 1 and vials == 4",
+2,
+true
+],
+[
+"vials == 8",
+2,
+true
+],
+[
+"rations >= 2",
+1,
+true
+],
+[
+"vials >= 6",
+2,
+true
+],
+[
+"meters >= 4",
+5,
+true
+],
+[
+"meters <= 3 and vials <= 1",
+7,
+true
+],
+[
+"meters == 3",
+5,
+true
+],
+[
+"permits == 0",
+2,
+true
+],
+[
+"panels <= 0",
+6,
+true
+],
+[
+"panels == 3",
+4,
+true
+],
+[
+"rosters <= 2 and permits == 0",
+0,
+true
+],
+[
+"permits == 0",
+1,
+true
+],
+[
+"permits >= 2 and ballast <= 1",
+2,
+true
+],
+[
+"permits <= 1",
+4,
+true
+],
+[
+"ballast == 1 and permits == 3",
+3,
+true
+],
+[
+"cells <= 0",
+0,
+true
+],
+[
+"ledger == 4 and sensors == 0",
+4,
+true
+],
+[
+"cells <= 1",
+0,
+true
+],
+[
+"freight == 1",
+3,
+true
+],
+[
+"panels >= 1 and cargo >= 4",
+2,
+true
+],
+[
+"freight >= 2",
+5,
+true
+],
+[
+"freight == 0",
+0,
+true
+],
+[
+"rails <= 1 and freight <= 1",
+4,
+true
+],
+[
+"freight == 2",
+1,
+true
+],
+[
+"gates == 0 and deposits <= 8",
+3,
+true
+],
+[
+"beacons == 2",
+4,
+true
+],
+[
+"beacons >= 4",
+4,
+true
+],
+[
+"beacons >= 6",
+4,
+true
+],
+[
+"queues == 0 and panels <= 7",
+0,
+false
+],
+[
+"panels == 1",
+3,
+true
+],
+[
+"panels >= 3",
+6,
+false
+],
+[
+"queues <= 1",
+0,
+true
+],
+[
+"panels <= 0",
+8,
+true
+],
+[
+"sensors == 4",
+7,
+true
+],
+[
+"gates >= 1",
+8,
+true
+],
+[
+"sensors >= 4 and gates >= 5",
+7,
+true
+],
+[
+"hooks == 0",
+0,
+false
+],
+[
+"cargo >= 2",
+7,
+true
+],
+[
+"hooks == 1 and cargo <= 0",
+3,
+true
+],
+[
+"panels == 2 and ledger == 1",
+1,
+true
+],
+[
+"panels == 4 and ledger == 1",
+1,
+true
+],
+[
+"panels == 3 and ledger == 1",
+1,
+true
+],
+[
+"ballast == 0",
+2,
+false
+],
+[
+"permits >= 1 and rations >= 2",
+4,
+false
+],
+[
+"gates == 0 and permits == 1",
+1,
+true
+],
+[
+"gates == 0",
+6,
+true
+],
+[
+"rations == 2 and gates == 0",
+2,
+true
+],
+[
+"backlog == 1 and deposits == 0",
+5,
+true
+],
+[
+"signals == 1",
+4,
+true
+],
+[
+"signals == 2",
+1,
+false
+],
+[
+"rosters == 1 and rations >= 2",
+1,
+false
+],
+[
+"rosters == 1 and rations <= 1",
+1,
+true
+],
+[
+"meters == 4",
+2,
+true
+],
+[
+"meters == 4",
+2,
+true
+],
+[
+"rosters <= 1 and gates == 0",
+4,
+true
+],
+[
+"rosters <= 0",
+4,
+true
+],
+[
+"hooks == 2 and gates == 1",
+8,
+true
+],
+[
+"rosters == 2",
+5,
+true
+],
+[
+"valves == 1 and licences >= 3",
+3,
+true
+],
+[
+"sensors <= 0",
+0,
+true
+],
+[
+"backlog == 0 and hooks <= 0",
+3,
+true
+],
+[
+"hooks == 0 and backlog >= 3",
+0,
+false
+],
+[
+"queues <= 0",
+4,
+true
+],
+[
+"queues >= 3 and beacons <= 1",
+3,
+true
+],
+[
+"queues == 4 and shifts == 0",
+4,
+true
+],
+[
+"queues >= 4",
+3,
+true
+],
+[
+"reels >= 2",
+2,
+true
+],
+[
+"panels == 1",
+5,
+true
+],
+[
+"meters == 0",
+4,
+true
+],
+[
+"meters == 2",
+4,
+true
+],
+[
+"deposits == 1",
+8,
+true
+],
+[
+"meters == 3",
+4,
+true
+],
+[
+"hooks >= 5",
+2,
+true
+],
+[
+"vials == 3 and rails >= 2",
+1,
+true
+],
+[
+"ledger == 1 and hooks <= 6",
+5,
+true
+],
+[
+"vials >= 5 and backlog >= 1",
+0,
+true
+],
+[
+"hooks >= 4",
+0,
+false
+],
+[
+"signals <= 3",
+0,
+true
+],
+[
+"signals == 2",
+0,
+true
+],
+[
+"ledger == 0",
+4,
+true
+],
+[
+"beacons == 0",
+9,
+true
+],
+[
+"queues <= 4",
+0,
+true
+],
+[
+"pledges >= 6 and rosters <= 4",
+4,
+true
+],
+[
+"rosters <= 1",
+1,
+false
+],
+[
+"vials <= 0",
+3,
+true
+],
+[
+"rails <= 1",
+1,
+true
+],
+[
+"rails == 1",
+1,
+true
+],
+[
+"rosters == 4",
+5,
+true
+],
+[
+"rails <= 0",
+1,
+true
+],
+[
+"valves >= 3 and meters == 1",
+5,
+true
+],
+[
+"valves == 7 and probes >= 1",
+1,
+true
+],
+[
+"meters == 1 and valves == 0",
+3,
+true
+],
+[
+"probes <= 0 and valves <= 7",
+4,
+true
+],
+[
+"cargo <= 5 and warrants == 4",
+1,
+true
+],
+[
+"cargo >= 4",
+4,
+true
+],
+[
+"meters == 2",
+5,
+true
+],
+[
+"meters <= 0 and cargo <= 1",
+1,
+false
+],
+[
+"freight <= 1 and sensors <= 2",
+5,
+true
+],
+[
+"pledges == 3",
+1,
+true
+],
+[
+"pledges >= 4 and sensors <= 1",
+1,
+true
+],
+[
+"freight >= 2",
+3,
+true
+],
+[
+"freight == 0 and ballast >= 1",
+5,
+true
+],
+[
+"queues >= 5",
+8,
+true
+],
+[
+"queues >= 5",
+8,
+true
+],
+[
+"sensors == 0 and deposits <= 1",
+5,
+true
+],
+[
+"valves <= 3 and doses >= 1",
+4,
+false
+],
+[
+"deposits <= 1 and doses >= 1",
+5,
+true
+],
+[
+"doses >= 3 and sensors == 1",
+4,
+false
+],
+[
+"sensors == 0",
+2,
+true
+],
+[
+"pledges <= 2",
+1,
+false
+],
+[
+"pledges >= 4",
+3,
+true
+],
+[
+"cells <= 2 and pledges == 0",
+0,
+true
+],
+[
+"beacons == 2",
+0,
+true
+],
+[
+"vials == 3 and beacons == 5",
+8,
+true
+],
+[
+"vials >= 6 and rosters >= 3",
+0,
+true
+],
+[
+"rosters == 0 and warrants == 5",
+5,
+true
+],
+[
+"licences >= 4 and warrants <= 5",
+5,
+false
+],
+[
+"warrants == 6 and rosters == 0",
+5,
+true
+],
+[
+"rosters == 0 and warrants >= 6",
+5,
+true
+],
+[
+"sensors <= 1",
+4,
+true
+],
+[
+"meters >= 3",
+5,
+true
+],
+[
+"sensors == 0 and freight <= 3",
+4,
+true
+],
+[
+"freight >= 2 and meters <= 3",
+3,
+true
+],
+[
+"sensors >= 6",
+6,
+true
+],
+[
+"valves >= 3 and shifts == 1",
+2,
+false
+],
+[
+"beacons == 1",
+1,
+true
+],
+[
+"beacons == 1",
+4,
+false
+],
+[
+"rails == 6",
+6,
+true
+],
+[
+"rails >= 6 and beacons == 1",
+0,
+true
+],
+[
+"gates <= 0",
+5,
+false
+],
+[
+"reels == 1 and meters >= 1",
+3,
+true
+],
+[
+"valves == 2 and vials == 2",
+0,
+true
+],
+[
+"vials >= 1 and valves == 0",
+0,
+true
+],
+[
+"margin == 2",
+2,
+true
+],
+[
+"margin <= 0 and queues == 1",
+3,
+true
+],
+[
+"queues == 1",
+3,
+true
+],
+[
+"cells <= 0 and permits >= 2",
+0,
+true
+],
+[
+"doses >= 1",
+3,
+true
+],
+[
+"permits >= 4",
+0,
+true
+],
+[
+"probes == 6",
+4,
+true
+],
+[
+"deposits <= 2 and probes <= 0",
+3,
+true
+],
+[
+"deposits <= 0",
+0,
+true
+],
+[
+"probes <= 4 and margin == 1",
+3,
+true
+],
+[
+"rails == 1 and rations <= 1",
+6,
+true
+],
+[
+"warrants <= 3 and rails == 0",
+5,
+true
+],
+[
+"rations >= 1 and margin >= 3",
+3,
+false
+],
+[
+"warrants <= 1",
+5,
+true
+],
+[
+"pledges >= 3 and shifts == 1",
+3,
+true
+],
+[
+"vials == 1",
+5,
+true
+],
+[
+"ledger == 1 and gates <= 1",
+3,
+true
+],
+[
+"freight <= 0",
+5,
+true
+],
+[
+"valves <= 1",
+1,
+true
+],
+[
+"queues >= 4 and rosters >= 4",
+0,
+true
+],
+[
+"rosters <= 2 and valves >= 2",
+4,
+true
+],
+[
+"queues >= 3 and rosters <= 0",
+2,
+true
+],
+[
+"margin >= 7",
+7,
+true
+],
+[
+"panels == 0",
+8,
+true
+],
+[
+"margin >= 7",
+7,
+true
+],
+[
+"margin == 1",
+6,
+true
+],
+[
+"cargo <= 1",
+7,
+true
+],
+[
+"queues >= 3 and cargo == 0",
+7,
+true
+],
+[
+"sensors <= 2",
+1,
+true
+],
+[
+"cells == 1",
+6,
+true
+],
+[
+"licences <= 3 and sensors <= 1",
+0,
+true
+],
+[
+"licences == 2",
+3,
+true
+],
+[
+"probes >= 4",
+6,
+true
+],
+[
+"backlog >= 5",
+3,
+true
+],
+[
+"backlog >= 8",
+3,
+true
+],
+[
+"vials == 1",
+6,
+true
+],
+[
+"vials >= 3",
+6,
+true
+],
+[
+"permits == 2",
+3,
+true
+],
+[
+"sensors == 1 and vials == 4",
+6,
+true
+],
+[
+"ballast == 2",
+7,
+true
+],
+[
+"rations <= 2",
+1,
+true
+],
+[
+"panels == 7",
+6,
+true
+],
+[
+"panels >= 2 and rations >= 5",
+3,
+true
+],
+[
+"queues <= 3 and warrants <= 5",
+4,
+true
+],
+[
+"licences == 1 and warrants <= 0",
+2,
+true
+],
+[
+"warrants <= 5",
+2,
+true
+],
+[
+"warrants <= 5",
+2,
+true
+],
+[
+"backlog == 3",
+2,
+true
+],
+[
+"queues == 3 and backlog <= 1",
+2,
+true
+],
+[
+"beacons >= 8",
+0,
+true
+],
+[
+"beacons == 6 and cells == 1",
+0,
+true
+],
+[
+"sensors <= 1",
+3,
+true
+],
+[
+"beacons == 7",
+0,
+true
+],
+[
+"vials <= 1",
+1,
+true
+],
+[
+"cells == 0 and beacons == 1",
+5,
+true
+],
+[
+"vials <= 2 and cells == 1",
+1,
+true
+],
+[
+"permits == 9 and queues == 0",
+5,
+false
+],
+[
+"permits == 8",
+5,
+true
+],
+[
+"licences == 3 and shifts == 2",
+4,
+true
+],
+[
+"shifts == 2",
+4,
+true
+],
+[
+"cargo == 1 and meters == 0",
+6,
+true
+],
+[
+"probes == 4 and meters == 1",
+6,
+true
+],
+[
+"doses <= 4 and cargo == 1",
+6,
+true
+],
+[
+"probes == 4",
+6,
+true
+],
+[
+"sensors >= 5",
+1,
+true
+],
+[
+"cargo == 1 and reels >= 6",
+4,
+true
+],
+[
+"cargo == 1 and sensors >= 3",
+3,
+true
+],
+[
+"sensors >= 5",
+1,
+true
+],
+[
+"pledges == 1 and doses == 2",
+1,
+true
+],
+[
+"doses >= 1",
+0,
+true
+],
+[
+"doses <= 2",
+0,
+true
+],
+[
+"meters <= 4",
+3,
+true
+],
+[
+"ballast <= 1 and cargo == 4",
+0,
+true
+],
+[
+"sensors == 0",
+6,
+true
+],
+[
+"cargo >= 2 and permits >= 1",
+0,
+true
+],
+[
+"probes <= 0",
+5,
+true
+],
+[
+"shifts == 1",
+3,
+true
+],
+[
+"probes <= 2",
+5,
+true
+],
+[
+"doses <= 0 and deposits >= 5",
+2,
+true
+],
+[
+"deposits == 5",
+2,
+true
+],
+[
+"deposits == 6",
+2,
+true
+],
+[
+"rations == 1",
+0,
+true
+],
+[
+"hooks == 8 and rails <= 0",
+6,
+true
+],
+[
+"hooks <= 4",
+2,
+true
+],
+[
+"licences <= 1",
+1,
+false
+],
+[
+"licences == 0 and probes >= 3",
+7,
+true
+],
+[
+"licences <= 0",
+2,
+true
+],
+[
+"licences <= 0",
+1,
+false
+],
+[
+"margin >= 4 and valves == 1",
+3,
+true
+],
+[
+"margin <= 6",
+2,
+true
+],
+[
+"margin <= 6",
+5,
+true
+],
+[
+"sensors == 1",
+7,
+true
+],
+[
+"permits == 1 and pledges == 1",
+3,
+true
+],
+[
+"signals == 0",
+6,
+true
+],
+[
+"permits == 2",
+4,
+true
+],
+[
+"margin == 2",
+1,
+true
+],
+[
+"margin == 3",
+0,
+true
+],
+[
+"rails >= 6",
+6,
+true
+],
+[
+"rails >= 6",
+6,
+true
+],
+[
+"rails >= 6",
+6,
+true
+],
+[
+"cells <= 0 and margin == 5",
+3,
+true
+],
+[
+"hooks == 1 and margin <= 0",
+2,
+true
+],
+[
+"margin == 3",
+2,
+true
+],
+[
+"margin <= 1",
+2,
+true
+],
+[
+"hooks == 0",
+2,
+true
+],
+[
+"sensors == 0",
+5,
+true
+],
+[
+"sensors == 2",
+6,
+true
+],
+[
+"rosters >= 1 and sensors == 4",
+3,
+true
+],
+[
+"deposits <= 4 and reels == 1",
+5,
+true
+],
+[
+"deposits == 4",
+4,
+true
+],
+[
+"shifts >= 2 and reels == 1",
+1,
+true
+],
+[
+"shifts <= 3 and cargo == 2",
+1,
+true
+],
+[
+"valves <= 0",
+0,
+true
+],
+[
+"cargo >= 2",
+1,
+true
+],
+[
+"shifts == 2",
+1,
+true
+],
+[
+"permits == 5",
+2,
+true
+],
+[
+"cargo == 1 and permits >= 6",
+4,
+true
+],
+[
+"hooks == 3 and cargo == 1",
+0,
+true
+],
+[
+"permits == 0",
+3,
+true
+],
+[
+"valves == 1",
+4,
+true
+],
+[
+"freight >= 2 and shifts == 4",
+2,
+true
+],
+[
+"freight <= 2",
+7,
+true
+],
+[
+"freight == 3",
+8,
+true
+],
+[
+"permits >= 3 and shifts <= 0",
+2,
+true
+],
+[
+"rosters >= 3",
+6,
+true
+],
+[
+"rosters == 3 and doses == 1",
+6,
+true
+],
+[
+"sensors <= 0 and rosters >= 2",
+3,
+true
+],
+[
+"rosters <= 1",
+4,
+true
+],
+[
+"meters <= 2 and margin >= 1",
+6,
+true
+],
+[
+"margin >= 1",
+5,
+true
+],
+[
+"margin >= 4",
+5,
+true
+],
+[
+"ballast == 1 and margin <= 1",
+4,
+false
+],
+[
+"warrants <= 3 and signals <= 3",
+1,
+true
+],
+[
+"warrants <= 3",
+4,
+true
+],
+[
+"signals == 0 and reels == 0",
+2,
+false
+],
+[
+"signals <= 0",
+0,
+true
+],
+[
+"freight >= 4 and cargo == 1",
+7,
+true
+],
+[
+"freight == 0",
+2,
+true
+],
+[
+"freight == 4",
+7,
+true
+],
+[
+"freight == 4",
+7,
+true
+],
+[
+"rations == 0 and margin == 3",
+5,
+true
+],
+[
+"margin == 0",
+4,
+false
+],
+[
+"queues == 6",
+4,
+true
+],
+[
+"margin <= 0",
+4,
+false
+],
+[
+"pledges >= 4",
+8,
+true
+],
+[
+"pledges >= 2",
+4,
+false
+],
+[
+"licences == 1",
+0,
+true
+],
+[
+"hooks == 1",
+1,
+true
+],
+[
+"freight == 2",
+0,
+true
+],
+[
+"freight == 3 and hooks == 1",
+4,
+true
+],
+[
+"freight <= 1 and margin <= 2",
+3,
+true
+],
+[
+"queues == 0",
+5,
+true
+],
+[
+"probes == 0",
+6,
+false
+],
+[
+"valves >= 1",
+4,
+true
+],
+[
+"signals >= 5",
+1,
+true
+],
+[
+"signals >= 1",
+1,
+true
+],
+[
+"signals >= 4",
+1,
+true
+],
+[
+"signals <= 1",
+4,
+true
+],
+[
+"ledger >= 3",
+0,
+true
+],
+[
+"ledger == 4",
+0,
+true
+],
+[
+"meters == 1",
+6,
+true
+],
+[
+"cells == 4",
+0,
+true
+],
+[
+"signals == 1",
+1,
+false
+],
+[
+"signals == 0 and meters >= 1",
+1,
+false
+],
+[
+"vials <= 2 and sensors == 1",
+6,
+true
+],
+[
+"permits == 1 and vials <= 2",
+0,
+true
+],
+[
+"vials <= 4",
+0,
+true
+],
+[
+"sensors == 0 and vials == 1",
+0,
+true
+],
+[
+"rails == 3 and cargo <= 3",
+0,
+true
+],
+[
+"shifts == 1",
+5,
+true
+],
+[
+"cargo == 5 and rails == 0",
+4,
+true
+],
+[
+"shifts == 1 and rails == 3",
+0,
+true
+],
+[
+"shifts == 0 and licences == 1",
+0,
+true
+],
+[
+"shifts <= 0 and backlog == 1",
+0,
+true
+],
+[
+"shifts <= 1",
+0,
+true
+],
+[
+"rails >= 1 and freight >= 6",
+3,
+true
+],
+[
+"queues == 3",
+0,
+true
+],
+[
+"doses == 1",
+0,
+true
+],
+[
+"rails == 0",
+5,
+true
+],
+[
+"rails == 1",
+3,
+true
+],
+[
+"rails >= 4 and doses <= 2",
+2,
+false
+],
+[
+"signals >= 4",
+2,
+true
+],
+[
+"signals <= 0 and beacons == 1",
+4,
+true
+],
+[
+"rations == 1",
+5,
+true
+],
+[
+"permits >= 9",
+1,
+true
+],
+[
+"rails <= 1",
+4,
+true
+],
+[
+"permits == 8",
+2,
+true
+],
+[
+"licences <= 0 and permits == 6",
+4,
+true
+],
+[
+"doses >= 2",
+5,
+true
+],
+[
+"doses <= 1 and rails <= 0",
+0,
+false
+],
+[
+"rails == 0 and doses >= 3",
+0,
+true
+],
+[
+"permits == 0",
+0,
+true
+],
+[
+"permits == 1",
+0,
+true
+],
+[
+"permits == 1 and sensors == 0",
+0,
+true
+],
+[
+"doses == 5",
+0,
+true
+],
+[
+"permits == 4",
+2,
+true
+],
+[
+"permits >= 9",
+4,
+true
+],
+[
+"doses >= 6 and permits <= 2",
+5,
+true
+],
+[
+"rails == 4",
+5,
+true
+],
+[
+"shifts == 8",
+4,
+true
+],
+[
+"shifts == 9 and rails >= 4",
+4,
+true
+],
+[
+"rations == 1 and panels <= 3",
+2,
+true
+],
+[
+"panels <= 0",
+4,
+true
+],
+[
+"probes == 1",
+4,
+true
+],
+[
+"permits >= 1 and signals == 1",
+0,
+true
+],
+[
+"backlog == 8 and ballast == 1",
+0,
+true
+],
+[
+"probes == 0 and backlog == 4",
+5,
+true
+],
+[
+"backlog == 0",
+4,
+true
+],
+[
+"cells == 0 and margin <= 1",
+3,
+true
+],
+[
+"margin >= 2 and cells <= 1",
+3,
+true
+],
+[
+"probes == 0 and cells <= 5",
+3,
+true
+],
+[
+"probes == 1 and margin <= 1",
+4,
+true
+],
+[
+"deposits == 1",
+8,
+true
+],
+[
+"reels == 0",
+5,
+true
+],
+[
+"gates == 1 and ballast == 0",
+6,
+true
+],
+[
+"meters == 4 and vials == 0",
+1,
+true
+],
+[
+"meters >= 4 and cargo <= 0",
+1,
+true
+],
+[
+"probes == 1 and vials == 1",
+0,
+true
+],
+[
+"probes <= 0",
+2,
+true
+],
+[
+"meters >= 3",
+3,
+true
+],
+[
+"probes == 3",
+8,
+true
+],
+[
+"probes == 4",
+9,
+true
+],
+[
+"meters == 9 and gates <= 0",
+4,
+false
+],
+[
+"warrants <= 0",
+1,
+true
+],
+[
+"hooks <= 1",
+6,
+true
+],
+[
+"warrants == 5",
+0,
+true
+],
+[
+"warrants <= 3 and rosters <= 1",
+0,
+true
+],
+[
+"rosters == 0 and rations <= 5",
+4,
+true
+],
+[
+"freight >= 4 and rosters <= 1",
+2,
+false
+],
+[
+"ballast <= 2",
+3,
+true
+],
+[
+"ballast == 3",
+4,
+true
+],
+[
+"ballast == 3",
+4,
+true
+],
+[
+"reels >= 1 and ballast >= 4",
+4,
+true
+],
+[
+"cells <= 0",
+4,
+false
+],
+[
+"backlog >= 2 and cells <= 0",
+4,
+true
+],
+[
+"vials >= 2",
+1,
+true
+],
+[
+"vials >= 2 and queues == 3",
+3,
+true
+],
+[
+"vials <= 0 and queues == 4",
+3,
+true
+],
+[
+"licences == 8",
+1,
+true
+],
+[
+"rosters == 1 and licences <= 4",
+4,
+false
+],
+[
+"rosters == 1 and licences <= 5",
+5,
+true
+],
+[
+"pledges == 0 and licences == 7",
+0,
+true
+],
+[
+"vials <= 0",
+1,
+true
+],
+[
+"cells == 0",
+2,
+true
+],
+[
+"reels <= 1",
+4,
+true
+],
+[
+"reels == 0 and beacons == 5",
+3,
+true
+],
+[
+"beacons >= 9",
+3,
+true
+],
+[
+"cells == 0 and probes == 0",
+3,
+true
+],
+[
+"cells <= 0",
+3,
+true
+],
+[
+"pledges >= 4 and rails == 1",
+1,
+true
+],
+[
+"valves <= 0",
+2,
+true
+],
+[
+"margin == 0 and licences >= 3",
+1,
+true
+],
+[
+"cargo >= 4 and margin == 0",
+0,
+true
+],
+[
+"cargo <= 1",
+3,
+true
+],
+[
+"permits >= 2 and cells == 4",
+0,
+true
+],
+[
+"cells == 0",
+0,
+true
+],
+[
+"ballast == 1 and meters == 4",
+2,
+true
+],
+[
+"ballast == 1",
+1,
+true
+],
+[
+"signals <= 2",
+2,
+true
+],
+[
+"margin == 2 and hooks == 3",
+3,
+true
+],
+[
+"vials == 2",
+4,
+true
+],
+[
+"warrants >= 2",
+4,
+true
+],
+[
+"shifts == 1",
+6,
+true
+],
+[
+"freight == 2 and hooks >= 4",
+0,
+true
+],
+[
+"queues == 7",
+0,
+true
+],
+[
+"permits == 0 and queues >= 5",
+1,
+true
+],
+[
+"sensors >= 8",
+3,
+true
+],
+[
+"cargo == 0",
+5,
+true
+],
+[
+"cells <= 5 and doses == 0",
+6,
+true
+],
+[
+"probes == 3 and rosters == 0",
+5,
+true
+],
+[
+"probes == 3 and cells <= 1",
+5,
+true
+],
+[
+"deposits <= 2 and probes >= 2",
+5,
+true
+],
+[
+"cargo == 2 and freight <= 2",
+5,
+true
+],
+[
+"cargo == 3",
+4,
+true
+],
+[
+"vials == 1",
+6,
+true
+],
+[
+"cells == 0 and sensors == 0",
+5,
+true
+],
+[
+"deposits == 1",
+3,
+true
+],
+[
+"deposits == 4",
+2,
+false
+],
+[
+"deposits == 2 and shifts == 0",
+4,
+true
+],
+[
+"doses <= 4",
+2,
+true
+],
+[
+"margin >= 4",
+1,
+true
+],
+[
+"ballast == 1",
+2,
+true
+],
+[
+"margin == 4 and ballast >= 3",
+1,
+true
+],
+[
+"freight >= 4",
+1,
+true
+],
+[
+"freight == 2 and cargo == 1",
+0,
+true
+],
+[
+"freight >= 2 and ballast >= 1",
+0,
+true
+],
+[
+"reels <= 0",
+0,
+true
+],
+[
+"shifts == 1 and reels <= 1",
+0,
+true
+],
+[
+"ledger >= 8",
+5,
+true
+],
+[
+"ledger >= 9",
+5,
+true
+],
+[
+"pledges == 2",
+0,
+true
+],
+[
+"pledges >= 2",
+4,
+true
+],
+[
+"pledges == 4",
+4,
+true
+],
+[
+"doses == 7",
+5,
+true
+],
+[
+"doses == 4",
+6,
+true
+],
+[
+"backlog == 0 and doses == 5",
+2,
+true
+],
+[
+"doses == 4",
+2,
+true
+],
+[
+"signals == 0 and licences <= 1",
+2,
+true
+],
+[
+"shifts == 0 and signals == 1",
+2,
+true
+],
+[
+"signals <= 0 and shifts == 0",
+2,
+true
+],
+[
+"signals <= 0",
+1,
+true
+],
+[
+"freight == 3",
+0,
+true
+],
+[
+"freight <= 5",
+0,
+true
+],
+[
+"ledger == 0",
+7,
+true
+],
+[
+"shifts == 1",
+2,
+true
+],
+[
+"cells >= 1 and signals <= 0",
+2,
+true
+],
+[
+"doses == 1",
+3,
+true
+],
+[
+"panels >= 5",
+7,
+true
+],
+[
+"pledges == 1 and ledger >= 2",
+7,
+true
+],
+[
+"panels >= 7",
+7,
+true
+],
+[
+"panels >= 6",
+7,
+true
+],
+[
+"deposits == 0 and backlog == 0",
+0,
+true
+],
+[
+"backlog == 1 and gates >= 2",
+2,
+true
+],
+[
+"deposits <= 1",
+0,
+true
+],
+[
+"hooks >= 9 and deposits == 0",
+1,
+true
+],
+[
+"shifts >= 6",
+5,
+true
+],
+[
+"panels == 0",
+6,
+true
+],
+[
+"panels == 1",
+1,
+true
+],
+[
+"deposits == 2",
+3,
+true
+],
+[
+"freight == 2",
+3,
+true
+],
+[
+"freight >= 3 and backlog <= 1",
+2,
+true
+],
+[
+"doses == 1",
+1,
+true
+],
+[
+"doses >= 2",
+1,
+true
+],
+[
+"doses == 3 and backlog <= 1",
+1,
+true
+],
+[
+"gates <= 1",
+1,
+true
+],
+[
+"probes >= 3",
+6,
+true
+],
+[
+"shifts == 1 and licences >= 2",
+5,
+true
+],
+[
+"gates <= 0",
+2,
+true
+],
+[
+"ballast == 0",
+0,
+true
+],
+[
+"reels <= 1 and ballast >= 1",
+2,
+true
+],
+[
+"ballast == 1",
+0,
+true
+],
+[
+"ballast <= 1",
+0,
+true
+],
+[
+"rations >= 3",
+2,
+true
+],
+[
+"rations <= 1 and vials == 4",
+4,
+true
+],
+[
+"meters >= 2",
+6,
+true
+],
+[
+"permits == 2",
+1,
+true
+],
+[
+"meters == 2 and licences == 0",
+5,
+true
+],
+[
+"permits == 1",
+1,
+true
+],
+[
+"permits == 0 and signals >= 5",
+4,
+true
+],
+[
+"permits == 0",
+5,
+true
+],
+[
+"probes <= 1",
+1,
+true
+],
+[
+"reels == 3 and doses <= 1",
+2,
+true
+],
+[
+"pledges == 0",
+5,
+true
+],
+[
+"rations == 3 and deposits == 0",
+2,
+true
+],
+[
+"rations == 3",
+2,
+true
+],
+[
+"rations >= 3 and backlog >= 2",
+2,
+true
+],
+[
+"rails >= 3",
+2,
+true
+],
+[
+"warrants >= 3",
+4,
+true
+],
+[
+"warrants <= 0",
+6,
+true
+],
+[
+"sensors <= 1 and cargo <= 1",
+7,
+true
+],
+[
+"ballast <= 2",
+6,
+true
+],
+[
+"hooks <= 2",
+4,
+true
+],
+[
+"hooks <= 2 and sensors >= 1",
+4,
+true
+],
+[
+"reels >= 2",
+0,
+true
+],
+[
+"signals == 1 and freight <= 0",
+4,
+true
+],
+[
+"margin == 0 and doses == 0",
+3,
+true
+],
+[
+"doses == 1 and margin <= 4",
+3,
+true
+],
+[
+"margin == 4",
+3,
+true
+],
+[
+"probes == 4",
+4,
+true
+],
+[
+"licences == 1",
+5,
+true
+],
+[
+"meters == 3",
+2,
+true
+],
+[
+"beacons >= 6",
+3,
+false
+],
+[
+"beacons == 0",
+0,
+true
+],
+[
+"panels == 0 and meters >= 4",
+6,
+true
+],
+[
+"reels >= 3",
+5,
+true
+],
+[
+"reels <= 1 and panels == 1",
+2,
+true
+],
+[
+"freight == 0",
+6,
+true
+],
+[
+"vials == 0 and panels == 0",
+1,
+true
+],
+[
+"probes == 1",
+4,
+true
+],
+[
+"doses == 0 and signals == 0",
+2,
+true
+],
+[
+"signals == 1",
+2,
+true
+],
+[
+"signals == 5",
+3,
+true
+],
+[
+"signals <= 5",
+2,
+true
+],
+[
+"probes == 5 and doses <= 2",
+9,
+true
+],
+[
+"probes <= 3 and doses == 5",
+6,
+true
+],
+[
+"vials == 4",
+5,
+true
+],
+[
+"probes == 6 and vials >= 5",
+5,
+true
+],
+[
+"beacons <= 1",
+6,
+true
+],
+[
+"beacons == 0",
+3,
+true
+],
+[
+"vials >= 1",
+7,
+true
+],
+[
+"beacons == 0",
+6,
+true
+],
+[
+"margin == 0 and meters >= 5",
+5,
+true
+],
+[
+"meters == 3 and margin == 1",
+0,
+true
+],
+[
+"margin == 0 and meters == 6",
+0,
+true
+],
+[
+"rosters == 3",
+0,
+true
+],
+[
+"licences == 0",
+7,
+true
+],
+[
+"rosters == 3",
+0,
+true
+],
+[
+"backlog == 2",
+2,
+true
+],
+[
+"permits >= 1",
+6,
+true
+],
+[
+"meters <= 1",
+3,
+true
+],
+[
+"rations >= 2",
+0,
+false
+],
+[
+"meters == 0 and queues <= 2",
+3,
+true
+],
+[
+"panels == 0 and probes == 4",
+1,
+true
+],
+[
+"probes == 5",
+5,
+false
+],
+[
+"probes >= 4",
+0,
+true
+],
+[
+"probes == 1",
+1,
+true
+],
+[
+"reels <= 1",
+0,
+true
+],
+[
+"reels == 1 and gates >= 5",
+0,
+true
+],
+[
+"queues == 0 and ledger == 0",
+6,
+true
+],
+[
+"queues == 8 and probes <= 0",
+4,
+true
+],
+[
+"valves == 1 and deposits >= 1",
+4,
+true
+],
+[
+"deposits <= 6",
+0,
+true
+],
+[
+"deposits <= 1",
+0,
+true
+],
+[
+"deposits >= 4",
+3,
+true
+],
+[
+"shifts == 0 and cargo >= 4",
+4,
+true
+],
+[
+"cargo >= 4",
+4,
+true
+],
+[
+"cargo == 2",
+2,
+true
+],
+[
+"cargo == 5",
+4,
+true
+],
+[
+"freight >= 8",
+0,
+true
+],
+[
+"signals == 0 and freight >= 8",
+3,
+true
+],
+[
+"panels <= 4",
+5,
+false
+],
+[
+"panels == 2",
+4,
+true
+],
+[
+"permits <= 0 and backlog >= 3",
+5,
+true
+],
+[
+"valves >= 2",
+4,
+true
+],
+[
+"valves <= 0",
+3,
+false
+],
+[
+"pledges <= 6",
+2,
+true
+],
+[
+"gates == 0",
+5,
+true
+],
+[
+"deposits <= 2 and meters == 1",
+5,
+true
+],
+[
+"deposits == 0 and meters == 0",
+0,
+true
+],
+[
+"deposits == 0",
+4,
+true
+],
+[
+"margin <= 0",
+6,
+false
+],
+[
+"rails <= 3",
+7,
+true
+],
+[
+"margin == 1",
+6,
+false
+],
+[
+"rails == 0",
+6,
+false
+],
+[
+"meters >= 5",
+6,
+true
+],
+[
+"warrants == 9 and meters >= 3",
+4,
+true
+],
+[
+"meters >= 6",
+6,
+true
+],
+[
+"beacons >= 5",
+8,
+true
+],
+[
+"backlog >= 3",
+0,
+true
+],
+[
+"shifts >= 3",
+3,
+true
+],
+[
+"shifts == 8",
+5,
+false
+],
+[
+"shifts == 8",
+5,
+false
+],
+[
+"shifts <= 3 and probes == 0",
+1,
+true
+],
+[
+"doses <= 0",
+2,
+true
+],
+[
+"backlog == 1 and doses <= 7",
+6,
+true
+],
+[
+"doses == 8",
+5,
+true
+],
+[
+"cargo <= 0",
+10,
+false
+],
+[
+"pledges == 7",
+6,
+true
+],
+[
+"panels == 3",
+0,
+true
+],
+[
+"reels == 0 and vials == 0",
+3,
+true
+],
+[
+"cells >= 2",
+3,
+true
+],
+[
+"beacons <= 1",
+0,
+false
+],
+[
+"signals >= 2",
+0,
+true
+],
+[
+"pledges == 1",
+6,
+true
+]
+],
+"looser requests": [
+[
+"reels >= 3",
+5,
+true
+],
+[
+"reels == 2",
+3,
+false
+],
+[
+"freight <= 4",
+4,
+false
+],
+[
+"probes <= 5",
+1,
+true
+],
+[
+"probes == 3",
+1,
+true
+],
+[
+"queues == 1",
+3,
+true
+],
+[
+"doses == 1",
+3,
+false
+],
+[
+"freight >= 3",
+7,
+true
+],
+[
+"beacons <= 0",
+2,
+true
+],
+[
+"beacons <= 1",
+2,
+true
+],
+[
+"beacons <= 3",
+2,
+true
+],
+[
+"reels <= 4",
+3,
+false
+],
+[
+"ballast >= 1 and vials <= 1",
+1,
+true
+],
+[
+"backlog == 2 and rails == 1",
+3,
+true
+],
+[
+"shifts >= 3 and rails <= 1",
+6,
+false
+],
+[
+"rails == 0 and shifts <= 2",
+4,
+true
+],
+[
+"rails <= 3",
+4,
+true
+],
+[
+"queues == 5 and doses == 3",
+7,
+false
+],
+[
+"doses == 3",
+7,
+true
+],
+[
+"rations == 2 and not less than 0",
+3,
+false
+],
+[
+"ballast == 2 and rations == 0",
+1,
+true
+],
+[
+"probes == 0 and beacons == 8",
+5,
+false
+],
+[
+"rations == 1 and rails == 0",
+3,
+true
+],
+[
+"freight <= 0 and doses == 5",
+3,
+true
+],
+[
+"doses >= 4",
+1,
+true
+],
+[
+"doses == 7",
+1,
+true
+],
+[
+"beacons == 2 and doses == 5",
+1,
+true
+],
+[
+"ledger == 4",
+0,
+true
+],
+[
+"signals >= 2 and sensors == 1",
+6,
+true
+],
+[
+"ledger >= 4",
+1,
+true
+],
+[
+"rails >= 7",
+3,
+true
+],
+[
+"rails >= 4",
+3,
+true
+],
+[
+"backlog <= 6 and sensors == 1",
+1,
+false
+],
+[
+"backlog <= 2 and hooks == 0",
+0,
+true
+],
+[
+"backlog <= 1 and hooks == 0",
+0,
+true
+],
+[
+"hooks == 4 and rails == 1",
+3,
+true
+],
+[
+"ballast == 1 and hooks <= 5",
+3,
+true
+],
+[
+"meters == 1 and pledges <= 0",
+1,
+true
+],
+[
+"doses <= 2 and pledges == 2",
+3,
+true
+],
+[
+"doses >= 2",
+4,
+true
+],
+[
+"ballast == 8",
+6,
+true
+],
+[
+"rosters <= 4 and ballast == 8",
+6,
+true
+],
+[
+"reels >= 2",
+2,
+false
+],
+[
+"queues <= 1",
+0,
+true
+],
+[
+"rosters <= 2 and probes == 0",
+0,
+false
+],
+[
+"probes <= 0",
+0,
+false
+],
+[
+"probes == 0 and cargo == 1",
+5,
+true
+],
+[
+"queues == 2",
+4,
+true
+],
+[
+"shifts <= 1",
+3,
+true
+],
+[
+"shifts == 1 and permits >= 2",
+3,
+true
+],
+[
+"signals <= 2 and hooks <= 2",
+2,
+true
+],
+[
+"hooks <= 0",
+4,
+true
+],
+[
+"sensors == 0",
+8,
+true
+],
+[
+"rails <= 0",
+4,
+true
+],
+[
+"reels == 1 and rails >= 2",
+0,
+true
+],
+[
+"reels >= 4",
+6,
+true
+],
+[
+"sensors == 0 and rosters == 1",
+1,
+true
+],
+[
+"warrants == 5 and permits >= 2",
+0,
+true
+],
+[
+"rosters <= 1 and signals <= 1",
+1,
+true
+],
+[
+"rosters <= 1",
+1,
+true
+],
+[
+"cargo >= 2 and freight >= 6",
+6,
+true
+],
+[
+"freight >= 6 and rosters >= 3",
+2,
+true
+],
+[
+"doses == 6",
+3,
+true
+],
+[
+"sensors == 0 and beacons <= 1",
+1,
+true
+],
+[
+"rations == 1",
+5,
+true
+],
+[
+"rails >= 2",
+4,
+true
+],
+[
+"doses >= 2 and rails >= 3",
+4,
+true
+],
+[
+"rails == 1 and doses >= 4",
+4,
+true
+],
+[
+"margin == 9",
+0,
+true
+],
+[
+"freight == 0 and margin <= 6",
+4,
+true
+],
+[
+"rosters <= 1",
+4,
+true
+],
+[
+"sensors == 1 and rosters == 0",
+4,
+true
+],
+[
+"rosters <= 0",
+4,
+true
+],
+[
+"rosters <= 3",
+4,
+true
+],
+[
+"rails == 0",
+4,
+true
+],
+[
+"licences == 4",
+3,
+true
+],
+[
+"ledger == 3",
+4,
+true
+],
+[
+"ledger == 0 and reels == 1",
+1,
+false
+],
+[
+"gates == 1 and reels == 4",
+0,
+true
+],
+[
+"gates == 1 and panels == 0",
+1,
+true
+],
+[
+"deposits >= 4",
+5,
+true
+],
+[
+"deposits == 1",
+2,
+true
+],
+[
+"cells == 0",
+4,
+true
+],
+[
+"queues <= 0 and ballast == 3",
+3,
+true
+],
+[
+"ballast == 8",
+6,
+true
+],
+[
+"permits <= 0",
+2,
+true
+],
+[
+"permits == 0 and rails >= 2",
+5,
+true
+],
+[
+"rails <= 3 and licences == 0",
+7,
+true
+],
+[
+"rails == 8",
+6,
+true
+],
+[
+"cargo == 3 and reels >= 2",
+3,
+true
+],
+[
+"cargo == 2 and reels <= 1",
+2,
+true
+],
+[
+"pledges == 2",
+2,
+true
+],
+[
+"ballast <= 0 and meters <= 1",
+5,
+true
+],
+[
+"pledges >= 2 and ballast <= 2",
+5,
+true
+],
+[
+"ballast == 7",
+3,
+false
+],
+[
+"ballast >= 1",
+0,
+true
+],
+[
+"ballast == 2",
+0,
+true
+],
+[
+"vials == 1 and doses <= 1",
+4,
+true
+],
+[
+"doses >= 3",
+2,
+true
+],
+[
+"valves >= 4",
+0,
+true
+],
+[
+"valves == 3",
+0,
+true
+],
+[
+"shifts <= 0",
+0,
+true
+],
+[
+"cargo == 3",
+5,
+true
+],
+[
+"valves == 1",
+2,
+true
+],
+[
+"margin >= 3",
+0,
+true
+],
+[
+"reels == 0 and margin == 4",
+2,
+true
+],
+[
+"margin >= 4",
+0,
+true
+],
+[
+"backlog == 1 and meters == 5",
+6,
+false
+],
+[
+"meters == 2 and pledges == 1",
+0,
+false
+],
+[
+"meters == 7",
+6,
+true
+],
+[
+"meters <= 1",
+6,
+false
+],
+[
+"hooks == 5 and margin == 1",
+4,
+true
+],
+[
+"hooks == 8",
+2,
+true
+],
+[
+"ballast >= 1",
+1,
+true
+],
+[
+"ballast == 2 and hooks >= 2",
+1,
+true
+],
+[
+"rosters <= 2 and cells <= 3",
+0,
+true
+],
+[
+"rosters == 4",
+3,
+true
+],
+[
+"rosters == 4",
+3,
+true
+],
+[
+"cells == 0",
+2,
+true
+],
+[
+"signals <= 3",
+6,
+true
+],
+[
+"probes == 2 and freight >= 4",
+5,
+false
+],
+[
+"freight == 0 and licences >= 8",
+4,
+true
+],
+[
+"gates == 0 and licences <= 3",
+5,
+true
+],
+[
+"gates == 0",
+6,
+true
+],
+[
+"licences <= 3",
+5,
+true
+],
+[
+"hooks == 0 and pledges == 0",
+4,
+true
+],
+[
+"meters == 6 and pledges == 1",
+4,
+true
+],
+[
+"hooks <= 2 and pledges == 0",
+3,
+true
+],
+[
+"ballast >= 4",
+2,
+true
+],
+[
+"sensors == 4",
+4,
+true
+],
+[
+"shifts <= 1 and ballast >= 2",
+3,
+true
+],
+[
+"margin == 3 and permits == 3",
+3,
+false
+],
+[
+"permits <= 0 and margin <= 3",
+2,
+true
+],
+[
+"cargo == 8",
+1,
+true
+],
+[
+"permits == 2 and cargo == 2",
+5,
+true
+],
+[
+"cargo == 6 and permits <= 0",
+1,
+true
+],
+[
+"cargo == 3",
+2,
+true
+],
+[
+"backlog >= 3 and ballast == 1",
+11,
+true
+],
+[
+"valves == 1",
+2,
+true
+],
+[
+"ballast == 1 and valves == 0",
+1,
+false
+],
+[
+"ballast <= 8",
+4,
+false
+],
+[
+"ballast >= 4",
+6,
+true
+],
+[
+"probes == 3 and valves <= 0",
+1,
+true
+],
+[
+"ballast <= 2",
+2,
+false
+],
+[
+"ballast >= 5",
+2,
+true
+],
+[
+"gates == 0 and ballast == 6",
+2,
+true
+],
+[
+"ballast <= 2",
+2,
+false
+],
+[
+"margin <= 0",
+0,
+true
+],
+[
+"warrants >= 2 and margin == 0",
+0,
+true
+],
+[
+"rations <= 1",
+7,
+true
+],
+[
+"rations >= 1",
+4,
+true
+],
+[
+"shifts == 2",
+6,
+true
+],
+[
+"rails == 5",
+5,
+true
+],
+[
+"meters <= 1",
+3,
+true
+],
+[
+"rails <= 1 and probes == 0",
+1,
+true
+],
+[
+"rosters >= 2 and sensors == 2",
+3,
+true
+],
+[
+"rosters == 1 and sensors == 1",
+3,
+true
+],
+[
+"rosters == 3",
+0,
+true
+],
+[
+"rosters <= 1 and warrants >= 2",
+3,
+true
+],
+[
+"meters == 0 and ballast >= 2",
+0,
+true
+],
+[
+"panels == 2 and doses == 1",
+3,
+true
+],
+[
+"rails == 0",
+2,
+true
+],
+[
+"gates <= 2",
+0,
+true
+],
+[
+"gates <= 0",
+3,
+true
+],
+[
+"cargo == 2 and probes == 2",
+6,
+false
+],
+[
+"margin == 1",
+8,
+true
+],
+[
+"shifts == 0 and backlog == 1",
+7,
+false
+],
+[
+"margin == 2 and pledges <= 1",
+4,
+true
+],
+[
+"pledges <= 4 and margin == 0",
+5,
+true
+],
+[
+"valves <= 2",
+1,
+true
+],
+[
+"hooks == 1 and valves <= 2",
+4,
+true
+],
+[
+"hooks <= 1",
+4,
+true
+],
+[
+"gates == 2 and hooks <= 2",
+4,
+true
+],
+[
+"meters == 2",
+0,
+true
+],
+[
+"meters <= 0 and rails == 0",
+0,
+true
+],
+[
+"cargo == 1",
+5,
+true
+],
+[
+"meters <= 1",
+0,
+true
+],
+[
+"deposits <= 0",
+0,
+true
+],
+[
+"rosters == 4",
+0,
+true
+],
+[
+"rosters == 4",
+0,
+true
+],
+[
+"rosters == 2 and cells == 0",
+0,
+true
+],
+[
+"ballast <= 0 and beacons <= 1",
+1,
+true
+],
+[
+"shifts >= 2 and deposits <= 1",
+6,
+true
+],
+[
+"doses <= 2 and signals == 1",
+3,
+true
+],
+[
+"doses == 3",
+3,
+false
+],
+[
+"valves <= 1 and doses <= 3",
+3,
+true
+],
+[
+"rations <= 1 and vials == 4",
+2,
+true
+],
+[
+"vials == 8",
+2,
+true
+],
+[
+"rations >= 2",
+1,
+true
+],
+[
+"vials >= 6",
+2,
+true
+],
+[
+"meters >= 4",
+5,
+true
+],
+[
+"meters <= 3 and vials <= 1",
+7,
+true
+],
+[
+"meters == 3",
+5,
+true
+],
+[
+"permits == 0",
+2,
+true
+],
+[
+"panels <= 0",
+6,
+true
+],
+[
+"panels == 3",
+4,
+true
+],
+[
+"rosters <= 2 and permits == 0",
+0,
+true
+],
+[
+"permits == 0",
+1,
+true
+],
+[
+"permits == 2 and ballast <= 1",
+2,
+true
+],
+[
+"permits <= 1",
+4,
+true
+],
+[
+"ballast == 1 and permits == 3",
+1,
+true
+],
+[
+"cells == 0",
+0,
+true
+],
+[
+"ledger == 4 and sensors == 0",
+4,
+true
+],
+[
+"cells <= 1",
+0,
+true
+],
+[
+"freight == 1",
+1,
+true
+],
+[
+"panels >= 1 and cargo >= 4",
+2,
+true
+],
+[
+"freight >= 2",
+5,
+true
+],
+[
+"freight == 0",
+0,
+true
+],
+[
+"rails <= 1 and freight <= 1",
+4,
+true
+],
+[
+"freight == 2",
+1,
+true
+],
+[
+"gates == 0 and deposits <= 8",
+3,
+true
+],
+[
+"beacons == 2",
+4,
+true
+],
+[
+"beacons >= 4",
+4,
+true
+],
+[
+"beacons >= 6",
+4,
+true
+],
+[
+"queues == 0 and panels <= 7",
+0,
+false
+],
+[
+"panels == 1",
+3,
+true
+],
+[
+"panels >= 3",
+6,
+false
+],
+[
+"queues <= 1",
+0,
+true
+],
+[
+"panels <= 0",
+8,
+true
+],
+[
+"sensors == 4 and panels <= 1",
+7,
+true
+],
+[
+"gates == 1+",
+8,
+false
+],
+[
+"sensors >= 4 and gates >= 5",
+7,
+true
+],
+[
+"hooks == 0",
+0,
+false
+],
+[
+"cargo >= 2",
+7,
+true
+],
+[
+"hooks == 1 and cargo == 1",
+3,
+true
+],
+[
+"panels == 2 and ledger == 1",
+1,
+true
+],
+[
+"panels == 4 and ledger == 1",
+1,
+true
+],
+[
+"panels == 3 and ledger == 1",
+1,
+true
+],
+[
+"ballast == 0",
+2,
+false
+],
+[
+"permits <= 1 and rations >= 2",
+4,
+true
+],
+[
+"gates == 0 and permits == 1",
+1,
+true
+],
+[
+"gates == 0",
+6,
+true
+],
+[
+"rations == 2 and gates == 0",
+2,
+true
+],
+[
+"backlog == 1 and deposits == 0",
+5,
+true
+],
+[
+"signals == 1",
+4,
+true
+],
+[
+"signals == 2",
+1,
+false
+],
+[
+"rosters == 1 and rations == 2",
+1,
+true
+],
+[
+"rosters == 1 and rations <= 1",
+0,
+true
+],
+[
+"meters == 4",
+2,
+true
+],
+[
+"meters == 4",
+2,
+true
+],
+[
+"rosters <= 1 and gates == 0",
+4,
+true
+],
+[
+"rosters <= 0",
+4,
+true
+],
+[
+"hooks == 2 and gates == 1",
+8,
+true
+],
+[
+"rosters == 2 and (rosters >= 2 and rosters <= 2)",
+5,
+false
+],
+[
+"valves == 1 and licences >= 3",
+4,
+true
+],
+[
+"sensors <= 0",
+0,
+true
+],
+[
+"backlog == 0 and hooks <= 0",
+3,
+true
+],
+[
+"hooks == 0 and backlog >= 3",
+0,
+false
+],
+[
+"queues <= 0",
+4,
+true
+],
+[
+"queues >= 3 and beacons >= 1",
+3,
+true
+],
+[
+"queues == 4 and shifts == 0",
+4,
+true
+],
+[
+"queues >= 4",
+3,
+true
+],
+[
+"reels >= 2",
+2,
+true
+],
+[
+"panels == 1",
+5,
+true
+],
+[
+"meters == 0",
+4,
+true
+],
+[
+"meters == 2",
+4,
+true
+],
+[
+"deposits == 1",
+8,
+true
+],
+[
+"meters == 3",
+4,
+true
+],
+[
+"hooks >= 5",
+2,
+true
+],
+[
+"vials == 3 and rails >= 2",
+1,
+true
+],
+[
+"ledger == 1 and hooks <= 6",
+5,
+true
+],
+[
+"vials >= 5 and backlog <= 1",
+0,
+true
+],
+[
+"hooks >= 4",
+0,
+false
+],
+[
+"signals <= 3",
+0,
+true
+],
+[
+"signals == 2",
+0,
+true
+],
+[
+"ledger == 0",
+4,
+true
+],
+[
+"beacons deactivated",
+9,
+false
+],
+[
+"queues <= 4",
+0,
+true
+],
+[
+"pledges <= 6 and rosters <= 4",
+0,
+true
+],
+[
+"rosters <= 1",
+1,
+false
+],
+[
+"vials <= 0",
+3,
+true
+],
+[
+"rails <= 1",
+1,
+true
+],
+[
+"rails == 1",
+1,
+true
+],
+[
+"rosters == 4",
+5,
+true
+],
+[
+"rails <= 0",
+1,
+true
+],
+[
+"valves == 3 and meters == 0",
+3,
+true
+],
+[
+"valves == 7 and probes >= 1",
+1,
+true
+],
+[
+"meters == 1 and valves == 0",
+5,
+true
+],
+[
+"probes <= 0 and valves <= 7",
+4,
+true
+],
+[
+"cargo <= 5 and warrants == 4",
+1,
+true
+],
+[
+"cargo >= 4",
+4,
+true
+],
+[
+"meters == 2",
+5,
+true
+],
+[
+"meters == 0 and cargo <= 1",
+7,
+true
+],
+[
+"freight <= 1 and sensors <= 2",
+5,
+true
+],
+[
+"pledges == 3",
+1,
+true
+],
+[
+"pledges >= 1 and sensors <= 1",
+1,
+true
+],
+[
+"freight >= 2",
+3,
+true
+],
+[
+"freight == 0 and ballast >= 1",
+5,
+true
+],
+[
+"queues >= 5",
+8,
+true
+],
+[
+"queues >= 5",
+8,
+true
+],
+[
+"sensors == 0 and deposits <= 1",
+5,
+true
+],
+[
+"valves <= 3 and doses <= 1",
+5,
+false
+],
+[
+"deposits <= 1 and doses >= 1",
+5,
+true
+],
+[
+"doses == 3 and sensors == 0",
+6,
+true
+],
+[
+"sensors == 0",
+2,
+true
+],
+[
+"pledges <= 2",
+1,
+false
+],
+[
+"pledges >= 4",
+3,
+true
+],
+[
+"cells <= 2 and pledges == 0",
+0,
+true
+],
+[
+"beacons == 2",
+0,
+true
+],
+[
+"vials == 3 and beacons == 5",
+8,
+true
+],
+[
+"vials >= 6 and rosters >= 3",
+0,
+true
+],
+[
+"rosters == 0 and warrants == 5",
+5,
+true
+],
+[
+"licences >= 4 and warrants >= 5",
+5,
+true
+],
+[
+"warrants == 6 and rosters == 0",
+5,
+true
+],
+[
+"rosters == 0 and warrants >= 6",
+5,
+true
+],
+[
+"sensors <= 1",
+4,
+true
+],
+[
+"meters <= 3",
+4,
+false
+],
+[
+"sensors <= 0 and freight <= 3",
+4,
+true
+],
+[
+"freight >= 2 and meters >= 2",
+4,
+false
+],
+[
+"sensors >= 6",
+6,
+true
+],
+[
+"valves >= 3 and shifts == 1",
+2,
+false
+],
+[
+"beacons == 1",
+1,
+true
+],
+[
+"beacons == 1",
+4,
+false
+],
+[
+"rails == 6",
+6,
+true
+],
+[
+"rails == 6 and beacons == 1",
+0,
+true
+],
+[
+"gates <= 0",
+1,
+false
+],
+[
+"reels == 1 and meters >= 1",
+3,
+true
+],
+[
+"valves == 2 and vials == 2",
+0,
+true
+],
+[
+"vials >= 1 and valves == 0",
+0,
+true
+],
+[
+"margin == 2",
+2,
+true
+],
+[
+"margin <= 0 and queues == 1",
+3,
+true
+],
+[
+"queues == 1",
+3,
+true
+],
+[
+"cells <= 2 and permits >= 0",
+2,
+false
+],
+[
+"doses >= 1",
+3,
+true
+],
+[
+"permits == 4",
+0,
+true
+],
+[
+"probes == 6",
+4,
+true
+],
+[
+"deposits <= 2 and probes <= 0",
+3,
+true
+],
+[
+"deposits <= 0",
+0,
+true
+],
+[
+"probes <= 4 and margin == 1",
+3,
+true
+],
+[
+"rails == 1 and rations <= 1",
+6,
+true
+],
+[
+"warrants <= 3 and rails == 0",
+5,
+true
+],
+[
+"rations >= 1 and margin == 3",
+3,
+false
+],
+[
+"warrants <= 1",
+5,
+true
+],
+[
+"pledges >= 3 and shifts == 1",
+3,
+true
+],
+[
+"vials == 1",
+5,
+true
+],
+[
+"ledger == 1 and gates <= 1",
+3,
+true
+],
+[
+"freight <= 0",
+5,
+true
+],
+[
+"valves <= 1",
+1,
+true
+],
+[
+"queues >= 4 and rosters >= 4",
+2,
+true
+],
+[
+"rosters <= 2 and valves >= 2",
+4,
+true
+],
+[
+"queues >= 3 and rosters <= 0",
+2,
+true
+],
+[
+"margin == 7",
+7,
+true
+],
+[
+"panels == 0",
+8,
+true
+],
+[
+"margin >= 7",
+7,
+true
+],
+[
+"margin == 1",
+6,
+true
+],
+[
+"cargo <= 1",
+7,
+true
+],
+[
+"queues >= 3 and cargo == 0",
+7,
+true
+],
+[
+"sensors <= 2",
+1,
+true
+],
+[
+"cells == 1",
+6,
+true
+],
+[
+"licences <= 3 and sensors <= 1",
+1,
+true
+],
+[
+"licences == 2",
+3,
+true
+],
+[
+"probes >= 4",
+6,
+true
+],
+[
+"backlog >= 5",
+3,
+true
+],
+[
+"backlog == 8+",
+3,
+false
+],
+[
+"vials == 1",
+6,
+true
+],
+[
+"vials >= 3",
+6,
+true
+],
+[
+"permits == 2",
+3,
+true
+],
+[
+"sensors == 1 and vials == 4",
+6,
+true
+],
+[
+"ballast == 2",
+7,
+true
+],
+[
+"rations <= 2",
+1,
+true
+],
+[
+"panels == 7",
+6,
+true
+],
+[
+"panels >= 2 and rations <= 5",
+3,
+false
+],
+[
+"queues <= 3 and warrants <= 5",
+4,
+true
+],
+[
+"unclear",
+8,
+false
+],
+[
+"warrants <= 5",
+2,
+true
+],
+[
+"warrants <= 5",
+2,
+true
+],
+[
+"backlog == 3",
+2,
+true
+],
+[
+"queues == 3 and backlog <= 1",
+2,
+true
+],
+[
+"beacons == 8",
+0,
+true
+],
+[
+"beacons == 6 and cells == 0",
+3,
+true
+],
+[
+"sensors <= 1",
+3,
+true
+],
+[
+"beacons == 7",
+0,
+true
+],
+[
+"vials <= 1",
+1,
+true
+],
+[
+"cells == 0 and beacons == 1",
+5,
+true
+],
+[
+"vials <= 2 and cells == 1",
+1,
+true
+],
+[
+"permits == 9 and queues == 0",
+5,
+false
+],
+[
+"permits == 8",
+5,
+true
+],
+[
+"licences == 3 and shifts == 2",
+4,
+true
+],
+[
+"shifts == 2",
+4,
+true
+],
+[
+"cargo == 0 and meters == 0",
+7,
+true
+],
+[
+"probes == 4 and meters == 1",
+6,
+true
+],
+[
+"doses <= 4 and cargo == on",
+6,
+false
+],
+[
+"probes == 4",
+6,
+true
+],
+[
+"sensors == 5",
+1,
+true
+],
+[
+"cargo == 0 and reels == 6",
+5,
+true
+],
+[
+"cargo >= 1 and sensors >= 3",
+3,
+true
+],
+[
+"sensors >= 5",
+1,
+true
+],
+[
+"pledges == 2 and doses == 2",
+6,
+true
+],
+[
+"doses >= 1",
+0,
+true
+],
+[
+"doses <= 2",
+0,
+true
+],
+[
+"meters <= 4",
+3,
+true
+],
+[
+"ballast <= 1 and cargo == 4",
+0,
+true
+],
+[
+"sensors == 0",
+6,
+true
+],
+[
+"cargo == 2 and permits >= 1",
+0,
+true
+],
+[
+"probes <= 0",
+5,
+true
+],
+[
+"shifts == 1",
+3,
+true
+],
+[
+"probes <= 2",
+5,
+true
+],
+[
+"doses <= 0 and deposits >= 5",
+2,
+true
+],
+[
+"deposits == 5",
+2,
+true
+],
+[
+"deposits == 6 and receipts <= 0",
+2,
+false
+],
+[
+"rations == 0",
+4,
+true
+],
+[
+"hooks == 8 and rails <= 0",
+6,
+true
+],
+[
+"hooks <= 4",
+2,
+true
+],
+[
+"licences <= 1",
+1,
+false
+],
+[
+"licences == 0 and probes >= 3",
+7,
+true
+],
+[
+"licences <= 0",
+2,
+true
+],
+[
+"licences <= 0",
+1,
+false
+],
+[
+"margin >= 4 and valves == 1",
+3,
+true
+],
+[
+"margin <= 6",
+2,
+true
+],
+[
+"margin <= 6",
+5,
+true
+],
+[
+"sensors == 1",
+7,
+true
+],
+[
+"permits == 1 and pledges == 1",
+3,
+true
+],
+[
+"signals == 0",
+6,
+true
+],
+[
+"permits == 2",
+4,
+true
+],
+[
+"margin == 2",
+1,
+true
+],
+[
+"margin == 3",
+0,
+true
+],
+[
+"rails <= 5 and policy == 0",
+7,
+false
+],
+[
+"rails >= 6",
+6,
+true
+],
+[
+"rails >= 6",
+6,
+true
+],
+[
+"cells <= 0 and margin == 5",
+3,
+true
+],
+[
+"hooks == 0 and margin <= 0",
+7,
+true
+],
+[
+"margin == 3",
+2,
+true
+],
+[
+"margin <= 1",
+2,
+true
+],
+[
+"hooks == 0",
+2,
+true
+],
+[
+"sensors == 0",
+5,
+true
+],
+[
+"sensors == 2",
+6,
+true
+],
+[
+"rosters >= 1 and sensors == 4",
+3,
+true
+],
+[
+"deposits <= 4 and reels == 1",
+5,
+true
+],
+[
+"deposits == 4",
+4,
+true
+],
+[
+"shifts == 2 and reels == 1",
+1,
+true
+],
+[
+"shifts <= 3 and cargo == 2",
+1,
+true
+],
+[
+"valves <= 0",
+0,
+true
+],
+[
+"cargo >= 2",
+1,
+true
+],
+[
+"shifts == 2 and valves <= 1",
+1,
+true
+],
+[
+"permits == 5",
+2,
+true
+],
+[
+"cargo == 1 and permits == 6",
+4,
+true
+],
+[
+"hooks == 3 and cargo == 1",
+0,
+true
+],
+[
+"permits == 0",
+3,
+true
+],
+[
+"valves == 1",
+4,
+true
+],
+[
+"freight >= 2 and shifts == 4",
+2,
+true
+],
+[
+"freight <= 2",
+7,
+true
+],
+[
+"freight == 3",
+8,
+true
+],
+[
+"permits < 2 and shifts <= 0",
+2,
+false
+],
+[
+"rosters >= 3",
+6,
+true
+],
+[
+"rosters == 3 and doses == 1",
+6,
+true
+],
+[
+"sensors <= 0 and rosters == 2",
+3,
+true
+],
+[
+"rosters <= 1",
+4,
+true
+],
+[
+"meters <= 2 and margin == 1",
+6,
+true
+],
+[
+"margin >= 1",
+5,
+true
+],
+[
+"margin >= 4",
+5,
+true
+],
+[
+"ballast == 1 and margin <= 1",
+4,
+false
+],
+[
+"warrants <= 3 and signals <= 3",
+1,
+true
+],
+[
+"warrants <= 3",
+4,
+true
+],
+[
+"signals == 0 and reels == 0",
+2,
+false
+],
+[
+"signals <= 0",
+0,
+true
+],
+[
+"freight >= 4 and cargo == 1",
+7,
+true
+],
+[
+"freight == 0",
+2,
+true
+],
+[
+"freight == 4",
+7,
+true
+],
+[
+"freight == 4",
+7,
+true
+],
+[
+"rations == 0 and margin == 3",
+5,
+true
+],
+[
+"margin == 0 and rations <= 0",
+4,
+false
+],
+[
+"queues == 6",
+4,
+true
+],
+[
+"margin <= 0",
+4,
+false
+],
+[
+"pledges >= 4",
+8,
+true
+],
+[
+"pledges == 2",
+0,
+false
+],
+[
+"licences == 1",
+0,
+true
+],
+[
+"hooks == 1",
+1,
+true
+],
+[
+"freight == 2",
+0,
+true
+],
+[
+"freight == 3 and hooks == 1",
+4,
+true
+],
+[
+"freight <= 1 and margin <= 2",
+3,
+true
+],
+[
+"queues == 0",
+5,
+true
+],
+[
+"probes == 0",
+6,
+false
+],
+[
+"valves >= 1",
+4,
+true
+],
+[
+"signals >= 5",
+1,
+true
+],
+[
+"signals >= 1",
+1,
+true
+],
+[
+"signals >= 4",
+1,
+true
+],
+[
+"signals <= 1",
+4,
+true
+],
+[
+"ledger >= 3",
+0,
+true
+],
+[
+"ledger == 4",
+0,
+true
+],
+[
+"meters == 1 and (meters >= 1 and meters <= 1)",
+6,
+false
+],
+[
+"cells == 4",
+0,
+true
+],
+[
+"signals == 1",
+1,
+false
+],
+[
+"signals == 0 and meters <= 1",
+1,
+false
+],
+[
+"vials <= 2 and sensors == 1",
+6,
+true
+],
+[
+"permits == 1 and vials <= 2",
+0,
+true
+],
+[
+"vials <= 4",
+0,
+true
+],
+[
+"sensors == 0 and vials == 1",
+0,
+true
+],
+[
+"rails == 3 and cargo <= 3",
+0,
+true
+],
+[
+"shifts == 1",
+5,
+true
+],
+[
+"cargo == 5 and rails == 0",
+4,
+true
+],
+[
+"shifts == 1 and rails == 3",
+0,
+true
+],
+[
+"shifts == 0 and licences == 1",
+0,
+true
+],
+[
+"shifts <= 0 and backlog == 1",
+0,
+true
+],
+[
+"shifts <= 1",
+0,
+true
+],
+[
+"rails == 1 and freight >= 6",
+3,
+true
+],
+[
+"queues == 3",
+0,
+true
+],
+[
+"doses == 1 and doses >= 1",
+0,
+true
+],
+[
+"rails == 0",
+5,
+true
+],
+[
+"rails == 1",
+3,
+true
+],
+[
+"rails == 4 + doses <= 2",
+2,
+false
+],
+[
+"signals >= 4",
+2,
+true
+],
+[
+"signals <= 0 and beacons == 1",
+4,
+true
+],
+[
+"rations == 1",
+5,
+true
+],
+[
+"permits <= 9",
+1,
+false
+],
+[
+"rails <= 1",
+4,
+true
+],
+[
+"permits == 8",
+2,
+true
+],
+[
+"licences <= 0 and permits == 6",
+4,
+true
+],
+[
+"doses >= 2",
+5,
+true
+],
+[
+"doses <= 1 and rails <= 0",
+0,
+false
+],
+[
+"rails == 0 and doses >= 3",
+0,
+true
+],
+[
+"permits == 0",
+0,
+true
+],
+[
+"permits == 1",
+0,
+true
+],
+[
+"permits == 1 and sensors == 1",
+1,
+true
+],
+[
+"doses == 5",
+0,
+true
+],
+[
+"permits == 4",
+2,
+true
+],
+[
+"permits >= 9",
+2,
+true
+],
+[
+"doses >= 6 and permits <= 2",
+5,
+true
+],
+[
+"rails == 4",
+5,
+true
+],
+[
+"shifts == 8",
+4,
+true
+],
+[
+"shifts == 9 and rails >= 4",
+4,
+true
+],
+[
+"rations == 0 and panels <= 3",
+0,
+true
+],
+[
+"panels <= 0",
+4,
+true
+],
+[
+"probes == 1",
+4,
+true
+],
+[
+"permits >= 1 and signals == 1",
+1,
+true
+],
+[
+"backlog == 8 and ballast == 1",
+0,
+true
+],
+[
+"probes == 0 and backlog == 4",
+5,
+true
+],
+[
+"backlog == 0",
+4,
+true
+],
+[
+"cells == 0 and margin <= 1",
+3,
+true
+],
+[
+"margin == 2 and cells <= 1",
+3,
+true
+],
+[
+"probes == 0 and cells <= 5",
+3,
+true
+],
+[
+"probes == 0 and margin <= 1",
+2,
+true
+],
+[
+"deposits == 1",
+8,
+true
+],
+[
+"reels == 0",
+5,
+true
+],
+[
+"gates == 1 and ballast == 0",
+6,
+true
+],
+[
+"meters == 4 and vials == 0",
+1,
+true
+],
+[
+"meters >= 4 and cargo <= 0",
+1,
+true
+],
+[
+"probes == 1 and vials == 1",
+0,
+true
+],
+[
+"probes <= 0",
+2,
+true
+],
+[
+"meters >= 3",
+3,
+true
+],
+[
+"probes == 3",
+8,
+true
+],
+[
+"probes == 4",
+9,
+true
+],
+[
+"meters == 9 and gates == 0",
+4,
+false
+],
+[
+"warrants <= 0",
+1,
+true
+],
+[
+"hooks <= 1",
+6,
+true
+],
+[
+"warrants == 5",
+0,
+true
+],
+[
+"warrants <= 3 and rosters <= 1",
+0,
+true
+],
+[
+"rosters == 0 and rations <= 5",
+4,
+true
+],
+[
+"freight >= 4 and rosters <= 1",
+2,
+false
+],
+[
+"ballast <= 2",
+3,
+true
+],
+[
+"ballast == 3",
+4,
+true
+],
+[
+"ballast == 3",
+4,
+true
+],
+[
+"reels >= 2 and ballast >= 1",
+4,
+true
+],
+[
+"cells <= 0",
+4,
+false
+],
+[
+"backlog == 2 and cells <= 0",
+4,
+false
+],
+[
+"vials >= 2",
+1,
+true
+],
+[
+"vials >= 2 and queues == 3",
+3,
+true
+],
+[
+"vials <= 0 and queues == 4",
+3,
+true
+],
+[
+"licences == 8",
+1,
+true
+],
+[
+"rosters == 1 and licences <= 4",
+4,
+false
+],
+[
+"rosters == 1 and licences <= 5",
+5,
+true
+],
+[
+"pledges == 0 and licences == 7",
+1,
+true
+],
+[
+"vials <= 0",
+1,
+true
+],
+[
+"cells == 0",
+2,
+true
+],
+[
+"reels <= 1",
+4,
+true
+],
+[
+"reels == 0 and beacons == 5",
+3,
+true
+],
+[
+"beacons >= 9",
+3,
+true
+],
+[
+"cells == 0 and probes == 0",
+3,
+true
+],
+[
+"cells <= 0",
+3,
+true
+],
+[
+"pledges >= 4 and rails == 1",
+1,
+true
+],
+[
+"valves <= 0",
+2,
+true
+],
+[
+"margin == 0 and licences >= 3",
+1,
+true
+],
+[
+"cargo >= 4 and margin == 0",
+0,
+true
+],
+[
+"cargo <= 1",
+3,
+true
+],
+[
+"permits == 2 and cells == 4",
+4,
+true
+],
+[
+"cells == 0",
+0,
+true
+],
+[
+"ballast == 1 and meters == 4",
+2,
+true
+],
+[
+"ballast == 1",
+1,
+true
+],
+[
+"signals <= 2",
+2,
+true
+],
+[
+"margin == 2 and hooks == 3",
+3,
+true
+],
+[
+"vials == 2",
+4,
+true
+],
+[
+"warrants >= 2",
+4,
+true
+],
+[
+"shifts == 0",
+6,
+true
+],
+[
+"freight == 2 and hooks >= 4",
+0,
+true
+],
+[
+"queues == 7",
+0,
+true
+],
+[
+"permits == 0 and queues == 5",
+1,
+true
+],
+[
+"sensors == 8+",
+3,
+false
+],
+[
+"cargo == 1",
+5,
+true
+],
+[
+"cells <= 5 and doses == 0",
+6,
+true
+],
+[
+"probes == 3 and rosters == 0",
+5,
+true
+],
+[
+"probes == 3 and cells <= 1",
+5,
+true
+],
+[
+"deposits <= 2 and probes >= 2",
+5,
+true
+],
+[
+"cargo == 2 and freight <= 2",
+5,
+true
+],
+[
+"cargo == 3",
+4,
+true
+],
+[
+"vials == 1",
+6,
+true
+],
+[
+"cells == 0 and sensors == 0",
+5,
+true
+],
+[
+"deposits == 1",
+3,
+true
+],
+[
+"deposits == 4",
+2,
+false
+],
+[
+"deposits == 2 and shifts == 0",
+4,
+true
+],
+[
+"doses <= 4",
+2,
+true
+],
+[
+"margin >= 4",
+1,
+true
+],
+[
+"ballast == 1",
+2,
+true
+],
+[
+"margin == 4 and ballast >= 3",
+1,
+true
+],
+[
+"freight >= 4",
+1,
+true
+],
+[
+"freight == 2 and cargo == 1",
+0,
+true
+],
+[
+"freight <= 2 and ballast >= 1",
+0,
+false
+],
+[
+"reels <= 0",
+0,
+true
+],
+[
+"shifts == 1 and reels <= 1",
+0,
+true
+],
+[
+"ledger == 8+",
+5,
+false
+],
+[
+"ledger >= 9",
+5,
+true
+],
+[
+"pledges == 2",
+0,
+true
+],
+[
+"pledges <= 2",
+4,
+false
+],
+[
+"pledges == 4",
+4,
+true
+],
+[
+"doses == 7",
+5,
+true
+],
+[
+"doses == 4",
+6,
+true
+],
+[
+"backlog == 0 and doses == 5",
+2,
+true
+],
+[
+"doses == 4",
+2,
+true
+],
+[
+"signals == 0 and licences <= 1",
+2,
+true
+],
+[
+"shifts == 0 and signals == 1",
+2,
+true
+],
+[
+"signals <= 0 and shifts == 0",
+2,
+true
+],
+[
+"signals <= 0",
+1,
+true
+],
+[
+"freight == 3",
+0,
+true
+],
+[
+"freight <= 5",
+0,
+true
+],
+[
+"unclear",
+7,
+false
+],
+[
+"shifts == 1",
+2,
+true
+],
+[
+"cells >= 1 and signals <= 0",
+2,
+true
+],
+[
+"doses == 1",
+3,
+true
+],
+[
+"panels >= 5",
+7,
+true
+],
+[
+"pledges == 0 and ledger >= 2",
+9,
+true
+],
+[
+"panels >= 7",
+7,
+true
+],
+[
+"panels >= 6",
+7,
+true
+],
+[
+"deposits == 0 and backlog == 0",
+0,
+true
+],
+[
+"backlog == 1 and gates >= 2",
+2,
+true
+],
+[
+"deposits <= 1",
+0,
+true
+],
+[
+"hooks >= 9 and deposits == 0",
+1,
+true
+],
+[
+"shifts <= 6",
+5,
+false
+],
+[
+"panels == 0",
+6,
+true
+],
+[
+"panels == 1",
+0,
+true
+],
+[
+"deposits == 2",
+3,
+true
+],
+[
+"freight == 2",
+3,
+true
+],
+[
+"freight == 3 and backlog <= 1",
+2,
+true
+],
+[
+"doses == 1",
+1,
+true
+],
+[
+"doses >= 2",
+1,
+true
+],
+[
+"doses == 3 and backlog <= 1",
+1,
+true
+],
+[
+"gates <= 1",
+2,
+true
+],
+[
+"probes == 3",
+6,
+true
+],
+[
+"shifts == 1 and licences >= 2",
+5,
+true
+],
+[
+"gates <= 0",
+2,
+true
+],
+[
+"ballast == 0",
+0,
+true
+],
+[
+"reels <= 1 and ballast >= 1",
+2,
+true
+],
+[
+"ballast == 1",
+0,
+true
+],
+[
+"ballast <= 1",
+0,
+true
+],
+[
+"rations <= 3 and rations >= 3",
+2,
+true
+],
+[
+"rations <= 1 and vials == 4",
+4,
+true
+],
+[
+"meters >= 2",
+6,
+true
+],
+[
+"permits == 2 and cells <= 1",
+1,
+false
+],
+[
+"meters == 2 and licences == 0",
+5,
+true
+],
+[
+"permits == 1",
+1,
+true
+],
+[
+"permits == 1 and signals >= 5",
+5,
+true
+],
+[
+"permits == 0",
+5,
+true
+],
+[
+"probes <= 1",
+1,
+true
+],
+[
+"reels == 3 and doses <= 1",
+2,
+true
+],
+[
+"pledges == 0",
+5,
+true
+],
+[
+"rations == 3 and deposits == 0",
+2,
+true
+],
+[
+"rations == 3",
+2,
+true
+],
+[
+"rations >= 3 and backlog >= 2",
+2,
+true
+],
+[
+"rails >= 3 and warrants < 1",
+2,
+false
+],
+[
+"warrants >= 3",
+4,
+true
+],
+[
+"warrants <= 0",
+6,
+true
+],
+[
+"sensors <= 1 and cargo <= 1",
+7,
+true
+],
+[
+"ballast <= 2",
+6,
+true
+],
+[
+"hooks <= 2",
+4,
+true
+],
+[
+"hooks <= 2 and sensors >= 1",
+4,
+true
+],
+[
+"reels >= 2",
+0,
+true
+],
+[
+"signals == 1 and freight <= 0",
+4,
+true
+],
+[
+"margin == 0 and doses == 0",
+3,
+true
+],
+[
+"doses == 1 and margin <= 4",
+3,
+true
+],
+[
+"margin == 4",
+3,
+true
+],
+[
+"probes == 4",
+4,
+true
+],
+[
+"licences == 0",
+5,
+true
+],
+[
+"meters == 3",
+0,
+true
+],
+[
+"beacons >= 6",
+3,
+false
+],
+[
+"beacons == 0",
+0,
+true
+],
+[
+"panels == 0 and meters == 4",
+6,
+true
+],
+[
+"reels <= 3",
+5,
+false
+],
+[
+"reels <= 1 and panels == 1",
+2,
+true
+],
+[
+"freight == 0",
+6,
+true
+],
+[
+"vials == 0 and panels == 1",
+1,
+true
+],
+[
+"probes == 1",
+4,
+true
+],
+[
+"doses == 0 and signals == 0",
+2,
+true
+],
+[
+"signals == 1 and meters <= 1",
+2,
+true
+],
+[
+"signals == 5",
+3,
+true
+],
+[
+"signals <= 5",
+2,
+true
+],
+[
+"probes == 5 and doses <= 2",
+9,
+true
+],
+[
+"probes <= 3 and doses == 5",
+6,
+true
+],
+[
+"vials == 4",
+5,
+true
+],
+[
+"probes == 6 and vials == 5+",
+8,
+false
+],
+[
+"beacons <= 1",
+6,
+true
+],
+[
+"beacons == 0",
+3,
+true
+],
+[
+"vials >= 1",
+7,
+true
+],
+[
+"beacons == 0",
+6,
+true
+],
+[
+"margin == 0 and meters >= 5",
+5,
+true
+],
+[
+"meters == 3 and margin == 1",
+0,
+true
+],
+[
+"margin == 0 and meters == 6",
+0,
+true
+],
+[
+"rosters == 3",
+0,
+true
+],
+[
+"licences == 0",
+7,
+true
+],
+[
+"rosters == 3",
+0,
+true
+],
+[
+"backlog == 2",
+2,
+true
+],
+[
+"permits == 1",
+6,
+true
+],
+[
+"meters <= 1",
+3,
+true
+],
+[
+"rations >= 2",
+0,
+false
+],
+[
+"meters == 0 and queues <= 2",
+3,
+true
+],
+[
+"panels == 0 and probes == 4",
+1,
+true
+],
+[
+"probes == 5",
+5,
+false
+],
+[
+"probes == 4",
+0,
+true
+],
+[
+"probes == 1 and (probes >= 0)",
+1,
+false
+],
+[
+"reels <= 1",
+0,
+true
+],
+[
+"reels == 1 and gates >= 5",
+0,
+true
+],
+[
+"queues == 0 and ledger == 1",
+7,
+true
+],
+[
+"queues == 8 and probes <= 0",
+4,
+true
+],
+[
+"valves == 1 and deposits >= 1",
+4,
+true
+],
+[
+"deposits <= 6",
+0,
+true
+],
+[
+"deposits <= 1",
+0,
+true
+],
+[
+"deposits >= 4",
+3,
+true
+],
+[
+"shifts == 0 and cargo == 4",
+4,
+true
+],
+[
+"cargo >= 4",
+4,
+true
+],
+[
+"cargo == 2",
+2,
+true
+],
+[
+"cargo == 5",
+4,
+true
+],
+[
+"freight >= 8",
+0,
+true
+],
+[
+"signals == 0 and freight <= 8",
+3,
+false
+],
+[
+"panels <= 4",
+5,
+false
+],
+[
+"panels == 2",
+4,
+true
+],
+[
+"permits <= 0 and backlog >= 3",
+5,
+true
+],
+[
+"valves == 2",
+4,
+true
+],
+[
+"valves <= 0",
+3,
+false
+],
+[
+"pledges <= 6",
+2,
+true
+],
+[
+"gates == 0",
+5,
+true
+],
+[
+"deposits <= 2 and meters == 1",
+5,
+true
+],
+[
+"deposits == 0 and meters == 0 and permits == 1 and freight == 1",
+5,
+false
+],
+[
+"deposits == 0",
+4,
+true
+],
+[
+"margin <= 0",
+6,
+false
+],
+[
+"rails <= 3",
+7,
+true
+],
+[
+"margin == 1 and (margin <= 1)",
+6,
+false
+],
+[
+"rails == 0",
+6,
+false
+],
+[
+"meters == 5",
+6,
+true
+],
+[
+"warrants == 9 and meters >= 3",
+4,
+true
+],
+[
+"meters <= 6",
+6,
+false
+],
+[
+"beacons >= 5",
+8,
+true
+],
+[
+"backlog == 3",
+0,
+true
+],
+[
+"shifts >= 3",
+3,
+true
+],
+[
+"shifts == 8",
+5,
+false
+],
+[
+"shifts == 8",
+5,
+false
+],
+[
+"shifts <= 3 and probes == 0",
+1,
+true
+],
+[
+"doses <= 0",
+2,
+true
+],
+[
+"backlog == 1 and doses <= 7",
+6,
+true
+],
+[
+"doses == 8",
+5,
+true
+],
+[
+"cargo <= 0",
+10,
+false
+],
+[
+"pledges == 7",
+6,
+true
+],
+[
+"panels == 3",
+0,
+true
+],
+[
+"reels == 0 and vials == 0",
+3,
+true
+],
+[
+"cells <= 2",
+3,
+false
+],
+[
+"beacons <= 1",
+0,
+false
+],
+[
+"signals >= 2",
+0,
+true
+],
+[
+"pledges == 0",
+6,
+true
+]
+],
+"requests without a goal": [
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"probes == 4",
+1,
+true
+],
+[
+"unclear",
+3,
+false
+],
+[
+"unclear",
+3,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"doses != 0",
+4,
+false
+],
+[
+"unclear",
+3,
+false
+],
+[
+"unclear",
+3,
+false
+],
+[
+"unclear",
+3,
+false
+],
+[
+"reels == 2",
+4,
+true
+],
+[
+"unclear",
+4,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"shifts == 1",
+0,
+true
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+8,
+false
+],
+[
+"unclear",
+8,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"freight == any value but 0",
+3,
+false
+],
+[
+"unclear",
+4,
+false
+],
+[
+"unclear",
+4,
+false
+],
+[
+"unclear",
+4,
+false
+],
+[
+"ledger != 1",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+4,
+false
+],
+[
+"unclear",
+4,
+false
+],
+[
+"unclear",
+4,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+4,
+false
+],
+[
+"unclear",
+4,
+false
+],
+[
+"doses == 0",
+3,
+true
+],
+[
+"unclear",
+8,
+false
+],
+[
+"unclear",
+8,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"permits == 1 and unclear",
+4,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+8,
+false
+],
+[
+"unclear",
+8,
+false
+],
+[
+"unclear",
+8,
+false
+],
+[
+"shifts == any value but 1",
+8,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"freight == 2",
+7,
+true
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+3,
+false
+],
+[
+"beacons == 1",
+1,
+true
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"rations == 2",
+5,
+true
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"beacons == 1 and unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+4,
+false
+],
+[
+"shifts == 2",
+4,
+true
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+8,
+false
+],
+[
+"unclear",
+8,
+false
+],
+[
+"unclear",
+8,
+false
+],
+[
+"unclear",
+8,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"meters == 2",
+1,
+true
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+4,
+false
+],
+[
+"unclear",
+4,
+false
+],
+[
+"unclear",
+4,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"hooks == 2",
+4,
+true
+],
+[
+"unclear",
+4,
+false
+],
+[
+"unclear",
+4,
+false
+],
+[
+"unclear",
+4,
+false
+],
+[
+"cells == 2",
+2,
+true
+],
+[
+"unclear",
+4,
+false
+],
+[
+"unclear",
+4,
+false
+],
+[
+"unclear",
+4,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"licences == 2",
+2,
+true
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"meters == 2",
+5,
+true
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"ballast == 2",
+10,
+true
+],
+[
+"unclear",
+10,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+11,
+false
+],
+[
+"unclear",
+11,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+3,
+false
+],
+[
+"unclear",
+3,
+false
+],
+[
+"unclear",
+11,
+false
+],
+[
+"unclear",
+11,
+false
+],
+[
+"hooks == 1 and unclear",
+11,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+10,
+false
+],
+[
+"unclear",
+10,
+false
+],
+[
+"unclear",
+10,
+false
+],
+[
+"unclear",
+10,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"deposits == anything but 1",
+0,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+7,
+false
+],
+[
+"unclear",
+4,
+false
+],
+[
+"unclear",
+4,
+false
+],
+[
+"unclear",
+4,
+false
+],
+[
+"ballast == 1 and pledges <= 2",
+1,
+true
+],
+[
+"unclear",
+4,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+4,
+false
+],
+[
+"unclear",
+4,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"probes == 2",
+5,
+true
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"probes == 2",
+4,
+true
+],
+[
+"panels == 0",
+6,
+true
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+9,
+false
+],
+[
+"unclear",
+9,
+false
+],
+[
+"unclear",
+9,
+false
+],
+[
+"unclear",
+9,
+false
+],
+[
+"unclear",
+8,
+false
+],
+[
+"unclear",
+8,
+false
+],
+[
+"unclear",
+8,
+false
+],
+[
+"unclear",
+4,
+false
+],
+[
+"unclear",
+4,
+false
+],
+[
+"unclear",
+4,
+false
+],
+[
+"panels == 0",
+4,
+true
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"unclear",
+5,
+false
+],
+[
+"backlog == anything but 1",
+5,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+],
+[
+"unclear",
+6,
+false
+]
+]
+}

@@ -10,3 +10,4 @@ experiments/shopware/*/training/
 experiments/shopware/core/data/disagreements.jsonl
 
 .holodeck/
+.claude/
