@@ -10,6 +10,7 @@ from threading import Lock
 
 import torch
 
+from confirm import confirm, propose
 import holo
 from fusion import load_backbone
 from reader import ReaderArm
@@ -37,7 +38,7 @@ class Demo:
         unseen = build(7, 3, "test")
         self.worlds = {"allocation": hand[0][0], "quarantine": hand[1][0],
                        **{f"generated-{index + 1}": world for index, (world, _) in enumerate(unseen)}}
-        self.hosts, self.generation = {}, 0
+        self.hosts, self.generation, self.proposals = {}, 0, {}
         for name in self.worlds:
             self.reset(name)
 
@@ -63,13 +64,23 @@ class Demo:
         goal, stated = output["goal_texts"][0], output["goals"][0]
         for sign, shown in SIGNS.items():
             goal = goal.replace(sign, shown)
-        yield {"understood": goal if stated else "no goal", "checked": output["agree"][0], "context_tokens": round(output["tokens"]),
-               "state": snapshot["fields"], "epoch": snapshot["epoch"]}
+        plan = None
+        if stated:
+            proposal = propose(world, snapshot, actor, stated)
+            ticket = f"{name}-{len(self.proposals)}"
+            self.proposals[ticket] = proposal
+            plan = {"id": ticket, "status": proposal["status"], "labels": proposal["labels"]}
+        yield {"understood": goal if stated else "no goal", "checked": output["agree"][0], "plan": plan,
+               "context_tokens": round(output["tokens"]), "state": snapshot["fields"], "epoch": snapshot["epoch"]}
         notice = "This request is already fulfilled." if stated and world.satisfied(task["state"], stated) else \
             "No sequence of allowed actions fulfils this request." if stated else \
             "I could not turn this into a goal for this application. These actions are possible now."
         scene = holo.tree(scenes[0], world, task, snapshot["epoch"], notice)
         yield from holo.patches(scene, snapshot["epoch"])
+
+    def confirm(self, name, ticket, key):
+        """The person accepted the stated goal. The whole verified plan commits atomically or not at all."""
+        return confirm(self.hosts[name], self.proposals[ticket], key)
 
     def invoke(self, name, handle, key):
         return self.hosts[name].invoke(handle["actor"], handle, key)
@@ -104,6 +115,8 @@ def handler(demo):
                     self.wfile.flush()
             elif self.path == "/invoke":
                 self.send(json.dumps(demo.invoke(body["app"], body["handle"], body["key"])).encode())
+            elif self.path == "/confirm":
+                self.send(json.dumps(demo.confirm(body["app"], body["id"], body["key"])).encode())
             elif self.path == "/reset":
                 demo.reset(body["app"])
                 self.send(b"{}")

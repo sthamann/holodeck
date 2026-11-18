@@ -8,6 +8,8 @@ This experiment trains a foundation model to read compiled Decks as tokens, to u
 
 **Third run.** Looser requests break the clean picture. The same reader states only 69% of them exactly and commits wrongly on 4%. It also commits on a third of requests that have no goal. Training with broader wordings and with requests marked as unclear lifts exact goals to 83%, search accuracy to 91% and cuts commits on goal-less requests from 80 to 19 of 240. Wrong commits on looser requests stay at 3%. [Looser requests](#looser-requests)
 
+**Confirmation.** The system now shows the goal it understood and the exact plan, and commits the whole plan atomically once a person accepts the goal. Replayed with a simulated person who accepts only goals that mean the request, 648 of 763 looser requests are settled in one round with no wrong commit, 95 are rejected and asked again, and 20 are not understood. [Confirmed goals](#confirmed-goals)
+
 ## Task
 
 A generated contract, a state, an acting role and an English request. The answer is the grounded action that starts a shortest plan, or a refusal when no plan exists. Plans are one to four steps long. Labels come from exhaustive search and are confirmed by a second, independent search in the replay. Training and test contracts share no field names, action names, role names or request phrasings. Start states are chosen so that at least three actions are legal and legality alone does not reveal the answer.
@@ -136,6 +138,25 @@ The generator's test split uses one held-out template per kind. A second set rew
 
 The hand-written contracts now beat the generated form as well.
 
+## Confirmed goals
+
+Agreement between model and search still commits wrongly on 3% of looser requests. The remaining error is a misread goal, and the stated goal is short and written in the contract's own terms. So the Host now waits for a person: it shows `I understood: clock == 3. Exact plan: Advance clock → Advance clock → Advance clock.` and commits all steps in one atomic transition once the goal is accepted. The plan is bound to the epoch it was computed for. A direct click on a control still commits one step, as before.
+
+The replay takes what `reader+loose` stated for every request and simulates a person who accepts a goal only when it holds in exactly the same states as the request. Every accepted plan is committed on the durable Host from the task's state.
+
+| | Template, of 763 | Looser, of 763 | No goal, of 240 |
+| --- | ---: | ---: | ---: |
+| Agreement rule: committed | 699 | 662 | 19 |
+| Agreement rule: wrong | 1 | 20 | 19 |
+| Confirmation: goal accepted | 759 | 648 | 0 |
+| of these, whole plan committed and request reached | 657 | 564 | 0 |
+| of these, correctly reported that no way exists | 102 | 84 | 0 |
+| Confirmation: wrong | 0 | 0 | 0 |
+| Rejected and asked again | 4 | 95 | 19 |
+| Not understood | 0 | 20 | 221 |
+
+Accepted plans reached the request in the shortest number of steps in every case, 2,682 committed steps in total. A repeated confirmation returned the same receipt and a second confirmation of the same plan was stale. Zero wrong commits is a property of the simulated person, who never accepts a wrong goal. What the replay establishes is the other side: when the goal is right, the exact plan and the Host deliver it, and the price of safety is one extra question in 12% of looser requests. Whether people spot a wrong goal in this notation has to be tested with people.
+
 ## Generated Holos
 
 The scene head of `deck+exec` streams containers, facts and controls. The grammar offers a control token only for a handle the Deck enables in the current state. 200 scenes per cohort, 40 for the hand-written contracts.
@@ -159,14 +180,14 @@ On 24 held-back authored messages the zero-shot 0.6B judge is weak on urgency (1
 ## What follows
 
 1. **Done:** the application stays text, the goal is stated as text, the Deck searches and checks, and the scene is built from the verified step.
-2. **Requests from people.** Both loose sets were written by the author of the training templates. The 3% wrong commits need to be measured on collected requests, and driven down with broader data and a confirmation step that shows the stated goal before the first commit.
+2. **Requests and confirmations from people.** Both loose sets were written by the author of the training templates, and the confirming person is simulated. Collected requests and a test of whether people catch a misread goal are the next evidence.
 3. **A richer goal language.** Inequality, relations between fields and relative changes are outside it today and get forced into it.
 4. **Leave exhaustive search.** With entities and larger state spaces the Deck can no longer enumerate, and the model has to propose plans that the Deck verifies step by step.
 5. **Deck tokens only where text cannot follow:** contracts with hundreds of actions.
 
 ## Reproduce
 
-The exact parts need only Python. The command checks 734,778 compiled transitions against the definitions, 277 labels against an independent search, the scene grammar, the Host binding and the judgement journal, and summarizes the recorded runs.
+The exact parts need only Python. The command checks 734,778 compiled transitions against the definitions, 277 labels against an independent search, the scene grammar, the Host binding, the judgement journal and every confirmed plan on the Host, and summarizes the recorded runs.
 
 ```sh
 python3 experiments/deck-modality/replay.py > /tmp/deck-modality.json
@@ -188,7 +209,7 @@ python demo.py "$QWEN_SNAPSHOT"
 
 The demo serves five Decks with the retrained reader. A typed request becomes a stated goal and a streamed Holo, and a click commits on the Host.
 
-[Recorded runs](results) · [Evidence](evidence.json) · [Generator and oracle](worlds.py) · [Fused arms](fusion.py) · [Reader arm](reader.py) · [Looser requests](phrasings.py) · [Scene grammar](holo.py) · [Neural operators](neural_ops.py)
+[Recorded runs](results) · [Evidence](evidence.json) · [Generator and oracle](worlds.py) · [Fused arms](fusion.py) · [Reader arm](reader.py) · [Looser requests](phrasings.py) · [Confirmation](confirm.py) · [Scene grammar](holo.py) · [Neural operators](neural_ops.py)
 
 ## Limits
 

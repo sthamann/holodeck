@@ -22,11 +22,14 @@
   .fact { padding: .5rem .8rem; border-radius: .4rem; background: white; border: 1px solid var(--line); }
   .fact b { font-variant-numeric: tabular-nums; margin-left: .4rem; }
   button.primary { font-weight: 600; padding: .7rem 1.2rem; }
+  #confirm { display: none; align-items: center; gap: .8rem; flex-wrap: wrap; border: 1px solid var(--accent); border-radius: .6rem; padding: .8rem 1rem; margin-bottom: .75rem; background: white; }
+  #confirm.open { display: flex; }
+  #confirm span { flex: 1 1 16rem; }
   #log { margin-top: 1.5rem; font: .85rem ui-monospace, monospace; color: var(--soft); white-space: pre-wrap; }
   @media (max-width: 40rem) { form { grid-template-columns: 1fr 1fr; } form input, form button { grid-column: 1 / -1; } }
 </style>
 <h1>Holodeck · say what you want</h1>
-<p class="lead">Pick a Deck, say what you want. The model reads the application as text, states the goal it understood and streams the interface. Exact search checks its suggestion against that goal. Every control is a revision-bound handle on the durable Host.</p>
+<p class="lead">Pick a Deck, say what you want. The model reads the application as text, states the goal it understood and streams the interface. Exact search finds the plan for that goal, and nothing runs on your behalf before you confirm the goal. Every control is a revision-bound handle on the durable Host.</p>
 <form id="ask">
   <select id="app" aria-label="Deck"></select>
   <select id="actor" aria-label="Acting as"></select>
@@ -35,6 +38,7 @@
 </form>
 <div id="state" aria-label="Durable state"></div>
 <div id="meta" role="status"></div>
+<div id="confirm" aria-live="polite"><span></span><button class="primary" type="button"></button></div>
 <div id="holo" aria-live="polite"></div>
 <div id="log"></div>
 <script type="module">
@@ -87,14 +91,33 @@
           $("state").replaceChildren(...Object.entries(patch.state).map(([key, value]) =>
             Object.assign(document.createElement("span"), {textContent: `${key} ${value}`})));
           $("meta").textContent = body.request
-            ? `Understood: ${patch.understood} · ${patch.understood === "no goal" ? "nothing suggested" : patch.checked ? "model and exact search agree" : "model and exact search disagree, the search result is shown"} · ${patch.context_tokens} context tokens · epoch ${patch.epoch}`
+            ? `Understood: ${patch.understood} · ${patch.understood === "no goal" ? "nothing suggested" : patch.plan.status === "fulfilled" ? "already fulfilled" : patch.plan.status === "unreachable" ? "no way to get there" : patch.checked ? "model and exact search agree" : "model and exact search disagree, the search result is shown"} · ${patch.context_tokens} context tokens · epoch ${patch.epoch}`
             : `Epoch ${patch.epoch}`;
+          offer(body.request ? patch : {});
         } else if (patch.put) {
           if (fresh) { $("holo").replaceChildren(); fresh = false; }
           $("holo").append(node(patch.put[1]));
         }
       }
     }
+  }
+
+  function offer(patch) {
+    const plan = patch.plan, box = $("confirm");
+    box.classList.toggle("open", Boolean(plan && plan.status === "ready"));
+    if (!plan || plan.status !== "ready") return;
+    const count = plan.labels.length;
+    box.firstElementChild.textContent = `I understood: ${patch.understood}. Exact plan: ${plan.labels.join(" → ")}.`;
+    const button = box.lastElementChild;
+    button.textContent = `Confirm goal and run ${count} step${count === 1 ? "" : "s"}`;
+    button.onclick = async () => {
+      const response = await fetch("/confirm", {method: "POST", body: JSON.stringify(
+        {app: $("app").value, id: plan.id, key: `confirm-${Date.now()}-${clicks++}`})});
+      const receipt = await response.json();
+      const effects = (receipt.effects ?? []).map(effect => `${effect.kind}(${effect.value})`).join(", ");
+      $("log").textContent = `Confirmed “${patch.understood}” → ${receipt.status}${effects ? " · effects: " + effects : ""}\n` + $("log").textContent;
+      generate();
+    };
   }
 
   async function invoke(item) {

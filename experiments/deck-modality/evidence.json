@@ -52,6 +52,59 @@
    "model_calls_during_replay": 0
   }
  },
+ "confirmed_goals_on_durable_host": {
+  "template requests": {
+   "requests": 763,
+   "agreement_rule": {
+    "committed": 699,
+    "wrong": 1
+   },
+   "confirmation": {
+    "goal_shown": 763,
+    "accepted": 759,
+    "plans_committed_on_host": 657,
+    "steps_committed": 1442,
+    "correctly_reported_no_way": 102,
+    "wrong": 0,
+    "rejected_and_asked_again": 4,
+    "not_understood": 0
+   }
+  },
+  "looser requests": {
+   "requests": 763,
+   "agreement_rule": {
+    "committed": 662,
+    "wrong": 20
+   },
+   "confirmation": {
+    "goal_shown": 743,
+    "accepted": 648,
+    "plans_committed_on_host": 564,
+    "steps_committed": 1240,
+    "correctly_reported_no_way": 84,
+    "wrong": 0,
+    "rejected_and_asked_again": 95,
+    "not_understood": 20
+   }
+  },
+  "requests without a goal": {
+   "requests": 240,
+   "agreement_rule": {
+    "committed": 19,
+    "wrong": 19
+   },
+   "confirmation": {
+    "goal_shown": 19,
+    "accepted": 0,
+    "plans_committed_on_host": 0,
+    "steps_committed": 0,
+    "correctly_reported_no_way": 0,
+    "wrong": 0,
+    "rejected_and_asked_again": 19,
+    "not_understood": 221
+   }
+  }
+ },
  "recorded_training_runs": {
   "deck+exec": {
    "backbone": "c1899de289a04d12100db370d81485cdf75e47ca",

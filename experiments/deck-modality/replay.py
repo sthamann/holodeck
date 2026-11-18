@@ -7,13 +7,16 @@ import random
 import sys
 from tempfile import TemporaryDirectory
 
+from confirm import confirm, equivalent, propose
 import holo
 from neural_ops import Desk, calibrate, label_set
-from worlds import authored, build, interpret
+from phrasings import restate, without_goal
+from worlds import authored, build, interpret, parse_goal
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT.parent / "model-applications" / "vertical"))
 
+from compiler import digest  # noqa: E402
 from runtime import Host  # noqa: E402
 from storage import Journal  # noqa: E402
 
@@ -170,6 +173,60 @@ def check_judgements():
     return report
 
 
+def check_confirmation():
+    """Replay what the reader stated. A simulated person accepts a goal only when it means the request.
+
+    Every accepted plan is committed on the durable Host from the task's state. The agreement rule
+    of the earlier runs is recomputed on the same rows for comparison.
+    """
+    unseen = [(world, task) for world, tasks in build(1, 250, "test") for task in tasks]
+    sets = {"template requests": unseen, "looser requests": restate(unseen), "requests without a goal": without_goal(unseen)}
+    report = {}
+    with TemporaryDirectory() as root:
+        for name, rows in json.loads((ROOT / "stated" / "reader+loose.json").read_text()).items():
+            tasks = sets[name]
+            require(len(rows) == len(tasks), "recorded statements do not match the cohort")
+            real = name != "requests without a goal"
+            stats = {"requests": len(tasks), "agreement_rule": {"committed": 0, "wrong": 0},
+                     "confirmation": {"goal_shown": 0, "accepted": 0, "plans_committed_on_host": 0,
+                                      "steps_committed": 0, "correctly_reported_no_way": 0, "wrong": 0,
+                                      "rejected_and_asked_again": 0, "not_understood": 0}}
+            for number, ((world, task), (text, choice, agree)) in enumerate(zip(tasks, rows)):
+                right = real and (choice in task["optimal"] if task["optimal"] else choice == len(world.candidates))
+                stats["agreement_rule"]["committed"] += agree
+                stats["agreement_rule"]["wrong"] += agree and not right
+                row, goal = stats["confirmation"], parse_goal(world, text)
+                if goal is None:
+                    row["not_understood"] += 1
+                    continue
+                row["goal_shown"] += 1
+                if not real or not equivalent(world, goal, task["goal"]):
+                    row["rejected_and_asked_again"] += 1
+                    continue
+                row["accepted"] += 1
+                store = Journal(Path(root) / f"{name[:3]}-{number}")
+                store.save(None, {"epoch": 0, "revision": world.model.checkpoint["initial_revision"],
+                                  "checkpoint": digest(world.model.checkpoint),
+                                  "fields": dict(zip(world.names, task["state"])), "receipts": {}, "outbox": []})
+                host = Host(store, world.model)
+                proposal = propose(world, host.snapshot(), task["actor"], goal)
+                receipt = confirm(host, proposal, "confirmed")
+                if task["depth"] == 0:
+                    require(receipt == {"status": "unreachable"}, "a plan was committed where none exists")
+                    row["correctly_reported_no_way"] += 1
+                    continue
+                after = host.snapshot()["fields"]
+                reached = receipt["status"] == "committed" and len(proposal["steps"]) == task["depth"] and \
+                    world.satisfied([after[field] for field in world.names], task["goal"])
+                row["wrong"] += not reached
+                row["plans_committed_on_host"] += reached
+                row["steps_committed"] += len(proposal["steps"])
+                require(confirm(host, proposal, "confirmed") == receipt, "retry returned a different receipt")
+                require(confirm(host, proposal, "again") == {"status": "stale"}, "an old confirmation was accepted")
+            report[name] = stats
+    return report
+
+
 def study(run):
     """A saved reader scored on looser requests, on requests without a goal and on verified scenes."""
     loose = run["looser requests on the unseen cohort"]
@@ -227,6 +284,7 @@ def main():
         "scene_grammar": check_scenes(unseen + larger + hand),
         "generated_control_on_durable_host": check_host(),
         "neural_operators": check_judgements(),
+        "confirmed_goals_on_durable_host": check_confirmation(),
         "recorded_training_runs": measured(),
     }, indent=1))
 

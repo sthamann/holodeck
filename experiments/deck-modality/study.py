@@ -40,6 +40,7 @@ def main():
     parser.add_argument("--name", default="reader-study")
     parser.add_argument("--seed", type=int, default=1)
     parser.add_argument("--batch", type=int, default=16)
+    parser.add_argument("--stated", default="", help="only record what the reader stated, under this name")
     args = parser.parse_args()
     device = "mps" if torch.backends.mps.is_available() else "cpu"
     tokenizer, lm = load_backbone(args.backbone, device)
@@ -51,6 +52,20 @@ def main():
     cohorts = {"unseen contracts, names and phrasings": unseen,
                "larger structure than training": flatten(build(args.seed, 125, "test", "larger")),
                "hand-written vertical contracts": flatten(authored())}
+    if args.stated:
+        sets = {"template requests": unseen, "looser requests": restate(unseen, args.seed),
+                "requests without a goal": without_goal(unseen, args.seed)}
+        stated = {}
+        for name, tasks in sets.items():
+            rows = []
+            for batch in chunks(tasks, args.batch):
+                output = model.run(batch)
+                rows += [[text, choice, agree] for text, choice, agree in
+                         zip(output["goal_texts"], output["choices"], output["agree"])]
+            stated[name] = rows
+        (ROOT / "stated").mkdir(exist_ok=True)
+        (ROOT / "stated" / f"{args.stated}.json").write_text(json.dumps(stated, indent=0) + "\n")
+        return
     report = {"arm": args.name, "checkpoint": Path(args.checkpoint).name}
     report["looser requests on the unseen cohort"] = {
         "tasks": len(unseen), **evaluate_reader(model, restate(unseen, args.seed), args.batch, 0)}

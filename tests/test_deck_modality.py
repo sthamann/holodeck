@@ -116,6 +116,29 @@ class DeckModality(unittest.TestCase):
                 self.assertEqual(scene[0], holo.NOTICE)
                 self.assertTrue(holo.wellformed(scene, range(len(world.names)), legal))
 
+    def test_confirmed_plan_commits_atomically_and_goes_stale(self):
+        sys.path.insert(0, str(HERE.parent / 'model-applications' / 'vertical'))
+        from confirm import confirm, equivalent, propose
+        from runtime import Host
+        from storage import Journal
+        world = next(world for world, _ in authored() if 'hold' in world.spec['actions'])
+        pending, clock = world.names.index('pending'), world.names.index('clock')
+        self.assertTrue(equivalent(world, [(pending, 'ge', 3)], [(pending, 'eq', 3)]))
+        self.assertFalse(equivalent(world, [(pending, 'ge', 2)], [(pending, 'le', 2)]))
+        with TemporaryDirectory() as root:
+            host = Host(Journal(Path(root) / 'journal'), world.model)
+            proposal = propose(world, host.snapshot(), 'controller', [(clock, 'eq', 3)])
+            self.assertEqual((proposal['status'], len(proposal['steps'])), ('ready', 3))
+            receipt = confirm(host, proposal, 'yes')
+            self.assertEqual(receipt['status'], 'committed')
+            self.assertEqual(host.snapshot()['fields']['clock'], 3)
+            self.assertEqual(host.snapshot()['epoch'], 1)
+            self.assertEqual(confirm(host, proposal, 'yes'), receipt)
+            self.assertEqual(confirm(host, proposal, 'again'), {'status': 'stale'})
+            done = propose(world, host.snapshot(), 'controller', [(clock, 'eq', 3)])
+            self.assertEqual(confirm(host, done, 'more'), {'status': 'fulfilled'})
+            self.assertEqual(host.snapshot()['epoch'], 1)
+
     def test_recorded_evidence_is_valid_json(self):
         evidence = json.loads((HERE / 'evidence.json').read_text())
         self.assertEqual(evidence['scene_grammar']['unauthorized_or_repeated_controls'], 0)

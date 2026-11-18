@@ -251,6 +251,20 @@ class World:
         return [candidate for candidate, target in enumerate(self.table(actor)[self.index[tuple(state)]])
                 if target >= 0 and distance[target] == here - 1]
 
+    def plan(self, state, actor, goal):
+        """One shortest sequence of candidates to the goal. Empty when it holds, None when it is out of reach."""
+        distance, table = self.distance(actor, goal), self.table(actor)
+        current = self.index[tuple(state)]
+        if distance[current] is None:
+            return None
+        steps = []
+        while distance[current]:
+            candidate = next(index for index, target in enumerate(table[current])
+                             if target >= 0 and distance[target] == distance[current] - 1)
+            steps.append(candidate)
+            current = table[current][candidate]
+        return steps
+
 
 def phrase(rng, world, goal, split):
     def pick(options):
