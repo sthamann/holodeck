@@ -53,3 +53,7 @@ The film explains how a Deck is built and shows an early commerce run with the t
 ---
 
 Holodeck is a research project by Stefan Hamann and the technical companion to *The End of Software as We Know It: From Apps to Holos*. [Contributing](CONTRIBUTING.md) · [Artwork and capture credits](assets/README.md)
+
+## Author
+
+Built by [Stefan Hamann](https://stefan-hamann.de/), co-founder of Shopware and author of the handbook [Agentic Commerce](https://www.agentic-commerce.sh/). More about this project: [Holodeck on agentic-commerce.sh](https://www.agentic-commerce.sh/en/lab/holodeck/).
